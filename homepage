@@ -1,0 +1,365 @@
+import Link from 'next/link';
+import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, Brain, Sparkles, Cpu, FileText,
+BarChart3, History, Zap, Shield } from 'lucide-react';
+
+export default function LandingPage() {
+return (
+<div className="flex flex-col">
+    {/* Hero Section */}
+    <section
+        className="relative px-4 pt-20 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
+        <div className="container mx-auto text-center max-w-5xl">
+            <div
+                className="mb-6 inline-flex items-center rounded-full border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-3 py-1 text-sm font-medium text-slate-900 dark:text-white backdrop-blur-sm">
+                <span>🛡️ The Enterprise Safety Layer for LLMs</span>
+            </div>
+            <h1
+                className="mb-6 text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-7xl lg:text-8xl">
+                Remove risk from <br className="hidden sm:block" />
+                <span
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
+                    enterprise LLMs
+                </span>
+            </h1>
+            <p
+                className="mx-auto mb-10 max-w-2xl text-xl text-slate-600 dark:text-slate-300 sm:text-2xl leading-relaxed">
+                Protect your organization with granular cost controls, PII redaction, and dual-layer guardrails.
+                Deploy AI with confidence, not compromise.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link href="/register"
+                    className="w-full sm:w-auto rounded-full bg-slate-900 dark:bg-white px-8 py-4 text-lg font-bold text-white dark:text-slate-900 transition hover:scale-105 active:scale-95">
+                Get Started
+                </Link>
+                <Link href="/login"
+                    className="w-full sm:w-auto rounded-full border border-slate-200 dark:border-white/20 bg-transparent px-8 py-4 text-lg font-bold text-slate-900 dark:text-white transition hover:bg-slate-50 dark:hover:bg-white/10">
+                Log In
+                </Link>
+            </div>
+
+            {/* Main Hero Video/Image Placeholder */}
+            <div
+                className="mt-16 relative mx-auto max-w-4xl aspect-video rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-100 dark:bg-black/40 flex items-center justify-center group">
+                <div
+                    className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent dark:from-black/40 pointer-events-none" />
+                <span className="font-mono text-sm text-slate-400 dark:text-slate-500">[ Enterprise Dashboard Demo
+                    ]</span>
+                {/* Dynamic shine effect */}
+                <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform" />
+            </div>
+        </div>
+    </section>
+
+    {/* Alternating Feature Scctions */}
+    <div id="safety" className="flex flex-col w-full">
+
+        {/* Cost Control */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#131314] transition-colors duration-300">
+            <div className="container mx-auto max-w-6xl">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
+                    <div className="order-2 lg:order-1">
+                        {/* Video Placeholder */}
+                        <div
+                            className="aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-black/30 shadow-xl flex items-center justify-center">
+                            <span className="font-mono text-sm text-slate-400">[ Budget Allocation Demo ]</span>
+                        </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                        <div
+                            className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 mb-6">
+                            <Coins className="h-6 w-6" />
+                        </div>
+                        <h2
+                            className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-6">
+                            Granular Cost Control.
+                        </h2>
+                        <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Enforce strict budget limits at the Organization, Department, and User level.
+                        </p>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Pre-flight Checks:</strong> We calculate token costs <em>before</em>
+                                    sending requests. Transactions are blocked instantly if funds are
+                                    insufficient.</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Recurring Allowances:</strong> Set daily, weekly, or monthly credit
+                                    renewals that reset automatically.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Brand Safety (Dual Layer) */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
+            <div className="container mx-auto max-w-6xl">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
+                    <div>
+                        <div
+                            className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 mb-6">
+                            <ShieldCheck className="h-6 w-6" />
+                        </div>
+                        <h2
+                            className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-6">
+                            Dual-Layer Guardrails.
+                        </h2>
+                        <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Protect your brand with a defense-in-depth approach that catches what others miss.
+                        </p>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Layer 1 (Fast):</strong> Instant regex matching for PII, secrets, and
+                                    known toxic phrases. Zero latency overhead.</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Layer 2 (Semantic):</strong> Advanced LLM-based analysis to detect subtle
+                                    jailbreaks, competitor mentions, and off-policy advice.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        {/* Video Placeholder */}
+                        <div
+                            className="aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-black/30 shadow-xl flex items-center justify-center">
+                            <span className="font-mono text-sm text-slate-400">[ Guardrail Block Demo ]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Data Privacy */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#131314] transition-colors duration-300">
+            <div className="container mx-auto max-w-6xl">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
+                    <div className="order-2 lg:order-1">
+                        {/* Video Placeholder */}
+                        <div
+                            className="aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-black/30 shadow-xl flex items-center justify-center">
+                            <span className="font-mono text-sm text-slate-400">[ PII Redaction Demo ]</span>
+                        </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                        <div
+                            className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 mb-6">
+                            <Lock className="h-6 w-6" />
+                        </div>
+                        <h2
+                            className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-6">
+                            Automatic Data Redaction.
+                        </h2>
+                        <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Ensure sensitive data never leaves your secure perimeter.
+                        </p>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>PII Scrubbing:</strong> Automatically detect and redact emails, phone
+                                    numbers, and SSNs.</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Secret Detection:</strong> Blocks API keys and credentials from being
+                                    pasted into prompts.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Org Policies */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
+            <div className="container mx-auto max-w-6xl">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
+                    <div>
+                        <div
+                            className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 mb-6">
+                            <Building2 className="h-6 w-6" />
+                        </div>
+                        <h2
+                            className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-6">
+                            Hierarchical Control.
+                        </h2>
+                        <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                            Manage AI policies the way you manage your organization.
+                        </p>
+                        <ul className="space-y-4">
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Global Baselines:</strong> Set company-wide rules that no one can
+                                    bypass.</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                                <span><strong>Department Overrides:</strong> Allow Engineering to use coding assistants
+                                    while restricting Marketing's hallucinations.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        {/* Video Placeholder */}
+                        <div
+                            className="aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-black/30 shadow-xl flex items-center justify-center">
+                            <span className="font-mono text-sm text-slate-400">[ Policy Config Demo ]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    {/* Pricing Section */}
+    <section id="pricing"
+        className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#131314] transition-colors duration-300">
+        <div className="container mx-auto max-w-7xl">
+            <div className="max-w-6xl mx-auto">
+                {/* Super Enterprise Mega-Card */}
+                <div
+                    className="relative rounded-[2.5rem] border border-emerald-500/30 bg-white dark:bg-white/5 p-8 lg:p-12 shadow-2xl backdrop-blur-md ring-1 ring-emerald-500/30 overflow-hidden">
+                    <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+                        {/* Left Column: Pricing & Basic Info */}
+                        <div className="lg:col-span-4 flex flex-col justify-between">
+                            <div className="mb-10 lg:mb-0">
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div
+                                        className="p-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-xl">
+                                        <Building2 className="h-8 w-8" />
+                                    </div>
+                                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white">Super Enterprise
+                                    </h3>
+                                </div>
+
+                                <div className="flex items-baseline gap-1 mb-2">
+                                    <span className="text-6xl font-black text-slate-900 dark:text-white">$20</span>
+                                    <span className="text-xl text-slate-500 dark:text-slate-400 font-medium">/ seat /
+                                        month</span>
+                                </div>
+                                <p
+                                    className="text-sm text-slate-500 dark:text-slate-400 mb-8 font-semibold uppercase tracking-wider">
+                                    Minimum 100 seats required
+                                </p>
+
+                                <div
+                                    className="rounded-2xl border border-emerald-500/20 bg-emerald-50/50 dark:bg-emerald-500/5 p-6 mb-8">
+                                    <div
+                                        className="flex items-center gap-2 mb-2 text-emerald-700 dark:text-emerald-400 font-bold">
+                                        <Coins className="h-5 w-5" />
+                                        <span>AI Credit Consumption</span>
+                                    </div>
+                                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        $10,000 annual pre-paid credit minimum for unified LLM billing across all
+                                        models.
+                                    </p>
+                                </div>
+
+                                <Link href="/register"
+                                    className="group flex items-center justify-center w-full rounded-2xl bg-slate-900 dark:bg-white px-8 py-5 text-xl font-bold text-white dark:text-slate-900 transition-all hover:scale-[1.02] active:scale-95 shadow-2xl hover:shadow-emerald-500/20">
+                                Get Started
+                                <Zap className="ml-2 h-5 w-5 fill-current group-hover:animate-bounce" />
+                                </Link>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Feature Sections */}
+                        <div className="lg:col-span-8 grid md:grid-cols-2 gap-8 lg:gap-12">
+                            {/* Section 1: Flagship AI */}
+                            <div className="space-y-6">
+                                <div
+                                    className="flex items-center gap-2 text-slate-900 dark:text-white font-black text-xs uppercase tracking-[0.2em] opacity-50">
+                                    <Brain className="h-4 w-4" />
+                                    Cognitive Intelligence
+                                </div>
+                                <ul className="space-y-4">
+                                    {[
+                                    { title: "Hyper-Modal Access", desc: "GPT-4o, Claude 3.5, Gemini 1.5, Llama 3" },
+                                    { title: "Visual Creativity Engine", desc: "DALL-E 3 & fal.ai High-Fi generation" },
+                                    { title: "Document Forge", desc: "Automatic PDF & Report generation" },
+                                    { title: "Intelligent Routing", desc: "remova-1.0 auto-model optimization" },
+                                    { title: "Context-Aware Grounding", desc: "Grounding in private PDFs & Web data" }
+                                    ].map((feat, i) => (
+                                    <li key={i} className="group">
+                                        <div className="flex items-start gap-3">
+                                            <div
+                                                className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                                                <Check className="h-3 w-3" />
+                                            </div>
+                                            <div>
+                                                <p className="font-bold text-slate-900 dark:text-white leading-tight">
+                                                    {feat.title}</p>
+                                                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                                    {feat.desc}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Section 2: Enterprise Governance */}
+                            <div className="space-y-6">
+                                <div
+                                    className="flex items-center gap-2 text-slate-900 dark:text-white font-black text-xs uppercase tracking-[0.2em] opacity-50">
+                                    <Shield className="h-4 w-4" />
+                                    Enterprise Governance
+                                </div>
+                                <ul className="space-y-4">
+                                    {[
+                                    { title: "Dual-Layer Guardrails", desc: "Real-time Fast & Semantic defense" },
+                                    { title: "PII & Secret Shield", desc: "Instant data redaction & mask protocols" },
+                                    { title: "Hierarchical Policy Engine", desc: "Org, Dept, and User level control" },
+                                    { title: "Executive Analytics", desc: "Real-time ROI & Adoption dashboards" },
+                                    { title: "Universal SSO/SAML", desc: "Enterprise RBAC & SCIM support" },
+                                    { title: "Full Audit Transparency", desc: "1-year retention on all sessions" },
+                                    { title: "Flexible Deployment", desc: "VPC, On-prem, or White-label" }
+                                    ].map((feat, i) => (
+                                    <li key={i} className="group">
+                                        <div className="flex items-start gap-3">
+                                            <div
+                                                className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500/10 text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                                                <Check className="h-3 w-3" />
+                                            </div>
+                                            <div>
+                                                <p className="font-bold text-slate-900 dark:text-white leading-tight">
+                                                    {feat.title}</p>
+                                                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                                                    {feat.desc}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* Bottom CTA */}
+    <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] transition-colors duration-300">
+        <div className="container mx-auto max-w-3xl">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+                Ready to secure your AI?
+            </h2>
+            <p className="mb-10 text-xl text-slate-600 dark:text-slate-300">
+                Join the organizations that trust Remova to deploy LLMs safely and confidently.
+            </p>
+            <Link href="/register"
+                className="inline-block rounded-full bg-slate-900 dark:bg-white px-8 py-4 text-lg font-bold text-white dark:text-slate-900 transition hover:scale-105 active:scale-95 shadow-2xl">
+            Start Free Trial
+            </Link>
+        </div>
+    </section>
+</div>
+);
+}
