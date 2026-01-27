@@ -517,7 +517,7 @@ export default function LandingPage() {
 
 
             {/* How It Works Section */}
-            <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300 border-b-2 border-slate-900 dark:border-white">
+            <section id="protocol" className="py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300 border-b-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-[90rem]">
                     <div className="flex flex-col md:flex-row items-baseline gap-6 mb-24 border-b-2 border-slate-900 dark:border-white pb-8">
                         <h2 className="text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl w-full">
