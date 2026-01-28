@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Shield, Twitter, Linkedin, Github, Globe } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -28,15 +28,14 @@ export default function Footer() {
                             Implementing granular cost controls and real-time PII protection across the global intelligence stack.
                         </p>
                         <div className="flex gap-5">
-                            {[Twitter, Linkedin, Github, Globe].map((Icon, i) => (
-                                <a
-                                    key={i}
-                                    href="#"
-                                    className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
-                                >
-                                    <Icon className="h-5 w-5 transition-transform group-hover:scale-110" />
-                                </a>
-                            ))}
+                            <a
+                                href="https://www.linkedin.com/company/remova.org/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
+                            >
+                                <Linkedin className="h-5 w-5 transition-transform group-hover:scale-110" />
+                            </a>
                         </div>
                     </div>
 
@@ -70,8 +69,8 @@ export default function Footer() {
                         {
                             title: "Legal",
                             links: [
-                                { name: "Privacy Protocol", href: "mailto:notifications@remova.org?subject=Privacy%20Inquiry" },
-                                { name: "Terms of Access", href: "mailto:notifications@remova.org?subject=Terms%20Inquiry" },
+                                { name: "Privacy Protocol", href: "/privacy" },
+                                { name: "Terms of Access", href: "/terms" },
                                 { name: "Governance", href: "mailto:notifications@remova.org?subject=Governance%20Inquiry" }
                             ],
                         },
@@ -99,12 +98,8 @@ export default function Footer() {
 
                 <div className="mt-24 border-t-2 border-slate-900 dark:border-white pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-sm font-bold text-slate-500 dark:text-slate-500 uppercase tracking-widest">
-                        &copy; {currentYear} Remova Protocol. SECURE_ENVIRONMENT_ACTIVE
+                        &copy; {currentYear} Remova. All rights reserved.
                     </p>
-                    <div className="flex gap-8">
-                        <span className="text-xs font-black text-slate-400 dark:text-slate-600 uppercase tracking-tighter">v2.4.0_STABLE</span>
-                        <span className="text-xs font-black text-slate-400 dark:text-slate-600 uppercase tracking-tighter text-emerald-500">SYSTEMS_NOMINAL</span>
-                    </div>
                 </div>
             </div>
         </footer>
