@@ -6,7 +6,7 @@ export default function LandingPage() {
         <div className="flex flex-col">
             {/* Hero Section */}
             {/* Hero Section */}
-            <section className="relative px-4 pt-48 pb-32 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300 overflow-hidden">
+            <section className="relative px-4 pt-48 pb-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300 overflow-hidden">
                 {/* Subtle Background Pattern */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
@@ -43,7 +43,7 @@ export default function LandingPage() {
             </section>
 
             {/* Supademo Embed */}
-            <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
+            <section className="pt-0 pb-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
                 <div className="container mx-auto max-w-6xl">
                     <div style={{ position: 'relative', boxSizing: 'content-box', maxHeight: '80vh', width: '100%', aspectRatio: '1.97', padding: '40px 0' }}>
                         <iframe
