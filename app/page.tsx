@@ -36,44 +36,24 @@ export default function LandingPage() {
                             href="https://app.remova.org/login"
                             className="w-full sm:w-auto rounded-[2.5rem] border-2 border-slate-200 dark:border-white/10 bg-transparent px-12 py-6 text-2xl font-black text-slate-900 dark:text-white transition hover:bg-slate-50 dark:hover:bg-white/5 hover:border-slate-300"
                         >
-                            Book Demo
+                            Login
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Interactive Demo Section */}
-            <section className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300 border-y-2 border-slate-900 dark:border-white">
-                <div className="container mx-auto max-w-7xl">
-                    <div className="text-center mb-16">
-                        <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-6 py-2 text-base font-bold text-slate-900 dark:text-white backdrop-blur-md shadow-sm">
-                            <MonitorDot className="h-5 w-5 text-black dark:text-white animate-pulse" />
-                            <span className="tracking-wide">LIVE PRODUCT DEMO</span>
-                        </div>
-                        <h2 className="text-5xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-7xl mb-6 leading-[0.9]">
-                            See Remova <br /> In Action
-                        </h2>
-                        <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                            Watch how enterprise teams deploy AI with complete control, security, and cost management.
-                        </p>
-                    </div>
-
-                    {/* Supademo Embed Container */}
-                    <div className="relative mx-auto max-w-6xl">
-                        <div style={{ position: 'relative', boxSizing: 'content-box', maxHeight: '80vh', width: '100%', aspectRatio: '1.97', padding: '40px 0' }} className="rounded-[2rem] overflow-hidden border-8 border-slate-900/10 dark:border-white/10 shadow-2xl">
-                            <iframe
-                                src="https://app.supademo.com/embed/cmkz7miia3gr8tw9fdbksfw6i?embed_v=2&utm_source=embed"
-                                loading="lazy"
-                                title="Remova Entreprise AI Control Layer"
-                                allow="clipboard-write"
-                                frameBorder="0"
-                                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                                className="w-full h-full"
-                            />
-                        </div>
-                        <div className="text-center mt-6">
-                            <p className="font-sans text-slate-500 dark:text-slate-400 text-lg font-bold">REMOVA_AGENTS_ACTIVE: 420</p>
-                        </div>
+            {/* Supademo Embed */}
+            <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
+                <div className="container mx-auto max-w-6xl">
+                    <div style={{ position: 'relative', boxSizing: 'content-box', maxHeight: '80vh', width: '100%', aspectRatio: '1.97', padding: '40px 0' }}>
+                        <iframe
+                            src="https://app.supademo.com/embed/cmkz7miia3gr8tw9fdbksfw6i?embed_v=2&utm_source=embed"
+                            loading="lazy"
+                            title="Remova Entreprise AI Control Layer"
+                            allow="clipboard-write"
+                            frameBorder="0"
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                        />
                     </div>
                 </div>
             </section>
