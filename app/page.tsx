@@ -39,21 +39,41 @@ export default function LandingPage() {
                             Book Demo
                         </Link>
                     </div>
+                </div>
+            </section>
 
-                    {/* Main Hero Video/Image Placeholder - Bigger & Bolder */}
-                    <div className="relative mx-auto max-w-6xl aspect-[16/9] rounded-[2rem] overflow-hidden border-8 border-slate-900/5 dark:border-white/5 shadow-2xl bg-slate-900 dark:bg-black group perspective-1000">
-                        {/* Placeholder Interface */}
-                        <div className="absolute inset-0 flex items-center justify-center bg-[#0F1117]">
-                            <div className="text-center space-y-4">
-                                <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-white/5 animate-pulse">
-                                    <Shield className="h-10 w-10 text-white/20" />
-                                </div>
-                                <p className="font-sans text-slate-500 text-lg">REMOVA_AGENTS_ACTIVE: 420</p>
-                            </div>
+            {/* Interactive Demo Section */}
+            <section className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-300 border-y-2 border-slate-900 dark:border-white">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="text-center mb-16">
+                        <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-6 py-2 text-base font-bold text-slate-900 dark:text-white backdrop-blur-md shadow-sm">
+                            <MonitorDot className="h-5 w-5 text-black dark:text-white animate-pulse" />
+                            <span className="tracking-wide">LIVE PRODUCT DEMO</span>
                         </div>
+                        <h2 className="text-5xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-7xl mb-6 leading-[0.9]">
+                            See Remova <br /> In Action
+                        </h2>
+                        <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                            Watch how enterprise teams deploy AI with complete control, security, and cost management.
+                        </p>
+                    </div>
 
-                        {/* Dynamic shine effect */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-transparent skew-y-12 translate-y-full group-hover:translate-y-[-100%] transition-transform ease-in-out" />
+                    {/* Supademo Embed Container */}
+                    <div className="relative mx-auto max-w-6xl">
+                        <div style={{ position: 'relative', boxSizing: 'content-box', maxHeight: '80vh', width: '100%', aspectRatio: '1.97', padding: '40px 0' }} className="rounded-[2rem] overflow-hidden border-8 border-slate-900/10 dark:border-white/10 shadow-2xl">
+                            <iframe
+                                src="https://app.supademo.com/embed/cmkz7miia3gr8tw9fdbksfw6i?embed_v=2&utm_source=embed"
+                                loading="lazy"
+                                title="Remova Entreprise AI Control Layer"
+                                allow="clipboard-write"
+                                frameBorder="0"
+                                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                                className="w-full h-full"
+                            />
+                        </div>
+                        <div className="text-center mt-6">
+                            <p className="font-sans text-slate-500 dark:text-slate-400 text-lg font-bold">REMOVA_AGENTS_ACTIVE: 420</p>
+                        </div>
                     </div>
                 </div>
             </section>
