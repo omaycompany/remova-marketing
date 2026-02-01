@@ -28,7 +28,7 @@ export default function Header() {
                         {["Product", "Pricing", "Resources"].map((item) => (
                             <Link
                                 key={item}
-                                href={`#${item.toLowerCase()}`}
+                                href={`/#${item.toLowerCase()}`}
                                 className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                             >
                                 {item}
@@ -73,7 +73,7 @@ export default function Header() {
                         {["Product", "Pricing", "Resources"].map((item) => (
                             <Link
                                 key={item}
-                                href={`#${item.toLowerCase()}`}
+                                href={`/#${item.toLowerCase()}`}
                                 className="block px-3 py-4 text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >

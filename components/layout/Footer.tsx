@@ -44,16 +44,16 @@ export default function Footer() {
                         {
                             title: "System",
                             links: [
-                                { name: "Safety Layer", href: "#safety" },
-                                { name: "Core Engine", href: "#product" },
-                                { name: "Protocol", href: "#protocol" },
-                                { name: "Licensing", href: "#pricing" }
+                                { name: "Safety Layer", href: "/#safety" },
+                                { name: "Core Engine", href: "/#product" },
+                                { name: "Compliance", href: "/#compliance" },
+                                { name: "Licensing", href: "/#pricing" }
                             ],
                         },
                         {
                             title: "Organization",
                             links: [
-                                { name: "Why Remova?", href: "#resources" },
+                                { name: "Why Remova?", href: "/#resources" },
                                 { name: "Careers", href: "mailto:notifications@remova.org?subject=Careers Inquiry" },
                                 { name: "Contact", href: "mailto:notifications@remova.org?subject=General Inquiry" }
                             ],
@@ -69,9 +69,9 @@ export default function Footer() {
                         {
                             title: "Legal",
                             links: [
-                                { name: "Privacy Protocol", href: "/privacy" },
-                                { name: "Terms of Access", href: "/terms" },
-                                { name: "Governance", href: "mailto:notifications@remova.org?subject=Governance%20Inquiry" }
+                                { name: "Privacy Policy", href: "/privacy" },
+                                { name: "Terms of Service", href: "/terms" },
+                                { name: "Legal Inquiry", href: "mailto:notifications@remova.org?subject=Legal%20Inquiry" }
                             ],
                         },
                     ].map((col, idx) => (
