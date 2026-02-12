@@ -42,28 +42,30 @@ export default function Footer() {
                     {/* Link Columns */}
                     {[
                         {
-                            title: "System",
+                            title: "Product",
                             links: [
-                                { name: "Safety Layer", href: "/#safety" },
-                                { name: "Core Engine", href: "/#product" },
-                                { name: "Compliance", href: "/#compliance" },
-                                { name: "Licensing", href: "/#pricing" }
+                                { name: "Features", href: "/features" },
+                                { name: "Use Cases", href: "/use-cases" },
+                                { name: "Integrations", href: "/integrations" },
+                                { name: "Pricing", href: "/#pricing" }
                             ],
                         },
                         {
-                            title: "Organization",
+                            title: "Resources",
                             links: [
-                                { name: "Why Remova?", href: "/#resources" },
-                                { name: "Careers", href: "mailto:notifications@remova.org?subject=Careers Inquiry" },
-                                { name: "Contact", href: "mailto:notifications@remova.org?subject=General Inquiry" }
+                                { name: "Blog", href: "/blog" },
+                                { name: "Glossary", href: "/glossary" },
+                                { name: "Resources", href: "/resources" },
+                                { name: "Customer Stories", href: "/customers" }
                             ],
                         },
                         {
-                            title: "Support",
+                            title: "Comparisons",
                             links: [
-                                { name: "Documentation", href: "mailto:notifications@remova.org?subject=Documentation%20Request" },
-                                { name: "API Reference", href: "mailto:notifications@remova.org?subject=API%20Access%20Request" },
-                                { name: "Security Unit", href: "mailto:notifications@remova.org?subject=Security%20Inquiry" }
+                                { name: "Alternatives", href: "/alternative" },
+                                { name: "Head-to-Head", href: "/compare" },
+                                { name: "Vs ChatGPT", href: "/alternative/chatgpt-enterprise" },
+                                { name: "Vs Copilot", href: "/alternative/microsoft-copilot" }
                             ],
                         },
                         {

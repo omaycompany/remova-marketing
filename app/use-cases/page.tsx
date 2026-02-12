@@ -4,9 +4,9 @@ import { useCases } from "@/content/use-cases";
 import { ArrowRight, Briefcase, Building, Cog } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Use Cases | Remova — Enterprise AI Governance by Industry & Role",
-    description: "Explore how Remova solves AI governance challenges across 20 industries, 10 roles, and 10 functions. Find your use case.",
-    openGraph: { title: "Use Cases | Remova", description: "Enterprise AI governance for every industry, role, and function.", url: "https://remova.org/use-cases", siteName: "Remova", type: "website" },
+    title: "Use Cases | AI for Companies — Enterprise AI Solutions",
+    description: "Discover the most effective use cases for AI for companies across industries and roles. From legal to engineering, secure your AI deployment.",
+    openGraph: { title: "Use Cases | AI for Companies", description: "Discover the most effective use cases for AI for companies.", url: "https://remova.org/use-cases", siteName: "Remova", type: "website" },
     alternates: { canonical: "/use-cases" },
 };
 

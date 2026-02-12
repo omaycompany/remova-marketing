@@ -4,9 +4,9 @@ import { glossaryTerms } from "@/content/glossary";
 import { BookOpen, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "AI Glossary | Remova — Enterprise AI Terms Explained",
-    description: "Comprehensive glossary of enterprise AI terms. Definitions for guardrails, PII redaction, LLMs, RAG, fine-tuning, prompt injection, and 50+ more concepts.",
-    openGraph: { title: "AI Glossary | Remova", description: "60+ AI terms defined for enterprise teams.", url: "https://remova.org/glossary", siteName: "Remova", type: "website" },
+    title: "AI Glossary | AI for Companies — Remova Terms Database",
+    description: "The definitive glossary of AI for companies. Explore definitions for guardrails, PII redaction, and 50+ more concepts for business AI deployment.",
+    openGraph: { title: "AI Glossary | AI for Companies", description: "60+ AI terms defined for business teams within companies.", url: "https://remova.org/glossary", siteName: "Remova", type: "website" },
     alternates: { canonical: "/glossary" },
 };
 

@@ -4,9 +4,9 @@ import { resources } from "@/content/resources";
 import { ArrowRight, FileText, Download } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Resources | Remova — Free Enterprise AI Governance Resources",
-    description: "Free guides, checklists, templates, toolkits, and whitepapers for enterprise AI governance. Download and use immediately.",
-    openGraph: { title: "Resources | Remova", description: "25 free enterprise AI governance resources.", url: "https://remova.org/resources", siteName: "Remova", type: "website" },
+    title: "Resources | AI for Companies — Free Enterprise Tools",
+    description: "Free guides, checklists, and templates for AI for companies. Download the ultimate resource pack for safe business AI deployment.",
+    openGraph: { title: "Resources | AI for Companies", description: "Free tools and resources for AI for companies.", url: "https://remova.org/resources", siteName: "Remova", type: "website" },
     alternates: { canonical: "/resources" },
 };
 

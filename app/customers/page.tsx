@@ -4,9 +4,9 @@ import { customerStories } from "@/content/customer-stories";
 import { ArrowRight, Building2, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Customer Stories | Remova — Enterprise AI Success Stories",
-    description: "See how Fortune 500 companies, law firms, healthcare systems, and government agencies use Remova for enterprise AI governance.",
-    openGraph: { title: "Customer Stories | Remova", description: "Real results from enterprise AI governance.", url: "https://remova.org/customers", siteName: "Remova", type: "website" },
+    title: "Customer Stories | AI for Companies — Success Stories",
+    description: "Read real-world success stories of AI for companies. See how leaders across industries use Remova to secure and scale their AI deployment.",
+    openGraph: { title: "Customer Stories | AI for Companies", description: "Real results and success stories of AI for companies.", url: "https://remova.org/customers", siteName: "Remova", type: "website" },
     alternates: { canonical: "/customers" },
 };
 

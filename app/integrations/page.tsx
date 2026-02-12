@@ -4,9 +4,9 @@ import { integrations } from "@/content/integrations";
 import { Plug, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Integrations | Remova — Connect Your AI Stack",
-    description: "Remova integrates with 30+ tools across AI providers, identity, cloud, productivity, security, and developer tools. SSO, API, and native connectors.",
-    openGraph: { title: "Integrations | Remova", description: "30+ integrations for your enterprise AI stack.", url: "https://remova.org/integrations", siteName: "Remova", type: "website" },
+    title: "Integrations | AI for Companies — Connect Your Stack",
+    description: "Remova provides the best integrations for AI for companies. Connect with 30+ tools across AI providers, identity, cloud, and security.",
+    openGraph: { title: "Integrations | AI for Companies", description: "30+ integrations for safe AI for companies.", url: "https://remova.org/integrations", siteName: "Remova", type: "website" },
     alternates: { canonical: "/integrations" },
 };
 

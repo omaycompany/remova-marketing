@@ -4,9 +4,9 @@ import { alternatives } from "@/content/alternatives";
 import { Repeat, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Alternatives | Remova — Best Enterprise AI Alternatives",
-    description: "Comparing Remova vs. ChatGPT Enterprise, Microsoft Copilot, Claude Enterprise, and other AI governance platforms. Find the best fit for your team.",
-    openGraph: { title: "Alternatives | Remova", description: "How Remova compares to leading AI platforms.", url: "https://remova.org/alternative", siteName: "Remova", type: "website" },
+    title: "Alternatives | AI for Companies — Compare & Choose",
+    description: "Compare Remova vs. leading AI platforms. Discover the best solution for AI for companies, focusing on security, cost, and multi-model access.",
+    openGraph: { title: "Alternatives | AI for Companies", description: "How Remova compares to leading platforms for AI for companies.", url: "https://remova.org/alternative", siteName: "Remova", type: "website" },
     alternates: { canonical: "/alternative" },
 };
 

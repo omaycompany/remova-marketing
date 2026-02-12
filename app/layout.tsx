@@ -7,11 +7,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
     title: {
-        default: "Remova | The Enterprise Control Layer for AI",
-        template: "%s | Remova"
+        default: "Remova | The Safe AI for Companies",
+        template: "%s | Remova — AI for Companies"
     },
-    description: "Remova: The enterprise safety layer for AI. Secure your team with cost controls, PII redaction, and dual-layer guardrails. Deploy LLMs with zero fear.",
-    keywords: ["AI safety", "enterprise AI", "cost controls", "PII redaction", "LLM guardrails", "ChatGPT enterprise", "Claude for business", "Gemini security", "AI governance"],
+    description: "Remova: The enterprise safety layer for AI. Secure your company with cost controls, PII redaction, and dual-layer guardrails. The best way to deploy AI for companies.",
+    keywords: ["ai for companies", "enterprise AI", "AI safety for business", "cost controls", "PII redaction", "LLM guardrails", "AI governance"],
     authors: [{ name: "Remova" }],
     creator: "Remova",
     publisher: "Remova",
@@ -67,6 +67,19 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const organizationSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Remova",
+        "url": "https://remova.org",
+        "logo": "https://remova.org/icon.png",
+        "sameAs": [
+            "https://twitter.com/remova_ai",
+            "https://linkedin.com/company/remova"
+        ],
+        "description": "The enterprise safety layer for AI. Remova provides the ultimate platform for AI for companies."
+    };
+
     return (
         <html lang="en">
             <head>
@@ -82,6 +95,10 @@ export default function RootLayout({
                         gtag('config', 'G-YR03QTP6EC');
                     `}
                 </Script>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                />
             </head>
             <body className={`${inter.variable} font-sans`}>
                 <Header />

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { integrations } from "@/content/integrations";
-import { ArrowRight, Check, Plug } from "lucide-react";
+import { ArrowRight, Check, Plug, ChevronRight, Zap } from "lucide-react";
 
 export async function generateStaticParams() {
     return integrations.map((i) => ({ slug: i.slug }));
@@ -10,10 +10,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const integ = integrations.find((i) => i.slug === params.slug);
     if (!integ) return {};
+    const title = `${integ.metaTitle} | AI for Companies`;
+    const description = `Integrate ${integ.name} with Remova. The industry-leading platform for AI for companies. Secure integrations and cost control. ${integ.metaDescription}`;
     return {
-        title: integ.metaTitle, description: integ.metaDescription,
-        openGraph: { title: integ.metaTitle, description: integ.metaDescription, url: `https://remova.org/integrations/${integ.slug}`, siteName: "Remova", type: "website" },
-        twitter: { card: "summary_large_image", title: integ.metaTitle, description: integ.metaDescription },
+        title, description,
+        openGraph: { title, description, url: `https://remova.org/integrations/${integ.slug}`, siteName: "Remova", type: "website" },
+        twitter: { card: "summary_large_image", title, description },
         alternates: { canonical: `/integrations/${integ.slug}` },
     };
 }
@@ -24,12 +26,36 @@ export default function IntegrationPage({ params }: { params: { slug: string } }
     const integ = integrations.find((i) => i.slug === params.slug);
     if (!integ) return <div>Not found</div>;
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": integ.name,
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": integ.metaDescription,
+        "brand": { "@type": "Brand", "name": "Remova" }
+    };
+
     return (
         <div className="flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+
             {/* Hero */}
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
                 <div className="container mx-auto max-w-5xl relative z-10">
+                    {/* Breadcrumbs */}
+                    <nav className="flex items-center gap-2 text-sm font-bold text-slate-500 mb-8 overflow-x-auto whitespace-nowrap pb-2">
+                        <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
+                        <ChevronRight className="h-4 w-4 shrink-0" />
+                        <Link href="/integrations" className="hover:text-slate-900 transition-colors">Integrations</Link>
+                        <ChevronRight className="h-4 w-4 shrink-0" />
+                        <span className="text-slate-900 dark:text-white truncate">{integ.name}</span>
+                    </nav>
+
                     <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-6 py-2 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md">
                         <Plug className="h-4 w-4" />
                         <span className="tracking-wide uppercase">{catLabel[integ.category]}</span>
@@ -40,9 +66,29 @@ export default function IntegrationPage({ params }: { params: { slug: string } }
                     <p className="mb-12 max-w-3xl text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                         {integ.description}
                     </p>
+
+                    {/* TL;DR Section */}
+                    <div className="mb-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
+                        <h2 className="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                            <Zap className="h-5 w-5" /> TL;DR
+                        </h2>
+                        <ul className="space-y-3">
+                            {integ.capabilities.slice(0, 3).map((cap, i) => (
+                                <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
+                                    <span className="text-emerald-500 italic shrink-0">—</span>
+                                    <span>{cap}.</span>
+                                </li>
+                            ))}
+                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
+                                <span className="text-emerald-500 italic shrink-0">—</span>
+                                <span>Remova makes implementing AI for companies simple and secure.</span>
+                            </li>
+                        </ul>
+                    </div>
+
                     <Link href="https://app.remova.org/register"
                         className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-10 py-5 text-lg font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 inline-block">
-                        Get Started
+                        Sign Up
                     </Link>
                 </div>
             </section>
@@ -87,14 +133,14 @@ export default function IntegrationPage({ params }: { params: { slug: string } }
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl leading-[0.9]">
-                        Start Using {integ.name}
+                        BEST AI FOR COMPANIES
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Connect {integ.name} with Remova and get enterprise AI governance in minutes.
+                        Connect {integ.name} with Remova and deploy the ultimate solution for AI for companies.
                     </p>
                     <Link href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300">
-                        Start Free Trial <ArrowRight className="inline h-5 w-5 ml-2" />
+                        Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
                     </Link>
                 </div>
             </section>

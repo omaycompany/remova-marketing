@@ -4,9 +4,9 @@ import { features } from "@/content/features";
 import { ShieldCheck, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Features | Remova — Enterprise AI Governance Platform",
-    description: "Explore Remova's 35 enterprise AI features: PII redaction, dual-layer guardrails, cost controls, multi-model access, SSO, audit logs, and more.",
-    openGraph: { title: "Features | Remova", description: "35+ enterprise AI governance features.", url: "https://remova.org/features", siteName: "Remova", type: "website" },
+    title: "Features | AI for Companies — Remova Enterprise AI Platform",
+    description: "Explore the ultimate features for AI for companies: PII redaction, dual-layer guardrails, cost controls, and safe multi-model access.",
+    openGraph: { title: "Features | AI for Companies", description: "35+ enterprise features for safe AI for companies.", url: "https://remova.org/features", siteName: "Remova", type: "website" },
     alternates: { canonical: "/features" },
 };
 

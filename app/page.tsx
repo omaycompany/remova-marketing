@@ -15,15 +15,14 @@ export default function LandingPage() {
                         <Shield className="h-5 w-5 text-black dark:text-white animate-draw" />
                         <span className="tracking-wide">THE ENTERPRISE CONTROL LAYER</span>
                     </div>
-                    <h1 className="mb-8 text-7xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl lg:text-[10rem] leading-[0.85] select-none">
-                        REMOVE RISK <br />
+                    <h1 className="mb-8 text-7xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl lg:text-[10rem] leading-[0.85] select-none uppercase">
+                        AI for <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-b from-slate-700 to-slate-900 dark:from-white dark:to-slate-400">
-                            FROM AI
+                            Companies
                         </span>
                     </h1>
                     <p className="mx-auto mb-12 max-w-3xl text-2xl text-slate-600 dark:text-slate-300 sm:text-3xl leading-relaxed font-medium">
-                        Cost controls. Privacy shields. Custom models.<br />
-                        Deploy ChatGPT, Claude, and Gemini with <span className="text-slate-900 dark:text-white font-bold underline decoration-4 decoration-emerald-500 underline-offset-4">zero fear.</span>
+                        The ultimate safety layer for enterprise AI. Deploy ChatGPT, Claude, and Gemini with <span className="text-slate-900 dark:text-white font-bold underline decoration-4 decoration-emerald-500 underline-offset-4">zero risk.</span>
                     </p>
                     <div className="flex flex-col items-center justify-center gap-6 sm:flex-row mb-20">
                         <Link

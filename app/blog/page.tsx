@@ -4,9 +4,9 @@ import { allBlogPosts } from "@/content/blog";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Blog | Remova — Enterprise AI Governance Insights",
-    description: "Expert insights on enterprise AI governance, security, compliance, and cost management. Technical guides, thought leadership, and industry analysis.",
-    openGraph: { title: "Remova Blog", description: "Enterprise AI governance insights, guides, and analysis.", url: "https://remova.org/blog", siteName: "Remova", type: "website" },
+    title: "Blog | AI for Companies — Remova Enterprise Insights",
+    description: "Expert insights on AI for companies, governance, security, and cost management. Technical guides and industry analysis for safe AI deployment.",
+    openGraph: { title: "Blog | AI for Companies", description: "Expert insights on AI for companies, governance, and security.", url: "https://remova.org/blog", siteName: "Remova", type: "website" },
     alternates: { canonical: "/blog" },
 };
 

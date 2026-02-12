@@ -4,9 +4,9 @@ import { comparisons } from "@/content/comparisons";
 import { Scale, ArrowRight, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Comparisons | Remova — Side-by-Side AI Platform Comparisons",
-    description: "Detailed side-by-side comparisons of enterprise AI platforms. Head-to-head reviews and top 10 roundups for AI governance and safety.",
-    openGraph: { title: "Comparisons | Remova", description: "Expert AI platform comparisons and reviews.", url: "https://remova.org/compare", siteName: "Remova", type: "website" },
+    title: "AI Comparisons | AI for Companies — Side-by-Side Analysis",
+    description: "Detailed side-by-side analysis of the best AI for companies. Compare enterprise platforms, security features, and cost management tools head-to-head.",
+    openGraph: { title: "AI Comparisons | AI for Companies", description: "Expert analysis and reviews of the best AI for companies.", url: "https://remova.org/compare", siteName: "Remova", type: "website" },
     alternates: { canonical: "/compare" },
 };
 
