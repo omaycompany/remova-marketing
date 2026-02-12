@@ -8,6 +8,7 @@ export interface Integration {
     description: string;
     capabilities: string[];
     setupSteps: string[];
+    faqs?: { question: string; answer: string }[];
 }
 
 const ig = (slug: string, name: string, category: Integration["category"], description: string, capabilities: string[], setupSteps: string[]): Integration => ({

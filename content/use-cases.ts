@@ -8,6 +8,7 @@ export interface UseCase {
     description: string;
     challenges: string[];
     solutions: { title: string; description: string }[];
+    faqs?: { question: string; answer: string }[];
 }
 
 export const useCases: UseCase[] = [

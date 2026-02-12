@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { customerStories } from "@/content/customer-stories";
 import { ArrowRight, TrendingUp, Building2, Quote, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return customerStories.map((s) => ({ slug: s.slug }));
@@ -32,6 +33,24 @@ export default function CustomerStoryPage({ params }: { params: { slug: string }
         "author": { "@type": "Organization", "name": "Remova" },
         "publisher": { "@type": "Organization", "name": "Remova" }
     };
+
+    // Default unique FAQs for customer stories
+    const defaultFaqs = [
+        {
+            question: `How did ${story.company} benefit from AI for companies?`,
+            answer: `${story.company} achieved significant measurable success, including ${story.results[0].value} ${story.results[0].metric}, by implementing Remova's leading platform for AI for companies.`
+        },
+        {
+            question: `What was the primary challenge ${story.company} faced?`,
+            answer: `The main hurdle was ${story.challenge.split('.')[0].toLowerCase()}. Remova's protocol for AI for companies provided a secure and compliant solution to overcome this obstacle.`
+        },
+        {
+            question: `Is Remova suitable for others in the ${story.industry} industry?`,
+            answer: `Absolutely. This case study demonstrates how Remova's governance layer effectively manages industry-specific safety and cost concerns for AI for companies within ${story.industry}.`
+        }
+    ];
+
+    const displayFaqs = story.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -128,6 +147,9 @@ export default function CustomerStoryPage({ params }: { params: { slug: string }
                     <p className="text-sm text-slate-500 dark:text-slate-400">{story.quote.role}, {story.company}</p>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title="Success Story FAQs" />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

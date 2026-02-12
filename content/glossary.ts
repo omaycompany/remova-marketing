@@ -6,6 +6,7 @@ export interface GlossaryTerm {
     definition: string;
     explanation: string;
     relatedTerms: string[];
+    faqs?: { question: string; answer: string }[];
 }
 
 const t = (slug: string, term: string, definition: string, explanation: string, relatedTerms: string[]): GlossaryTerm => ({

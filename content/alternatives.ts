@@ -7,6 +7,7 @@ export interface Alternative {
     competitorDescription: string;
     whySwitch: string[];
     removaAdvantages: { title: string; description: string }[];
+    faqs?: { question: string; answer: string }[];
 }
 
 export const alternatives: Alternative[] = [

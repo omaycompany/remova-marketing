@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { allBlogPosts } from "@/content/blog";
 import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return allBlogPosts.map((p) => ({ slug: p.slug }));
@@ -34,6 +35,24 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "datePublished": post.date,
         "image": "https://remova.org/images/og-image.png",
     };
+
+    // Default unique FAQs based on blog post
+    const defaultFaqs = [
+        {
+            question: `How does "${post.title}" apply to AI for companies?`,
+            answer: `This article explores the critical intersection of ${post.category.toLowerCase()} and enterprise AI. Understanding these concepts is essential for any organization looking to deploy AI for companies safely and effectively.`
+        },
+        {
+            question: `What is the main takeaway regarding ${post.sections[0].heading}?`,
+            answer: `${post.sections[0].content.split('.')[0]}. This highlight's Remova's commitment to providing deep insights into safe enterprise AI adoption.`
+        },
+        {
+            question: `Are the strategies mentioned here compatible with HIPAA or GDPR?`,
+            answer: `Yes. Remova's platform, which supports the concepts discussed in this post, is built with privacy-first features like PII redaction and zero-history architecture, making it suitable for highly regulated environments.`
+        }
+    ];
+
+    const displayFaqs = post.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -109,6 +128,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     ))}
                 </div>
             </article>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title="Article FAQs" />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

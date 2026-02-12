@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, Brain, Sparkles, Cpu, FileText, BarChart3, History, Zap, Shield, MessageSquare, Bot, ToggleRight, LayoutDashboard, Database, Ghost, Smartphone, Wand2, FileSpreadsheet, ShieldAlert, XCircle, Search, Server, FileLock2, AlertTriangle, Workflow, FileType, Key, BoxSelect, MonitorDot, Gauge, Scale, BookOpen, Fingerprint, Eye, LockKeyhole, Umbrella, RefreshCw, Slash, FileClock, SearchX, UserMinus, Diamond, Users, UserCog, UserCheck, KeyRound, Plug, Wallet, Receipt, Hourglass, Bell, CreditCard, Antenna, MessagesSquare, FileOutput, Printer } from 'lucide-react';
+import FAQ from '@/components/ui/FAQ';
 
 export default function LandingPage() {
     return (
@@ -1030,6 +1031,33 @@ export default function LandingPage() {
                 </div>
             </section>
 
+
+            {/* FAQ Section */}
+            <FAQ
+                items={[
+                    {
+                        question: "What is Remova?",
+                        answer: "Remova is an enterprise AI control layer that allows companies to deploy 300+ AI models (including GPT-4, Claude, and Gemini) with built-in security, governance, and cost controls. We provide the safety layer needed for safe adoption of AI for companies."
+                    },
+                    {
+                        question: "How does Remova ensure data privacy?",
+                        answer: "We use a zero-history architecture, meaning your conversation data is never stored on our servers. Additionally, our PII redaction layer automatically detects and masks sensitive information like emails, credit card numbers, and health data before it reaches AI providers."
+                    },
+                    {
+                        question: "Can I manage AI costs across different departments?",
+                        answer: "Yes. Remova allowing you to set granular monthly budgets for different teams (Engineering, Marketing, HR, etc.). You can set hard caps that automatically pause usage or soft alerts to notify admins when thresholds are reached."
+                    },
+                    {
+                        question: "Does Remova support on-premises deployment?",
+                        answer: "Yes. For organizations with the strictest security requirements, Remova can be deployed on-premises or within your private cloud, ensuring that data never leaves your environment."
+                    },
+                    {
+                        question: "What AI models are supported?",
+                        answer: "Remova provides access to over 300+ AI models from providers like OpenAI, Anthropic, Google, Meta, and Mistral. We normalize the pricing into a universal credit system, so your users get a consistent experience regardless of the model chosen."
+                    }
+                ]}
+                title="Common Questions about AI for Companies"
+            />
 
             {/* Bottom CTA - Bolder Style */}
             <section className="py-32 px-4 text-center bg-white dark:bg-[#131314] transition-colors duration-300 border-t-2 border-slate-900 dark:border-white">

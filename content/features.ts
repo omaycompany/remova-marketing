@@ -8,6 +8,7 @@ export interface Feature {
     description: string;
     benefits: string[];
     useCases: string[];
+    faqs?: { question: string; answer: string }[];
 }
 
 export const features: Feature[] = [
@@ -20,7 +21,12 @@ export const features: Feature[] = [
         subheadline: "Stop sensitive data from ever reaching AI models",
         description: "Remova's dual-layer protection system automatically detects and blocks personally identifiable information (PII), API keys, financial data, and other sensitive content before it's sent to any AI provider. Layer 1 uses instant rule-based matching with zero latency, while Layer 2 applies semantic analysis to catch sophisticated attempts to leak data through rephrased prompts or encoded content.",
         benefits: ["Instant PII detection and blocking", "Zero-latency rule-based matching", "Semantic analysis for sophisticated leak attempts", "Automatic audit logging of all blocked content", "Customizable sensitivity rules per department"],
-        useCases: ["Preventing employees from uploading salary data to ChatGPT", "Blocking API keys and passwords from AI prompts", "Ensuring HIPAA compliance in healthcare AI usage", "Protecting client confidential information in legal AI tools"]
+        useCases: ["Preventing employees from uploading salary data to ChatGPT", "Blocking API keys and passwords from AI prompts", "Ensuring HIPAA compliance in healthcare AI usage", "Protecting client confidential information in legal AI tools"],
+        faqs: [
+            { question: "How does Remova detect PII in AI prompts?", answer: "Remova uses a dual-layer detection system. Layer 1 uses high-speed regex and pattern matching for common identifiers like SSNs and credit cards. Layer 2 uses semantic AI analysis to detect contextual PII that rules might miss, such as names in conversation or project-specific secrets." },
+            { question: "Can we customize which data types are redacted?", answer: "Yes. Admins can configure custom redaction rules per department. You can decide whether to block the prompt entirely, redact the sensitive parts (e.g., [REDACTED]), or simply log the event for auditing." },
+            { question: "Does PII redaction add latency to the chat?", answer: "Layer 1 redaction adds negligible latency (less than 5ms). Layer 2 semantic analysis runs in parallel with the initial model request, ensuring that the safety layer never slows down the user experience." }
+        ]
     },
     {
         slug: "dual-layer-guardrails",
@@ -31,7 +37,12 @@ export const features: Feature[] = [
         subheadline: "Two levels of protection for every AI interaction",
         description: "Remova deploys a unique dual-layer guardrail system that combines the speed of rule-based filtering with the intelligence of semantic analysis. Layer 1 catches known threats instantly through pattern matching and blocklists. Layer 2 uses AI-powered semantic understanding to detect jailbreak attempts, competitor intelligence extraction, biased prompts, and policy violations that simple rules cannot catch.",
         benefits: ["Layer 1: Zero-latency rule-based filtering", "Layer 2: AI-powered semantic threat detection", "Jailbreak and prompt injection prevention", "Custom policy enforcement per team", "Real-time violation alerts and logging"],
-        useCases: ["Blocking prompt injection attacks", "Preventing competitor intelligence extraction", "Enforcing brand safety guidelines", "Detecting biased or inappropriate AI prompts"]
+        useCases: ["Blocking prompt injection attacks", "Preventing competitor intelligence extraction", "Enforcing brand safety guidelines", "Detecting biased or inappropriate AI prompts"],
+        faqs: [
+            { question: "What are AI guardrails?", answer: "AI guardrails are automated filters that monitor inputs and outputs to ensure safety and compliance. They stop malicious prompts (jailbreaks), block inappropriate content, and ensure the AI stays within defined organizational boundaries." },
+            { question: "How do semantic guardrails differ from keyword filters?", answer: "Keyword filters only look for specific words. Semantic guardrails use AI to understand the 'meaning' of a prompt. For example, they can detect a 'jailbreak' attempt even if it uses creative language or encoding that avoids specific keywords." },
+            { question: "Can we have different guardrails for different teams?", answer: "Absolutely. Remova allows you to set stricter guardrails for sensitive departments like Legal or HR, while allowing more creative freedom for Marketing or Engineering." }
+        ]
     },
     {
         slug: "cost-controls",
@@ -42,7 +53,12 @@ export const features: Feature[] = [
         subheadline: "Enforce strict budget limits across every team",
         description: "Remova gives finance and IT leaders granular control over AI spending. Set hard budget caps per department, soft alerts at custom thresholds, and auto-stop logic that freezes AI access when limits are reached. Track every token spent in real-time across GPT-4o, Claude, Gemini, and 300+ other models through a unified cost dashboard.",
         benefits: ["Hard budget caps per department and user", "Auto-stop when limits are reached", "Real-time spend tracking dashboard", "Soft alerts at custom thresholds", "Cross-model cost normalization"],
-        useCases: ["Allocating $5K/month to engineering, $2K to marketing", "Preventing a single team from consuming the entire AI budget", "Tracking ROI of AI usage per department", "Setting per-user daily spending limits"]
+        useCases: ["Allocating $5K/month to engineering, $2K to marketing", "Preventing a single team from consuming the entire AI budget", "Tracking ROI of AI usage per department", "Setting per-user daily spending limits"],
+        faqs: [
+            { question: "How do department budgets work in Remova?", answer: "Admins assign specific dollar (or credit) limits to each department. When a team reaches their limit, the platform can either soft-alert the manager or automatically stop AI access for that team until the next billing cycle or manual top-up." },
+            { question: "Can we track costs per individual user?", answer: "Yes. Remova provides detailed reporting at the organization, department, and individual user levels, allowing you to see exactly where your AI budget is being spent." },
+            { question: "Do these limits apply to all models?", answer: "Yes. Whether your team uses GPT-4o, Claude, or local models, every interaction is tracked against their department's unified budget." }
+        ]
     },
     {
         slug: "budget-allocation",
@@ -53,7 +69,12 @@ export const features: Feature[] = [
         subheadline: "Unified credit system across all AI providers",
         description: "Remova's Universal Credit Protocol normalizes costs across all AI providers into a single internal currency. Allocate credits to departments, set renewal schedules, and enforce hard limits — all from one dashboard. No more surprise bills from OpenAI, Anthropic, or Google.",
         benefits: ["Universal credit system across providers", "Automated monthly renewal logic", "Department-level budget isolation", "Predictable AI spending", "Detailed cost breakdowns per model"],
-        useCases: ["Setting quarterly AI budgets per business unit", "Auto-renewing monthly credits for each department", "Comparing cost-efficiency across AI providers", "Forecasting AI infrastructure costs"]
+        useCases: ["Setting quarterly AI budgets per business unit", "Auto-renewing monthly credits for each department", "Comparing cost-efficiency across AI providers", "Forecasting AI infrastructure costs"],
+        faqs: [
+            { question: "What is the Universal Credit System?", answer: "Remova normalizes the varied pricing of different AI providers (which might charge different rates for input vs output tokens) into a single 'credit' value. this makes it easy for finance teams to manage one consistent budget across multiple vendors." },
+            { question: "What happens when a budget limit is reached?", answer: "You can configure 'Soft Limits' (which send email/Slack alerts) and 'Hard Limits' (which automatically pause AI access). This ensures you never receive a surprise bill from an AI provider." },
+            { question: "Do credits roll over to the next month?", answer: "Budget allocations are typically reset monthly, but you can configure custom renewal logic to fit your organization's financial cycles." }
+        ]
     },
     {
         slug: "model-access",
@@ -64,7 +85,12 @@ export const features: Feature[] = [
         subheadline: "Every major AI model, one secure gateway",
         description: "Remova provides instant access to over 300 AI models from OpenAI, Anthropic, Google, Meta, Mistral, and more — all through a single, governed interface. Admins can curate which models are available to each department, ensuring teams only use approved models while maintaining access to the latest capabilities.",
         benefits: ["300+ models from all major providers", "Single unified interface", "Admin-controlled model curation", "Automatic model updates", "Vendor-agnostic architecture"],
-        useCases: ["Giving engineering access to GPT-4o and Claude while restricting marketing to Gemini", "Testing new models without changing infrastructure", "Comparing model outputs side-by-side", "Switching providers without any workflow disruption"]
+        useCases: ["Giving engineering access to GPT-4o and Claude while restricting marketing to Gemini", "Testing new models without changing infrastructure", "Comparing model outputs side-by-side", "Switching providers without any workflow disruption"],
+        faqs: [
+            { question: "Which AI models can we access through Remova?", answer: "Remova provides a single gateway to 300+ models, including all versions of ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Llama (Meta), Mistral, and many specialized open-source models." },
+            { question: "Do we need separate accounts with each provider?", answer: "No. Remova handles the provider relationships. You get one unified interface and one bill for all models you choose to enable." },
+            { question: "How quickly are new models added?", answer: "We typically add support for new flagship models (like GPT-5 or Claude 4) within 24 hours of their public release." }
+        ]
     },
     {
         slug: "model-curation",
@@ -75,7 +101,12 @@ export const features: Feature[] = [
         subheadline: "Control exactly which AI models each team can use",
         description: "Not every team needs access to every model. Remova lets admins create curated model selections per department — give engineering access to code-optimized models, let marketing use creative models, and restrict sensitive departments to privacy-focused options. Full control, zero confusion.",
         benefits: ["Per-department model allowlists", "Role-based model access", "Simplified user experience", "Reduced shadow AI risk", "Centralized model governance"],
-        useCases: ["Restricting legal teams to privacy-compliant models only", "Giving creative teams access to image generation models", "Standardizing engineering on specific code models", "Gradually rolling out new models to pilot groups"]
+        useCases: ["Restricting legal teams to privacy-compliant models only", "Giving creative teams access to image generation models", "Standardizing engineering on specific code models", "Gradually rolling out new models to pilot groups"],
+        faqs: [
+            { question: "How does model curation help with security?", answer: "By limiting departments to specific approved models, IT can ensure that sensitive teams (like Legal or Finance) only use models with the highest security certifications, while preventing the use of unvetted or third-party models." },
+            { question: "Can we enable models for specific users but not others?", answer: "Model access is managed at the Department level, which mirrors your organization's hierarchy. This makes it easy to manage permissions for large groups rather than individual users." },
+            { question: "Can users see the models that are disabled for them?", answer: "No. Users only see the curated selection of models that IT has enabled for their specific department, keeping the interface clean and focused." }
+        ]
     },
     {
         slug: "custom-presets",
@@ -86,7 +117,12 @@ export const features: Feature[] = [
         subheadline: "Build specialized AI assistants for every team",
         description: "Create pre-configured AI presets that combine a specific model, system prompt, and guardrail configuration into a ready-to-use AI assistant. Deploy a 'Legal Drafting Assistant' to the legal team, a 'Code Review Bot' to engineering, or a 'Marketing Copy Writer' to marketing — each with tailored behavior and safety controls.",
         benefits: ["Custom system prompts per preset", "Model and guardrail bundling", "Department-level deployment", "Consistent AI behavior across teams", "Easy preset management dashboard"],
-        useCases: ["Creating a HIPAA-compliant medical assistant", "Building a brand-voice marketing writer", "Deploying a secure code review assistant", "Setting up an HR policy Q&A bot"]
+        useCases: ["Creating a HIPAA-compliant medical assistant", "Building a brand-voice marketing writer", "Deploying a secure code review assistant", "Setting up an HR policy Q&A bot"],
+        faqs: [
+            { question: "What are AI Presets?", answer: "Presets are pre-configured 'versions' of an AI model. They combine a base model (like GPT-4o) with a custom system prompt (the instructions) and specific safety guardrails. This allows you to create specialized tools for specific jobs." },
+            { question: "Can we shared presets across departments?", answer: "Yes. Admins can create global presets available to the entire company or department-specific presets tailored to a single team's workflows." },
+            { question: "Can users create their own presets?", answer: "Currently, preset creation is restricted to Admins and Department Heads to ensure that all AI behavior remains compliant with company policy." }
+        ]
     },
     {
         slug: "rbac",
@@ -97,7 +133,12 @@ export const features: Feature[] = [
         subheadline: "Hierarchical permissions for every level of your org",
         description: "Remova implements a deep hierarchical RBAC system that mirrors your organizational structure. Organization admins get full oversight, department heads manage their teams' AI access and budgets, and standard users operate within their assigned boundaries. Every action is scoped and auditable.",
         benefits: ["Three-tier permission hierarchy", "Department-scoped management", "Granular feature access control", "Full audit trail of admin actions", "Self-service team management"],
-        useCases: ["Giving department heads control over their team's AI budget", "Restricting model selection to admin-approved options", "Allowing IT to manage guardrails without full admin access", "Enabling self-service user onboarding within departments"]
+        useCases: ["Giving department heads control over their team's AI budget", "Restricting model selection to admin-approved options", "Allowing IT to manage guardrails without full admin access", "Enabling self-service user onboarding within departments"],
+        faqs: [
+            { question: "What RBAC roles does Remova support?", answer: "Remova supports three primary roles: Global Admin (complete system control), Department Head (manages budget and users for their team), and Standard User (can chat with models and use presets within their department)." },
+            { question: "Can we integrate RBAC with our SSO provider?", answer: "Yes. Remova can map your SSO groups (from Okta, Azure AD, etc.) directly to Remova departments and roles, automating your permission management." },
+            { question: "Can one user belong to multiple departments?", answer: "In the current architecture, users belong to one primary department for budget and policy isolation, but admins can easily move users between teams as needed." }
+        ]
     },
     {
         slug: "zero-history",
@@ -108,7 +149,12 @@ export const features: Feature[] = [
         subheadline: "Privacy by architecture, not just policy",
         description: "Unlike other AI platforms that store your conversations on their servers, Remova keeps all chat history exclusively in the user's browser using local storage. No conversation data is ever persisted on Remova servers. When the browser data is cleared, it's gone forever. This is privacy by design — not a checkbox in settings.",
         benefits: ["Zero server-side conversation storage", "Browser-only local storage", "No data available to Remova staff", "GDPR-compliant by architecture", "No risk of server-side data breaches"],
-        useCases: ["Meeting strict data residency requirements", "Ensuring attorney-client privilege in legal AI use", "Complying with financial data handling regulations", "Providing employees complete conversation privacy"]
+        useCases: ["Meeting strict data residency requirements", "Ensuring attorney-client privilege in legal AI use", "Complying with financial data handling regulations", "Providing employees complete conversation privacy"],
+        faqs: [
+            { question: "Where is my chat history stored?", answer: "Nowhere on our servers. Remova uses 'Zero-History Architecture,' meaning your conversations are stored exclusively in your browser's local storage. If you clear your browser data, the history is deleted forever." },
+            { question: "How does 'Zero-Training' work?", answer: "Remova uses Enterprise APIs where data is explicitly NOT used to train the base models. Combined with our Zero-History server-side, your data remains entirely private." },
+            { question: "Is my data encrypted?", answer: "Yes. Data is encrypted in transit using industry-standard TLS. Since we don't store it on our servers, there is no 'data at rest' for a provider to manage or for a breach to target." }
+        ]
     },
     {
         slug: "analytics-dashboard",

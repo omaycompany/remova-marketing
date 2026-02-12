@@ -10,6 +10,7 @@ export interface CustomerStory {
     solution: string;
     results: { metric: string; value: string; description: string }[];
     quote: { text: string; author: string; role: string };
+    faqs?: { question: string; answer: string }[];
 }
 
 const cs = (slug: string, company: string, industry: string, size: string, challenge: string, solution: string, results: [string, string, string][], quote: [string, string, string]): CustomerStory => ({

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { integrations } from "@/content/integrations";
 import { ArrowRight, Check, Plug, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return integrations.map((i) => ({ slug: i.slug }));
@@ -35,6 +36,24 @@ export default function IntegrationPage({ params }: { params: { slug: string } }
         "description": integ.metaDescription,
         "brand": { "@type": "Brand", "name": "Remova" }
     };
+
+    // Default unique FAQs for integrations
+    const defaultFaqs = [
+        {
+            question: `How does the ${integ.name} integration enhance AI safety?`,
+            answer: `The ${integ.name} integration works alongside Remova's governance layer to provide ${integ.capabilities[0].toLowerCase()}. This ensures that your use of AI for companies remains secure and compliant with your organizational standards.`
+        },
+        {
+            question: `Is the ${integ.name} setup complex?`,
+            answer: `Not at all. The setup involves ${integ.setupSteps.length} simple steps, primarily focusing on ${integ.setupSteps[0].toLowerCase()}. Most organizations complete the integration in under 5 minutes.`
+        },
+        {
+            question: `Does this integration support all AI models?`,
+            answer: `Yes. Remova's integration framework is model-agnostic. Whether you are using OpenAI, Anthropic, or Google, the ${integ.name} integration provides consistent security and functionality across all 300+ supported models.`
+        }
+    ];
+
+    const displayFaqs = integ.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -128,6 +147,9 @@ export default function IntegrationPage({ params }: { params: { slug: string } }
                     </div>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title={`${integ.name} Integration FAQs`} />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

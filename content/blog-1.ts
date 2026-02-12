@@ -7,6 +7,7 @@ export interface BlogPost {
     readTime: string;
     excerpt: string;
     sections: { heading: string; content: string }[];
+    faqs?: { question: string; answer: string }[];
 }
 
 const bp = (slug: string, title: string, metaDescription: string, category: string, date: string, readTime: string, excerpt: string, sections: { heading: string; content: string }[]): BlogPost => ({

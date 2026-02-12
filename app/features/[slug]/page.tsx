@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { features } from "@/content/features";
-import { ShieldCheck, ArrowRight, Check, ChevronRight, Zap } from "lucide-react";
+import { ArrowRight, Check, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return features.map((f) => ({ slug: f.slug }));
@@ -48,6 +49,24 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         }
     };
 
+    // Default unique FAQs based on feature title if not provided
+    const defaultFaqs = [
+        {
+            question: `How does Remova's ${feature.title} benefit my company?`,
+            answer: `${feature.title} provides critical governance and safety by ${feature.subheadline.toLowerCase()}. It ensures that when your organization uses AI for companies, you maintain full control over security and costs.`
+        },
+        {
+            question: `Is ${feature.title} compatible with all AI models?`,
+            answer: `Yes. Remova's ${feature.title} layer works universally across 300+ models, including GPT-4o, Claude 3.5, and Gemini, ensuring consistent protection regardless of which AI provider you choose.`
+        },
+        {
+            question: `How quickly can we deploy ${feature.title}?`,
+            answer: `Deployment is near-instant. Once you've added your users to Remova, ${feature.title} is applied automatically to all AI interactions based on your department-level policies.`
+        }
+    ];
+
+    const displayFaqs = feature.faqs || defaultFaqs;
+
     return (
         <div className="flex flex-col">
             <script
@@ -69,7 +88,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                     </nav>
 
                     <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-6 py-2 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md">
-                        <ShieldCheck className="h-4 w-4" />
+                        <Zap className="h-4 w-4" />
                         <span className="tracking-wide uppercase">Feature</span>
                     </div>
                     <h1 className="mb-8 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.9]">
@@ -162,6 +181,9 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title={`${feature.title} FAQs`} />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

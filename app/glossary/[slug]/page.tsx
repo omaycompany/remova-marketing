@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { glossaryTerms } from "@/content/glossary";
 import { ArrowRight, BookOpen, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return glossaryTerms.map((g) => ({ slug: g.slug }));
@@ -39,6 +40,24 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
             "url": "https://remova.org/glossary"
         }
     };
+
+    // Default unique FAQs for glossary
+    const defaultFaqs = [
+        {
+            question: `Why is ${term.term} important for AI for companies?`,
+            answer: `${term.term} is a fundamental concept in the AI for companies landscape because it directly impacts how organizations manage ${term.definition.toLowerCase()}. Understanding this is crucial for maintaining AI security and compliance.`
+        },
+        {
+            question: `How does Remova handle ${term.term}?`,
+            answer: `Remova's platform is built to natively manage and optimize ${term.term} through our integrated governance layer, ensuring that your organization benefits from this technology while mitigating its inherent risks.`
+        },
+        {
+            question: `Where can I find more terms related to AI for companies?`,
+            answer: `You can explore our full AI for companies glossary, which includes detailed definitions for related concepts like ${related[0]?.term || 'Machine Learning'} and ${related[1]?.term || 'Data Privacy'}.`
+        }
+    ];
+
+    const displayFaqs = term.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -108,7 +127,7 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
 
             {/* Related Terms */}
             {related.length > 0 && (
-                <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5 text-left">
                     <div className="container mx-auto max-w-4xl">
                         <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8">
                             Related Terms
@@ -116,7 +135,7 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                         <div className="grid sm:grid-cols-2 gap-4">
                             {related.map((r) => r && (
                                 <Link key={r.slug} href={`/glossary/${r.slug}`}
-                                    className="p-6 rounded-2xl bg-white dark:bg-[#131314] border border-slate-200 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/30 transition-colors">
+                                    className="p-6 rounded-2xl bg-white dark:bg-[#131314] border border-slate-200 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/30 transition-colors text-left">
                                     <h3 className="text-lg font-black text-slate-900 dark:text-white mb-2">{r.term}</h3>
                                     <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">{r.definition}</p>
                                 </Link>
@@ -125,6 +144,9 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                     </div>
                 </section>
             )}
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title="Glossary FAQs" />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

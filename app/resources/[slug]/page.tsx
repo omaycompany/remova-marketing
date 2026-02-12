@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { resources } from "@/content/resources";
 import { ArrowRight, Download, FileText, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return resources.map((r) => ({ slug: r.slug }));
@@ -34,6 +35,24 @@ export default function ResourcePage({ params }: { params: { slug: string } }) {
         "genre": res.type,
         "publisher": { "@type": "Organization", "name": "Remova" }
     };
+
+    // Default unique FAQs for resources
+    const defaultFaqs = [
+        {
+            question: `Is this ${res.type} really free?`,
+            answer: `Yes. Remova provides this ${res.type} as a complimentary resource to help organizations understand and implement the best practices for AI for companies.`
+        },
+        {
+            question: `How does "${res.title}" help with AI safety?`,
+            answer: `This resource covers ${res.sections[0].heading.toLowerCase()} and other key areas, providing actionable insights that you can use to secure your organization's AI for companies strategy.`
+        },
+        {
+            question: `Can I implement these strategies using the Remova platform?`,
+            answer: `Absolutely. Many of the concepts discussed in this ${res.type} are natively supported and enforced by Remova's governance layer, making it the ideal platform for executing your AI for companies plans.`
+        }
+    ];
+
+    const displayFaqs = res.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -96,7 +115,7 @@ export default function ResourcePage({ params }: { params: { slug: string } }) {
             <article className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-4xl space-y-12">
                     {res.sections.map((section, i) => (
-                        <div key={i} className="p-8 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                        <div key={i} className="p-8 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-left">
                             <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-6 leading-[0.9]">
                                 {section.heading}
                             </h2>
@@ -107,6 +126,9 @@ export default function ResourcePage({ params }: { params: { slug: string } }) {
                     ))}
                 </div>
             </article>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title="Resource FAQs" />
 
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">

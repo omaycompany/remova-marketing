@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { alternatives } from "@/content/alternatives";
 import { ArrowRight, Check, X, Zap, ChevronRight } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return alternatives.map((a) => ({ slug: a.slug }));
@@ -38,6 +39,24 @@ export default function AlternativePage({ params }: { params: { slug: string } }
         "description": alt.metaDescription,
         "brand": { "@type": "Brand", "name": "Remova" }
     };
+
+    // Default unique FAQs for alternatives
+    const defaultFaqs = [
+        {
+            question: `Is Remova really a better alternative to ${alt.competitor}?`,
+            answer: `Remova is designed specifically as an enterprise-grade protocol for AI for companies. Unlike generic consumers tools like ${alt.competitor}, we provide 300+ models, multi-vendor support, and built-in governance that ${alt.competitor} lacks.`
+        },
+        {
+            question: `What is the main reason companies switch from ${alt.competitor} to Remova?`,
+            answer: `The primary reason is ${alt.whySwitch[0].toLowerCase()}. Remova solves this by providing ${alt.removaAdvantages[0].title.toLowerCase()} and other security-first features that make AI adoption safe for the entire organization.`
+        },
+        {
+            question: `Can I still use the same AI models I used on ${alt.competitor}?`,
+            answer: `Yes, and many more. Remova provides access to GPT-4o, Claude 3.5, and 300+ other enterprise models through a single, secure interface, applying consistent safety protocols regardless of the model provider.`
+        }
+    ];
+
+    const displayFaqs = alt.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -142,6 +161,9 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                     </div>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title="Switching FAQs" />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

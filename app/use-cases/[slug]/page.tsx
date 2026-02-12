@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { useCases } from "@/content/use-cases";
 import { ArrowRight, Check, AlertTriangle, Building2, User, Cog, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return useCases.map((u) => ({ slug: u.slug }));
@@ -37,6 +38,24 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
         "provider": { "@type": "Organization", "name": "Remova" },
         "areaServed": "Global"
     };
+
+    // Default unique FAQs based on use case
+    const defaultFaqs = [
+        {
+            question: `Is Remova suitable for ${uc.headline}?`,
+            answer: `Yes. Remova is specifically designed to handle the complex security and governance requirements of ${uc.headline.toLowerCase()}. It provides the necessary controls to ensure that AI for companies is deployed safely and compliantly.`
+        },
+        {
+            question: `How does Remova address ${uc.challenges[0].toLowerCase()}?`,
+            answer: `Remova addresses ${uc.challenges[0].toLowerCase()} through our ${uc.solutions[0].title.toLowerCase()} and other integrated safety layers, ensuring that your ${uc.category} stays protected during AI interactions.`
+        },
+        {
+            question: `Can we use any AI model with this solution?`,
+            answer: `Absolutely. You can use GPT-4o, Claude, Gemini, and 300+ other models. Remova acts as a secure gateway, applying the same ${uc.headline} safety policies regardless of the underlying model.`
+        }
+    ];
+
+    const displayFaqs = uc.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -145,6 +164,9 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title={`${uc.headline} FAQs`} />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">

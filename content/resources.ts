@@ -6,6 +6,7 @@ export interface Resource {
     metaDescription: string;
     description: string;
     sections: { heading: string; content: string }[];
+    faqs?: { question: string; answer: string }[];
 }
 
 const r = (slug: string, title: string, type: Resource["type"], description: string, sections: [string, string][]): Resource => ({

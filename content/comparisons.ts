@@ -7,6 +7,7 @@ export interface Comparison {
     type: "vs-remova" | "head-to-head" | "roundup";
     contenders: { name: string; strengths: string[]; weaknesses: string[] }[];
     verdict: string;
+    faqs?: { question: string; answer: string }[];
 }
 
 export const comparisons: Comparison[] = [

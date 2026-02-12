@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { comparisons } from "@/content/comparisons";
 import { ArrowRight, Check, X, Scale, ChevronRight, Zap } from "lucide-react";
+import FAQ from "@/components/ui/FAQ";
 
 export async function generateStaticParams() {
     return comparisons.map((c) => ({ slug: c.slug }));
@@ -33,6 +34,24 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
         "author": { "@type": "Organization", "name": "Remova" },
         "publisher": { "@type": "Organization", "name": "Remova" }
     };
+
+    // Default unique FAQs for comparisons
+    const defaultFaqs = [
+        {
+            question: `Which is the best solution for AI for companies among those listed?`,
+            answer: `According to our detailed comparison, Remova stands out as the best overall solution for AI for companies, particularly for enterprises requiring robust governance and multi-model flexibility.`
+        },
+        {
+            question: `How does Remova compare to ${comp.contenders[0].name}?`,
+            answer: `While ${comp.contenders[0].name} has strengths like ${comp.contenders[0].strengths[0].toLowerCase()}, it lacks Remova's comprehensive dual-layer guardrails and granular cost control specifically designed for AI for companies.`
+        },
+        {
+            question: `Are these comparisons based on current data?`,
+            answer: `Yes. We continuously update our comparison data to reflect the latest feature sets, security standards, and pricing models of all platforms in the AI for companies ecosystem.`
+        }
+    ];
+
+    const displayFaqs = comp.faqs || defaultFaqs;
 
     return (
         <div className="flex flex-col">
@@ -110,7 +129,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                                         ))}
                                     </ul>
                                 </div>
-                                <div>
+                                <div className="mb-6">
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-red-600 dark:text-red-400 mb-4">Weaknesses</h3>
                                     <ul className="space-y-3">
                                         {contender.weaknesses.map((w, j) => (
@@ -138,6 +157,9 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     </p>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FAQ items={displayFaqs} title="Comparison FAQs" />
 
             {/* CTA */}
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
