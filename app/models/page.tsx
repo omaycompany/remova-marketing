@@ -1,8 +1,9 @@
 import { Metadata } from "next";
-import { BrainCircuit, CalendarDays, Layers, Wallet, ArrowRight } from "lucide-react";
+import { BrainCircuit, CalendarDays, Layers, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
 import { models, modelsLastUpdated } from "@/content/models";
+import { modelLandings } from "@/content/model-landings";
 
 export const metadata: Metadata = {
     title: "Models | AI for Companies — Latest Enterprise Model Catalog",
@@ -25,6 +26,7 @@ function formatPrice(price: number) {
 
 export default function ModelsPage() {
     const maxContext = Math.max(...models.map((m) => m.contextLength));
+    const landingByModelId = new Map(modelLandings.map((landing) => [landing.modelId, landing.slug]));
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -119,6 +121,15 @@ export default function ModelsPage() {
                                     ))}
                                 </ul>
                             </div>
+
+                            {landingByModelId.has(model.id) && (
+                                <Link
+                                    href={`/models/${landingByModelId.get(model.id)}`}
+                                    className="mt-6 inline-flex items-center gap-2 text-sm font-black text-slate-900 dark:text-white hover:gap-3 transition-all"
+                                >
+                                    View Full Landing Page <ArrowRight className="h-4 w-4" />
+                                </Link>
+                            )}
                         </article>
                     ))}
                 </div>

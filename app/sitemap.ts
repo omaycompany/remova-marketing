@@ -5,6 +5,7 @@ import { comparisons } from '@/content/comparisons'
 import { useCases } from '@/content/use-cases'
 import { glossaryTerms } from '@/content/glossary'
 import { allBlogPosts } from '@/content/blog'
+import { modelLandings } from '@/content/model-landings'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const b = 'https://remova.org'
@@ -26,5 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...useCases.map((u) => m(`/use-cases/${u.slug}`, 0.8)),
         ...glossaryTerms.map((g) => m(`/glossary/${g.slug}`, 0.5)),
         ...allBlogPosts.map((p) => m(`/blog/${p.slug}`, 0.6)),
+        ...modelLandings.map((entry) => m(`/models/${entry.slug}`, 0.7)),
     ]
 }
