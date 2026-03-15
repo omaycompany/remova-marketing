@@ -51,6 +51,12 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-8">
                         {landing.heroSubtitle}
                     </p>
+                    <Link
+                        href="https://app.remova.org/register"
+                        className="mb-8 inline-block rounded-[2.5rem] bg-slate-900 dark:bg-white px-8 py-4 text-base font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95"
+                    >
+                        Use {landing.heroTitle} in your company
+                    </Link>
                     <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
                         Data checked: {landing.sourceCheckedAt}
                     </p>
@@ -196,7 +202,7 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
-                        Start Free <ArrowRight className="inline h-5 w-5 ml-2" />
+                        Use {landing.heroTitle} in your company <ArrowRight className="inline h-5 w-5 ml-2" />
                     </Link>
                 </div>
             </section>
