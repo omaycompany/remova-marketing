@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const uc = useCases.find((u) => u.slug === params.slug);
     if (!uc) return {};
     const title = `${uc.metaTitle} | AI for Companies`;
-    const description = `Discover ${uc.headline} solutions. Remova provides the safest AI for companies with regulatory compliance and security. ${uc.metaDescription}`;
+    const description = `Discover ${uc.headline} solutions with enterprise AI governance controls. ${uc.metaDescription}`;
     return {
         title,
         description,
@@ -51,7 +51,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
         },
         {
             question: `Can we use any AI model with this solution?`,
-            answer: `Absolutely. You can use GPT-4o, Claude, Gemini, and 300+ other models. Remova acts as a secure gateway, applying the same ${uc.headline} safety policies regardless of the underlying model.`
+            answer: `Remova supports a broad model catalog and applies the same ${uc.headline} safety policies regardless of provider choice.`
         }
     ];
 
@@ -102,7 +102,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>The definitive protocol for safe AI for companies.</span>
+                                <span>Governed controls help teams adopt AI safely and consistently.</span>
                             </li>
                         </ul>
                     </div>
@@ -175,7 +175,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                         SAFE AI FOR COMPANIES
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        See how Remova can help your {uc.category === "industry" ? "industry" : "team"} deploy the best AI for companies safely.
+                        See how Remova can help your {uc.category === "industry" ? "industry" : "team"} deploy enterprise AI with governance and safety controls.
                     </p>
                     <Link
                         href="https://app.remova.org/register"

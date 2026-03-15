@@ -5,12 +5,19 @@ import { Repeat, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Alternatives | AI for Companies — Compare & Choose",
-    description: "Compare Remova vs. leading AI platforms. Discover the best solution for AI for companies, focusing on security, cost, and multi-model access.",
+    description: "Compare Remova with leading AI platforms across security, governance, and operational cost controls.",
     openGraph: { title: "Alternatives | AI for Companies", description: "How Remova compares to leading platforms for AI for companies.", url: "https://remova.org/alternative", siteName: "Remova", type: "website" },
     alternates: { canonical: "/alternative" },
 };
 
 export default function AlternativesIndex() {
+    const buyingCriteria = [
+        "How enforceable are policy controls in daily workflows?",
+        "Can you assign access and spending ownership at department level?",
+        "How quickly can teams move from pilot to controlled scale?",
+        "Do reporting and audit records support real governance decisions?",
+    ];
+
     return (
         <div className="flex flex-col">
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
@@ -23,7 +30,7 @@ export default function AlternativesIndex() {
                         Alternatives
                     </h1>
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        See how Remova compares to ChatGPT Enterprise, Microsoft Copilot, and other point solutions. Designed for organizations that need more than just a single model.
+                        See how Remova compares to common AI platform categories, including point solutions and suite add-ons.
                     </p>
                 </div>
             </section>
@@ -54,6 +61,22 @@ export default function AlternativesIndex() {
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl">
+                    <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
+                        Evaluation Questions Before Switching
+                    </h2>
+                    <ul className="space-y-4">
+                        {buyingCriteria.map((item) => (
+                            <li key={item} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </section>
         </div>

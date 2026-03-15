@@ -24,8 +24,7 @@ export default function Footer() {
                             />
                         </Link>
                         <p className="mb-8 max-w-sm text-lg font-medium text-slate-600 dark:text-slate-400 leading-relaxed">
-                            The definitive enterprise protocol for LLM safety.
-                            Implementing granular cost controls and real-time PII protection across the global intelligence stack.
+                            Enterprise AI governance with policy controls, access boundaries, and predictable cost ownership across teams.
                         </p>
                         <div className="flex gap-5">
                             <a
@@ -46,17 +45,15 @@ export default function Footer() {
                             links: [
                                 { name: "Features", href: "/features" },
                                 { name: "Use Cases", href: "/use-cases" },
-                                { name: "Integrations", href: "/integrations" },
-                                { name: "Pricing", href: "/#pricing" }
+                                { name: "Models", href: "/models" },
+                                { name: "Compare", href: "/compare" }
                             ],
                         },
                         {
-                            title: "Resources",
+                            title: "Insights",
                             links: [
                                 { name: "Blog", href: "/blog" },
                                 { name: "Glossary", href: "/glossary" },
-                                { name: "Resources", href: "/resources" },
-                                { name: "Customer Stories", href: "/customers" }
                             ],
                         },
                         {
@@ -64,8 +61,6 @@ export default function Footer() {
                             links: [
                                 { name: "Alternatives", href: "/alternative" },
                                 { name: "Head-to-Head", href: "/compare" },
-                                { name: "Vs ChatGPT", href: "/alternative/chatgpt-enterprise" },
-                                { name: "Vs Copilot", href: "/alternative/microsoft-copilot" }
                             ],
                         },
                         {

@@ -5,12 +5,31 @@ import { ShieldCheck, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Features | AI for Companies — Remova Enterprise AI Platform",
-    description: "Explore the ultimate features for AI for companies: PII redaction, dual-layer guardrails, cost controls, and safe multi-model access.",
-    openGraph: { title: "Features | AI for Companies", description: "35+ enterprise features for safe AI for companies.", url: "https://remova.org/features", siteName: "Remova", type: "website" },
+    description: "Explore Remova features for enterprise AI governance, policy controls, access management, and budget oversight.",
+    openGraph: { title: "Features | AI for Companies", description: "Enterprise AI governance features for policy, access, and cost control.", url: "https://remova.org/features", siteName: "Remova", type: "website" },
     alternates: { canonical: "/features" },
 };
 
 export default function FeaturesIndex() {
+    const evaluationAreas = [
+        {
+            title: "Control Precision",
+            text: "How specifically you can tune policy behavior by role, department, and workflow context.",
+        },
+        {
+            title: "Operational Fit",
+            text: "Whether teams can adopt controls without slowing core workflows or adding heavy manual overhead.",
+        },
+        {
+            title: "Evidence Quality",
+            text: "How clearly governance activity is captured for audits, incident response, and executive reviews.",
+        },
+        {
+            title: "Cost Accountability",
+            text: "How easily usage and spending can be attributed, limited, and reviewed at team level.",
+        },
+    ];
+
     return (
         <div className="flex flex-col">
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
@@ -23,7 +42,7 @@ export default function FeaturesIndex() {
                         Features
                     </h1>
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        Every tool your enterprise needs to deploy AI safely: security, governance, cost controls, and multi-model access.
+                        Tools for deploying AI with governance: policy controls, role-based operations, usage analytics, and cost management.
                     </p>
                 </div>
             </section>
@@ -40,6 +59,29 @@ export default function FeaturesIndex() {
                             </span>
                         </Link>
                     ))}
+                </div>
+            </section>
+
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-6xl">
+                    <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
+                        How to Evaluate AI Governance Features
+                    </h2>
+                    <p className="mb-10 max-w-3xl text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                        Strong feature lists are not enough. Focus on enforceability, rollout reliability, and measurable outcomes
+                        so governance is useful in daily operations.
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {evaluationAreas.map((area) => (
+                            <article
+                                key={area.title}
+                                className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] p-6"
+                            >
+                                <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">{area.title}</h3>
+                                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{area.text}</p>
+                            </article>
+                        ))}
+                    </div>
                 </div>
             </section>
         </div>

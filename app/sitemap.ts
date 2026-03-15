@@ -4,10 +4,7 @@ import { alternatives } from '@/content/alternatives'
 import { comparisons } from '@/content/comparisons'
 import { useCases } from '@/content/use-cases'
 import { glossaryTerms } from '@/content/glossary'
-import { integrations } from '@/content/integrations'
 import { allBlogPosts } from '@/content/blog'
-import { customerStories } from '@/content/customer-stories'
-import { resources } from '@/content/resources'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const b = 'https://remova.org'
@@ -17,11 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${b}/privacy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
         { url: `${b}/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
         { url: `${b}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${b}/resources`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-        { url: `${b}/customers`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
         { url: `${b}/features`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${b}/models`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
         { url: `${b}/glossary`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-        { url: `${b}/integrations`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
         { url: `${b}/use-cases`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
         { url: `${b}/alternative`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
         { url: `${b}/compare`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
@@ -30,9 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...comparisons.map((c) => m(`/compare/${c.slug}`, 0.7)),
         ...useCases.map((u) => m(`/use-cases/${u.slug}`, 0.8)),
         ...glossaryTerms.map((g) => m(`/glossary/${g.slug}`, 0.5)),
-        ...integrations.map((i) => m(`/integrations/${i.slug}`, 0.6)),
         ...allBlogPosts.map((p) => m(`/blog/${p.slug}`, 0.6)),
-        ...customerStories.map((s) => m(`/customers/${s.slug}`, 0.7)),
-        ...resources.map((r) => m(`/resources/${r.slug}`, 0.6)),
     ]
 }

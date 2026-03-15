@@ -13,6 +13,13 @@ export const metadata: Metadata = {
 const categories = Array.from(new Set(allBlogPosts.map(p => p.category)));
 
 export default function BlogIndex() {
+    const editorialThemes = [
+        "Practical governance playbooks for enterprise rollout teams",
+        "Policy enforcement patterns that reduce manual overhead",
+        "Budget and cost-governance frameworks for sustainable adoption",
+        "Audit and compliance operating models for AI programs",
+    ];
+
     return (
         <div className="flex flex-col">
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
@@ -65,6 +72,22 @@ export default function BlogIndex() {
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl">
+                    <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
+                        Editorial Focus
+                    </h2>
+                    <ul className="space-y-4">
+                        {editorialThemes.map((item) => (
+                            <li key={item} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </section>
         </div>

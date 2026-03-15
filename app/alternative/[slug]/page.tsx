@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const alt = alternatives.find((a) => a.slug === params.slug);
     if (!alt) return {};
     const title = `${alt.metaTitle} | AI for Companies`;
-    const description = `Looking for the best ${alt.competitor} alternative? Remova is the leading protocol for AI for companies. Secure, compliant, and cost-effective. ${alt.metaDescription}`;
+    const description = `Evaluating alternatives to ${alt.competitor}? ${alt.metaDescription}`;
     return {
         title,
         description,
@@ -44,7 +44,7 @@ export default function AlternativePage({ params }: { params: { slug: string } }
     const defaultFaqs = [
         {
             question: `Is Remova really a better alternative to ${alt.competitor}?`,
-            answer: `Remova is designed specifically as an enterprise-grade protocol for AI for companies. Unlike generic consumers tools like ${alt.competitor}, we provide 300+ models, multi-vendor support, and built-in governance that ${alt.competitor} lacks.`
+            answer: `Remova is designed for enterprise AI governance. Unlike general consumer tools such as ${alt.competitor}, it combines multi-model access with centralized policy controls, budget management, and auditability.`
         },
         {
             question: `What is the main reason companies switch from ${alt.competitor} to Remova?`,
@@ -52,11 +52,23 @@ export default function AlternativePage({ params }: { params: { slug: string } }
         },
         {
             question: `Can I still use the same AI models I used on ${alt.competitor}?`,
-            answer: `Yes, and many more. Remova provides access to GPT-4o, Claude 3.5, and 300+ other enterprise models through a single, secure interface, applying consistent safety protocols regardless of the model provider.`
+            answer: `Remova supports a broad model catalog through one governed interface, with consistent policy, access, and budget controls regardless of model selection.`
         }
     ];
 
     const displayFaqs = alt.faqs || defaultFaqs;
+    const migrationPlan = [
+        `Map current ${alt.competitor.toLowerCase()} workflows by team and risk level.`,
+        "Define policy, access, and budget baselines before migration starts.",
+        "Run a controlled pilot with clear success metrics and exception handling.",
+        "Scale in phases and review governance outcomes every month.",
+    ];
+    const decisionSignals = [
+        "Policy enforcement depth in real workflows",
+        "Operational burden on admins and managers",
+        "Cost ownership clarity at department level",
+        "Audit and reporting quality for leadership reviews",
+    ];
 
     return (
         <div className="flex flex-col">
@@ -83,10 +95,10 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                         <span className="tracking-wide uppercase">Alternative</span>
                     </div>
                     <h1 className="mb-8 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.9]">
-                        Best {alt.headline}
+                        {alt.headline}
                     </h1>
                     <p className="mb-12 max-w-3xl text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        Looking for a better alternative to {alt.competitor}? Remova offers 300+ AI models with enterprise-grade governance, cost controls, and dual-layer guardrails.
+                        Looking for an alternative to {alt.competitor}? Remova provides enterprise governance, policy controls, and cost management in one platform.
                     </p>
 
                     {/* TL;DR Section */}
@@ -97,15 +109,15 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova is the leading alternative to {alt.competitor} for companies.</span>
+                                <span>Remova is built for governed enterprise AI deployment.</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Get 300+ models, PII redaction, and granular cost controls.</span>
+                                <span>Use a broad model catalog with sensitive data protection and granular cost controls.</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>The definitive protocol for safe and compliant AI for companies.</span>
+                                <span>Centralized governance helps teams deploy AI safely and consistently.</span>
                             </li>
                         </ul>
                     </div>
@@ -162,6 +174,37 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                 </div>
             </section>
 
+            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
+                            Decision Signals
+                        </h2>
+                        <ul className="space-y-4">
+                            {decisionSignals.map((signal) => (
+                                <li key={signal} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <div className="mt-2 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                    <span>{signal}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
+                            Migration Plan
+                        </h2>
+                        <ul className="space-y-4">
+                            {migrationPlan.map((step) => (
+                                <li key={step} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <Check className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
+                                    <span>{step}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Switching FAQs" />
 
@@ -169,10 +212,10 @@ export default function AlternativePage({ params }: { params: { slug: string } }
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl leading-[0.9]">
-                        BEST AI FOR COMPANIES
+                        ENTERPRISE AI GOVERNANCE
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Deploy Remova and get 300+ AI models with enterprise governance in minutes. The trusted platform for AI for companies.
+                        Deploy Remova with enterprise governance, policy controls, and team-level cost management.
                     </p>
                     <Link
                         href="https://app.remova.org/register"

@@ -5,8 +5,8 @@ import { Scale, ArrowRight, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "AI Comparisons | AI for Companies — Side-by-Side Analysis",
-    description: "Detailed side-by-side analysis of the best AI for companies. Compare enterprise platforms, security features, and cost management tools head-to-head.",
-    openGraph: { title: "AI Comparisons | AI for Companies", description: "Expert analysis and reviews of the best AI for companies.", url: "https://remova.org/compare", siteName: "Remova", type: "website" },
+    description: "Detailed side-by-side analysis of enterprise AI platforms, including security, governance, and cost management capabilities.",
+    openGraph: { title: "AI Comparisons | AI for Companies", description: "Side-by-side analysis of enterprise AI platforms and controls.", url: "https://remova.org/compare", siteName: "Remova", type: "website" },
     alternates: { canonical: "/compare" },
 };
 
@@ -14,6 +14,12 @@ export default function ComparisonsIndex() {
     const roundup = comparisons.filter(c => c.type === 'roundup');
     const headToHead = comparisons.filter(c => c.type === 'head-to-head');
     const vsRemova = comparisons.filter(c => c.type === 'vs-remova');
+    const checklist = [
+        "Define the exact workflows you need to govern before shortlisting vendors.",
+        "Score policy enforcement depth and access control flexibility by team.",
+        "Benchmark cost predictability under realistic monthly usage.",
+        "Validate reporting quality for risk, audit, and leadership reviews.",
+    ];
 
     return (
         <div className="flex flex-col">
@@ -27,7 +33,7 @@ export default function ComparisonsIndex() {
                         Comparisons
                     </h1>
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        Unbiased, side-by-side analysis of enterprise AI platforms. From top 10 roundups to deep head-to-head reviews.
+                        Side-by-side analysis of enterprise AI platforms, from top roundups to detailed head-to-head reviews.
                     </p>
                 </div>
             </section>
@@ -86,6 +92,22 @@ export default function ComparisonsIndex() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl">
+                    <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
+                        Procurement Checklist
+                    </h2>
+                    <ul className="space-y-4">
+                        {checklist.map((item) => (
+                            <li key={item} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                <span className="mt-1 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </section>
         </div>

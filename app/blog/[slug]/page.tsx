@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const post = allBlogPosts.find((p) => p.slug === params.slug);
     if (!post) return {};
     const title = `${post.title} | AI for Companies`;
-    const description = `Learn about ${post.title}. Remova provides the best AI for companies with security and safety. ${post.metaDescription}`;
+    const description = `Learn about ${post.title}. ${post.metaDescription}`;
     return {
         title,
         description,
@@ -25,6 +25,51 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const post = allBlogPosts.find((p) => p.slug === params.slug);
     if (!post) return <div>Not found</div>;
+    const metricsByCategory: Record<string, string[]> = {
+        Guide: [
+            "Control adoption rate by team",
+            "Policy exception volume trend",
+            "Time-to-resolution for governance issues",
+            "Quarterly governance review completion rate",
+        ],
+        Operations: [
+            "Daily policy block/allow ratio",
+            "Manual exception requests per week",
+            "Approval turnaround time",
+            "Workflow completion rate after controls",
+        ],
+        FinOps: [
+            "Spend vs budget by department",
+            "Forecast variance month-over-month",
+            "Cost per completed workflow",
+            "Percentage of teams within budget threshold",
+        ],
+        Compliance: [
+            "Audit evidence completeness",
+            "Retention exception count",
+            "Policy violation recurrence rate",
+            "Review cycle SLA adherence",
+        ],
+        Governance: [
+            "Governance meeting action closure rate",
+            "Control drift incidents",
+            "Cross-team policy consistency score",
+            "Risk signal response time",
+        ],
+        Playbook: [
+            "Pilot-to-scale conversion rate",
+            "Onboarding completion time",
+            "Control pass rate in first 30 days",
+            "User adoption trend after rollout",
+        ],
+    };
+    const operationalChecklist = [
+        `Assign an owner for ${post.sections[0]?.heading.toLowerCase()}.`,
+        "Define baseline controls and exception paths before broad rollout.",
+        "Track outcomes weekly and publish a short operational summary.",
+        "Review controls monthly and adjust based on incident patterns.",
+    ];
+    const priorityMetrics = metricsByCategory[post.category] || metricsByCategory.Guide;
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -44,11 +89,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         },
         {
             question: `What is the main takeaway regarding ${post.sections[0].heading}?`,
-            answer: `${post.sections[0].content.split('.')[0]}. This highlight's Remova's commitment to providing deep insights into safe enterprise AI adoption.`
+            answer: `${post.sections[0].content.split('.')[0]}. This highlights practical guidance for safe enterprise AI adoption.`
         },
         {
             question: `Are the strategies mentioned here compatible with HIPAA or GDPR?`,
-            answer: `Yes. Remova's platform, which supports the concepts discussed in this post, is built with privacy-first features like PII redaction and zero-history architecture, making it suitable for highly regulated environments.`
+            answer: `Yes. The strategies are compatible when implemented with appropriate controls such as PII redaction, role-based access, retention policies, and audit logging.`
         }
     ];
 
@@ -106,7 +151,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova is the leading solution for safe AI for companies.</span>
+                                <span>Use these practices with governed enterprise AI controls.</span>
                             </li>
                         </ul>
                     </div>
@@ -129,6 +174,37 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
             </article>
 
+            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-4xl grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 className="mb-8 text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-3xl leading-[0.9]">
+                            Operational Checklist
+                        </h2>
+                        <ul className="space-y-4">
+                            {operationalChecklist.map((item) => (
+                                <li key={item} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 className="mb-8 text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-3xl leading-[0.9]">
+                            Metrics to Track
+                        </h2>
+                        <ul className="space-y-4">
+                            {priorityMetrics.map((metric) => (
+                                <li key={metric} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                    <span>{metric}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Article FAQs" />
 
@@ -139,7 +215,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         SAFE AI FOR COMPANIES
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Deploy enterprise AI governance in minutes. The trusted platform for AI for companies.
+                        Deploy enterprise AI governance with centralized policy, safety, and cost controls.
                     </p>
                     <Link href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300">

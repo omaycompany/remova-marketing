@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const feature = features.find((f) => f.slug === params.slug);
     if (!feature) return {};
     const title = `${feature.metaTitle} | AI for Companies`;
-    const description = `Discover how ${feature.title} can secure your AI. Remova offers the best AI for companies with safety and cost control. ${feature.metaDescription}`;
+    const description = `Discover how ${feature.title} supports secure, governed enterprise AI usage. ${feature.metaDescription}`;
     return {
         title,
         description,
@@ -57,7 +57,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         },
         {
             question: `Is ${feature.title} compatible with all AI models?`,
-            answer: `Yes. Remova's ${feature.title} layer works universally across 300+ models, including GPT-4o, Claude 3.5, and Gemini, ensuring consistent protection regardless of which AI provider you choose.`
+            answer: `Remova applies ${feature.title} controls across supported providers and models, so teams get consistent governance regardless of model choice.`
         },
         {
             question: `How quickly can we deploy ${feature.title}?`,
@@ -66,6 +66,18 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
     ];
 
     const displayFaqs = feature.faqs || defaultFaqs;
+    const rolloutChecklist = [
+        `Define policy scope and ownership for ${feature.title.toLowerCase()}.`,
+        `Pilot ${feature.title.toLowerCase()} with one department and measure adoption quality.`,
+        `Set alert thresholds for governance events and escalation workflows.`,
+        `Review outcomes monthly and tune controls based on operational feedback.`,
+    ];
+    const operatingMetrics = [
+        "Control adoption rate by team",
+        "Policy or safety event volume trend",
+        "Exception turnaround time",
+        "Cost impact before vs after rollout",
+    ];
 
     return (
         <div className="flex flex-col">
@@ -112,7 +124,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova: The enterprise safety protocol for AI for companies.</span>
+                                <span>Designed for governed enterprise AI usage.</span>
                             </li>
                         </ul>
                     </div>
@@ -182,6 +194,37 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
+            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
+                            Rollout Checklist
+                        </h2>
+                        <ul className="space-y-4">
+                            {rolloutChecklist.map((item) => (
+                                <li key={item} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <Check className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
+                            Metrics to Track
+                        </h2>
+                        <ul className="space-y-4">
+                            {operatingMetrics.map((metric) => (
+                                <li key={metric} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <div className="mt-2 h-2.5 w-2.5 rounded-full bg-slate-900 dark:bg-white shrink-0" />
+                                    <span>{metric}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title={`${feature.title} FAQs`} />
 
@@ -192,7 +235,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                         AI FOR COMPANIES
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Deploy {feature.title.toLowerCase()} and other powerful tools with Remova&apos;s leading platform for AI for companies.
+                        Deploy {feature.title.toLowerCase()} and related controls with Remova&apos;s enterprise AI governance platform.
                     </p>
                     <Link
                         href="https://app.remova.org/register"

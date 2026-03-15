@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const term = glossaryTerms.find((g) => g.slug === params.slug);
     if (!term) return {};
     const title = `${term.metaTitle} | AI for Companies`;
-    const description = `What is ${term.term}? Learn about this and more in our AI for companies glossary. Remova provides the best tools for enterprise AI safety. ${term.metaDescription}`;
+    const description = `What is ${term.term}? Learn about this and related enterprise AI concepts in our glossary. ${term.metaDescription}`;
     return {
         title, description,
         openGraph: { title, description, url: `https://remova.org/glossary/${term.slug}`, siteName: "Remova", type: "article" },
@@ -152,10 +152,10 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-5xl leading-[0.9]">
-                        BEST AI FOR COMPANIES
+                        ENTERPRISE AI GOVERNANCE
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Experience enterprise AI governance firsthand with Remova. The trusted platform for AI for companies.
+                        Experience enterprise AI governance firsthand with Remova.
                     </p>
                     <Link href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300">

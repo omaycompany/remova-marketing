@@ -7,6 +7,12 @@ import { Menu, X, Shield } from "lucide-react";
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const navLinks = [
+        { label: "Features", href: "/features" },
+        { label: "Models", href: "/models" },
+        { label: "Blog", href: "/blog" },
+        { label: "Glossary", href: "/glossary" },
+    ];
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 dark:border-white/10 bg-white/80 dark:bg-[#131314]/80 backdrop-blur-md transition-colors duration-300">
@@ -25,13 +31,13 @@ export default function Header() {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-8">
-                        {["Product", "Pricing", "Resources"].map((item) => (
+                        {navLinks.map((item) => (
                             <Link
-                                key={item}
-                                href={`/#${item.toLowerCase()}`}
+                                key={item.label}
+                                href={item.href}
                                 className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
                             >
-                                {item}
+                                {item.label}
                             </Link>
                         ))}
                     </nav>
@@ -70,14 +76,14 @@ export default function Header() {
             {isMobileMenuOpen && (
                 <div className="md:hidden border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314]">
                     <div className="space-y-1 px-4 py-6">
-                        {["Product", "Pricing", "Resources"].map((item) => (
+                        {navLinks.map((item) => (
                             <Link
-                                key={item}
-                                href={`/#${item.toLowerCase()}`}
+                                key={item.label}
+                                href={item.href}
                                 className="block px-3 py-4 text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 rounded-lg"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
-                                {item}
+                                {item.label}
                             </Link>
                         ))}
                         <div className="mt-6 flex flex-col gap-4 px-3">

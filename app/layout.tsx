@@ -10,8 +10,8 @@ export const metadata: Metadata = {
         default: "Remova | The Safe AI for Companies",
         template: "%s | Remova — AI for Companies"
     },
-    description: "Remova: The enterprise safety layer for AI. Secure your company with cost controls, PII redaction, and dual-layer guardrails. The best way to deploy AI for companies.",
-    keywords: ["ai for companies", "enterprise AI", "AI safety for business", "cost controls", "PII redaction", "LLM guardrails", "AI governance"],
+    description: "Remova: enterprise AI governance with policy controls, sensitive data protection, and budget management.",
+    keywords: ["ai for companies", "enterprise ai governance", "ai safety for business", "budget controls", "sensitive data protection", "policy guardrails", "ai governance"],
     authors: [{ name: "Remova" }],
     creator: "Remova",
     publisher: "Remova",
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: "Remova | The Enterprise Control Layer for AI",
-        description: "Deploy ChatGPT, Claude, and Gemini with granular cost controls, PII redaction, and dual-layer guardrails.",
+        description: "Deploy AI with policy controls, sensitive data protection, and team-level budget governance.",
         url: "https://remova.org",
         siteName: "Remova",
         images: [
             {
-                url: "/images/og-image.png", // USER should provide this, or I'll assume it exists/will exist
+                url: "/images/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Remova - Enterprise AI Control Layer",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Remova | The Enterprise Control Layer for AI",
-        description: "Deploy AI with zero fear. Cost controls, Privacy shields, and Custom models.",
+        description: "Deploy AI with cost controls, privacy protections, and policy guardrails.",
         images: ["/images/og-image.png"],
     },
     robots: {
@@ -77,7 +77,7 @@ export default function RootLayout({
             "https://twitter.com/remova_ai",
             "https://linkedin.com/company/remova"
         ],
-        "description": "The enterprise safety layer for AI. Remova provides the ultimate platform for AI for companies."
+        "description": "The enterprise control layer for AI with governance, safety, and cost management controls."
     };
 
     return (

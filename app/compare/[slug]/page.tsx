@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const comp = comparisons.find((c) => c.slug === params.slug);
     if (!comp) return {};
     const title = `${comp.metaTitle} | AI for Companies`;
-    const description = `Compare the best AI for companies. ${comp.metaDescription} Remova is the definitive platform for enterprise AI governance.`;
+    const description = `${comp.metaDescription} Compare enterprise AI platforms across governance, security, and operational controls.`;
     return {
         title,
         description,
@@ -38,20 +38,44 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
     // Default unique FAQs for comparisons
     const defaultFaqs = [
         {
-            question: `Which is the best solution for AI for companies among those listed?`,
-            answer: `According to our detailed comparison, Remova stands out as the best overall solution for AI for companies, particularly for enterprises requiring robust governance and multi-model flexibility.`
+            question: `How should we choose among the platforms listed?`,
+            answer: `Prioritize your operational requirements first: governance controls, identity model, cost management, deployment options, and integration fit. The right choice depends on your risk profile and rollout scope.`
         },
         {
             question: `How does Remova compare to ${comp.contenders[0].name}?`,
-            answer: `While ${comp.contenders[0].name} has strengths like ${comp.contenders[0].strengths[0].toLowerCase()}, it lacks Remova's comprehensive dual-layer guardrails and granular cost control specifically designed for AI for companies.`
+            answer: `${comp.contenders[0].name} may be strong in areas like ${comp.contenders[0].strengths[0].toLowerCase()}, while Remova emphasizes centralized governance, policy controls, and multi-model cost management for enterprise teams.`
         },
         {
             question: `Are these comparisons based on current data?`,
-            answer: `Yes. We continuously update our comparison data to reflect the latest feature sets, security standards, and pricing models of all platforms in the AI for companies ecosystem.`
+            answer: `Each comparison reflects the information available at publication time. Always verify current feature and pricing details directly in vendor documentation before procurement decisions.`
         }
     ];
 
     const displayFaqs = comp.faqs || defaultFaqs;
+    const evaluationFramework = [
+        {
+            title: "Governance Depth",
+            note: "Assess policy enforcement, access controls, and data handling guardrails in real workflows.",
+        },
+        {
+            title: "Operational Scalability",
+            note: "Check whether controls remain manageable as more teams and departments onboard.",
+        },
+        {
+            title: "Financial Predictability",
+            note: "Compare how clearly spend can be attributed, limited, and reviewed by function.",
+        },
+        {
+            title: "Audit Readiness",
+            note: "Validate evidence quality for investigations, compliance reviews, and executive reporting.",
+        },
+    ];
+    const rolloutChecklist = [
+        "Define must-have controls before procurement discussions.",
+        "Run a scoped pilot with representative users and workflows.",
+        "Measure control efficacy and operational overhead for each platform.",
+        "Choose the platform with the best fit for governance maturity and rollout velocity.",
+    ];
 
     return (
         <div className="flex flex-col">
@@ -102,7 +126,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova is the leading protocol for safe and compliant AI for companies.</span>
+                                <span>Remova focuses on governed, multi-model enterprise AI deployment.</span>
                             </li>
                         </ul>
                     </div>
@@ -158,6 +182,37 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
+            <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
+                            Evaluation Framework
+                        </h2>
+                        <div className="space-y-5">
+                            {evaluationFramework.map((item) => (
+                                <div key={item.title} className="rounded-2xl border border-slate-200 dark:border-white/10 p-5">
+                                    <h3 className="mb-2 text-lg font-black text-slate-900 dark:text-white">{item.title}</h3>
+                                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{item.note}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
+                            Rollout Checklist
+                        </h2>
+                        <ul className="space-y-4">
+                            {rolloutChecklist.map((item) => (
+                                <li key={item} className="flex items-start gap-3 text-base font-medium text-slate-700 dark:text-slate-300">
+                                    <Check className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Comparison FAQs" />
 
@@ -165,10 +220,10 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl leading-[0.9]">
-                        BEST AI FOR COMPANIES
+                        ENTERPRISE AI COMPARISON
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        300+ AI models. Enterprise governance. Granular cost controls. The definitive platform for AI for companies.
+                        Enterprise governance, policy controls, and granular cost management in one platform.
                     </p>
                     <Link
                         href="https://app.remova.org/register"
