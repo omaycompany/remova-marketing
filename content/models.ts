@@ -1,3 +1,5 @@
+import { generatedModels, generatedModelsLastUpdated } from "./models.generated";
+
 export interface ModelEntry {
     id: string;
     name: string;
@@ -10,9 +12,7 @@ export interface ModelEntry {
     bestFor: string[];
 }
 
-export const modelsLastUpdated = "2026-03-15";
-
-export const models: ModelEntry[] = [
+const featuredModels: ModelEntry[] = [
     {
         id: "x-ai/grok-4.20-multi-agent-beta",
         name: "Grok 4.20 Multi-Agent Beta",
@@ -212,3 +212,23 @@ export const models: ModelEntry[] = [
         bestFor: ["Strategic analysis", "Complex writing", "Long reasoning chains"],
     },
 ];
+
+const mergedModels = new Map<string, ModelEntry>();
+
+for (const model of featuredModels) {
+    mergedModels.set(model.id, model);
+}
+
+for (const model of generatedModels as ModelEntry[]) {
+    if (!mergedModels.has(model.id)) {
+        mergedModels.set(model.id, model);
+    }
+}
+
+export const models: ModelEntry[] = Array.from(mergedModels.values()).sort((a, b) => {
+    const dateComparison = b.releasedAt.localeCompare(a.releasedAt);
+    if (dateComparison !== 0) return dateComparison;
+    return a.name.localeCompare(b.name);
+});
+
+export const modelsLastUpdated = generatedModelsLastUpdated;

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, CalendarDays, Layers, Search, SlidersHorizontal, X } from "lucide-react";
 import type { ModelEntry } from "@/content/models";
 
@@ -11,6 +11,7 @@ interface ModelsListViewProps {
 }
 
 const fmtNumber = new Intl.NumberFormat("en-US");
+const MODELS_PER_PAGE = 12;
 
 function formatPrice(price: number) {
     return `$${price.toFixed(price < 1 ? 2 : 2)}`;
@@ -34,6 +35,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
     const [contextTier, setContextTier] = useState("all");
     const [priceTier, setPriceTier] = useState("all");
     const [landingFilter, setLandingFilter] = useState("all");
+    const [page, setPage] = useState(1);
 
     const providers = useMemo(
         () => Array.from(new Set(models.map((model) => model.provider))).sort((a, b) => a.localeCompare(b)),
@@ -71,6 +73,21 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
         contextTier !== "all" ||
         priceTier !== "all" ||
         landingFilter !== "all";
+
+    const totalPages = Math.max(1, Math.ceil(filteredModels.length / MODELS_PER_PAGE));
+    const pageStart = (page - 1) * MODELS_PER_PAGE;
+    const pageEnd = Math.min(pageStart + MODELS_PER_PAGE, filteredModels.length);
+    const visibleModels = filteredModels.slice(pageStart, pageStart + MODELS_PER_PAGE);
+
+    useEffect(() => {
+        setPage(1);
+    }, [search, provider, contextTier, priceTier, landingFilter]);
+
+    useEffect(() => {
+        if (page > totalPages) {
+            setPage(totalPages);
+        }
+    }, [page, totalPages]);
 
     return (
         <div className="container mx-auto max-w-6xl">
@@ -145,6 +162,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                                 setContextTier("all");
                                 setPriceTier("all");
                                 setLandingFilter("all");
+                                setPage(1);
                             }}
                             className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-white/10 px-3 py-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-[#131314]"
                         >
@@ -159,7 +177,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
             </div>
 
             <div className="space-y-6">
-                {filteredModels.map((model) => (
+                {visibleModels.map((model) => (
                     <article
                         key={model.id}
                         className="rounded-3xl border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-7 sm:p-8"
@@ -216,7 +234,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                                     href={`/models/${landingByModelId[model.id]}`}
                                     className="inline-flex items-center gap-2 text-sm font-black text-slate-900 dark:text-white hover:gap-3 transition-all"
                                 >
-                                    View Full Landing Page <ArrowRight className="h-4 w-4" />
+                                    View model details <ArrowRight className="h-4 w-4" />
                                 </Link>
                             )}
                         </div>
@@ -229,6 +247,36 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                         <p className="text-sm font-medium text-slate-600 dark:text-slate-300">
                             Adjust provider, context, price, or search terms to expand results.
                         </p>
+                    </div>
+                )}
+
+                {filteredModels.length > 0 && (
+                    <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-4 py-3">
+                        <span className="text-sm font-bold text-slate-600 dark:text-slate-300">
+                            Showing {pageStart + 1}-{pageEnd} of {filteredModels.length}
+                        </span>
+
+                        <div className="flex items-center gap-2">
+                            <button
+                                type="button"
+                                onClick={() => setPage((current) => Math.max(1, current - 1))}
+                                disabled={page === 1}
+                                className="rounded-lg border border-slate-200 dark:border-white/10 px-3 py-1.5 text-sm font-bold text-slate-700 dark:text-slate-200 disabled:cursor-not-allowed disabled:opacity-40 hover:bg-white dark:hover:bg-[#131314]"
+                            >
+                                Previous
+                            </button>
+                            <span className="px-2 text-sm font-black text-slate-900 dark:text-white">
+                                Page {page} / {totalPages}
+                            </span>
+                            <button
+                                type="button"
+                                onClick={() => setPage((current) => Math.min(totalPages, current + 1))}
+                                disabled={page === totalPages}
+                                className="rounded-lg border border-slate-200 dark:border-white/10 px-3 py-1.5 text-sm font-bold text-slate-700 dark:text-slate-200 disabled:cursor-not-allowed disabled:opacity-40 hover:bg-white dark:hover:bg-[#131314]"
+                            >
+                                Next
+                            </button>
+                        </div>
                     </div>
                 )}
             </div>

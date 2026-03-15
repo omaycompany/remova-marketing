@@ -1220,11 +1220,3 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
 }
 
 export const modelLandings: ModelLanding[] = landingSeeds.map(toModelLanding);
-
-const modelIds = new Set(models.map((entry) => entry.id));
-const landingModelIds = new Set(modelLandings.map((entry) => entry.modelId));
-
-const missingLandings = Array.from(modelIds).filter((id) => !landingModelIds.has(id));
-if (missingLandings.length > 0) {
-    throw new Error(`Missing model landing entries for: ${missingLandings.join(", ")}`);
-}
