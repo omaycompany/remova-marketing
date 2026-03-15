@@ -19,10 +19,7 @@ export const metadata: Metadata = {
     alternates: { canonical: "/models" },
 };
 
-const fmtNumber = new Intl.NumberFormat("en-US");
-
 export default function ModelsPage() {
-    const maxContext = Math.max(...models.map((m) => m.contextLength));
     const landingByModelId = Object.fromEntries(modelLandings.map((landing) => [landing.modelId, landing.slug]));
 
     const jsonLd = {
@@ -57,23 +54,6 @@ export default function ModelsPage() {
                     <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
                         Snapshot updated: {modelsLastUpdated}
                     </p>
-                </div>
-            </section>
-
-            <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
-                <div className="container mx-auto max-w-6xl grid gap-6 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
-                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Models Tracked</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{models.length}</div>
-                    </div>
-                    <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
-                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Largest Context</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{fmtNumber.format(maxContext)}</div>
-                    </div>
-                    <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
-                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Most Recent Release</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{models[0]?.releasedAt}</div>
-                    </div>
                 </div>
             </section>
 
