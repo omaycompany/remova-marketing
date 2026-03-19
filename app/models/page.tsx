@@ -5,6 +5,7 @@ import FAQ from "@/components/ui/FAQ";
 import { models, modelsLastUpdated } from "@/content/models";
 import { modelLandings } from "@/content/model-landings";
 import ModelsListView from "@/components/models/ModelsListView";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export const metadata: Metadata = {
     title: "Models | AI for Companies — Latest Enterprise Model Catalog",
@@ -61,6 +62,8 @@ export default function ModelsPage() {
                 <ModelsListView models={models} landingByModelId={landingByModelId} />
             </section>
 
+            <LeadMagnetSection magnet="use-case-selector" tone="slate" />
+
             <FAQ
                 title="Model Selection FAQs"
                 items={[
@@ -78,6 +81,8 @@ export default function ModelsPage() {
                     },
                 ]}
             />
+
+            <LeadMagnetSection magnet="risk-test" />
 
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">

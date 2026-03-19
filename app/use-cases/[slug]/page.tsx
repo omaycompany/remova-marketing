@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useCases } from "@/content/use-cases";
 import { ArrowRight, Check, AlertTriangle, Building2, User, Cog, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export async function generateStaticParams() {
     return useCases.map((u) => ({ slug: u.slug }));
@@ -145,6 +146,8 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="use-case-selector" tone="slate" />
+
             {/* Solutions */}
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl">
@@ -164,6 +167,8 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="adoption-plan" />
 
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title={`${uc.headline} FAQs`} />

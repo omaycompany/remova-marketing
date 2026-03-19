@@ -3,6 +3,7 @@ import Link from "next/link";
 import { alternatives } from "@/content/alternatives";
 import { ArrowRight, Check, X, Zap, ChevronRight } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export async function generateStaticParams() {
     return alternatives.map((a) => ({ slug: a.slug }));
@@ -174,6 +175,8 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="readiness-check" />
+
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
                     <div>
@@ -204,6 +207,8 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="adoption-plan" tone="slate" />
 
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Switching FAQs" />

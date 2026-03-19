@@ -3,6 +3,7 @@ import Link from "next/link";
 import { glossaryTerms } from "@/content/glossary";
 import { ArrowRight, BookOpen, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export async function generateStaticParams() {
     return glossaryTerms.map((g) => ({ slug: g.slug }));
@@ -125,6 +126,8 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="employee-safety-checklist" tone="slate" />
+
             {/* Related Terms */}
             {related.length > 0 && (
                 <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5 text-left">
@@ -144,6 +147,8 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                     </div>
                 </section>
             )}
+
+            <LeadMagnetSection magnet="policy-generator" />
 
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Glossary FAQs" />

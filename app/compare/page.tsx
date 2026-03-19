@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { comparisons } from "@/content/comparisons";
 import { Scale, ArrowRight, Zap } from "lucide-react";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export const metadata: Metadata = {
     title: "AI Comparisons | AI for Companies — Side-by-Side Analysis",
@@ -63,6 +64,8 @@ export default function ComparisonsIndex() {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="risk-test" tone="slate" />
+
             {/* Head-to-Head & VS Remova */}
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/[0.02]">
                 <div className="container mx-auto max-w-6xl">
@@ -94,6 +97,8 @@ export default function ComparisonsIndex() {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="adoption-plan" />
 
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl">

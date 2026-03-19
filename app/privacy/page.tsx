@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
+import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 
 export const metadata = {
     title: "Privacy Policy | Remova",
@@ -212,6 +213,10 @@ export default function PrivacyPage() {
                     </div>
                 </div>
 
+                <div className="mt-12">
+                    <LeadMagnetSection magnet="employee-safety-checklist" tone="slate" />
+                </div>
+
                 <div className="mt-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
                     <h3 className="text-xl font-black uppercase mb-4">Contact Us About Privacy</h3>
                     <p className="text-slate-600 dark:text-slate-400 mb-6 font-medium">
@@ -223,6 +228,10 @@ export default function PrivacyPage() {
                     >
                         Contact Privacy Team
                     </Link>
+                </div>
+
+                <div className="mt-12">
+                    <LeadMagnetSection magnet="policy-generator" />
                 </div>
             </div>
         </div>

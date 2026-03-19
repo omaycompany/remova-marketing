@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, Brain, Sparkles, Cpu, FileText, BarChart3, History, Zap, Shield, MessageSquare, Bot, ToggleRight, LayoutDashboard, Database, Ghost, Smartphone, Wand2, FileSpreadsheet, ShieldAlert, XCircle, Search, Server, FileLock2, AlertTriangle, Workflow, FileType, Key, BoxSelect, MonitorDot, Gauge, Scale, BookOpen, Fingerprint, Eye, LockKeyhole, Umbrella, RefreshCw, Slash, FileClock, SearchX, UserMinus, Diamond, Users, UserCog, UserCheck, KeyRound, Plug, Wallet, Receipt, Hourglass, Bell, CreditCard, Antenna, MessagesSquare, FileOutput, Printer } from 'lucide-react';
 import FAQ from '@/components/ui/FAQ';
+import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 
 export default function LandingPage() {
     return (
@@ -57,6 +58,8 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="readiness-check" tone="slate" />
 
             {/* Alternating Feature Sections */}
             <div id="safety" className="flex flex-col w-full">
@@ -235,6 +238,8 @@ export default function LandingPage() {
                         </div>
                     </div>
                 </section>
+
+                <LeadMagnetSection magnet="use-case-selector" />
 
                 {/* 3. Chat Like Usual */}
                 <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
@@ -1030,7 +1035,7 @@ export default function LandingPage() {
                     </div>
                 </div>
             </section>
-
+            <LeadMagnetSection magnet="risk-test" tone="slate" />
 
             {/* FAQ Section */}
             <FAQ
@@ -1058,6 +1063,8 @@ export default function LandingPage() {
                 ]}
                 title="Common Questions about AI for Companies"
             />
+
+            <LeadMagnetSection magnet="adoption-plan" />
 
             {/* Bottom CTA - Bolder Style */}
             <section className="py-32 px-4 text-center bg-white dark:bg-[#131314] transition-colors duration-300 border-t-2 border-slate-900 dark:border-white">

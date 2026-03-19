@@ -3,6 +3,7 @@ import Link from "next/link";
 import { comparisons } from "@/content/comparisons";
 import { ArrowRight, Check, X, Scale, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export async function generateStaticParams() {
     return comparisons.map((c) => ({ slug: c.slug }));
@@ -182,6 +183,8 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="risk-test" />
+
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl grid lg:grid-cols-2 gap-12">
                     <div>
@@ -212,6 +215,8 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="adoption-plan" tone="slate" />
 
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Comparison FAQs" />

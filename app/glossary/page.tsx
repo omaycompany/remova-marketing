@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { glossaryTerms } from "@/content/glossary";
 import { BookOpen, ArrowRight } from "lucide-react";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export const metadata: Metadata = {
     title: "AI Glossary | AI for Companies — Remova Terms Database",
@@ -42,6 +43,8 @@ export default function GlossaryIndex() {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="readiness-check" tone="slate" />
+
             {/* Terms */}
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314]">
                 <div className="container mx-auto max-w-5xl">
@@ -67,6 +70,8 @@ export default function GlossaryIndex() {
                     })}
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="employee-safety-checklist" />
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
+import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 
 export const metadata = {
     title: "Terms of Service | Remova",
@@ -282,6 +283,10 @@ export default function TermsPage() {
                     </div>
                 </div>
 
+                <div className="mt-12">
+                    <LeadMagnetSection magnet="readiness-check" tone="slate" />
+                </div>
+
                 <div className="mt-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
                     <h3 className="text-xl font-black uppercase mb-4">Questions About These Terms?</h3>
                     <p className="text-slate-600 dark:text-slate-400 mb-6 font-medium">
@@ -293,6 +298,10 @@ export default function TermsPage() {
                     >
                         Contact Legal
                     </Link>
+                </div>
+
+                <div className="mt-12">
+                    <LeadMagnetSection magnet="policy-generator" />
                 </div>
             </div>
         </div>

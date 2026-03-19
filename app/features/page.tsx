@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { features } from "@/content/features";
 import { ShieldCheck, ArrowRight } from "lucide-react";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export const metadata: Metadata = {
     title: "Features | AI for Companies — Remova Enterprise AI Platform",
@@ -62,6 +63,8 @@ export default function FeaturesIndex() {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="readiness-check" tone="slate" />
+
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-6xl">
                     <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
@@ -84,6 +87,8 @@ export default function FeaturesIndex() {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="policy-generator" />
         </div>
     );
 }

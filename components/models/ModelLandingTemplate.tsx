@@ -3,6 +3,7 @@ import { AlertTriangle, ArrowRight, Check, ChevronRight, Gauge, Layers, Sparkles
 import FAQ from "@/components/ui/FAQ";
 import { ModelEntry } from "@/content/models";
 import { ModelLanding } from "@/content/model-landings";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 const fmtNumber = new Intl.NumberFormat("en-US");
 
@@ -172,6 +173,8 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                 </div>
             </section>
 
+            <LeadMagnetSection magnet="use-case-selector" tone="slate" />
+
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl">
                     <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
@@ -187,6 +190,8 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="risk-test" />
 
             <FAQ title={`${landing.heroTitle} FAQs`} items={landing.faqs} />
 

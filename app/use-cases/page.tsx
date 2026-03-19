@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { useCases } from "@/content/use-cases";
 import { ArrowRight, Briefcase, Building, Cog } from "lucide-react";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export const metadata: Metadata = {
     title: "Use Cases | AI for Companies — Enterprise AI Solutions",
@@ -57,6 +58,10 @@ export default function UseCasesIndex() {
                     })}
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="use-case-selector" tone="slate" />
+
+            <LeadMagnetSection magnet="adoption-plan" />
         </div>
     );
 }

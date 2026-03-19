@@ -3,6 +3,7 @@ import Link from "next/link";
 import { allBlogPosts } from "@/content/blog";
 import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 
 export async function generateStaticParams() {
     return allBlogPosts.map((p) => ({ slug: p.slug }));
@@ -174,6 +175,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </div>
             </article>
 
+            <LeadMagnetSection magnet="employee-safety-checklist" tone="slate" />
+
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-4xl grid lg:grid-cols-2 gap-12">
                     <div>
@@ -204,6 +207,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            <LeadMagnetSection magnet="readiness-check" />
 
             {/* FAQ Section */}
             <FAQ items={displayFaqs} title="Article FAQs" />
