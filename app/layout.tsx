@@ -61,6 +61,7 @@ export const metadata: Metadata = {
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import LeadMagnetsSection from "@/components/marketing/LeadMagnetsSection";
 
 export default function RootLayout({
     children,
@@ -114,6 +115,7 @@ export default function RootLayout({
                 <main className="flex-grow">
                     {children}
                 </main>
+                <LeadMagnetsSection />
                 <Footer />
             </body>
         </html>
