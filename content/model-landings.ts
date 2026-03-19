@@ -1,4 +1,4 @@
-import { models } from "@/content/models";
+import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
 
 export interface ModelLanding {
     slug: string;
@@ -1219,4 +1219,308 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
     };
 }
 
-export const modelLandings: ModelLanding[] = landingSeeds.map(toModelLanding);
+const batchThemes = [
+    {
+        heroLabel: "Capability Assessment",
+        governanceLine: "Use role-based access before broad team rollout.",
+        rolloutFocus: "pilot this model on one workflow before wider enablement.",
+    },
+    {
+        heroLabel: "Production Readiness Profile",
+        governanceLine: "Enforce policy checks and output review on sensitive workflows.",
+        rolloutFocus: "monitor quality and spend weekly during early deployment.",
+    },
+    {
+        heroLabel: "Enterprise Deployment Brief",
+        governanceLine: "Route requests by policy tier to prevent capability overuse.",
+        rolloutFocus: "define escalation rules to premium models before launch.",
+    },
+    {
+        heroLabel: "Operational Fit Analysis",
+        governanceLine: "Apply department budgets and alert thresholds from day one.",
+        rolloutFocus: "measure business impact against cost before scaling usage.",
+    },
+    {
+        heroLabel: "Governed AI Model Profile",
+        governanceLine: "Keep audit logs enabled for all high-impact use cases.",
+        rolloutFocus: "start with approved teams, then expand in controlled waves.",
+    },
+];
+
+const fallbackParameterNotes: { name: string; note: string }[] = [
+    { name: "max_tokens", note: "Set completion limits to avoid unpredictable long-output spend." },
+    { name: "temperature", note: "Lower temperature for deterministic policy and compliance tasks." },
+    { name: "top_p", note: "Use tighter sampling for stable outputs in repeatable operations." },
+    { name: "response_format", note: "Prefer structured output where responses feed internal systems." },
+];
+
+const parameterGuidance: Record<string, string> = {
+    frequency_penalty: "Tune repetition control for long responses in multi-step workflows.",
+    include_reasoning: "Enable only where reasoning traces add operational value or review quality.",
+    max_tokens: "Set completion limits to avoid unpredictable long-output spend.",
+    presence_penalty: "Use carefully when expanding idea diversity in exploration-heavy prompts.",
+    reasoning: "Increase reasoning effort only for complex tasks that justify extra cost.",
+    response_format: "Prefer structured output where responses feed internal systems.",
+    stop: "Use stop sequences to keep output boundaries consistent across automations.",
+    temperature: "Lower temperature for deterministic policy and compliance tasks.",
+    tool_choice: "Constrain tool selection when deterministic workflow routing is required.",
+    tools: "Whitelist approved tools only to reduce misuse risk in agent workflows.",
+    top_p: "Use tighter sampling for stable outputs in repeatable operations.",
+};
+
+function normalizeSlug(value: string) {
+    const normalized = value
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[^a-z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "");
+    return normalized || "model";
+}
+
+function numericHash(value: string) {
+    let hash = 0;
+    for (let index = 0; index < value.length; index += 1) {
+        hash = (hash * 31 + value.charCodeAt(index)) | 0;
+    }
+    return Math.abs(hash);
+}
+
+function shortHash(value: string) {
+    return numericHash(value).toString(36).slice(0, 6);
+}
+
+function ensureUniqueSlug(model: ModelEntry, usedSlugs: Set<string>) {
+    const base = normalizeSlug(model.name);
+    const providerSuffix = normalizeSlug(model.provider).slice(0, 16);
+
+    const candidates = [
+        base,
+        `${base}-${providerSuffix}`,
+        `${base}-${shortHash(model.id)}`,
+    ];
+
+    let candidate = candidates.find((entry) => !usedSlugs.has(entry));
+    if (!candidate) {
+        let counter = 2;
+        candidate = `${base}-${shortHash(model.id)}-${counter}`;
+        while (usedSlugs.has(candidate)) {
+            counter += 1;
+            candidate = `${base}-${shortHash(model.id)}-${counter}`;
+        }
+    }
+
+    usedSlugs.add(candidate);
+    return candidate;
+}
+
+function contextBand(model: ModelEntry) {
+    if (model.contextLength >= 1_000_000) return "ultra-long context";
+    if (model.contextLength >= 200_000) return "long context";
+    return "standard context";
+}
+
+function pricingBand(model: ModelEntry) {
+    if (model.inputPer1M <= 0.3) return "cost-efficient";
+    if (model.inputPer1M <= 2.5) return "balanced";
+    return "premium";
+}
+
+function defaultModality(model: ModelEntry) {
+    if (model.modality) return model.modality;
+    if (model.bestFor.some((entry) => /multimodal|image|audio|video/i.test(entry))) {
+        return "text+image->text";
+    }
+    return "text->text";
+}
+
+function bestFitPhrase(model: ModelEntry) {
+    const topTags = model.bestFor.slice(0, 2);
+    if (topTags.length === 0) return "enterprise assistant operations";
+    if (topTags.length === 1) return topTags[0].toLowerCase();
+    return `${topTags[0].toLowerCase()} and ${topTags[1].toLowerCase()}`;
+}
+
+function articleFor(phrase: string) {
+    return /^[aeiou]/i.test(phrase) ? "an" : "a";
+}
+
+function trimCopy(value: string, maxLength: number) {
+    if (value.length <= maxLength) return value;
+    return `${value.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
+}
+
+function rotatePick<T>(items: T[], start: number, count: number) {
+    if (items.length === 0 || count <= 0) return [];
+    const selected: T[] = [];
+    for (let index = 0; index < count; index += 1) {
+        selected.push(items[(start + index) % items.length]);
+    }
+    return selected;
+}
+
+function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, modality: string, autoIndex: number) {
+    const commonTradeoffs = [
+        "Quality and latency should be benchmarked against your internal prompt set before broad rollout.",
+        "Without workload routing, teams may overuse this model for requests that fit lower-cost tiers.",
+        "Governance controls are still required for regulated or sensitive workflows.",
+        "Operational drift can appear over time without recurring quality evaluations.",
+        "Prompt standards are still needed to keep output quality consistent across teams.",
+        "Policy exceptions should be monitored and reviewed on a fixed cadence.",
+    ];
+
+    const contextTradeoffs: Record<string, string> = {
+        "ultra-long context": "Very large context windows can increase token spend variance without strict limits.",
+        "long context": "Long-context prompts can increase spend and latency if prompts are not scoped carefully.",
+        "standard context": "Standard context limits may require chunking or retrieval strategies for large documents.",
+    };
+
+    const pricingTradeoffs: Record<string, string> = {
+        "cost-efficient": "Low-cost tiers can still underperform on high-consequence decisions without escalation paths.",
+        balanced: "Balanced-price tiers still need policy-based routing to protect monthly budgets.",
+        premium: "Premium tiers should be restricted to high-value workflows to avoid unnecessary spend concentration.",
+    };
+
+    const modalityTradeoff = modality.includes("+")
+        ? "Multimodal pipelines require strict input handling and validation policies for reliability."
+        : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
+
+    const hash = numericHash(`${model.id}-${autoIndex}`);
+    const selectedCommon = rotatePick(commonTradeoffs, hash % commonTradeoffs.length, 2);
+
+    return [
+        selectedCommon[0],
+        contextTradeoffs[context] ?? selectedCommon[1],
+        pricingTradeoffs[pricing] ?? "Cost governance is still required for sustainable production use.",
+        modalityTradeoff,
+    ];
+}
+
+function useCaseFromTag(tag: string, modelName: string) {
+    const value = tag.toLowerCase();
+    if (value.includes("code")) return `${modelName} for software delivery workflows with policy-enforced prompts.`;
+    if (value.includes("reason")) return `${modelName} for complex analysis and long-form decision support.`;
+    if (value.includes("multimodal")) return `${modelName} for document, image, or mixed-input processing pipelines.`;
+    if (value.includes("agent")) return `${modelName} for tool-driven automation with governance checkpoints.`;
+    if (value.includes("latency")) return `${modelName} for high-volume assistant traffic with low-response targets.`;
+    if (value.includes("cost")) return `${modelName} for scaled deployment under strict budget constraints.`;
+    return `${modelName} for internal productivity assistants and knowledge workflows.`;
+}
+
+function parameterNotesForModel(model: ModelEntry) {
+    const supported = Array.from(new Set(model.supportedParameters ?? []));
+    const notes = supported
+        .map((parameter) => ({
+            name: parameter,
+            note: parameterGuidance[parameter] ?? "Use this parameter only with tested defaults in production workflows.",
+        }))
+        .slice(0, 4);
+
+    for (const fallback of fallbackParameterNotes) {
+        if (notes.length >= 4) break;
+        if (notes.some((entry) => entry.name === fallback.name)) continue;
+        notes.push(fallback);
+    }
+
+    return notes;
+}
+
+function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Set<string>): ModelLanding {
+    const batchIndex = Math.floor(autoIndex / 20);
+    const theme = batchThemes[batchIndex % batchThemes.length];
+    const context = contextBand(model);
+    const pricing = pricingBand(model);
+    const modality = defaultModality(model);
+    const slug = ensureUniqueSlug(model, usedSlugs);
+    const fitPhrase = bestFitPhrase(model);
+    const contextArticle = articleFor(context);
+    const useCases = model.bestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model.name));
+    const bestFitList = model.bestFor.length > 0 ? model.bestFor.join(", ") : "General assistants";
+    const topUseCasesText =
+        model.bestFor.length > 1
+            ? `${model.bestFor[0].toLowerCase()} and ${model.bestFor[1].toLowerCase()}`
+            : model.bestFor[0]?.toLowerCase() ?? "general assistants";
+    while (useCases.length < 4) {
+        useCases.push(`${model.name} for governed enterprise assistant workflows across teams.`);
+    }
+
+    const strengths = [
+        `${model.name} is suited for ${model.bestFor[0]?.toLowerCase() ?? "general enterprise assistants"}.`,
+        `Supports ${context} for multi-step prompts and larger working sets.`,
+        `Pricing profile is ${pricing}, enabling predictable workload routing decisions.`,
+        `Can be paired with policy guardrails for safer deployment at scale.`,
+    ];
+
+    const tradeoffs = tradeoffsForModel(model, context, pricing, modality, autoIndex);
+
+    const inputModalities = (model.inputModalities ?? ["text"]).join(", ");
+    const outputModalities = (model.outputModalities ?? ["text"]).join(", ");
+
+    return {
+        slug,
+        modelId: model.id,
+        heroLabel: theme.heroLabel,
+        heroTitle: model.name,
+        heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, optimized for ${fitPhrase} in enterprise environments.`,
+        metaTitle: `${model.name} | Enterprise Model Landing`,
+        metaDescription: trimCopy(
+            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPrice(model.inputPer1M)} input), and deployment guidance for ${topUseCasesText}.`,
+            158
+        ),
+        providerSummary: `${model.provider} lists ${model.name} as ${contextArticle} ${context} option with ${formatPrice(model.inputPer1M)} input pricing, ${formatPrice(model.outputPer1M)} output pricing, and ${modality} modality support for enterprise AI operations.`,
+        summaryPoints: [
+            `Latest profile indicates ${context} capacity for enterprise prompts and documents.`,
+            `Current pricing band is ${pricing}: ${formatPrice(model.inputPer1M)} input and ${formatPrice(model.outputPer1M)} output.`,
+            `Best-fit workloads include: ${bestFitList}.`,
+            theme.governanceLine,
+        ],
+        strengths,
+        tradeoffs,
+        useCases,
+        deploymentChecklist: [
+            `Define where ${model.name} is default vs. fallback in your routing policy.`,
+            "Enable role-based access and policy checks before opening access broadly.",
+            "Set spend guardrails by team and monitor weekly token consumption.",
+            theme.rolloutFocus,
+            "Re-run quality and cost benchmarks monthly as newer releases appear.",
+        ],
+        parameterNotes: parameterNotesForModel(model),
+        specNotes: [
+            { label: "Model ID", value: model.id },
+            { label: "Context Window", value: `${fmtNumber.format(model.contextLength)} tokens` },
+            { label: "Modality", value: modality },
+            { label: "Input Modalities", value: inputModalities },
+            { label: "Output Modalities", value: outputModalities },
+            { label: "Input Price", value: formatPrice(model.inputPer1M) },
+            { label: "Output Price", value: formatPrice(model.outputPer1M) },
+            { label: "Provider", value: model.provider },
+            { label: "Listing Date", value: model.releasedAt },
+        ],
+        faqs: [
+            {
+                question: `When should teams choose ${model.name}?`,
+                answer: `Choose ${model.name} when the workload aligns with ${bestFitList.toLowerCase()} and quality targets justify its pricing profile.`,
+            },
+            {
+                question: `Can ${model.name} be used as a default model?`,
+                answer: "It depends on workload mix. Most organizations use routing policies so routine traffic stays on lower-cost tiers.",
+            },
+            {
+                question: "What should be validated before rollout?",
+                answer: "Validate quality on real internal prompts, token efficiency, latency, and policy compliance behavior.",
+            },
+        ],
+        sourceCheckedAt: modelsLastUpdated,
+    };
+}
+
+const curatedLandings = landingSeeds.map(toModelLanding);
+const curatedModelIds = new Set(curatedLandings.map((entry) => entry.modelId));
+const usedSlugs = new Set(curatedLandings.map((entry) => entry.slug));
+
+const autoLandings = models
+    .filter((model) => !curatedModelIds.has(model.id))
+    .map((model, index) => autoLandingForModel(model, index, usedSlugs));
+
+export const modelLandings: ModelLanding[] = [...curatedLandings, ...autoLandings];

@@ -6,7 +6,7 @@ import { ShieldCheck, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
     title: "Features | AI for Companies — Remova Enterprise AI Platform",
     description: "Explore Remova features for enterprise AI governance, policy controls, access management, and budget oversight.",
-    openGraph: { title: "Features | AI for Companies", description: "Enterprise AI governance features for policy, access, and cost control.", url: "https://remova.org/features", siteName: "Remova", type: "website" },
+    openGraph: { title: "Features | AI for Companies", description: "Enterprise AI governance features for policy, access, and cost control.", url: "https://www.remova.org/features", siteName: "Remova", type: "website" },
     alternates: { canonical: "/features" },
 };
 

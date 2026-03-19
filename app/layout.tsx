@@ -20,14 +20,14 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL("https://remova.org"),
+    metadataBase: new URL("https://www.remova.org"),
     alternates: {
         canonical: "/",
     },
     openGraph: {
         title: "Remova | The Enterprise Control Layer for AI",
         description: "Deploy AI with policy controls, sensitive data protection, and team-level budget governance.",
-        url: "https://remova.org",
+        url: "https://www.remova.org",
         siteName: "Remova",
         images: [
             {
@@ -71,8 +71,8 @@ export default function RootLayout({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Remova",
-        "url": "https://remova.org",
-        "logo": "https://remova.org/icon.png",
+        "url": "https://www.remova.org",
+        "logo": "https://www.remova.org/icon.png",
         "sameAs": [
             "https://twitter.com/remova_ai",
             "https://linkedin.com/company/remova"
@@ -93,6 +93,15 @@ export default function RootLayout({
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', 'G-YR03QTP6EC');
+                    `}
+                </Script>
+                <Script id="microsoft-clarity" strategy="afterInteractive">
+                    {`
+                        (function(c,l,a,r,i,t,y){
+                            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                        })(window, document, "clarity", "script", "vy5a0rxg0o");
                     `}
                 </Script>
                 <script

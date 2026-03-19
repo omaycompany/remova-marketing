@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Models | AI for Companies",
         description: "Current model landscape for enterprise AI deployment.",
-        url: "https://remova.org/models",
+        url: "https://www.remova.org/models",
         siteName: "Remova",
         type: "website",
     },

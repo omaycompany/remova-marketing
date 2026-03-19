@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title,
         description,
-        openGraph: { title, description, url: `https://remova.org/use-cases/${uc.slug}`, siteName: "Remova", type: "website" },
+        openGraph: { title, description, url: `https://www.remova.org/use-cases/${uc.slug}`, siteName: "Remova", type: "website" },
         twitter: { card: "summary_large_image", title, description },
         alternates: { canonical: `/use-cases/${uc.slug}` },
     };

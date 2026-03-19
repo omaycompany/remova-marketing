@@ -6,7 +6,7 @@ import { Scale, ArrowRight, Zap } from "lucide-react";
 export const metadata: Metadata = {
     title: "AI Comparisons | AI for Companies — Side-by-Side Analysis",
     description: "Detailed side-by-side analysis of enterprise AI platforms, including security, governance, and cost management capabilities.",
-    openGraph: { title: "AI Comparisons | AI for Companies", description: "Side-by-side analysis of enterprise AI platforms and controls.", url: "https://remova.org/compare", siteName: "Remova", type: "website" },
+    openGraph: { title: "AI Comparisons | AI for Companies", description: "Side-by-side analysis of enterprise AI platforms and controls.", url: "https://www.remova.org/compare", siteName: "Remova", type: "website" },
     alternates: { canonical: "/compare" },
 };
 

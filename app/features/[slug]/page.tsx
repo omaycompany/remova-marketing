@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title,
             description,
-            url: `https://remova.org/features/${feature.slug}`,
+            url: `https://www.remova.org/features/${feature.slug}`,
             siteName: "Remova",
             type: "website",
         },
@@ -44,7 +44,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         "brand": { "@type": "Brand", "name": "Remova" },
         "offers": {
             "@type": "Offer",
-            "url": `https://remova.org/features/${feature.slug}`,
+            "url": `https://www.remova.org/features/${feature.slug}`,
             "availability": "https://schema.org/InStock"
         }
     };

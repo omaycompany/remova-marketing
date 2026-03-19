@@ -6,7 +6,7 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 export const metadata: Metadata = {
     title: "Blog | AI for Companies — Remova Enterprise Insights",
     description: "Expert insights on AI for companies, governance, security, and cost management. Technical guides and industry analysis for safe AI deployment.",
-    openGraph: { title: "Blog | AI for Companies", description: "Expert insights on AI for companies, governance, and security.", url: "https://remova.org/blog", siteName: "Remova", type: "website" },
+    openGraph: { title: "Blog | AI for Companies", description: "Expert insights on AI for companies, governance, and security.", url: "https://www.remova.org/blog", siteName: "Remova", type: "website" },
     alternates: { canonical: "/blog" },
 };
 

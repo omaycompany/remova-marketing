@@ -6,7 +6,7 @@ import { Repeat, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
     title: "Alternatives | AI for Companies — Compare & Choose",
     description: "Compare Remova with leading AI platforms across security, governance, and operational cost controls.",
-    openGraph: { title: "Alternatives | AI for Companies", description: "How Remova compares to leading platforms for AI for companies.", url: "https://remova.org/alternative", siteName: "Remova", type: "website" },
+    openGraph: { title: "Alternatives | AI for Companies", description: "How Remova compares to leading platforms for AI for companies.", url: "https://www.remova.org/alternative", siteName: "Remova", type: "website" },
     alternates: { canonical: "/alternative" },
 };
 

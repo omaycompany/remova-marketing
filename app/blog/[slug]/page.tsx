@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title,
         description,
-        openGraph: { title, description, url: `https://remova.org/blog/${post.slug}`, siteName: "Remova", type: "article" },
+        openGraph: { title, description, url: `https://www.remova.org/blog/${post.slug}`, siteName: "Remova", type: "article" },
         twitter: { card: "summary_large_image", title, description },
         alternates: { canonical: `/blog/${post.slug}` },
     };
@@ -78,7 +78,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "description": post.metaDescription,
         "author": { "@type": "Organization", "name": "Remova" },
         "datePublished": post.date,
-        "image": "https://remova.org/images/og-image.png",
+        "image": "https://www.remova.org/images/og-image.png",
     };
 
     // Default unique FAQs based on blog post

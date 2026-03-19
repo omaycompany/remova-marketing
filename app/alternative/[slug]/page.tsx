@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title,
             description,
-            url: `https://remova.org/alternative/${alt.slug}`,
+            url: `https://www.remova.org/alternative/${alt.slug}`,
             siteName: "Remova",
             type: "website",
         },

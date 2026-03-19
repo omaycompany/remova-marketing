@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,13 +43,7 @@ export default function Header() {
                     </nav>
 
                     {/* Desktop Actions */}
-                    <div className="hidden md:flex items-center gap-4">
-                        <Link
-                            href="https://app.remova.org/login"
-                            className="text-sm font-bold text-slate-900 dark:text-white hover:opacity-80 transition-opacity"
-                        >
-                            Log In
-                        </Link>
+                    <div className="hidden md:flex items-center">
                         <Link
                             href="https://app.remova.org/register"
                             className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-5 py-2.5 text-sm font-bold text-white dark:text-slate-900 transition hover:scale-105 active:scale-95"
@@ -87,13 +81,6 @@ export default function Header() {
                             </Link>
                         ))}
                         <div className="mt-6 flex flex-col gap-4 px-3">
-                            <Link
-                                href="https://app.remova.org/login"
-                                className="w-full rounded-[2rem] border border-slate-200 dark:border-white/10 py-3 text-center text-base font-bold text-slate-900 dark:text-white"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Log In
-                            </Link>
                             <Link
                                 href="https://app.remova.org/register"
                                 className="w-full rounded-[2rem] bg-slate-900 dark:bg-white py-3 text-center text-base font-bold text-white dark:text-slate-900"

@@ -9,7 +9,12 @@ export interface ModelEntry {
     inputPer1M: number;
     outputPer1M: number;
     summary: string;
+    description?: string;
     bestFor: string[];
+    modality?: string;
+    inputModalities?: string[];
+    outputModalities?: string[];
+    supportedParameters?: string[];
 }
 
 const featuredModels: ModelEntry[] = [

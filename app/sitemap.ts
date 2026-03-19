@@ -8,7 +8,7 @@ import { allBlogPosts } from '@/content/blog'
 import { modelLandings } from '@/content/model-landings'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const b = 'https://remova.org'
+    const b = 'https://www.remova.org'
     const m = (p: string, pr: number) => ({ url: `${b}${p}`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: pr })
     return [
         { url: b, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 },

@@ -6,7 +6,7 @@ import { ArrowRight, Briefcase, Building, Cog } from "lucide-react";
 export const metadata: Metadata = {
     title: "Use Cases | AI for Companies — Enterprise AI Solutions",
     description: "Discover the most effective use cases for AI for companies across industries and roles. From legal to engineering, secure your AI deployment.",
-    openGraph: { title: "Use Cases | AI for Companies", description: "Discover the most effective use cases for AI for companies.", url: "https://remova.org/use-cases", siteName: "Remova", type: "website" },
+    openGraph: { title: "Use Cases | AI for Companies", description: "Discover the most effective use cases for AI for companies.", url: "https://www.remova.org/use-cases", siteName: "Remova", type: "website" },
     alternates: { canonical: "/use-cases" },
 };
 

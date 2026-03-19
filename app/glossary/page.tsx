@@ -6,7 +6,7 @@ import { BookOpen, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
     title: "AI Glossary | AI for Companies — Remova Terms Database",
     description: "Explore definitions for guardrails, PII redaction, and enterprise AI governance concepts.",
-    openGraph: { title: "AI Glossary | AI for Companies", description: "60+ AI terms defined for business teams within companies.", url: "https://remova.org/glossary", siteName: "Remova", type: "website" },
+    openGraph: { title: "AI Glossary | AI for Companies", description: "60+ AI terms defined for business teams within companies.", url: "https://www.remova.org/glossary", siteName: "Remova", type: "website" },
     alternates: { canonical: "/glossary" },
 };
 
