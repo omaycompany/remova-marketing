@@ -3,7 +3,9 @@ import Link from "next/link";
 import { allBlogPosts } from "@/content/blog";
 import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return allBlogPosts.map((p) => ({ slug: p.slug }));
@@ -12,13 +14,20 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const post = allBlogPosts.find((p) => p.slug === params.slug);
     if (!post) return {};
-    const title = `${post.title} | AI for Companies`;
+    const title = post.title;
     const description = `Learn about ${post.title}. ${post.metaDescription}`;
     return {
         title,
         description,
-        openGraph: { title, description, url: `https://www.remova.org/blog/${post.slug}`, siteName: "Remova", type: "article" },
-        twitter: { card: "summary_large_image", title, description },
+        openGraph: {
+            title,
+            description,
+            url: absoluteUrl(`/blog/${post.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
+            type: "article"
+        },
+        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
         alternates: { canonical: `/blog/${post.slug}` },
     };
 }
@@ -65,7 +74,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         ],
     };
     const operationalChecklist = [
-        `Assign an owner for ${post.sections[0]?.heading.toLowerCase()}.`,
+        `Assign an owner for "${post.sections[0]?.heading}".`,
         "Define baseline controls and exception paths before broad rollout.",
         "Track outcomes weekly and publish a short operational summary.",
         "Review controls monthly and adjust based on incident patterns.",
@@ -77,24 +86,34 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "@type": "BlogPosting",
         "headline": post.title,
         "description": post.metaDescription,
+        "mainEntityOfPage": absoluteUrl(`/blog/${post.slug}`),
         "author": { "@type": "Organization", "name": "Remova" },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Remova",
+            "logo": {
+                "@type": "ImageObject",
+                "url": absoluteUrl("/icon.png"),
+            },
+        },
         "datePublished": post.date,
-        "image": "https://www.remova.org/images/og-image.png",
+        "dateModified": post.date,
+        "image": DEFAULT_OG_IMAGE_URL,
     };
 
     // Default unique FAQs based on blog post
     const defaultFaqs = [
         {
             question: `How does "${post.title}" apply to AI for companies?`,
-            answer: `This article explores the critical intersection of ${post.category.toLowerCase()} and enterprise AI. Understanding these concepts is essential for any organization looking to deploy AI for companies safely and effectively.`
+            answer: `This article explains how ${post.category.toLowerCase()} decisions affect real AI for companies rollout, policy enforcement, and operating consistency across teams.`
         },
         {
             question: `What is the main takeaway regarding ${post.sections[0].heading}?`,
-            answer: `${post.sections[0].content.split('.')[0]}. This highlights practical guidance for safe enterprise AI adoption.`
+            answer: `${post.sections[0].content.split('.')[0]}. This highlights practical guidance for safe AI for companies rollout.`
         },
         {
             question: `Are the strategies mentioned here compatible with HIPAA or GDPR?`,
-            answer: `Yes. The strategies are compatible when implemented with appropriate controls such as PII redaction, role-based access, retention policies, and audit logging.`
+            answer: `They can support HIPAA or GDPR programs when mapped to legal requirements by your compliance and legal teams. Use controls like PII redaction, role-based access, retention policies, and audit logging as implementation foundations, not legal guarantees.`
         }
     ];
 
@@ -152,7 +171,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Use these practices with governed enterprise AI controls.</span>
+                                <span>Use these practices with governed controls for AI for companies.</span>
                             </li>
                         </ul>
                     </div>
@@ -220,12 +239,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         SAFE AI FOR COMPANIES
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Deploy enterprise AI governance with centralized policy, safety, and cost controls.
+                        Deploy AI for companies with centralized policy, safety, and cost controls.
                     </p>
-                    <Link href="https://app.remova.org/register"
+                    <ExternalAppLink href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300">
                         Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

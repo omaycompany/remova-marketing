@@ -3,11 +3,25 @@ import Link from "next/link";
 import { allBlogPosts } from "@/content/blog";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Blog | AI for Companies — Remova Enterprise Insights",
-    description: "Expert insights on AI for companies, governance, security, and cost management. Technical guides and industry analysis for safe AI deployment.",
-    openGraph: { title: "Blog | AI for Companies", description: "Expert insights on AI for companies, governance, and security.", url: "https://www.remova.org/blog", siteName: "Remova", type: "website" },
+    title: "Enterprise AI Blog",
+    description: "Expert insights on AI for companies, governance, security, and cost management. Technical guides and operating analysis for safe AI deployment.",
+    openGraph: {
+        title: "Enterprise AI Blog",
+        description: "Expert insights on AI for companies, governance, and security.",
+        url: absoluteUrl("/blog"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Blog",
+        description: "Expert insights on AI for companies, governance, and security.",
+        images: [DEFAULT_OG_IMAGE_URL]
+    },
     alternates: { canonical: "/blog" },
 };
 
@@ -30,7 +44,7 @@ export default function BlogIndex() {
                         Blog
                     </h1>
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        Expert insights on enterprise AI governance, security, compliance, and cost management. {allBlogPosts.length} articles and growing.
+                        Expert insights on AI for companies: governance, security, compliance, and cost management. {allBlogPosts.length} articles and growing.
                     </p>
                 </div>
             </section>
