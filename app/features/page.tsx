@@ -3,11 +3,25 @@ import Link from "next/link";
 import { features } from "@/content/features";
 import { ShieldCheck, ArrowRight } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Features | AI for Companies — Remova Enterprise AI Platform",
+    title: "Enterprise AI Features",
     description: "Explore Remova features for enterprise AI governance, policy controls, access management, and budget oversight.",
-    openGraph: { title: "Features | AI for Companies", description: "Enterprise AI governance features for policy, access, and cost control.", url: "https://www.remova.org/features", siteName: "Remova", type: "website" },
+    openGraph: {
+        title: "Enterprise AI Features",
+        description: "Enterprise AI governance features for policy, access, and cost control.",
+        url: absoluteUrl("/features"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Features",
+        description: "Enterprise AI governance features for policy, access, and cost control.",
+        images: [DEFAULT_OG_IMAGE_URL]
+    },
     alternates: { canonical: "/features" },
 };
 

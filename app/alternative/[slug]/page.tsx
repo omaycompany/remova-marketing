@@ -3,7 +3,9 @@ import Link from "next/link";
 import { alternatives } from "@/content/alternatives";
 import { ArrowRight, Check, X, Zap, ChevronRight } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return alternatives.map((a) => ({ slug: a.slug }));
@@ -12,19 +14,20 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const alt = alternatives.find((a) => a.slug === params.slug);
     if (!alt) return {};
-    const title = `${alt.metaTitle} | AI for Companies`;
-    const description = `Evaluating alternatives to ${alt.competitor}? ${alt.metaDescription}`;
+    const title = stripTitleSuffix(alt.metaTitle);
+    const description = alt.metaDescription;
     return {
         title,
         description,
         openGraph: {
             title,
             description,
-            url: `https://www.remova.org/alternative/${alt.slug}`,
-            siteName: "Remova",
+            url: absoluteUrl(`/alternative/${alt.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
             type: "website",
         },
-        twitter: { card: "summary_large_image", title, description },
+        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
         alternates: { canonical: `/alternative/${alt.slug}` },
     };
 }
@@ -45,11 +48,11 @@ export default function AlternativePage({ params }: { params: { slug: string } }
     const defaultFaqs = [
         {
             question: `Is Remova really a better alternative to ${alt.competitor}?`,
-            answer: `Remova is designed for enterprise AI governance. Unlike general consumer tools such as ${alt.competitor}, it combines multi-model access with centralized policy controls, budget management, and auditability.`
+            answer: `It is a better alternative when your requirements include department-level governance, consistent policy enforcement, and clearer operating ownership than ${alt.competitor} was designed to provide. If your need is only lightweight convenience, the answer may be different.`
         },
         {
             question: `What is the main reason companies switch from ${alt.competitor} to Remova?`,
-            answer: `The primary reason is ${alt.whySwitch[0].toLowerCase()}. Remova solves this by providing ${alt.removaAdvantages[0].title.toLowerCase()} and other security-first features that make AI adoption safe for the entire organization.`
+            answer: `A common reason is ${alt.whySwitch[0].toLowerCase()}. Teams switch when that limitation stops being a minor annoyance and starts blocking controlled rollout, clearer ownership, or policy consistency across the organization.`
         },
         {
             question: `Can I still use the same AI models I used on ${alt.competitor}?`,
@@ -99,7 +102,7 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                         {alt.headline}
                     </h1>
                     <p className="mb-12 max-w-3xl text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        Looking for an alternative to {alt.competitor}? Remova provides enterprise governance, policy controls, and cost management in one platform.
+                        If {alt.competitor} is no longer a fit for enterprise rollout, Remova gives teams a more structured way to govern access, policy, workflow controls, and cost ownership.
                     </p>
 
                     {/* TL;DR Section */}
@@ -110,25 +113,25 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova is built for governed enterprise AI deployment.</span>
+                                <span>{alt.competitor} may work for narrower usage, but teams usually switch when governance requirements outgrow the product model.</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Use a broad model catalog with sensitive data protection and granular cost controls.</span>
+                                <span>Remova combines broader model choice with policy, access, retention, and budget controls that scale across departments.</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Centralized governance helps teams deploy AI safely and consistently.</span>
+                                <span>This page focuses on the practical reasons buyers move when convenience is no longer enough.</span>
                             </li>
                         </ul>
                     </div>
 
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-10 py-5 text-lg font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 inline-block"
                     >
                         Switch to Remova
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
 
@@ -220,14 +223,14 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                         ENTERPRISE AI GOVERNANCE
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Deploy Remova with enterprise governance, policy controls, and team-level cost management.
+                        Evaluate whether switching from {alt.competitor} is really about features or about needing a stronger operating model for AI adoption.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -20,32 +21,7 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL("https://www.remova.org"),
-    alternates: {
-        canonical: "/",
-    },
-    openGraph: {
-        title: "Remova | The Enterprise Control Layer for AI",
-        description: "Deploy AI with policy controls, sensitive data protection, and team-level budget governance.",
-        url: "https://www.remova.org",
-        siteName: "Remova",
-        images: [
-            {
-                url: "/images/og-image.png",
-                width: 1200,
-                height: 630,
-                alt: "Remova - Enterprise AI Control Layer",
-            },
-        ],
-        locale: "en_US",
-        type: "website",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "Remova | The Enterprise Control Layer for AI",
-        description: "Deploy AI with cost controls, privacy protections, and policy guardrails.",
-        images: ["/images/og-image.png"],
-    },
+    metadataBase: new URL(SITE_URL),
     robots: {
         index: true,
         follow: true,
@@ -71,8 +47,8 @@ export default function RootLayout({
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Remova",
-        "url": "https://www.remova.org",
-        "logo": "https://www.remova.org/icon.png",
+        "url": SITE_URL,
+        "logo": `${SITE_URL}/icon.png`,
         "sameAs": [
             "https://twitter.com/remova_ai",
             "https://linkedin.com/company/remova"

@@ -1,10 +1,29 @@
+import { Metadata } from "next";
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from '@/lib/seo';
 
-export const metadata = {
-    title: "Privacy Policy | Remova",
+export const metadata: Metadata = {
+    title: "Privacy Policy",
     description: "Detailed information about how Remova handles your data and ensures privacy.",
+    alternates: {
+        canonical: "/privacy",
+    },
+    openGraph: {
+        title: "Privacy Policy",
+        description: "Detailed information about how Remova handles your data and ensures privacy.",
+        url: absoluteUrl("/privacy"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Privacy Policy",
+        description: "Detailed information about how Remova handles your data and ensures privacy.",
+        images: [DEFAULT_OG_IMAGE_URL],
+    },
 };
 
 export default function PrivacyPage() {

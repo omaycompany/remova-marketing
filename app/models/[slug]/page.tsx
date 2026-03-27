@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ModelLandingTemplate from "@/components/models/ModelLandingTemplate";
 import { modelLandings } from "@/content/model-landings";
 import { models } from "@/content/models";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 function trimForTitle(value: string, maxLength: number) {
     if (value.length <= maxLength) return value;
@@ -25,14 +26,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title: seoTitle,
             description: landing.metaDescription,
-            url: `https://www.remova.org/models/${landing.slug}`,
-            siteName: "Remova",
+            url: absoluteUrl(`/models/${landing.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
             type: "article",
         },
         twitter: {
             card: "summary_large_image",
             title: seoTitle,
             description: landing.metaDescription,
+            images: [DEFAULT_OG_IMAGE_URL],
         },
         alternates: { canonical: `/models/${landing.slug}` },
     };

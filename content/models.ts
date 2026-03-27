@@ -19,6 +19,28 @@ export interface ModelEntry {
 
 const featuredModels: ModelEntry[] = [
     {
+        id: "reka/reka-edge",
+        name: "Reka Edge",
+        provider: "Reka",
+        releasedAt: "2026-03-20",
+        contextLength: 16384,
+        inputPer1M: 0.1,
+        outputPer1M: 0.1,
+        summary: "Compact multimodal model tuned for efficient visual reasoning and fast production throughput.",
+        bestFor: ["Vision-language tasks", "High-volume multimodal workflows", "Low-cost assistants"],
+    },
+    {
+        id: "nvidia/nemotron-3-super-120b-a12b",
+        name: "Nemotron 3 Super 120B-A12B",
+        provider: "NVIDIA",
+        releasedAt: "2026-03-11",
+        contextLength: 262144,
+        inputPer1M: 0.1,
+        outputPer1M: 0.5,
+        summary: "Open hybrid MoE model designed for strong multi-agent reasoning with efficient token economics.",
+        bestFor: ["Agent workflows", "Technical reasoning", "Cost-aware enterprise copilots"],
+    },
+    {
         id: "x-ai/grok-4.20-multi-agent-beta",
         name: "Grok 4.20 Multi-Agent Beta",
         provider: "xAI",
@@ -236,4 +258,10 @@ export const models: ModelEntry[] = Array.from(mergedModels.values()).sort((a, b
     return a.name.localeCompare(b.name);
 });
 
-export const modelsLastUpdated = generatedModelsLastUpdated;
+const latestFeaturedRelease = featuredModels.reduce(
+    (latest, model) => (model.releasedAt > latest ? model.releasedAt : latest),
+    "0000-00-00"
+);
+
+export const modelsLastUpdated =
+    latestFeaturedRelease > generatedModelsLastUpdated ? latestFeaturedRelease : generatedModelsLastUpdated;

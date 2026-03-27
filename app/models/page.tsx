@@ -2,20 +2,29 @@ import { Metadata } from "next";
 import { BrainCircuit, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import { models, modelsLastUpdated } from "@/content/models";
 import { modelLandings } from "@/content/model-landings";
 import ModelsListView from "@/components/models/ModelsListView";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Models | AI for Companies — Latest Enterprise Model Catalog",
+    title: "Enterprise AI Model Catalog",
     description: "Latest AI model snapshot for enterprise teams, including context windows, pricing, and best-fit use cases.",
     openGraph: {
-        title: "Models | AI for Companies",
+        title: "Enterprise AI Model Catalog",
         description: "Current model landscape for enterprise AI deployment.",
-        url: "https://www.remova.org/models",
-        siteName: "Remova",
+        url: absoluteUrl("/models"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
         type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Model Catalog",
+        description: "Current model landscape for enterprise AI deployment.",
+        images: [DEFAULT_OG_IMAGE_URL],
     },
     alternates: { canonical: "/models" },
 };
@@ -92,12 +101,12 @@ export default function ModelsPage() {
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
                         Launch multi-model AI safely with centralized policy controls, role-based governance, and budget accountability.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Use top models in your company <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

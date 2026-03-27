@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { AlertTriangle, ArrowRight, Check, ChevronRight, Gauge, Layers, Sparkles } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import { ModelEntry } from "@/content/models";
 import { ModelLanding } from "@/content/model-landings";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { absoluteUrl } from "@/lib/seo";
 
 const fmtNumber = new Intl.NumberFormat("en-US");
 
@@ -23,6 +25,7 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
         name: landing.heroTitle,
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
+        url: absoluteUrl(`/models/${landing.slug}`),
         description: landing.metaDescription,
         brand: { "@type": "Brand", name: model.provider },
     };
@@ -52,12 +55,12 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-8">
                         {landing.heroSubtitle}
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="mb-8 inline-block rounded-[2.5rem] bg-slate-900 dark:bg-white px-8 py-4 text-base font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95"
                     >
                         Use {landing.heroTitle} in your company
-                    </Link>
+                    </ExternalAppLink>
                     <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
                         Data checked: {landing.sourceCheckedAt}
                     </p>
@@ -203,12 +206,12 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
                         Use policy controls, role-based access, and budget guardrails before enabling advanced model tiers at scale.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Use {landing.heroTitle} in your company <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

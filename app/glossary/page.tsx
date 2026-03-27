@@ -3,11 +3,25 @@ import Link from "next/link";
 import { glossaryTerms } from "@/content/glossary";
 import { BookOpen, ArrowRight } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "AI Glossary | AI for Companies — Remova Terms Database",
+    title: "AI Glossary",
     description: "Explore definitions for guardrails, PII redaction, and enterprise AI governance concepts.",
-    openGraph: { title: "AI Glossary | AI for Companies", description: "60+ AI terms defined for business teams within companies.", url: "https://www.remova.org/glossary", siteName: "Remova", type: "website" },
+    openGraph: {
+        title: "AI Glossary",
+        description: "60+ AI terms defined for business teams within companies.",
+        url: absoluteUrl("/glossary"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AI Glossary",
+        description: "60+ AI terms defined for business teams within companies.",
+        images: [DEFAULT_OG_IMAGE_URL]
+    },
     alternates: { canonical: "/glossary" },
 };
 

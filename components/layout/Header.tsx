@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,12 +45,12 @@ export default function Header() {
 
                     {/* Desktop Actions */}
                     <div className="hidden md:flex items-center">
-                        <Link
+                        <ExternalAppLink
                             href="https://app.remova.org/register"
                             className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-5 py-2.5 text-sm font-bold text-white dark:text-slate-900 transition hover:scale-105 active:scale-95"
                         >
                             Get Started
-                        </Link>
+                        </ExternalAppLink>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -81,13 +82,13 @@ export default function Header() {
                             </Link>
                         ))}
                         <div className="mt-6 flex flex-col gap-4 px-3">
-                            <Link
+                            <ExternalAppLink
                                 href="https://app.remova.org/register"
                                 className="w-full rounded-[2rem] bg-slate-900 dark:bg-white py-3 text-center text-base font-bold text-white dark:text-slate-900"
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Get Started
-                            </Link>
+                            </ExternalAppLink>
                         </div>
                     </div>
                 </div>

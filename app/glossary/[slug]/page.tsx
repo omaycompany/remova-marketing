@@ -3,7 +3,9 @@ import Link from "next/link";
 import { glossaryTerms } from "@/content/glossary";
 import { ArrowRight, BookOpen, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return glossaryTerms.map((g) => ({ slug: g.slug }));
@@ -12,12 +14,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const term = glossaryTerms.find((g) => g.slug === params.slug);
     if (!term) return {};
-    const title = `${term.metaTitle} | AI for Companies`;
-    const description = `What is ${term.term}? Learn about this and related enterprise AI concepts in our glossary. ${term.metaDescription}`;
+    const title = stripTitleSuffix(term.metaTitle);
+    const description = term.metaDescription;
     return {
         title, description,
-        openGraph: { title, description, url: `https://www.remova.org/glossary/${term.slug}`, siteName: "Remova", type: "article" },
-        twitter: { card: "summary_large_image", title, description },
+        openGraph: {
+            title,
+            description,
+            url: absoluteUrl(`/glossary/${term.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
+            type: "article"
+        },
+        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
         alternates: { canonical: `/glossary/${term.slug}` },
     };
 }
@@ -38,7 +47,7 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
         "inDefinedTermSet": {
             "@type": "DefinedTermSet",
             "name": "Remova AI Glossary",
-            "url": "https://www.remova.org/glossary"
+            "url": absoluteUrl("/glossary")
         }
     };
 
@@ -46,15 +55,15 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
     const defaultFaqs = [
         {
             question: `Why is ${term.term} important for AI for companies?`,
-            answer: `${term.term} is a fundamental concept in the AI for companies landscape because it directly impacts how organizations manage ${term.definition.toLowerCase()}. Understanding this is crucial for maintaining AI security and compliance.`
+            answer: `${term.term} matters because it directly affects how teams operationalize AI safely, how leaders assign ownership, and how controls are applied in daily workflows. Organizations that misunderstand ${term.term.toLowerCase()} usually end up with inconsistent rollout decisions and weaker governance discipline.`
         },
         {
             question: `How does Remova handle ${term.term}?`,
-            answer: `Remova's platform is built to natively manage and optimize ${term.term} through our integrated governance layer, ensuring that your organization benefits from this technology while mitigating its inherent risks.`
+            answer: `Remova supports ${term.term.toLowerCase()} through policy controls, role-based access, auditability, and workflow governance features that make the concept operational rather than theoretical. The goal is to give teams a controlled way to apply the principle in production usage.`
         },
         {
             question: `Where can I find more terms related to AI for companies?`,
-            answer: `You can explore our full AI for companies glossary, which includes detailed definitions for related concepts like ${related[0]?.term || 'Machine Learning'} and ${related[1]?.term || 'Data Privacy'}.`
+            answer: `You can explore related entries in the glossary, including ${related[0]?.term || 'Machine Learning'} and ${related[1]?.term || 'Data Privacy'}, to see how this concept connects to broader enterprise AI governance and operating practices.`
         }
     ];
 
@@ -103,11 +112,11 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Understanding {term.term} is critical for effective AI for companies.</span>
+                                <span>{term.term} shapes how organizations design controls, ownership, and operating discipline around AI.</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova helps companies implement this technology safely.</span>
+                                <span>Use the related terms and explanation below to connect the definition to real enterprise rollout decisions.</span>
                             </li>
                         </ul>
                     </div>
@@ -160,12 +169,12 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                         ENTERPRISE AI GOVERNANCE
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Experience enterprise AI governance firsthand with Remova.
+                        Turn glossary concepts like {term.term} into enforceable operating controls with Remova.
                     </p>
-                    <Link href="https://app.remova.org/register"
+                    <ExternalAppLink href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300">
                         Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

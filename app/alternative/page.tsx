@@ -3,11 +3,25 @@ import Link from "next/link";
 import { alternatives } from "@/content/alternatives";
 import { Repeat, ArrowRight } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Alternatives | AI for Companies — Compare & Choose",
+    title: "Enterprise AI Alternatives",
     description: "Compare Remova with leading AI platforms across security, governance, and operational cost controls.",
-    openGraph: { title: "Alternatives | AI for Companies", description: "How Remova compares to leading platforms for AI for companies.", url: "https://www.remova.org/alternative", siteName: "Remova", type: "website" },
+    openGraph: {
+        title: "Enterprise AI Alternatives",
+        description: "How Remova compares to leading platforms for AI for companies.",
+        url: absoluteUrl("/alternative"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Alternatives",
+        description: "How Remova compares to leading platforms for AI for companies.",
+        images: [DEFAULT_OG_IMAGE_URL]
+    },
     alternates: { canonical: "/alternative" },
 };
 

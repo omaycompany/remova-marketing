@@ -1,7 +1,31 @@
+import type { Metadata } from "next";
 import Link from 'next/link';
 import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, Brain, Sparkles, Cpu, FileText, BarChart3, History, Zap, Shield, MessageSquare, Bot, ToggleRight, LayoutDashboard, Database, Ghost, Smartphone, Wand2, FileSpreadsheet, ShieldAlert, XCircle, Search, Server, FileLock2, AlertTriangle, Workflow, FileType, Key, BoxSelect, MonitorDot, Gauge, Scale, BookOpen, Fingerprint, Eye, LockKeyhole, Umbrella, RefreshCw, Slash, FileClock, SearchX, UserMinus, Diamond, Users, UserCog, UserCheck, KeyRound, Plug, Wallet, Receipt, Hourglass, Bell, CreditCard, Antenna, MessagesSquare, FileOutput, Printer } from 'lucide-react';
 import FAQ from '@/components/ui/FAQ';
+import ExternalAppLink from '@/components/ui/ExternalAppLink';
 import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL } from '@/lib/seo';
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: "/",
+    },
+    openGraph: {
+        title: "Remova | The Enterprise Control Layer for AI",
+        description: "Deploy AI with policy controls, sensitive data protection, and team-level budget governance.",
+        url: SITE_URL,
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Remova | The Enterprise Control Layer for AI",
+        description: "Deploy AI with cost controls, privacy protections, and policy guardrails.",
+        images: [DEFAULT_OG_IMAGE_URL],
+    },
+};
 
 export default function LandingPage() {
     return (
@@ -27,18 +51,18 @@ export default function LandingPage() {
                         The governance layer for enterprise AI. Deploy across teams with <span className="text-slate-900 dark:text-white font-bold underline decoration-4 decoration-emerald-500 underline-offset-4">control and confidence.</span>
                     </p>
                     <div className="flex flex-col items-center justify-center gap-6 sm:flex-row mb-20">
-                        <Link
+                        <ExternalAppLink
                             href="https://app.remova.org/register"
                             className="w-full sm:w-auto rounded-[2.5rem] bg-slate-900 dark:bg-white px-12 py-6 text-2xl font-black text-white dark:text-slate-900 transition-all hover:scale-105 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.3)] active:scale-95"
                         >
                             Get Started
-                        </Link>
-                        <Link
+                        </ExternalAppLink>
+                        <ExternalAppLink
                             href="https://app.remova.org/login"
                             className="w-full sm:w-auto rounded-[2.5rem] border-2 border-slate-200 dark:border-white/10 bg-transparent px-12 py-6 text-2xl font-black text-slate-900 dark:text-white transition hover:bg-slate-50 dark:hover:bg-white/5 hover:border-slate-300"
                         >
                             Login
-                        </Link>
+                        </ExternalAppLink>
                     </div>
                 </div>
             </section>
@@ -591,12 +615,12 @@ export default function LandingPage() {
                         Don't trust <span className="inline-block border-4 border-slate-900 dark:border-white px-4 py-1 mx-2 transform -rotate-2">LLMs<span className="text-slate-900 dark:text-white">,</span></span><br />
                         add a control layer!
                     </h2>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block mt-4 rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-slate-900 dark:bg-white px-12 py-5 text-xl font-black uppercase tracking-wider text-white dark:text-slate-900 hover:bg-transparent hover:text-slate-900 dark:hover:bg-transparent dark:hover:text-white transition-all duration-300"
                     >
                         Secure My Org
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
 
@@ -632,12 +656,12 @@ export default function LandingPage() {
                                         </p>
                                     </div>
                                 </div>
-                                <Link
+                                <ExternalAppLink
                                     href="https://app.remova.org/register"
                                     className="w-full py-5 text-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xl font-black uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors rounded-[2.5rem]"
                                 >
                                     Contact Sales
-                                </Link>
+                                </ExternalAppLink>
                             </div>
 
                             {/* Right Column: Scope */}
@@ -1075,12 +1099,12 @@ export default function LandingPage() {
                     <p className="mb-12 text-xl font-sans text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
                         Join the organizations that trust Remova to deploy LLMs safely and confidently.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Get Started
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

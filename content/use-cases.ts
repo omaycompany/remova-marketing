@@ -19,7 +19,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Govern AI usage in financial organizations with policy controls, auditability, and spend management.",
         headline: "AI for Financial Services",
         subheadline: "Control risk while teams use AI productively",
-        description: "Financial teams need controlled AI adoption across operations, analysis, and client workflows while maintaining strong governance.",
+        description: "Financial institutions need AI support across analyst research, internal operations, client-service drafting, and control-heavy back-office workflows without losing oversight of data handling, approvals, or model access.",
         challenges: [
             "Sensitive financial data handling",
             "Auditability requirements",
@@ -28,10 +28,10 @@ export const useCases: UseCase[] = [
             "Role-scoped access",
         ],
         solutions: [
-            { title: "Sensitive Data Protection", description: "Apply configurable protection controls to reduce accidental data exposure." },
-            { title: "Audit Trails", description: "Maintain traceable records for review and governance reporting." },
-            { title: "Department Budgets", description: "Set spending limits and alerts by team." },
-            { title: "Role-Based Access", description: "Scope access and controls by organizational role." },
+            { title: "Sensitive Data Protection", description: "Reduce the chance that client data, internal forecasts, or transaction details are exposed in prompts and outputs." },
+            { title: "Audit Trails", description: "Maintain reviewable records for supervisory checks, internal investigations, and control reporting." },
+            { title: "Department Budgets", description: "Separate exploratory AI spend from business-unit operating usage so cost ownership stays visible." },
+            { title: "Role-Based Access", description: "Scope models and governance actions by analyst, manager, compliance, and admin responsibility." },
         ],
     },
     {
@@ -41,7 +41,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Deploy AI with governance controls for healthcare teams handling sensitive workflows and records.",
         headline: "AI for Healthcare Organizations",
         subheadline: "Enable AI usage with strong privacy and control",
-        description: "Healthcare teams need AI support for documentation and operations while maintaining strict data handling and access boundaries.",
+        description: "Healthcare organizations need AI for documentation, administrative support, and internal coordination while preserving strict privacy boundaries, careful access control, and operational traceability across clinical and non-clinical teams.",
         challenges: [
             "Sensitive record handling",
             "Access controls across clinical and non-clinical roles",
@@ -50,10 +50,10 @@ export const useCases: UseCase[] = [
             "Retention governance",
         ],
         solutions: [
-            { title: "Retention Controls", description: "Configure data handling behavior to match organizational policy." },
-            { title: "Role-Based Access", description: "Apply scoped permissions for different job functions." },
-            { title: "Policy Guardrails", description: "Enforce approved usage patterns across teams." },
-            { title: "Audit Trails", description: "Support internal review and compliance workflows." },
+            { title: "Retention Controls", description: "Configure storage and visibility rules that reflect how different healthcare workflows should retain AI interaction data." },
+            { title: "Role-Based Access", description: "Apply scoped permissions for clinical leaders, admins, support teams, and governance owners." },
+            { title: "Policy Guardrails", description: "Enforce approved usage patterns for documentation support, communication drafting, and internal guidance workflows." },
+            { title: "Audit Trails", description: "Preserve the records needed for compliance review, incident analysis, and operational oversight." },
         ],
     },
     {
@@ -63,7 +63,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Use AI in legal workflows with controlled access, retention settings, and policy checks.",
         headline: "AI for Legal Services",
         subheadline: "Support legal work with governed AI controls",
-        description: "Legal organizations need AI assistance for drafting and research while maintaining strict confidentiality and access discipline.",
+        description: "Legal teams need AI support for research, drafting, matter preparation, and internal knowledge work while maintaining confidentiality, matter boundaries, and discipline around who can use which tools for which classes of work.",
         challenges: [
             "Confidential matter handling",
             "Need-to-know access boundaries",
@@ -72,10 +72,10 @@ export const useCases: UseCase[] = [
             "Cross-practice consistency",
         ],
         solutions: [
-            { title: "Role-Based Access", description: "Scope access by team responsibilities and governance policy." },
-            { title: "Retention Controls", description: "Apply stricter data handling behavior for sensitive workflows." },
-            { title: "Preset Workflows", description: "Standardize approved legal use patterns." },
-            { title: "Audit Trails", description: "Maintain clear records for internal review." },
+            { title: "Role-Based Access", description: "Scope access by practice area, support function, and governance responsibility." },
+            { title: "Retention Controls", description: "Apply stricter storage and visibility rules to sensitive drafting and case-related workflows." },
+            { title: "Preset Workflows", description: "Standardize approved drafting, summarization, and research patterns instead of letting each team improvise." },
+            { title: "Audit Trails", description: "Maintain records that help legal operations and leadership review usage, exceptions, and admin changes." },
         ],
     },
     {
@@ -85,7 +85,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Scale AI adoption in technology organizations with policy, cost, and access controls.",
         headline: "AI for Technology Organizations",
         subheadline: "Scale AI usage without losing governance",
-        description: "Technology teams move quickly and need AI support across engineering, operations, and go-to-market functions with centralized governance.",
+        description: "Technology companies often see AI spread rapidly across engineering, support, operations, product, and go-to-market teams, which makes centralized governance necessary before local experimentation turns into fragmented production usage.",
         challenges: [
             "Rapid tool adoption",
             "Cross-functional usage growth",
@@ -94,10 +94,10 @@ export const useCases: UseCase[] = [
             "Operational governance at scale",
         ],
         solutions: [
-            { title: "Model Governance", description: "Control model availability by team and policy posture." },
-            { title: "Department Budgets", description: "Track and control cost by function." },
-            { title: "Governed API Access", description: "Integrate AI into internal tools without bypassing policy." },
-            { title: "Usage Analytics", description: "Monitor adoption, safety events, and spend in one view." },
+            { title: "Model Governance", description: "Control which teams can use frontier models, cheaper defaults, or experimental tiers as the portfolio evolves." },
+            { title: "Department Budgets", description: "Track and limit cost by engineering, support, product, and business function rather than one shared pool." },
+            { title: "Governed API Access", description: "Integrate AI into internal tools and automations without creating an ungoverned side channel." },
+            { title: "Usage Analytics", description: "Monitor adoption, control effectiveness, and cost concentration as rollout accelerates." },
         ],
     },
     {
@@ -107,7 +107,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Support public-sector AI adoption with policy controls, oversight, and operational transparency.",
         headline: "AI for Public Sector Teams",
         subheadline: "Improve service workflows with governed AI adoption",
-        description: "Public-sector teams require strong oversight and accountability when adopting AI for service delivery and internal operations.",
+        description: "Public-sector teams need AI support for internal operations, knowledge work, and citizen-service processes under conditions where accountability, oversight, explainability, and reporting are often as important as raw productivity gains.",
         challenges: [
             "High accountability standards",
             "Clear access governance",
@@ -116,10 +116,10 @@ export const useCases: UseCase[] = [
             "Cross-agency coordination",
         ],
         solutions: [
-            { title: "Policy Guardrails", description: "Apply clear policy checks across usage scenarios." },
-            { title: "Audit Trails", description: "Provide traceable records for oversight workflows." },
-            { title: "Role-Based Access", description: "Limit access by organizational responsibility." },
-            { title: "Usage Analytics", description: "Track rollout health and control effectiveness." },
+            { title: "Policy Guardrails", description: "Apply enforceable policy checks so frontline teams are not left to interpret high-level guidance on their own." },
+            { title: "Audit Trails", description: "Provide traceable records for oversight reviews, investigations, and leadership reporting." },
+            { title: "Role-Based Access", description: "Limit capabilities by responsibility so elevated functions are not exposed broadly across agencies or departments." },
+            { title: "Usage Analytics", description: "Track rollout quality, control exceptions, and adoption health across public-service workflows." },
         ],
     },
     {
@@ -129,7 +129,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Give security leaders practical controls for AI policy enforcement, monitoring, and incident response.",
         headline: "AI Governance for Security Leaders",
         subheadline: "Enable adoption with enforceable controls",
-        description: "Security leaders need confidence that AI can be adopted with protection controls, clear visibility, and accountable ownership.",
+        description: "Security leaders need confidence that employee AI usage can expand without opening uncontrolled channels for sensitive data exposure, policy bypass, shadow tooling, or incident response blind spots.",
         challenges: [
             "Unmanaged team usage",
             "Sensitive data exposure risk",
@@ -138,10 +138,10 @@ export const useCases: UseCase[] = [
             "Incident response readiness",
         ],
         solutions: [
-            { title: "Sensitive Data Protection", description: "Reduce accidental data exposure in prompts and outputs." },
-            { title: "Policy Guardrails", description: "Enforce security and usage policy in real time." },
-            { title: "Audit Trails", description: "Improve investigation and review capability." },
-            { title: "Usage Analytics", description: "Track patterns and high-risk activity signals." },
+            { title: "Sensitive Data Protection", description: "Reduce accidental exposure of confidential records, credentials, source code, and internal security context." },
+            { title: "Policy Guardrails", description: "Enforce security policy in daily AI workflows instead of relying on static guidance documents." },
+            { title: "Audit Trails", description: "Improve investigation speed when incidents, exceptions, or risky usage patterns appear." },
+            { title: "Usage Analytics", description: "Track whether risk is concentrating in certain teams, tools, or model tiers." },
         ],
     },
     {
@@ -151,7 +151,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Support enterprise AI rollout with governance, budget control, and team-level access management.",
         headline: "AI Governance for IT Leadership",
         subheadline: "Roll out AI in a controlled, scalable way",
-        description: "IT leaders need a repeatable way to launch AI across teams without creating unmanaged risk or spend.",
+        description: "IT leaders need a repeatable operating model for launching AI across departments, provisioning access, enforcing standards, and keeping rollout velocity from turning into fragmented governance debt.",
         challenges: [
             "Cross-team rollout complexity",
             "Governance consistency",
@@ -160,10 +160,10 @@ export const useCases: UseCase[] = [
             "Adoption tracking",
         ],
         solutions: [
-            { title: "Onboarding Controls", description: "Launch new teams with governance defaults." },
-            { title: "Role-Based Access", description: "Delegate administration safely." },
-            { title: "Department Budgets", description: "Control spend with team-level limits." },
-            { title: "Usage Analytics", description: "Track adoption and operational performance." },
+            { title: "Onboarding Controls", description: "Launch new teams with access, policy, and budget defaults instead of configuring governance after the fact." },
+            { title: "Role-Based Access", description: "Delegate administration to department owners without giving every team global control." },
+            { title: "Department Budgets", description: "Control spend with team-level limits and clearer ownership for expansion decisions." },
+            { title: "Usage Analytics", description: "Track adoption quality, support burden, and operational performance as rollout scales." },
         ],
     },
     {
@@ -173,7 +173,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Help compliance teams monitor policy adherence with audit trails and governance analytics.",
         headline: "AI Governance for Compliance Teams",
         subheadline: "Turn policy into visible operational controls",
-        description: "Compliance teams need practical controls and evidence to monitor AI usage policy and support internal review cycles.",
+        description: "Compliance teams need evidence-backed visibility into how policy is enforced in real workflows, where exceptions are concentrated, and whether the organization can demonstrate control rather than just publish guidance.",
         challenges: [
             "Policy-to-practice gaps",
             "Evidence collection overhead",
@@ -182,10 +182,10 @@ export const useCases: UseCase[] = [
             "Reporting complexity",
         ],
         solutions: [
-            { title: "Audit Trails", description: "Capture relevant records for review and reporting." },
-            { title: "Policy Guardrails", description: "Reduce manual policy enforcement workload." },
-            { title: "Retention Controls", description: "Align data handling with compliance posture." },
-            { title: "Usage Analytics", description: "Monitor policy adherence trends over time." },
+            { title: "Audit Trails", description: "Capture the records needed for internal review, issue escalation, and leadership reporting." },
+            { title: "Policy Guardrails", description: "Reduce manual enforcement workload by moving policy into operational checks." },
+            { title: "Retention Controls", description: "Align data handling with the organization's documented compliance posture." },
+            { title: "Usage Analytics", description: "Monitor whether adherence is improving, where exceptions cluster, and which controls need adjustment." },
         ],
     },
     {
@@ -195,7 +195,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Give department managers practical controls for budgets, access, and approved AI workflows.",
         headline: "AI Governance for Department Managers",
         subheadline: "Enable your team with clear guardrails",
-        description: "Department managers need fast team enablement with clear policy boundaries and budget accountability.",
+        description: "Department managers need their teams to move quickly with AI while staying inside approved policy, predictable budgets, and workflow standards that do not require constant central intervention.",
         challenges: [
             "Balancing speed and control",
             "Managing team spend",
@@ -204,10 +204,10 @@ export const useCases: UseCase[] = [
             "Escalating policy exceptions",
         ],
         solutions: [
-            { title: "Department Budgets", description: "Set clear limits and alerts for team usage." },
-            { title: "Preset Workflows", description: "Standardize team tasks with approved defaults." },
-            { title: "Role-Based Access", description: "Delegate team administration without over-permissioning." },
-            { title: "Usage Analytics", description: "Review team trends and adjust controls as needed." },
+            { title: "Department Budgets", description: "Set clear usage boundaries and escalation triggers before spend becomes a surprise." },
+            { title: "Preset Workflows", description: "Standardize recurring team tasks with approved defaults instead of prompt-by-prompt improvisation." },
+            { title: "Role-Based Access", description: "Delegate team administration without giving managers permissions they do not need." },
+            { title: "Usage Analytics", description: "Review whether the team is adopting AI effectively or simply generating more activity." },
         ],
     },
     {
@@ -217,7 +217,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Apply enforceable AI policy controls across teams through centralized governance.",
         headline: "AI Policy Enforcement",
         subheadline: "Move from written policy to operational controls",
-        description: "Organizations can translate policy into active controls for daily AI usage across departments.",
+        description: "Organizations can turn policy from a written expectation into an operational system of checks, routing decisions, and review processes that govern daily AI usage across departments.",
         challenges: [
             "Written policy without enforcement",
             "Manual review burden",
@@ -226,10 +226,10 @@ export const useCases: UseCase[] = [
             "Limited policy feedback loops",
         ],
         solutions: [
-            { title: "Policy Guardrails", description: "Apply rule-based and contextual checks in workflows." },
-            { title: "Sensitive Data Protection", description: "Reduce accidental disclosures during AI usage." },
-            { title: "Audit Trails", description: "Track how policy is applied over time." },
-            { title: "Usage Analytics", description: "Use data to tune policy controls." },
+            { title: "Policy Guardrails", description: "Apply rule-based and contextual checks directly in employee workflows rather than relying on after-the-fact review." },
+            { title: "Sensitive Data Protection", description: "Reduce accidental disclosures that often turn policy gaps into real incidents." },
+            { title: "Audit Trails", description: "Track how policy is applied, where it is bypassed, and which exceptions keep recurring." },
+            { title: "Usage Analytics", description: "Use production data to tune policies instead of assuming the initial rule set is correct." },
         ],
     },
     {
@@ -239,7 +239,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Control AI spend through budgeting, allocation, and team-level usage visibility.",
         headline: "AI Cost Governance",
         subheadline: "Keep AI spend aligned with business priorities",
-        description: "Cost governance helps finance and operations teams scale AI usage without losing financial control.",
+        description: "Cost governance helps finance, IT, and operations leaders scale AI usage without losing visibility into where spend originates, which workflows justify premium models, and when usage patterns require intervention.",
         challenges: [
             "Unclear spend ownership",
             "Budget overruns",
@@ -248,10 +248,10 @@ export const useCases: UseCase[] = [
             "Difficult forecasting",
         ],
         solutions: [
-            { title: "Department Budgets", description: "Assign and enforce team-level spending boundaries." },
-            { title: "Usage Analytics", description: "Track spend trends and budget utilization." },
-            { title: "Model Governance", description: "Align model availability with cost posture." },
-            { title: "Onboarding Controls", description: "Apply budget defaults during team rollout." },
+            { title: "Department Budgets", description: "Assign and enforce team-level spending boundaries with owners who can explain and manage variance." },
+            { title: "Usage Analytics", description: "Track spend concentration, budget utilization, and cost-per-workflow rather than just total monthly usage." },
+            { title: "Model Governance", description: "Align model availability with cost posture so expensive tiers are deliberate, not accidental defaults." },
+            { title: "Onboarding Controls", description: "Apply budget defaults during rollout so teams inherit guardrails instead of asking for them later." },
         ],
     },
     {
@@ -261,7 +261,7 @@ export const useCases: UseCase[] = [
         metaDescription: "Deploy an enterprise AI chat experience with policy, privacy, and budget controls built in.",
         headline: "Safe Enterprise AI Chat",
         subheadline: "Give teams AI access with governance from day one",
-        description: "Organizations can provide AI chat capabilities while preserving policy controls, access boundaries, and spend governance.",
+        description: "Organizations can provide a broad internal AI chat experience without letting convenience override policy enforcement, sensitive-data handling, model access rules, or department-level cost discipline.",
         challenges: [
             "Need for broad team adoption",
             "Safety and policy requirements",
@@ -270,10 +270,10 @@ export const useCases: UseCase[] = [
             "Operational consistency",
         ],
         solutions: [
-            { title: "Policy Guardrails", description: "Apply policy checks to daily chat usage." },
-            { title: "Sensitive Data Protection", description: "Protect confidential content in prompts and responses." },
-            { title: "Department Budgets", description: "Control spend by team with alerts and limits." },
-            { title: "Role-Based Access", description: "Manage who can access what capabilities." },
+            { title: "Policy Guardrails", description: "Apply policy checks to daily chat usage so the default experience is safe rather than permissive." },
+            { title: "Sensitive Data Protection", description: "Protect confidential content in prompts and responses across broad employee usage." },
+            { title: "Department Budgets", description: "Control spend by team with alerts, thresholds, and clear ownership as adoption spreads." },
+            { title: "Role-Based Access", description: "Manage who can access which models, settings, and governance actions inside the chat environment." },
         ],
     },
 ];

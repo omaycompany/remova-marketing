@@ -3,7 +3,9 @@ import Link from "next/link";
 import { features } from "@/content/features";
 import { ArrowRight, Check, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return features.map((f) => ({ slug: f.slug }));
@@ -12,22 +14,24 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const feature = features.find((f) => f.slug === params.slug);
     if (!feature) return {};
-    const title = `${feature.metaTitle} | AI for Companies`;
-    const description = `Discover how ${feature.title} supports secure, governed enterprise AI usage. ${feature.metaDescription}`;
+    const title = stripTitleSuffix(feature.metaTitle);
+    const description = feature.metaDescription;
     return {
         title,
         description,
         openGraph: {
             title,
             description,
-            url: `https://www.remova.org/features/${feature.slug}`,
-            siteName: "Remova",
+            url: absoluteUrl(`/features/${feature.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
             type: "website",
         },
         twitter: {
             card: "summary_large_image",
             title,
             description,
+            images: [DEFAULT_OG_IMAGE_URL],
         },
         alternates: { canonical: `/features/${feature.slug}` },
     };
@@ -45,7 +49,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         "brand": { "@type": "Brand", "name": "Remova" },
         "offers": {
             "@type": "Offer",
-            "url": `https://www.remova.org/features/${feature.slug}`,
+            "url": absoluteUrl(`/features/${feature.slug}`),
             "availability": "https://schema.org/InStock"
         }
     };
@@ -54,7 +58,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
     const defaultFaqs = [
         {
             question: `How does Remova's ${feature.title} benefit my company?`,
-            answer: `${feature.title} provides critical governance and safety by ${feature.subheadline.toLowerCase()}. It ensures that when your organization uses AI for companies, you maintain full control over security and costs.`
+            answer: `${feature.title} helps your company operationalize governance in a specific area instead of relying on policy documents and manual review alone. It is designed to make ${feature.subheadline.toLowerCase()} a repeatable system behavior across teams.`
         },
         {
             question: `Is ${feature.title} compatible with all AI models?`,
@@ -62,7 +66,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         },
         {
             question: `How quickly can we deploy ${feature.title}?`,
-            answer: `Deployment is near-instant. Once you've added your users to Remova, ${feature.title} is applied automatically to all AI interactions based on your department-level policies.`
+            answer: `Teams can deploy ${feature.title.toLowerCase()} quickly once ownership, policy defaults, and rollout scope are defined. The actual timeline depends less on setup effort and more on how clearly your organization has decided which workflows and departments should be governed first.`
         }
     ];
 
@@ -131,12 +135,12 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Link
+                        <ExternalAppLink
                             href="https://app.remova.org/register"
                             className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-10 py-5 text-lg font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 text-center"
                         >
                             Sign Up
-                        </Link>
+                        </ExternalAppLink>
                         <Link
                             href="/features"
                             className="rounded-[2.5rem] border-2 border-slate-200 dark:border-white/10 px-10 py-5 text-lg font-black text-slate-900 dark:text-white transition hover:bg-slate-50 dark:hover:bg-white/5 text-center"
@@ -242,12 +246,12 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
                         Deploy {feature.title.toLowerCase()} and related controls with Remova&apos;s enterprise AI governance platform.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

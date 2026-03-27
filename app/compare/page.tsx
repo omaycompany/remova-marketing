@@ -3,11 +3,25 @@ import Link from "next/link";
 import { comparisons } from "@/content/comparisons";
 import { Scale, ArrowRight, Zap } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "AI Comparisons | AI for Companies — Side-by-Side Analysis",
+    title: "Enterprise AI Comparisons",
     description: "Detailed side-by-side analysis of enterprise AI platforms, including security, governance, and cost management capabilities.",
-    openGraph: { title: "AI Comparisons | AI for Companies", description: "Side-by-side analysis of enterprise AI platforms and controls.", url: "https://www.remova.org/compare", siteName: "Remova", type: "website" },
+    openGraph: {
+        title: "Enterprise AI Comparisons",
+        description: "Side-by-side analysis of enterprise AI platforms and controls.",
+        url: absoluteUrl("/compare"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Comparisons",
+        description: "Side-by-side analysis of enterprise AI platforms and controls.",
+        images: [DEFAULT_OG_IMAGE_URL]
+    },
     alternates: { canonical: "/compare" },
 };
 

@@ -3,7 +3,9 @@ import Link from "next/link";
 import { useCases } from "@/content/use-cases";
 import { ArrowRight, Check, AlertTriangle, Building2, User, Cog, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return useCases.map((u) => ({ slug: u.slug }));
@@ -12,13 +14,20 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const uc = useCases.find((u) => u.slug === params.slug);
     if (!uc) return {};
-    const title = `${uc.metaTitle} | AI for Companies`;
-    const description = `Discover ${uc.headline} solutions with enterprise AI governance controls. ${uc.metaDescription}`;
+    const title = stripTitleSuffix(uc.metaTitle);
+    const description = uc.metaDescription;
     return {
         title,
         description,
-        openGraph: { title, description, url: `https://www.remova.org/use-cases/${uc.slug}`, siteName: "Remova", type: "website" },
-        twitter: { card: "summary_large_image", title, description },
+        openGraph: {
+            title,
+            description,
+            url: absoluteUrl(`/use-cases/${uc.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
+            type: "website"
+        },
+        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
         alternates: { canonical: `/use-cases/${uc.slug}` },
     };
 }
@@ -44,15 +53,15 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
     const defaultFaqs = [
         {
             question: `Is Remova suitable for ${uc.headline}?`,
-            answer: `Yes. Remova is specifically designed to handle the complex security and governance requirements of ${uc.headline.toLowerCase()}. It provides the necessary controls to ensure that AI for companies is deployed safely and compliantly.`
+            answer: `Yes. Remova is designed for organizations that need to support ${uc.headline.toLowerCase()} with clearer policy enforcement, role ownership, and operational visibility instead of treating AI adoption as an unmanaged tool rollout.`
         },
         {
             question: `How does Remova address ${uc.challenges[0].toLowerCase()}?`,
-            answer: `Remova addresses ${uc.challenges[0].toLowerCase()} through our ${uc.solutions[0].title.toLowerCase()} and other integrated safety layers, ensuring that your ${uc.category} stays protected during AI interactions.`
+            answer: `Remova addresses ${uc.challenges[0].toLowerCase()} through ${uc.solutions[0].title.toLowerCase()} plus supporting controls for access, monitoring, and workflow governance. That gives teams an operating model for the problem instead of a single isolated feature.`
         },
         {
             question: `Can we use any AI model with this solution?`,
-            answer: `Remova supports a broad model catalog and applies the same ${uc.headline} safety policies regardless of provider choice.`
+            answer: `Remova supports a broad model catalog while keeping policy, access, and budget controls consistent across providers. That lets teams choose models deliberately instead of weakening governance every time model choice changes.`
         }
     ];
 
@@ -108,12 +117,12 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                         </ul>
                     </div>
 
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-10 py-5 text-lg font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 inline-block"
                     >
                         Sign Up
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
 
@@ -180,14 +189,14 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                         SAFE AI FOR COMPANIES
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        See how Remova can help your {uc.category === "industry" ? "industry" : "team"} deploy enterprise AI with governance and safety controls.
+                        See how Remova can help your {uc.category === "industry" ? "organization" : "team"} handle {uc.headline.toLowerCase()} with clearer controls, accountability, and rollout discipline.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>

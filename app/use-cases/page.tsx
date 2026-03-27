@@ -3,11 +3,25 @@ import Link from "next/link";
 import { useCases } from "@/content/use-cases";
 import { ArrowRight, Briefcase, Building, Cog } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Use Cases | AI for Companies — Enterprise AI Solutions",
+    title: "Enterprise AI Use Cases",
     description: "Discover the most effective use cases for AI for companies across industries and roles. From legal to engineering, secure your AI deployment.",
-    openGraph: { title: "Use Cases | AI for Companies", description: "Discover the most effective use cases for AI for companies.", url: "https://www.remova.org/use-cases", siteName: "Remova", type: "website" },
+    openGraph: {
+        title: "Enterprise AI Use Cases",
+        description: "Discover the most effective use cases for AI for companies.",
+        url: absoluteUrl("/use-cases"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Use Cases",
+        description: "Discover the most effective use cases for AI for companies.",
+        images: [DEFAULT_OG_IMAGE_URL]
+    },
     alternates: { canonical: "/use-cases" },
 };
 

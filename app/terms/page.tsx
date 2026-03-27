@@ -1,10 +1,29 @@
+import { Metadata } from "next";
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from '@/lib/seo';
 
-export const metadata = {
-    title: "Terms of Service | Remova",
+export const metadata: Metadata = {
+    title: "Terms of Service",
     description: "Legal terms and conditions for using the Remova platform.",
+    alternates: {
+        canonical: "/terms",
+    },
+    openGraph: {
+        title: "Terms of Service",
+        description: "Legal terms and conditions for using the Remova platform.",
+        url: absoluteUrl("/terms"),
+        siteName: SITE_NAME,
+        images: [DEFAULT_OG_IMAGE],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Terms of Service",
+        description: "Legal terms and conditions for using the Remova platform.",
+        images: [DEFAULT_OG_IMAGE_URL],
+    },
 };
 
 export default function TermsPage() {

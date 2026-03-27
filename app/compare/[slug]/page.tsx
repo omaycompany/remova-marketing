@@ -3,7 +3,9 @@ import Link from "next/link";
 import { comparisons } from "@/content/comparisons";
 import { ArrowRight, Check, X, Scale, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
+import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return comparisons.map((c) => ({ slug: c.slug }));
@@ -12,13 +14,20 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const comp = comparisons.find((c) => c.slug === params.slug);
     if (!comp) return {};
-    const title = `${comp.metaTitle} | AI for Companies`;
-    const description = `${comp.metaDescription} Compare enterprise AI platforms across governance, security, and operational controls.`;
+    const title = stripTitleSuffix(comp.metaTitle);
+    const description = comp.metaDescription;
     return {
         title,
         description,
-        openGraph: { title, description, url: `https://www.remova.org/compare/${comp.slug}`, siteName: "Remova", type: "website" },
-        twitter: { card: "summary_large_image", title, description },
+        openGraph: {
+            title,
+            description,
+            url: absoluteUrl(`/compare/${comp.slug}`),
+            siteName: SITE_NAME,
+            images: [DEFAULT_OG_IMAGE],
+            type: "website"
+        },
+        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
         alternates: { canonical: `/compare/${comp.slug}` },
     };
 }
@@ -32,19 +41,28 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
         "@type": "Article",
         "headline": comp.headline,
         "description": comp.metaDescription,
+        "mainEntityOfPage": absoluteUrl(`/compare/${comp.slug}`),
+        "image": DEFAULT_OG_IMAGE_URL,
         "author": { "@type": "Organization", "name": "Remova" },
-        "publisher": { "@type": "Organization", "name": "Remova" }
+        "publisher": {
+            "@type": "Organization",
+            "name": "Remova",
+            "logo": {
+                "@type": "ImageObject",
+                "url": absoluteUrl("/icon.png"),
+            },
+        }
     };
 
     // Default unique FAQs for comparisons
     const defaultFaqs = [
         {
             question: `How should we choose among the platforms listed?`,
-            answer: `Prioritize your operational requirements first: governance controls, identity model, cost management, deployment options, and integration fit. The right choice depends on your risk profile and rollout scope.`
+            answer: `Start with the operating problem you are actually trying to solve: policy enforcement, access control, budgeting, oversight, deployment speed, or ecosystem fit. The right choice is the platform model that best matches your governance maturity, rollout complexity, and tolerance for manual control work.`
         },
         {
             question: `How does Remova compare to ${comp.contenders[0].name}?`,
-            answer: `${comp.contenders[0].name} may be strong in areas like ${comp.contenders[0].strengths[0].toLowerCase()}, while Remova emphasizes centralized governance, policy controls, and multi-model cost management for enterprise teams.`
+            answer: `${comp.contenders[0].name} may be attractive for ${comp.contenders[0].strengths[0].toLowerCase()}, but Remova is built for buyers who care more about enforceable governance, department-level ownership, and operating consistency across teams than lowest-friction first use.`
         },
         {
             question: `Are these comparisons based on current data?`,
@@ -119,15 +137,15 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Expert comparison of top solutions for AI for companies.</span>
+                                <span>{comp.type === "roundup" ? "This guide compares platform models, not just feature lists." : "This comparison is framed around operating fit, not surface-level convenience."}</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Detailed analysis of {comp.contenders.map(c => c.name).join(', ')}.</span>
+                                <span>{comp.contenders.map(c => c.name).join(", ")} solve different parts of the enterprise AI problem and should be judged on governance depth as much as usability.</span>
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Remova focuses on governed, multi-model enterprise AI deployment.</span>
+                                <span>{comp.verdict}</span>
                             </li>
                         </ul>
                     </div>
@@ -228,14 +246,14 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                         ENTERPRISE AI COMPARISON
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Enterprise governance, policy controls, and granular cost management in one platform.
+                        Use this comparison to choose the platform model that best matches your control requirements, rollout complexity, and governance maturity.
                     </p>
-                    <Link
+                    <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
                         Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
-                    </Link>
+                    </ExternalAppLink>
                 </div>
             </section>
         </div>
