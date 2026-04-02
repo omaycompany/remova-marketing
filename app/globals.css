@@ -27,6 +27,23 @@ body {
             rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+html.demo-fullscreen,
+body.demo-fullscreen {
+    height: 100dvh;
+    overflow: hidden;
+}
+
+body.demo-fullscreen>header,
+body.demo-fullscreen>footer {
+    display: none !important;
+}
+
+body.demo-fullscreen>main {
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
 @keyframes draw {
     0% {
         stroke-dashoffset: 100;

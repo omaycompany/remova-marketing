@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import DemoFullscreenMode from "@/components/demo/DemoFullscreenMode";
 import GuestProductDemo from "@/components/demo/GuestProductDemo";
 
 export const metadata: Metadata = {
@@ -11,7 +12,8 @@ export const metadata: Metadata = {
 
 export default function DemoPage() {
     return (
-        <div className="bg-white pb-0 pt-24 dark:bg-[#131314]">
+        <div className="h-full min-h-[100dvh] bg-white dark:bg-[#131314]">
+            <DemoFullscreenMode />
             <GuestProductDemo />
         </div>
     );
