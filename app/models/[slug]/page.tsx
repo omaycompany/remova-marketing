@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const landing = modelLandings.find((entry) => entry.slug === params.slug);
     if (!landing) return {};
 
-    const seoTitle = `${trimForTitle(landing.heroTitle, 52)} | Remova`;
+    const seoTitle = trimForTitle(landing.metaTitle, 60);
 
     return {
         title: { absolute: seoTitle },
@@ -48,5 +48,28 @@ export default function ModelLandingPage({ params }: { params: { slug: string } 
     const model = models.find((entry) => entry.id === landing.modelId);
     if (!model) notFound();
 
-    return <ModelLandingTemplate model={model} landing={landing} />;
+    const relatedCandidates = modelLandings
+        .filter((entry) => entry.slug !== landing.slug)
+        .map((entry) => {
+            const candidateModel = models.find((modelEntry) => modelEntry.id === entry.modelId);
+            if (!candidateModel) return null;
+            return { landing: entry, model: candidateModel };
+        })
+        .filter(
+            (
+                entry
+            ): entry is {
+                landing: (typeof modelLandings)[number];
+                model: (typeof models)[number];
+            } => Boolean(entry)
+        );
+
+    const relatedLandings = [
+        ...relatedCandidates.filter((entry) => entry.model.provider === model.provider),
+        ...relatedCandidates.filter((entry) => entry.model.provider !== model.provider),
+    ]
+        .slice(0, 8)
+        .map((entry) => ({ slug: entry.landing.slug, title: entry.landing.heroTitle }));
+
+    return <ModelLandingTemplate model={model} landing={landing} relatedLandings={relatedLandings} />;
 }
