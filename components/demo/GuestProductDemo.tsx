@@ -1,9 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import {
     AlertTriangle,
+    Check,
+    ChevronDown,
     Download,
     Lock,
     Menu,
@@ -45,11 +47,21 @@ const sampleMessages = [
     },
 ];
 
+const modelOptions = [
+    "Remova 1.0",
+    "GPT-5.4",
+    "Claude Sonnet 4",
+    "Gemini 2.5 Pro",
+];
+
 export default function GuestProductDemo() {
     const [activeTab, setActiveTab] = useState<DemoTab>("chat");
     const [menuOpen, setMenuOpen] = useState(true);
     const [showSignup, setShowSignup] = useState(false);
     const [blockedAction, setBlockedAction] = useState("send messages");
+    const [selectedModel, setSelectedModel] = useState(modelOptions[0]);
+    const [showModelMenu, setShowModelMenu] = useState(false);
+    const modelMenuRef = useRef<HTMLDivElement | null>(null);
 
     const totals = useMemo(() => {
         const spent = budgetData.reduce((sum, item) => sum + item.spent, 0);
@@ -62,6 +74,18 @@ export default function GuestProductDemo() {
         setBlockedAction(action);
         setShowSignup(true);
     }
+
+    useEffect(() => {
+        if (!showModelMenu) return;
+        const handleClickOutside = (event: MouseEvent) => {
+            if (!modelMenuRef.current) return;
+            if (!modelMenuRef.current.contains(event.target as Node)) {
+                setShowModelMenu(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [showModelMenu]);
 
     return (
         <>
@@ -175,8 +199,8 @@ export default function GuestProductDemo() {
 
                         {activeTab === "chat" ? (
                             <div className="flex h-full min-h-0 flex-1 flex-col px-2 py-3 sm:px-6 sm:py-5">
-                                <div className="flex-1 overflow-y-auto rounded-2xl border border-slate-200 bg-slate-50 p-3 dark:border-white/10 dark:bg-[#1e1f20] sm:p-5">
-                                    <div className="space-y-3">
+                                <div className="flex-1 overflow-y-auto px-2 sm:px-0">
+                                    <div className="space-y-3 py-2">
                                         {sampleMessages.map((message) => (
                                             <div
                                                 key={`${message.role}-${message.text}`}
@@ -196,7 +220,7 @@ export default function GuestProductDemo() {
                                         event.preventDefault();
                                         openSignup("send messages");
                                     }}
-                                    className="mt-3 rounded-[28px] border border-slate-200 bg-slate-100 p-2 dark:border-white/5 dark:bg-[#1e1f20]"
+                                    className="mt-3 rounded-[28px] border border-slate-200 bg-slate-100 p-2 shadow-sm transition-colors focus-within:bg-slate-200 dark:border-white/5 dark:bg-[#1e1f20] dark:focus-within:bg-[#282a2c]"
                                 >
                                     <div className="flex items-end gap-2">
                                         <textarea
@@ -204,13 +228,42 @@ export default function GuestProductDemo() {
                                             placeholder="Enter a prompt here"
                                             className="h-12 max-h-52 w-full resize-none bg-transparent px-3 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-500 dark:text-[#e3e3e3] dark:placeholder:text-[#e3e3e3]/50"
                                         />
-                                        <button
-                                            type="submit"
-                                            className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-200 text-slate-700 hover:bg-slate-300 dark:bg-[#37393b] dark:text-[#e3e3e3]"
-                                            aria-label="Send"
-                                        >
-                                            <Send className="h-4 w-4" />
-                                        </button>
+                                        <div className="relative flex items-center rounded-full bg-slate-200 p-1 dark:bg-[#37393b]" ref={modelMenuRef}>
+                                            <button
+                                                type="submit"
+                                                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-slate-700 hover:bg-white/40 dark:text-[#e3e3e3] dark:hover:bg-white/10"
+                                                aria-label="Send"
+                                            >
+                                                <Send className="h-4 w-4" />
+                                            </button>
+                                            <button
+                                                type="button"
+                                                onClick={() => setShowModelMenu((prev) => !prev)}
+                                                className="inline-flex items-center gap-1 rounded-full px-2 py-1 text-[11px] font-medium text-slate-700 hover:bg-white/40 dark:text-[#e3e3e3] dark:hover:bg-white/10"
+                                            >
+                                                <span className="max-w-[7.5rem] truncate">{selectedModel}</span>
+                                                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${showModelMenu ? "rotate-180" : ""}`} />
+                                            </button>
+
+                                            {showModelMenu && (
+                                                <div className="absolute bottom-12 right-0 z-20 w-52 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-[#1f2022]">
+                                                    {modelOptions.map((model) => (
+                                                        <button
+                                                            key={model}
+                                                            type="button"
+                                                            onClick={() => {
+                                                                setSelectedModel(model);
+                                                                setShowModelMenu(false);
+                                                            }}
+                                                            className="flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-xs text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/10"
+                                                        >
+                                                            <span>{model}</span>
+                                                            {selectedModel === model && <Check className="h-3.5 w-3.5 text-emerald-500" />}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 </form>
                             </div>
