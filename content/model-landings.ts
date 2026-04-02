@@ -1187,7 +1187,7 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
         throw new Error(`Missing model data for landing seed: ${seed.modelId}`);
     }
 
-    const metaTitle = `${model.name} | Enterprise Model Landing`;
+    const metaTitle = buildMetaTitle(model.name);
     const metaDescription = `Detailed enterprise profile for ${model.name}: positioning, strengths, tradeoffs, and deployment guidance.`;
 
     return {
@@ -1351,6 +1351,13 @@ function trimCopy(value: string, maxLength: number) {
     return `${value.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
 }
 
+function buildMetaTitle(modelName: string) {
+    const suffix = " Pricing, Context Window & Use Cases | Remova";
+    const maxLength = 60;
+    const maxNameLength = Math.max(12, maxLength - suffix.length);
+    return `${trimCopy(modelName, maxNameLength)}${suffix}`;
+}
+
 function rotatePick<T>(items: T[], start: number, count: number) {
     if (items.length === 0 || count <= 0) return [];
     const selected: T[] = [];
@@ -1463,7 +1470,7 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         heroLabel: theme.heroLabel,
         heroTitle: model.name,
         heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, optimized for ${fitPhrase} in enterprise environments.`,
-        metaTitle: `${model.name} | Enterprise Model Landing`,
+        metaTitle: buildMetaTitle(model.name),
         metaDescription: trimCopy(
             `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPrice(model.inputPer1M)} input), and deployment guidance for ${topUseCasesText}.`,
             158

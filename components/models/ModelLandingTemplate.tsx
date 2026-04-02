@@ -16,9 +16,10 @@ function formatPrice(price: number) {
 interface Props {
     model: ModelEntry;
     landing: ModelLanding;
+    relatedLandings: { slug: string; title: string }[];
 }
 
-export default function ModelLandingTemplate({ model, landing }: Props) {
+export default function ModelLandingTemplate({ model, landing, relatedLandings }: Props) {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
@@ -175,6 +176,31 @@ export default function ModelLandingTemplate({ model, landing }: Props) {
                     </div>
                 </div>
             </section>
+
+            {relatedLandings.length > 0 && (
+                <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                    <div className="container mx-auto max-w-6xl">
+                        <h2 className="mb-3 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
+                            Related Model Pages
+                        </h2>
+                        <p className="mb-8 text-base font-medium text-slate-600 dark:text-slate-300">
+                            Explore adjacent model profiles for routing and benchmarking decisions.
+                        </p>
+                        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                            {relatedLandings.map((item) => (
+                                <li key={item.slug}>
+                                    <Link
+                                        href={`/models/${item.slug}`}
+                                        className="block rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] px-4 py-3 text-sm font-bold text-slate-800 dark:text-slate-200 hover:border-slate-400 dark:hover:border-white/30 hover:text-slate-900 dark:hover:text-white transition-colors"
+                                    >
+                                        {item.title}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            )}
 
             <LeadMagnetSection magnet="use-case-selector" tone="slate" />
 
