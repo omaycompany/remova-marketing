@@ -3,14 +3,16 @@ import Link from "next/link";
 import { useCases } from "@/content/use-cases";
 import { ArrowRight, Briefcase, Building, Cog } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import ItemListSchema from "@/components/seo/ItemListSchema";
+import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Enterprise AI Use Cases",
-    description: "Discover the most effective use cases for AI for companies across industries and roles. From legal to engineering, secure your AI deployment.",
+    title: { absolute: "Enterprise AI Use Cases | Remova" },
+    description: "Enterprise AI use cases across industries, roles, and business functions for secure deployment planning.",
     openGraph: {
-        title: "Enterprise AI Use Cases",
-        description: "Discover the most effective use cases for AI for companies.",
+        title: "Enterprise AI Use Cases | Remova",
+        description: "Enterprise AI use cases across industries, roles, and business functions for secure deployment planning.",
         url: absoluteUrl("/use-cases"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -18,20 +20,34 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Use Cases",
-        description: "Discover the most effective use cases for AI for companies.",
+        title: "Enterprise AI Use Cases | Remova",
+        description: "Enterprise AI use cases across industries, roles, and business functions for secure deployment planning.",
         images: [DEFAULT_OG_IMAGE_URL]
     },
     alternates: { canonical: "/use-cases" },
 };
 
 const icons: Record<string, typeof Briefcase> = { industry: Building, role: Briefcase, function: Cog };
+const useCaseItems = useCases.map((useCase) => ({
+    name: useCase.headline,
+    url: absoluteUrl(`/use-cases/${useCase.slug}`),
+}));
+const relatedHubs = [
+    { href: "/features", label: "Features" },
+    { href: "/models", label: "Models" },
+    { href: "/compare", label: "Compare" },
+    { href: "/alternative", label: "Alternatives" },
+    { href: "/glossary", label: "Glossary" },
+    { href: "/blog", label: "Blog" },
+];
 
 export default function UseCasesIndex() {
     const categories = Array.from(new Set(useCases.map(u => u.category)));
 
     return (
         <div className="flex flex-col">
+            <ItemListSchema name="Enterprise AI Use Cases" items={useCaseItems} />
+
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
                 <div className="container mx-auto max-w-6xl relative z-10">
@@ -72,6 +88,8 @@ export default function UseCasesIndex() {
                     })}
                 </div>
             </section>
+
+            <RelatedHubs hubs={relatedHubs} />
 
             <LeadMagnetSection magnet="use-case-selector" tone="slate" />
 

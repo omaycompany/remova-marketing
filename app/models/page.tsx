@@ -7,14 +7,16 @@ import { models, modelsLastUpdated } from "@/content/models";
 import { modelLandings } from "@/content/model-landings";
 import ModelsListView from "@/components/models/ModelsListView";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import ItemListSchema from "@/components/seo/ItemListSchema";
+import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Enterprise AI Model Catalog",
-    description: "Latest AI model snapshot for enterprise teams, including context windows, pricing, and best-fit use cases.",
+    title: { absolute: "Enterprise AI Model Catalog | Remova" },
+    description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
     openGraph: {
-        title: "Enterprise AI Model Catalog",
-        description: "Current model landscape for enterprise AI deployment.",
+        title: "Enterprise AI Model Catalog | Remova",
+        description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
         url: absoluteUrl("/models"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -22,36 +24,36 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Model Catalog",
-        description: "Current model landscape for enterprise AI deployment.",
+        title: "Enterprise AI Model Catalog | Remova",
+        description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
         images: [DEFAULT_OG_IMAGE_URL],
     },
     alternates: { canonical: "/models" },
 };
 
+const modelItems = [...modelLandings]
+    .sort((a, b) => a.heroTitle.localeCompare(b.heroTitle))
+    .map((landing) => ({
+        name: landing.heroTitle,
+        url: absoluteUrl(`/models/${landing.slug}`),
+    }));
+
+const relatedHubs = [
+    { href: "/features", label: "Features" },
+    { href: "/use-cases", label: "Use Cases" },
+    { href: "/compare", label: "Compare" },
+    { href: "/alternative", label: "Alternatives" },
+    { href: "/glossary", label: "Glossary" },
+    { href: "/blog", label: "Blog" },
+];
+
 export default function ModelsPage() {
     const landingByModelId = Object.fromEntries(modelLandings.map((landing) => [landing.modelId, landing.slug]));
     const sortedLandings = [...modelLandings].sort((a, b) => a.heroTitle.localeCompare(b.heroTitle));
 
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Enterprise AI Models",
-        "numberOfItems": models.length,
-        "itemListElement": models.map((model, index) => {
-            const slug = landingByModelId[model.id];
-            return {
-                "@type": "ListItem",
-                position: index + 1,
-                name: model.name,
-                ...(slug ? { url: absoluteUrl(`/models/${slug}`) } : {}),
-            };
-        }),
-    };
-
     return (
         <div className="flex flex-col">
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <ItemListSchema name="Enterprise AI Model Catalog" items={modelItems} />
 
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
@@ -98,6 +100,8 @@ export default function ModelsPage() {
                     </ul>
                 </div>
             </section>
+
+            <RelatedHubs hubs={relatedHubs} />
 
             <LeadMagnetSection magnet="use-case-selector" tone="slate" />
 

@@ -3,14 +3,16 @@ import Link from "next/link";
 import { alternatives } from "@/content/alternatives";
 import { Repeat, ArrowRight } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import ItemListSchema from "@/components/seo/ItemListSchema";
+import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Enterprise AI Alternatives",
-    description: "Compare Remova with leading AI platforms across security, governance, and operational cost controls.",
+    title: { absolute: "Enterprise AI Alternatives | Remova" },
+    description: "Enterprise AI alternatives and comparisons across security, governance, and cost controls.",
     openGraph: {
-        title: "Enterprise AI Alternatives",
-        description: "How Remova compares to leading platforms for AI for companies.",
+        title: "Enterprise AI Alternatives | Remova",
+        description: "Enterprise AI alternatives and comparisons across security, governance, and cost controls.",
         url: absoluteUrl("/alternative"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -18,12 +20,26 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Alternatives",
-        description: "How Remova compares to leading platforms for AI for companies.",
+        title: "Enterprise AI Alternatives | Remova",
+        description: "Enterprise AI alternatives and comparisons across security, governance, and cost controls.",
         images: [DEFAULT_OG_IMAGE_URL]
     },
     alternates: { canonical: "/alternative" },
 };
+
+const alternativeItems = alternatives.map((alternative) => ({
+    name: alternative.headline,
+    url: absoluteUrl(`/alternative/${alternative.slug}`),
+}));
+
+const relatedHubs = [
+    { href: "/compare", label: "Compare" },
+    { href: "/features", label: "Features" },
+    { href: "/models", label: "Models" },
+    { href: "/use-cases", label: "Use Cases" },
+    { href: "/glossary", label: "Glossary" },
+    { href: "/blog", label: "Blog" },
+];
 
 export default function AlternativesIndex() {
     const buyingCriteria = [
@@ -35,6 +51,8 @@ export default function AlternativesIndex() {
 
     return (
         <div className="flex flex-col">
+            <ItemListSchema name="Enterprise AI Alternatives" items={alternativeItems} />
+
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
                 <div className="container mx-auto max-w-6xl relative z-10">
@@ -78,6 +96,8 @@ export default function AlternativesIndex() {
                     </div>
                 </div>
             </section>
+
+            <RelatedHubs hubs={relatedHubs} />
 
             <LeadMagnetSection magnet="readiness-check" tone="slate" />
 

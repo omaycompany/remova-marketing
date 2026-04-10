@@ -47,7 +47,7 @@ const landingSeeds: ModelLandingSeed[] = [
     {
         slug: "grok-4-20-multi-agent-beta",
         modelId: "x-ai/grok-4.20-multi-agent-beta",
-        heroLabel: "Model Landing Template",
+        heroLabel: "Model Profile",
         heroSubtitle:
             "A high-context, multi-agent model profile for enterprise research and complex tool-driven workflows.",
         providerSummary:
@@ -1188,7 +1188,7 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
     }
 
     const metaTitle = buildMetaTitle(model.name);
-    const metaDescription = `Detailed enterprise profile for ${model.name}: positioning, strengths, tradeoffs, and deployment guidance.`;
+    const metaDescription = `A practical enterprise guide to ${model.name}, covering fit, strengths, tradeoffs, and rollout considerations.`;
 
     return {
         slug: seed.slug,
@@ -1221,29 +1221,29 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
 
 const batchThemes = [
     {
-        heroLabel: "Capability Assessment",
-        governanceLine: "Use role-based access before broad team rollout.",
-        rolloutFocus: "pilot this model on one workflow before wider enablement.",
+        heroLabel: "Quick Profile",
+        governanceLine: "Keep role-based access in place before broad rollout.",
+        rolloutFocus: "Start with one workflow, then expand after you verify quality and spend.",
     },
     {
-        heroLabel: "Production Readiness Profile",
-        governanceLine: "Enforce policy checks and output review on sensitive workflows.",
-        rolloutFocus: "monitor quality and spend weekly during early deployment.",
+        heroLabel: "Readiness Notes",
+        governanceLine: "Use policy checks and output review on sensitive workflows.",
+        rolloutFocus: "Watch quality and spend weekly during early deployment.",
     },
     {
-        heroLabel: "Enterprise Deployment Brief",
-        governanceLine: "Route requests by policy tier to prevent capability overuse.",
-        rolloutFocus: "define escalation rules to premium models before launch.",
+        heroLabel: "Deployment Brief",
+        governanceLine: "Route requests by policy tier so teams do not overuse capability.",
+        rolloutFocus: "Define escalation rules to premium models before launch.",
     },
     {
-        heroLabel: "Operational Fit Analysis",
+        heroLabel: "Operational Review",
         governanceLine: "Apply department budgets and alert thresholds from day one.",
-        rolloutFocus: "measure business impact against cost before scaling usage.",
+        rolloutFocus: "Measure business impact against cost before scaling usage.",
     },
     {
-        heroLabel: "Governed AI Model Profile",
-        governanceLine: "Keep audit logs enabled for all high-impact use cases.",
-        rolloutFocus: "start with approved teams, then expand in controlled waves.",
+        heroLabel: "Governed Profile",
+        governanceLine: "Keep audit logs enabled for high-impact use cases.",
+        rolloutFocus: "Start with approved teams, then expand in controlled waves.",
     },
 ];
 
@@ -1352,8 +1352,8 @@ function trimCopy(value: string, maxLength: number) {
 }
 
 function buildMetaTitle(modelName: string) {
-    const suffix = " Pricing, Context Window & Use Cases | Remova";
-    const maxLength = 60;
+    const suffix = ": Pricing, Context, and Rollout Fit | Remova";
+    const maxLength = 80;
     const maxNameLength = Math.max(12, maxLength - suffix.length);
     return `${trimCopy(modelName, maxNameLength)}${suffix}`;
 }
@@ -1469,15 +1469,15 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         modelId: model.id,
         heroLabel: theme.heroLabel,
         heroTitle: model.name,
-        heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, optimized for ${fitPhrase} in enterprise environments.`,
+        heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, suited to ${fitPhrase} for enterprise teams.`,
         metaTitle: buildMetaTitle(model.name),
         metaDescription: trimCopy(
-            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPrice(model.inputPer1M)} input), and deployment guidance for ${topUseCasesText}.`,
+            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPrice(model.inputPer1M)} input), and rollout guidance for ${topUseCasesText}.`,
             158
         ),
         providerSummary: `${model.provider} lists ${model.name} as ${contextArticle} ${context} option with ${formatPrice(model.inputPer1M)} input pricing, ${formatPrice(model.outputPer1M)} output pricing, and ${modality} modality support for enterprise AI operations.`,
         summaryPoints: [
-            `Latest profile indicates ${context} capacity for enterprise prompts and documents.`,
+            `${model.name} offers ${context} capacity for enterprise prompts and documents.`,
             `Current pricing band is ${pricing}: ${formatPrice(model.inputPer1M)} input and ${formatPrice(model.outputPer1M)} output.`,
             `Best-fit workloads include: ${bestFitList}.`,
             theme.governanceLine,

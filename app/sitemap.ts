@@ -5,8 +5,8 @@ import { comparisons } from '@/content/comparisons'
 import { useCases } from '@/content/use-cases'
 import { glossaryTerms } from '@/content/glossary'
 import { allBlogPosts } from '@/content/blog'
-import { modelLandings } from '@/content/model-landings'
 import { modelsLastUpdated } from '@/content/models'
+import { modelLandings } from '@/content/model-landings'
 import { SITE_LAST_UPDATED_DATE, SITE_URL, dateFromIsoDate } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/use-cases`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/alternative`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/compare`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
+        ...modelLandings.map((landing) => m(`/models/${landing.slug}`, 0.45, dateFromIsoDate(landing.sourceCheckedAt))),
         ...features.map((f) => m(`/features/${f.slug}`, 0.8)),
         ...alternatives.map((a) => m(`/alternative/${a.slug}`, 0.7)),
         ...comparisons.map((c) => m(`/compare/${c.slug}`, 0.7)),
@@ -40,6 +41,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly' as const,
             priority: 0.6
         })),
-        ...modelLandings.map((entry) => m(`/models/${entry.slug}`, 0.7, dateFromIsoDate(entry.sourceCheckedAt))),
     ]
 }

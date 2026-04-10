@@ -3,14 +3,16 @@ import Link from "next/link";
 import { comparisons } from "@/content/comparisons";
 import { Scale, ArrowRight, Zap } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import ItemListSchema from "@/components/seo/ItemListSchema";
+import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Enterprise AI Comparisons",
-    description: "Detailed side-by-side analysis of enterprise AI platforms, including security, governance, and cost management capabilities.",
+    title: { absolute: "Enterprise AI Comparisons | Remova" },
+    description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
     openGraph: {
-        title: "Enterprise AI Comparisons",
-        description: "Side-by-side analysis of enterprise AI platforms and controls.",
+        title: "Enterprise AI Comparisons | Remova",
+        description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
         url: absoluteUrl("/compare"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -18,12 +20,26 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Comparisons",
-        description: "Side-by-side analysis of enterprise AI platforms and controls.",
+        title: "Enterprise AI Comparisons | Remova",
+        description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
         images: [DEFAULT_OG_IMAGE_URL]
     },
     alternates: { canonical: "/compare" },
 };
+
+const comparisonItems = comparisons.map((comparison) => ({
+    name: comparison.headline,
+    url: absoluteUrl(`/compare/${comparison.slug}`),
+}));
+
+const relatedHubs = [
+    { href: "/alternative", label: "Alternatives" },
+    { href: "/features", label: "Features" },
+    { href: "/models", label: "Models" },
+    { href: "/use-cases", label: "Use Cases" },
+    { href: "/glossary", label: "Glossary" },
+    { href: "/blog", label: "Blog" },
+];
 
 export default function ComparisonsIndex() {
     const roundup = comparisons.filter(c => c.type === 'roundup');
@@ -38,6 +54,8 @@ export default function ComparisonsIndex() {
 
     return (
         <div className="flex flex-col">
+            <ItemListSchema name="Enterprise AI Comparisons" items={comparisonItems} />
+
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
                 <div className="container mx-auto max-w-6xl relative z-10">
@@ -77,6 +95,8 @@ export default function ComparisonsIndex() {
                     </div>
                 </div>
             </section>
+
+            <RelatedHubs hubs={relatedHubs} />
 
             <LeadMagnetSection magnet="risk-test" tone="slate" />
 

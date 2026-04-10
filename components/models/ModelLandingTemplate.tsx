@@ -60,10 +60,10 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                         href="https://app.remova.org/register"
                         className="mb-8 inline-block rounded-[2.5rem] bg-slate-900 dark:bg-white px-8 py-4 text-base font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95"
                     >
-                        Use {landing.heroTitle} in your company
+                        Try {landing.heroTitle} with your team
                     </ExternalAppLink>
                     <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                        Data checked: {landing.sourceCheckedAt}
+                        Last reviewed: {landing.sourceCheckedAt}
                     </p>
                 </div>
             </section>
@@ -89,7 +89,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                 <div className="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-12 items-start">
                     <div>
                         <h2 className="mb-6 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                            Model Positioning
+                            Why this model
                         </h2>
                         <p className="mb-8 text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                             {landing.providerSummary}
@@ -105,7 +105,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                     </div>
                     <div className="rounded-3xl border-2 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5 p-8">
                         <h3 className="mb-6 text-xl font-black uppercase tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
-                            <Gauge className="h-5 w-5" /> Key Specs
+                            <Gauge className="h-5 w-5" /> At a glance
                         </h3>
                         <dl className="space-y-4">
                             {landing.specNotes.map((spec) => (
@@ -150,7 +150,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                 <div className="container mx-auto max-w-6xl grid lg:grid-cols-2 gap-12">
                     <div>
                         <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                            High-Fit Use Cases
+                            Best for
                         </h2>
                         <ul className="space-y-4">
                             {landing.useCases.map((item) => (
@@ -163,7 +163,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                     </div>
                     <div>
                         <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                            Deployment Checklist
+                            Rollout checklist
                         </h2>
                         <ul className="space-y-4">
                             {landing.deploymentChecklist.map((item) => (
@@ -181,7 +181,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                 <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                     <div className="container mx-auto max-w-6xl">
                         <h2 className="mb-3 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                            Related Model Pages
+                            Related models
                         </h2>
                         <p className="mb-8 text-base font-medium text-slate-600 dark:text-slate-300">
                             Explore adjacent model profiles for routing and benchmarking decisions.
@@ -207,7 +207,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl">
                     <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                        Parameter Guidance
+                        Tuning notes
                     </h2>
                     <div className="grid gap-4">
                         {landing.parameterNotes.map((item) => (
@@ -236,7 +236,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
-                        Use {landing.heroTitle} in your company <ArrowRight className="inline h-5 w-5 ml-2" />
+                        Try {landing.heroTitle} with your team <ArrowRight className="inline h-5 w-5 ml-2" />
                     </ExternalAppLink>
                 </div>
             </section>

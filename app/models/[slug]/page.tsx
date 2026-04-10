@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const landing = modelLandings.find((entry) => entry.slug === params.slug);
     if (!landing) return {};
 
-    const seoTitle = trimForTitle(landing.metaTitle, 60);
+    const seoTitle = trimForTitle(landing.metaTitle, 80);
 
     return {
         title: { absolute: seoTitle },
@@ -29,13 +29,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             url: absoluteUrl(`/models/${landing.slug}`),
             siteName: SITE_NAME,
             images: [DEFAULT_OG_IMAGE],
-            type: "article",
+            type: "website",
         },
         twitter: {
             card: "summary_large_image",
             title: seoTitle,
             description: landing.metaDescription,
             images: [DEFAULT_OG_IMAGE_URL],
+        },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
         },
         alternates: { canonical: `/models/${landing.slug}` },
     };

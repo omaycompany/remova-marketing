@@ -50,8 +50,7 @@ export default function RootLayout({
         "url": SITE_URL,
         "logo": `${SITE_URL}/icon.png`,
         "sameAs": [
-            "https://twitter.com/remova_ai",
-            "https://linkedin.com/company/remova"
+            "https://www.linkedin.com/company/remova.org/"
         ],
         "description": "The enterprise control layer for AI with governance, safety, and cost management controls."
     };

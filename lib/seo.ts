@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export const SITE_NAME = "Remova";
 export const SITE_URL = "https://www.remova.org";
 export const SITE_LAST_UPDATED = "2026-03-25";
@@ -27,3 +29,22 @@ export function dateFromIsoDate(value: string) {
 }
 
 export const SITE_LAST_UPDATED_DATE = dateFromIsoDate(SITE_LAST_UPDATED);
+
+export function legacyRedirectMetadata(canonicalPath: string): Metadata {
+    return {
+        robots: {
+            index: false,
+            follow: true,
+            googleBot: {
+                index: false,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
+        alternates: {
+            canonical: canonicalPath,
+        },
+    };
+}

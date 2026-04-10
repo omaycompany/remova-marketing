@@ -3,14 +3,16 @@ import Link from "next/link";
 import { allBlogPosts } from "@/content/blog";
 import { ArrowRight, Clock, Tag } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
+import ItemListSchema from "@/components/seo/ItemListSchema";
+import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Enterprise AI Blog",
-    description: "Expert insights on AI for companies, governance, security, and cost management. Technical guides and operating analysis for safe AI deployment.",
+    title: { absolute: "Enterprise AI Governance Blog | Remova" },
+    description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
     openGraph: {
-        title: "Enterprise AI Blog",
-        description: "Expert insights on AI for companies, governance, and security.",
+        title: "Enterprise AI Governance Blog | Remova",
+        description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
         url: absoluteUrl("/blog"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -18,14 +20,27 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Blog",
-        description: "Expert insights on AI for companies, governance, and security.",
+        title: "Enterprise AI Governance Blog | Remova",
+        description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
         images: [DEFAULT_OG_IMAGE_URL]
     },
     alternates: { canonical: "/blog" },
 };
 
 const categories = Array.from(new Set(allBlogPosts.map(p => p.category)));
+const relatedHubs = [
+    { href: "/features", label: "Features" },
+    { href: "/use-cases", label: "Use Cases" },
+    { href: "/models", label: "Models" },
+    { href: "/compare", label: "Compare" },
+    { href: "/alternative", label: "Alternatives" },
+    { href: "/glossary", label: "Glossary" },
+];
+
+const blogItems = allBlogPosts.map((post) => ({
+    name: post.title,
+    url: absoluteUrl(`/blog/${post.slug}`),
+}));
 
 export default function BlogIndex() {
     const editorialThemes = [
@@ -37,6 +52,8 @@ export default function BlogIndex() {
 
     return (
         <div className="flex flex-col">
+            <ItemListSchema name="Enterprise AI Blog" items={blogItems} />
+
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
                 <div className="container mx-auto max-w-6xl relative z-10">
@@ -89,6 +106,8 @@ export default function BlogIndex() {
                     </div>
                 </div>
             </section>
+
+            <RelatedHubs hubs={relatedHubs} />
 
             <LeadMagnetSection magnet="employee-safety-checklist" tone="slate" />
 
