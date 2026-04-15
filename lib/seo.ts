@@ -16,6 +16,18 @@ export function absoluteUrl(path: string) {
     return new URL(path, SITE_URL).toString();
 }
 
+export function buildKeywords(...groups: Array<Array<string | undefined>>): string[] {
+    const seen = new Set<string>();
+    for (const group of groups) {
+        for (const value of group) {
+            const normalized = (value ?? "").trim().toLowerCase();
+            if (!normalized) continue;
+            seen.add(normalized);
+        }
+    }
+    return Array.from(seen);
+}
+
 export function stripTitleSuffix(value: string) {
     return value
         .replace(/\s+\|\s+AI for Companies$/i, "")

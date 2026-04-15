@@ -5,7 +5,7 @@ import { ArrowRight, Check, AlertTriangle, Building2, User, Cog, ChevronRight, Z
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return useCases.map((u) => ({ slug: u.slug }));
@@ -19,6 +19,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title,
         description,
+        keywords: buildKeywords([
+            uc.headline,
+            uc.category,
+            "enterprise ai use case",
+            "ai governance",
+            "secure ai deployment"
+        ]),
         openGraph: {
             title,
             description,

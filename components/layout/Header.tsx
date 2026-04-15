@@ -27,6 +27,8 @@ export default function Header() {
                             alt="Remova Logo"
                             width={180}
                             height={50}
+                            priority
+                            fetchPriority="high"
                             className="h-16 w-auto object-contain transition-transform group-hover:scale-105 dark:brightness-0 dark:invert"
                         />
                     </Link>

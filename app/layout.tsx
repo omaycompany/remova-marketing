@@ -8,11 +8,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
     title: {
-        default: "Remova | The Safe AI for Companies",
+        default: "Remova | The Enterprise Control Layer for AI",
         template: "%s | Remova — AI for Companies"
     },
     description: "Remova: enterprise AI governance with policy controls, sensitive data protection, and budget management.",
-    keywords: ["ai for companies", "enterprise ai governance", "ai safety for business", "budget controls", "sensitive data protection", "policy guardrails", "ai governance"],
     authors: [{ name: "Remova" }],
     creator: "Remova",
     publisher: "Remova",
@@ -50,9 +49,24 @@ export default function RootLayout({
         "url": SITE_URL,
         "logo": `${SITE_URL}/icon.png`,
         "sameAs": [
-            "https://www.linkedin.com/company/remova.org/"
+            "https://www.linkedin.com/company/remova.org/",
+            "https://github.com/remova"
         ],
         "description": "The enterprise control layer for AI with governance, safety, and cost management controls."
+    };
+    const softwareApplicationSchema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Remova",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "AI Governance Platform",
+        "operatingSystem": "Web",
+        "url": SITE_URL,
+        "publisher": {
+            "@type": "Organization",
+            "name": "Remova"
+        },
+        "description": "Enterprise AI governance platform with policy controls, sensitive data protection, and budget management."
     };
 
     return (
@@ -88,6 +102,10 @@ export default function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
                 />
             </head>
             <body className={`${inter.variable} font-sans`}>

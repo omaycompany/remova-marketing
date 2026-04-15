@@ -9,11 +9,18 @@ import ModelsListView from "@/components/models/ModelsListView";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: { absolute: "Enterprise AI Model Catalog | Remova" },
     description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
+    keywords: buildKeywords([
+        "enterprise ai model catalog",
+        "llm model comparison",
+        "ai model pricing",
+        "context window comparison",
+        "enterprise model selection"
+    ]),
     openGraph: {
         title: "Enterprise AI Model Catalog | Remova",
         description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",

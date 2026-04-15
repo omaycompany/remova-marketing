@@ -176,13 +176,13 @@ export default function DemoComposerModelPicker({
                     setIsOpen(true);
                 }}
                 aria-label={`Open model picker. Current selection: ${activeLabel}`}
-                className="group relative flex h-8 w-8 items-center justify-center rounded-full border border-slate-200/80 bg-white/90 text-sky-700 shadow-sm transition hover:border-slate-300 hover:bg-white dark:border-white/10 dark:bg-white/[0.06] dark:text-sky-300 dark:hover:border-white/20 dark:hover:bg-white/[0.08] sm:h-9 sm:w-9"
+                className="group relative flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-sky-300 shadow-sm transition hover:border-white/20 hover:bg-white/[0.08] sm:h-9 sm:w-9"
                 title={activeLabel}
             >
                 <span className="pointer-events-none">
                     <Brain className="h-4 w-4" />
                 </span>
-                <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition dark:border-white/15 dark:bg-[#141619] dark:text-white/50">
+                <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-white/15 bg-[#141619] text-white/50 shadow-sm transition">
                     <ChevronDown className={`h-2.5 w-2.5 transition ${isOpen ? "rotate-180" : ""}`} />
                 </span>
             </button>
@@ -191,25 +191,25 @@ export default function DemoComposerModelPicker({
                 <>
                     <div className="fixed inset-0 z-10" onClick={closePicker} />
 
-                    <div className="absolute bottom-full right-0 z-20 mb-3 w-[min(32rem,calc(100vw-1rem))] overflow-hidden rounded-[30px] border border-slate-200/80 bg-white/95 shadow-[0_30px_80px_-28px_rgba(15,23,42,0.45)] backdrop-blur-xl dark:border-white/10 dark:bg-[#141619]/95">
-                        <div className="relative overflow-hidden border-b border-slate-200/80 px-4 py-4 dark:border-white/10">
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_36%),radial-gradient(circle_at_top_right,rgba(251,191,36,0.16),transparent_30%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.24),transparent_36%),radial-gradient(circle_at_top_right,rgba(251,191,36,0.16),transparent_30%)]" />
+                    <div className="absolute bottom-full right-0 z-20 mb-3 w-[min(32rem,calc(100vw-1rem))] overflow-hidden rounded-[30px] border border-white/10 bg-[#141619]/95 shadow-[0_30px_80px_-28px_rgba(0,0,0,0.55)] backdrop-blur-xl">
+                        <div className="relative overflow-hidden border-b border-white/10 px-4 py-4">
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.24),transparent_36%),radial-gradient(circle_at_top_right,rgba(251,191,36,0.16),transparent_30%)]" />
                             <div className="relative flex items-start justify-between gap-3">
                                 <div>
-                                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-white/40">
+                                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/40">
                                         Chat routing
                                     </p>
-                                    <h3 className="mt-1 text-lg font-semibold text-slate-950 dark:text-white">
+                                    <h3 className="mt-1 text-lg font-semibold text-white">
                                         Find the right brain faster
                                     </h3>
-                                    <p className="mt-1 text-sm text-slate-600 dark:text-white/60">
+                                    <p className="mt-1 text-sm text-white/60">
                                         {activeCaption || "Search raw models without leaving the composer."}
                                     </p>
                                 </div>
                                 <button
                                     type="button"
                                     onClick={closePicker}
-                                    className="rounded-full border border-slate-200/80 bg-white/70 p-2 text-slate-500 transition hover:border-slate-300 hover:text-slate-900 dark:border-white/10 dark:bg-white/[0.04] dark:text-white/45 dark:hover:border-white/20 dark:hover:text-white"
+                                    className="rounded-full border border-white/10 bg-white/[0.04] p-2 text-white/45 transition hover:border-white/20 hover:text-white"
                                     aria-label="Close model picker"
                                 >
                                     <X className="h-4 w-4" />
@@ -217,22 +217,22 @@ export default function DemoComposerModelPicker({
                             </div>
                         </div>
 
-                        <div className="border-b border-slate-200/80 px-4 py-3 dark:border-white/10">
-                            <label className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50/90 px-3 py-2.5 shadow-sm transition focus-within:border-sky-300 focus-within:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:focus-within:border-sky-400/50 dark:focus-within:bg-white/[0.07]">
-                                <Search className="h-4 w-4 shrink-0 text-slate-400 dark:text-white/35" />
+                        <div className="border-b border-white/10 px-4 py-3">
+                            <label className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2.5 shadow-sm transition focus-within:border-sky-400/50 focus-within:bg-white/[0.07]">
+                                <Search className="h-4 w-4 shrink-0 text-white/35" />
                                 <input
                                     ref={searchInputRef}
                                     type="text"
                                     value={query}
                                     onChange={(event) => setQuery(event.target.value)}
                                     placeholder="Search models or providers"
-                                    className="w-full bg-transparent text-sm text-slate-900 outline-none placeholder:text-slate-400 dark:text-white dark:placeholder:text-white/30"
+                                    className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/30"
                                 />
                                 {query && (
                                     <button
                                         type="button"
                                         onClick={() => setQuery("")}
-                                        className="rounded-full p-1 text-slate-400 transition hover:bg-slate-200 hover:text-slate-700 dark:text-white/35 dark:hover:bg-white/[0.08] dark:hover:text-white"
+                                        className="rounded-full p-1 text-white/35 transition hover:bg-white/[0.08] hover:text-white"
                                         aria-label="Clear search"
                                     >
                                         <X className="h-3.5 w-3.5" />
@@ -240,7 +240,7 @@ export default function DemoComposerModelPicker({
                                 )}
                             </label>
 
-                            <div className="mt-2 flex items-center justify-between text-[11px] text-slate-500 dark:text-white/40">
+                            <div className="mt-2 flex items-center justify-between text-[11px] text-white/40">
                                 <span>{availableModels.length} models ready</span>
                                 <span>Esc to close</span>
                             </div>
@@ -249,7 +249,7 @@ export default function DemoComposerModelPicker({
                         <div className="max-h-[26rem] overflow-y-auto px-4 py-4">
                             {!normalizedQuery && recentModelCards.length > 0 && (
                                 <section className="mb-5">
-                                    <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-white/40">
+                                    <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
                                         <Clock3 className="h-3.5 w-3.5" />
                                         Recent models
                                     </div>
@@ -262,8 +262,8 @@ export default function DemoComposerModelPicker({
                                                     type="button"
                                                     onClick={() => handleModelSelect(model)}
                                                     className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${isSelected
-                                                            ? "border-sky-300 bg-sky-50 text-sky-700 dark:border-sky-400/40 dark:bg-sky-500/10 dark:text-sky-200"
-                                                            : "border-slate-200 bg-white text-slate-700 hover:border-slate-300 hover:text-slate-950 dark:border-white/10 dark:bg-white/[0.04] dark:text-white/75 dark:hover:border-white/20 dark:hover:text-white"
+                                                            ? "border-sky-400/40 bg-sky-500/10 text-sky-200"
+                                                            : "border-white/10 bg-white/[0.04] text-white/75 hover:border-white/20 hover:text-white"
                                                         }`}
                                                 >
                                                     {model.name}
@@ -276,7 +276,7 @@ export default function DemoComposerModelPicker({
 
                             {filteredModels.length > 0 && (
                                 <section>
-                                    <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-white/40">
+                                    <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/40">
                                         <Brain className="h-3.5 w-3.5" />
                                         Models
                                     </div>
@@ -292,46 +292,46 @@ export default function DemoComposerModelPicker({
                                                     type="button"
                                                     onClick={() => handleModelSelect(model)}
                                                     className={`flex w-full items-start gap-3 rounded-2xl border px-3 py-3 text-left transition ${isSelected
-                                                            ? "border-sky-300/80 bg-sky-50 text-slate-950 dark:border-sky-400/35 dark:bg-sky-500/10 dark:text-white"
-                                                            : "border-slate-200 bg-slate-50/75 text-slate-900 hover:border-slate-300 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:hover:border-white/20 dark:hover:bg-white/[0.06]"
+                                                            ? "border-sky-400/35 bg-sky-500/10 text-white"
+                                                            : "border-white/10 bg-white/[0.04] text-white hover:border-white/20 hover:bg-white/[0.06]"
                                                         }`}
                                                 >
-                                                    <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-500/12 text-sky-700 dark:text-sky-300">
+                                                    <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-sky-500/12 text-sky-300">
                                                         <Brain className="h-4 w-4" />
                                                     </span>
                                                     <span className="min-w-0 flex-1">
                                                         <span className="flex flex-wrap items-center gap-2">
                                                             <span className="truncate text-sm font-semibold">{model.name}</span>
                                                             {model.id === "remova-1.0" && (
-                                                                <span className="rounded-full bg-sky-500/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
+                                                                <span className="rounded-full bg-sky-500/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-300">
                                                                     Recommended
                                                                 </span>
                                                             )}
                                                             {isRecent && !normalizedQuery && (
-                                                                <span className="rounded-full bg-slate-900 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white dark:bg-white/10 dark:text-white/70">
+                                                                <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white/70">
                                                                     Recent
                                                                 </span>
                                                             )}
                                                             {isSelected && (
-                                                                <span className="rounded-full bg-sky-500/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
+                                                                <span className="rounded-full bg-sky-500/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-sky-300">
                                                                     Active
                                                                 </span>
                                                             )}
                                                         </span>
-                                                        <span className="mt-1 block text-xs text-slate-500 dark:text-white/45">
+                                                        <span className="mt-1 block text-xs text-white/45">
                                                             {model.id}
                                                         </span>
-                                                        <span className="mt-1 block text-xs leading-5 text-slate-600 dark:text-white/60">
+                                                        <span className="mt-1 block text-xs leading-5 text-white/60">
                                                             {model.description || "Direct model override for this chat."}
                                                         </span>
                                                         {summary && (
-                                                            <span className="mt-2 block text-[11px] text-slate-500 dark:text-white/45">
+                                                            <span className="mt-2 block text-[11px] text-white/45">
                                                                 {summary}
                                                             </span>
                                                         )}
                                                     </span>
                                                     {isSelected && (
-                                                        <Check className="mt-1 h-4 w-4 shrink-0 text-sky-700 dark:text-sky-300" />
+                                                        <Check className="mt-1 h-4 w-4 shrink-0 text-sky-300" />
                                                     )}
                                                 </button>
                                             );
@@ -341,11 +341,11 @@ export default function DemoComposerModelPicker({
                             )}
 
                             {filteredModels.length === 0 && (
-                                <div className="rounded-3xl border border-dashed border-slate-300 px-4 py-10 text-center dark:border-white/10">
-                                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                <div className="rounded-3xl border border-dashed border-white/10 px-4 py-10 text-center">
+                                    <p className="text-sm font-medium text-white">
                                         Nothing matched “{deferredQuery.trim()}”
                                     </p>
-                                    <p className="mt-1 text-sm text-slate-500 dark:text-white/45">
+                                    <p className="mt-1 text-sm text-white/45">
                                         Try a provider name or a shorter model ID.
                                     </p>
                                 </div>

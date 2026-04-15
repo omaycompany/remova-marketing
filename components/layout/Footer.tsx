@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -34,6 +34,14 @@ export default function Footer() {
                                 className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
                             >
                                 <Linkedin className="h-5 w-5 transition-transform group-hover:scale-110" />
+                            </a>
+                            <a
+                                href="https://github.com/remova"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
+                            >
+                                <Github className="h-5 w-5 transition-transform group-hover:scale-110" />
                             </a>
                         </div>
                     </div>

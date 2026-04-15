@@ -5,11 +5,18 @@ import { ShieldCheck, ArrowRight } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: { absolute: "Enterprise AI Governance Features | Remova" },
     description: "Enterprise AI governance features for policy controls, access management, usage analytics, and budget oversight.",
+    keywords: buildKeywords([
+        "enterprise ai governance features",
+        "ai policy controls",
+        "ai access management",
+        "ai usage analytics",
+        "ai budget oversight"
+    ]),
     openGraph: {
         title: "Enterprise AI Governance Features | Remova",
         description: "Enterprise AI governance features for policy controls, access management, usage analytics, and budget oversight.",
