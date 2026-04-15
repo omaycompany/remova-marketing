@@ -5,7 +5,7 @@ import { ArrowRight, Check, X, Scale, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return comparisons.map((c) => ({ slug: c.slug }));
@@ -19,6 +19,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title,
         description,
+        keywords: buildKeywords([
+            comp.headline,
+            ...comp.contenders.map((contender) => contender.name),
+            "enterprise ai comparison",
+            "ai governance comparison"
+        ]),
         openGraph: {
             title,
             description,

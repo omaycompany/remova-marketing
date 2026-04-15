@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, stripTitleSuffix } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return glossaryTerms.map((g) => ({ slug: g.slug }));
@@ -18,6 +18,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const description = term.metaDescription;
     return {
         title, description,
+        keywords: buildKeywords([
+            term.term,
+            ...term.relatedTerms,
+            "enterprise ai glossary",
+            "ai governance terminology"
+        ]),
         openGraph: {
             title,
             description,

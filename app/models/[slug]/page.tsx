@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ModelLandingTemplate from "@/components/models/ModelLandingTemplate";
 import { modelLandings } from "@/content/model-landings";
 import { models } from "@/content/models";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 function trimForTitle(value: string, maxLength: number) {
     if (value.length <= maxLength) return value;
@@ -23,6 +23,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: { absolute: seoTitle },
         description: landing.metaDescription,
+        keywords: buildKeywords([
+            landing.heroTitle,
+            landing.heroLabel,
+            "enterprise ai models",
+            "llm model profile",
+            "ai model governance"
+        ]),
         openGraph: {
             title: seoTitle,
             description: landing.metaDescription,

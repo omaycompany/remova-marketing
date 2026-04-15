@@ -5,11 +5,18 @@ import { BookOpen, ArrowRight } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: { absolute: "Enterprise AI Glossary | Remova" },
     description: "Enterprise AI glossary terms for governance, security, and operations.",
+    keywords: buildKeywords([
+        "enterprise ai glossary",
+        "ai governance terms",
+        "ai security terminology",
+        "ai operations definitions",
+        "llm governance glossary"
+    ]),
     openGraph: {
         title: "Enterprise AI Glossary | Remova",
         description: "Enterprise AI glossary terms for governance, security, and operations.",

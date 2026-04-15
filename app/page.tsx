@@ -4,9 +4,18 @@ import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, 
 import FAQ from '@/components/ui/FAQ';
 import ExternalAppLink from '@/components/ui/ExternalAppLink';
 import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL } from '@/lib/seo';
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
+    title: { absolute: "Remova | The Enterprise Control Layer for AI" },
+    keywords: buildKeywords([
+        "ai for companies",
+        "enterprise ai governance",
+        "enterprise ai control layer",
+        "ai policy controls",
+        "sensitive data protection",
+        "ai budget controls"
+    ]),
     alternates: {
         canonical: "/",
     },

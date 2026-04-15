@@ -5,11 +5,18 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: { absolute: "Enterprise AI Governance Blog | Remova" },
     description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
+    keywords: buildKeywords([
+        "enterprise ai blog",
+        "ai governance guides",
+        "ai policy enforcement",
+        "ai security operations",
+        "ai cost management"
+    ]),
     openGraph: {
         title: "Enterprise AI Governance Blog | Remova",
         description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",

@@ -5,11 +5,18 @@ import { Scale, ArrowRight, Zap } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
     title: { absolute: "Enterprise AI Comparisons | Remova" },
     description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
+    keywords: buildKeywords([
+        "enterprise ai comparisons",
+        "ai platform comparison",
+        "ai governance comparison",
+        "ai security comparison",
+        "ai cost management comparison"
+    ]),
     openGraph: {
         title: "Enterprise AI Comparisons | Remova",
         description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",

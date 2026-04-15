@@ -5,7 +5,7 @@ import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-reac
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return allBlogPosts.map((p) => ({ slug: p.slug }));
@@ -19,6 +19,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title,
         description,
+        keywords: buildKeywords([
+            post.title,
+            post.category,
+            "enterprise ai governance",
+            "ai policy controls",
+            "ai operations"
+        ]),
         openGraph: {
             title,
             description,
