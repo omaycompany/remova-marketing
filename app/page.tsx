@@ -7,11 +7,12 @@ import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: { absolute: "Remova | The Enterprise Control Layer for AI" },
+    title: { absolute: "Remova | Safer AI for Teams" },
     keywords: buildKeywords([
-        "ai for companies",
-        "enterprise ai governance",
-        "enterprise ai control layer",
+        "safer ai for teams",
+        "chatgpt for work",
+        "ai data safety",
+        "ai access controls",
         "ai policy controls",
         "sensitive data protection",
         "ai budget controls"
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
         canonical: "/",
     },
     openGraph: {
-        title: "Remova | The Enterprise Control Layer for AI",
-        description: "Deploy AI with policy controls, sensitive data protection, and team-level budget governance.",
+        title: "Remova | Safer AI for Teams",
+        description: "Deploy AI with data safety, access controls, and team-level budget control.",
         url: SITE_URL,
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Remova | The Enterprise Control Layer for AI",
-        description: "Deploy AI with cost controls, privacy protections, and policy guardrails.",
+        title: "Remova | Safer AI for Teams",
+        description: "Deploy AI with data safety, privacy protections, and policy guardrails.",
         images: [DEFAULT_OG_IMAGE_URL],
     },
 };
@@ -48,16 +49,15 @@ export default function LandingPage() {
                 <div className="container mx-auto text-center max-w-[90rem] relative z-10">
                     <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-6 py-2 text-base font-bold text-slate-900 dark:text-white backdrop-blur-md shadow-sm">
                         <Shield className="h-5 w-5 text-black dark:text-white animate-draw" />
-                        <span className="tracking-wide">THE ENTERPRISE CONTROL LAYER</span>
+                        <span className="tracking-wide">SAFER AI FOR TEAMS</span>
                     </div>
                     <h1 className="mb-8 text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl lg:text-[9rem] xl:text-[9.5rem] leading-[0.92] select-none uppercase">
-                        AI for <br />
-                        <span className="inline-block pb-1 text-transparent bg-clip-text bg-gradient-to-b from-slate-700 to-slate-900 dark:from-white dark:to-slate-400">
-                            Companies
-                        </span>
+                        A safer way to <br />
+                        bring AI into <br />
+                        the company
                     </h1>
                     <p className="mx-auto mb-12 max-w-3xl text-2xl text-slate-600 dark:text-slate-300 sm:text-3xl leading-relaxed font-medium">
-                        The governance layer for enterprise AI. Deploy across teams with <span className="text-slate-900 dark:text-white font-bold underline decoration-4 decoration-emerald-500 underline-offset-4">control and confidence.</span>
+                        Let your team use ChatGPT, Claude, and Gemini without exposing company data.
                     </p>
                     <div className="flex flex-col items-center justify-center gap-6 sm:flex-row mb-20">
                         <ExternalAppLink
@@ -310,10 +310,10 @@ export default function LandingPage() {
                                     <MessageSquare className="h-12 w-12 animate-draw" />
                                 </div>
                                 <h2 className="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl mb-6 leading-[0.9]">
-                                    Chat Like <br /> Usual
+                                    Use ChatGPT <br /> at Work
                                 </h2>
                                 <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                                    The familiar AI experience teams expect, with governance built into every interaction.
+                                    Use ChatGPT at work, with control and protection.
                                 </p>
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
@@ -344,19 +344,19 @@ export default function LandingPage() {
                                     <Cpu className="h-12 w-12 animate-draw" />
                                 </div>
                                 <h2 className="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl mb-6 leading-[0.9]">
-                                    Select Your <br /> AI Providers
+                                    ChatGPT, Claude, <br /> and Gemini
                                 </h2>
                                 <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                                    Choose from a broad model catalog and enable only the providers approved for your organization.
+                                    Give people access to the models they know, with the right safeguards.
                                 </p>
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-emerald-500" />
-                                        <span>Create curated model catalogs for each team.</span>
+                                        <span>Show approved models for each team.</span>
                                     </li>
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-emerald-500" />
-                                        <span>Route usage to approved models by policy and role.</span>
+                                        <span>Route usage by role and rules.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -366,17 +366,17 @@ export default function LandingPage() {
                                     {/* Dynamic shine effect */}
                                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-transparent skew-y-12 translate-y-full group-hover:translate-y-[-100%] transition-transform ease-in-out" />
 
-                                    {['GPT-4o', 'Claude 3.5 Sonnet', 'Gemini 1.5 Pro', 'Llama 3 70B'].map((model, i) => (
+                                    {['ChatGPT', 'Claude', 'Gemini'].map((model, i) => (
                                         <div key={i} className="bg-white dark:bg-white/10 p-4 rounded-2xl flex items-center justify-between border border-slate-200 dark:border-white/5 shadow-sm transform transition hover:scale-105">
                                             <div className="flex items-center gap-3">
                                                 <Bot className="h-6 w-6 text-slate-700 dark:text-slate-300" />
                                                 <span className="font-bold text-slate-900 dark:text-white">{model}</span>
                                             </div>
-                                            <ToggleRight className={`h-8 w-8 ${i < 2 ? 'text-emerald-500' : 'text-slate-300 dark:text-slate-600'}`} />
+                                            <ToggleRight className="h-8 w-8 text-emerald-500" />
                                         </div>
                                     ))}
                                     <div className="text-center font-bold text-slate-400 dark:text-slate-500 mt-2">
-                                        + 296 more models
+                                        Approved models available as needed
                                     </div>
                                 </div>
                             </div>
@@ -399,7 +399,7 @@ export default function LandingPage() {
                                         <div className="bg-white dark:bg-white/10 p-6 rounded-3xl border border-slate-200 dark:border-white/10 shadow-lg w-full text-center">
                                             <Wand2 className="h-10 w-10 text-purple-500 mx-auto mb-3" />
                                             <h4 className="font-bold text-xl text-slate-900 dark:text-white">Marketing Helper v2</h4>
-                                            <p className="text-sm text-slate-500 mt-1">Base: GPT-4o • Temp: 0.7</p>
+                                            <p className="text-sm text-slate-500 mt-1">Base: ChatGPT • Temp: 0.7</p>
                                         </div>
                                         <div className="h-12 w-0.5 bg-slate-300 dark:bg-white/20" />
                                         <div className="grid grid-cols-2 gap-4 w-full">
@@ -418,10 +418,10 @@ export default function LandingPage() {
                                     <Wand2 className="h-12 w-12 animate-draw" />
                                 </div>
                                 <h2 className="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl mb-6 leading-[0.9]">
-                                    Custom AI <br /> Management
+                                    Team AI <br /> Setup
                                 </h2>
                                 <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                                    Create custom AI models with ease.
+                                    Set up AI tools for the way each team works.
                                 </p>
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
@@ -430,7 +430,7 @@ export default function LandingPage() {
                                     </li>
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-purple-500" />
-                                        <span>Or deploy for your entire team</span>
+                                        <span>Or deploy across the company</span>
                                     </li>
                                 </ul>
                             </div>
@@ -448,17 +448,17 @@ export default function LandingPage() {
                                     <LayoutDashboard className="h-12 w-12 animate-draw" />
                                 </div>
                                 <h2 className="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl mb-6 leading-[0.9]">
-                                    Complete <br /> Control
+                                    See <br /> Everything
                                 </h2>
                                 <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                                    Track models, costs, policy violations, AI task types, everything!
+                                    Track models, costs, policy events, and task types.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
                                         <p className="font-bold text-slate-900 dark:text-white">Track Costs</p>
                                     </div>
                                     <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
-                                        <p className="font-bold text-slate-900 dark:text-white">Policy Violations</p>
+                                        <p className="font-bold text-slate-900 dark:text-white">Policy Events</p>
                                     </div>
                                     <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
                                         <p className="font-bold text-slate-900 dark:text-white">Model Usage</p>
@@ -531,15 +531,15 @@ export default function LandingPage() {
                                     <Ghost className="h-12 w-12 animate-draw" />
                                 </div>
                                 <h2 className="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl mb-6 leading-[0.9]">
-                                    No History! <br /> No Personal Data!
+                                    Private <br /> by Default
                                 </h2>
                                 <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                                    Remova only keeps conversations on users browsers. Its completely private.
+                                    Keep conversations under company control.
                                 </p>
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-emerald-500" />
-                                        <span>No server-side history logs</span>
+                                        <span>No shared history logs</span>
                                     </li>
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-emerald-500" />
@@ -589,11 +589,11 @@ export default function LandingPage() {
                                 <div className="border-l-4 border-slate-900 dark:border-white pl-6 mb-8 group-hover:bg-slate-50 dark:group-hover:bg-white/5 transition-colors py-2">
                                     <span className="block text-8xl font-black text-slate-200 dark:text-white/20 -ml-1 mb-[-4rem] relative z-0">02</span>
                                     <h3 className="relative z-10 text-3xl font-black uppercase text-slate-900 dark:text-white leading-none">
-                                        Structure <br /> & Govern
+                                        Structure <br /> & Control
                                     </h3>
                                 </div>
                                 <p className="text-lg font-sans text-slate-600 dark:text-slate-400 leading-relaxed pl-7 border-l border-dashed border-slate-300 dark:border-white/20">
-                                    Mirror your org chart. Create distinct departments, allocate strict budget perimeters, and activate your global Security Layer to govern all data flow.
+                                    Mirror your org chart. Create distinct departments, set budget limits, and apply rules to data access.
                                 </p>
                             </div>
                         </div>
@@ -604,11 +604,11 @@ export default function LandingPage() {
                                 <div className="border-l-4 border-slate-900 dark:border-white pl-6 mb-8 group-hover:bg-slate-50 dark:group-hover:bg-white/5 transition-colors py-2">
                                     <span className="block text-8xl font-black text-slate-200 dark:text-white/20 -ml-1 mb-[-4rem] relative z-0">03</span>
                                     <h3 className="relative z-10 text-3xl font-black uppercase text-slate-900 dark:text-white leading-none">
-                                        Optimize <br /> & Run
+                                        Optimize <br /> & Scale
                                     </h3>
                                 </div>
                                 <p className="text-lg font-sans text-slate-600 dark:text-slate-400 leading-relaxed pl-7 border-l border-dashed border-slate-300 dark:border-white/20">
-                                    Execute usage. Customize the experience with efficient presets, custom guardrails, and specific AI model version controls for every team.
+                                    Launch usage. Customize the experience with efficient presets and model controls for every team.
                                 </p>
                             </div>
                         </div>
@@ -621,8 +621,7 @@ export default function LandingPage() {
             <section className="py-32 px-4 bg-white dark:bg-[#131314] text-slate-900 dark:text-white text-center relative overflow-hidden border-b-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-5xl relative z-10">
                     <h2 className="text-6xl sm:text-8xl font-black uppercase tracking-tighter mb-12 leading-[0.85]">
-                        Don't trust <span className="inline-block border-4 border-slate-900 dark:border-white px-4 py-1 mx-2 transform -rotate-2">LLMs<span className="text-slate-900 dark:text-white">,</span></span><br />
-                        add a control layer!
+                        Use AI without <br /> giving up control.
                     </h2>
                     <ExternalAppLink
                         href="https://app.remova.org/register"
@@ -683,16 +682,16 @@ export default function LandingPage() {
                                         </h4>
                                         <ul className="space-y-6">
                                             {[
-                                                "Hyper-Modal Access (GPT-4o, Claude 3.5, Gemini 1.5)",
-                                                "Visual Creativity Engine (DALL-E 3 & High-Fi)",
-                                                "Document Forge (Auto PDF/Report Gen)",
-                                                "Intelligent Routing (Auto-Optimization)",
-                                                "Context-Aware Grounding (Private Data)",
-                                                "Universal API Gateway (broad model access)",
-                                                "Web research and real-time synthesis",
-                                                "Custom Model Fine-tuning & Deployment",
-                                                "Multi-Modal Pipeline Orchestration",
-                                                "Adaptive Latency-Optimized Inference"
+                                                "ChatGPT, Claude, and Gemini access",
+                                                "Visual creation tools",
+                                                "Document creation",
+                                                "Smart routing",
+                                                "Private data grounding",
+                                                "Unified model access",
+                                                "Web research and real-time answers",
+                                                "Custom model setup",
+                                                "Multi-step workflows",
+                                                "Fast response paths"
                                             ].map((feature, idx) => (
                                                 <li key={idx} className="flex items-start gap-4 group">
                                                     <div className="h-3 w-3 bg-slate-900 dark:bg-white mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform" />
@@ -702,23 +701,23 @@ export default function LandingPage() {
                                         </ul>
                                     </div>
 
-                                    {/* Governance */}
+                                    {/* Safety */}
                                     <div>
                                         <h4 className="text-2xl font-black uppercase text-slate-900 dark:text-white mb-8 border-b-2 border-slate-900 dark:border-white pb-4">
-                                            Global Governance
+                                            Safety & Access
                                         </h4>
                                         <ul className="space-y-6">
                                             {[
-                                                "Dual-Layer Guardrails (Fast & Semantic)",
-                                                "PII & Secret Shield (Instant Redaction)",
-                                                "Hierarchical Policy Engine (Global RBAC)",
-                                                "Executive Analytics & ROI Dashboards",
-                                                "Full Audit Transparency (1-Year Retention)",
-                                                "SSO & Directory Sync (Okta, Azure AD)",
-                                                "Custom Data Sovereignty & Geofencing",
-                                                "Proactive Compliance & Leak Detection",
-                                                "Unified Billing & Departmental Budgets",
-                                                "White-Glove Support & Technical Success"
+                                                "Fast and semantic guardrails",
+                                                "Sensitive data redaction",
+                                                "Role-based access",
+                                                "Executive analytics",
+                                                "Activity history",
+                                                "SSO and directory sync",
+                                                "Data location controls",
+                                                "Leak detection",
+                                                "Team budgets",
+                                                "White-glove support"
                                             ].map((feature, idx) => (
                                                 <li key={idx} className="flex items-start gap-4 group">
                                                     <div className="h-3 w-3 bg-slate-900 dark:bg-white mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform" />
@@ -787,7 +786,7 @@ export default function LandingPage() {
                                     {[
                                         "Private Air-Gapped Infrastructure",
                                         "Deployment of Full Control Layer",
-                                        "Local AI Model Serving (Llama, Mistral)",
+                                        "Local AI Model Serving",
                                         "Full Source Code Access Option",
                                         "Zero-Data-Outbound Guarantee"
                                     ].map((feat, i) => (
@@ -878,10 +877,10 @@ export default function LandingPage() {
                         <AlertTriangle className="h-10 w-10 animate-pulse" />
                     </div>
                     <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter mb-8 leading-none text-slate-900 dark:text-white">
-                        Add governance <br /> beyond any single provider.
+                        Keep the same safeguards <br /> across every model.
                     </h2>
                     <p className="text-2xl sm:text-3xl font-bold opacity-90 max-w-2xl mx-auto border-4 border-slate-900 dark:border-white rounded-full py-4 px-8 inline-block text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors cursor-default">
-                        Build your control layer now.
+                        Build it once. Use it everywhere.
                     </p>
                 </div>
             </section>
@@ -914,7 +913,7 @@ export default function LandingPage() {
                                         { title: "Latency-Based Routing", desc: "Performance prioritization for time-sensitive queries." },
                                         { title: "Privacy-Constraint Routing", desc: "Automatic routing to sovereign/local models for sensitive data." },
                                         { title: "Universal API Gateway", desc: "Single-point access to a global network of models." },
-                                        { title: "Broad Model Access", desc: "Integration with a large library of top-tier LLMs." },
+                                        { title: "Broad Model Access", desc: "Integration with approved AI models." },
                                         { title: "Vendor-Agnostic Architecture", desc: "Zero lock-in to any single model provider (OpenAI, Anthropic, etc.)." },
                                         { title: "Multi-Modal Pipeline (Text)", desc: "Optimized pipelines for text generation and analysis." },
                                         { title: "Multi-Modal Pipeline (Image)", desc: "State-of-the-art visual generation capabilities." },
@@ -975,7 +974,7 @@ export default function LandingPage() {
                         {/* 3. Multi-Tenancy & Governance */}
                         <div className="grid lg:grid-cols-4 gap-12">
                             <div className="lg:col-span-1">
-                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">Governance <br /> & Access</h3>
+                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">Access <br /> & Control</h3>
                                 <div className="h-2 w-24 bg-slate-900 dark:bg-white" />
                             </div>
                             <div className="lg:col-span-3">
@@ -1075,11 +1074,11 @@ export default function LandingPage() {
                 items={[
                     {
                         question: "What is Remova?",
-                        answer: "Remova is an enterprise AI governance layer for deploying multiple models with policy controls, security guardrails, and budget management."
+                        answer: "Remova is a safer way for teams to use multiple AI models with policy controls, data protection, and budget management."
                     },
                     {
                         question: "How does Remova ensure data privacy?",
-                        answer: "Remova applies policy checks and sensitive-data controls before requests reach external models, with audit-ready visibility for governance teams."
+                        answer: "Remova applies policy checks and sensitive-data controls before requests reach external models, with visibility for admins."
                     },
                     {
                         question: "Can I manage AI costs across different departments?",
@@ -1091,10 +1090,10 @@ export default function LandingPage() {
                     },
                     {
                         question: "What AI models are supported?",
-                        answer: "Remova supports a broad multi-provider model catalog, so teams can use approved models from one governed interface."
+                        answer: "Remova supports a broad model catalog, so teams can use approved models from one place."
                     }
                 ]}
-                title="Common Questions about AI for Companies"
+                title="Common Questions about safer AI at work"
             />
 
             <LeadMagnetSection magnet="adoption-plan" />
@@ -1103,10 +1102,10 @@ export default function LandingPage() {
             <section className="py-32 px-4 text-center bg-white dark:bg-[#131314] transition-colors duration-300 border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-6xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-8xl leading-[0.9]">
-                        Ready to <br className="hidden sm:block" /> secure your AI?
+                        Ready to <br className="hidden sm:block" /> bring AI into the company safely?
                     </h2>
                     <p className="mb-12 text-xl font-sans text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Join the organizations that trust Remova to deploy LLMs safely and confidently.
+                        Give your team access to ChatGPT, Claude, and Gemini with the right controls in place.
                     </p>
                     <ExternalAppLink
                         href="https://app.remova.org/register"
