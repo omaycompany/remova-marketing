@@ -27,7 +27,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    environment: production
+    environment: github-pages
     runs-on: ubuntu-latest
     env:
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
