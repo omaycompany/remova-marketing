@@ -92,13 +92,16 @@ export default function LeadMagnetSection({ magnet, tone = "white" }: Props) {
         setStatusText("");
 
         try {
-            const response = await fetch("/api/subscribe", {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    Accept: "application/json",
                 },
                 body: JSON.stringify({
+                    access_key: "605d5350-f21e-4531-bd3c-219ad374486c",
                     email,
+                    subject: `New Request for ${item.title}`,
                     magnet,
                 }),
             });
