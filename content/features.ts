@@ -9,17 +9,19 @@ export interface Feature {
     benefits: string[];
     useCases: string[];
     faqs?: { question: string; answer: string }[];
+    lastModified?: string;
 }
 
 export const features: Feature[] = [
     {
         slug: "policy-guardrails",
+        lastModified: "2026-04-23",
         title: "Policy Guardrails",
         metaTitle: "Policy Guardrails for Enterprise AI | Remova",
         metaDescription: "Apply policy checks to AI inputs and outputs with configurable enforcement and audit visibility.",
         headline: "Policy Guardrails",
         subheadline: "Enforce policy before risky output reaches users",
-        description: "Remova evaluates AI requests and responses against organization policy so teams can block unsafe behavior, warn on borderline cases, and keep legitimate work moving without relying on manual spot checks.",
+        description: "Remova evaluates AI requests and responses against organization policy (a critical component for <a href='/blog/governing-agentic-ai-enterprise'>governing agentic AI</a>) so teams can block unsafe behavior, warn on borderline cases, and keep legitimate work moving without relying on manual spot checks.",
         benefits: [
             "Configurable rules tied to actual workflow policy",
             "Checks on both prompts and generated output",
@@ -36,12 +38,13 @@ export const features: Feature[] = [
     },
     {
         slug: "sensitive-data-protection",
+        lastModified: "2026-04-23",
         title: "Sensitive Data Protection",
         metaTitle: "Sensitive Data Protection for Enterprise AI | Remova",
         metaDescription: "Detect and protect sensitive information in AI workflows with configurable controls and event logging.",
         headline: "Sensitive Data Protection",
         subheadline: "Reduce accidental data exposure in AI usage",
-        description: "Remova helps identify sensitive content in prompts and responses so organizations can redact, block, or review risky interactions before confidential material moves beyond approved boundaries.",
+        description: "Remova helps identify sensitive content in prompts and responses (essential for protecting <a href='/blog/sensitive-data-protection-ai-workflows'>data in enterprise AI workflows</a> and mitigating <a href='/blog/shadow-ai-enterprise-detection-response'>shadow AI</a>) so organizations can redact, block, or review risky interactions before confidential material moves beyond approved boundaries.",
         benefits: [
             "Pattern and context-aware detection for higher-risk content",
             "Configurable redaction, blocking, and escalation behavior",

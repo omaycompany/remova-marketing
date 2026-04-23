@@ -27,7 +27,11 @@ concurrency:
 jobs:
   # Build job
   build:
+    environment: production
     runs-on: ubuntu-latest
+    env:
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,6 +44,10 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
+      - name: Validate required secrets
+        run: |
+          test -n "$RESEND_API_KEY" || (echo "Missing RESEND_API_KEY" && exit 1)
+          test -n "$RESEND_AUDIENCE_ID" || (echo "Missing RESEND_AUDIENCE_ID" && exit 1)
       - name: Build with Next.js
         run: npm run build
       - name: Upload artifact

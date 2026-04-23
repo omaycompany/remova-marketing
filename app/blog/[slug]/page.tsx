@@ -16,6 +16,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!post) return {};
     const title = post.title;
     const description = `Learn about ${post.title}. ${post.metaDescription}`;
+    const publishedTime = `${post.date}T00:00:00.000Z`;
+    const modifiedTime = `${post.lastModified ?? post.date}T00:00:00.000Z`;
     return {
         title,
         description,
@@ -32,10 +34,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             url: absoluteUrl(`/blog/${post.slug}`),
             siteName: SITE_NAME,
             images: [DEFAULT_OG_IMAGE],
-            type: "article"
+            type: "article",
+            publishedTime,
+            modifiedTime,
+            authors: [post.author ?? "Remova"],
+            section: post.category,
         },
         twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
-        alternates: { canonical: `/blog/${post.slug}` },
+        alternates: {
+            canonical: `/blog/${post.slug}`,
+        },
     };
 }
 
@@ -88,13 +96,20 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     ];
     const priorityMetrics = metricsByCategory[post.category] || metricsByCategory.Guide;
 
+    const articleType = post.articleType ?? "BlogPosting";
+    const dateModified = post.lastModified ?? post.date;
+
     const jsonLd = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": articleType,
         "headline": post.title,
         "description": post.metaDescription,
         "mainEntityOfPage": absoluteUrl(`/blog/${post.slug}`),
-        "author": { "@type": "Organization", "name": "Remova" },
+        "author": {
+            "@type": "Organization",
+            "name": post.author ?? "Remova",
+            "url": absoluteUrl("/"),
+        },
         "publisher": {
             "@type": "Organization",
             "name": "Remova",
@@ -103,10 +118,25 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 "url": absoluteUrl("/icon.png"),
             },
         },
-        "datePublished": post.date,
-        "dateModified": post.date,
+        "datePublished": `${post.date}T00:00:00.000Z`,
+        "dateModified": `${dateModified}T00:00:00.000Z`,
         "image": DEFAULT_OG_IMAGE_URL,
+        "keywords": post.category,
+        "articleSection": post.category,
+        "inLanguage": "en-US",
+        "wordCount": post.sections.reduce((acc, s) => acc + s.content.split(" ").length, 0),
     };
+
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": absoluteUrl("/") },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": absoluteUrl("/blog") },
+            { "@type": "ListItem", "position": 3, "name": post.title },
+        ],
+    };
+
 
     // Default unique FAQs based on blog post
     const defaultFaqs = [
@@ -126,12 +156,36 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
     const displayFaqs = post.faqs || defaultFaqs;
 
+    const faqLd = displayFaqs.length > 0 ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": displayFaqs.map((faq) => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer,
+            },
+        })),
+    } : null;
+
+
     return (
         <div className="flex flex-col">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
+            {faqLd && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+                />
+            )}
 
             {/* Hero */}
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
@@ -150,9 +204,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-4 py-1.5 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md">
                             <Tag className="h-3.5 w-3.5" /> {post.category}
                         </span>
-                        <span className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                            <Calendar className="h-3.5 w-3.5" /> {post.date}
-                        </span>
+                        <time dateTime={post.date} className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 font-medium">
+                            <Calendar className="h-3.5 w-3.5" />
+                            {new Date(`${post.date}T00:00:00.000Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                        </time>
                         <span className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 font-medium">
                             <Clock className="h-3.5 w-3.5" /> {post.readTime}
                         </span>

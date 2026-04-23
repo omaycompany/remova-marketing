@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "Remova";
 export const SITE_URL = "https://www.remova.org";
-export const SITE_LAST_UPDATED = "2026-03-25";
+
+// Always reflects the current build date so every deploy reports a fresh lastModified
+const now = new Date();
+export const SITE_LAST_UPDATED = now.toISOString().split("T")[0];
 
 export const DEFAULT_OG_IMAGE_URL = `${SITE_URL}/images/og-image.png`;
 export const DEFAULT_OG_IMAGE = {
@@ -40,7 +43,14 @@ export function dateFromIsoDate(value: string) {
     return new Date(`${value}T00:00:00.000Z`);
 }
 
-export const SITE_LAST_UPDATED_DATE = dateFromIsoDate(SITE_LAST_UPDATED);
+/** Returns true if an ISO date string is within the last 30 days */
+export function isRecentDate(isoDate: string): boolean {
+    const date = dateFromIsoDate(isoDate);
+    const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+    return date >= thirtyDaysAgo;
+}
+
+export const SITE_LAST_UPDATED_DATE = now;
 
 export function legacyRedirectMetadata(canonicalPath: string): Metadata {
     return {

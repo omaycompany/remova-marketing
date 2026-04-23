@@ -1,3 +1,6 @@
+"use client";
+
+import { FormEvent, useState } from "react";
 import {
     AlertTriangle,
     ClipboardCheck,
@@ -21,8 +24,6 @@ type LeadMagnet = {
     description: string;
     deliverable: string;
     icon: LucideIcon;
-    emailSubject: string;
-    emailBody: string;
     showDemo?: boolean;
 };
 
@@ -32,40 +33,30 @@ const leadMagnets: Record<LeadMagnetId, LeadMagnet> = {
         description: "Answer a few questions to see how ready your company is to adopt AI safely.",
         deliverable: "A readiness level with the next actions worth taking.",
         icon: ClipboardCheck,
-        emailSubject: "Send me the AI Readiness Check",
-        emailBody: "Hi Remova,\n\nPlease send me the AI Readiness Check.\n\nCompany:\nRole:\n",
     },
     "use-case-selector": {
         title: "Safe AI Use Case Selector",
         description: "Choose your team and goals, then start with the AI use cases that fit best and carry the least risk.",
         deliverable: "Recommended first use cases for your company.",
         icon: Waypoints,
-        emailSubject: "Send me the Safe AI Use Case Selector",
-        emailBody: "Hi Remova,\n\nPlease send me the Safe AI Use Case Selector.\n\nTeam:\nGoal:\n",
     },
     "policy-generator": {
         title: "AI Policy Generator",
         description: "Generate a practical internal AI policy your team can review, edit, and put into use.",
         deliverable: "A draft AI policy tailored to company usage.",
         icon: FileCog,
-        emailSubject: "Send me the AI Policy Generator",
-        emailBody: "Hi Remova,\n\nPlease send me the AI Policy Generator.\n\nCompany:\nIndustry:\n",
     },
     "employee-safety-checklist": {
         title: "Employee AI Safety Checklist",
         description: "Give employees a simple checklist for using AI without exposing company data or creating avoidable risk.",
         deliverable: "A 1-page checklist for daily safe AI use.",
         icon: ShieldCheck,
-        emailSubject: "Send me the Employee AI Safety Checklist",
-        emailBody: "Hi Remova,\n\nPlease send me the Employee AI Safety Checklist.\n\nCompany:\nTeam size:\n",
     },
     "adoption-plan": {
         title: "AI Adoption Plan",
         description: "Get a phased rollout plan that balances practical adoption, security, privacy, and employee readiness.",
         deliverable: "A recommended plan for what to do first, next, and later.",
         icon: Map,
-        emailSubject: "Send me the AI Adoption Plan",
-        emailBody: "Hi Remova,\n\nPlease send me the AI Adoption Plan.\n\nCompany:\nPriority:\n",
         showDemo: true,
     },
     "risk-test": {
@@ -73,8 +64,6 @@ const leadMagnets: Record<LeadMagnetId, LeadMagnet> = {
         description: "Test what can go wrong before teams start using AI loosely across the company.",
         deliverable: "A short risk summary with the main gaps to close.",
         icon: AlertTriangle,
-        emailSubject: "Send me the AI Risk Test",
-        emailBody: "Hi Remova,\n\nPlease send me the AI Risk Test.\n\nCompany:\nMain concern:\n",
         showDemo: true,
     },
 };
@@ -91,6 +80,43 @@ type Props = {
 export default function LeadMagnetSection({ magnet, tone = "white" }: Props) {
     const item = leadMagnets[magnet];
     const Icon = item.icon;
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    const [statusText, setStatusText] = useState("");
+
+    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        if (status === "submitting") return;
+
+        setStatus("submitting");
+        setStatusText("");
+
+        try {
+            const response = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email,
+                    magnet,
+                }),
+            });
+
+            const payload = (await response.json().catch(() => ({}))) as { message?: string };
+
+            if (!response.ok) {
+                throw new Error(payload.message || "Something went wrong. Please try again.");
+            }
+
+            setStatus("success");
+            setStatusText(payload.message || "Done. Check your inbox.");
+            setEmail("");
+        } catch (error) {
+            setStatus("error");
+            setStatusText(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+        }
+    }
 
     return (
         <section
@@ -125,22 +151,53 @@ export default function LeadMagnetSection({ magnet, tone = "white" }: Props) {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap gap-3">
-                            <a
-                                href={`mailto:notifications@remova.org?subject=${encodeURIComponent(item.emailSubject)}&body=${encodeURIComponent(item.emailBody)}`}
-                                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
-                            >
-                                Send to my email
-                            </a>
-                            {item.showDemo ? (
-                                <a
-                                    href={demoHref}
-                                    className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-black text-slate-900 transition hover:bg-slate-100 dark:border-white/15 dark:text-white dark:hover:bg-white/5"
+                        <form onSubmit={onSubmit} className="space-y-3">
+                            <label htmlFor={`lead-magnet-email-${magnet}`} className="sr-only">
+                                Email address
+                            </label>
+                            <input
+                                id={`lead-magnet-email-${magnet}`}
+                                type="email"
+                                inputMode="email"
+                                autoComplete="email"
+                                placeholder="Work email"
+                                value={email}
+                                onChange={(event) => setEmail(event.target.value)}
+                                required
+                                className="w-full rounded-full border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-slate-900 dark:border-white/20 dark:bg-[#0f1012] dark:text-white dark:placeholder:text-slate-400 dark:focus:border-white"
+                            />
+
+                            <div className="flex flex-wrap gap-3">
+                                <button
+                                    type="submit"
+                                    disabled={status === "submitting"}
+                                    className="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
                                 >
-                                    Book demo
-                                </a>
+                                    {status === "submitting" ? "Sending..." : "Send to my email"}
+                                </button>
+
+                                {item.showDemo ? (
+                                    <a
+                                        href={demoHref}
+                                        className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-black text-slate-900 transition hover:bg-slate-100 dark:border-white/15 dark:text-white dark:hover:bg-white/5"
+                                    >
+                                        Book demo
+                                    </a>
+                                ) : null}
+                            </div>
+
+                            {statusText ? (
+                                <p
+                                    className={`text-sm font-medium ${
+                                        status === "success"
+                                            ? "text-emerald-700 dark:text-emerald-300"
+                                            : "text-red-700 dark:text-red-300"
+                                    }`}
+                                >
+                                    {statusText}
+                                </p>
                             ) : null}
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

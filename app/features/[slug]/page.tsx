@@ -78,6 +78,29 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
     ];
 
     const displayFaqs = feature.faqs || defaultFaqs;
+
+    const breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": absoluteUrl("/") },
+            { "@type": "ListItem", "position": 2, "name": "Features", "item": absoluteUrl("/features") },
+            { "@type": "ListItem", "position": 3, "name": feature.title },
+        ],
+    };
+
+    const faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": displayFaqs.map((faq) => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer,
+            },
+        })),
+    };
     const rolloutChecklist = [
         `Define policy scope and ownership for ${feature.title.toLowerCase()}.`,
         `Pilot ${feature.title.toLowerCase()} with one department and measure adoption quality.`,
@@ -96,6 +119,14 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
             />
 
             {/* Hero */}

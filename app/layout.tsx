@@ -69,9 +69,27 @@ export default function RootLayout({
         "description": "Enterprise AI governance platform with policy controls, sensitive data protection, and budget management."
     };
 
+    const webSiteSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Remova",
+        "url": SITE_URL,
+        "description": "The enterprise control layer for AI with governance, safety, and cost management controls.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": `${SITE_URL}/blog?q={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+        }
+    };
+
     return (
         <html lang="en">
             <head>
+                {/* RSS Autodiscovery — lets crawlers and feed readers find new content */}
+                <link rel="alternate" type="application/rss+xml" title="Remova Blog" href="/feed.xml" />
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-YR03QTP6EC"
                     strategy="afterInteractive"
@@ -106,6 +124,10 @@ export default function RootLayout({
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
                 />
             </head>
             <body className={`${inter.variable} font-sans`}>
