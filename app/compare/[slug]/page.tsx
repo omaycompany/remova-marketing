@@ -133,9 +133,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     </h1>
                     <div className="mb-12 max-w-3xl space-y-4">
                         {comp.intro.split('\n\n').map((paragraph, idx) => (
-                            <p key={idx} className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                                {paragraph}
-                            </p>
+                             <p key={idx} className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph }} />
                         ))}
                     </div>
 
@@ -155,7 +153,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>{comp.verdict}</span>
+                                <span dangerouslySetInnerHTML={{ __html: comp.verdict }} />
                             </li>
                         </ul>
                     </div>
@@ -177,7 +175,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                                         {contender.strengths.map((s, j) => (
                                             <li key={j} className="flex items-start gap-3 text-base font-bold text-slate-700 dark:text-slate-300">
                                                 <Check className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
-                                                <span>{s}</span>
+                                                <span dangerouslySetInnerHTML={{ __html: s }} />
                                             </li>
                                         ))}
                                     </ul>
@@ -188,7 +186,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                                         {contender.weaknesses.map((w, j) => (
                                             <li key={j} className="flex items-start gap-3 text-base font-bold text-slate-500 dark:text-slate-400">
                                                 <X className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
-                                                <span>{w}</span>
+                                                <span dangerouslySetInnerHTML={{ __html: w }} />
                                             </li>
                                         ))}
                                     </ul>
@@ -207,9 +205,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     </h2>
                     <div className="max-w-3xl space-y-4">
                         {comp.verdict.split('\n\n').map((paragraph, idx) => (
-                            <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                                {paragraph}
-                            </p>
+                             <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
                         ))}
                     </div>
                 </div>

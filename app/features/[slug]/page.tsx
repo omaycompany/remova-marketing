@@ -199,9 +199,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                             </h2>
                             <div className="space-y-4">
                                 {feature.description.split('\n\n').map((paragraph, idx) => (
-                                    <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                                        {paragraph}
-                                    </p>
+                                    <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
                                 ))}
                             </div>
                         </div>

@@ -150,9 +150,7 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                     </h2>
                     <div className="space-y-4 mb-12">
                         {alt.competitorDescription.split('\n\n').map((paragraph, idx) => (
-                            <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                                {paragraph}
-                            </p>
+                             <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
                         ))}
                     </div>
                     <h3 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8">

@@ -354,15 +354,15 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "rag-architecture-compliance-failures",
-        title: "Why Your <a href='/glossary/rag'>RAG</a> Architecture Is Failing Compliance Audits",
-        metaDescription: "<a href='/glossary/rag'>Retrieval-Augmented Generation</a> (<a href='/glossary/rag'>RAG</a>) solves hallucinations but creates massive data access risks. Learn why auditors are flagging enterprise <a href='/glossary/rag'>RAG</a> systems and how to fix them.",
+        title: "Why Your RAG Architecture Is Failing Compliance Audits",
+        metaDescription: "Retrieval-Augmented Generation (RAG) solves hallucinations but creates massive data access risks. Learn why auditors are flagging enterprise RAG systems and how to fix them.",
         category: "Compliance",
         date: "2026-06-15",
         lastModified: "2026-06-15",
         articleType: "BlogPosting",
         author: "Remova Architecture Team",
         readTime: "8 min",
-        excerpt: "Connecting an LLM to your internal databases seems like the perfect solution to hallucinations. But if your <a href='/glossary/rag'>RAG</a> system ignores identity permissions, you are building a massive compliance violation.",
+        excerpt: "Connecting an LLM to your internal databases seems like the perfect solution to hallucinations. But if your RAG system ignores identity permissions, you are building a massive compliance violation.",
         sections: [
             {
                 heading: "The Promise and Peril of RAG",
@@ -518,15 +518,15 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "dynamic-data-redaction-vs-static-dlp",
-        title: "Dynamic Data Redaction vs. Static <a href='/features/sensitive-data-protection'>DLP</a>: Why Context Matters",
-        metaDescription: "Legacy <a href='/features/sensitive-data-protection'>Data Loss Prevention</a> (<a href='/features/sensitive-data-protection'>DLP</a>) tools break AI workflows. Discover why contextual, dynamic data redaction is the only way to secure generative AI.",
+        title: "Dynamic Data Redaction vs. Static DLP: Why Context Matters",
+        metaDescription: "Legacy Data Loss Prevention (DLP) tools break AI workflows. Discover why contextual, dynamic data redaction is the only way to secure generative AI.",
         category: "Security",
         date: "2026-06-08",
         lastModified: "2026-06-08",
         articleType: "BlogPosting",
         author: "Remova Security Research",
         readTime: "8 min",
-        excerpt: "When you put a 15-year-old <a href='/features/sensitive-data-protection'>DLP</a> tool in front of a modern LLM, productivity dies. Securing AI requires understanding semantic intent, not just scanning for regex patterns.",
+        excerpt: "When you put a 15-year-old DLP tool in front of a modern LLM, productivity dies. Securing AI requires understanding semantic intent, not just scanning for regex patterns.",
         sections: [
             {
                 heading: "The Failure of First-Generation Security",
@@ -574,7 +574,7 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "what-is-enterprise-ai-governance-2026-guide",
-        title: "What Is Enterprise <a href='/glossary/ai-governance'>AI Governance</a>? The Complete 2026 Guide",
+        title: "What Is Enterprise AI Governance? The Complete 2026 Guide",
         metaDescription: "Enterprise AI governance in 2026 is an operational discipline, not a PDF. Learn how to design active controls, manage cost, and scale AI safely.",
         category: "Governance",
         date: "2026-05-01",
@@ -630,8 +630,8 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "enterprise-ai-security-ciso-playbook",
-        title: "Enterprise AI Security: The <a href='/use-cases/ciso'>CISO</a>'s Complete Playbook",
-        metaDescription: "The <a href='/use-cases/ciso'>CISO</a> guide to securing enterprise AI. Learn how to combat prompt injections, govern <a href='/glossary/shadow-ai'>shadow AI</a>, and implement data protection guardrails in 2026.",
+        title: "Enterprise AI Security: The CISO's Complete Playbook",
+        metaDescription: "The CISO guide to securing enterprise AI. Learn how to combat prompt injections, govern shadow AI, and implement data protection guardrails in 2026.",
         category: "Security",
         date: "2026-05-04",
         lastModified: "2026-05-04",
@@ -742,8 +742,8 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "calculate-roi-enterprise-ai-governance",
-        title: "How to Calculate the ROI of Enterprise <a href='/glossary/ai-governance'>AI Governance</a>",
-        metaDescription: "AI governance isn't just a security cost—it is a financial strategy. Learn how to calculate the true ROI of <a href='/features/department-budgets'>FinOps</a>, model routing, and workflow standardization.",
+        title: "How to Calculate the ROI of Enterprise AI Governance",
+        metaDescription: "AI governance isn't just a security cost—it is a financial strategy. Learn how to calculate the true ROI of FinOps, model routing, and workflow standardization.",
         category: "FinOps",
         date: "2026-05-12",
         lastModified: "2026-05-12",
@@ -1408,8 +1408,8 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "eu-ai-act-enterprise-readiness-checklist",
-        title: "<a href='/blog/eu-ai-act-enterprise-readiness-checklist'>EU AI Act</a>: What Enterprise Teams Need Ready by August 2026",
-        metaDescription: "The <a href='/blog/eu-ai-act-enterprise-readiness-checklist'>EU AI Act</a> enforcement deadline for high-risk AI systems is August 2, 2026. Here is the operational checklist enterprise teams need to meet it.",
+        title: "EU AI Act: What Enterprise Teams Need Ready by August 2026",
+        metaDescription: "The EU AI Act enforcement deadline for high-risk AI systems is August 2, 2026. Here is the operational checklist enterprise teams need to meet it.",
         category: "Compliance",
         date: "2026-04-23",
         articleType: "NewsArticle",
@@ -1432,8 +1432,8 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "governing-agentic-ai-enterprise",
-        title: "Governing <a href='/blog/governing-agentic-ai-enterprise'>Agentic AI</a>: Why Static Policies Fail for Autonomous Systems",
-        metaDescription: "<a href='/blog/governing-agentic-ai-enterprise'>Agentic AI</a> has moved into enterprise production, but traditional governance frameworks assume human workflows. Here is what effective agentic AI governance requires.",
+        title: "Governing Agentic AI: Why Static Policies Fail for Autonomous Systems",
+        metaDescription: "Agentic AI has moved into enterprise production, but traditional governance frameworks assume human workflows. Here is what effective agentic AI governance requires.",
         category: "Governance",
         date: "2026-04-24",
         articleType: "NewsArticle",
@@ -1456,13 +1456,13 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "shadow-ai-enterprise-detection-response",
-        title: "<a href='/glossary/shadow-ai'>Shadow AI</a> in 2026: Detection, Response, and the Case for Sanctioned Alternatives",
-        metaDescription: "Most enterprises have more unauthorized AI usage than they track. Here is how to detect <a href='/glossary/shadow-ai'>shadow AI</a>, understand why bans fail, and build a governed alternative that actually works.",
+        title: "Shadow AI in 2026: Detection, Response, and the Case for Sanctioned Alternatives",
+        metaDescription: "Most enterprises have more unauthorized AI usage than they track. Here is how to detect shadow AI, understand why bans fail, and build a governed alternative that actually works.",
         category: "Security",
         date: "2026-04-25",
         articleType: "NewsArticle",
         readTime: "8 min",
-        excerpt: "Banning <a href='/glossary/shadow-ai'>shadow AI</a> tools does not stop the usage — it just moves it to personal devices where you have no visibility at all.",
+        excerpt: "Banning shadow AI tools does not stop the usage — it just moves it to personal devices where you have no visibility at all.",
         sections: [
             { heading: "How Widespread Shadow AI Actually Is", content: "<a href='/glossary/shadow-ai'>Shadow AI</a> — the use of AI tools by employees without formal IT or security approval — is now one of the most consistently reported enterprise security concerns. Surveys from early 2026 indicate that a significant majority of employees use AI tools for work tasks, and that a substantial share of those tools were adopted without any organizational approval process. The gap between what employees use and what IT is aware of has widened as consumer AI tools have become sophisticated enough to handle genuinely complex work tasks. Employees are using these tools for drafting communications, summarizing documents, writing code, researching topics, and analyzing data — workflows that often involve confidential business information, customer data, proprietary processes, and legally sensitive material. The organization's visibility into this activity is typically zero." },
             { heading: "Why Traditional Responses Fail", content: "The default enterprise response to <a href='/glossary/shadow-ai'>shadow AI</a> has been to block it through network controls, publish usage policies that prohibit unauthorized tools, and issue warnings when violations are detected. These approaches fail for a straightforward reason: they remove convenience without providing an alternative. Employees who use AI tools to get work done faster do not stop when the tool is blocked — they find a way around the block, use the tool on personal devices or networks, or find a different tool that is not yet on the block list. The result is usage that is even less visible to security teams than before the block was implemented. Research consistently shows that the most effective way to reduce <a href='/glossary/shadow-ai'>shadow AI</a> risk is to provide a sanctioned alternative that meets a high proportion of the workflow needs that drive unauthorized adoption in the first place." },
@@ -1553,7 +1553,7 @@ const rawBlogPosts: BlogPost[] = [
     {
         slug: "role-based-access-ai-governance",
         title: "Role-Based Access for AI: Beyond Just Admin vs. User",
-        metaDescription: "Enterprise AI needs granular <a href='/features/role-access-control'>RBAC</a>: model access, budget authority, policy configuration, and audit viewing. Here is how to design it.",
+        metaDescription: "Enterprise AI needs granular RBAC: model access, budget authority, policy configuration, and audit viewing. Here is how to design it.",
         category: "Operations",
         date: "2026-05-07",
         articleType: "BlogPosting",
@@ -1594,7 +1594,7 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "ai-usage-analytics-operational-guide",
-        title: "AI <a href='/features/usage-analytics'>Usage Analytics</a>: From Activity Logs to Operational Intelligence",
+        title: "AI Usage Analytics: From Activity Logs to Operational Intelligence",
         metaDescription: "AI analytics should connect activity, risk, and cost. Here is what to measure, how to set review cadences, and when analytics should trigger action.",
         category: "Operations",
         date: "2026-05-13",
@@ -1637,8 +1637,8 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "knowledge-grounding-rag-enterprise-governance",
-        title: "Knowledge Grounding and <a href='/glossary/rag'>RAG</a>: A Governance Perspective",
-        metaDescription: "<a href='/glossary/rag'>RAG</a> improves AI accuracy but introduces new governance risks around data access and hallucinated citations. Here is the control framework.",
+        title: "Knowledge Grounding and RAG: A Governance Perspective",
+        metaDescription: "RAG improves AI accuracy but introduces new governance risks around data access and hallucinated citations. Here is the control framework.",
         category: "Guide",
         date: "2026-05-20",
         articleType: "BlogPosting",
@@ -1658,7 +1658,7 @@ const rawBlogPosts: BlogPost[] = [
     },
     {
         slug: "preset-workflows-standardize-ai-usage",
-        title: "<a href='/features/preset-workflows'>Preset Workflows</a>: Standardizing AI Usage Across Departments",
+        title: "Preset Workflows: Standardizing AI Usage Across Departments",
         metaDescription: "Instead of relying on employee prompt engineering, standardizing recurring tasks with preset workflows improves quality, reduces risk, and provides better governance.",
         category: "Operations",
         date: "2026-05-21",
