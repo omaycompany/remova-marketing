@@ -16,7 +16,7 @@ export const useCases: UseCase[] = [
     {
         slug: "financial-services",
         category: "industry",
-        metaTitle: "AI Governance for Financial Services | Remova",
+        metaTitle: "AI Governance for Financial Services",
         metaDescription: "Govern AI usage in financial organizations with policy controls, auditability, and spend management.",
         headline: "AI for Financial Services",
         subheadline: "Control risk while teams use AI productively",
@@ -38,7 +38,7 @@ export const useCases: UseCase[] = [
     {
         slug: "healthcare",
         category: "industry",
-        metaTitle: "AI Governance for Healthcare Organizations | Remova",
+        metaTitle: "AI Governance for Healthcare Organizations",
         metaDescription: "Deploy AI with governance controls for healthcare teams handling sensitive workflows and records.",
         headline: "AI for Healthcare Organizations",
         subheadline: "Enable AI usage with strong privacy and control",
@@ -60,7 +60,7 @@ export const useCases: UseCase[] = [
     {
         slug: "legal-services",
         category: "industry",
-        metaTitle: "AI Governance for Legal Teams | Remova",
+        metaTitle: "AI Governance for Legal Teams",
         metaDescription: "Use AI in legal workflows with controlled access, retention settings, and policy checks.",
         headline: "AI for Legal Services",
         subheadline: "Support legal work with governed AI controls",
@@ -82,7 +82,7 @@ export const useCases: UseCase[] = [
     {
         slug: "technology",
         category: "industry",
-        metaTitle: "AI Governance for Technology Teams | Remova",
+        metaTitle: "AI Governance for Technology Teams",
         metaDescription: "Scale AI adoption in technology organizations with policy, cost, and access controls.",
         headline: "AI for Technology Organizations",
         subheadline: "Scale AI usage without losing governance",
@@ -104,7 +104,7 @@ export const useCases: UseCase[] = [
     {
         slug: "public-sector",
         category: "industry",
-        metaTitle: "AI Governance for Public Sector Teams | Remova",
+        metaTitle: "AI Governance for Public Sector Teams",
         metaDescription: "Support public-sector AI adoption with policy controls, oversight, and operational transparency.",
         headline: "AI for Public Sector Teams",
         subheadline: "Improve service workflows with governed AI adoption",
@@ -126,7 +126,7 @@ export const useCases: UseCase[] = [
     {
         slug: "ciso",
         category: "role",
-        metaTitle: "AI Governance for Security Leaders | Remova",
+        metaTitle: "AI Governance for Security Leaders",
         metaDescription: "Give security leaders practical controls for AI policy enforcement, monitoring, and incident response.",
         headline: "AI Governance for Security Leaders",
         subheadline: "Enable adoption with enforceable controls",
@@ -148,7 +148,7 @@ export const useCases: UseCase[] = [
     {
         slug: "cio",
         category: "role",
-        metaTitle: "AI Governance for IT Leadership | Remova",
+        metaTitle: "AI Governance for IT Leadership",
         metaDescription: "Support enterprise AI rollout with governance, budget control, and team-level access management.",
         headline: "AI Governance for IT Leadership",
         subheadline: "Roll out AI in a controlled, scalable way",
@@ -170,7 +170,7 @@ export const useCases: UseCase[] = [
     {
         slug: "compliance-lead",
         category: "role",
-        metaTitle: "AI Governance for Compliance Teams | Remova",
+        metaTitle: "AI Governance for Compliance Teams",
         metaDescription: "Help compliance teams monitor policy adherence with audit trails and governance analytics.",
         headline: "AI Governance for Compliance Teams",
         subheadline: "Turn policy into visible operational controls",
@@ -192,7 +192,7 @@ export const useCases: UseCase[] = [
     {
         slug: "department-manager",
         category: "role",
-        metaTitle: "AI Governance for Department Managers | Remova",
+        metaTitle: "AI Governance for Department Managers",
         metaDescription: "Give department managers practical controls for budgets, access, and approved AI workflows.",
         headline: "AI Governance for Department Managers",
         subheadline: "Enable your team with clear guardrails",
@@ -214,7 +214,7 @@ export const useCases: UseCase[] = [
     {
         slug: "policy-enforcement",
         category: "function",
-        metaTitle: "AI Policy Enforcement | Remova",
+        metaTitle: "AI Policy Enforcement",
         metaDescription: "Apply enforceable AI policy controls across teams through centralized governance.",
         headline: "AI Policy Enforcement",
         subheadline: "Move from written policy to operational controls",
@@ -236,7 +236,7 @@ export const useCases: UseCase[] = [
     {
         slug: "cost-governance",
         category: "function",
-        metaTitle: "AI Cost Governance | Remova",
+        metaTitle: "AI Cost Governance",
         metaDescription: "Control AI spend through budgeting, allocation, and team-level usage visibility.",
         headline: "AI Cost Governance",
         subheadline: "Keep AI spend aligned with business priorities",
@@ -258,7 +258,7 @@ export const useCases: UseCase[] = [
     {
         slug: "safe-ai-chat",
         category: "function",
-        metaTitle: "Safe Enterprise AI Chat | Remova",
+        metaTitle: "Safe Enterprise AI Chat",
         metaDescription: "Deploy an enterprise AI chat experience with policy, privacy, and budget controls built in.",
         headline: "Safe Enterprise AI Chat",
         subheadline: "Give teams AI access with governance from day one",

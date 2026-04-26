@@ -18,7 +18,7 @@ const t = (
 ): GlossaryTerm => ({
     slug,
     term,
-    metaTitle: `What is ${term}? | AI Glossary | Remova`,
+    metaTitle: `What is ${term}? | AI Glossary`,
     metaDescription: `${term} explained for enterprise AI teams: ${definition.replace(/[.]+$/, "")}.`,
     definition,
     explanation,
@@ -124,4 +124,13 @@ export const glossaryTerms: GlossaryTerm[] = [
         "AI risk includes the potential for privacy breaches, policy violations, harmful outputs, cost overruns, unreliable automation, reputational damage, and operational disruption. It is best managed through a combination of preventive controls, monitoring, role ownership, and review processes rather than relying on users to self-govern in the moment. Mature organizations classify risk by workflow and impact level instead of treating all AI activity as equally risky or equally safe.",
         ["ai-governance", "incident-response", "policy-guardrails", "ai-finops"]
     ),
+
+    t(
+        "ai-transparency",
+        "AI Transparency",
+        "The degree to which an AI system's operations, training data, and decision-making processes are visible and understandable to stakeholders.",
+        "AI transparency is a critical requirement for enterprise trust and regulatory compliance. It encompasses several dimensions: data transparency (knowing what data trained the model), algorithmic transparency (understanding the architecture and weights), and operational transparency (logging when, where, and how the model is used). Organizations require high transparency to defend automated decisions, prevent bias, and pass audits. Without transparency, AI remains a 'black box' that exposes the enterprise to unquantifiable risk.",
+        ["audit-trails", "ai-governance", "ai-risk", "model-governance"]
+    )
+
 ];

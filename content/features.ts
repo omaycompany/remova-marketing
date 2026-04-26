@@ -17,7 +17,7 @@ export const features: Feature[] = [
         slug: "policy-guardrails",
         lastModified: "2026-04-23",
         title: "Policy Guardrails",
-        metaTitle: "Policy Guardrails for Enterprise AI | Remova",
+        metaTitle: "Policy Guardrails for Enterprise AI",
         metaDescription: "Apply policy checks to AI inputs and outputs with configurable enforcement and audit visibility.",
         headline: "Policy Guardrails",
         subheadline: "Enforce policy before risky output reaches users",
@@ -40,7 +40,7 @@ export const features: Feature[] = [
         slug: "sensitive-data-protection",
         lastModified: "2026-04-23",
         title: "Sensitive Data Protection",
-        metaTitle: "Sensitive Data Protection for Enterprise AI | Remova",
+        metaTitle: "Sensitive Data Protection for Enterprise AI",
         metaDescription: "Detect and protect sensitive information in AI workflows with configurable controls and event logging.",
         headline: "Sensitive Data Protection",
         subheadline: "Reduce accidental data exposure in AI usage",
@@ -62,7 +62,7 @@ export const features: Feature[] = [
     {
         slug: "role-access-control",
         title: "Role-Based Access Control",
-        metaTitle: "Role-Based Access Control for AI | Remova",
+        metaTitle: "Role-Based Access Control for AI",
         metaDescription: "Manage AI access by role and team with scoped permissions and administrative oversight.",
         headline: "Role-Based Access Control",
         subheadline: "Give teams only the access they need",
@@ -84,7 +84,7 @@ export const features: Feature[] = [
     {
         slug: "department-budgets",
         title: "Department Budget Controls",
-        metaTitle: "Department Budget Controls for AI | Remova",
+        metaTitle: "Department Budget Controls for AI",
         metaDescription: "Set spending limits, alerts, and controls for AI usage by team and department.",
         headline: "Department Budget Controls",
         subheadline: "Keep AI costs predictable across teams",
@@ -106,7 +106,7 @@ export const features: Feature[] = [
     {
         slug: "usage-analytics",
         title: "Usage Analytics",
-        metaTitle: "Enterprise AI Usage Analytics | Remova",
+        metaTitle: "Enterprise AI Usage Analytics",
         metaDescription: "Track AI adoption, policy events, and spend trends with role-appropriate analytics views.",
         headline: "Usage Analytics",
         subheadline: "Understand adoption, risk, and cost in one place",
@@ -128,7 +128,7 @@ export const features: Feature[] = [
     {
         slug: "preset-workflows",
         title: "Preset Workflows",
-        metaTitle: "AI Preset Workflows for Teams | Remova",
+        metaTitle: "AI Preset Workflows for Teams",
         metaDescription: "Create reusable AI presets with approved behavior, controls, and team-level governance defaults.",
         headline: "Preset Workflows",
         subheadline: "Standardize common AI tasks safely",
@@ -150,7 +150,7 @@ export const features: Feature[] = [
     {
         slug: "knowledge-grounding",
         title: "Knowledge Grounding",
-        metaTitle: "Knowledge Grounding for Enterprise AI | Remova",
+        metaTitle: "Knowledge Grounding for Enterprise AI",
         metaDescription: "Ground AI responses on approved organizational knowledge with scoped access and control.",
         headline: "Knowledge Grounding",
         subheadline: "Anchor responses in approved internal context",
@@ -172,7 +172,7 @@ export const features: Feature[] = [
     {
         slug: "audit-trails",
         title: "Audit Trails",
-        metaTitle: "AI Audit Trails and Activity Logging | Remova",
+        metaTitle: "AI Audit Trails and Activity Logging",
         metaDescription: "Maintain traceable records of AI usage and governance actions for review and compliance workflows.",
         headline: "Audit Trails",
         subheadline: "Maintain traceable records of AI activity",
@@ -194,7 +194,7 @@ export const features: Feature[] = [
     {
         slug: "retention-controls",
         title: "Retention Controls",
-        metaTitle: "AI Retention Controls for Enterprise Teams | Remova",
+        metaTitle: "AI Retention Controls for Enterprise Teams",
         metaDescription: "Configure retention behavior and access scope for AI interaction data based on organizational policy.",
         headline: "Retention Controls",
         subheadline: "Align data handling with your policy",
@@ -216,7 +216,7 @@ export const features: Feature[] = [
     {
         slug: "model-governance",
         title: "Model Governance",
-        metaTitle: "Model Governance Controls for Enterprise AI | Remova",
+        metaTitle: "Model Governance Controls for Enterprise AI",
         metaDescription: "Control model availability and usage policy by department with centralized governance.",
         headline: "Model Governance",
         subheadline: "Control who can use which model profiles",
@@ -238,7 +238,7 @@ export const features: Feature[] = [
     {
         slug: "api-access",
         title: "Governed API Access",
-        metaTitle: "Governed API Access for AI Workflows | Remova",
+        metaTitle: "Governed API Access for AI Workflows",
         metaDescription: "Integrate governed AI usage into internal applications through scoped API access and policy enforcement.",
         headline: "Governed API Access",
         subheadline: "Embed governance into your internal tools",
@@ -260,7 +260,7 @@ export const features: Feature[] = [
     {
         slug: "onboarding-controls",
         title: "Onboarding Controls",
-        metaTitle: "Enterprise AI Onboarding Controls | Remova",
+        metaTitle: "Enterprise AI Onboarding Controls",
         metaDescription: "Guide setup for teams, access, budgets, and policy defaults through a governed onboarding flow.",
         headline: "Onboarding Controls",
         subheadline: "Launch teams with governance defaults from day one",

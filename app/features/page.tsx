@@ -8,8 +8,8 @@ import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Enterprise AI Governance Features | Remova" },
-    description: "Enterprise AI governance features for policy controls, access management, usage analytics, and budget oversight.",
+    title: "Enterprise AI Governance Features",
+    description: "Audit AI spend and block data leaks in real-time with comprehensive enterprise AI governance features.",
     keywords: buildKeywords([
         "enterprise ai governance features",
         "ai policy controls",
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
         "ai budget oversight"
     ]),
     openGraph: {
-        title: "Enterprise AI Governance Features | Remova",
-        description: "Enterprise AI governance features for policy controls, access management, usage analytics, and budget oversight.",
+        title: "Enterprise AI Governance Features",
+        description: "Audit AI spend and block data leaks in real-time with comprehensive enterprise AI governance features.",
         url: absoluteUrl("/features"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Governance Features | Remova",
+        title: "Enterprise AI Governance Features",
         description: "Enterprise AI governance features for policy controls, access management, usage analytics, and budget oversight.",
         images: [DEFAULT_OG_IMAGE_URL]
     },

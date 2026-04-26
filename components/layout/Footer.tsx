@@ -62,6 +62,7 @@ export default function Footer() {
                             links: [
                                 { name: "Blog", href: "/blog" },
                                 { name: "Glossary", href: "/glossary" },
+                                { name: "Resources", href: "/resources" },
                             ],
                         },
                         {
