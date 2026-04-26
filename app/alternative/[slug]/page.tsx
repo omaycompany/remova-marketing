@@ -148,9 +148,13 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                     <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
                         About {alt.competitor}
                     </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium mb-12">
-                        {alt.competitorDescription}
-                    </p>
+                    <div className="space-y-4 mb-12">
+                        {alt.competitorDescription.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
                     <h3 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8">
                         Common Reasons to Switch
                     </h3>

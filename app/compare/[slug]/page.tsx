@@ -131,9 +131,13 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     <h1 className="mb-8 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.9]">
                         {comp.headline}
                     </h1>
-                    <p className="mb-12 max-w-3xl text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        {comp.intro}
-                    </p>
+                    <div className="mb-12 max-w-3xl space-y-4">
+                        {comp.intro.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
 
                     {/* TL;DR Section */}
                     <div className="mb-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5 text-left">
@@ -201,9 +205,13 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
                         The Verdict
                     </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium max-w-3xl">
-                        {comp.verdict}
-                    </p>
+                    <div className="max-w-3xl space-y-4">
+                        {comp.verdict.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
                 </div>
             </section>
 

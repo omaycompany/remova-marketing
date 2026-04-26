@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.remova.org/sitemap.xml
+Sitemap: https://www.remova.org/news-sitemap.xml

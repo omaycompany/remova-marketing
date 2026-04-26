@@ -151,7 +151,7 @@ export default function LeadMagnetSection({ magnet, tone = "white" }: Props) {
                             <Icon className="h-6 w-6" />
                         </div>
                         <p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">
-                            Start Smaller
+                            {item.sectionLabel || "Free Resource"}
                         </p>
                         <h2 className="mb-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.95]">
                             {item.title}

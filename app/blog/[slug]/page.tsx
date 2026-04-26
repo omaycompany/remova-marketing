@@ -44,6 +44,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         alternates: {
             canonical: `/blog/${post.slug}`,
         },
+        ...(post.articleType === "NewsArticle" && {
+            other: {
+                "news_keywords": [post.title, post.category, "enterprise ai governance"].join(", ")
+            }
+        }),
     };
 }
 
@@ -102,6 +107,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": articleType,
+        "isAccessibleForFree": true,
         "headline": post.title,
         "description": post.metaDescription,
         "mainEntityOfPage": absoluteUrl(`/blog/${post.slug}`),

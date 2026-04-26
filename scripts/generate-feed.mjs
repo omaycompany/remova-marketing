@@ -35,14 +35,18 @@ async function getBlogPosts() {
         const src = await fs.readFile(contentPath, 'utf8');
 
         // Extract slug and date pairs from the rawBlogPosts array
-        const slugDates = [...src.matchAll(/p\(\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,\s*"([^"]+)"/g)]
-            .map(m => ({
-                slug: m[1],
-                title: m[2],
-                metaDescription: m[3],
-                category: m[4],
-                date: m[5],
-            }));
+        const slugDates = [];
+        const blocks = src.split('slug:').slice(1);
+        for (const block of blocks) {
+            const slug = block.match(/^\s*"([^"]+)"/)?.[1];
+            const title = block.match(/title:\s*"([^"]+)"/)?.[1];
+            const metaDescription = block.match(/metaDescription:\s*"([^"]+)"/)?.[1];
+            const category = block.match(/category:\s*"([^"]+)"/)?.[1];
+            const date = block.match(/date:\s*"([^"]+)"/)?.[1];
+            if (slug && date) {
+                slugDates.push({ slug, title, metaDescription, category, date });
+            }
+        }
 
         const today = new Date().toISOString().split('T')[0];
         return slugDates
