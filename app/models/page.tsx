@@ -75,9 +75,6 @@ export default function ModelsPage() {
                         A curated view of recently released production models for enterprise AI teams. Compare context limits,
                         cost profile, and best-fit workloads before rollout.
                     </p>
-                    <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                        Snapshot updated: {modelsLastUpdated}
-                    </p>
                 </div>
             </section>
 
