@@ -1,26 +1,26 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { features } from "@/content/features";
-import { ShieldCheck, ArrowRight, Lock, DollarSign, Users, Cpu } from "lucide-react";
+import { ShieldCheck, ArrowRight, Lock, DollarSign, Cpu } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Features — Safe, Governed AI for Every Team",
-    description: "Give your teams access to the world's best AI models with data masking, cost controls, and safety built in. Frontier AI with on-prem security.",
+    title: "Features — Safe AI for Every Team",
+    description: "Give your teams access to frontier AI models with sensitive data masking, cost controls, and safety rules built in. On-prem level security.",
     keywords: buildKeywords([
         "enterprise ai features",
         "ai data masking",
         "ai cost controls",
         "ai safety for business",
-        "frontier ai models on-prem",
+        "frontier ai models enterprise",
         "team ai workspaces",
     ]),
     openGraph: {
-        title: "Features — Safe, Governed AI for Every Team",
-        description: "Give your teams access to the world's best AI models with data masking, cost controls, and safety built in.",
+        title: "Features — Safe AI for Every Team",
+        description: "Frontier AI models with sensitive data masking, cost controls, and safety rules built in.",
         url: absoluteUrl("/features"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Features — Safe, Governed AI for Every Team",
+        title: "Features — Safe AI for Every Team",
         description: "Frontier AI models with data masking, cost controls, and safety built in for every department.",
         images: [DEFAULT_OG_IMAGE_URL]
     },
@@ -54,22 +54,22 @@ export default function FeaturesIndex() {
         {
             icon: <Lock className="h-6 w-6" />,
             title: "Mask Sensitive Data",
-            text: "Confidential information — names, financials, trade secrets — is automatically detected and masked before it reaches any AI model. Your data stays yours.",
+            text: "Names, financials, internal identifiers. If it's in a prompt, Remova catches it and replaces it before the model sees it. Your data stays in your environment.",
         },
         {
             icon: <ShieldCheck className="h-6 w-6" />,
             title: "Keep AI Safe",
-            text: "You set the rules for what AI can and can't do. Block risky outputs, flag borderline prompts, and let safe work flow through — all automatically.",
+            text: "You set the rules: what's blocked, what's flagged, what goes through. The system enforces them on every interaction. Same rules, every team, every time.",
         },
         {
             icon: <DollarSign className="h-6 w-6" />,
             title: "Control Costs",
-            text: "Set budgets per team, get alerts before they run out, and see exactly where every dollar goes. No more surprise AI bills.",
+            text: "Each team gets a budget. You see what they spend. Alerts go out before the money runs out. If they hit the cap, usage stops. Done.",
         },
         {
             icon: <Cpu className="h-6 w-6" />,
-            title: "Frontier Models, On-Prem Safety",
-            text: "Access GPT-4o, Claude, Gemini, and more — with every interaction governed, logged, and protected behind your organization's own safety layer.",
+            title: "Frontier Models, Your Rules",
+            text: "GPT-4o, Claude, Gemini, Llama. Use any of them. Every message still goes through your company's masking, safety rules, and audit log.",
         },
     ];
 
@@ -84,11 +84,11 @@ export default function FeaturesIndex() {
                         <ShieldCheck className="h-4 w-4" /> {features.length} Features
                     </div>
                     <h1 className="mb-6 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.85]">
-                        AI for Every Team.<br />Safe by Default.
+                        Give Your Teams AI.<br />Keep Everything Safe.
                     </h1>
                     <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        Give every department access to the world&apos;s best AI models — with sensitive data masked,
-                        costs controlled, and safety rules enforced automatically. Frontier AI with the security of on-prem.
+                        Frontier AI models for every department. Sensitive data gets masked. Costs are tracked per team.
+                        Safety rules apply to every interaction. All of it runs behind your own governance layer.
                     </p>
                 </div>
             </section>
@@ -97,10 +97,10 @@ export default function FeaturesIndex() {
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-6xl">
                     <h2 className="mb-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                        What Makes Remova Different
+                        Four Things That Matter
                     </h2>
                     <p className="mb-12 max-w-2xl text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        We built Remova around four simple ideas that every company rolling out AI needs to get right.
+                        Every company rolling out AI runs into the same problems. These are the four things you need to get right.
                     </p>
                     <div className="grid sm:grid-cols-2 gap-6">
                         {pillars.map((pillar) => (
@@ -123,10 +123,10 @@ export default function FeaturesIndex() {
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-6xl">
                     <h2 className="mb-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                        Everything You Need to Roll Out AI Safely
+                        What&apos;s Included
                     </h2>
                     <p className="mb-10 max-w-2xl text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        From data protection to cost management — every feature is designed so your teams can use AI confidently, every day.
+                        From data masking to cost management to audit trails. Everything a company needs to roll out AI without the usual problems.
                     </p>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((f) => (
@@ -145,41 +145,40 @@ export default function FeaturesIndex() {
 
             <RelatedHubs hubs={relatedHubs} />
 
-            <LeadMagnetSection magnet="readiness-check" tone="slate" />
+            <LeadMagnetSection magnet="cost-calculator" tone="slate" />
 
             {/* Why This Matters */}
             <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-6xl">
                     <h2 className="mb-8 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
-                        Why Companies Choose Remova
+                        The Questions That Actually Matter
                     </h2>
                     <p className="mb-10 max-w-3xl text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        The real question isn&apos;t whether your company should use AI — it&apos;s whether you can do it
-                        without leaking data, overspending, or losing control. Here&apos;s what to look for.
+                        Before you pick an AI platform, ask yourself these. If the answer to any of them is &ldquo;I don&apos;t know,&rdquo; that&apos;s the problem.
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                         <article className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] p-6">
-                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Does it actually protect your data?</h3>
+                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Is confidential data actually protected?</h3>
                             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Not just promises — does it detect and mask sensitive information before it reaches the AI model? Can you prove it in an audit?
+                                Not &ldquo;we have a policy&rdquo; protected. Actually masked at the prompt level, logged, and provable in an audit.
                             </p>
                         </article>
                         <article className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] p-6">
-                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Can your teams actually use it?</h3>
+                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Can people actually use it every day?</h3>
                             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                The best AI platform is useless if people avoid it. Look for something that fits into daily work without slowing anyone down.
+                                A tool that slows people down doesn&apos;t get used. It gets worked around. And that&apos;s how shadow AI starts.
                             </p>
                         </article>
                         <article className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] p-6">
-                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Do you know what it costs?</h3>
+                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Do you know what it costs per team?</h3>
                             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                If you can&apos;t tell which team spent how much this month, you don&apos;t have cost control. You have a credit card bill.
+                                If you can&apos;t break down AI spend by department this month, you don&apos;t have cost control. You have a credit card bill.
                             </p>
                         </article>
                         <article className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] p-6">
-                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Are you getting the best AI available?</h3>
+                            <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">Are you using the best models available?</h3>
                             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Settling for a weaker model because it&apos;s &ldquo;safer&rdquo; is a false trade-off. You should have frontier models with real safety controls.
+                                Using a weaker model because the good ones feel risky is a bad trade. You should be able to use frontier models with real controls applied.
                             </p>
                         </article>
                     </div>

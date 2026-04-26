@@ -8,6 +8,7 @@ import {
     Map,
     ShieldCheck,
     Waypoints,
+    Calculator,
     type LucideIcon,
 } from "lucide-react";
 
@@ -17,7 +18,8 @@ export type LeadMagnetId =
     | "policy-generator"
     | "employee-safety-checklist"
     | "adoption-plan"
-    | "risk-test";
+    | "risk-test"
+    | "cost-calculator";
 
 type LeadMagnet = {
     title: string;
@@ -25,46 +27,61 @@ type LeadMagnet = {
     deliverable: string;
     icon: LucideIcon;
     showDemo?: boolean;
+    sectionLabel?: string;
 };
 
 const leadMagnets: Record<LeadMagnetId, LeadMagnet> = {
     "readiness-check": {
-        title: "AI Readiness Check",
-        description: "Answer a few questions to see how ready your company is to adopt AI safely.",
-        deliverable: "A readiness level with the next actions worth taking.",
+        title: "How Exposed Is Your Company?",
+        description: "Most companies already have employees using AI. The question is whether that's happening safely. Take 2 minutes to find out.",
+        deliverable: "A short report showing where your biggest AI risks are right now.",
         icon: ClipboardCheck,
+        sectionLabel: "Free Assessment",
     },
     "use-case-selector": {
-        title: "Safe AI Use Case Selector",
-        description: "Choose your team and goals, then start with the AI use cases that fit best and carry the least risk.",
-        deliverable: "Recommended first use cases for your company.",
+        title: "Where Should Your Team Start with AI?",
+        description: "Tell us your industry and team size. We'll tell you which AI use cases will save the most time with the least setup.",
+        deliverable: "A shortlist of AI use cases ranked by impact and effort for your situation.",
         icon: Waypoints,
+        sectionLabel: "Free Resource",
     },
     "policy-generator": {
-        title: "AI Policy Generator",
-        description: "Generate a practical internal AI policy your team can review, edit, and put into use.",
-        deliverable: "A draft AI policy tailored to company usage.",
+        title: "Get a Draft AI Policy in 5 Minutes",
+        description: "Answer 6 questions about your company. Get a real AI usage policy you can hand to legal this week.",
+        deliverable: "A ready-to-review AI policy document customized to your company.",
         icon: FileCog,
+        sectionLabel: "Free Resource",
     },
     "employee-safety-checklist": {
-        title: "Employee AI Safety Checklist",
-        description: "Give employees a simple checklist for using AI without exposing company data or creating avoidable risk.",
-        deliverable: "A 1-page checklist for daily safe AI use.",
+        title: "The 1-Page AI Safety Sheet",
+        description: "Print this, pin it next to every screen. 10 rules your team should follow every time they use AI at work.",
+        deliverable: "A printable 1-page PDF with 10 clear do's and don'ts for AI use.",
         icon: ShieldCheck,
+        sectionLabel: "Free Resource",
     },
     "adoption-plan": {
-        title: "AI Adoption Plan",
-        description: "Get a phased rollout plan that balances practical adoption, security, privacy, and employee readiness.",
-        deliverable: "A recommended plan for what to do first, next, and later.",
+        title: "Your 30-60-90 Day AI Rollout Plan",
+        description: "What to do this month, next month, and the month after. A concrete plan for rolling AI out to your teams without chaos.",
+        deliverable: "A 3-phase rollout plan with specific actions for each stage.",
         icon: Map,
         showDemo: true,
+        sectionLabel: "Free Resource",
     },
     "risk-test": {
-        title: "AI Risk Test",
-        description: "Test what can go wrong before teams start using AI loosely across the company.",
-        deliverable: "A short risk summary with the main gaps to close.",
+        title: "What Could Go Wrong?",
+        description: "5 questions about how your company uses AI today. We'll show you the risks most companies miss until it's too late.",
+        deliverable: "A risk breakdown with the 3 things you should fix first.",
         icon: AlertTriangle,
         showDemo: true,
+        sectionLabel: "Free Assessment",
+    },
+    "cost-calculator": {
+        title: "How Much Is AI Costing Your Company?",
+        description: "Enter your team size, the models you use, and how often. We'll calculate what you're spending now, what you'll spend in 6 months, and where the money is actually going.",
+        deliverable: "A cost projection showing your current AI spend, 6-month forecast, and the top 3 areas where you're overspending.",
+        icon: Calculator,
+        showDemo: true,
+        sectionLabel: "Free Tool",
     },
 };
 

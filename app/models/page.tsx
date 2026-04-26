@@ -107,7 +107,7 @@ export default function ModelsPage() {
 
             <RelatedHubs hubs={relatedHubs} />
 
-            <LeadMagnetSection magnet="use-case-selector" tone="slate" />
+            <LeadMagnetSection magnet="cost-calculator" tone="slate" />
 
             <FAQ
                 title="Model Selection FAQs"
