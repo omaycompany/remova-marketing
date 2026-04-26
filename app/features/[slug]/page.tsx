@@ -162,7 +162,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                             {feature.benefits.slice(0, 3).map((b, i) => (
                                 <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                     <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span>{b}.</span>
+                                    <span dangerouslySetInnerHTML={{ __html: `${b}.` }} />
                                 </li>
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">

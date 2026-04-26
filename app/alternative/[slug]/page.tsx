@@ -160,7 +160,7 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                         {alt.whySwitch.map((reason, i) => (
                             <li key={i} className="flex items-start gap-4 text-lg font-bold text-slate-600 dark:text-slate-400">
                                 <X className="h-6 w-6 text-red-500 mt-0.5 shrink-0" />
-                                <span>{reason}</span>
+                                <span dangerouslySetInnerHTML={{ __html: reason }} />
                             </li>
                         ))}
                     </ul>
@@ -180,7 +180,7 @@ export default function AlternativePage({ params }: { params: { slug: string } }
                                     <Check className="h-6 w-6 text-emerald-500 mt-0.5 shrink-0" />
                                     <h3 className="text-xl font-black text-slate-900 dark:text-white">{adv.title}</h3>
                                 </div>
-                                <p className="text-base font-medium text-slate-600 dark:text-slate-400 ml-10">{adv.description}</p>
+                                <p className="text-slate-600 dark:text-slate-400 font-medium" dangerouslySetInnerHTML={{ __html: adv.description }} />
                             </div>
                         ))}
                     </div>

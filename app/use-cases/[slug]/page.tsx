@@ -155,7 +155,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                                 {uc.challenges.map((challenge, i) => (
                                     <li key={i} className="flex items-start gap-4 text-lg font-bold text-slate-600 dark:text-slate-400">
                                         <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5 shrink-0" />
-                                        <span>{challenge}</span>
+                                        <span dangerouslySetInnerHTML={{ __html: challenge }} />
                                     </li>
                                 ))}
                             </ul>

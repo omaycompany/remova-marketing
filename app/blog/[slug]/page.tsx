@@ -234,7 +234,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             {post.sections.slice(0, 3).map((s, i) => (
                                 <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                     <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span>{s.heading}: {s.content.split('.')[0]}.</span>
+                                    <span dangerouslySetInnerHTML={{ __html: `${s.heading}: ${s.content.split('.')[0]}.` }} />
                                 </li>
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
