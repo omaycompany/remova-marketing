@@ -7,7 +7,7 @@ import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: { absolute: "Remova | Safer AI for Teams" },
+    title: "Remova | Safer AI for Teams",
     keywords: buildKeywords([
         "safer ai for teams",
         "chatgpt for work",
@@ -52,9 +52,7 @@ export default function LandingPage() {
                         <span className="tracking-wide">SAFER AI FOR TEAMS</span>
                     </div>
                     <h1 className="mb-8 text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl lg:text-[9rem] xl:text-[9.5rem] leading-[0.92] select-none uppercase">
-                        A safer way to <br />
-                        bring AI into <br />
-                        the company
+                        A Safer Way <br /> To Use Ai
                     </h1>
                     <p className="mx-auto mb-12 max-w-3xl text-2xl text-slate-600 dark:text-slate-300 sm:text-3xl leading-relaxed font-medium">
                         Let your team use ChatGPT, Claude, and Gemini without exposing company data.
@@ -272,7 +270,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <LeadMagnetSection magnet="use-case-selector" />
+                <LeadMagnetSection magnet="cost-calculator" />
 
                 {/* 3. Chat Like Usual */}
                 <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">

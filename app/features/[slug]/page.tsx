@@ -162,7 +162,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                             {feature.benefits.slice(0, 3).map((b, i) => (
                                 <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                     <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span>{b}.</span>
+                                    <span dangerouslySetInnerHTML={{ __html: `${b}.` }} />
                                 </li>
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
@@ -197,9 +197,11 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                             <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
                                 How It Works
                             </h2>
-                            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                                {feature.description}
-                            </p>
+                            <div className="space-y-4">
+                                {feature.description.split('\n\n').map((paragraph, idx) => (
+                                    <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                ))}
+                            </div>
                         </div>
                         <div>
                             <h3 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8">

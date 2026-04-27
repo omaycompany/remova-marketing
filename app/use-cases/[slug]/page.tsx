@@ -141,9 +141,11 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                             <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
                                 The Challenge
                             </h2>
-                            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium mb-8">
-                                {uc.description}
-                            </p>
+                            <div className="space-y-4 mb-8">
+                                {uc.description.split('\n\n').map((paragraph, idx) => (
+                                    <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                                ))}
+                            </div>
                         </div>
                         <div>
                             <h3 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8">
@@ -153,7 +155,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                                 {uc.challenges.map((challenge, i) => (
                                     <li key={i} className="flex items-start gap-4 text-lg font-bold text-slate-600 dark:text-slate-400">
                                         <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5 shrink-0" />
-                                        <span>{challenge}</span>
+                                        <span dangerouslySetInnerHTML={{ __html: challenge }} />
                                     </li>
                                 ))}
                             </ul>

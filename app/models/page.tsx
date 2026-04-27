@@ -12,8 +12,8 @@ import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Enterprise AI Model Catalog | Remova" },
-    description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
+    title: "Enterprise AI Model Catalog",
+    description: "Compare context windows, pricing, and best-fit use cases to optimize your enterprise AI model rollout.",
     keywords: buildKeywords([
         "enterprise ai model catalog",
         "llm model comparison",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
         "enterprise model selection"
     ]),
     openGraph: {
-        title: "Enterprise AI Model Catalog | Remova",
-        description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
+        title: "Enterprise AI Model Catalog",
+        description: "Compare context windows, pricing, and best-fit use cases to optimize your enterprise AI model rollout.",
         url: absoluteUrl("/models"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Model Catalog | Remova",
+        title: "Enterprise AI Model Catalog",
         description: "Enterprise AI model catalog for context windows, pricing, and best-fit use cases.",
         images: [DEFAULT_OG_IMAGE_URL],
     },
@@ -75,9 +75,6 @@ export default function ModelsPage() {
                         A curated view of recently released production models for enterprise AI teams. Compare context limits,
                         cost profile, and best-fit workloads before rollout.
                     </p>
-                    <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                        Snapshot updated: {modelsLastUpdated}
-                    </p>
                 </div>
             </section>
 
@@ -110,7 +107,7 @@ export default function ModelsPage() {
 
             <RelatedHubs hubs={relatedHubs} />
 
-            <LeadMagnetSection magnet="use-case-selector" tone="slate" />
+            <LeadMagnetSection magnet="cost-calculator" tone="slate" />
 
             <FAQ
                 title="Model Selection FAQs"

@@ -135,9 +135,11 @@ export default function GlossaryPage({ params }: { params: { slug: string } }) {
                     <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-8 leading-[0.9]">
                         In Depth
                     </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                        {term.explanation}
-                    </p>
+                    <div className="space-y-4">
+                        {term.explanation.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                        ))}
+                    </div>
                 </div>
             </section>
 

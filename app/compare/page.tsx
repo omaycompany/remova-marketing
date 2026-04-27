@@ -8,7 +8,7 @@ import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Enterprise AI Comparisons | Remova" },
+    title: "Enterprise AI Comparisons",
     description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
     keywords: buildKeywords([
         "enterprise ai comparisons",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         "ai cost management comparison"
     ]),
     openGraph: {
-        title: "Enterprise AI Comparisons | Remova",
+        title: "Enterprise AI Comparisons",
         description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
         url: absoluteUrl("/compare"),
         siteName: SITE_NAME,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Comparisons | Remova",
+        title: "Enterprise AI Comparisons",
         description: "Enterprise AI comparisons across security, governance, and cost management capabilities.",
         images: [DEFAULT_OG_IMAGE_URL]
     },

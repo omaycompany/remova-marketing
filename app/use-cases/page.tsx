@@ -8,7 +8,7 @@ import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Enterprise AI Use Cases | Remova" },
+    title: "Enterprise AI Use Cases",
     description: "Enterprise AI use cases across industries, roles, and business functions for secure deployment planning.",
     keywords: buildKeywords([
         "enterprise ai use cases",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         "business ai controls"
     ]),
     openGraph: {
-        title: "Enterprise AI Use Cases | Remova",
+        title: "Enterprise AI Use Cases",
         description: "Enterprise AI use cases across industries, roles, and business functions for secure deployment planning.",
         url: absoluteUrl("/use-cases"),
         siteName: SITE_NAME,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Use Cases | Remova",
+        title: "Enterprise AI Use Cases",
         description: "Enterprise AI use cases across industries, roles, and business functions for secure deployment planning.",
         images: [DEFAULT_OG_IMAGE_URL]
     },

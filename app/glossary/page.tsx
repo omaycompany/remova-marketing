@@ -8,7 +8,7 @@ import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Enterprise AI Glossary | Remova" },
+    title: "Enterprise AI Glossary",
     description: "Enterprise AI glossary terms for governance, security, and operations.",
     keywords: buildKeywords([
         "enterprise ai glossary",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         "llm governance glossary"
     ]),
     openGraph: {
-        title: "Enterprise AI Glossary | Remova",
+        title: "Enterprise AI Glossary",
         description: "Enterprise AI glossary terms for governance, security, and operations.",
         url: absoluteUrl("/glossary"),
         siteName: SITE_NAME,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Glossary | Remova",
+        title: "Enterprise AI Glossary",
         description: "Enterprise AI glossary terms for governance, security, and operations.",
         images: [DEFAULT_OG_IMAGE_URL]
     },

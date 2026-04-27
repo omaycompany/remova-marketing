@@ -8,7 +8,7 @@ import RelatedHubs from "@/components/seo/RelatedHubs";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Enterprise AI Governance Blog | Remova" },
+    title: "Enterprise AI Governance Blog",
     description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
     keywords: buildKeywords([
         "enterprise ai blog",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         "ai cost management"
     ]),
     openGraph: {
-        title: "Enterprise AI Governance Blog | Remova",
+        title: "Enterprise AI Governance Blog",
         description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
         url: absoluteUrl("/blog"),
         siteName: SITE_NAME,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Governance Blog | Remova",
+        title: "Enterprise AI Governance Blog",
         description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
         images: [DEFAULT_OG_IMAGE_URL]
     },

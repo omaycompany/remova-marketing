@@ -131,9 +131,11 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     <h1 className="mb-8 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.9]">
                         {comp.headline}
                     </h1>
-                    <p className="mb-12 max-w-3xl text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        {comp.intro}
-                    </p>
+                    <div className="mb-12 max-w-3xl space-y-4">
+                        {comp.intro.split('\n\n').map((paragraph, idx) => (
+                             <p key={idx} className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                        ))}
+                    </div>
 
                     {/* TL;DR Section */}
                     <div className="mb-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5 text-left">
@@ -151,7 +153,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                             </li>
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>{comp.verdict}</span>
+                                <span dangerouslySetInnerHTML={{ __html: comp.verdict }} />
                             </li>
                         </ul>
                     </div>
@@ -173,7 +175,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                                         {contender.strengths.map((s, j) => (
                                             <li key={j} className="flex items-start gap-3 text-base font-bold text-slate-700 dark:text-slate-300">
                                                 <Check className="h-5 w-5 text-emerald-500 mt-0.5 shrink-0" />
-                                                <span>{s}</span>
+                                                <span dangerouslySetInnerHTML={{ __html: s }} />
                                             </li>
                                         ))}
                                     </ul>
@@ -184,7 +186,7 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                                         {contender.weaknesses.map((w, j) => (
                                             <li key={j} className="flex items-start gap-3 text-base font-bold text-slate-500 dark:text-slate-400">
                                                 <X className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
-                                                <span>{w}</span>
+                                                <span dangerouslySetInnerHTML={{ __html: w }} />
                                             </li>
                                         ))}
                                     </ul>
@@ -201,9 +203,11 @@ export default function ComparePage({ params }: { params: { slug: string } }) {
                     <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl mb-8 leading-[0.9]">
                         The Verdict
                     </h2>
-                    <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium max-w-3xl">
-                        {comp.verdict}
-                    </p>
+                    <div className="max-w-3xl space-y-4">
+                        {comp.verdict.split('\n\n').map((paragraph, idx) => (
+                             <p key={idx} className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: paragraph }} />
+                        ))}
+                    </div>
                 </div>
             </section>
 
