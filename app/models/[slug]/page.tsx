@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ModelLandingTemplate from "@/components/models/ModelLandingTemplate";
 import { modelLandings } from "@/content/model-landings";
+import { getModelVideo } from "@/content/model-videos";
 import { models } from "@/content/models";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
@@ -19,6 +20,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!landing) return {};
 
     const seoTitle = trimForTitle(landing.metaTitle, 80);
+    const video = getModelVideo(landing.slug);
+    const ogVideoUrl = video ? absoluteUrl(video.contentUrl) : undefined;
+    const ogImage = video
+        ? {
+            url: absoluteUrl(video.thumbnailUrl),
+            width: 1920,
+            height: 1080,
+            alt: video.title,
+        }
+        : DEFAULT_OG_IMAGE;
 
     return {
         title: { absolute: seoTitle },
@@ -26,6 +37,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         keywords: buildKeywords([
             landing.heroTitle,
             landing.heroLabel,
+            video?.title,
+            ...(video?.keywords ?? []),
             "enterprise ai models",
             "llm model profile",
             "ai model governance"
@@ -35,14 +48,25 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             description: landing.metaDescription,
             url: absoluteUrl(`/models/${landing.slug}`),
             siteName: SITE_NAME,
-            images: [DEFAULT_OG_IMAGE],
+            images: [ogImage],
+            videos: video && ogVideoUrl
+                ? [
+                    {
+                        url: ogVideoUrl,
+                        secureUrl: ogVideoUrl,
+                        type: "video/mp4",
+                        width: 1920,
+                        height: 1080,
+                    },
+                ]
+                : undefined,
             type: "website",
         },
         twitter: {
             card: "summary_large_image",
             title: seoTitle,
             description: landing.metaDescription,
-            images: [DEFAULT_OG_IMAGE_URL],
+            images: [video ? absoluteUrl(video.thumbnailUrl) : DEFAULT_OG_IMAGE_URL],
         },
         robots: {
             index: true,

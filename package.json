@@ -7,16 +7,27 @@
         "build": "next build && node scripts/generate-feed.mjs",
         "start": "next start",
         "lint": "next lint",
+        "video:studio": "remotion studio remotion/index.ts",
+        "video:compositions": "remotion compositions remotion/index.ts",
+        "video:render": "remotion render remotion/index.ts LandingPageTeaser renders/landing-page-teaser.mp4",
+        "video:still": "remotion still remotion/index.ts LandingPageTeaser renders/landing-page-teaser.png --frame=90",
+        "video:render:deepseek4": "remotion render remotion/index.ts DeepSeekV4Landing renders/deepseek-v4-landing.mp4",
+        "video:still:deepseek4": "remotion still remotion/index.ts DeepSeekV4Landing renders/deepseek-v4-landing.png --frame=945",
+        "video:render:models": "tsx scripts/render-model-videos.ts",
+        "video:youtube:upload": "tsx scripts/upload-model-videos-youtube.ts",
         "feed": "node scripts/generate-feed.mjs",
         "sitemap:ping": "curl -s \"https://www.google.com/ping?sitemap=https://www.remova.org/sitemap.xml\" && echo \" — Google sitemap pinged\"",
         "indexnow:submit": "node scripts/indexnow-submit.mjs",
         "indexnow:dry-run": "node scripts/indexnow-submit.mjs --dry-run"
     },
     "dependencies": {
+        "@remotion/cli": "4.0.453",
+        "googleapis": "^171.4.0",
         "lucide-react": "^0.330.0",
         "next": "14.1.0",
         "react": "^18.3.1",
-        "react-dom": "^18.3.1"
+        "react-dom": "^18.3.1",
+        "remotion": "4.0.453"
     },
     "devDependencies": {
         "@types/node": "^20",
@@ -25,6 +36,7 @@
         "autoprefixer": "^10.4.20",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.19",
+        "tsx": "^4.21.0",
         "typescript": "^5"
     }
 }

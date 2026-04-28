@@ -10,6 +10,20 @@
 /.next/
 /out/
 
+# remotion
+/renders/
+/remotion-output/
+/.remotion/
+/remotion/.cache/
+/public/videos/models/*.mp4
+/public/videos/models/*.png
+/public/videos/models/*.vtt
+
+# youtube upload automation
+/youtube-oauth-client.json
+/youtube-oauth-token.json
+/content/model-youtube-videos.generated.json
+
 # production
 /build
 

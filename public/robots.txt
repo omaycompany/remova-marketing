@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://www.remova.org/sitemap.xml
 Sitemap: https://www.remova.org/news-sitemap.xml
+Sitemap: https://www.remova.org/video-sitemap.xml

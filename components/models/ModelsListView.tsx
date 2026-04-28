@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, CalendarDays, Layers, Search, SlidersHorizontal, X } from "lucide-react";
 import type { ModelEntry } from "@/content/models";
+import { formatPublicModelPrice, publicModelPrice } from "@/lib/model-pricing";
 
 interface ModelsListViewProps {
     models: ModelEntry[];
@@ -13,10 +14,6 @@ interface ModelsListViewProps {
 const fmtNumber = new Intl.NumberFormat("en-US");
 const MODELS_PER_PAGE = 12;
 
-function formatPrice(price: number) {
-    return `$${price.toFixed(price < 1 ? 2 : 2)}`;
-}
-
 function contextTierForModel(contextLength: number) {
     if (contextLength >= 1_000_000) return "ultra";
     if (contextLength >= 200_000) return "long";
@@ -24,8 +21,9 @@ function contextTierForModel(contextLength: number) {
 }
 
 function priceTierForModel(inputPer1M: number) {
-    if (inputPer1M <= 0.25) return "budget";
-    if (inputPer1M <= 2) return "balanced";
+    const publicInputPrice = publicModelPrice(inputPer1M);
+    if (publicInputPrice <= 0.25) return "budget";
+    if (publicInputPrice <= 2) return "balanced";
     return "premium";
 }
 
@@ -201,11 +199,11 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                             </div>
                             <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
                                 <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Input / 1M</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatPrice(model.inputPer1M)}</div>
+                                <div className="text-base font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.inputPer1M)}</div>
                             </div>
                             <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
                                 <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Output / 1M</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatPrice(model.outputPer1M)}</div>
+                                <div className="text-base font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.outputPer1M)}</div>
                             </div>
                         </div>
 

@@ -1,5 +1,10 @@
 import fs from 'fs';
 
+// Pricing policy:
+// Keep inputPer1M/outputPer1M as raw provider costs when updating model data.
+// Public Remova pricing applies the 1.5x margin in lib/model-pricing.ts.
+// See docs/model-pricing.md before changing model pricing behavior.
+
 const modelsTsPath = 'content/models.ts';
 let content = fs.readFileSync(modelsTsPath, 'utf8');
 

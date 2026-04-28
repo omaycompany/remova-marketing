@@ -4,14 +4,14 @@ import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import { ModelEntry } from "@/content/models";
 import { ModelLanding } from "@/content/model-landings";
+import { applicationsForModel } from "@/content/model-applications";
+import { getModelVideo } from "@/content/model-videos";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { absoluteUrl } from "@/lib/seo";
+import LazyModelVideo from "@/components/video/LazyModelVideo";
+import { SITE_NAME, absoluteUrl } from "@/lib/seo";
+import { formatPublicModelPrice } from "@/lib/model-pricing";
 
 const fmtNumber = new Intl.NumberFormat("en-US");
-
-function formatPrice(price: number) {
-    return `$${price.toFixed(price < 1 ? 2 : 2)}`;
-}
 
 interface Props {
     model: ModelEntry;
@@ -20,15 +20,49 @@ interface Props {
 }
 
 export default function ModelLandingTemplate({ model, landing, relatedLandings }: Props) {
-    const jsonLd = {
-        "@context": "https://schema.org",
+    const video = getModelVideo(landing.slug);
+    const applications = applicationsForModel(model);
+    const softwareLd = {
         "@type": "SoftwareApplication",
+        "@id": absoluteUrl(`/models/${landing.slug}#software`),
         name: landing.heroTitle,
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         url: absoluteUrl(`/models/${landing.slug}`),
         description: landing.metaDescription,
         brand: { "@type": "Brand", name: model.provider },
+    };
+    const videoLd = video
+        ? {
+            "@type": "VideoObject",
+            "@id": absoluteUrl(`/models/${landing.slug}#video`),
+            name: video.title,
+            description: video.description,
+            thumbnailUrl: [absoluteUrl(video.thumbnailUrl)],
+            uploadDate: video.uploadDate,
+            duration: video.duration,
+            contentUrl: absoluteUrl(video.contentUrl),
+            embedUrl: absoluteUrl(`/models/${landing.slug}#model-video`),
+            inLanguage: "en-US",
+            transcript: video.transcript,
+            keywords: video.keywords.join(", "),
+            publisher: {
+                "@type": "Organization",
+                name: SITE_NAME,
+                logo: {
+                    "@type": "ImageObject",
+                    url: absoluteUrl("/icon.png"),
+                },
+            },
+            about: softwareLd,
+        }
+        : null;
+    const jsonLd = videoLd ? {
+        "@context": "https://schema.org",
+        "@graph": [softwareLd, videoLd],
+    } : {
+        "@context": "https://schema.org",
+        ...softwareLd,
     };
 
     return (
@@ -76,11 +110,68 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                     </div>
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
                         <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Input / 1M</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatPrice(model.inputPer1M)}</div>
+                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.inputPer1M)}</div>
                     </div>
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
                         <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Output / 1M</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatPrice(model.outputPer1M)}</div>
+                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.outputPer1M)}</div>
+                    </div>
+                </div>
+            </section>
+
+            {video && (
+                <section id="model-video" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                    <div className="container mx-auto max-w-6xl">
+                        <div className="mb-8 max-w-3xl">
+                            <h2 className="mb-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-5xl leading-[0.92]">
+                                Watch {landing.heroTitle} in Remova
+                            </h2>
+                            <p className="text-lg font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                See how a team selects {landing.heroTitle}, passes policy checks, and routes the request safely through Remova.
+                            </p>
+                        </div>
+                        <figure className="overflow-hidden rounded-3xl border-2 border-slate-900 dark:border-white bg-white dark:bg-[#131314] shadow-[0_28px_90px_-45px_rgba(15,23,42,0.55)]">
+                            <LazyModelVideo video={video} />
+                            <figcaption className="border-t border-slate-200 dark:border-white/10 p-6">
+                                <h3 className="mb-2 text-xl font-black text-slate-900 dark:text-white">{video.title}</h3>
+                                <p className="text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">{video.description}</p>
+                                <details className="mt-4">
+                                    <summary className="cursor-pointer text-sm font-black uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
+                                        Video transcript
+                                    </summary>
+                                    <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                        {video.transcript}
+                                    </p>
+                                </details>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+            )}
+
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="mb-10 max-w-3xl">
+                        <h2 className="mb-4 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-5xl leading-[0.92]">
+                            What can you do with {landing.heroTitle}?
+                        </h2>
+                        <p className="text-lg font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                            Practical ways teams can use {landing.heroTitle} inside governed AI workflows.
+                        </p>
+                    </div>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {applications.map((application, index) => (
+                            <article
+                                key={application.title}
+                                className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6"
+                            >
+                                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-sm font-black text-white dark:bg-white dark:text-slate-900">
+                                    {String(index + 1).padStart(2, "0")}
+                                </div>
+                                <h3 className="mb-3 text-xl font-black text-slate-900 dark:text-white">{application.title} with {landing.heroTitle}</h3>
+                                <p className="text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">{application.description}</p>
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>

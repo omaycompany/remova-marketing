@@ -1,4 +1,5 @@
 import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
+import { formatPublicModelPricePer1M, publicModelPrice } from "@/lib/model-pricing";
 
 export interface ModelLanding {
     slug: string;
@@ -38,10 +39,6 @@ interface ModelLandingSeed {
 }
 
 const fmtNumber = new Intl.NumberFormat("en-US");
-
-function formatPrice(price: number) {
-    return `$${price.toFixed(price < 1 ? 2 : 2)} per 1M tokens`;
-}
 
 const landingSeeds: ModelLandingSeed[] = [
     {
@@ -1209,8 +1206,8 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
             { label: "Model ID", value: model.id },
             { label: "Context Window", value: `${fmtNumber.format(model.contextLength)} tokens` },
             { label: "Modality", value: seed.modality },
-            { label: "Input Price", value: formatPrice(model.inputPer1M) },
-            { label: "Output Price", value: formatPrice(model.outputPer1M) },
+            { label: "Input Price", value: formatPublicModelPricePer1M(model.inputPer1M) },
+            { label: "Output Price", value: formatPublicModelPricePer1M(model.outputPer1M) },
             { label: "Provider", value: model.provider },
             { label: "Listing Date", value: model.releasedAt },
         ],
@@ -1322,8 +1319,9 @@ function contextBand(model: ModelEntry) {
 }
 
 function pricingBand(model: ModelEntry) {
-    if (model.inputPer1M <= 0.3) return "cost-efficient";
-    if (model.inputPer1M <= 2.5) return "balanced";
+    const publicInputPrice = publicModelPrice(model.inputPer1M);
+    if (publicInputPrice <= 0.3) return "cost-efficient";
+    if (publicInputPrice <= 2.5) return "balanced";
     return "premium";
 }
 
@@ -1472,13 +1470,13 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, suited to ${fitPhrase} for enterprise teams.`,
         metaTitle: buildMetaTitle(model.name),
         metaDescription: trimCopy(
-            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPrice(model.inputPer1M)} input), and rollout guidance for ${topUseCasesText}.`,
+            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPublicModelPricePer1M(model.inputPer1M)} input), and rollout guidance for ${topUseCasesText}.`,
             158
         ),
-        providerSummary: `${model.provider} lists ${model.name} as ${contextArticle} ${context} option with ${formatPrice(model.inputPer1M)} input pricing, ${formatPrice(model.outputPer1M)} output pricing, and ${modality} modality support for enterprise AI operations.`,
+        providerSummary: `${model.name} is available in Remova as ${contextArticle} ${context} option with ${formatPublicModelPricePer1M(model.inputPer1M)} input pricing, ${formatPublicModelPricePer1M(model.outputPer1M)} output pricing, and ${modality} modality support for enterprise AI operations.`,
         summaryPoints: [
             `${model.name} offers ${context} capacity for enterprise prompts and documents.`,
-            `Current pricing band is ${pricing}: ${formatPrice(model.inputPer1M)} input and ${formatPrice(model.outputPer1M)} output.`,
+            `Current Remova pricing band is ${pricing}: ${formatPublicModelPricePer1M(model.inputPer1M)} input and ${formatPublicModelPricePer1M(model.outputPer1M)} output.`,
             `Best-fit workloads include: ${bestFitList}.`,
             theme.governanceLine,
         ],
@@ -1499,8 +1497,8 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
             { label: "Modality", value: modality },
             { label: "Input Modalities", value: inputModalities },
             { label: "Output Modalities", value: outputModalities },
-            { label: "Input Price", value: formatPrice(model.inputPer1M) },
-            { label: "Output Price", value: formatPrice(model.outputPer1M) },
+            { label: "Input Price", value: formatPublicModelPricePer1M(model.inputPer1M) },
+            { label: "Output Price", value: formatPublicModelPricePer1M(model.outputPer1M) },
             { label: "Provider", value: model.provider },
             { label: "Listing Date", value: model.releasedAt },
         ],
