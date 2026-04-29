@@ -1,5 +1,6 @@
 import { Composition } from "remotion";
 import { DeepSeekV4Landing } from "./compositions/DeepSeekV4Landing";
+import { FeaturesPageDraft } from "./compositions/FeaturesPageDraft";
 import { LandingPageTeaser } from "./compositions/LandingPageTeaser";
 
 export const RemotionRoot = () => {
@@ -49,6 +50,14 @@ export const RemotionRoot = () => {
                     inputPrice: "$7.50 / 1M input",
                     outputPrice: "$45.00 / 1M output",
                 }}
+            />
+            <Composition
+                id="FeaturesPageDraft"
+                component={FeaturesPageDraft}
+                durationInFrames={900}
+                fps={30}
+                width={1920}
+                height={1080}
             />
         </>
     );

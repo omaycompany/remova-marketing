@@ -5,6 +5,7 @@ import { ShieldCheck, ArrowRight, Lock, DollarSign, Cpu } from "lucide-react";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
+import LazyFeatureHeroVideo from "@/components/video/LazyFeatureHeroVideo";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -90,6 +91,7 @@ export default function FeaturesIndex() {
                         Frontier AI models for every department. Sensitive data gets masked. Costs are tracked per team.
                         Safety rules apply to every interaction. All of it runs behind your own governance layer.
                     </p>
+                    <LazyFeatureHeroVideo />
                 </div>
             </section>
 
