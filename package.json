@@ -15,6 +15,8 @@
         "video:still:deepseek4": "remotion still remotion/index.ts DeepSeekV4Landing renders/deepseek-v4-landing.png --frame=945",
         "video:render:models": "tsx scripts/render-model-videos.ts",
         "video:youtube:upload": "tsx scripts/upload-model-videos-youtube.ts",
+        "video:r2:upload": "node scripts/upload-videos-r2.mjs",
+        "video:r2:upload:models": "node scripts/upload-videos-r2.mjs --models-only",
         "models:update": "node scripts/update_models.mjs",
         "models:update:vertex": "node scripts/update_models.mjs --with-vertex",
         "feed": "node scripts/generate-feed.mjs",

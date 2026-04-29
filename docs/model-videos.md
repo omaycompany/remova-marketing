@@ -14,7 +14,9 @@ Video assets live at:
 - `public/videos/models/{slug}.png`
 - `public/videos/models/{slug}.vtt`
 
-`content/model-videos.ts` only exposes video metadata when all three files exist. This prevents broken embeds and keeps video SEO entries limited to pages with complete assets.
+`content/model-videos.ts` only exposes video metadata when all three files exist locally, or when `R2_PUBLIC_BASE_URL` is configured and the slug is listed in `content/model-video-manifest.generated.ts`. This prevents broken embeds and keeps video SEO entries limited to pages with complete assets.
+
+Generated model video binaries are intentionally ignored by git. Keep large MP4/poster/caption files in object storage and commit only the generated manifest plus code changes.
 
 ## Rendering
 
@@ -37,6 +39,28 @@ npm run video:render:models -- --slug=deepseek-v4-pro --force
 ```
 
 For the full catalog, expect a multi-hour render and roughly 2.5 GB of MP4 output at the current 36-second 1080p settings. Prefer uploading the generated MP4s to production object storage/CDN before scaling beyond a small curated set.
+
+## Object storage upload
+
+Local uploads read credentials from `.env.local`; production builds read the public video base URL from GitHub environment secrets.
+
+Required variables:
+
+- `R2_ACCOUNT_ID`
+- `R2_BUCKET_NAME`
+- `R2_ACCESS_KEY_ID`
+- `R2_SECRET_ACCESS_KEY`
+- `R2_PUBLIC_BASE_URL`
+
+Upload all generated model video assets:
+
+```bash
+npm run video:r2:upload:models
+```
+
+`R2_PUBLIC_BASE_URL` must be the public delivery URL for the bucket, such as a Remova-controlled custom domain. Do not use the S3/API endpoint ending in `.r2.cloudflarestorage.com` as the public base URL; that endpoint is for uploads and can return HTTP 400 in browsers.
+
+After rendering new model videos, update `content/model-video-manifest.generated.ts` so production knows which uploaded slugs are available.
 
 ## SEO
 

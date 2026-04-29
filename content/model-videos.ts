@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { applicationsForModel } from "@/content/model-applications";
 import { modelLandings } from "@/content/model-landings";
+import { modelVideoSlugs } from "@/content/model-video-manifest.generated";
 import { models } from "@/content/models";
 
 export interface ModelVideo {
@@ -20,15 +21,23 @@ export interface ModelVideo {
 
 const durationSeconds = 36;
 const uploadDate = "2026-04-28";
+const publicVideoBaseUrl = process.env.R2_PUBLIC_BASE_URL?.replace(/\/+$/, "");
+const uploadedModelVideoSlugs = new Set<string>(modelVideoSlugs);
 
 function publicAssetExists(pathname: string) {
     return existsSync(join(process.cwd(), "public", pathname.replace(/^\//, "")));
 }
 
 function assetSetExists(slug: string) {
+    if (publicVideoBaseUrl) return uploadedModelVideoSlugs.has(slug);
     return publicAssetExists(`/videos/models/${slug}.mp4`)
         && publicAssetExists(`/videos/models/${slug}.png`)
         && publicAssetExists(`/videos/models/${slug}.vtt`);
+}
+
+function modelVideoAssetUrl(slug: string, extension: "mp4" | "png" | "vtt") {
+    const pathname = `/videos/models/${slug}.${extension}`;
+    return publicVideoBaseUrl ? `${publicVideoBaseUrl}${pathname}` : pathname;
 }
 
 export function buildModelVideo(slug: string): ModelVideo | null {
@@ -45,10 +54,10 @@ export function buildModelVideo(slug: string): ModelVideo | null {
         slug,
         title: `Use ${landing.heroTitle} Safely on Remova`,
         description:
-            `A 36-second overview showing how teams can select ${landing.heroTitle} inside Remova, pass policy checks, apply it to real-world work, and use ${model.provider} models with redaction, routing, budgets, and audit trails.`,
-        contentUrl: `/videos/models/${slug}.mp4`,
-        thumbnailUrl: `/videos/models/${slug}.png`,
-        captionsUrl: `/videos/models/${slug}.vtt`,
+            `A 36-second overview showing how teams can select ${landing.heroTitle} inside Remova, pass policy checks, apply it to real-world work, and use advanced AI with redaction, routing, budgets, and audit trails.`,
+        contentUrl: modelVideoAssetUrl(slug, "mp4"),
+        thumbnailUrl: modelVideoAssetUrl(slug, "png"),
+        captionsUrl: modelVideoAssetUrl(slug, "vtt"),
         duration: "PT36S",
         durationSeconds,
         uploadDate,
@@ -58,7 +67,6 @@ export function buildModelVideo(slug: string): ModelVideo | null {
             landing.heroTitle,
             `${landing.heroTitle} enterprise AI`,
             `${landing.heroTitle} governance`,
-            `${model.provider} AI model`,
             "AI model governance",
             "safe AI deployment",
             "Remova",
