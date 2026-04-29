@@ -6,6 +6,7 @@ import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 export const metadata: Metadata = {
     title: "Enterprise AI Resources and Docs",
     description: "Download comprehensive guides, checklists, and documentation on enterprise AI governance and security.",
+    alternates: { canonical: "/resources" },
 };
 
 const resources = [

@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: SITE_URL, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 1 },
         { url: `${SITE_URL}/privacy`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'yearly', priority: 0.3 },
         { url: `${SITE_URL}/terms`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'yearly', priority: 0.3 },
+        { url: `${SITE_URL}/resources`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.6 },
         // Blog index: daily crawl so Google picks up new posts fast
         { url: `${SITE_URL}/blog`, lastModified: latestBlogDate, changeFrequency: 'daily', priority: 0.95 },
         { url: `${SITE_URL}/features`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.9 },

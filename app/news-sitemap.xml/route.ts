@@ -5,18 +5,13 @@ export const dynamic = "force-static";
 
 export async function GET() {
     // Google News requires articles to be no older than 2 days
-    // For testing/development, we'll return the most recent ones if none fit the 2 days,
-    // but the spec dictates <= 48 hours. Let's just filter for NewsArticle and recent ones.
     const now = new Date();
     const twoDaysAgo = new Date(now.getTime() - 2 * 24 * 60 * 60 * 1000);
 
     const newsArticles = allBlogPosts.filter((post) => {
         if (post.articleType !== "NewsArticle") return false;
-        
-        // In real production, filter by date <= 2 days
-        // const postDate = new Date(post.date);
-        // return postDate >= twoDaysAgo;
-        return true; // Included all for now to ensure the feed is not empty.
+        const postDate = new Date(`${post.date}T00:00:00.000Z`);
+        return postDate >= twoDaysAgo && postDate <= now;
     });
 
     const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
