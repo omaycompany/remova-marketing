@@ -32,6 +32,14 @@ Render every missing model video:
 npm run video:render:models
 ```
 
+Render missing videos for the newest 200 model detail pages first:
+
+```bash
+npm run video:render:models:latest200
+```
+
+Use the latest-200 command when curating high-priority landing pages. It sorts model pages by `releasedAt` newest first, skips complete `{slug}.mp4`, `{slug}.png`, and `{slug}.vtt` sets, and uses a minimal Remotion public directory so each render does not recopy unrelated site assets.
+
 Force re-render an existing model:
 
 ```bash
@@ -61,6 +69,10 @@ npm run video:r2:upload:models
 `R2_PUBLIC_BASE_URL` must be the public delivery URL for the bucket, such as a Remova-controlled custom domain. Do not use the S3/API endpoint ending in `.r2.cloudflarestorage.com` as the public base URL; that endpoint is for uploads and can return HTTP 400 in browsers.
 
 After rendering new model videos, update `content/model-video-manifest.generated.ts` so production knows which uploaded slugs are available.
+
+```bash
+npm run video:manifest:models
+```
 
 ## SEO
 

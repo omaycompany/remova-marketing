@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -9,7 +9,10 @@ import { formatPublicModelPrice } from "../lib/model-pricing";
 
 const outputDir = join(process.cwd(), "public/videos/models");
 const propsDir = join(process.cwd(), ".remotion/model-video-props");
+const renderPublicDir = join(process.cwd(), ".remotion/public-empty");
 const frame = "945";
+const renderTimeout = "300000";
+const renderConcurrency = "2";
 
 function argValue(name: string) {
     const prefix = `${name}=`;
@@ -19,6 +22,10 @@ function argValue(name: string) {
 
 function hasFlag(name: string) {
     return process.argv.includes(name);
+}
+
+function modelReleasedAt(modelId: string) {
+    return models.find((entry) => entry.id === modelId)?.releasedAt ?? "";
 }
 
 function formatContextWindow(tokens: number) {
@@ -46,26 +53,47 @@ function run(command: string, args: string[]) {
 async function main() {
     await mkdir(outputDir, { recursive: true });
     await mkdir(propsDir, { recursive: true });
+    await mkdir(renderPublicDir, { recursive: true });
+    await mkdir(join(renderPublicDir, "images"), { recursive: true });
+    await copyFile(
+        join(process.cwd(), "public/images/remova logo (4).png"),
+        join(renderPublicDir, "images/remova logo (4).png")
+    );
 
     const onlySlug = argValue("--slug");
     const limit = Number(argValue("--limit") ?? "0");
     const force = hasFlag("--force");
+    const latest = hasFlag("--latest");
+    const missingOnly = hasFlag("--missing-only");
 
-    const targets = modelLandings
+    const selectedLandings = [...modelLandings]
         .filter((landing) => !onlySlug || landing.slug === onlySlug)
+        .sort((a, b) => {
+            if (!latest) return 0;
+            return modelReleasedAt(b.modelId).localeCompare(modelReleasedAt(a.modelId))
+                || a.heroTitle.localeCompare(b.heroTitle);
+        })
+        .slice(0, limit > 0 ? limit : undefined);
+
+    const targets = selectedLandings
         .map((landing) => {
             const model = models.find((entry) => entry.id === landing.modelId);
             return model ? { landing, model } : null;
         })
-        .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry))
-        .slice(0, limit > 0 ? limit : undefined);
+        .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 
     for (const { landing, model } of targets) {
         const mp4Path = join(outputDir, `${landing.slug}.mp4`);
         const posterPath = join(outputDir, `${landing.slug}.png`);
         const captionsPath = join(outputDir, `${landing.slug}.vtt`);
 
-        if (!force && existsSync(mp4Path) && existsSync(posterPath) && existsSync(captionsPath)) {
+        const hasCompleteAssetSet = existsSync(mp4Path) && existsSync(posterPath) && existsSync(captionsPath);
+        if (missingOnly && hasCompleteAssetSet) {
+            console.log(`[video] Skipping ${landing.slug}; latest target already has complete assets.`);
+            continue;
+        }
+
+        if (!force && hasCompleteAssetSet) {
             console.log(`[video] Skipping ${landing.slug}; assets already exist.`);
             continue;
         }
@@ -110,6 +138,8 @@ ${escapeVtt(`Use ${landing.heroTitle} safely on Remova with redaction, routing, 
             posterPath,
             `--frame=${frame}`,
             `--props=${propsPath}`,
+            `--public-dir=${renderPublicDir}`,
+            `--timeout=${renderTimeout}`,
         ]);
 
         console.log(`[video] Rendering MP4 for ${landing.slug}`);
@@ -120,6 +150,9 @@ ${escapeVtt(`Use ${landing.heroTitle} safely on Remova with redaction, routing, 
             "ModelLandingVideo",
             mp4Path,
             `--props=${propsPath}`,
+            `--public-dir=${renderPublicDir}`,
+            `--timeout=${renderTimeout}`,
+            `--concurrency=${renderConcurrency}`,
         ]);
     }
 

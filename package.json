@@ -14,6 +14,8 @@
         "video:render:deepseek4": "remotion render remotion/index.ts DeepSeekV4Landing renders/deepseek-v4-landing.mp4",
         "video:still:deepseek4": "remotion still remotion/index.ts DeepSeekV4Landing renders/deepseek-v4-landing.png --frame=945",
         "video:render:models": "tsx scripts/render-model-videos.ts",
+        "video:render:models:latest200": "tsx scripts/render-model-videos.ts --latest --limit=200 --missing-only",
+        "video:manifest:models": "node scripts/update-model-video-manifest.mjs",
         "video:youtube:upload": "tsx scripts/upload-model-videos-youtube.ts",
         "video:r2:upload": "node scripts/upload-videos-r2.mjs",
         "video:r2:upload:models": "node scripts/upload-videos-r2.mjs --models-only",
