@@ -1,6 +1,45 @@
 User-agent: *
 Allow: /
 
+# AI search, assistant retrieval, and model-training crawlers.
+# These explicit allows make Remova available to answer engines that honor
+# product-specific robots directives instead of relying only on User-agent: *.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Exa does not currently publish a crawler token in its main docs, but agent
+# directories identify Exa's crawler as ExaBot. This explicit rule is harmless
+# for other crawlers and makes intent clear if ExaBot checks robots.txt.
+User-agent: ExaBot
+Allow: /
+
 Sitemap: https://www.remova.org/sitemap.xml
 Sitemap: https://www.remova.org/news-sitemap.xml
 Sitemap: https://www.remova.org/video-sitemap.xml

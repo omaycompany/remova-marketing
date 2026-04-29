@@ -7,8 +7,12 @@ import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-    title: "Remova | Safer AI for Teams",
+    title: "Remova | Enterprise AI Governance for Teams",
+    description: "Remova helps companies give teams access to ChatGPT, Claude, Gemini, and other AI models with policy controls, sensitive-data masking, role-based access, audit visibility, and department-level budget controls.",
     keywords: buildKeywords([
+        "enterprise ai governance platform",
+        "ai control layer",
+        "model agnostic ai governance",
         "safer ai for teams",
         "chatgpt for work",
         "ai data safety",
@@ -21,8 +25,8 @@ export const metadata: Metadata = {
         canonical: "/",
     },
     openGraph: {
-        title: "Remova | Safer AI for Teams",
-        description: "Deploy AI with data safety, access controls, and team-level budget control.",
+        title: "Remova | Enterprise AI Governance for Teams",
+        description: "Deploy AI with data safety, access controls, audit visibility, and team-level budget control.",
         url: SITE_URL,
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -31,15 +35,64 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Remova | Safer AI for Teams",
-        description: "Deploy AI with data safety, privacy protections, and policy guardrails.",
+        title: "Remova | Enterprise AI Governance for Teams",
+        description: "Deploy AI with data safety, privacy protections, policy guardrails, and budget controls.",
         images: [DEFAULT_OG_IMAGE_URL],
     },
 };
 
+const homepageFaqs = [
+    {
+        question: "What is Remova?",
+        answer: "Remova is an enterprise AI governance platform that helps companies give teams access to multiple AI models with policy controls, sensitive-data masking, role-based access, audit visibility, and budget management."
+    },
+    {
+        question: "How does Remova ensure data privacy?",
+        answer: "Remova applies policy checks and sensitive-data controls before requests reach external models, with visibility for administrators and governance teams."
+    },
+    {
+        question: "Can I manage AI costs across different departments?",
+        answer: "Yes. Remova lets organizations define department-level budgets, set hard and soft thresholds, and track spend trends by team."
+    },
+    {
+        question: "Does Remova support on-premises deployment?",
+        answer: "Yes. Remova supports private deployment patterns for organizations with strict security and data residency requirements."
+    },
+    {
+        question: "What AI models are supported?",
+        answer: "Remova supports a broad model catalog, so teams can use approved models from one governed interface."
+    },
+    {
+        question: "How is model usage billed?",
+        answer: "Each monthly seat includes $50 in Remova model credits. Usage is charged at the Remova rates shown on the /models page and deducted from your monthly credits. If you need more, you can top up. Companies can bring their own provider keys, but the monthly Remova subscription is still required."
+    },
+    {
+        question: "What security documents are available for procurement review?",
+        answer: "Remova can provide a security review packet with DPA language, subprocessors, architecture diagrams, encryption and retention details, incident-response process, and current SOC 2 status."
+    }
+];
+
 export default function LandingPage() {
+    const faqLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": homepageFaqs.map((faq) => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer,
+            },
+        })),
+    };
+
     return (
         <div className="flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+            />
+
             {/* Hero Section */}
             {/* Hero Section */}
             <section className="relative px-4 pt-48 pb-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
@@ -655,10 +708,13 @@ export default function LandingPage() {
                                     <div className="mb-12">
                                         <div className="flex items-baseline gap-2">
                                             <span className="text-8xl font-black text-slate-900 dark:text-white tracking-tighter">$50</span>
-                                            <span className="text-2xl font-sans text-slate-500 dark:text-slate-400 font-bold">/ seat</span>
+                                            <span className="text-2xl font-sans text-slate-500 dark:text-slate-400 font-bold">/ seat / month</span>
                                         </div>
                                         <p className="text-slate-900 dark:text-white font-bold mt-4 border-l-4 border-slate-900 dark:border-white pl-4">
                                             Minimum 10 seats required
+                                        </p>
+                                        <p className="text-sm text-slate-600 dark:text-slate-400 font-sans font-bold mt-4 leading-relaxed">
+                                            Includes $50 in monthly model credits. Usage consumes credits at the Remova rates shown on the /models page. Add top-ups when you need more. Bring-your-own keys are supported with an active subscription.
                                         </p>
                                     </div>
                                 </div>
@@ -715,6 +771,7 @@ export default function LandingPage() {
                                                 "Data location controls",
                                                 "Leak detection",
                                                 "Team budgets",
+                                                "DPA, subprocessors, and security review packet",
                                                 "White-glove support"
                                             ].map((feature, idx) => (
                                                 <li key={idx} className="flex items-start gap-4 group">
@@ -767,22 +824,23 @@ export default function LandingPage() {
                             </Link>
                         </div>
 
-                        {/* On-Prem Deployment */}
+                        {/* On-Prem AI Setup */}
                         <div className="border-2 border-slate-900 dark:border-white bg-slate-900 dark:bg-white p-12 flex flex-col justify-between text-white dark:text-slate-900 rounded-[2.5rem] overflow-hidden">
                             <div>
                                 <div className="flex justify-between items-start mb-2">
-                                    <h3 className="text-4xl font-black uppercase leading-none">On-Prem <br /> Deployment</h3>
+                                    <h3 className="text-4xl font-black uppercase leading-none">On-Prem <br /> AI Setup</h3>
                                     <ShieldCheck className="h-10 w-10" />
                                 </div>
-                                <p className="opacity-60 font-sans mb-8 uppercase tracking-widest text-sm">Ultimate Control</p>
+                                <p className="opacity-60 font-sans mb-8 uppercase tracking-widest text-sm">Dedicated Private AI</p>
 
                                 <div className="mb-8">
-                                    <span className="text-5xl font-black tracking-tighter uppercase">Custom Quote</span>
+                                    <span className="block text-lg font-sans font-bold uppercase tracking-widest opacity-60 mb-2">Starting from</span>
+                                    <span className="text-5xl font-black tracking-tighter uppercase">$5,000 / month</span>
                                 </div>
 
                                 <ul className="space-y-4 mb-12">
                                     {[
-                                        "Private Air-Gapped Infrastructure",
+                                        "Private AI infrastructure with powerful NVIDIA chips",
                                         "Deployment of Full Control Layer",
                                         "Local AI Model Serving",
                                         "Full Source Code Access Option",
@@ -951,8 +1009,14 @@ export default function LandingPage() {
                                         { title: "Continuity Fallbacks", desc: "Seamless switching to backup models during downtime." },
                                         { title: "Sensitive Word Blocking", desc: "Custom-tuned blocklists for prohibited terms." },
                                         { title: "Immutable Audit Logs", desc: "Permanent records of all system activity." },
-                                        { title: "Forensic Analysis", desc: "Deep-dive capability into past user interactions." },
-                                        { title: "Zero-Retention", desc: "Technical assurance that data is ephemeral." },
+                                        { title: "Forensic Analysis", desc: "Deep-dive capability into past user interactions and incidents." },
+                                        { title: "Encryption Controls", desc: "Encryption in transit and at rest for protected workspace data." },
+                                        { title: "Data Retention Controls", desc: "Configurable retention windows for chats, files, and audit evidence." },
+                                        { title: "DPA and Subprocessors", desc: "Procurement-ready privacy terms and subprocessors list available for review." },
+                                        { title: "Architecture Review", desc: "Security architecture diagrams and deployment details for buyer diligence." },
+                                        { title: "Incident Response", desc: "Documented response process for security events and customer notification." },
+                                        { title: "SOC 2 Status", desc: "Current SOC 2 status and roadmap shared during enterprise security review." },
+                                        { title: "Zero-Retention Options", desc: "Controls for ephemeral processing where a workflow requires it." },
                                         { title: "No-Training Architecture", desc: "Prevention of client data being used for model training." },
                                         { title: "Data Sovereignty", desc: "Geographic restriction options for data processing." },
                                     ].map((feature, i) => (
@@ -1010,8 +1074,9 @@ export default function LandingPage() {
                             <div className="lg:col-span-3">
                                 <div className="border-t border-slate-200 dark:border-white/10">
                                     {[
-                                        { title: "Universal Credit Protocol", desc: "Internal currency normalizing costs across providers." },
-                                        { title: "Cross-Provider Normalization", desc: "Unified pricing regardless of underlying model variance." },
+                                        { title: "Included Monthly Credits", desc: "Each seat includes $50 in Remova model credits every month." },
+                                        { title: "Remova Model Rates", desc: "Usage is charged at the rates shown on the /models page and deducted from monthly credits." },
+                                        { title: "Top-Ups and BYO Keys", desc: "Buy extra credits when needed, or bring your own provider keys while keeping the monthly subscription active." },
                                         { title: "Smart Renewal Logic", desc: "Automated handling of monthly credit resets." },
                                         { title: "Precise Token Tracking", desc: "Micro-accounting of token consumption." },
                                         { title: "Real-Time Cost Auditing", desc: "Live dashboard of spend vs. budget." },
@@ -1069,28 +1134,7 @@ export default function LandingPage() {
 
             {/* FAQ Section */}
             <FAQ
-                items={[
-                    {
-                        question: "What is Remova?",
-                        answer: "Remova is a safer way for teams to use multiple AI models with policy controls, data protection, and budget management."
-                    },
-                    {
-                        question: "How does Remova ensure data privacy?",
-                        answer: "Remova applies policy checks and sensitive-data controls before requests reach external models, with visibility for admins."
-                    },
-                    {
-                        question: "Can I manage AI costs across different departments?",
-                        answer: "Yes. You can define department-level budgets, set hard and soft thresholds, and track spend trends by team."
-                    },
-                    {
-                        question: "Does Remova support on-premises deployment?",
-                        answer: "Yes. Remova supports private deployment patterns for organizations with strict security and data residency requirements."
-                    },
-                    {
-                        question: "What AI models are supported?",
-                        answer: "Remova supports a broad model catalog, so teams can use approved models from one place."
-                    }
-                ]}
+                items={homepageFaqs}
                 title="Common Questions about safer AI at work"
             />
 

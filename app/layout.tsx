@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         default: "Remova | The Enterprise Control Layer for AI",
         template: "%s | Remova — AI for Companies"
     },
-    description: "Remova: enterprise AI governance with policy controls, sensitive data protection, and budget management.",
+    description: "Remova is an enterprise AI governance platform for companies using ChatGPT, Claude, Gemini, and other AI models with policy controls, sensitive-data protection, role-based access, audit visibility, and budget management.",
     authors: [{ name: "Remova" }],
     creator: "Remova",
     publisher: "Remova",
@@ -42,39 +42,85 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const organizationId = `${SITE_URL}/#organization`;
+    const softwareId = `${SITE_URL}/#software`;
+
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": organizationId,
         "name": "Remova",
+        "legalName": "Remova",
+        "alternateName": [
+            "Remova AI",
+            "Remova AI governance platform"
+        ],
         "url": SITE_URL,
         "logo": `${SITE_URL}/icon.png`,
         "sameAs": [
             "https://www.linkedin.com/company/remova.org/",
             "https://github.com/remova"
         ],
-        "description": "The enterprise control layer for AI with governance, safety, and cost management controls."
+        "description": "Remova is an enterprise AI governance platform for companies that need policy controls, sensitive-data protection, role-based access, audit visibility, and budget management for AI usage.",
+        "knowsAbout": [
+            "enterprise AI governance",
+            "AI policy enforcement",
+            "sensitive data masking",
+            "AI budget management",
+            "AI audit trails",
+            "role-based AI access",
+            "model-agnostic AI governance",
+            "governed AI workspaces"
+        ]
     };
     const softwareApplicationSchema = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
+        "@id": softwareId,
         "name": "Remova",
+        "alternateName": "Remova Enterprise AI Governance Platform",
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "AI Governance Platform",
         "operatingSystem": "Web",
         "url": SITE_URL,
         "publisher": {
-            "@type": "Organization",
-            "name": "Remova"
+            "@id": organizationId
         },
-        "description": "Enterprise AI governance platform with policy controls, sensitive data protection, and budget management."
+        "description": "Enterprise AI governance platform with policy controls, sensitive-data masking, role-based access, audit visibility, model access governance, and department-level budget controls.",
+        "featureList": [
+            "Sensitive-data masking before AI model calls",
+            "Policy guardrails for prompts and responses",
+            "Role-based access controls for AI usage",
+            "Department-level AI budgets and spend visibility",
+            "Audit trails for AI usage and policy events",
+            "Model-agnostic access to approved AI providers",
+            "Team AI workspaces",
+            "Governed API access for internal applications"
+        ],
+        "audience": {
+            "@type": "BusinessAudience",
+            "audienceType": "Companies rolling out AI across departments"
+        },
+        "offers": {
+            "@type": "Offer",
+            "url": "https://app.remova.org/register",
+            "price": "50",
+            "priceCurrency": "USD",
+            "description": "Enterprise plan listed publicly at $50 per seat with a 10-seat minimum.",
+            "availability": "https://schema.org/InStock"
+        }
     };
 
     const webSiteSchema = {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
         "name": "Remova",
         "url": SITE_URL,
-        "description": "The enterprise control layer for AI with governance, safety, and cost management controls.",
+        "publisher": {
+            "@id": organizationId
+        },
+        "description": "Remova is an enterprise AI governance platform with policy controls, sensitive-data protection, role-based access, audit visibility, and budget management.",
         "potentialAction": {
             "@type": "SearchAction",
             "target": {

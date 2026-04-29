@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 
 const resources = [
     {
-        title: "Ultimate Guide to Trade Privacy 2025",
-        description: "A comprehensive manual on protecting your supply chain data from being ingested by third-party models.",
-        href: "/docs/ultimate-guide-trade-privacy-2025.pdf"
+        title: "Enterprise AI Governance Guide",
+        description: "How to roll out AI with policy controls, role-based access, audit visibility, and team-level budget ownership.",
+        href: "/features"
     },
     {
-        title: "ImportYeti Removal Guide",
-        description: "Step-by-step instructions for identifying and removing sensitive organizational data from public trade databases.",
-        href: "/docs/importyeti-removal-guide.pdf"
+        title: "Security Review Checklist",
+        description: "What buyers should ask for: DPA terms, subprocessors, architecture diagrams, encryption, retention, and incident-response details.",
+        href: "/privacy"
     },
     {
-        title: "Panjiva Removal Protocol",
-        description: "Technical workflow for executing data removal requests with global trade intelligence platforms.",
-        href: "/docs/resources/panjiva-removal.pdf"
+        title: "AI Cost Control Playbook",
+        description: "Practical guidance for tracking model usage, setting team budgets, choosing billing options, and preventing surprise AI spend.",
+        href: "/features/department-budgets"
     }
 ];
 
@@ -58,7 +58,7 @@ export default function ResourcesPage() {
                                     {res.description}
                                 </p>
                                 <div className="flex items-center text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider group-hover:underline">
-                                    Download PDF <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                                    Open resource <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
                                 </div>
                             </Link>
                         ))}
