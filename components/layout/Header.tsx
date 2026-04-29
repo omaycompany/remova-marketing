@@ -9,7 +9,6 @@ import ExternalAppLink from "@/components/ui/ExternalAppLink";
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const navLinks = [
-        { label: "Demo", href: "/demo" },
         { label: "Features", href: "/features" },
         { label: "Models", href: "/models" },
         { label: "Blog", href: "/blog" },

@@ -15,6 +15,9 @@ export interface ModelEntry {
     inputModalities?: string[];
     outputModalities?: string[];
     supportedParameters?: string[];
+    source?: "llm_catalog" | "media_catalog" | "cloud_catalog";
+    modelType?: string;
+    pricingDescription?: string;
 }
 
 const featuredModels: ModelEntry[] = [

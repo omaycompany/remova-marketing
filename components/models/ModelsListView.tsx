@@ -27,6 +27,27 @@ function priceTierForModel(inputPer1M: number) {
     return "premium";
 }
 
+function formatContextLabel(model: ModelEntry) {
+    if (model.contextLength <= 0) return "N/A";
+    return fmtNumber.format(model.contextLength);
+}
+
+function formatInputPriceLabel(model: ModelEntry) {
+    if (model.pricingDescription) return model.pricingDescription;
+    return formatPublicModelPrice(model.inputPer1M);
+}
+
+function formatOutputPriceLabel(model: ModelEntry) {
+    if (model.pricingDescription) return "Usage-based";
+    return formatPublicModelPrice(model.outputPer1M);
+}
+
+function publicModelId(model: ModelEntry, slug?: string) {
+    if (!slug) return model.id;
+    if (model.source === "media_catalog" || model.source === "cloud_catalog") return `remova/${slug}`;
+    return model.id;
+}
+
 export default function ModelsListView({ models, landingByModelId }: ModelsListViewProps) {
     const [search, setSearch] = useState("");
     const [provider, setProvider] = useState("all");
@@ -195,15 +216,15 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                         <div className="mb-6 grid gap-3 sm:grid-cols-3">
                             <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
                                 <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Context</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{fmtNumber.format(model.contextLength)}</div>
+                                <div className="text-base font-black text-slate-900 dark:text-white">{formatContextLabel(model)}</div>
                             </div>
                             <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
                                 <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Input / 1M</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.inputPer1M)}</div>
+                                <div className="text-base font-black text-slate-900 dark:text-white">{formatInputPriceLabel(model)}</div>
                             </div>
                             <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
                                 <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Output / 1M</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.outputPer1M)}</div>
+                                <div className="text-base font-black text-slate-900 dark:text-white">{formatOutputPriceLabel(model)}</div>
                             </div>
                         </div>
 
@@ -224,15 +245,15 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
 
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <code className="rounded-md bg-slate-100 dark:bg-white/10 px-2 py-1 text-xs font-bold text-slate-600 dark:text-slate-300">
-                                {model.id}
+                                {publicModelId(model, landingByModelId[model.id])}
                             </code>
 
                             {landingByModelId[model.id] && (
                                 <Link
                                     href={`/models/${landingByModelId[model.id]}`}
-                                    className="inline-flex items-center gap-2 text-sm font-black text-slate-900 dark:text-white hover:gap-3 transition-all"
+                                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white shadow-[0_16px_35px_-22px_rgba(15,23,42,0.9)] transition-all hover:-translate-y-0.5 hover:bg-slate-700 hover:shadow-[0_20px_45px_-24px_rgba(15,23,42,0.95)] focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 dark:focus:ring-white/30"
                                 >
-                                    View model details <ArrowRight className="h-4 w-4" />
+                                    View model details <ArrowRight className="h-4 w-4" aria-hidden="true" />
                                 </Link>
                             )}
                         </div>

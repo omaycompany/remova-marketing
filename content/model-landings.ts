@@ -1313,16 +1313,38 @@ function ensureUniqueSlug(model: ModelEntry, usedSlugs: Set<string>) {
 }
 
 function contextBand(model: ModelEntry) {
+    if (model.contextLength <= 0) return "non-token";
     if (model.contextLength >= 1_000_000) return "ultra-long context";
     if (model.contextLength >= 200_000) return "long context";
     return "standard context";
 }
 
 function pricingBand(model: ModelEntry) {
+    if (model.pricingDescription) return "usage-based";
     const publicInputPrice = publicModelPrice(model.inputPer1M);
     if (publicInputPrice <= 0.3) return "cost-efficient";
     if (publicInputPrice <= 2.5) return "balanced";
     return "premium";
+}
+
+function contextSpecValue(model: ModelEntry) {
+    if (model.contextLength <= 0) return "N/A";
+    return `${fmtNumber.format(model.contextLength)} tokens`;
+}
+
+function inputPriceSpecValue(model: ModelEntry) {
+    if (model.pricingDescription) return model.pricingDescription;
+    return formatPublicModelPricePer1M(model.inputPer1M);
+}
+
+function outputPriceSpecValue(model: ModelEntry) {
+    if (model.pricingDescription) return "Usage-based";
+    return formatPublicModelPricePer1M(model.outputPer1M);
+}
+
+function publicModelId(model: ModelEntry, slug: string) {
+    if (model.source === "media_catalog" || model.source === "cloud_catalog") return `remova/${slug}`;
+    return model.id;
 }
 
 function defaultModality(model: ModelEntry) {
@@ -1382,6 +1404,7 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
     };
 
     const pricingTradeoffs: Record<string, string> = {
+        "usage-based": "Usage-based media models need per-workflow cost estimates before broad rollout.",
         "cost-efficient": "Low-cost tiers can still underperform on high-consequence decisions without escalation paths.",
         balanced: "Balanced-price tiers still need policy-based routing to protect monthly budgets.",
         premium: "Premium tiers should be restricted to high-value workflows to avoid unnecessary spend concentration.",
@@ -1452,7 +1475,9 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
 
     const strengths = [
         `${model.name} is suited for ${model.bestFor[0]?.toLowerCase() ?? "general enterprise assistants"}.`,
-        `Supports ${context} for multi-step prompts and larger working sets.`,
+        context === "non-token"
+            ? `Supports ${modality} workflows for governed media and automation use cases.`
+            : `Supports ${context} for multi-step prompts and larger working sets.`,
         `Pricing profile is ${pricing}, enabling predictable workload routing decisions.`,
         `Can be paired with policy guardrails for safer deployment at scale.`,
     ];
@@ -1470,13 +1495,13 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, suited to ${fitPhrase} for enterprise teams.`,
         metaTitle: buildMetaTitle(model.name),
         metaDescription: trimCopy(
-            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${formatPublicModelPricePer1M(model.inputPer1M)} input), and rollout guidance for ${topUseCasesText}.`,
+            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${inputPriceSpecValue(model)} input), and rollout guidance for ${topUseCasesText}.`,
             158
         ),
-        providerSummary: `${model.name} is available in Remova as ${contextArticle} ${context} option with ${formatPublicModelPricePer1M(model.inputPer1M)} input pricing, ${formatPublicModelPricePer1M(model.outputPer1M)} output pricing, and ${modality} modality support for enterprise AI operations.`,
+        providerSummary: `${model.name} is available in Remova as ${contextArticle} ${context} option with ${inputPriceSpecValue(model)} input pricing, ${outputPriceSpecValue(model)} output pricing, and ${modality} modality support for enterprise AI operations.`,
         summaryPoints: [
             `${model.name} offers ${context} capacity for enterprise prompts and documents.`,
-            `Current Remova pricing band is ${pricing}: ${formatPublicModelPricePer1M(model.inputPer1M)} input and ${formatPublicModelPricePer1M(model.outputPer1M)} output.`,
+            `Current Remova pricing band is ${pricing}: ${inputPriceSpecValue(model)} input and ${outputPriceSpecValue(model)} output.`,
             `Best-fit workloads include: ${bestFitList}.`,
             theme.governanceLine,
         ],
@@ -1492,13 +1517,13 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         ],
         parameterNotes: parameterNotesForModel(model),
         specNotes: [
-            { label: "Model ID", value: model.id },
-            { label: "Context Window", value: `${fmtNumber.format(model.contextLength)} tokens` },
+            { label: "Model ID", value: publicModelId(model, slug) },
+            { label: "Context Window", value: contextSpecValue(model) },
             { label: "Modality", value: modality },
             { label: "Input Modalities", value: inputModalities },
             { label: "Output Modalities", value: outputModalities },
-            { label: "Input Price", value: formatPublicModelPricePer1M(model.inputPer1M) },
-            { label: "Output Price", value: formatPublicModelPricePer1M(model.outputPer1M) },
+            { label: "Input Price", value: inputPriceSpecValue(model) },
+            { label: "Output Price", value: outputPriceSpecValue(model) },
             { label: "Provider", value: model.provider },
             { label: "Listing Date", value: model.releasedAt },
         ],

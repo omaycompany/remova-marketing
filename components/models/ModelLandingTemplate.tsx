@@ -13,6 +13,21 @@ import { formatPublicModelPrice } from "@/lib/model-pricing";
 
 const fmtNumber = new Intl.NumberFormat("en-US");
 
+function formatContextLabel(model: ModelEntry) {
+    if (model.contextLength <= 0) return "N/A";
+    return fmtNumber.format(model.contextLength);
+}
+
+function formatInputPriceLabel(model: ModelEntry) {
+    if (model.pricingDescription) return model.pricingDescription;
+    return formatPublicModelPrice(model.inputPer1M);
+}
+
+function formatOutputPriceLabel(model: ModelEntry) {
+    if (model.pricingDescription) return "Usage-based";
+    return formatPublicModelPrice(model.outputPer1M);
+}
+
 interface Props {
     model: ModelEntry;
     landing: ModelLanding;
@@ -106,15 +121,15 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                 <div className="container mx-auto max-w-6xl grid gap-6 sm:grid-cols-3">
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
                         <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Context Window</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{fmtNumber.format(model.contextLength)}</div>
+                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatContextLabel(model)}</div>
                     </div>
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
                         <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Input / 1M</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.inputPer1M)}</div>
+                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatInputPriceLabel(model)}</div>
                     </div>
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
                         <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Output / 1M</div>
-                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatPublicModelPrice(model.outputPer1M)}</div>
+                        <div className="text-3xl font-black text-slate-900 dark:text-white">{formatOutputPriceLabel(model)}</div>
                     </div>
                 </div>
             </section>
