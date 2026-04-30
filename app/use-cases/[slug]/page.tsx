@@ -47,7 +47,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
     if (!uc) return <div>Not found</div>;
     const Icon = categoryIcon[uc.category];
 
-    const jsonLd = {
+    const serviceLd = {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": uc.headline,
@@ -55,6 +55,19 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
         "provider": { "@type": "Organization", "name": "Remova" },
         "areaServed": "Global"
     };
+    const videoLd = uc.video ? {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": uc.video.title,
+        "description": uc.video.description,
+        "thumbnailUrl": [absoluteUrl(uc.video.thumbnailUrl)],
+        "uploadDate": uc.video.uploadDate,
+        "duration": uc.video.duration,
+        "contentUrl": absoluteUrl(uc.video.contentUrl),
+        "embedUrl": absoluteUrl(`/use-cases/${uc.slug}#use-case-video`),
+        "transcript": uc.video.transcript
+    } : null;
+    const jsonLd = videoLd ? { "@context": "https://schema.org", "@graph": [serviceLd, videoLd] } : serviceLd;
 
     // Default unique FAQs based on use case
     const defaultFaqs = [
@@ -133,6 +146,36 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                 </div>
             </section>
 
+            {uc.video && (
+                <section id="use-case-video" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                    <div className="container mx-auto max-w-5xl">
+                        <div className="grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+                            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-black shadow-2xl shadow-slate-950/10 dark:border-white/10">
+                                <video
+                                    className="block aspect-video w-full"
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    poster={uc.video.thumbnailUrl}
+                                    aria-label={uc.video.title}
+                                >
+                                    <source src={uc.video.contentUrl} type="video/mp4" />
+                                </video>
+                            </div>
+                            <div>
+                                <p className="mb-3 text-sm font-black uppercase tracking-widest text-slate-500 dark:text-slate-400">Example Video</p>
+                                <h2 className="mb-4 text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.9]">
+                                    {uc.video.title}
+                                </h2>
+                                <p className="text-lg font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                    {uc.video.description}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* Description + Challenges */}
             <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-5xl">
@@ -163,6 +206,64 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
+
+            {(uc.workflow || uc.examplePrompts || uc.bestFor) && (
+                <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
+                    <div className="container mx-auto max-w-5xl">
+                        <div className="grid gap-12 lg:grid-cols-[1fr_0.85fr]">
+                            {uc.workflow && (
+                                <div>
+                                    <h2 className="mb-10 text-3xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.9]">
+                                        Example Workflow
+                                    </h2>
+                                    <div className="space-y-5">
+                                        {uc.workflow.map((step, i) => (
+                                            <div key={step.title} className="flex gap-5">
+                                                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-black text-white dark:bg-white dark:text-slate-900">
+                                                    {i + 1}
+                                                </div>
+                                                <div>
+                                                    <h3 className="mb-1 text-xl font-black text-slate-900 dark:text-white">{step.title}</h3>
+                                                    <p className="text-base font-medium leading-relaxed text-slate-600 dark:text-slate-400">{step.description}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="space-y-8">
+                                {uc.examplePrompts && (
+                                    <div>
+                                        <h3 className="mb-5 text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white">Example Prompts</h3>
+                                        <div className="space-y-3">
+                                            {uc.examplePrompts.map((prompt) => (
+                                                <div key={prompt} className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm font-bold leading-relaxed text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-200">
+                                                    {prompt}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {uc.bestFor && (
+                                    <div>
+                                        <h3 className="mb-5 text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white">Best For</h3>
+                                        <ul className="space-y-3">
+                                            {uc.bestFor.map((item) => (
+                                                <li key={item} className="flex items-start gap-3 text-base font-bold text-slate-600 dark:text-slate-300">
+                                                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             <LeadMagnetSection magnet="use-case-selector" tone="slate" />
 

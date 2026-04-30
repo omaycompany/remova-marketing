@@ -8,11 +8,313 @@ export interface UseCase {
     description: string;
     challenges: string[];
     solutions: { title: string; description: string }[];
+    video?: {
+        title: string;
+        description: string;
+        contentUrl: string;
+        thumbnailUrl: string;
+        duration: string;
+        uploadDate: string;
+        transcript: string;
+    };
+    workflow?: { title: string; description: string }[];
+    examplePrompts?: string[];
+    bestFor?: string[];
     faqs?: { question: string; answer: string }[];
     lastModified?: string;
 }
 
 export const useCases: UseCase[] = [
+    {
+        slug: "writing-better-emails",
+        category: "function",
+        metaTitle: "Use AI to Write Better Emails",
+        metaDescription: "See how teams can use AI to draft, rewrite, summarize, and polish everyday emails faster.",
+        headline: "AI for Writing Better Emails",
+        subheadline: "Turn rough notes into clear, useful messages",
+        description: "Email is one of the simplest places to start using AI because the work is repetitive, text-heavy, and easy to review before sending. Teams can use AI to turn quick notes into polished messages, shorten long drafts, adjust tone, create replies, and summarize long threads before deciding what to say next.\n\nA normal workflow starts with the user pasting a messy draft, bullet points, or a thread summary into Remova. They choose the kind of email they need, such as a customer reply, internal update, follow-up, meeting request, or escalation note. The AI then produces a structured draft that the user can edit, approve, and send from their normal email tool.\n\nThis use case is intentionally basic. It does not require a complex automation project or a custom AI agent. The value comes from removing blank-page work, making communication clearer, and helping employees handle everyday writing tasks with less context switching.",
+        video: {
+            title: "Example: Drafting a Clear Email with AI",
+            description: "A short walkthrough showing how an employee can use Remova to turn rough notes into a polished email draft, review the result, and keep the workflow inside an approved company AI workspace.",
+            contentUrl: "/videos/use-cases/writing-better-emails.mp4",
+            thumbnailUrl: "/videos/use-cases/writing-better-emails-poster.png",
+            duration: "PT30S",
+            uploadDate: "2026-04-30",
+            transcript: "An employee opens Remova, chooses an approved AI workspace, and pastes rough notes for a follow-up email. The assistant rewrites the notes into a clear message with a subject line, concise body, and next step. The employee reviews the draft, adjusts the tone, and copies the approved version into their email client."
+        },
+        challenges: [
+            "Starting emails from a blank page",
+            "Rewriting messages to sound clearer or more professional",
+            "Summarizing long threads before replying",
+            "Keeping tone consistent across teams",
+            "Reducing time spent on routine follow-ups"
+        ],
+        workflow: [
+            { title: "Add the context", description: "Paste rough notes, a previous email, or the key facts the reply needs to include." },
+            { title: "Choose the outcome", description: "Ask for a first draft, shorter version, warmer tone, firmer tone, subject line, or reply options." },
+            { title: "Review and edit", description: "Check names, dates, commitments, and tone before sending from the normal email tool." },
+            { title: "Reuse the pattern", description: "Save strong prompts or templates for common emails like follow-ups, status updates, and customer replies." }
+        ],
+        examplePrompts: [
+            "Turn these bullet points into a concise client follow-up email with a clear next step.",
+            "Rewrite this email so it sounds professional, direct, and friendly without becoming too formal.",
+            "Summarize this thread and draft a reply that confirms the decision, owner, and deadline.",
+            "Create three subject line options for this internal update.",
+            "Shorten this message by 40% while keeping the same meaning."
+        ],
+        solutions: [
+            { title: "Faster First Drafts", description: "AI removes the blank-page step by turning notes, fragments, or thread context into a complete email draft the user can review." },
+            { title: "Tone Rewriting", description: "Employees can quickly make a message clearer, warmer, firmer, shorter, or more executive-friendly without rewriting from scratch." },
+            { title: "Thread Summaries", description: "Long conversations can be condensed into decisions, open questions, owners, and deadlines before the user writes a reply." },
+            { title: "Reusable Email Patterns", description: "Common messages such as follow-ups, meeting notes, status updates, and customer replies can become repeatable templates." }
+        ],
+        bestFor: [
+            "Sales and customer success teams writing follow-ups",
+            "Managers sending status updates and meeting recaps",
+            "Operations teams coordinating tasks and deadlines",
+            "Support teams replying to repeated customer questions",
+            "Founders and small teams that need polished communication quickly"
+        ],
+        faqs: [
+            { question: "Can AI send the email automatically?", answer: "For this basic use case, the best workflow is human review before sending. AI drafts and improves the message, while the employee checks accuracy and sends it from the normal email tool." },
+            { question: "What should users check before sending?", answer: "Users should confirm names, dates, prices, commitments, attachments, links, and any promise made in the email. AI is useful for drafting, but the sender remains responsible for the final message." },
+            { question: "Can this work for internal and external emails?", answer: "Yes. The same workflow works for customer replies, internal updates, meeting follow-ups, executive summaries, and routine administrative messages." },
+            { question: "Does this require a custom integration?", answer: "No. A team can start by copying context into an approved AI workspace, reviewing the output, and pasting the final draft into their email client." }
+        ],
+        lastModified: "2026-04-30"
+    },
+    {
+        slug: "checking-understanding-excel-files",
+        category: "function",
+        metaTitle: "Use AI to Check and Understand Excel Files",
+        metaDescription: "Use AI to find spreadsheet errors, explain formulas, clean messy data, and turn Excel files into plain-English insights.",
+        headline: "AI for Checking and Understanding Excel Files",
+        subheadline: "Make spreadsheets easier to review, clean, and explain",
+        description: "Spreadsheets are full of hidden work: formulas, inconsistent formatting, blank rows, duplicate entries, totals that do not match, and trends that are hard to spot quickly. AI helps non-technical users understand what is inside a spreadsheet without manually inspecting every row and formula.\n\nA normal workflow starts by uploading or pasting spreadsheet data into Remova, then asking a specific question: find errors, explain a formula, summarize sales by region, clean duplicate customer names, or turn a table into a short business summary. The AI can point out likely issues and produce a clear explanation that a manager, analyst, or operations teammate can review.\n\nThis use case is useful because it makes spreadsheet review more approachable. AI does not replace the source file or the person responsible for the numbers, but it gives teams a faster way to inspect, explain, and communicate what the data appears to show.",
+        video: {
+            title: "Example: Reviewing an Excel File with AI",
+            description: "A short walkthrough showing how AI can check spreadsheet data, explain formulas, summarize trends, and produce plain-English insights for human review.",
+            contentUrl: "/videos/use-cases/checking-understanding-excel-files.mp4",
+            thumbnailUrl: "/videos/use-cases/checking-understanding-excel-files-poster.png",
+            duration: "PT30S",
+            uploadDate: "2026-04-30",
+            transcript: "An employee uploads a spreadsheet into Remova and asks AI to find errors, explain formulas, summarize trends, and clean inconsistent data. The assistant flags duplicate customers, blank values, unusual numbers, formula risks, and business insights. The employee reviews the findings before updating or sharing the spreadsheet."
+        },
+        challenges: [
+            "Finding spreadsheet mistakes before sharing a file",
+            "Understanding formulas written by someone else",
+            "Summarizing rows, columns, and trends quickly",
+            "Cleaning inconsistent names, dates, and categories",
+            "Turning raw spreadsheet data into plain-English insights"
+        ],
+        workflow: [
+            { title: "Upload or paste the data", description: "Start with the relevant sheet, table, CSV export, or selected rows instead of the whole workbook when possible." },
+            { title: "Ask for a targeted review", description: "Request formula explanations, possible errors, duplicates, missing values, outliers, or trend summaries." },
+            { title: "Review the findings", description: "Check any flagged issues against the original file before changing formulas, totals, or source data." },
+            { title: "Create a clean summary", description: "Turn the final findings into a short explanation, table, action list, or stakeholder update." }
+        ],
+        examplePrompts: [
+            "Review this spreadsheet and flag likely errors, duplicates, missing values, and inconsistent categories.",
+            "Explain what this formula is doing in plain English and identify where it could break.",
+            "Summarize the main trends by month, region, and product line.",
+            "Clean this customer list by standardizing company names and removing obvious duplicates.",
+            "Turn this spreadsheet into five plain-English insights for a manager."
+        ],
+        solutions: [
+            { title: "Error Finding", description: "AI can look for suspicious blanks, mismatched totals, duplicated rows, unusual values, and inconsistent labels that are easy to miss manually." },
+            { title: "Formula Explanation", description: "Complex formulas can be translated into plain English so users understand the logic before editing or trusting the result." },
+            { title: "Data Summaries", description: "Rows and columns can be summarized into trends, outliers, grouped totals, and concise business observations." },
+            { title: "Data Cleanup Support", description: "Messy spreadsheet data can be reorganized into cleaner names, categories, date formats, and tables ready for review." }
+        ],
+        bestFor: [
+            "Operations teams reviewing trackers and exports",
+            "Finance teams checking simple models and monthly sheets",
+            "Sales teams summarizing pipeline or revenue data",
+            "Managers who need spreadsheet insights without deep Excel work",
+            "Small teams cleaning CSVs from tools and CRMs"
+        ],
+        faqs: [
+            { question: "Can AI edit the Excel file directly?", answer: "The safest starting workflow is to let AI explain, flag, and suggest changes while the user applies approved edits in the spreadsheet. Direct editing can be added later if the team wants a more automated workflow." },
+            { question: "Should users trust every flagged error?", answer: "No. AI findings should be treated as a review checklist. Users should confirm important numbers, formulas, and source data before making business decisions." },
+            { question: "Can AI explain Excel formulas?", answer: "Yes. Users can paste a formula and ask for a plain-English explanation, assumptions, dependencies, and possible edge cases." },
+            { question: "What works best for large spreadsheets?", answer: "Start with the relevant sheet, table, or export. For very large files, ask focused questions such as duplicate detection, column summaries, or formula review rather than asking AI to inspect everything at once." }
+        ],
+        lastModified: "2026-04-30"
+    },
+    {
+        slug: "analyzing-documents-quickly",
+        category: "function",
+        metaTitle: "Use AI to Analyze Documents Quickly",
+        metaDescription: "Use AI to summarize PDFs, Word documents, contracts, and reports into key points, action items, comparisons, and briefings.",
+        headline: "AI for Analyzing Documents Quickly",
+        subheadline: "Turn long files into clear summaries and action items",
+        description: "Documents often contain the information teams need, but finding it takes time. PDFs, Word documents, contracts, reports, policies, meeting notes, and research files can be long, repetitive, and difficult to compare manually. AI helps users extract the useful parts faster.\n\nA normal workflow starts with uploading a document or pasting text into Remova, then asking for a specific output: summarize the file, extract key points, find action items, compare it with another document, identify missing information, or turn the content into a short briefing. The user then reviews the result against the original file before sharing or acting on it.\n\nThis use case is one of the most practical starting points for AI because it saves time without requiring automation. The AI becomes a reading assistant that helps teams understand, compare, and communicate document content more efficiently.",
+        video: {
+            title: "Example: Summarizing and Comparing Documents with AI",
+            description: "A short walkthrough showing how AI can summarize documents, extract action items, compare two files, and turn long material into a briefing.",
+            contentUrl: "/videos/use-cases/analyzing-documents-quickly.mp4",
+            thumbnailUrl: "/videos/use-cases/analyzing-documents-quickly-poster.png",
+            duration: "PT30S",
+            uploadDate: "2026-04-30",
+            transcript: "An employee uploads a report or contract into Remova and asks AI to summarize the file, extract action items, compare it with another version, and create a leadership briefing. The assistant identifies key points, owners, deadlines, changes, missing sections, and next steps for review."
+        },
+        challenges: [
+            "Summarizing long PDFs, Word docs, contracts, and reports",
+            "Extracting key points and action items",
+            "Comparing two versions or related documents",
+            "Finding missing information or unanswered questions",
+            "Turning long documents into short briefings"
+        ],
+        workflow: [
+            { title: "Add the document", description: "Upload the file or paste the relevant sections, then explain what the user needs to learn from it." },
+            { title: "Choose the output", description: "Ask for a summary, action list, comparison table, risk list, missing information check, or briefing." },
+            { title: "Check against the source", description: "Review important facts, dates, obligations, numbers, and quotes before using the output." },
+            { title: "Share the result", description: "Convert the reviewed output into a team update, decision note, client summary, or next-step checklist." }
+        ],
+        examplePrompts: [
+            "Summarize this PDF into the five most important points and list any action items.",
+            "Compare these two documents and show what changed in a table.",
+            "Read this contract and extract obligations, deadlines, fees, renewal terms, and open questions.",
+            "Find missing information in this report based on the stated goal.",
+            "Turn this long document into a one-page briefing for leadership."
+        ],
+        solutions: [
+            { title: "Fast Summaries", description: "AI can condense long documents into executive summaries, section summaries, and key takeaways." },
+            { title: "Action Extraction", description: "Tasks, owners, deadlines, decisions, open questions, and follow-ups can be pulled out into a practical checklist." },
+            { title: "Document Comparison", description: "Two files can be compared for changes in wording, requirements, dates, scope, and missing sections." },
+            { title: "Briefing Creation", description: "Dense documents can be rewritten into concise briefings tailored for managers, clients, or project teams." }
+        ],
+        bestFor: [
+            "Managers reviewing reports before meetings",
+            "Legal and operations teams checking contracts and policies",
+            "Consultants turning source material into briefings",
+            "Customer teams summarizing long notes or requirements",
+            "Founders and executives reviewing documents quickly"
+        ],
+        faqs: [
+            { question: "Can AI summarize PDFs and Word documents?", answer: "Yes. Users can upload or paste document content and ask for summaries, action items, comparisons, or missing information checks." },
+            { question: "Can this replace legal or expert review?", answer: "No. AI can help organize and explain content, but contracts, legal documents, financial reports, and regulated materials should still be reviewed by the responsible expert." },
+            { question: "What should users verify?", answer: "Users should verify names, dates, figures, obligations, quoted language, and any recommendation before sharing the output." },
+            { question: "Can AI compare two documents?", answer: "Yes. It can produce a comparison table showing differences, additions, removals, changed terms, and areas that need human review." }
+        ],
+        lastModified: "2026-04-30"
+    },
+    {
+        slug: "preparing-reports-pdfs-presentations",
+        category: "function",
+        metaTitle: "Use AI to Prepare Reports, PDFs, and Presentations",
+        metaDescription: "Use AI to turn notes into reports, executive summaries, PDF-ready content, slide outlines, and clearer client-facing writing.",
+        headline: "AI for Preparing Reports, PDFs, and Presentations",
+        subheadline: "Turn rough material into structured business content",
+        description: "Reports, PDFs, and presentations usually start with messy inputs: meeting notes, spreadsheet summaries, document excerpts, research points, customer feedback, and half-written drafts. AI helps organize those materials into clear deliverables that are easier to review and finish.\n\nA normal workflow starts with pasting the source material into Remova and choosing the target format. The user can ask for a structured report, executive summary, PDF-ready section, slide outline, client-friendly rewrite, or dense-to-simple explanation. The AI creates a draft structure, and the user edits the final wording, facts, formatting, and design.\n\nThis use case is valuable because it reduces the time between raw information and a polished draft. AI helps with structure, phrasing, and summarization while the user keeps control over judgment, accuracy, and final presentation.",
+        video: {
+            title: "Example: Turning Notes into Reports and Presentations",
+            description: "A short walkthrough showing how AI can structure rough notes into reports, executive summaries, PDF-ready sections, and slide outlines.",
+            contentUrl: "/videos/use-cases/preparing-reports-pdfs-presentations.mp4",
+            thumbnailUrl: "/videos/use-cases/preparing-reports-pdfs-presentations-poster.png",
+            duration: "PT30S",
+            uploadDate: "2026-04-30",
+            transcript: "An employee pastes project notes into Remova and asks AI to create a structured report, executive summary, slide outline, and client-ready rewrite. The assistant organizes rough material into headings, key messages, recommendations, and final draft sections for human review."
+        },
+        challenges: [
+            "Turning notes into structured reports",
+            "Creating executive summaries",
+            "Formatting content for PDF export",
+            "Building slide outlines",
+            "Rewriting dense content for clients or teams"
+        ],
+        workflow: [
+            { title: "Collect source material", description: "Paste notes, bullet points, spreadsheet insights, document summaries, or research findings." },
+            { title: "Choose the deliverable", description: "Ask for a report, executive summary, PDF section, slide outline, client memo, or presentation narrative." },
+            { title: "Refine the structure", description: "Adjust headings, order, level of detail, audience, and tone until the draft matches the use case." },
+            { title: "Finalize outside AI", description: "Review facts, apply brand formatting, add visuals, and export the final PDF or presentation." }
+        ],
+        examplePrompts: [
+            "Turn these meeting notes into a structured report with headings, recommendations, and next steps.",
+            "Create an executive summary from this draft in under 250 words.",
+            "Rewrite this dense section so a client can understand it quickly.",
+            "Build a 10-slide presentation outline from these notes.",
+            "Format this content into a PDF-ready structure with title, sections, bullets, and conclusion."
+        ],
+        solutions: [
+            { title: "Report Structuring", description: "Messy notes can become organized sections with headings, summaries, recommendations, and next steps." },
+            { title: "Executive Summaries", description: "Long drafts can be condensed into concise summaries for leadership, clients, or internal updates." },
+            { title: "Slide Outlines", description: "AI can turn source material into slide titles, key messages, speaker notes, and logical presentation flow." },
+            { title: "Audience Rewriting", description: "Dense or technical writing can be rewritten for clients, executives, teammates, or non-specialist readers." }
+        ],
+        bestFor: [
+            "Consultants creating client deliverables",
+            "Managers preparing leadership updates",
+            "Sales teams building proposal summaries",
+            "Operations teams documenting processes and results",
+            "Small teams turning notes into polished materials"
+        ],
+        faqs: [
+            { question: "Can AI create a finished PDF or presentation by itself?", answer: "AI can create the structure and draft content, but users should still review the facts, formatting, charts, visuals, and final export quality." },
+            { question: "What inputs work best?", answer: "Clear notes, source summaries, audience context, desired length, and target format produce the best results." },
+            { question: "Can AI rewrite content for a specific audience?", answer: "Yes. Users can ask for client-friendly, executive-level, internal, technical, or simple-language versions." },
+            { question: "Can this help with slide decks?", answer: "Yes. AI can create slide outlines, titles, key points, speaker notes, and narrative flow before the user builds the final deck." }
+        ],
+        lastModified: "2026-04-30"
+    },
+    {
+        slug: "daily-admin-productivity-tasks",
+        category: "function",
+        metaTitle: "Use AI for Daily Admin and Productivity Tasks",
+        metaDescription: "Use AI to create task lists, meeting agendas, call summaries, checklists, SOPs, tables, timelines, and next steps.",
+        headline: "AI for Daily Admin and Productivity Tasks",
+        subheadline: "Organize messy work into clear next steps",
+        description: "A lot of everyday work is not complex, but it is still time-consuming. Teams spend hours turning messy notes into tasks, planning agendas, summarizing calls, drafting checklists, creating SOPs, and organizing information into tables or timelines. AI helps convert scattered information into usable structure.\n\nA normal workflow starts with a raw input: notes from a call, a meeting transcript, a Slack-style update, a list of ideas, or an unstructured process. The user asks Remova to organize it into a task list, agenda, checklist, SOP, timeline, table, or next-step plan. The result gives the user a clear draft to review and share.\n\nThis is a strong basic AI use case because it fits almost every team. It does not require advanced setup. It simply helps people move from messy information to organized work faster.",
+        video: {
+            title: "Example: Organizing Daily Admin Work with AI",
+            description: "A short walkthrough showing how AI can turn messy notes into task lists, meeting agendas, call summaries, checklists, SOPs, and next steps.",
+            contentUrl: "/videos/use-cases/daily-admin-productivity-tasks.mp4",
+            thumbnailUrl: "/videos/use-cases/daily-admin-productivity-tasks-poster.png",
+            duration: "PT30S",
+            uploadDate: "2026-04-30",
+            transcript: "An employee pastes messy notes or a meeting transcript into Remova and asks AI to organize the work. The assistant creates a task list, agenda, call summary, checklist, SOP structure, timeline, and next-step plan. The employee reviews owners, deadlines, decisions, and open questions before sharing."
+        },
+        challenges: [
+            "Creating task lists from messy notes",
+            "Planning meetings and agendas",
+            "Summarizing calls or transcripts",
+            "Drafting checklists and SOPs",
+            "Organizing information into tables, timelines, or next steps"
+        ],
+        workflow: [
+            { title: "Paste the messy input", description: "Add notes, transcript text, process details, ideas, or a rough update." },
+            { title: "Pick the structure", description: "Ask for tasks, agenda items, checklist steps, SOP format, timeline, table, or next-step plan." },
+            { title: "Assign ownership", description: "Ask AI to separate owners, deadlines, dependencies, decisions, and unanswered questions." },
+            { title: "Review and share", description: "Confirm the details, edit wording, and share the organized version with the team." }
+        ],
+        examplePrompts: [
+            "Turn these messy notes into a task list with owners, deadlines, and open questions.",
+            "Create a 30-minute meeting agenda from this context.",
+            "Summarize this call transcript into decisions, action items, and follow-ups.",
+            "Draft a checklist and SOP for this repeated process.",
+            "Organize this information into a table, timeline, and next-step plan."
+        ],
+        solutions: [
+            { title: "Task List Creation", description: "Messy notes can become structured tasks with owners, deadlines, dependencies, and open questions." },
+            { title: "Meeting Planning", description: "AI can create agendas, discussion questions, preparation notes, and expected outcomes." },
+            { title: "Call Summaries", description: "Transcripts and notes can be turned into decisions, action items, risks, and follow-ups." },
+            { title: "Process Documentation", description: "Repeated work can become checklists, SOPs, tables, timelines, and step-by-step instructions." }
+        ],
+        bestFor: [
+            "Founders and operators managing many small tasks",
+            "Managers preparing meetings and follow-ups",
+            "Customer teams summarizing calls",
+            "HR and operations teams documenting procedures",
+            "Any team that needs cleaner next steps from messy notes"
+        ],
+        faqs: [
+            { question: "Can AI summarize meeting transcripts?", answer: "Yes. Users can paste a transcript or notes and ask for decisions, action items, owners, deadlines, and open questions." },
+            { question: "Can AI create SOPs?", answer: "Yes. AI can turn a rough process description into a draft SOP or checklist, but the responsible team should validate the steps before relying on it." },
+            { question: "What makes admin prompts work well?", answer: "Give the AI the raw context, target format, desired level of detail, and any known owners or deadlines." },
+            { question: "Can AI organize information into tables?", answer: "Yes. It can convert unstructured notes into tables, timelines, checklists, task lists, and next-step plans." }
+        ],
+        lastModified: "2026-04-30"
+    },
     {
         slug: "financial-services",
         category: "industry",
