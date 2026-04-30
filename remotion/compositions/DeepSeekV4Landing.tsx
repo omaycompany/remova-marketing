@@ -15,6 +15,14 @@ type DeepSeekV4LandingProps = {
     contextWindow: string;
     inputPrice: string;
     outputPrice: string;
+    applicationItems?: ApplicationItem[];
+};
+
+type ApplicationItem = {
+    title: string;
+    description: string;
+    icon: string;
+    color: string;
 };
 
 const colors = {
@@ -39,6 +47,7 @@ export const DeepSeekV4Landing = ({
     contextWindow,
     inputPrice,
     outputPrice,
+    applicationItems,
 }: DeepSeekV4LandingProps) => {
     const frame = useCurrentFrame();
 
@@ -69,7 +78,7 @@ export const DeepSeekV4Landing = ({
                 {(localFrame) => <InterfaceScene frame={localFrame} modelName={modelName} />}
             </SceneLayer>
             <SceneLayer start={sceneFrames * 2} end={sceneFrames * 3} frame={frame}>
-                {(localFrame) => <ApplicationsScene frame={localFrame} modelName={modelName} />}
+                {(localFrame) => <ApplicationsScene frame={localFrame} modelName={modelName} applicationItems={applicationItems} />}
             </SceneLayer>
             <SceneLayer start={sceneFrames * 3} end={sceneFrames * 4} frame={frame}>
                 {(localFrame) => <CtaScene frame={localFrame} modelName={modelName} />}
@@ -248,17 +257,27 @@ const InterfaceScene = ({ frame, modelName }: { frame: number; modelName: string
     );
 };
 
-const ApplicationsScene = ({ frame, modelName }: { frame: number; modelName: string }) => {
+const defaultApplicationItems: ApplicationItem[] = [
+    { title: "Summaries", description: "Condense long documents into decision-ready notes", color: colors.violet, icon: "doc" },
+    { title: "Presentations", description: "Turn research into exec-ready slide narratives", color: colors.teal, icon: "slides" },
+    { title: "Code", description: "Build, debug, test, and explain software changes", color: colors.blue, icon: "code" },
+    { title: "Data analysis", description: "Explain spreadsheets, trends, and forecast drivers", color: colors.emerald, icon: "chart" },
+    { title: "Market research", description: "Synthesize competitors, customers, and positioning", color: "#f59e0b", icon: "search" },
+    { title: "Workflows", description: "Plan governed agent steps across internal tools", color: "#ef4444", icon: "flow" },
+];
+
+const ApplicationsScene = ({
+    frame,
+    modelName,
+    applicationItems,
+}: {
+    frame: number;
+    modelName: string;
+    applicationItems?: ApplicationItem[];
+}) => {
     const { fps } = useVideoConfig();
     const intro = spring({ frame: frame + 8, fps, config: { damping: 18, stiffness: 82 } });
-    const items = [
-        { title: "Presentations", detail: "Turn research into exec-ready slide narratives", color: colors.teal, icon: "slides" },
-        { title: "Code", detail: "Build, debug, test, and explain software changes", color: colors.blue, icon: "code" },
-        { title: "Contracts", detail: "Summarize obligations and flag risky clauses", color: colors.violet, icon: "doc" },
-        { title: "Data analysis", detail: "Explain spreadsheets, trends, and forecast drivers", color: colors.emerald, icon: "chart" },
-        { title: "Market research", detail: "Synthesize competitors, customers, and positioning", color: "#f59e0b", icon: "search" },
-        { title: "Workflows", detail: "Plan governed agent steps across internal tools", color: "#ef4444", icon: "flow" },
-    ];
+    const items = (applicationItems?.length ? applicationItems : defaultApplicationItems).slice(0, 6);
 
     return (
         <>
@@ -287,7 +306,7 @@ const ApplicationsScene = ({ frame, modelName }: { frame: number; modelName: str
                     What teams can do with {modelName}
                 </h2>
                 <p style={{ ...heroCopy, maxWidth: 980, textAlign: "center", margin: "0 auto 48px" }}>
-                    Give every department access to frontier reasoning while Remova keeps policy, budget, and audit controls in the loop.
+                    Give every department access to the right AI capability while Remova keeps policy, budget, and audit controls in the loop.
                 </p>
 
                 <div
@@ -326,14 +345,14 @@ const ApplicationsScene = ({ frame, modelName }: { frame: number; modelName: str
                                 <ApplicationIcon type={item.icon} color={item.color} />
                                 <div>
                                     <div style={{ fontSize: 32, lineHeight: 1, fontWeight: 950, marginBottom: 10 }}>{item.title}</div>
-                                    <div style={{ fontSize: 22, lineHeight: 1.18, fontWeight: 750, color: colors.muted }}>{item.detail}</div>
+                                    <div style={{ fontSize: 22, lineHeight: 1.18, fontWeight: 750, color: colors.muted }}>{item.description}</div>
                                 </div>
                             </div>
                         );
                     })}
                 </div>
             </div>
-            <Footer left={`Scene 3: Real-world ${modelName} applications`} right="Presentations, code, contracts, data, research, workflows" />
+            <Footer left={`Scene 3: Real-world ${modelName} applications`} right={items.map((item) => item.title).join(", ")} />
         </>
     );
 };
@@ -456,6 +475,44 @@ const ApplicationIcon = ({ type, color }: { type: string; color: string }) => {
                     <rect x="47" y="22" width="17" height="17" rx="5" fill={color} />
                     <rect x="34" y="50" width="17" height="17" rx="5" fill={color} />
                     <path d="M37 31h10M55 39l-9 11M29 39l10 11" stroke={color} strokeWidth="5" strokeLinecap="round" />
+                </>
+            )}
+            {type === "image" && (
+                <>
+                    <rect x="20" y="22" width="44" height="38" rx="7" stroke={color} strokeWidth="5" />
+                    <circle cx="34" cy="35" r="5" fill={color} />
+                    <path d="m24 56 13-13 9 8 7-7 10 12" stroke={color} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                </>
+            )}
+            {type === "video" && (
+                <>
+                    <rect x="19" y="25" width="37" height="34" rx="7" stroke={color} strokeWidth="5" />
+                    <path d="m56 36 12-8v28l-12-8z" fill={color} />
+                    <path d="M34 36v12l11-6z" fill={color} />
+                </>
+            )}
+            {type === "audio" && (
+                <>
+                    <path d="M29 50H20V34h9l15-12v40z" stroke={color} strokeWidth="5" strokeLinejoin="round" />
+                    <path d="M54 32c5 6 5 14 0 20M62 25c9 11 9 23 0 34" stroke={color} strokeWidth="5" strokeLinecap="round" />
+                </>
+            )}
+            {type === "shield" && (
+                <>
+                    <path d="M42 18 61 26v15c0 13-8 21-19 26-11-5-19-13-19-26V26z" stroke={color} strokeWidth="5" strokeLinejoin="round" />
+                    <path d="m33 42 7 7 13-15" stroke={color} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                </>
+            )}
+            {type === "layers" && (
+                <>
+                    <path d="m42 18 24 13-24 13-24-13z" stroke={color} strokeWidth="5" strokeLinejoin="round" />
+                    <path d="m20 43 22 12 22-12M20 55l22 12 22-12" stroke={color} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+                </>
+            )}
+            {type === "spark" && (
+                <>
+                    <path d="M42 18 47 35 64 42 47 49 42 66 35 49 18 42 35 35z" stroke={color} strokeWidth="5" strokeLinejoin="round" />
+                    <path d="M61 18v12M55 24h12" stroke={color} strokeWidth="4" strokeLinecap="round" />
                 </>
             )}
         </svg>

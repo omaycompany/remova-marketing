@@ -74,6 +74,12 @@ After rendering new model videos, update `content/model-video-manifest.generated
 npm run video:manifest:models
 ```
 
+The default manifest command only exposes videos whose application copy is safe for text-model workflows. Media, transcription, retrieval, and other non-text videos must be rerendered with modality-specific application scenes before they are added back to production. After that pass is complete, regenerate the full manifest:
+
+```bash
+npm run video:manifest:models:all
+```
+
 ## SEO
 
 When the asset set exists, the model page automatically gets:

@@ -28,6 +28,40 @@ function modelReleasedAt(modelId: string) {
     return models.find((entry) => entry.id === modelId)?.releasedAt ?? "";
 }
 
+function needsModalitySpecificApplications(model: { name: string; summary: string; description?: string; modelType?: string; modality?: string; bestFor: string[]; inputModalities?: string[]; outputModalities?: string[] }) {
+    const output = new Set(model.outputModalities ?? []);
+    const input = new Set(model.inputModalities ?? []);
+    const text = [
+        model.name,
+        model.summary,
+        model.description,
+        ...model.bestFor,
+    ].filter(Boolean).join(" ").toLowerCase();
+    const modelType = `${model.modelType ?? ""}`.toLowerCase();
+    const modality = `${model.modality ?? ""}`.toLowerCase();
+
+    return output.has("video")
+        || output.has("image")
+        || output.has("audio")
+        || output.has("transcription")
+        || (input.has("audio") && output.has("text"))
+        || modelType.includes("video")
+        || modelType.includes("image")
+        || modelType.includes("audio")
+        || modelType.includes("speech")
+        || modelType.includes("tts")
+        || modelType.includes("music")
+        || modality.includes("->video")
+        || modality.includes("->image")
+        || modality.includes("->audio")
+        || text.includes("transcription")
+        || text.includes("transcribe")
+        || text.includes("whisper")
+        || text.includes("embed")
+        || text.includes("rerank")
+        || text.includes("retrieval");
+}
+
 function formatContextWindow(tokens: number) {
     if (tokens >= 1_000_000) return `${Math.round(tokens / 1_000_000)}M token context`;
     if (tokens >= 1_000) return `${Math.round(tokens / 1_000)}K token context`;
@@ -36,6 +70,13 @@ function formatContextWindow(tokens: number) {
 
 function escapeVtt(value: string) {
     return value.replace(/\s+/g, " ").trim();
+}
+
+function shortApplicationDescription(value: string) {
+    return value
+        .replace(/\s+with\s+.+\.$/, ".")
+        .replace(/\.$/, "")
+        .slice(0, 112);
 }
 
 function run(command: string, args: string[]) {
@@ -65,6 +106,7 @@ async function main() {
     const force = hasFlag("--force");
     const latest = hasFlag("--latest");
     const missingOnly = hasFlag("--missing-only");
+    const nonTextOnly = hasFlag("--non-text-only");
 
     const selectedLandings = [...modelLandings]
         .filter((landing) => !onlySlug || landing.slug === onlySlug)
@@ -80,7 +122,8 @@ async function main() {
             const model = models.find((entry) => entry.id === landing.modelId);
             return model ? { landing, model } : null;
         })
-        .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
+        .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry))
+        .filter((entry) => !nonTextOnly || needsModalitySpecificApplications(entry.model));
 
     for (const { landing, model } of targets) {
         const mp4Path = join(outputDir, `${landing.slug}.mp4`);
@@ -107,6 +150,12 @@ async function main() {
             contextWindow: formatContextWindow(model.contextLength),
             inputPrice: `${formatPublicModelPrice(model.inputPer1M)} / 1M input`,
             outputPrice: `${formatPublicModelPrice(model.outputPer1M)} / 1M output`,
+            applicationItems: applications.slice(0, 6).map((application) => ({
+                title: application.title,
+                description: shortApplicationDescription(application.description),
+                icon: application.icon,
+                color: application.color,
+            })),
         };
         const propsPath = join(propsDir, `${landing.slug}.json`);
 
