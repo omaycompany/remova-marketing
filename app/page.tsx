@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, Brain, Sparkles, Cpu, FileText, BarChart3, History, Zap, Shield, MessageSquare, Bot, ToggleRight, LayoutDashboard, Database, Ghost, Smartphone, Wand2, FileSpreadsheet, ShieldAlert, XCircle, Search, Server, FileLock2, AlertTriangle, Workflow, FileType, Key, BoxSelect, MonitorDot, Gauge, Scale, BookOpen, Fingerprint, Eye, LockKeyhole, Umbrella, RefreshCw, Slash, FileClock, SearchX, UserMinus, Diamond, Users, UserCog, UserCheck, KeyRound, Plug, Wallet, Receipt, Hourglass, Bell, CreditCard, Antenna, MessagesSquare, FileOutput, Printer } from 'lucide-react';
 import FAQ from '@/components/ui/FAQ';
 import ExternalAppLink from '@/components/ui/ExternalAppLink';
-import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -72,6 +71,17 @@ const homepageFaqs = [
     }
 ];
 
+const aiProviders = [
+    { name: "ChatGPT", logoSrc: "https://commons.wikimedia.org/wiki/Special:Redirect/file/ChatGPT-Logo.svg" },
+    { name: "Claude", logoSrc: "https://cdn.simpleicons.org/anthropic/111827" },
+    { name: "Gemini", logoSrc: "https://cdn.simpleicons.org/googlegemini/111827" },
+    { name: "Meta", logoSrc: "https://cdn.simpleicons.org/meta/111827" },
+    { name: "Mistral AI", logoSrc: "https://cdn.simpleicons.org/mistralai/111827" },
+    { name: "DeepSeek", logoSrc: "https://cdn.simpleicons.org/deepseek/111827" },
+    { name: "xAI", logoSrc: "https://cdn.simpleicons.org/x/111827" },
+    { name: "Perplexity", logoSrc: "https://cdn.simpleicons.org/perplexity/111827" },
+];
+
 export default function LandingPage() {
     const faqLd = {
         "@context": "https://schema.org",
@@ -100,10 +110,6 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
                 <div className="container mx-auto text-center max-w-[90rem] relative z-10">
-                    <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-6 py-2 text-base font-bold text-slate-900 dark:text-white backdrop-blur-md shadow-sm">
-                        <Shield className="h-5 w-5 text-black dark:text-white animate-draw" />
-                        <span className="tracking-wide">SAFER AI FOR TEAMS</span>
-                    </div>
                     <h1 className="mb-8 text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl lg:text-[9rem] xl:text-[9.5rem] leading-[0.92] select-none uppercase">
                         A Safer Way <br /> To Use Ai
                     </h1>
@@ -117,33 +123,114 @@ export default function LandingPage() {
                         >
                             Get Started
                         </ExternalAppLink>
-                        <ExternalAppLink
-                            href="https://app.remova.org/login"
-                            className="w-full sm:w-auto rounded-[2.5rem] border-2 border-slate-200 dark:border-white/10 bg-transparent px-12 py-6 text-2xl font-black text-slate-900 dark:text-white transition hover:bg-slate-50 dark:hover:bg-white/5 hover:border-slate-300"
-                        >
-                            Login
-                        </ExternalAppLink>
                     </div>
                 </div>
             </section>
 
-            {/* Supademo Embed */}
-            <section className="pt-0 pb-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
-                <div className="container mx-auto max-w-6xl">
-                    <div style={{ position: 'relative', boxSizing: 'content-box', maxHeight: '80vh', width: '100%', aspectRatio: '1.97', padding: '40px 0' }}>
-                        <iframe
-                            src="https://app.supademo.com/embed/cmkz7miia3gr8tw9fdbksfw6i?embed_v=2&utm_source=embed"
-                            loading="lazy"
-                            title="Remova Enterprise AI Control Layer"
-                            allow="clipboard-write"
-                            frameBorder="0"
-                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                        />
+            {/* AI Provider Slider */}
+            <section aria-label="AI providers on Remova" className="relative overflow-hidden border-y border-slate-200/80 bg-white px-4 py-10 dark:border-white/10 dark:bg-[#131314] sm:px-6 lg:px-8">
+                <div className="container mx-auto max-w-[90rem]">
+                    <div className="group relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
+                        <div className="ai-provider-marquee flex w-max items-center gap-12 group-hover:[animation-play-state:paused]">
+                            {[...aiProviders, ...aiProviders].map((provider, providerIndex) => (
+                                <div
+                                    key={`${provider.name}-${providerIndex}`}
+                                    className="flex h-10 min-w-[12rem] items-center justify-center gap-3 opacity-75 grayscale transition duration-300 hover:opacity-100 dark:opacity-80 dark:hover:opacity-100"
+                                >
+                                    <img
+                                        src={provider.logoSrc}
+                                        alt={`${provider.name} logo`}
+                                        className="h-7 w-7 object-contain dark:invert"
+                                        loading="lazy"
+                                    />
+                                    <span className="whitespace-nowrap text-2xl font-black tracking-tight text-slate-900 dark:text-white">
+                                        {provider.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mt-10 grid gap-4 text-base font-black text-slate-500 dark:text-slate-400 sm:grid-cols-[auto_1fr_auto] sm:items-center">
+                        <span>
+                            Govern access to <strong className="text-slate-900 dark:text-white">300+ AI models</strong> from one Remova workspace.
+                        </span>
+                        <span className="hidden h-px bg-slate-200 dark:bg-white/10 sm:block" />
+                        <span className="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
+                            <ShieldCheck className="h-5 w-5" />
+                            Extra safety controls
+                        </span>
                     </div>
                 </div>
             </section>
 
-            <LeadMagnetSection magnet="readiness-check" tone="slate" />
+            <section className="px-4 py-20 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
+                <div className="container mx-auto max-w-[96rem]">
+                    <div className="grid gap-6 lg:grid-cols-3">
+                        {[
+                            { layer: "Layer - 1", title: "Remove AI Data Leaks", visual: "leaks" },
+                            { layer: "Layer - 2", title: "Remove AI Misuse", visual: "misuse" },
+                            { layer: "Layer - 3", title: "Remove Third Parties", visual: "third-parties" },
+                        ].map((item, index) => (
+                            <div
+                                key={item.layer}
+                                className="group relative min-h-[22rem] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-9 transition-colors hover:border-slate-400 dark:border-white/10 dark:bg-[#17181a] dark:hover:border-white/30 xl:p-10"
+                            >
+                                <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.018)_1px,transparent_1px)] bg-[size:3.25rem_3.25rem] dark:bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)]" />
+                                <div className="pointer-events-none absolute right-8 top-24 hidden h-40 w-52 text-slate-950 opacity-[0.08] transition-opacity group-hover:opacity-[0.12] dark:text-white dark:opacity-[0.09] dark:group-hover:opacity-[0.14] sm:block" aria-hidden="true">
+                                    {item.visual === "leaks" && (
+                                        <svg viewBox="0 0 220 160" fill="none" className="h-full w-full">
+                                            <path d="M28 46h92c17 0 30 13 30 30v54" stroke="currentColor" strokeWidth="1.5" />
+                                            <path d="M28 82h54c17 0 30 13 30 30v18" stroke="currentColor" strokeWidth="1.5" />
+                                            <path d="M150 130l-13-13m13 13l13-13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                            <circle cx="28" cy="46" r="9" stroke="currentColor" strokeWidth="1.5" />
+                                            <circle cx="28" cy="82" r="9" stroke="currentColor" strokeWidth="1.5" />
+                                            <rect x="154" y="24" width="42" height="42" rx="8" stroke="currentColor" strokeWidth="1.5" />
+                                            <path d="M165 45h20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                        </svg>
+                                    )}
+                                    {item.visual === "misuse" && (
+                                        <svg viewBox="0 0 220 160" fill="none" className="h-full w-full">
+                                            <circle cx="110" cy="72" r="44" stroke="currentColor" strokeWidth="1.5" />
+                                            <path d="M80 104l60-64" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                            <path d="M48 132h124M64 132V92M156 132V92" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                            <path d="M100 58h20M98 78h24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                        </svg>
+                                    )}
+                                    {item.visual === "third-parties" && (
+                                        <svg viewBox="0 0 220 160" fill="none" className="h-full w-full">
+                                            <rect x="32" y="48" width="58" height="58" rx="12" stroke="currentColor" strokeWidth="1.5" />
+                                            <rect x="130" y="48" width="58" height="58" rx="12" stroke="currentColor" strokeWidth="1.5" />
+                                            <path d="M90 77h40M110 57v40" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                            <path d="M96 118l28-82M124 118L96 36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                            <circle cx="61" cy="77" r="9" stroke="currentColor" strokeWidth="1.5" />
+                                            <circle cx="159" cy="77" r="9" stroke="currentColor" strokeWidth="1.5" />
+                                        </svg>
+                                    )}
+                                </div>
+                                <div className="relative flex min-h-[18rem] flex-col justify-between">
+                                    <div className="flex items-start justify-between gap-6">
+                                        <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                                            {item.layer}
+                                        </p>
+                                        <span className="font-mono text-xs font-bold text-slate-300 dark:text-white/20">
+                                            0{index + 1}
+                                        </span>
+                                    </div>
+
+                                    <div className="relative max-w-[15rem]">
+                                        <div className="mb-5 h-px w-20 bg-slate-900 dark:bg-white" />
+                                        <h2 className="text-2xl font-black uppercase leading-[0.98] tracking-tight text-slate-900 dark:text-white">
+                                            {item.title}
+                                        </h2>
+                                    </div>
+                                    <div className="mt-6 h-px w-full max-w-32 bg-slate-200 dark:bg-white/15" />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* Alternating Feature Sections */}
             <div id="safety" className="flex flex-col w-full">
@@ -323,8 +410,6 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <LeadMagnetSection magnet="cost-calculator" />
-
                 {/* 3. Chat Like Usual */}
                 <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
                     <div className="container mx-auto max-w-7xl">
@@ -489,69 +574,6 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                {/* 6. Complete Control Over AI Usage */}
-                {/* 6. Complete Control Over AI Usage */}
-                <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
-                    <div className="container mx-auto max-w-7xl">
-                        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24 items-center">
-                            <div>
-                                <div className="flex h-24 w-24 items-center justify-center rounded-3xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 mb-8 border-4 border-transparent hover:scale-105 transition-transform">
-                                    <LayoutDashboard className="h-12 w-12 animate-draw" />
-                                </div>
-                                <h2 className="text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl mb-6 leading-[0.9]">
-                                    See <br /> Everything
-                                </h2>
-                                <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                                    Track models, costs, policy events, and task types.
-                                </p>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
-                                        <p className="font-bold text-slate-900 dark:text-white">Track Costs</p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
-                                        <p className="font-bold text-slate-900 dark:text-white">Policy Events</p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
-                                        <p className="font-bold text-slate-900 dark:text-white">Model Usage</p>
-                                    </div>
-                                    <div className="p-4 rounded-2xl bg-white dark:bg-black/20 border border-slate-200 dark:border-white/5">
-                                        <p className="font-bold text-slate-900 dark:text-white">Task Types</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                {/* Visual: Dashboard Mock */}
-                                <div className="aspect-[4/3] rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-slate-100 dark:bg-white/5 p-6 flex flex-col gap-4 relative overflow-hidden group">
-                                    {/* Dynamic shine effect */}
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-transparent skew-y-12 translate-y-full group-hover:translate-y-[-100%] transition-transform ease-in-out" />
-
-                                    <div className="h-1/3 w-full bg-white dark:bg-white/10 rounded-2xl shadow-sm border border-slate-200 dark:border-white/5 flex items-center p-4">
-                                        <div className="h-full w-2 bg-emerald-500 rounded-full mr-4" />
-                                        <div className="flex-1">
-                                            <div className="h-2 w-1/3 bg-slate-200 dark:bg-white/20 rounded mb-2" />
-                                            <div className="h-2 w-3/4 bg-slate-200 dark:bg-white/20 rounded" />
-                                        </div>
-                                    </div>
-                                    <div className="h-1/3 w-full bg-white dark:bg-white/10 rounded-2xl shadow-sm border border-slate-200 dark:border-white/5 flex items-center p-4">
-                                        <div className="h-full w-2 bg-blue-500 rounded-full mr-4" />
-                                        <div className="flex-1">
-                                            <div className="h-2 w-1/2 bg-slate-200 dark:bg-white/20 rounded mb-2" />
-                                            <div className="h-2 w-full bg-slate-200 dark:bg-white/20 rounded" />
-                                        </div>
-                                    </div>
-                                    <div className="h-1/3 w-full bg-white dark:bg-white/10 rounded-2xl shadow-sm border border-slate-200 dark:border-white/5 flex items-center p-4">
-                                        <div className="h-full w-2 bg-red-500 rounded-full mr-4" />
-                                        <div className="flex-1">
-                                            <div className="h-2 w-1/4 bg-slate-200 dark:bg-white/20 rounded mb-2" />
-                                            <div className="h-2 w-2/3 bg-slate-200 dark:bg-white/20 rounded" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 {/* 7. No History! No Personal Data! */}
                 <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
                     <div className="container mx-auto max-w-7xl">
@@ -604,70 +626,6 @@ export default function LandingPage() {
 
             </div>
 
-
-            {/* How It Works Section */}
-            <section id="protocol" className="py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300 border-b-2 border-slate-900 dark:border-white">
-                <div className="container mx-auto max-w-[90rem]">
-                    <div className="flex flex-col md:flex-row items-baseline gap-6 mb-24 border-b-2 border-slate-900 dark:border-white pb-8">
-                        <h2 className="text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl w-full">
-                            PROTOCOL
-                        </h2>
-                        <p className="text-xl font-sans text-slate-500 dark:text-slate-400 shrink-0">
-                            // DEPLOYMENT_SEQUENCE
-                        </p>
-                    </div>
-
-                    <div className="grid lg:grid-cols-3 gap-12 lg:gap-24">
-
-                        {/* Step 1 */}
-                        <div className="group flex flex-col justify-between h-full">
-                            <div>
-                                <div className="border-l-4 border-slate-900 dark:border-white pl-6 mb-8 group-hover:bg-slate-50 dark:group-hover:bg-white/5 transition-colors py-2">
-                                    <span className="block text-8xl font-black text-slate-200 dark:text-white/20 -ml-1 mb-[-4rem] relative z-0">01</span>
-                                    <h3 className="relative z-10 text-3xl font-black uppercase text-slate-900 dark:text-white leading-none">
-                                        Initialize <br /> & Auth
-                                    </h3>
-                                </div>
-                                <p className="text-lg font-sans text-slate-600 dark:text-slate-400 leading-relaxed pl-7 border-l border-dashed border-slate-300 dark:border-white/20">
-                                    Sign up instantly. Provision your entire team via Single Sign-On (SSO), Enterprise Identity Management, or manual invitation. Scale from one to one thousand users in seconds.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Step 2 */}
-                        <div className="group flex flex-col justify-between h-full">
-                            <div>
-                                <div className="border-l-4 border-slate-900 dark:border-white pl-6 mb-8 group-hover:bg-slate-50 dark:group-hover:bg-white/5 transition-colors py-2">
-                                    <span className="block text-8xl font-black text-slate-200 dark:text-white/20 -ml-1 mb-[-4rem] relative z-0">02</span>
-                                    <h3 className="relative z-10 text-3xl font-black uppercase text-slate-900 dark:text-white leading-none">
-                                        Structure <br /> & Control
-                                    </h3>
-                                </div>
-                                <p className="text-lg font-sans text-slate-600 dark:text-slate-400 leading-relaxed pl-7 border-l border-dashed border-slate-300 dark:border-white/20">
-                                    Mirror your org chart. Create distinct departments, set budget limits, and apply rules to data access.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Step 3 */}
-                        <div className="group flex flex-col justify-between h-full">
-                            <div>
-                                <div className="border-l-4 border-slate-900 dark:border-white pl-6 mb-8 group-hover:bg-slate-50 dark:group-hover:bg-white/5 transition-colors py-2">
-                                    <span className="block text-8xl font-black text-slate-200 dark:text-white/20 -ml-1 mb-[-4rem] relative z-0">03</span>
-                                    <h3 className="relative z-10 text-3xl font-black uppercase text-slate-900 dark:text-white leading-none">
-                                        Optimize <br /> & Scale
-                                    </h3>
-                                </div>
-                                <p className="text-lg font-sans text-slate-600 dark:text-slate-400 leading-relaxed pl-7 border-l border-dashed border-slate-300 dark:border-white/20">
-                                    Launch usage. Customize the experience with efficient presets and model controls for every team.
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
             {/* Safety CTA 2 - Monochrome & Clean */}
             <section className="py-32 px-4 bg-white dark:bg-[#131314] text-slate-900 dark:text-white text-center relative overflow-hidden border-b-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-5xl relative z-10">
@@ -691,9 +649,6 @@ export default function LandingPage() {
                         <h2 className="text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl w-full">
                             LICENSING
                         </h2>
-                        <p className="text-xl font-sans text-slate-500 dark:text-slate-400 shrink-0">
-                            // COMMERCIAL_MODELS
-                        </p>
                     </div>
 
                     <div className="border-2 border-slate-900 dark:border-white bg-white dark:bg-[#131314] rounded-[2.5rem] overflow-hidden">
@@ -731,21 +686,11 @@ export default function LandingPage() {
                                 <div className="grid md:grid-cols-2 gap-16">
                                     {/* Intelligence */}
                                     <div>
-                                        <h4 className="text-2xl font-black uppercase text-slate-900 dark:text-white mb-8 border-b-2 border-slate-900 dark:border-white pb-4">
-                                            Cognitive Engine
-                                        </h4>
                                         <ul className="space-y-6">
                                             {[
                                                 "ChatGPT, Claude, and Gemini access",
                                                 "Visual creation tools",
-                                                "Document creation",
-                                                "Smart routing",
-                                                "Private data grounding",
-                                                "Unified model access",
-                                                "Web research and real-time answers",
-                                                "Custom model setup",
-                                                "Multi-step workflows",
-                                                "Fast response paths"
+                                                "Document creation"
                                             ].map((feature, idx) => (
                                                 <li key={idx} className="flex items-start gap-4 group">
                                                     <div className="h-3 w-3 bg-slate-900 dark:bg-white mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform" />
@@ -762,17 +707,11 @@ export default function LandingPage() {
                                         </h4>
                                         <ul className="space-y-6">
                                             {[
-                                                "Fast and semantic guardrails",
                                                 "Sensitive data redaction",
-                                                "Role-based access",
                                                 "Executive analytics",
-                                                "Activity history",
                                                 "SSO and directory sync",
                                                 "Data location controls",
-                                                "Leak detection",
-                                                "Team budgets",
-                                                "DPA, subprocessors, and security review packet",
-                                                "White-glove support"
+                                                "Leak detection"
                                             ].map((feature, idx) => (
                                                 <li key={idx} className="flex items-start gap-4 group">
                                                     <div className="h-3 w-3 bg-slate-900 dark:bg-white mt-1.5 flex-shrink-0 group-hover:scale-125 transition-transform" />
@@ -804,10 +743,7 @@ export default function LandingPage() {
                                 <ul className="space-y-4 mb-12">
                                     {[
                                         "Dedicated AI Strategy Consultant",
-                                        "Quarterly Workflow Optimization",
-                                        "Custom Guardrail Development",
-                                        "Priority Integration Support",
-                                        "Monthly Executive ROI Audit"
+                                        "Priority Integration Support"
                                     ].map((feat, i) => (
                                         <li key={i} className="flex items-start gap-3">
                                             <div className="h-2 w-2 bg-slate-900 dark:bg-white mt-1.5 flex-shrink-0" />
@@ -816,12 +752,6 @@ export default function LandingPage() {
                                     ))}
                                 </ul>
                             </div>
-                            <Link
-                                href="mailto:notifications@remova.org?subject=Concierge%20Strategy%20Inquiry"
-                                className="w-full py-4 text-center border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white text-lg font-black uppercase hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors rounded-[2.5rem]"
-                            >
-                                Contact Strategy Team
-                            </Link>
                         </div>
 
                         {/* On-Prem AI Setup */}
@@ -909,19 +839,6 @@ export default function LandingPage() {
                                 Don't let AI costs surprise you. Set strict <span className="text-blue-600 dark:text-blue-400 font-bold">allowances</span> per team and track every token spent in real-time.
                             </p>
                         </div>
-
-                        {/* Card 4 - Control AI Costs */}
-                        <div className="group relative overflow-hidden rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-slate-100 dark:bg-white/5 p-10 transition-transform hover:scale-[1.01]">
-                            <div className="mb-8 flex h-24 w-24 items-center justify-center rounded-2xl bg-emerald-600 text-white shadow-2xl">
-                                <Coins className="h-12 w-12 animate-icon-shake" />
-                            </div>
-                            <h3 className="mb-6 text-4xl font-black uppercase leading-none tracking-tight text-slate-900 dark:text-white">
-                                Control <br /> AI Costs
-                            </h3>
-                            <p className="text-xl font-medium text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Stop paying for waste. Optimize model routing and enforce <span className="text-emerald-600 dark:text-emerald-400 font-bold">caps</span> so spend stays predictable and tied to measurable value.
-                            </p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -940,205 +857,11 @@ export default function LandingPage() {
                     </p>
                 </div>
             </section>
-            {/* Product Feature Table Section */}
-            {/* Product Feature Table Section - Bolder & Less Colorful */}
-            <section id="product" className="py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] transition-colors duration-300">
-                <div className="container mx-auto max-w-[90rem]">
-                    <div className="flex flex-col md:flex-row items-baseline gap-6 mb-24 border-b-2 border-slate-900 dark:border-white pb-8">
-                        <h2 className="text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl w-full">
-                            CAPABILITIES
-                        </h2>
-                        <p className="text-xl font-sans text-slate-500 dark:text-slate-400 shrink-0">
-                            // SYSTEM_OVERVIEW_V.2.0
-                        </p>
-                    </div>
-
-                    <div className="space-y-24">
-
-                        {/* 1. Core AI & Orchestration Engine */}
-                        <div className="grid lg:grid-cols-4 gap-12">
-                            <div className="lg:col-span-1">
-                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">Core <br /> Engine</h3>
-                                <div className="h-2 w-24 bg-slate-900 dark:bg-white" />
-                            </div>
-                            <div className="lg:col-span-3">
-                                <div className="border-t border-slate-200 dark:border-white/10">
-                                    {[
-                                        { title: "Adaptive Intelligence Routing", desc: "Dynamic query routing logic based on real-time constraints." },
-                                        { title: "Cost-Optimized Selection", desc: "Algorithms to select the most budget-friendly model for a given task." },
-                                        { title: "Latency-Based Routing", desc: "Performance prioritization for time-sensitive queries." },
-                                        { title: "Privacy-Constraint Routing", desc: "Automatic routing to sovereign/local models for sensitive data." },
-                                        { title: "Universal API Gateway", desc: "Single-point access to a global network of models." },
-                                        { title: "Broad Model Access", desc: "Integration with approved AI models." },
-                                        { title: "Vendor-Agnostic Architecture", desc: "Zero lock-in to any single model provider (OpenAI, Anthropic, etc.)." },
-                                        { title: "Multi-Modal Pipeline (Text)", desc: "Optimized pipelines for text generation and analysis." },
-                                        { title: "Multi-Modal Pipeline (Image)", desc: "State-of-the-art visual generation capabilities." },
-                                        { title: "Multi-Modal Pipeline (Video)", desc: "Integrated video generation support." },
-                                        { title: "Context-Aware Presets", desc: "Pre-configured settings for specific business roles." },
-                                        { title: "Role-Based System Prompts", desc: "Automatic injection of expert personas (e.g., 'Legal Drafting')." },
-                                        { title: "Enterprise Semantic Memory", desc: "AI retention of organizational context across sessions." },
-                                        { title: "Knowledge Graph Building", desc: "Automated construction of organizational knowledge over time." },
-                                    ].map((feature, i) => (
-                                        <div key={i} className="flex flex-col md:flex-row py-4 border-b border-slate-200 dark:border-white/10 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors px-2">
-                                            <div className="md:w-1/3 mb-2 md:mb-0">
-                                                <h4 className="font-bold text-slate-900 dark:text-white text-base">{feature.title}</h4>
-                                            </div>
-                                            <div className="md:w-2/3">
-                                                <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">{feature.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 2. Security, Compliance & Trust */}
-                        <div className="grid lg:grid-cols-4 gap-12">
-                            <div className="lg:col-span-1">
-                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">Security <br /> & Trust</h3>
-                                <div className="h-2 w-24 bg-slate-900 dark:bg-white" />
-                            </div>
-                            <div className="lg:col-span-3">
-                                <div className="border-t border-slate-200 dark:border-white/10">
-                                    {[
-                                        { title: "Semantic Input Filtering", desc: "Real-time analysis of user prompts before processing." },
-                                        { title: "Semantic Output Filtering", desc: "Verification of AI responses to prevent brand damage." },
-                                        { title: "DLP Enforcement", desc: "Active blocking of PII or sensitive internal data." },
-                                        { title: "Brand Safety", desc: "Guardrails to ensure on-brand tone and content." },
-                                        { title: "Resiliency Protocols", desc: "Failover logic for model provider outages." },
-                                        { title: "Continuity Fallbacks", desc: "Seamless switching to backup models during downtime." },
-                                        { title: "Sensitive Word Blocking", desc: "Custom-tuned blocklists for prohibited terms." },
-                                        { title: "Immutable Audit Logs", desc: "Permanent records of all system activity." },
-                                        { title: "Forensic Analysis", desc: "Deep-dive capability into past user interactions and incidents." },
-                                        { title: "Encryption Controls", desc: "Encryption in transit and at rest for protected workspace data." },
-                                        { title: "Data Retention Controls", desc: "Configurable retention windows for chats, files, and audit evidence." },
-                                        { title: "DPA and Subprocessors", desc: "Procurement-ready privacy terms and subprocessors list available for review." },
-                                        { title: "Architecture Review", desc: "Security architecture diagrams and deployment details for buyer diligence." },
-                                        { title: "Incident Response", desc: "Documented response process for security events and customer notification." },
-                                        { title: "SOC 2 Status", desc: "Current SOC 2 status and roadmap shared during enterprise security review." },
-                                        { title: "Zero-Retention Options", desc: "Controls for ephemeral processing where a workflow requires it." },
-                                        { title: "No-Training Architecture", desc: "Prevention of client data being used for model training." },
-                                        { title: "Data Sovereignty", desc: "Geographic restriction options for data processing." },
-                                    ].map((feature, i) => (
-                                        <div key={i} className="flex flex-col md:flex-row py-4 border-b border-slate-200 dark:border-white/10 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors px-2">
-                                            <div className="md:w-1/3 mb-2 md:mb-0">
-                                                <h4 className="font-bold text-slate-900 dark:text-white text-base">{feature.title}</h4>
-                                            </div>
-                                            <div className="md:w-2/3">
-                                                <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">{feature.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 3. Multi-Tenancy & Governance */}
-                        <div className="grid lg:grid-cols-4 gap-12">
-                            <div className="lg:col-span-1">
-                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">Access <br /> & Control</h3>
-                                <div className="h-2 w-24 bg-slate-900 dark:bg-white" />
-                            </div>
-                            <div className="lg:col-span-3">
-                                <div className="border-t border-slate-200 dark:border-white/10">
-                                    {[
-                                        { title: "Deep Hierarchical Structure", desc: "Support for complex org charts (Department > Team > User)." },
-                                        { title: "Cost Center Isolation", desc: "Separation of budgets and usage by department." },
-                                        { title: "RBAC (Admin)", desc: "Full system control and oversight permissions." },
-                                        { title: "RBAC (Department Head)", desc: "Management capabilities limited to specific teams." },
-                                        { title: "RBAC (Standard User)", desc: "Access-limited operational roles." },
-                                        { title: "Strict Data Isolation", desc: "Logical separation of data between tenants and teams." },
-                                        { title: "Self-Service Onboarding", desc: "Automated flows for new organization setup." },
-                                        { title: "Scoped API Access", desc: "Secure key generation for internal developers." },
-                                        { title: "Headless Integration", desc: "Tools for embedding Remova logic into other apps." },
-                                    ].map((feature, i) => (
-                                        <div key={i} className="flex flex-col md:flex-row py-4 border-b border-slate-200 dark:border-white/10 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors px-2">
-                                            <div className="md:w-1/3 mb-2 md:mb-0">
-                                                <h4 className="font-bold text-slate-900 dark:text-white text-base">{feature.title}</h4>
-                                            </div>
-                                            <div className="md:w-2/3">
-                                                <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">{feature.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 4. Financial Operations & Billing */}
-                        <div className="grid lg:grid-cols-4 gap-12">
-                            <div className="lg:col-span-1">
-                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">FinOps <br /> & Billing</h3>
-                                <div className="h-2 w-24 bg-slate-900 dark:bg-white" />
-                            </div>
-                            <div className="lg:col-span-3">
-                                <div className="border-t border-slate-200 dark:border-white/10">
-                                    {[
-                                        { title: "Included Monthly Credits", desc: "Each seat includes $50 in Remova model credits every month." },
-                                        { title: "Remova Model Rates", desc: "Usage is charged at the rates shown on the /models page and deducted from monthly credits." },
-                                        { title: "Top-Ups and BYO Keys", desc: "Buy extra credits when needed, or bring your own provider keys while keeping the monthly subscription active." },
-                                        { title: "Smart Renewal Logic", desc: "Automated handling of monthly credit resets." },
-                                        { title: "Precise Token Tracking", desc: "Micro-accounting of token consumption." },
-                                        { title: "Real-Time Cost Auditing", desc: "Live dashboard of spend vs. budget." },
-                                        { title: "Hard Budget Limits", desc: "Enforcement of strict spending caps." },
-                                        { title: "Soft Budget Alerts", desc: "Notifications for approaching budget thresholds." },
-                                        { title: "Subscription Engine", desc: "Management of recurring billing and plan tiers." },
-                                    ].map((feature, i) => (
-                                        <div key={i} className="flex flex-col md:flex-row py-4 border-b border-slate-200 dark:border-white/10 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors px-2">
-                                            <div className="md:w-1/3 mb-2 md:mb-0">
-                                                <h4 className="font-bold text-slate-900 dark:text-white text-base">{feature.title}</h4>
-                                            </div>
-                                            <div className="md:w-2/3">
-                                                <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">{feature.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 5. Collaboration & Productivity */}
-                        <div className="grid lg:grid-cols-4 gap-12">
-                            <div className="lg:col-span-1">
-                                <h3 className="text-4xl font-black uppercase text-slate-900 dark:text-white leading-none mb-4">Collaboration <br /> Tools</h3>
-                                <div className="h-2 w-24 bg-slate-900 dark:bg-white" />
-                            </div>
-                            <div className="lg:col-span-3">
-                                <div className="border-t border-slate-200 dark:border-white/10">
-                                    {[
-                                        { title: "WebSocket Streaming", desc: "Low-latency, real-time text delivery." },
-                                        { title: "Infinite Context", desc: "Smart windowing for long-running chats." },
-                                        { title: "Secure RAG Pipeline", desc: "Retrieval-Augmented Generation for internal docs." },
-                                        { title: "Document Parsing", desc: "Secure text extraction from uploaded files." },
-                                        { title: "Automated Reporting", desc: "Automated creation of structured documents." },
-                                        { title: "Publication Typesetting", desc: "High-fidelity formatting for exports." },
-                                        { title: "Central Dashboard", desc: "Single-pane-of-glass view for all usage, costs, and safety alerts." },
-                                    ].map((feature, i) => (
-                                        <div key={i} className="flex flex-col md:flex-row py-4 border-b border-slate-200 dark:border-white/10 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors px-2">
-                                            <div className="md:w-1/3 mb-2 md:mb-0">
-                                                <h4 className="font-bold text-slate-900 dark:text-white text-base">{feature.title}</h4>
-                                            </div>
-                                            <div className="md:w-2/3">
-                                                <p className="text-slate-600 dark:text-slate-400 text-sm font-sans">{feature.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <LeadMagnetSection magnet="risk-test" tone="slate" />
-
             {/* FAQ Section */}
             <FAQ
                 items={homepageFaqs}
                 title="Common Questions about safer AI at work"
             />
-
-            <LeadMagnetSection magnet="adoption-plan" />
 
             {/* Bottom CTA - Bolder Style */}
             <section className="py-32 px-4 text-center bg-white dark:bg-[#131314] transition-colors duration-300 border-t-2 border-slate-900 dark:border-white">

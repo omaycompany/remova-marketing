@@ -21,8 +21,31 @@ export interface ModelVideo {
 
 const durationSeconds = 36;
 const uploadDate = "2026-04-28";
-const publicVideoBaseUrl = process.env.R2_PUBLIC_BASE_URL?.replace(/\/+$/, "");
 const uploadedModelVideoSlugs = new Set<string>(modelVideoSlugs);
+
+function normalizePublicVideoBaseUrl(value: string | undefined) {
+    const normalized = value?.trim().replace(/\/+$/, "");
+    if (!normalized) return undefined;
+
+    let url: URL;
+    try {
+        url = new URL(normalized);
+    } catch {
+        throw new Error(`R2_PUBLIC_BASE_URL must be a full public URL, received "${value}".`);
+    }
+
+    if (!["http:", "https:"].includes(url.protocol)) {
+        throw new Error("R2_PUBLIC_BASE_URL must use http or https.");
+    }
+
+    if (url.hostname === "remova.org" || url.hostname === "www.remova.org") {
+        throw new Error("R2_PUBLIC_BASE_URL must point to the R2 asset hostname, not remova.org or www.remova.org.");
+    }
+
+    return normalized;
+}
+
+const publicVideoBaseUrl = normalizePublicVideoBaseUrl(process.env.R2_PUBLIC_BASE_URL);
 
 function publicAssetExists(pathname: string) {
     return existsSync(join(process.cwd(), "public", pathname.replace(/^\//, "")));

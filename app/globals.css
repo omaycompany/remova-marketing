@@ -154,3 +154,40 @@ body.demo-fullscreen>main {
         opacity: 0;
     }
 }
+
+@keyframes aiProviderMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes aiProviderMarqueeReverse {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.ai-provider-marquee {
+    animation: aiProviderMarquee 34s linear infinite;
+}
+
+.ai-provider-marquee-reverse {
+    animation: aiProviderMarqueeReverse 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ai-provider-marquee,
+    .ai-provider-marquee-reverse {
+        animation: none;
+        transform: translateX(0);
+    }
+}

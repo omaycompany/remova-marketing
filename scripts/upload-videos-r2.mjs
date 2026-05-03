@@ -68,6 +68,21 @@ writeFileSync(
 
 const destinationPrefix = source === "public/videos/models" ? "videos/models" : "videos";
 const publicBaseUrl = process.env.R2_PUBLIC_BASE_URL.replace(/\/+$/, "");
+let publicUrl;
+try {
+    publicUrl = new URL(publicBaseUrl);
+} catch {
+    console.error(`R2_PUBLIC_BASE_URL must be a full public URL, received "${process.env.R2_PUBLIC_BASE_URL}".`);
+    process.exit(1);
+}
+if (!["http:", "https:"].includes(publicUrl.protocol)) {
+    console.error("R2_PUBLIC_BASE_URL must use http or https.");
+    process.exit(1);
+}
+if (publicUrl.hostname === "remova.org" || publicUrl.hostname === "www.remova.org") {
+    console.error("R2_PUBLIC_BASE_URL must point to the R2 asset hostname, not remova.org or www.remova.org.");
+    process.exit(1);
+}
 if (publicBaseUrl.includes(".r2.cloudflarestorage.com")) {
     console.warn("Warning: R2_PUBLIC_BASE_URL points to the R2 S3/API endpoint. Upload can still work, but browser playback needs a public bucket URL or custom domain.");
 }

@@ -66,7 +66,7 @@ Upload all generated model video assets:
 npm run video:r2:upload:models
 ```
 
-`R2_PUBLIC_BASE_URL` must be the public delivery URL for the bucket, such as a Remova-controlled custom domain. Do not use the S3/API endpoint ending in `.r2.cloudflarestorage.com` as the public base URL; that endpoint is for uploads and can return HTTP 400 in browsers.
+`R2_PUBLIC_BASE_URL` must be the public delivery URL for the bucket, such as `https://assets.remova.org`. Do not use `https://remova.org`, `https://www.remova.org`, or the S3/API endpoint ending in `.r2.cloudflarestorage.com` as the public base URL. The root domains serve the marketing site, and the S3/API endpoint is for uploads and can return HTTP 400 in browsers.
 
 After rendering new model videos, update `content/model-video-manifest.generated.ts` so production knows which uploaded slugs are available.
 
