@@ -24,6 +24,15 @@ function hasFlag(name: string) {
     return process.argv.includes(name);
 }
 
+function argList(name: string) {
+    const value = argValue(name);
+    if (!value) return [];
+    return value
+        .split(",")
+        .map((entry) => entry.trim())
+        .filter(Boolean);
+}
+
 function modelReleasedAt(modelId: string) {
     return models.find((entry) => entry.id === modelId)?.releasedAt ?? "";
 }
@@ -102,6 +111,8 @@ async function main() {
     );
 
     const onlySlug = argValue("--slug");
+    const onlySlugs = argList("--slugs");
+    const onlySlugSet = new Set(onlySlugs);
     const limit = Number(argValue("--limit") ?? "0");
     const force = hasFlag("--force");
     const latest = hasFlag("--latest");
@@ -110,6 +121,7 @@ async function main() {
 
     const selectedLandings = [...modelLandings]
         .filter((landing) => !onlySlug || landing.slug === onlySlug)
+        .filter((landing) => onlySlugSet.size === 0 || onlySlugSet.has(landing.slug))
         .sort((a, b) => {
             if (!latest) return 0;
             return modelReleasedAt(b.modelId).localeCompare(modelReleasedAt(a.modelId))
