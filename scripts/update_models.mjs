@@ -302,6 +302,27 @@ async function fetchVertexModels() {
     });
 }
 
+async function readExistingGeneratedModels() {
+    if (!existsSync(generatedPath)) return [];
+
+    const content = await fs.readFile(generatedPath, "utf8");
+    const marker = "export const generatedModels = ";
+    const start = content.indexOf(marker);
+    if (start === -1) return [];
+
+    const afterMarker = content.slice(start + marker.length);
+    const end = afterMarker.lastIndexOf(";");
+    if (end === -1) return [];
+
+    try {
+        const models = JSON.parse(afterMarker.slice(0, end).trim());
+        return Array.isArray(models) ? models : [];
+    } catch (error) {
+        console.warn(`[models] Could not parse existing generated models: ${error.message}`);
+        return [];
+    }
+}
+
 function dedupeModels(models) {
     const seen = new Map();
     for (const model of models) {
@@ -318,28 +339,33 @@ function dedupeModels(models) {
     });
 }
 
-async function readExistingGeneratedIds() {
-    if (!existsSync(generatedPath)) return new Set();
-    const content = await fs.readFile(generatedPath, "utf8");
-    return new Set([...content.matchAll(/"id": "([^"]+)"/g)].map((match) => match[1]));
-}
-
 async function main() {
-    const previousIds = await readExistingGeneratedIds();
+    const existingModels = await readExistingGeneratedModels();
+    const previousIds = new Set(existingModels.map((model) => model.id).filter(Boolean));
     const sources = [];
+    const openRouterOnly = hasFlag("--openrouter-only");
 
     console.log("[models] Fetching OpenRouter models...");
     const openRouterModels = await fetchOpenRouterModels();
     sources.push({ name: "openrouter", count: openRouterModels.length });
 
-    console.log("[models] Fetching fal.ai models...");
-    const falModels = await fetchFalModels();
-    sources.push({ name: "fal", count: falModels.length });
+    let falModels = [];
+    let preservedModels = [];
+
+    if (openRouterOnly) {
+        preservedModels = existingModels.filter((model) => model.source && model.source !== "llm_catalog");
+        sources.push({ name: "preserved", count: preservedModels.length });
+        console.log(`[models] Preserving ${preservedModels.length} existing non-OpenRouter models.`);
+    } else {
+        console.log("[models] Fetching fal.ai models...");
+        falModels = await fetchFalModels();
+        sources.push({ name: "fal", count: falModels.length });
+    }
 
     const vertexModels = hasFlag("--with-vertex") ? await fetchVertexModels() : [];
     if (hasFlag("--with-vertex")) sources.push({ name: "vertex", count: vertexModels.length });
 
-    const models = dedupeModels([...openRouterModels, ...falModels, ...vertexModels]);
+    const models = dedupeModels([...openRouterModels, ...falModels, ...preservedModels, ...vertexModels]);
     const generatedAt = new Date();
     const generatedDate = generatedAt.toISOString().slice(0, 10);
 

@@ -1,18 +1,44 @@
 {
-  "generatedAt": "2026-04-28T18:45:00.199Z",
+  "generatedAt": "2026-05-07T10:01:38.185Z",
   "sources": [
     {
       "name": "openrouter",
-      "count": 428
+      "count": 433
     },
     {
-      "name": "fal",
-      "count": 200
+      "name": "preserved",
+      "count": 197
     }
   ],
-  "total": 621,
-  "addedCount": 0,
-  "removedCount": 0,
-  "added": [],
-  "removed": []
+  "total": 625,
+  "addedCount": 14,
+  "removedCount": 10,
+  "added": [
+    "baidu/cobuddy:free",
+    "google/chirp-3",
+    "ibm-granite/granite-4.1-8b",
+    "inclusionai/ling-2.6-flash",
+    "kwaivgi/kling-v3.0-pro",
+    "kwaivgi/kling-v3.0-std",
+    "microsoft/phi-4-mini-instruct",
+    "mistralai/mistral-medium-3-5",
+    "openai/gpt-4o-mini-transcribe",
+    "openai/gpt-4o-transcribe",
+    "openai/gpt-chat-latest",
+    "openai/whisper-large-v3",
+    "openai/whisper-large-v3-turbo",
+    "x-ai/grok-4.3"
+  ],
+  "removed": [
+    "allenai/olmo-3.1-32b-instruct",
+    "google/gemma-3-12b-it:free",
+    "google/gemma-3-27b-it:free",
+    "google/gemma-3-4b-it:free",
+    "google/gemma-3n-e2b-it:free",
+    "google/gemma-3n-e4b-it:free",
+    "inclusionai/ling-2.6-flash:free",
+    "mistralai/mistral-small-creative",
+    "nvidia/nemotron-nano-12b-v2-vl",
+    "qwen/qwq-32b"
+  ]
 }

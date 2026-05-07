@@ -1,10 +1,394 @@
 // Auto-generated snapshot from model catalog sources.
-// Generated at 2026-04-28T18:45:00.199Z
-// Source counts: source1=428, source2=200
+// Generated at 2026-05-07T10:01:38.185Z
+// Source counts: source1=433, source2=197
 
-export const generatedModelsLastUpdated = "2026-04-28";
+export const generatedModelsLastUpdated = "2026-05-07";
 
 export const generatedModels = [
+    {
+        "id": "baidu/cobuddy:free",
+        "name": "Baidu Qianfan: CoBuddy (free)",
+        "provider": "Baidu",
+        "releasedAt": "2026-05-06",
+        "contextLength": 131072,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "CoBuddy is a code generation model from Baidu, optimized for coding tasks and AI Agent workflows. It features high inference throughput and low end-to-end latency, with native support for tool...",
+        "description": "CoBuddy is a code generation model from Baidu, optimized for coding tasks and AI Agent workflows. It features high inference throughput and low end-to-end latency, with native support for tool...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "stop",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "google/chirp-3",
+        "name": "Google: Chirp 3",
+        "provider": "Google",
+        "releasedAt": "2026-05-05",
+        "contextLength": 0,
+        "inputPer1M": 16000,
+        "outputPer1M": 0,
+        "summary": "Chirp 3 is Google's latest multilingual speech-to-text model. It offers enhanced transcription accuracy across 24 GA languages and 77+ preview languages, with support for automatic language detection, automatic punctuat…",
+        "description": "Chirp 3 is Google's latest multilingual speech-to-text model. It offers enhanced transcription accuracy across 24 GA languages and 77+ preview languages, with support for automatic language detection, automatic punctuat…",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-chat-latest",
+        "name": "OpenAI: GPT Chat Latest",
+        "provider": "OpenAI",
+        "releasedAt": "2026-05-05",
+        "contextLength": 400000,
+        "inputPer1M": 5,
+        "outputPer1M": 30,
+        "summary": "GPT Chat Latest points to OpenAI's stable API alias `chat-latest` that always resolves to the latest Instant chat model used in ChatGPT. As OpenAI rolls out new Instant model updates...",
+        "description": "GPT Chat Latest points to OpenAI's stable API alias `chat-latest` that always resolves to the latest Instant chat model used in ChatGPT. As OpenAI rolls out new Instant model updates...",
+        "bestFor": [
+            "Image workflows",
+            "Agent workflows"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "top_logprobs"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-4o-mini-transcribe",
+        "name": "OpenAI: GPT-4o Mini Transcribe",
+        "provider": "OpenAI",
+        "releasedAt": "2026-05-01",
+        "contextLength": 128000,
+        "inputPer1M": 1.25,
+        "outputPer1M": 5,
+        "summary": "GPT-4o Mini Transcribe is OpenAI's smaller, cost-efficient speech-to-text model built on GPT-4o Mini audio capabilities. It's priced per token (input and output), making it suitable for high-volume transcription workflo…",
+        "description": "GPT-4o Mini Transcribe is OpenAI's smaller, cost-efficient speech-to-text model built on GPT-4o Mini audio capabilities. It's priced per token (input and output), making it suitable for high-volume transcription workflo…",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/whisper-large-v3",
+        "name": "OpenAI: Whisper Large V3",
+        "provider": "OpenAI",
+        "releasedAt": "2026-05-01",
+        "contextLength": 0,
+        "inputPer1M": 111000,
+        "outputPer1M": 0,
+        "summary": "Whisper Large V3 is OpenAI's open-source automatic speech recognition model offering both audio transcription and translation. It supports 99+ languages and accepts common audio formats including mp3, mp4, wav, webm,...",
+        "description": "Whisper Large V3 is OpenAI's open-source automatic speech recognition model offering both audio transcription and translation. It supports 99+ languages and accepts common audio formats including mp3, mp4, wav, webm,...",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/whisper-large-v3-turbo",
+        "name": "OpenAI: Whisper Large V3 Turbo",
+        "provider": "OpenAI",
+        "releasedAt": "2026-05-01",
+        "contextLength": 0,
+        "inputPer1M": 40000,
+        "outputPer1M": 0,
+        "summary": "Whisper Large V3 Turbo is an optimized version of OpenAI's Whisper Large V3 speech recognition model, designed for speed and cost efficiency. It supports transcription across 99+ languages with a...",
+        "description": "Whisper Large V3 Turbo is an optimized version of OpenAI's Whisper Large V3 speech recognition model, designed for speed and cost efficiency. It supports transcription across 99+ languages with a...",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "ibm-granite/granite-4.1-8b",
+        "name": "IBM: Granite 4.1 8B",
+        "provider": "Ibm Granite",
+        "releasedAt": "2026-04-30",
+        "contextLength": 131072,
+        "inputPer1M": 0.049999999999999996,
+        "outputPer1M": 0.09999999999999999,
+        "summary": "Granite 4.1 8B is a dense, decoder-only 8-billion-parameter language model from IBM, part of the Granite 4.1 family. It supports a 131K-token context window and is designed for enterprise tasks...",
+        "description": "Granite 4.1 8B is a dense, decoder-only 8-billion-parameter language model from IBM, part of the Granite 4.1 family. It supports a 131K-token context window and is designed for enterprise tasks...",
+        "bestFor": [
+            "Agent workflows",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "max_tokens",
+            "presence_penalty",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "mistralai/mistral-medium-3-5",
+        "name": "Mistral: Mistral Medium 3.5",
+        "provider": "Mistral AI",
+        "releasedAt": "2026-04-30",
+        "contextLength": 262144,
+        "inputPer1M": 1.5,
+        "outputPer1M": 7.5,
+        "summary": "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...",
+        "description": "Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...",
+        "bestFor": [
+            "Image workflows",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "x-ai/grok-4.3",
+        "name": "xAI: Grok 4.3",
+        "provider": "xAI",
+        "releasedAt": "2026-04-30",
+        "contextLength": 1000000,
+        "inputPer1M": 1.25,
+        "outputPer1M": 2.5,
+        "summary": "Grok 4.3 is a reasoning model from xAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
+        "description": "Grok 4.3 is a reasoning model from xAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...",
+        "bestFor": [
+            "Image workflows",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "kwaivgi/kling-v3.0-pro",
+        "name": "Kling: Video v3.0 Pro",
+        "provider": "Kwaivgi",
+        "releasedAt": "2026-04-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Kling v3.0 Pro is Kuaishou's premium video generation model, offering higher visual quality than the Standard tier. It supports text-to-video and image-to-video workflows, with first-frame and last-frame control for pre…",
+        "description": "Kling v3.0 Pro is Kuaishou's premium video generation model, offering higher visual quality than the Standard tier. It supports text-to-video and image-to-video workflows, with first-frame and last-frame control for pre…",
+        "bestFor": [
+            "Video workflows",
+            "Image workflows"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "kwaivgi/kling-v3.0-std",
+        "name": "Kling: Video v3.0 Standard",
+        "provider": "Kwaivgi",
+        "releasedAt": "2026-04-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Kling v3.0 Standard is a video generation model from Kuaishou. It supports text-to-video and image-to-video workflows, with first-frame and last-frame control for guided scene composition. Clips range from 3 to...",
+        "description": "Kling v3.0 Standard is a video generation model from Kuaishou. It supports text-to-video and image-to-video workflows, with first-frame and last-frame control for guided scene composition. Clips range from 3 to...",
+        "bestFor": [
+            "Video workflows",
+            "Image workflows"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
     {
         "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
         "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
@@ -330,9 +714,9 @@ export const generatedModels = [
         "name": "MoonshotAI Kimi Latest",
         "provider": "~moonshotai",
         "releasedAt": "2026-04-27",
-        "contextLength": 256000,
-        "inputPer1M": 0.7448,
-        "outputPer1M": 4.655,
+        "contextLength": 262144,
+        "inputPer1M": 0.75,
+        "outputPer1M": 3.5,
         "summary": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "bestFor": [
@@ -451,6 +835,43 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "openai/gpt-4o-transcribe",
+        "name": "OpenAI: GPT-4o Transcribe",
+        "provider": "OpenAI",
+        "releasedAt": "2026-04-27",
+        "contextLength": 128000,
+        "inputPer1M": 2.5,
+        "outputPer1M": 10,
+        "summary": "GPT-4o Transcribe is OpenAI's high-quality speech-to-text model built on GPT-4o audio capabilities. It's priced per token (input and output), making it suitable for workflows that benefit from token-level billing transp…",
+        "description": "GPT-4o Transcribe is OpenAI's high-quality speech-to-text model built on GPT-4o audio capabilities. It's priced per token (input and output), making it suitable for workflows that benefit from token-level billing transp…",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
         "id": "openai/whisper-1",
         "name": "OpenAI: Whisper 1",
         "provider": "OpenAI",
@@ -532,9 +953,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3.6 27B",
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
-        "contextLength": 256000,
-        "inputPer1M": 0.325,
-        "outputPer1M": 3.25,
+        "contextLength": 262144,
+        "inputPer1M": 0.32,
+        "outputPer1M": 3.1999999999999997,
         "summary": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "bestFor": [
@@ -581,14 +1002,14 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.16119999999999998,
-        "outputPer1M": 0.9652499999999999,
+        "inputPer1M": 0.15,
+        "outputPer1M": 1,
         "summary": "Qwen3.6-35B-A3B is an open-weight multimodal model from Alibaba Cloud with 35 billion total parameters and 3 billion active parameters per token. It uses a hybrid sparse mixture-of-experts architecture combining Gated...",
         "description": "Qwen3.6-35B-A3B is an open-weight multimodal model from Alibaba Cloud with 35 billion total parameters and 3 billion active parameters per token. It uses a hybrid sparse mixture-of-experts architecture combining Gated...",
         "bestFor": [
             "Video workflows",
             "Image workflows",
-            "Advanced reasoning"
+            "Agent workflows"
         ],
         "modality": "text+image+video->text",
         "inputModalities": [
@@ -613,6 +1034,8 @@ export const generatedModels = [
             "stop",
             "structured_outputs",
             "temperature",
+            "tool_choice",
+            "tools",
             "top_k",
             "top_p"
         ],
@@ -1416,13 +1839,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "inclusionai/ling-2.6-flash:free",
-        "name": "inclusionAI: Ling-2.6-flash (free)",
+        "id": "inclusionai/ling-2.6-flash",
+        "name": "inclusionAI: Ling-2.6-flash",
         "provider": "Inclusionai",
         "releasedAt": "2026-04-21",
         "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
+        "inputPer1M": 0.08,
+        "outputPer1M": 0.24,
         "summary": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficien…",
         "description": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficien…",
         "bestFor": [
@@ -1647,9 +2070,9 @@ export const generatedModels = [
         "name": "MoonshotAI: Kimi K2.6",
         "provider": "Moonshotai",
         "releasedAt": "2026-04-20",
-        "contextLength": 256000,
-        "inputPer1M": 0.7448,
-        "outputPer1M": 4.655,
+        "contextLength": 262144,
+        "inputPer1M": 0.75,
+        "outputPer1M": 3.5,
         "summary": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "bestFor": [
@@ -2727,8 +3150,8 @@ export const generatedModels = [
         "provider": "xAI",
         "releasedAt": "2026-03-31",
         "contextLength": 2000000,
-        "inputPer1M": 2,
-        "outputPer1M": 6,
+        "inputPer1M": 1.25,
+        "outputPer1M": 2.5,
         "summary": "Grok 4.20 is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently...",
         "description": "Grok 4.20 is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently...",
         "bestFor": [
@@ -3161,6 +3584,7 @@ export const generatedModels = [
             "reasoning",
             "repetition_penalty",
             "response_format",
+            "seed",
             "stop",
             "structured_outputs",
             "temperature",
@@ -3500,6 +3924,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -3512,6 +3937,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -4404,8 +4830,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-02-25",
         "contextLength": 262144,
-        "inputPer1M": 0.1625,
-        "outputPer1M": 1.3,
+        "inputPer1M": 0.14,
+        "outputPer1M": 1,
         "summary": "The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inference efficiency.…",
         "description": "The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inference efficiency.…",
         "bestFor": [
@@ -4914,7 +5340,7 @@ export const generatedModels = [
         "releasedAt": "2026-02-11",
         "contextLength": 202752,
         "inputPer1M": 0.6,
-        "outputPer1M": 2.08,
+        "outputPer1M": 1.92,
         "summary": "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on large-scale programm…",
         "description": "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on large-scale programm…",
         "bestFor": [
@@ -5302,7 +5728,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-02-04",
         "contextLength": 262144,
-        "inputPer1M": 0.14,
+        "inputPer1M": 0.11,
         "outputPer1M": 0.7999999999999999,
         "summary": "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per...",
         "description": "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per...",
@@ -6103,46 +6529,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "allenai/olmo-3.1-32b-instruct",
-        "name": "AllenAI: Olmo 3.1 32B Instruct",
-        "provider": "Allenai",
-        "releasedAt": "2026-01-06",
-        "contextLength": 65536,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.6,
-        "summary": "Olmo 3.1 32B Instruct is a large-scale, 32-billion-parameter instruction-tuned language model engineered for high-performance conversational AI, multi-turn dialogue, and practical instruction following. As part of the O…",
-        "description": "Olmo 3.1 32B Instruct is a large-scale, 32-billion-parameter instruction-tuned language model engineered for high-performance conversational AI, multi-turn dialogue, and practical instruction following. As part of the O…",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/bytedance/seedance/v1.5/pro/image-to-video",
         "name": "Bytedance",
         "provider": "Remova Media",
@@ -6795,33 +7181,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "mistralai/mistral-small-creative",
-        "name": "Mistral: Mistral Small Creative",
-        "provider": "Mistral AI",
-        "releasedAt": "2025-12-16",
-        "contextLength": 32768,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.3,
-        "summary": "Mistral Small Creative is an experimental small model designed for creative writing, narrative generation, roleplay and character-driven dialogue, general-purpose instruction following, and conversational agents.",
-        "description": "Mistral Small Creative is an experimental small model designed for creative writing, narrative generation, roleplay and character-driven dialogue, general-purpose instruction following, and conversational agents.",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/wan/v2.6/image-to-video",
@@ -7835,8 +8194,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2025-12-01",
         "contextLength": 163840,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 1.2,
+        "inputPer1M": 0.28700000000000003,
+        "outputPer1M": 0.431,
         "summary": "DeepSeek-V3.2-Speciale is a high-compute variant of DeepSeek-V3.2 optimized for maximum reasoning and agentic performance. It builds on DeepSeek Sparse Attention (DSA) for efficient long-context processing, then scales…",
         "description": "DeepSeek-V3.2-Speciale is a high-compute variant of DeepSeek-V3.2 optimized for maximum reasoning and agentic performance. It builds on DeepSeek Sparse Attention (DSA) for efficient long-context processing, then scales…",
         "bestFor": [
@@ -9517,6 +9876,7 @@ export const generatedModels = [
             "frequency_penalty",
             "logit_bias",
             "logprobs",
+            "max_completion_tokens",
             "max_tokens",
             "presence_penalty",
             "response_format",
@@ -9554,6 +9914,7 @@ export const generatedModels = [
             "frequency_penalty",
             "logit_bias",
             "logprobs",
+            "max_completion_tokens",
             "max_tokens",
             "presence_penalty",
             "response_format",
@@ -9672,49 +10033,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "nvidia/nemotron-nano-12b-v2-vl",
-        "name": "NVIDIA: Nemotron Nano 12B 2 VL",
-        "provider": "Nvidia",
-        "releasedAt": "2025-10-28",
-        "contextLength": 131072,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.6,
-        "summary": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transforme…",
-        "description": "NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transforme…",
-        "bestFor": [
-            "Video workflows",
-            "Image workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+video->text",
-        "inputModalities": [
-            "image",
-            "text",
-            "video"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -9992,6 +10310,42 @@ export const generatedModels = [
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "temperature",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "microsoft/phi-4-mini-instruct",
+        "name": "Microsoft: Phi 4 Mini Instruct",
+        "provider": "Microsoft",
+        "releasedAt": "2025-10-17",
+        "contextLength": 128000,
+        "inputPer1M": 0.08,
+        "outputPer1M": 0.35,
+        "summary": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
+        "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
+        "bestFor": [
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "max_tokens",
+            "presence_penalty",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
@@ -11310,8 +11664,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2025-09-22",
         "contextLength": 163840,
-        "inputPer1M": 0.21,
-        "outputPer1M": 0.7899999999999999,
+        "inputPer1M": 0.27,
+        "outputPer1M": 0.95,
         "summary": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent c…",
         "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent c…",
         "bestFor": [
@@ -12784,7 +13138,7 @@ export const generatedModels = [
         "releasedAt": "2025-08-05",
         "contextLength": 131072,
         "inputPer1M": 0.039,
-        "outputPer1M": 0.19,
+        "outputPer1M": 0.18,
         "summary": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
         "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
         "bestFor": [
@@ -12886,7 +13240,6 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
-            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -13680,37 +14033,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "google/gemma-3n-e2b-it:free",
-        "name": "Google: Gemma 3n 2B (free)",
-        "provider": "Google",
-        "releasedAt": "2025-07-09",
-        "contextLength": 8192,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based...",
-        "description": "Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "seed",
-            "temperature",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -15149,36 +15471,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "google/gemma-3n-e4b-it:free",
-        "name": "Google: Gemma 3n 4B (free)",
-        "provider": "Google",
-        "releasedAt": "2025-05-20",
-        "contextLength": 8192,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks.…",
-        "description": "Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks.…",
-        "bestFor": [
-            "Audio workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "seed",
-            "temperature",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/imagen4/preview",
         "name": "Imagen 4",
         "provider": "Remova Media",
@@ -15680,8 +15972,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
         "contextLength": 40960,
-        "inputPer1M": 0.08,
-        "outputPer1M": 0.28,
+        "inputPer1M": 0.09,
+        "outputPer1M": 0.44999999999999996,
         "summary": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
         "description": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
         "bestFor": [
@@ -16486,38 +16778,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "google/gemma-3-12b-it:free",
-        "name": "Google: Gemma 3 12B (free)",
-        "provider": "Google",
-        "releasedAt": "2025-03-13",
-        "contextLength": 32768,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
-        "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
-        "bestFor": [
-            "Image workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "seed",
-            "stop",
-            "temperature",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "google/gemma-3-4b-it",
         "name": "Google: Gemma 3 4B",
         "provider": "Google",
@@ -16552,39 +16812,6 @@ export const generatedModels = [
             "structured_outputs",
             "temperature",
             "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "google/gemma-3-4b-it:free",
-        "name": "Google: Gemma 3 4B (free)",
-        "provider": "Google",
-        "releasedAt": "2025-03-13",
-        "contextLength": 32768,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
-        "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
-        "bestFor": [
-            "Image workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -16628,39 +16855,6 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "google/gemma-3-27b-it:free",
-        "name": "Google: Gemma 3 27B (free)",
-        "provider": "Google",
-        "releasedAt": "2025-03-12",
-        "contextLength": 131072,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
-        "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
-        "bestFor": [
-            "Image workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -16901,41 +17095,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "qwen/qwq-32b",
-        "name": "Qwen: QwQ 32B",
-        "provider": "Qwen",
-        "releasedAt": "2025-03-05",
-        "contextLength": 131072,
-        "inputPer1M": 0.15,
-        "outputPer1M": 0.58,
-        "summary": "QwQ is the reasoning model of the Qwen series. Compared with conventional instruction-tuned models, QwQ, which is capable of thinking and reasoning, can achieve significantly enhanced performance in downstream tasks,...",
-        "description": "QwQ is the reasoning model of the Qwen series. Compared with conventional instruction-tuned models, QwQ, which is capable of thinking and reasoning, can achieve significantly enhanced performance in downstream tasks,...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/topaz/upscale/video",
         "name": "Topaz Video Upscale",
         "provider": "Remova Media",
@@ -17082,7 +17241,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -18079,6 +18237,7 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -19737,7 +19896,7 @@ export const generatedModels = [
         "releasedAt": "2024-07-19",
         "contextLength": 131072,
         "inputPer1M": 0.02,
-        "outputPer1M": 0.04,
+        "outputPer1M": 0.03,
         "summary": "A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA. The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chinese, Japanese,...",
         "description": "A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA. The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chinese, Japanese,...",
         "bestFor": [
@@ -20148,12 +20307,13 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2024-04-18",
         "contextLength": 8192,
-        "inputPer1M": 0.03,
+        "inputPer1M": 0.04,
         "outputPer1M": 0.04,
         "summary": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
         "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
         "bestFor": [
-            "Agent workflows"
+            "General chat",
+            "Enterprise assistants"
         ],
         "modality": "text->text",
         "inputModalities": [
@@ -20169,12 +20329,9 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "repetition_penalty",
-            "response_format",
             "seed",
             "stop",
             "temperature",
-            "tool_choice",
-            "tools",
             "top_k",
             "top_p"
         ],
