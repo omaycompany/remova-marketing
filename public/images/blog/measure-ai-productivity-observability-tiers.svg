@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI observability tiers</title>
+  <desc id="desc">Three tiers separating aggregate telemetry, event metadata, and prompt content.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Tiered AI Observability</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Match access depth to the governance question</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(200 210)">
+      <rect width="800" height="98" rx="20" fill="#dcfce7" stroke="#16a34a"/>
+      <text x="36" y="40" font-size="24" font-weight="800" fill="#14532d">Tier 1: Aggregate telemetry</text>
+      <text x="36" y="70" font-size="16" fill="#334155">Adoption, cost, workflow volume, model mix, policy rates</text>
+      <rect x="70" y="128" width="660" height="98" rx="20" fill="#fef3c7" stroke="#d97706"/>
+      <text x="106" y="168" font-size="24" font-weight="800" fill="#78350f">Tier 2: Event metadata</text>
+      <text x="106" y="198" font-size="16" fill="#334155">User, workflow, timestamp, data label, model, action taken</text>
+      <rect x="140" y="256" width="520" height="98" rx="20" fill="#fee2e2" stroke="#ef4444"/>
+      <text x="176" y="296" font-size="24" font-weight="800" fill="#7f1d1d">Tier 3: Prompt content</text>
+      <text x="176" y="326" font-size="16" fill="#334155">Investigation-only access with approval and audit record</text>
+    </g>
+    <g transform="translate(86 548)">
+      <rect width="1028" height="44" rx="12" fill="#0f172a"/>
+      <text x="514" y="29" text-anchor="middle" font-size="17" font-weight="800" fill="#ffffff">Routine management should use the shallowest tier that answers the question.</text>
+    </g>
+  </g>
+</svg>

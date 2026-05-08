@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Monthly AI governance review</title>
+  <desc id="desc">A governance review board summarizing adoption, cost, risk signals, and decisions.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Monthly AI Governance Review</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Discuss workflows, departments, models, policies, and actions</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(86 194)">
+      <rect width="242" height="330" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+      <text x="24" y="40" font-size="22" font-weight="800" fill="#1e3a8a">Adoption</text>
+      <text x="24" y="86" font-size="16" fill="#334155">Top workflows</text>
+      <text x="24" y="120" font-size="16" fill="#334155">Department usage</text>
+      <text x="24" y="154" font-size="16" fill="#334155">Repeat usage</text>
+      <rect x="24" y="208" width="194" height="66" rx="12" fill="#dbeafe"/>
+      <text x="121" y="248" text-anchor="middle" font-size="24" font-weight="900" fill="#1e3a8a">+18%</text>
+    </g>
+    <g transform="translate(348 194)">
+      <rect width="242" height="330" rx="18" fill="#ecfdf5" stroke="#16a34a"/>
+      <text x="24" y="40" font-size="22" font-weight="800" fill="#14532d">Cost</text>
+      <text x="24" y="86" font-size="16" fill="#334155">Spend vs budget</text>
+      <text x="24" y="120" font-size="16" fill="#334155">Model tier mix</text>
+      <text x="24" y="154" font-size="16" fill="#334155">Forecast variance</text>
+      <rect x="24" y="208" width="194" height="66" rx="12" fill="#dcfce7"/>
+      <text x="121" y="248" text-anchor="middle" font-size="24" font-weight="900" fill="#14532d">$0.41</text>
+    </g>
+    <g transform="translate(610 194)">
+      <rect width="242" height="330" rx="18" fill="#fff7ed" stroke="#f97316"/>
+      <text x="24" y="40" font-size="22" font-weight="800" fill="#7c2d12">Risk</text>
+      <text x="24" y="86" font-size="16" fill="#334155">Redaction events</text>
+      <text x="24" y="120" font-size="16" fill="#334155">Blocked requests</text>
+      <text x="24" y="154" font-size="16" fill="#334155">Exception trends</text>
+      <rect x="24" y="208" width="194" height="66" rx="12" fill="#fed7aa"/>
+      <text x="121" y="248" text-anchor="middle" font-size="24" font-weight="900" fill="#7c2d12">2 items</text>
+    </g>
+    <g transform="translate(872 194)">
+      <rect width="242" height="330" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+      <text x="24" y="40" font-size="22" font-weight="800" fill="#4c1d95">Actions</text>
+      <text x="24" y="86" font-size="16" fill="#334155">Tune policy</text>
+      <text x="24" y="120" font-size="16" fill="#334155">Add workflow</text>
+      <text x="24" y="154" font-size="16" fill="#334155">Update route</text>
+      <rect x="24" y="208" width="194" height="66" rx="12" fill="#ede9fe"/>
+      <text x="121" y="248" text-anchor="middle" font-size="24" font-weight="900" fill="#4c1d95">3 owners</text>
+    </g>
+  </g>
+</svg>

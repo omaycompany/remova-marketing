@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI residency review checklist</title>
+  <desc id="desc">Checklist items for reviewing data residency in AI workflows.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Residency Review Checklist</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Review the full data path, not only the primary model endpoint</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(92 200)">
+      <g>
+        <rect width="312" height="110" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+        <text x="28" y="42" font-size="22" font-weight="800" fill="#1e3a8a">Prompts and files</text>
+        <text x="28" y="72" font-size="15" fill="#334155">Where uploaded content is parsed,</text><text x="28" y="92" font-size="15" fill="#334155">processed, retained, and deleted</text>
+      </g>
+      <g transform="translate(356 0)">
+        <rect width="312" height="110" rx="18" fill="#ecfdf5" stroke="#16a34a"/>
+        <text x="28" y="42" font-size="22" font-weight="800" fill="#14532d">Outputs</text>
+        <text x="28" y="72" font-size="15" fill="#334155">Where generated summaries, code,</text><text x="28" y="92" font-size="15" fill="#334155">and decisions are stored</text>
+      </g>
+      <g transform="translate(712 0)">
+        <rect width="312" height="110" rx="18" fill="#fff7ed" stroke="#f97316"/>
+        <text x="28" y="42" font-size="22" font-weight="800" fill="#7c2d12">Embeddings</text>
+        <text x="28" y="72" font-size="15" fill="#334155">Where vectors and retrieval chunks</text><text x="28" y="92" font-size="15" fill="#334155">are created and retained</text>
+      </g>
+      <g transform="translate(0 154)">
+        <rect width="312" height="110" rx="18" fill="#fefce8" stroke="#eab308"/>
+        <text x="28" y="42" font-size="22" font-weight="800" fill="#713f12">Logs and analytics</text>
+        <text x="28" y="72" font-size="15" fill="#334155">Which metadata is exported,</text><text x="28" y="92" font-size="15" fill="#334155">aggregated, or minimized</text>
+      </g>
+      <g transform="translate(356 154)">
+        <rect width="312" height="110" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+        <text x="28" y="42" font-size="22" font-weight="800" fill="#4c1d95">Subprocessors</text>
+        <text x="28" y="72" font-size="15" fill="#334155">Which vendors and support teams</text><text x="28" y="92" font-size="15" fill="#334155">can access the workflow</text>
+      </g>
+      <g transform="translate(712 154)">
+        <rect width="312" height="110" rx="18" fill="#fee2e2" stroke="#ef4444"/>
+        <text x="28" y="42" font-size="22" font-weight="800" fill="#7f1d1d">Retention</text>
+        <text x="28" y="72" font-size="15" fill="#334155">How long content, logs, and</text><text x="28" y="92" font-size="15" fill="#334155">audit records remain available</text>
+      </g>
+    </g>
+    <g transform="translate(92 536)">
+      <rect width="1024" height="44" rx="12" fill="#0f172a"/>
+      <text x="512" y="29" text-anchor="middle" font-size="17" font-weight="800" fill="#ffffff">Contract terms and architecture must match the actual artifact flow.</text>
+    </g>
+  </g>
+</svg>

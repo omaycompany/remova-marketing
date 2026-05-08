@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Model catalog metadata card</title>
+  <desc id="desc">A model catalog metadata card with governance fields.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Model Metadata Card</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Each catalog entry needs enough context for governance decisions</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="188" y="198" width="824" height="382" rx="22" fill="#0f172a"/>
+    <text x="230" y="254" font-size="28" font-weight="900" fill="#fff">Secure Document Reasoning Model</text>
+    <text x="230" y="292" font-size="16" fill="#cbd5e1">Approved for contract summaries and confidential document analysis</text>
+    <g font-size="16">
+      <text x="230" y="352" fill="#94a3b8">Provider</text><text x="420" y="352" fill="#fff" font-weight="800">Approved enterprise provider</text>
+      <text x="230" y="398" fill="#94a3b8">Data allowance</text><text x="420" y="398" fill="#fff" font-weight="800">Confidential, no regulated health data</text>
+      <text x="230" y="444" fill="#94a3b8">Cost tier</text><text x="420" y="444" fill="#fff" font-weight="800">Medium, budget owner required</text>
+      <text x="230" y="490" fill="#94a3b8">Region</text><text x="420" y="490" fill="#fff" font-weight="800">EU and US routes available</text>
+      <text x="230" y="536" fill="#94a3b8">Review date</text><text x="420" y="536" fill="#fbbf24" font-weight="900">August 2026</text>
+    </g>
+    <rect x="768" y="334" width="180" height="72" rx="14" fill="#dcfce7"/><text x="858" y="378" text-anchor="middle" font-size="18" font-weight="800" fill="#14532d">Approved</text>
+    <rect x="768" y="430" width="180" height="72" rx="14" fill="#fef3c7"/><text x="858" y="474" text-anchor="middle" font-size="18" font-weight="800" fill="#78350f">Owner: Legal Ops</text>
+  </g>
+</svg>

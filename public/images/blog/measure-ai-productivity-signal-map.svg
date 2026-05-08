@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI productivity signal map</title>
+  <desc id="desc">A map of signals used to measure AI productivity without prompt surveillance.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Productivity Signal Map</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Measure outcomes from multiple signals, not prompt volume alone</text>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <rect x="470" y="278" width="260" height="118" rx="20" fill="#0f172a"/>
+    <text x="600" y="328" font-size="25" font-weight="800" fill="#fff">Workflow Value</text>
+    <text x="600" y="360" font-size="15" fill="#cbd5e1">Evidence-backed AI productivity</text>
+    <g font-size="18" font-weight="800">
+      <rect x="112" y="218" width="190" height="80" rx="16" fill="#eff6ff" stroke="#2563eb"/><text x="207" y="266" fill="#1e3a8a">Adoption</text>
+      <rect x="112" y="376" width="190" height="80" rx="16" fill="#ecfdf5" stroke="#16a34a"/><text x="207" y="424" fill="#14532d">Outcomes</text>
+      <rect x="505" y="120" width="190" height="80" rx="16" fill="#fff7ed" stroke="#f97316"/><text x="600" y="168" fill="#7c2d12">Cost</text>
+      <rect x="898" y="218" width="190" height="80" rx="16" fill="#fef2f2" stroke="#ef4444"/><text x="993" y="266" fill="#7f1d1d">Risk</text>
+      <rect x="898" y="376" width="190" height="80" rx="16" fill="#f5f3ff" stroke="#7c3aed"/><text x="993" y="424" fill="#4c1d95">User sentiment</text>
+    </g>
+    <g stroke="#94a3b8" stroke-width="4"><path d="M302 258l168 58"/><path d="M302 416l168-58"/><path d="M600 200v78"/><path d="M898 258l-168 58"/><path d="M898 416l-168-58"/></g>
+  </g>
+</svg>

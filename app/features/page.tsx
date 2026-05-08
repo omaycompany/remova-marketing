@@ -6,7 +6,16 @@ import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
 import LazyFeatureHeroVideo from "@/components/video/LazyFeatureHeroVideo";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
+import { SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
+import { featureHeroVideo } from "@/lib/video-seo";
+
+const featureHeroVideoUrl = absoluteUrl(featureHeroVideo.contentUrl);
+const featureHeroThumbnail = {
+    url: absoluteUrl(featureHeroVideo.thumbnailUrl),
+    width: 1920,
+    height: 1080,
+    alt: featureHeroVideo.title,
+};
 
 export const metadata: Metadata = {
     title: "Features — Safe AI for Every Team",
@@ -24,16 +33,48 @@ export const metadata: Metadata = {
         description: "Frontier AI models with sensitive data masking, cost controls, and safety rules built in.",
         url: absoluteUrl("/features"),
         siteName: SITE_NAME,
-        images: [DEFAULT_OG_IMAGE],
+        images: [featureHeroThumbnail],
+        videos: [
+            {
+                url: featureHeroVideoUrl,
+                secureUrl: featureHeroVideoUrl,
+                type: "video/mp4",
+                width: 1920,
+                height: 1080,
+            },
+        ],
         type: "website"
     },
     twitter: {
         card: "summary_large_image",
         title: "Features — Safe AI for Every Team",
         description: "Frontier AI models with data masking, cost controls, and safety built in for every department.",
-        images: [DEFAULT_OG_IMAGE_URL]
+        images: [absoluteUrl(featureHeroVideo.thumbnailUrl)]
     },
     alternates: { canonical: "/features" },
+};
+
+const featureVideoJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": absoluteUrl("/features#features-video"),
+    name: featureHeroVideo.title,
+    description: featureHeroVideo.description,
+    thumbnailUrl: [absoluteUrl(featureHeroVideo.thumbnailUrl)],
+    uploadDate: featureHeroVideo.uploadDate,
+    duration: featureHeroVideo.duration,
+    contentUrl: featureHeroVideoUrl,
+    embedUrl: absoluteUrl("/features#features-video"),
+    inLanguage: "en-US",
+    keywords: featureHeroVideo.tags.join(", "),
+    publisher: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        logo: {
+            "@type": "ImageObject",
+            url: absoluteUrl("/icon.png"),
+        },
+    },
 };
 
 const featureItems = features.map((feature) => ({
@@ -77,6 +118,7 @@ export default function FeaturesIndex() {
     return (
         <div className="flex flex-col">
             <ItemListSchema name="Enterprise AI Features" items={featureItems} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(featureVideoJsonLd) }} />
 
             <section className="relative px-4 pt-48 pb-24 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />

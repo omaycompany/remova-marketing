@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise AI model catalog interface</title>
+  <desc id="desc">A mock model catalog interface with approved models, owners, risk labels, and access tiers.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Enterprise AI Model Catalog</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Approved models with data classes, owners, budgets, and access rules</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="86" y="188" width="1028" height="58" rx="14" fill="#0f172a"/>
+    <text x="116" y="225" font-size="18" font-weight="800" fill="#ffffff">Model</text>
+    <text x="344" y="225" font-size="18" font-weight="800" fill="#ffffff">Tier</text>
+    <text x="514" y="225" font-size="18" font-weight="800" fill="#ffffff">Data class</text>
+    <text x="724" y="225" font-size="18" font-weight="800" fill="#ffffff">Owner</text>
+    <text x="900" y="225" font-size="18" font-weight="800" fill="#ffffff">Status</text>
+    <g font-size="16">
+      <g transform="translate(86 266)">
+        <rect width="1028" height="72" rx="14" fill="#f1f5f9"/>
+        <text x="30" y="44" font-weight="800" fill="#0f172a">Fast summary model</text>
+        <text x="258" y="44" fill="#1d4ed8">Standard</text>
+        <text x="428" y="44" fill="#334155">Internal</text>
+        <text x="638" y="44" fill="#334155">AI Platform</text>
+        <text x="814" y="44" fill="#166534" font-weight="800">Approved</text>
+      </g>
+      <g transform="translate(86 352)">
+        <rect width="1028" height="72" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="30" y="44" font-weight="800" fill="#0f172a">Secure document model</text>
+        <text x="258" y="44" fill="#7c2d12">Sensitive</text>
+        <text x="428" y="44" fill="#334155">Confidential</text>
+        <text x="638" y="44" fill="#334155">Legal Ops</text>
+        <text x="814" y="44" fill="#166534" font-weight="800">Approved</text>
+      </g>
+      <g transform="translate(86 438)">
+        <rect width="1028" height="72" rx="14" fill="#f1f5f9"/>
+        <text x="30" y="44" font-weight="800" fill="#0f172a">Frontier reasoning model</text>
+        <text x="258" y="44" fill="#6d28d9">Frontier</text>
+        <text x="428" y="44" fill="#334155">Internal only</text>
+        <text x="638" y="44" fill="#334155">CFO</text>
+        <text x="814" y="44" fill="#92400e" font-weight="800">Approval required</text>
+      </g>
+      <g transform="translate(86 524)">
+        <rect width="1028" height="72" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+        <text x="30" y="44" font-weight="800" fill="#0f172a">Unlogged public chat</text>
+        <text x="258" y="44" fill="#991b1b">Blocked</text>
+        <text x="428" y="44" fill="#334155">Any company data</text>
+        <text x="638" y="44" fill="#334155">Security</text>
+        <text x="814" y="44" fill="#991b1b" font-weight="800">Blocked</text>
+      </g>
+    </g>
+  </g>
+</svg>

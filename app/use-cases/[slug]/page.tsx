@@ -16,12 +16,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!uc) return {};
     const title = stripTitleSuffix(uc.metaTitle);
     const description = uc.metaDescription;
+    const video = uc.video;
+    const ogVideoUrl = video ? absoluteUrl(video.contentUrl) : undefined;
+    const ogImage = video
+        ? {
+            url: absoluteUrl(video.thumbnailUrl),
+            width: 1920,
+            height: 1080,
+            alt: video.title,
+        }
+        : DEFAULT_OG_IMAGE;
+
     return {
         title,
         description,
         keywords: buildKeywords([
             uc.headline,
             uc.category,
+            video?.title,
             "enterprise ai use case",
             "ai governance",
             "secure ai deployment"
@@ -31,10 +43,32 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             description,
             url: absoluteUrl(`/use-cases/${uc.slug}`),
             siteName: SITE_NAME,
-            images: [DEFAULT_OG_IMAGE],
+            images: [ogImage],
+            videos: video && ogVideoUrl
+                ? [
+                    {
+                        url: ogVideoUrl,
+                        secureUrl: ogVideoUrl,
+                        type: "video/mp4",
+                        width: 1920,
+                        height: 1080,
+                    },
+                ]
+                : undefined,
             type: "website"
         },
-        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
+        twitter: { card: "summary_large_image", title, description, images: [video ? absoluteUrl(video.thumbnailUrl) : DEFAULT_OG_IMAGE_URL] },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
         alternates: { canonical: `/use-cases/${uc.slug}` },
     };
 }
@@ -55,9 +89,17 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
         "provider": { "@type": "Organization", "name": "Remova" },
         "areaServed": "Global"
     };
+    const videoKeywords = [
+        uc.headline,
+        `${uc.headline} video`,
+        "enterprise AI use case",
+        "AI governance",
+        "Remova",
+    ];
     const videoLd = uc.video ? {
         "@context": "https://schema.org",
         "@type": "VideoObject",
+        "@id": absoluteUrl(`/use-cases/${uc.slug}#video`),
         "name": uc.video.title,
         "description": uc.video.description,
         "thumbnailUrl": [absoluteUrl(uc.video.thumbnailUrl)],
@@ -65,7 +107,17 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
         "duration": uc.video.duration,
         "contentUrl": absoluteUrl(uc.video.contentUrl),
         "embedUrl": absoluteUrl(`/use-cases/${uc.slug}#use-case-video`),
-        "transcript": uc.video.transcript
+        "inLanguage": "en-US",
+        "transcript": uc.video.transcript,
+        "keywords": videoKeywords.join(", "),
+        "publisher": {
+            "@type": "Organization",
+            "name": SITE_NAME,
+            "logo": {
+                "@type": "ImageObject",
+                "url": absoluteUrl("/icon.png"),
+            },
+        },
     } : null;
     const jsonLd = videoLd ? { "@context": "https://schema.org", "@graph": [serviceLd, videoLd] } : serviceLd;
 

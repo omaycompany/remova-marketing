@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI vendor questionnaire</title>
+  <desc id="desc">A structured AI vendor questionnaire grouped by data, model, security, legal, and operations.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Vendor Questionnaire</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Ask about the AI workflow, not only the SaaS vendor</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(86 202)">
+      <rect width="314" height="138" rx="18" fill="#eff6ff" stroke="#2563eb"/>
+      <text x="28" y="42" font-size="23" font-weight="800" fill="#1e3a8a">Data</text>
+      <text x="28" y="76" font-size="15" fill="#334155">What can users upload?</text>
+      <text x="28" y="100" font-size="15" fill="#334155">Where are prompts retained?</text>
+      <text x="28" y="124" font-size="15" fill="#334155">Can data be used for training?</text>
+      <g transform="translate(356 0)">
+        <rect width="314" height="138" rx="18" fill="#ecfdf5" stroke="#16a34a"/>
+        <text x="28" y="42" font-size="23" font-weight="800" fill="#14532d">Model Chain</text>
+        <text x="28" y="76" font-size="15" fill="#334155">Which model providers process data?</text>
+        <text x="28" y="100" font-size="15" fill="#334155">Are tools or plugins involved?</text>
+        <text x="28" y="124" font-size="15" fill="#334155">Are regions configurable?</text>
+      </g>
+      <g transform="translate(712 0)">
+        <rect width="314" height="138" rx="18" fill="#fff7ed" stroke="#f97316"/>
+        <text x="28" y="42" font-size="23" font-weight="800" fill="#7c2d12">Security</text>
+        <text x="28" y="76" font-size="15" fill="#334155">SSO, RBAC, audit logs?</text>
+        <text x="28" y="100" font-size="15" fill="#334155">Support access controls?</text>
+        <text x="28" y="124" font-size="15" fill="#334155">Incident notification path?</text>
+      </g>
+      <g transform="translate(178 180)">
+        <rect width="314" height="138" rx="18" fill="#f5f3ff" stroke="#7c3aed"/>
+        <text x="28" y="42" font-size="23" font-weight="800" fill="#4c1d95">Legal</text>
+        <text x="28" y="76" font-size="15" fill="#334155">Subprocessors and DPAs?</text>
+        <text x="28" y="100" font-size="15" fill="#334155">Deletion and retention terms?</text>
+        <text x="28" y="124" font-size="15" fill="#334155">IP and output commitments?</text>
+      </g>
+      <g transform="translate(534 180)">
+        <rect width="314" height="138" rx="18" fill="#fef2f2" stroke="#ef4444"/>
+        <text x="28" y="42" font-size="23" font-weight="800" fill="#7f1d1d">Operations</text>
+        <text x="28" y="76" font-size="15" fill="#334155">Owner and review date?</text>
+        <text x="28" y="100" font-size="15" fill="#334155">Approved departments?</text>
+        <text x="28" y="124" font-size="15" fill="#334155">Exception and support path?</text>
+      </g>
+    </g>
+  </g>
+</svg>

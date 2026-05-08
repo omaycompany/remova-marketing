@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI audit trail investigation panel</title>
+  <desc id="desc">A mock audit trail panel for investigating sensitive data exposure in an AI workflow.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Audit Trail Investigation</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">The responder needs policy evidence, not screenshots and guesses</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="86" y="194" width="1028" height="382" rx="18" fill="#0f172a"/>
+    <rect x="112" y="224" width="976" height="54" rx="12" fill="#1e293b"/>
+    <text x="136" y="258" font-size="18" font-weight="800" fill="#ffffff">Event #AI-48291</text>
+    <text x="936" y="258" font-size="15" font-weight="800" fill="#86efac">BLOCKED</text>
+    <g transform="translate(112 310)" font-size="16">
+      <g fill="#94a3b8"><text x="0" y="0">User</text><text x="244" y="0">Model</text><text x="488" y="0">Policy</text><text x="732" y="0">Action</text></g>
+      <g fill="#ffffff" font-weight="800"><text x="0" y="34">finance.analyst@company</text><text x="244" y="34">Public frontier model</text><text x="488" y="34">Customer PII detected</text><text x="732" y="34">Blocked before send</text></g>
+      <line x1="0" y1="62" x2="976" y2="62" stroke="#334155"/>
+      <g fill="#94a3b8"><text x="0" y="100">Prompt source</text><text x="244" y="100">Attachment</text><text x="488" y="100">Vendor reached</text><text x="732" y="100">Content access</text></g>
+      <g fill="#ffffff" font-weight="800"><text x="0" y="134">Chat workflow</text><text x="244" y="134">customers-q2.csv</text><text x="488" y="134">No</text><text x="732" y="134">Requires approval</text></g>
+      <line x1="0" y1="162" x2="976" y2="162" stroke="#334155"/>
+      <g fill="#94a3b8"><text x="0" y="200">Evidence</text></g>
+      <rect x="0" y="218" width="976" height="78" rx="12" fill="#111827" stroke="#334155"/>
+      <text x="22" y="250" fill="#cbd5e1">Redaction engine detected 214 customer records and prevented provider transmission.</text>
+      <text x="22" y="278" fill="#cbd5e1">Metadata retained for SOC review; prompt content encrypted behind investigation approval.</text>
+    </g>
+  </g>
+</svg>

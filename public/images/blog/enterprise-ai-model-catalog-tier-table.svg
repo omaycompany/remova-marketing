@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise AI model tier table</title>
+  <desc id="desc">A comparison table for model governance tiers.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Model Tier Comparison</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Simple tiers make model selection understandable and enforceable</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(92 200)">
+      <rect width="1016" height="60" rx="14" fill="#0f172a"/>
+      <text x="28" y="38" font-size="18" font-weight="800" fill="#ffffff">Tier</text>
+      <text x="210" y="38" font-size="18" font-weight="800" fill="#ffffff">Best for</text>
+      <text x="508" y="38" font-size="18" font-weight="800" fill="#ffffff">Data allowance</text>
+      <text x="780" y="38" font-size="18" font-weight="800" fill="#ffffff">Control</text>
+      <g font-size="16">
+        <g transform="translate(0 80)">
+          <rect width="1016" height="62" rx="12" fill="#eff6ff"/>
+          <text x="28" y="39" font-weight="800" fill="#1e3a8a">Standard</text>
+          <text x="210" y="39" fill="#334155">Summaries, drafts, classification</text>
+          <text x="508" y="39" fill="#334155">Public and internal</text>
+          <text x="780" y="39" fill="#334155">Default route</text>
+        </g>
+        <g transform="translate(0 154)">
+          <rect width="1016" height="62" rx="12" fill="#ecfdf5"/>
+          <text x="28" y="39" font-weight="800" fill="#14532d">Sensitive</text>
+          <text x="210" y="39" fill="#334155">Contracts, support, finance</text>
+          <text x="508" y="39" fill="#334155">Confidential with controls</text>
+          <text x="780" y="39" fill="#334155">Restricted groups</text>
+        </g>
+        <g transform="translate(0 228)">
+          <rect width="1016" height="62" rx="12" fill="#f5f3ff"/>
+          <text x="28" y="39" font-weight="800" fill="#4c1d95">Frontier</text>
+          <text x="210" y="39" fill="#334155">Complex reasoning and research</text>
+          <text x="508" y="39" fill="#334155">Internal by approval</text>
+          <text x="780" y="39" fill="#334155">Budget owner</text>
+        </g>
+        <g transform="translate(0 302)">
+          <rect width="1016" height="62" rx="12" fill="#fff7ed"/>
+          <text x="28" y="39" font-weight="800" fill="#7c2d12">Restricted</text>
+          <text x="210" y="39" fill="#334155">Pilots and special cases</text>
+          <text x="508" y="39" fill="#334155">Use-case specific</text>
+          <text x="780" y="39" fill="#334155">Exception workflow</text>
+        </g>
+        <g transform="translate(0 376)">
+          <rect width="1016" height="62" rx="12" fill="#fef2f2"/>
+          <text x="28" y="39" font-weight="800" fill="#7f1d1d">Blocked</text>
+          <text x="210" y="39" fill="#334155">Unapproved providers</text>
+          <text x="508" y="39" fill="#334155">No company data</text>
+          <text x="780" y="39" fill="#334155">Prevent access</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

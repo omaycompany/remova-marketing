@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI incident stakeholder map</title>
+  <desc id="desc">A map of stakeholders involved in AI incident response.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Incident Stakeholder Map</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Define who acts, who approves, and who communicates</text>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <rect x="456" y="266" width="288" height="128" rx="20" fill="#0f172a"/>
+    <text x="600" y="320" font-size="25" font-weight="800" fill="#fff">AI Incident Lead</text>
+    <text x="600" y="352" font-size="15" fill="#cbd5e1">Coordinates evidence and response</text>
+    <g stroke="#94a3b8" stroke-width="3"><path d="M456 318H296"/><path d="M744 318h160"/><path d="M600 266V198"/><path d="M600 394v72"/><path d="M456 368l-160 74"/><path d="M744 368l160 74"/></g>
+    <g font-size="18" font-weight="800">
+      <rect x="126" y="276" width="170" height="84" rx="15" fill="#fee2e2" stroke="#ef4444"/><text x="211" y="310" fill="#7f1d1d">Security</text><text x="211" y="336" font-size="13" fill="#991b1b">Containment</text>
+      <rect x="904" y="276" width="170" height="84" rx="15" fill="#f5f3ff" stroke="#7c3aed"/><text x="989" y="310" fill="#4c1d95">Legal</text><text x="989" y="336" font-size="13" fill="#6d28d9">Obligations</text>
+      <rect x="515" y="114" width="170" height="84" rx="15" fill="#eff6ff" stroke="#2563eb"/><text x="600" y="148" fill="#1e3a8a">Privacy</text><text x="600" y="174" font-size="13" fill="#1d4ed8">Data rights</text>
+      <rect x="515" y="466" width="170" height="84" rx="15" fill="#ecfdf5" stroke="#16a34a"/><text x="600" y="500" fill="#14532d">Business</text><text x="600" y="526" font-size="13" fill="#166534">Workflow owner</text>
+      <rect x="126" y="434" width="170" height="84" rx="15" fill="#fff7ed" stroke="#f97316"/><text x="211" y="468" fill="#7c2d12">Engineering</text><text x="211" y="494" font-size="13" fill="#9a3412">Fix and rotate</text>
+      <rect x="904" y="434" width="170" height="84" rx="15" fill="#f1f5f9" stroke="#64748b"/><text x="989" y="468" fill="#334155">Comms</text><text x="989" y="494" font-size="13" fill="#475569">Messaging</text>
+    </g>
+  </g>
+</svg>

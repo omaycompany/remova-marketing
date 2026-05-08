@@ -1,5 +1,9 @@
 import { modelVideos } from "@/content/model-videos";
+import { useCases } from "@/content/use-cases";
 import { SITE_URL, absoluteUrl } from "@/lib/seo";
+import { durationToSeconds, featureHeroVideo, type IndexedVideoEntry } from "@/lib/video-seo";
+
+export const dynamic = "force-static";
 
 function escapeXml(value: string) {
     return value
@@ -11,9 +15,49 @@ function escapeXml(value: string) {
 }
 
 export function GET() {
-    const urls = modelVideos
+    const videoEntries: IndexedVideoEntry[] = [
+        ...modelVideos.map((video) => ({
+            pagePath: `/models/${video.slug}`,
+            anchor: "model-video",
+            title: video.title,
+            description: video.description,
+            contentUrl: video.contentUrl,
+            thumbnailUrl: video.thumbnailUrl,
+            duration: video.duration,
+            durationSeconds: video.durationSeconds,
+            uploadDate: video.uploadDate,
+            transcript: video.transcript,
+            tags: video.keywords,
+        })),
+        featureHeroVideo,
+        ...useCases.flatMap((useCase) => {
+            if (!useCase.video) return [];
+
+            return [{
+                pagePath: `/use-cases/${useCase.slug}`,
+                anchor: "use-case-video",
+                title: useCase.video.title,
+                description: useCase.video.description,
+                contentUrl: useCase.video.contentUrl,
+                thumbnailUrl: useCase.video.thumbnailUrl,
+                duration: useCase.video.duration,
+                durationSeconds: durationToSeconds(useCase.video.duration),
+                uploadDate: useCase.video.uploadDate,
+                transcript: useCase.video.transcript,
+                tags: [
+                    useCase.headline,
+                    `${useCase.headline} video`,
+                    "enterprise AI use case",
+                    "AI governance",
+                    "Remova",
+                ],
+            }];
+        }),
+    ];
+
+    const urls = videoEntries
         .map((video) => {
-            const pageUrl = `${SITE_URL}/models/${video.slug}`;
+            const pageUrl = `${SITE_URL}${video.pagePath}`;
             return `
     <url>
         <loc>${escapeXml(pageUrl)}</loc>
@@ -22,11 +66,11 @@ export function GET() {
             <video:title>${escapeXml(video.title)}</video:title>
             <video:description>${escapeXml(video.description)}</video:description>
             <video:content_loc>${escapeXml(absoluteUrl(video.contentUrl))}</video:content_loc>
-            <video:player_loc>${escapeXml(`${pageUrl}#model-video`)}</video:player_loc>
+            <video:player_loc>${escapeXml(`${pageUrl}#${video.anchor}`)}</video:player_loc>
             <video:duration>${video.durationSeconds}</video:duration>
             <video:publication_date>${escapeXml(`${video.uploadDate}T00:00:00+00:00`)}</video:publication_date>
             <video:family_friendly>yes</video:family_friendly>
-            ${video.keywords.map((keyword) => `<video:tag>${escapeXml(keyword)}</video:tag>`).join("\n            ")}
+            ${video.tags.map((keyword) => `<video:tag>${escapeXml(keyword)}</video:tag>`).join("\n            ")}
         </video:video>
     </url>`;
         })

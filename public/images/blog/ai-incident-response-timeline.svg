@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI incident response timeline</title>
+  <desc id="desc">A six-step timeline for responding to sensitive data exposure in LLM systems.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Incident Response Timeline</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">From alert to evidence-driven control improvement</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <path d="M122 344h956" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+    <g transform="translate(118 248)">
+      <circle cx="0" cy="96" r="34" fill="#ef4444"/><text x="0" y="104" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">1</text>
+      <text x="0" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Alert</text>
+      <text x="0" y="184" text-anchor="middle" font-size="14" fill="#475569">Policy trigger</text>
+    </g>
+    <g transform="translate(310 248)">
+      <circle cx="0" cy="96" r="34" fill="#f97316"/><text x="0" y="104" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">2</text>
+      <text x="0" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Preserve</text>
+      <text x="0" y="184" text-anchor="middle" font-size="14" fill="#475569">Prompt evidence</text>
+    </g>
+    <g transform="translate(502 248)">
+      <circle cx="0" cy="96" r="34" fill="#eab308"/><text x="0" y="104" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">3</text>
+      <text x="0" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Triage</text>
+      <text x="0" y="184" text-anchor="middle" font-size="14" fill="#475569">Data and vendor</text>
+    </g>
+    <g transform="translate(694 248)">
+      <circle cx="0" cy="96" r="34" fill="#2563eb"/><text x="0" y="104" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">4</text>
+      <text x="0" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Contain</text>
+      <text x="0" y="184" text-anchor="middle" font-size="14" fill="#475569">Scope the action</text>
+    </g>
+    <g transform="translate(886 248)">
+      <circle cx="0" cy="96" r="34" fill="#7c3aed"/><text x="0" y="104" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">5</text>
+      <text x="0" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Escalate</text>
+      <text x="0" y="184" text-anchor="middle" font-size="14" fill="#475569">Legal and owner</text>
+    </g>
+    <g transform="translate(1078 248)">
+      <circle cx="0" cy="96" r="34" fill="#16a34a"/><text x="0" y="104" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">6</text>
+      <text x="0" y="158" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Improve</text>
+      <text x="0" y="184" text-anchor="middle" font-size="14" fill="#475569">Controls</text>
+    </g>
+  </g>
+</svg>

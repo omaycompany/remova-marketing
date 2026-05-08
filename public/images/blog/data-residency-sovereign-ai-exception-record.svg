@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI residency exception record</title>
+  <desc id="desc">An exception record for temporary AI residency routing.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Residency Exception Record</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Exceptions should be narrow, owned, time-bound, and reviewable</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="124" y="198" width="952" height="360" rx="18" fill="#0f172a"/>
+    <g font-size="16">
+      <text x="164" y="244" fill="#94a3b8">Business reason</text><text x="404" y="244" fill="#fff" font-weight="800">Urgent customer evidence review</text>
+      <text x="164" y="296" fill="#94a3b8">Data class</text><text x="404" y="296" fill="#fff" font-weight="800">Confidential customer data</text>
+      <text x="164" y="348" fill="#94a3b8">Approved route</text><text x="404" y="348" fill="#fff" font-weight="800">EU regional provider, no training</text>
+      <text x="164" y="400" fill="#94a3b8">Controls</text><text x="404" y="400" fill="#fff" font-weight="800">Redaction, limited users, encrypted logs</text>
+      <text x="164" y="452" fill="#94a3b8">Owner</text><text x="404" y="452" fill="#fff" font-weight="800">Legal Ops and Security</text>
+      <text x="164" y="504" fill="#94a3b8">Expires</text><text x="404" y="504" fill="#fca5a5" font-weight="900">14 days</text>
+    </g>
+    <rect x="816" y="230" width="210" height="92" rx="16" fill="#dcfce7"/><text x="921" y="282" text-anchor="middle" font-size="20" font-weight="800" fill="#14532d">Approved</text>
+    <rect x="816" y="354" width="210" height="92" rx="16" fill="#fef3c7"/><text x="921" y="406" text-anchor="middle" font-size="20" font-weight="800" fill="#78350f">Review Required</text>
+  </g>
+</svg>

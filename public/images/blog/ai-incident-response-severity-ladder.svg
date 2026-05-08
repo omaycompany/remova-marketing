@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI incident severity ladder</title>
+  <desc id="desc">A severity ladder for classifying AI data exposure events.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Exposure Severity Ladder</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Classify by data, destination, retention, and downstream output</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(170 204)" font-size="18" font-weight="800">
+      <rect x="0" y="264" width="860" height="70" rx="14" fill="#dcfce7"/><text x="28" y="307" fill="#14532d">Level 1: Public or sanitized content, approved vendor</text>
+      <rect x="80" y="198" width="780" height="70" rx="14" fill="#fef3c7"/><text x="108" y="241" fill="#78350f">Level 2: Internal data, governed route, no retention concern</text>
+      <rect x="160" y="132" width="700" height="70" rx="14" fill="#fed7aa"/><text x="188" y="175" fill="#7c2d12">Level 3: Confidential data or unclear vendor terms</text>
+      <rect x="240" y="66" width="620" height="70" rx="14" fill="#fecaca"/><text x="268" y="109" fill="#7f1d1d">Level 4: Customer, HR, financial, or source code exposure</text>
+      <rect x="320" y="0" width="540" height="70" rx="14" fill="#ef4444"/><text x="590" y="43" text-anchor="middle" fill="#fff">Level 5: Regulated data, secrets, or external publication</text>
+    </g>
+  </g>
+</svg>

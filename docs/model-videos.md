@@ -4,7 +4,7 @@ Model landing videos are generated from the same model metadata that powers the 
 
 ## Page loading policy
 
-Model pages use `LazyModelVideo`, which renders the poster/play state first and does not mount the MP4 `<source>` until the video section is near the viewport or the user clicks play. Keep this behavior in place for page speed. A 36-second 1080p MP4 is usually 6-7 MB, so eager loading would be too expensive across model pages.
+Model pages use `LazyModelVideo`, which renders a real `<video>` element and MP4 `<source>` immediately so Google can discover the media URL during rendering. Keep `preload="none"` in place for page speed. A 36-second 1080p MP4 is usually 6-7 MB, so eager loading would be too expensive across model pages.
 
 ## Asset rules
 
@@ -91,3 +91,5 @@ When the asset set exists, the model page automatically gets:
 - transcript and captions
 
 The metadata is generated from `modelLandings`, `models`, and `applicationsForModel`, so new models do not need manual video copy unless their messaging needs custom treatment.
+
+The video sitemap also includes the features overview video and use-case videos that are embedded on their watch pages. Keep every sitemap entry aligned with a visible on-page `<video>` element, stable poster URL, and stable MP4 URL.

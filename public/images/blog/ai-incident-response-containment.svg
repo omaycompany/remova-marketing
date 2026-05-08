@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI incident containment workflow</title>
+  <desc id="desc">A containment workflow for sensitive data exposure in LLM systems.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Containment Scope</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Target the exposed path without freezing the whole business</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="456" y="250" width="288" height="136" rx="20" fill="#0f172a"/>
+    <text x="600" y="306" text-anchor="middle" font-size="24" font-weight="800" fill="#ffffff">AI Exposure Event</text>
+    <text x="600" y="340" text-anchor="middle" font-size="16" fill="#cbd5e1">Sensitive data entered workflow</text>
+    <g stroke="#94a3b8" stroke-width="3" fill="none">
+      <path d="M456 286H290"/><path d="M456 350H290"/><path d="M744 286h166"/><path d="M744 350h166"/>
+      <path d="M600 250V190"/><path d="M600 386v70"/>
+    </g>
+    <g font-size="18" font-weight="800">
+      <g transform="translate(112 246)"><rect width="178" height="82" rx="16" fill="#fee2e2" stroke="#ef4444"/><text x="89" y="35" text-anchor="middle" fill="#7f1d1d">User or group</text><text x="89" y="59" text-anchor="middle" font-size="14" fill="#991b1b">Restrict if needed</text></g>
+      <g transform="translate(112 330)"><rect width="178" height="82" rx="16" fill="#ffedd5" stroke="#f97316"/><text x="89" y="35" text-anchor="middle" fill="#7c2d12">Workflow</text><text x="89" y="59" text-anchor="middle" font-size="14" fill="#9a3412">Disable upload path</text></g>
+      <g transform="translate(511 108)"><rect width="178" height="82" rx="16" fill="#dbeafe" stroke="#2563eb"/><text x="89" y="35" text-anchor="middle" fill="#1e3a8a">Model route</text><text x="89" y="59" text-anchor="middle" font-size="14" fill="#1d4ed8">Reroute or block</text></g>
+      <g transform="translate(910 246)"><rect width="178" height="82" rx="16" fill="#dcfce7" stroke="#16a34a"/><text x="89" y="35" text-anchor="middle" fill="#14532d">Data class</text><text x="89" y="59" text-anchor="middle" font-size="14" fill="#166534">Redact or rotate</text></g>
+      <g transform="translate(910 330)"><rect width="178" height="82" rx="16" fill="#ede9fe" stroke="#7c3aed"/><text x="89" y="35" text-anchor="middle" fill="#4c1d95">Downstream</text><text x="89" y="59" text-anchor="middle" font-size="14" fill="#6d28d9">Remove outputs</text></g>
+      <g transform="translate(511 456)"><rect width="178" height="82" rx="16" fill="#fef3c7" stroke="#d97706"/><text x="89" y="35" text-anchor="middle" fill="#78350f">Vendor</text><text x="89" y="59" text-anchor="middle" font-size="14" fill="#92400e">Delete or preserve</text></g>
+    </g>
+  </g>
+</svg>

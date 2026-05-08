@@ -112,6 +112,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
     const articleType = post.articleType ?? "BlogPosting";
     const dateModified = post.lastModified ?? post.date;
+    const heroImage = post.images?.find((image) => image.hero);
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -234,6 +235,20 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         {post.excerpt}
                     </p>
 
+                    {heroImage && (
+                        <figure className="mt-12 overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 shadow-2xl shadow-slate-900/10">
+                            <img
+                                src={heroImage.src}
+                                alt={heroImage.alt}
+                                className="h-auto w-full"
+                                loading="eager"
+                            />
+                            <figcaption className="border-t border-slate-200 dark:border-white/10 px-4 py-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+                                {heroImage.caption}
+                            </figcaption>
+                        </figure>
+                    )}
+
                     {/* TL;DR Section */}
                     <div className="mt-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
                         <h2 className="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4 flex items-center gap-2">
@@ -258,14 +273,42 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             {/* Content */}
             <article className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
                 <div className="container mx-auto max-w-4xl space-y-16">
-                    {post.sections.map((section, i) => (
-                        <div key={i}>
-                            <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-3xl mb-6 leading-[0.9]">
-                                {section.heading}
-                            </h2>
-                            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: section.content }} />
-                        </div>
-                    ))}
+                    {post.sections.map((section, i) => {
+                        const sectionImages = post.images?.filter((image) => !image.hero && image.afterSection === i) ?? [];
+
+                        return (
+                            <div key={i} className="space-y-8">
+                                <div>
+                                    <h2 className="text-2xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-3xl mb-6 leading-[0.9]">
+                                        {section.heading}
+                                    </h2>
+                                    <div className="space-y-6">
+                                        {section.content.split("\n\n").map((paragraph, paragraphIndex) => (
+                                            <p
+                                                key={paragraphIndex}
+                                                className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium"
+                                                dangerouslySetInnerHTML={{ __html: paragraph }}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {sectionImages.map((image) => (
+                                    <figure key={image.src} className="overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5">
+                                        <img
+                                            src={image.src}
+                                            alt={image.alt}
+                                            className="h-auto w-full"
+                                            loading="lazy"
+                                        />
+                                        <figcaption className="border-t border-slate-200 dark:border-white/10 px-4 py-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+                                            {image.caption}
+                                        </figcaption>
+                                    </figure>
+                                ))}
+                            </div>
+                        );
+                    })}
                 </div>
             </article>
 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI vendor monitoring loop</title>
+  <desc id="desc">A loop for monitoring approved AI vendors after approval.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="50" y="46" width="1100" height="583" rx="22" fill="#fff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="86" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">Post-Approval Monitoring Loop</text>
+  <text x="86" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">Approved AI vendors still need change review and usage evidence</text>
+  <g font-family="Inter, Arial, sans-serif" text-anchor="middle">
+    <circle cx="600" cy="354" r="156" fill="#f8fafc" stroke="#cbd5e1" stroke-width="12"/>
+    <path d="M704 235c58 38 89 102 80 171" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+    <path d="M775 394l13 32 24-25" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M496 473c-58-38-89-102-80-171" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+    <path d="M425 314l-13-32-24 25" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="474" y="292" width="252" height="124" rx="18" fill="#0f172a"/>
+    <text x="600" y="344" font-size="25" font-weight="800" fill="#fff">Approved Vendor</text>
+    <text x="600" y="376" font-size="15" fill="#cbd5e1">Owner, policy, data limits</text>
+    <g font-size="18" font-weight="800">
+      <rect x="128" y="286" width="220" height="92" rx="16" fill="#eff6ff" stroke="#2563eb"/>
+      <text x="238" y="326" fill="#1e3a8a">Usage telemetry</text>
+      <text x="238" y="354" font-size="14" fill="#334155">Who uses it and how</text>
+      <rect x="490" y="184" width="220" height="92" rx="16" fill="#fff7ed" stroke="#f97316"/>
+      <text x="600" y="224" fill="#7c2d12">Vendor changes</text>
+      <text x="600" y="252" font-size="14" fill="#334155">Models, regions, terms</text>
+      <rect x="852" y="286" width="220" height="92" rx="16" fill="#fef2f2" stroke="#ef4444"/>
+      <text x="962" y="326" fill="#7f1d1d">Risk review</text>
+      <text x="962" y="354" font-size="14" fill="#334155">Exceptions and drift</text>
+      <rect x="490" y="432" width="220" height="92" rx="16" fill="#ecfdf5" stroke="#16a34a"/>
+      <text x="600" y="472" fill="#14532d">Catalog update</text>
+      <text x="600" y="500" font-size="14" fill="#334155">Access and guidance</text>
+    </g>
+  </g>
+</svg>

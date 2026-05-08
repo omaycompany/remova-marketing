@@ -37,49 +37,32 @@ export default function LazyFeatureHeroVideo() {
 
     return (
         <div
+            id="features-video"
             ref={wrapperRef}
             className="relative mt-14 overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 shadow-2xl shadow-slate-950/10 dark:border-white/10 dark:bg-black dark:shadow-black/40"
         >
             <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
             <div className="aspect-video w-full">
-                {shouldLoadVideo ? (
-                    <video
-                        ref={videoRef}
-                        className="h-full w-full object-cover"
-                        muted
-                        loop
-                        playsInline
-                        preload="none"
-                        poster="/videos/features-page-hero-poster.png"
-                        aria-label="Remova native chat workflow showing governed AI workspaces, policy checks, analytics, model routing, and zero data retention"
-                    >
-                        <source src="/videos/features-page-hero.mp4" type="video/mp4" />
-                    </video>
-                ) : (
-                    <button
-                        type="button"
-                        className="group relative block h-full w-full overflow-hidden text-left"
-                        onClick={() => setShouldLoadVideo(true)}
-                        aria-label="Play Remova features video"
-                    >
-                        <img
-                            src="/videos/features-page-hero-poster.png"
-                            alt=""
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                        <span className="absolute inset-0 bg-slate-950/10 transition-colors group-hover:bg-slate-950/20" />
-                        <span className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/95 text-slate-950 shadow-2xl transition-transform group-hover:scale-105">
-                            <Play className="ml-1 h-9 w-9 fill-current" aria-hidden="true" />
-                        </span>
-                    </button>
-                )}
+                <video
+                    ref={videoRef}
+                    className="h-full w-full object-cover"
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    poster="/videos/features-page-hero-poster.png"
+                    aria-label="Remova native chat workflow showing governed AI workspaces, policy checks, analytics, model routing, and zero data retention"
+                >
+                    <source src="/videos/features-page-hero.mp4" type="video/mp4" />
+                </video>
             </div>
-            {shouldLoadVideo && !isPlaying ? (
+            {!isPlaying ? (
                 <button
                     type="button"
-                    onClick={() => videoRef.current?.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false))}
+                    onClick={() => {
+                        setShouldLoadVideo(true);
+                        videoRef.current?.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+                    }}
                     className="absolute inset-0 flex items-center justify-center bg-slate-950/10 text-slate-950"
                     aria-label="Play Remova features video"
                 >

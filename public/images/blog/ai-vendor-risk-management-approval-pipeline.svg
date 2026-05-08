@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI vendor approval pipeline</title>
+  <desc id="desc">A five-step approval workflow for AI vendor risk management.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <rect x="48" y="48" width="1104" height="579" rx="22" fill="#ffffff" stroke="#dbe3ee" stroke-width="2"/>
+  <text x="84" y="112" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#0f172a">AI Vendor Approval Pipeline</text>
+  <text x="84" y="148" font-family="Inter, Arial, sans-serif" font-size="18" fill="#475569">One workflow from request intake to governed employee access</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(84 218)">
+      <rect width="170" height="170" rx="18" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+      <circle cx="85" cy="46" r="22" fill="#0284c7"/>
+      <text x="85" y="54" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">1</text>
+      <text x="85" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Request</text>
+      <text x="85" y="126" text-anchor="middle" font-size="14" fill="#334155">Use case, owner,</text>
+      <text x="85" y="146" text-anchor="middle" font-size="14" fill="#334155">department, urgency</text>
+    </g>
+    <path d="M264 303h68" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M322 291l18 12-18 12" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(348 218)">
+      <rect width="170" height="170" rx="18" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+      <circle cx="85" cy="46" r="22" fill="#16a34a"/>
+      <text x="85" y="54" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">2</text>
+      <text x="85" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Data Map</text>
+      <text x="85" y="126" text-anchor="middle" font-size="14" fill="#334155">Prompts, files,</text>
+      <text x="85" y="146" text-anchor="middle" font-size="14" fill="#334155">logs, outputs</text>
+    </g>
+    <path d="M528 303h68" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M586 291l18 12-18 12" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(612 218)">
+      <rect width="170" height="170" rx="18" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+      <circle cx="85" cy="46" r="22" fill="#d97706"/>
+      <text x="85" y="54" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">3</text>
+      <text x="85" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Risk Score</text>
+      <text x="85" y="126" text-anchor="middle" font-size="14" fill="#334155">Data class plus</text>
+      <text x="85" y="146" text-anchor="middle" font-size="14" fill="#334155">tool capability</text>
+    </g>
+    <path d="M792 303h68" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M850 291l18 12-18 12" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(876 218)">
+      <rect width="170" height="170" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+      <circle cx="85" cy="46" r="22" fill="#7c3aed"/>
+      <text x="85" y="54" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">4</text>
+      <text x="85" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">Review</text>
+      <text x="85" y="126" text-anchor="middle" font-size="14" fill="#334155">Security, legal,</text>
+      <text x="85" y="146" text-anchor="middle" font-size="14" fill="#334155">privacy, owner</text>
+    </g>
+    <path d="M961 404v52H214" stroke="#94a3b8" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M226 444l-18 12 18 12" fill="none" stroke="#94a3b8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(234 455)">
+      <rect width="730" height="88" rx="18" fill="#0f172a"/>
+      <text x="365" y="38" text-anchor="middle" font-size="24" font-weight="800" fill="#ffffff">Approved AI Catalog</text>
+      <text x="365" y="64" text-anchor="middle" font-size="16" fill="#cbd5e1">Visible access rules, data limits, budget owner, and review date</text>
+    </g>
+  </g>
+</svg>
