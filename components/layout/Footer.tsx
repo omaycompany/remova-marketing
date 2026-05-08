@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Github, Linkedin } from "lucide-react";
+import SafeEmailLink from "@/components/ui/SafeEmailLink";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -77,7 +78,7 @@ export default function Footer() {
                             links: [
                                 { name: "Privacy Policy", href: "/privacy" },
                                 { name: "Terms of Service", href: "/terms" },
-                                { name: "Legal Inquiry", href: "mailto:notifications@remova.org?subject=Legal%20Inquiry" }
+                                { name: "Legal Inquiry", href: "email:legal" }
                             ],
                         },
                     ].map((col, idx) => (
@@ -88,13 +89,23 @@ export default function Footer() {
                             <ul className="space-y-4">
                                 {col.links.map((link) => (
                                     <li key={link.name}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-base font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors relative group inline-block"
-                                        >
-                                            {link.name}
-                                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 dark:bg-white transition-all group-hover:w-full" />
-                                        </Link>
+                                        {link.href === "email:legal" ? (
+                                            <SafeEmailLink
+                                                subject="Legal Inquiry"
+                                                className="text-base font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors relative group inline-block"
+                                            >
+                                                {link.name}
+                                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 dark:bg-white transition-all group-hover:w-full" />
+                                            </SafeEmailLink>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                className="text-base font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors relative group inline-block"
+                                            >
+                                                {link.name}
+                                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-slate-900 dark:bg-white transition-all group-hover:w-full" />
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

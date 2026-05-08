@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import LeadMagnetSection from '@/components/marketing/LeadMagnetSection';
+import SafeEmailLink from '@/components/ui/SafeEmailLink';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -311,12 +312,12 @@ export default function TermsPage() {
                     <p className="text-slate-600 dark:text-slate-400 mb-6 font-medium">
                         If you have any questions about these Terms of Service, please contact our legal team.
                     </p>
-                    <Link
-                        href="mailto:notifications@remova.org?subject=Terms%20of%20Service%20Inquiry"
+                    <SafeEmailLink
+                        subject="Terms of Service Inquiry"
                         className="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-full font-black uppercase tracking-wider hover:opacity-90 transition-opacity"
                     >
                         Contact Legal
-                    </Link>
+                    </SafeEmailLink>
                 </div>
 
                 <div className="mt-12">

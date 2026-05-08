@@ -5,14 +5,21 @@ import { ArrowRight, Check, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
+import { getLegacyFeatureRedirect } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
-    return features.map((f) => ({ slug: f.slug }));
+    return [
+        ...features.map((f) => ({ slug: f.slug })),
+        { slug: "role-based-access" },
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const feature = features.find((f) => f.slug === params.slug);
+    const legacyRedirect = getLegacyFeatureRedirect(params.slug);
+    if (!feature && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!feature) return {};
     const title = stripTitleSuffix(feature.metaTitle);
     const description = feature.metaDescription;
@@ -46,6 +53,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function FeaturePage({ params }: { params: { slug: string } }) {
     const feature = features.find((f) => f.slug === params.slug);
+    const legacyRedirect = getLegacyFeatureRedirect(params.slug);
+    if (!feature && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!feature) return <div>Not found</div>;
 
     const jsonLd = {

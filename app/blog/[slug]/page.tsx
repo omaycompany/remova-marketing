@@ -5,14 +5,21 @@ import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-reac
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
+import { getLegacyBlogRedirect, legacyBlogStaticParams } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
-    return allBlogPosts.map((p) => ({ slug: p.slug }));
+    return [
+        ...allBlogPosts.map((p) => ({ slug: p.slug })),
+        ...legacyBlogStaticParams,
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const post = allBlogPosts.find((p) => p.slug === params.slug);
+    const legacyRedirect = getLegacyBlogRedirect(params.slug);
+    if (!post && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!post) return {};
     const title = post.title;
     const description = `Learn about ${post.title}. ${post.metaDescription}`;
@@ -54,6 +61,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const post = allBlogPosts.find((p) => p.slug === params.slug);
+    const legacyRedirect = getLegacyBlogRedirect(params.slug);
+    if (!post && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!post) return <div>Not found</div>;
     const metricsByCategory: Record<string, string[]> = {
         Guide: [

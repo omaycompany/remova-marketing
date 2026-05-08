@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, Brain, Sparkles, Cpu, FileText, BarChart3, History, Zap, Shield, MessageSquare, Bot, ToggleRight, LayoutDashboard, Database, Ghost, Smartphone, Wand2, FileSpreadsheet, ShieldAlert, XCircle, Search, Server, FileLock2, AlertTriangle, Workflow, FileType, Key, BoxSelect, MonitorDot, Gauge, Scale, BookOpen, Fingerprint, Eye, LockKeyhole, Umbrella, RefreshCw, Slash, FileClock, SearchX, UserMinus, Diamond, Users, UserCog, UserCheck, KeyRound, Plug, Wallet, Receipt, Hourglass, Bell, CreditCard, Antenna, MessagesSquare, FileOutput, Printer } from 'lucide-react';
 import FAQ from '@/components/ui/FAQ';
 import ExternalAppLink from '@/components/ui/ExternalAppLink';
+import SafeEmailLink from '@/components/ui/SafeEmailLink';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -783,12 +784,12 @@ export default function LandingPage() {
                                     ))}
                                 </ul>
                             </div>
-                            <Link
-                                href="mailto:notifications@remova.org?subject=On-Prem%20Architecture%20Inquiry"
+                            <SafeEmailLink
+                                subject="On-Prem Architecture Inquiry"
                                 className="w-full py-4 text-center bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-lg font-black uppercase hover:opacity-90 transition-opacity rounded-[2.5rem]"
                             >
                                 Request Architecture Link
-                            </Link>
+                            </SafeEmailLink>
                         </div>
                     </div>
                 </div>
