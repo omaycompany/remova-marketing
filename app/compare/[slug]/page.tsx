@@ -5,14 +5,21 @@ import { ArrowRight, Check, X, Scale, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
+import { getLegacyCompareRedirect, legacyCompareStaticParams } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
-    return comparisons.map((c) => ({ slug: c.slug }));
+    return [
+        ...comparisons.map((c) => ({ slug: c.slug })),
+        ...legacyCompareStaticParams,
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const comp = comparisons.find((c) => c.slug === params.slug);
+    const legacyRedirect = getLegacyCompareRedirect(params.slug);
+    if (!comp && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!comp) return {};
     const title = stripTitleSuffix(comp.metaTitle);
     const description = comp.metaDescription;
@@ -40,6 +47,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function ComparePage({ params }: { params: { slug: string } }) {
     const comp = comparisons.find((c) => c.slug === params.slug);
+    const legacyRedirect = getLegacyCompareRedirect(params.slug);
+    if (!comp && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!comp) return <div>Not found</div>;
 
     const jsonLd = {

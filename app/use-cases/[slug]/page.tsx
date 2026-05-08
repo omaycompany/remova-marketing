@@ -5,14 +5,21 @@ import { ArrowRight, Check, AlertTriangle, Building2, User, Cog, ChevronRight, Z
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
+import { getLegacyUseCaseRedirect, legacyUseCaseStaticParams } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
-    return useCases.map((u) => ({ slug: u.slug }));
+    return [
+        ...useCases.map((u) => ({ slug: u.slug })),
+        ...legacyUseCaseStaticParams,
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const uc = useCases.find((u) => u.slug === params.slug);
+    const legacyRedirect = getLegacyUseCaseRedirect(params.slug);
+    if (!uc && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!uc) return {};
     const title = stripTitleSuffix(uc.metaTitle);
     const description = uc.metaDescription;
@@ -78,6 +85,8 @@ const categoryLabel = { industry: "Industry", role: "Role", function: "Solution"
 
 export default function UseCasePage({ params }: { params: { slug: string } }) {
     const uc = useCases.find((u) => u.slug === params.slug);
+    const legacyRedirect = getLegacyUseCaseRedirect(params.slug);
+    if (!uc && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!uc) return <div>Not found</div>;
     const Icon = categoryIcon[uc.category];
 

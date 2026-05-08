@@ -5,14 +5,21 @@ import { ArrowRight, BookOpen, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
+import { getLegacyGlossaryRedirect, legacyGlossaryStaticParams } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
-    return glossaryTerms.map((g) => ({ slug: g.slug }));
+    return [
+        ...glossaryTerms.map((g) => ({ slug: g.slug })),
+        ...legacyGlossaryStaticParams,
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const term = glossaryTerms.find((g) => g.slug === params.slug);
+    const legacyRedirect = getLegacyGlossaryRedirect(params.slug);
+    if (!term && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!term) return {};
     const title = stripTitleSuffix(term.metaTitle);
     const description = term.metaDescription;
@@ -39,6 +46,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function GlossaryPage({ params }: { params: { slug: string } }) {
     const term = glossaryTerms.find((g) => g.slug === params.slug);
+    const legacyRedirect = getLegacyGlossaryRedirect(params.slug);
+    if (!term && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!term) return <div>Not found</div>;
 
     const related = term.relatedTerms

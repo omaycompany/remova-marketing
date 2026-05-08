@@ -168,6 +168,29 @@ const legacyBlogSlugs = [
     "ai-ethics-case-studies",
     "building-ai-trust",
     "ai-governance-maturity-assessment",
+    "importgenius-opt-out-supplier-protection",
+    "how-to-remove-company-information-from-panjiva",
+    "rcep-afcfta-opportunity-2025",
+    "japan-customs-data-removal-asia-trade-protection",
+    "panjiva-vs-importgenius-vs-remova-comparison",
+    "supply-chain-open-book-5-minute-check",
+    "south-korea-customs-data-removal-tech-trade-guide",
+    "can-you-remove-data-from-importyeti-answer",
+    "india-customs-data-removal-business-protection-guide",
+    "more-complete-panjiva-alternative-total-data-privacy",
+    "digital-tariffs-and-data-sovereignty-2025",
+    "chinese-suppliers-poaching-european-clients",
+    "how-to-make-your-companys-shipping-data-private-2025-guide",
+    "eu-cbam-green-tariffs-2025",
+    "cybersecurity-blind-spot-firewall-cant-stop-competitors",
+    "cbp-manifest-confidentiality-filing-guide",
+    "remova-review-privacy-as-a-service-platform-worth-it",
+    "why-data-viewers-not-enough-proactive-removal-service",
+    "mexico-customs-data-removal-usmca-trade-guide",
+    "germany-customs-data-removal-eu-trade-protection",
+    "calculating-true-cost-supplier-data-leak",
+    "usa-customs-data-removal-complete-guide-2025",
+    "panjiva-data-removal",
 ] as const;
 
 export const legacyResourceSlugs = [
@@ -197,8 +220,128 @@ export const legacyResourceSlugs = [
     "data-sovereignty-playbook",
 ] as const;
 
+export const legacyModelSlugs = [
+    "ernie-45-21b-a3b-thinking",
+    "r1-0528",
+    "mistral-medium-3",
+    "glm-45-air-free",
+    "gpt-51-codex-max",
+    "qwen-vl-plus",
+    "qwen3-4b-free",
+    "gemma-3-12b-free",
+    "mistral-small-4",
+    "nemotron-3-super",
+    "ministral-3-14b-2512",
+    "deepseek-v31-terminus",
+    "gpt-51-codex",
+    "claude-haiku-45",
+] as const;
+
+export const legacyAlternativeSlugs = [
+    "ai21-labs",
+    "scale-ai",
+] as const;
+
+export const legacyCompareSlugs = [
+    "chatgpt-enterprise-vs-claude-enterprise",
+    "remova-vs-glean",
+    "remova-vs-arthur-ai",
+    "best-llm-cost-management-tools",
+    "remova-vs-writer",
+    "remova-vs-datarobot",
+    "microsoft-copilot-vs-google-gemini",
+    "fiddler-ai-vs-arthur-ai",
+] as const;
+
+export const legacyUseCaseSlugs = [
+    "regulatory-compliance",
+    "enterprise-ai-rollout",
+    "ai-customer-support",
+] as const;
+
+export const legacyGlossarySlugs = [
+    "compliance-framework",
+    "model-endpoint",
+    "dlp",
+] as const;
+
+export const legacyFeatureSlugs = [
+    "role-based-access",
+    "credit-system",
+] as const;
+
+export const legacyBlogCategorySlugs = [
+    "us-manufacturing-defense",
+    "asian-competition",
+    "chinese-competition",
+    "competitive-threats",
+    "supplier-protection",
+] as const;
+
+export const legacyCustomerSlugs = [
+    "insurance-carrier",
+] as const;
+
+export const legacyIntegrationSlugs = [
+    "aws",
+] as const;
+
+export const legacyTrustSlugs = [
+    "penetration-testing",
+    "soc2-roadmap",
+    "security-leadership",
+    "iso-27001-roadmap",
+] as const;
+
+export const legacyServiceSlugs = [
+    "manifest-privacy",
+    "government-privacy-filing",
+    "leakwatch",
+    "optout",
+] as const;
+
+export const legacyTopLevelSlugs = [
+    "forgot-password",
+    "login",
+    "gdpr-compliance-checker",
+    "commercial-invoice-template",
+    "us-customs-import-requirements-checklist",
+    "pricing",
+    "responsibilities",
+    "container-tracking",
+    "open-tools",
+    "transparency",
+    "company-exposure-checker",
+    "customs-duty-calculator",
+    "why-remova",
+    "public-benefit",
+    "disclosures",
+    "trade-data-leak-scanner",
+    "hs-code-directory",
+    "trade-agreement-finder",
+    "how-to-fill-out-bill-of-lading",
+    "isf-importer-security-filing-deadline-rules",
+    "investor-relations",
+    "tests",
+    "careers",
+    "organization",
+    "membership",
+] as const;
+
 const legacyBlogSlugSet = new Set<string>(legacyBlogSlugs);
 const legacyResourceSlugSet = new Set<string>(legacyResourceSlugs);
+const legacyModelSlugSet = new Set<string>(legacyModelSlugs);
+const legacyAlternativeSlugSet = new Set<string>(legacyAlternativeSlugs);
+const legacyCompareSlugSet = new Set<string>(legacyCompareSlugs);
+const legacyUseCaseSlugSet = new Set<string>(legacyUseCaseSlugs);
+const legacyGlossarySlugSet = new Set<string>(legacyGlossarySlugs);
+const legacyFeatureSlugSet = new Set<string>(legacyFeatureSlugs);
+const legacyBlogCategorySlugSet = new Set<string>(legacyBlogCategorySlugs);
+const legacyCustomerSlugSet = new Set<string>(legacyCustomerSlugs);
+const legacyIntegrationSlugSet = new Set<string>(legacyIntegrationSlugs);
+const legacyTrustSlugSet = new Set<string>(legacyTrustSlugs);
+const legacyServiceSlugSet = new Set<string>(legacyServiceSlugs);
+const legacyTopLevelSlugSet = new Set<string>(legacyTopLevelSlugs);
 
 const legacyBlogRedirectTargets: Record<string, string> = {
     "ai-cost-management-guide": "/blog/ai-cost-management-finops-guide",
@@ -222,8 +365,95 @@ const legacyResourceRedirectTargets: Record<string, string> = {
     "ai-vendor-evaluation-scorecard": "/blog/ai-vendor-risk-management-llm-tools",
 };
 
+const legacyAlternativeRedirectTargets: Record<string, string> = {
+    "ai21-labs": "/alternative",
+    "scale-ai": "/alternative",
+};
+
+const legacyCompareRedirectTargets: Record<string, string> = {
+    "chatgpt-enterprise-vs-claude-enterprise": "/compare/remova-vs-chatgpt-enterprise",
+    "remova-vs-glean": "/alternative/glean",
+    "remova-vs-arthur-ai": "/compare/ai-security-vs-ai-governance-platforms",
+    "best-llm-cost-management-tools": "/features/department-budgets",
+    "remova-vs-writer": "/compare/remova-vs-suite-ai-addon",
+    "remova-vs-datarobot": "/compare/best-enterprise-ai-governance-platforms",
+    "microsoft-copilot-vs-google-gemini": "/compare/remova-vs-microsoft-copilot",
+    "fiddler-ai-vs-arthur-ai": "/compare/ai-security-vs-ai-governance-platforms",
+};
+
+const legacyUseCaseRedirectTargets: Record<string, string> = {
+    "regulatory-compliance": "/use-cases/compliance-lead",
+    "enterprise-ai-rollout": "/use-cases/ai-center-of-excellence",
+    "ai-customer-support": "/use-cases/safe-ai-chat",
+};
+
+const legacyGlossaryRedirectTargets: Record<string, string> = {
+    "compliance-framework": "/glossary/ai-governance",
+    "model-endpoint": "/features/api-access",
+    "dlp": "/features/sensitive-data-protection",
+};
+
+const legacyFeatureRedirectTargets: Record<string, string> = {
+    "role-based-access": "/features/role-access-control",
+    "credit-system": "/features/department-budgets",
+};
+
+const legacyTrustRedirectTargets: Record<string, string> = {
+    "penetration-testing": "/blog",
+    "soc2-roadmap": "/resources/soc2-ai-controls-mapping",
+    "security-leadership": "/features/audit-trails",
+    "iso-27001-roadmap": "/blog/iso-27001-ai-controls",
+};
+
+const legacyServiceRedirectTargets: Record<string, string> = {
+    "manifest-privacy": "/features/sensitive-data-protection",
+    "government-privacy-filing": "/features/sensitive-data-protection",
+    "leakwatch": "/features/sensitive-data-protection",
+    "optout": "/privacy",
+};
+
+const legacyTopLevelRedirectTargets: Record<string, string> = {
+    "forgot-password": "https://app.remova.org/forgot-password",
+    "login": "https://app.remova.org/login",
+    "gdpr-compliance-checker": "/blog/gdpr-ai-compliance",
+    "commercial-invoice-template": "/resources",
+    "us-customs-import-requirements-checklist": "/resources",
+    "pricing": "https://app.remova.org/register",
+    "responsibilities": "/privacy",
+    "container-tracking": "/resources",
+    "open-tools": "/resources",
+    "transparency": "/glossary/ai-transparency",
+    "company-exposure-checker": "/features/sensitive-data-protection",
+    "customs-duty-calculator": "/resources",
+    "why-remova": "/",
+    "public-benefit": "/",
+    "disclosures": "/privacy",
+    "trade-data-leak-scanner": "/features/sensitive-data-protection",
+    "hs-code-directory": "/resources",
+    "trade-agreement-finder": "/resources",
+    "how-to-fill-out-bill-of-lading": "/resources",
+    "isf-importer-security-filing-deadline-rules": "/resources",
+    "investor-relations": "/",
+    "tests": "/",
+    "careers": "/",
+    "organization": "https://app.remova.org/organization",
+    "membership": "https://app.remova.org/register",
+};
+
 export const legacyBlogStaticParams = legacyBlogSlugs.map((slug) => ({ slug }));
 export const legacyResourceStaticParams = legacyResourceSlugs.map((slug) => ({ slug }));
+export const legacyModelStaticParams = legacyModelSlugs.map((slug) => ({ slug }));
+export const legacyAlternativeStaticParams = legacyAlternativeSlugs.map((slug) => ({ slug }));
+export const legacyCompareStaticParams = legacyCompareSlugs.map((slug) => ({ slug }));
+export const legacyUseCaseStaticParams = legacyUseCaseSlugs.map((slug) => ({ slug }));
+export const legacyGlossaryStaticParams = legacyGlossarySlugs.map((slug) => ({ slug }));
+export const legacyFeatureStaticParams = legacyFeatureSlugs.map((slug) => ({ slug }));
+export const legacyBlogCategoryStaticParams = legacyBlogCategorySlugs.map((slug) => ({ slug }));
+export const legacyCustomerStaticParams = legacyCustomerSlugs.map((slug) => ({ slug }));
+export const legacyIntegrationStaticParams = legacyIntegrationSlugs.map((slug) => ({ slug }));
+export const legacyTrustStaticParams = legacyTrustSlugs.map((slug) => ({ slug }));
+export const legacyServiceStaticParams = legacyServiceSlugs.map((slug) => ({ slug }));
+export const legacyTopLevelStaticParams = legacyTopLevelSlugs.map((legacy) => ({ legacy }));
 
 export function getLegacyBlogRedirect(slug: string): string | undefined {
     if (!legacyBlogSlugSet.has(slug)) return undefined;
@@ -236,6 +466,61 @@ export function getLegacyResourceRedirect(slug: string): string | undefined {
 }
 
 export function getLegacyFeatureRedirect(slug: string): string | undefined {
-    if (slug === "role-based-access") return "/features/role-access-control";
-    return undefined;
+    if (!legacyFeatureSlugSet.has(slug)) return undefined;
+    return legacyFeatureRedirectTargets[slug] ?? "/features";
+}
+
+export function getLegacyModelRedirect(slug: string): string | undefined {
+    if (!legacyModelSlugSet.has(slug)) return undefined;
+    return "/models";
+}
+
+export function getLegacyAlternativeRedirect(slug: string): string | undefined {
+    if (!legacyAlternativeSlugSet.has(slug)) return undefined;
+    return legacyAlternativeRedirectTargets[slug] ?? "/alternative";
+}
+
+export function getLegacyCompareRedirect(slug: string): string | undefined {
+    if (!legacyCompareSlugSet.has(slug)) return undefined;
+    return legacyCompareRedirectTargets[slug] ?? "/compare";
+}
+
+export function getLegacyUseCaseRedirect(slug: string): string | undefined {
+    if (!legacyUseCaseSlugSet.has(slug)) return undefined;
+    return legacyUseCaseRedirectTargets[slug] ?? "/use-cases";
+}
+
+export function getLegacyGlossaryRedirect(slug: string): string | undefined {
+    if (!legacyGlossarySlugSet.has(slug)) return undefined;
+    return legacyGlossaryRedirectTargets[slug] ?? "/glossary";
+}
+
+export function getLegacyBlogCategoryRedirect(slug: string): string | undefined {
+    if (!legacyBlogCategorySlugSet.has(slug)) return undefined;
+    return "/blog";
+}
+
+export function getLegacyCustomerRedirect(slug: string): string | undefined {
+    if (!legacyCustomerSlugSet.has(slug)) return undefined;
+    return "/use-cases/insurance";
+}
+
+export function getLegacyIntegrationRedirect(slug: string): string | undefined {
+    if (!legacyIntegrationSlugSet.has(slug)) return undefined;
+    return "/alternative/aws-bedrock";
+}
+
+export function getLegacyTrustRedirect(slug: string): string | undefined {
+    if (!legacyTrustSlugSet.has(slug)) return undefined;
+    return legacyTrustRedirectTargets[slug] ?? "/privacy";
+}
+
+export function getLegacyServiceRedirect(slug: string): string | undefined {
+    if (!legacyServiceSlugSet.has(slug)) return undefined;
+    return legacyServiceRedirectTargets[slug] ?? "/features/sensitive-data-protection";
+}
+
+export function getLegacyTopLevelRedirect(legacy: string): string | undefined {
+    if (!legacyTopLevelSlugSet.has(legacy)) return undefined;
+    return legacyTopLevelRedirectTargets[legacy] ?? "/";
 }

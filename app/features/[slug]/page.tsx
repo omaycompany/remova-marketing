@@ -6,13 +6,13 @@ import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import LegacyRedirect from "@/components/seo/LegacyRedirect";
-import { getLegacyFeatureRedirect } from "@/lib/legacy-redirects";
+import { getLegacyFeatureRedirect, legacyFeatureStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return [
         ...features.map((f) => ({ slug: f.slug })),
-        { slug: "role-based-access" },
+        ...legacyFeatureStaticParams,
     ];
 }
 

@@ -5,14 +5,21 @@ import { ArrowRight, Check, X, Zap, ChevronRight } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, stripTitleSuffix } from "@/lib/seo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
+import { getLegacyAlternativeRedirect, legacyAlternativeStaticParams } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
 export async function generateStaticParams() {
-    return alternatives.map((a) => ({ slug: a.slug }));
+    return [
+        ...alternatives.map((a) => ({ slug: a.slug })),
+        ...legacyAlternativeStaticParams,
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const alt = alternatives.find((a) => a.slug === params.slug);
+    const legacyRedirect = getLegacyAlternativeRedirect(params.slug);
+    if (!alt && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!alt) return {};
     const title = stripTitleSuffix(alt.metaTitle);
     const description = alt.metaDescription;
@@ -41,6 +48,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function AlternativePage({ params }: { params: { slug: string } }) {
     const alt = alternatives.find((a) => a.slug === params.slug);
+    const legacyRedirect = getLegacyAlternativeRedirect(params.slug);
+    if (!alt && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!alt) return <div>Not found</div>;
 
     const jsonLd = {

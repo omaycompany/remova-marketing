@@ -1,10 +1,12 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ModelLandingTemplate from "@/components/models/ModelLandingTemplate";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { modelLandings } from "@/content/model-landings";
 import { getModelVideo } from "@/content/model-videos";
 import { models } from "@/content/models";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
+import { getLegacyModelRedirect, legacyModelStaticParams } from "@/lib/legacy-redirects";
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata } from "@/lib/seo";
 
 function trimForTitle(value: string, maxLength: number) {
     if (value.length <= maxLength) return value;
@@ -12,11 +14,16 @@ function trimForTitle(value: string, maxLength: number) {
 }
 
 export async function generateStaticParams() {
-    return modelLandings.map((entry) => ({ slug: entry.slug }));
+    return [
+        ...modelLandings.map((entry) => ({ slug: entry.slug })),
+        ...legacyModelStaticParams,
+    ];
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const landing = modelLandings.find((entry) => entry.slug === params.slug);
+    const legacyRedirect = getLegacyModelRedirect(params.slug);
+    if (!landing && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!landing) return {};
 
     const seoTitle = trimForTitle(landing.metaTitle, 80);
@@ -85,6 +92,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function ModelLandingPage({ params }: { params: { slug: string } }) {
     const landing = modelLandings.find((entry) => entry.slug === params.slug);
+    const legacyRedirect = getLegacyModelRedirect(params.slug);
+    if (!landing && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!landing) notFound();
 
     const model = models.find((entry) => entry.id === landing.modelId);
