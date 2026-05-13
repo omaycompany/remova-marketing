@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/use-cases`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/alternative`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/compare`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
+        { url: `${SITE_URL}/llms.txt`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.3 },
         ...modelLandings.map((landing) => m(`/models/${landing.slug}`, 0.45, dateFromIsoDate(landing.sourceCheckedAt))),
         ...features.map((f) => m(`/features/${f.slug}`, 0.8)),
         ...alternatives.map((a) => m(`/alternative/${a.slug}`, 0.7)),

@@ -136,6 +136,7 @@ export default function RootLayout({
             <head>
                 {/* RSS Autodiscovery — lets crawlers and feed readers find new content */}
                 <link rel="alternate" type="application/rss+xml" title="Remova Blog" href="/feed.xml" />
+                <link rel="alternate" type="text/markdown" title="Remova AI reference" href="/llms.txt" />
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-YR03QTP6EC"
                     strategy="afterInteractive"
