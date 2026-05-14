@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ai governance tools implementation checklist">
+        
+        <style>
+            .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
+            .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #111827; }
+            .subtitle { font: 750 25px Inter, Arial, sans-serif; fill: #334155; }
+            .body { font: 700 22px Inter, Arial, sans-serif; fill: #475569; }
+            .small { font: 800 18px Inter, Arial, sans-serif; fill: #64748b; }
+            .label { font: 900 16px Inter, Arial, sans-serif; fill: #64748b; }
+            .metric { font: 950 28px Inter, Arial, sans-serif; }
+            .node { font: 950 23px Inter, Arial, sans-serif; fill: #111827; }
+            .check { font: 800 21px Inter, Arial, sans-serif; fill: #334155; }
+        </style>
+        <defs>
+            <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+                <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#e8eef6" stroke-width="1"/>
+            </pattern>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+                <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.13"/>
+            </filter>
+        </defs>
+    
+        <rect width="1200" height="630" fill="#ffffff"/>
+        <rect width="1200" height="630" fill="url(#grid)"/>
+        <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
+        <text class="eyebrow" x="112" y="126">Implementation checklist</text>
+        <text class="subtitle" x="112" y="164"><tspan x="112" dy="0">AI Governance Tools: Comparison Guide for</tspan><tspan x="112" dy="35">Enterprise Buyers</tspan></text>
+        
+                <circle cx="128" cy="172" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="178" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="180"><tspan x="168" dy="0">List required controls by risk, not by vendor category.</tspan></text>
+            
+                <circle cx="128" cy="244" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="250" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="252"><tspan x="168" dy="0">Separate observe-only, enforce-inline, and workflow-native tools.</tspan></text>
+            
+                <circle cx="128" cy="316" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="322" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="324"><tspan x="168" dy="0">Test data masking, model routing, role access, and audit exports.</tspan></text>
+            
+                <circle cx="128" cy="388" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="394" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="396"><tspan x="168" dy="0">Confirm how the tool handles employee chat and developer APIs.</tspan></text>
+            
+                <circle cx="128" cy="460" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="466" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="468"><tspan x="168" dy="0">Score each vendor against security, compliance, finance, and usability.</tspan></text>
+            
+        <rect x="812" y="454" width="236" height="58" rx="29" fill="#111827"/>
+        <text x="844" y="491" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
+    </svg>

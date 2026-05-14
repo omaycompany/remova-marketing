@@ -16,6 +16,8 @@
         "video:render:models": "tsx scripts/render-model-videos.ts",
         "video:render:models:latest200": "tsx scripts/render-model-videos.ts --latest --limit=200 --missing-only",
         "video:render:models:latest200:nontext": "tsx scripts/render-model-videos.ts --latest --limit=200 --non-text-only --force",
+        "video:assets:blogs": "tsx scripts/render-keyword-blog-videos.ts --assets-only",
+        "video:render:blogs": "tsx scripts/render-keyword-blog-videos.ts --missing-only",
         "video:manifest:models": "tsx scripts/update-model-video-manifest.ts",
         "video:manifest:models:all": "tsx scripts/update-model-video-manifest.ts --include-non-text",
         "video:youtube:upload": "tsx scripts/upload-model-videos-youtube.ts",

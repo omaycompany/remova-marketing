@@ -1,3 +1,5 @@
+import { keywordBlogPosts } from "./keyword-blog-posts";
+
 export interface BlogPost {
     slug: string;
     title: string;
@@ -13,6 +15,16 @@ export interface BlogPost {
     excerpt: string;
     sections: { heading: string; content: string }[];
     images?: { src: string; alt: string; caption: string; afterSection: number; hero?: boolean }[];
+    video?: {
+        title: string;
+        description: string;
+        contentUrl: string;
+        thumbnailUrl: string;
+        captionsUrl?: string;
+        duration: string;
+        uploadDate: string;
+        transcript: string;
+    };
     faqs?: { question: string; answer: string }[];
 }
 
@@ -2288,6 +2300,8 @@ The value is not just administrative tidiness. A model catalog lets the organiza
 const now = new Date();
 const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
-export const allBlogPosts = rawBlogPosts
+const combinedBlogPosts = [...rawBlogPosts, ...keywordBlogPosts];
+
+export const allBlogPosts = combinedBlogPosts
     .filter((post) => post.date <= today)
     .sort((a, b) => b.date.localeCompare(a.date));

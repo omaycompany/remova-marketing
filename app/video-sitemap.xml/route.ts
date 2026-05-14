@@ -1,3 +1,4 @@
+import { allBlogPosts } from "@/content/blog";
 import { modelVideos } from "@/content/model-videos";
 import { useCases } from "@/content/use-cases";
 import { SITE_URL, absoluteUrl } from "@/lib/seo";
@@ -49,6 +50,29 @@ export function GET() {
                     `${useCase.headline} video`,
                     "enterprise AI use case",
                     "AI governance",
+                    "Remova",
+                ],
+            }];
+        }),
+        ...allBlogPosts.flatMap((post) => {
+            if (!post.video) return [];
+
+            return [{
+                pagePath: `/blog/${post.slug}`,
+                anchor: "article-video",
+                title: post.video.title,
+                description: post.video.description,
+                contentUrl: post.video.contentUrl,
+                thumbnailUrl: post.video.thumbnailUrl,
+                duration: post.video.duration,
+                durationSeconds: durationToSeconds(post.video.duration),
+                uploadDate: post.video.uploadDate,
+                transcript: post.video.transcript,
+                tags: [
+                    post.title,
+                    post.category,
+                    `${post.title} video`,
+                    "enterprise AI governance",
                     "Remova",
                 ],
             }];

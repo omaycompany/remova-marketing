@@ -1,4 +1,5 @@
 import { Composition } from "remotion";
+import { BlogKeywordVideo } from "./compositions/BlogKeywordVideo";
 import { DeepSeekV4Landing } from "./compositions/DeepSeekV4Landing";
 import { EverydayUseCaseVideo } from "./compositions/EverydayUseCaseVideo";
 import { FeaturesPageDraft } from "./compositions/FeaturesPageDraft";
@@ -8,6 +9,30 @@ import { WritingBetterEmailsVideo } from "./compositions/WritingBetterEmailsVide
 export const RemotionRoot = () => {
     return (
         <>
+            <Composition
+                id="BlogKeywordVideo"
+                component={BlogKeywordVideo}
+                durationInFrames={270}
+                fps={30}
+                width={1280}
+                height={720}
+                defaultProps={{
+                    keyword: "ai governance",
+                    title: "AI Governance: A Practical Enterprise Guide",
+                    volume: 14800,
+                    cpc: "$3.51-$28.77",
+                    competition: "Medium",
+                    angle: "Enterprise AI governance guide",
+                    controlGoal: "Make AI adoption visible, enforceable, measurable, and useful.",
+                    primaryControl: "Enterprise AI control layer",
+                    checklist: [
+                        "Inventory approved and unapproved AI usage across teams.",
+                        "Define AI use policies by data class, department, model, and workflow.",
+                        "Connect identity, access, model routing, budgets, and audit logging.",
+                    ],
+                    metrics: ["Approved AI adoption by department"],
+                }}
+            />
             <Composition
                 id="LandingPageTeaser"
                 component={LandingPageTeaser}

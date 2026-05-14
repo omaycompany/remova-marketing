@@ -25,6 +25,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const description = `Learn about ${post.title}. ${post.metaDescription}`;
     const publishedTime = `${post.date}T00:00:00.000Z`;
     const modifiedTime = `${post.lastModified ?? post.date}T00:00:00.000Z`;
+    const heroImage = post.images?.find((image) => image.hero);
+    const ogVideoUrl = post.video ? absoluteUrl(post.video.contentUrl) : undefined;
+    const ogImage = post.video
+        ? {
+            url: absoluteUrl(post.video.thumbnailUrl),
+            width: 1280,
+            height: 720,
+            alt: post.video.title,
+        }
+        : heroImage
+            ? {
+                url: absoluteUrl(heroImage.src),
+                width: 1200,
+                height: 630,
+                alt: heroImage.alt,
+            }
+            : DEFAULT_OG_IMAGE;
+
     return {
         title,
         description,
@@ -40,14 +58,36 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             description,
             url: absoluteUrl(`/blog/${post.slug}`),
             siteName: SITE_NAME,
-            images: [DEFAULT_OG_IMAGE],
+            images: [ogImage],
+            videos: post.video && ogVideoUrl
+                ? [
+                    {
+                        url: ogVideoUrl,
+                        secureUrl: ogVideoUrl,
+                        type: "video/mp4",
+                        width: 1280,
+                        height: 720,
+                    },
+                ]
+                : undefined,
             type: "article",
             publishedTime,
             modifiedTime,
             authors: [post.author ?? "Remova"],
             section: post.category,
         },
-        twitter: { card: "summary_large_image", title, description, images: [DEFAULT_OG_IMAGE_URL] },
+        twitter: { card: "summary_large_image", title, description, images: [post.video ? absoluteUrl(post.video.thumbnailUrl) : heroImage ? absoluteUrl(heroImage.src) : DEFAULT_OG_IMAGE_URL] },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                "max-video-preview": -1,
+                "max-image-preview": "large",
+                "max-snippet": -1,
+            },
+        },
         alternates: {
             canonical: `/blog/${post.slug}`,
         },
@@ -113,6 +153,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const articleType = post.articleType ?? "BlogPosting";
     const dateModified = post.lastModified ?? post.date;
     const heroImage = post.images?.find((image) => image.hero);
+    const structuredImage = post.video?.thumbnailUrl ?? heroImage?.src ?? DEFAULT_OG_IMAGE_URL;
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -136,11 +177,26 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         },
         "datePublished": `${post.date}T00:00:00.000Z`,
         "dateModified": `${dateModified}T00:00:00.000Z`,
-        "image": DEFAULT_OG_IMAGE_URL,
+        "image": absoluteUrl(structuredImage),
         "keywords": post.category,
         "articleSection": post.category,
         "inLanguage": "en-US",
         "wordCount": post.sections.reduce((acc, s) => acc + s.content.split(" ").length, 0),
+        ...(post.video && {
+            "video": {
+                "@type": "VideoObject",
+                "@id": absoluteUrl(`/blog/${post.slug}#article-video`),
+                "name": post.video.title,
+                "description": post.video.description,
+                "thumbnailUrl": [absoluteUrl(post.video.thumbnailUrl)],
+                "uploadDate": post.video.uploadDate,
+                "duration": post.video.duration,
+                "contentUrl": absoluteUrl(post.video.contentUrl),
+                "embedUrl": absoluteUrl(`/blog/${post.slug}#article-video`),
+                "transcript": post.video.transcript,
+                "keywords": [post.title, post.category, "Remova", "enterprise AI governance"].join(", "),
+            },
+        }),
     };
 
     const breadcrumbLd = {
@@ -245,6 +301,26 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             />
                             <figcaption className="border-t border-slate-200 dark:border-white/10 px-4 py-3 text-sm font-medium text-slate-500 dark:text-slate-400">
                                 {heroImage.caption}
+                            </figcaption>
+                        </figure>
+                    )}
+
+                    {post.video && (
+                        <figure id="article-video" className="mt-12 overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 bg-slate-950 shadow-2xl shadow-slate-900/10">
+                            <video
+                                className="block aspect-video w-full"
+                                controls
+                                preload="metadata"
+                                poster={post.video.thumbnailUrl}
+                                aria-label={post.video.title}
+                            >
+                                <source src={post.video.contentUrl} type="video/mp4" />
+                                {post.video.captionsUrl && (
+                                    <track src={post.video.captionsUrl} kind="captions" srcLang="en" label="English" default />
+                                )}
+                            </video>
+                            <figcaption className="border-t border-white/10 bg-white px-4 py-3 text-sm font-medium text-slate-600 dark:bg-[#131314] dark:text-slate-300">
+                                {post.video.description}
                             </figcaption>
                         </figure>
                     )}
