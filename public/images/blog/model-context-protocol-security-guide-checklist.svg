@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="model context protocol implementation checklist">
+        
+        <style>
+            .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
+            .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #111827; }
+            .subtitle { font: 800 24px Inter, Arial, sans-serif; fill: #334155; }
+            .body { font: 700 22px Inter, Arial, sans-serif; fill: #475569; }
+            .small { font: 800 18px Inter, Arial, sans-serif; fill: #64748b; }
+            .label { font: 900 16px Inter, Arial, sans-serif; fill: #64748b; }
+            .metric { font: 950 28px Inter, Arial, sans-serif; }
+            .node { font: 950 23px Inter, Arial, sans-serif; fill: #111827; }
+            .check { font: 800 18px Inter, Arial, sans-serif; fill: #334155; }
+        </style>
+        <defs>
+            <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+                <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#e8eef6" stroke-width="1"/>
+            </pattern>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+                <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.13"/>
+            </filter>
+        </defs>
+    
+        <rect width="1200" height="630" fill="#ffffff"/>
+        <rect width="1200" height="630" fill="url(#grid)"/>
+        <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
+        <text class="eyebrow" x="112" y="126">Implementation checklist</text>
+        <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
+        <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
+        
+                <circle cx="128" cy="184" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="190" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="192"><tspan x="168" dy="0">Inventory approved MCP servers, owners, transports, scopes, and exposed tools.</tspan></text>
+            
+                <circle cx="128" cy="232" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="238" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="240"><tspan x="168" dy="0">Require secure authorization for remote MCP servers and sensitive resources.</tspan></text>
+            
+                <circle cx="128" cy="280" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="286" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="288"><tspan x="168" dy="0">Classify tools by data access, write capability, external reach, and business</tspan><tspan x="168" dy="22">impact.</tspan></text>
+            
+                <circle cx="128" cy="344" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="350" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="352"><tspan x="168" dy="0">Block unapproved MCP servers and log tool-call denials.</tspan></text>
+            
+                <circle cx="128" cy="392" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="398" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="400"><tspan x="168" dy="0">Review MCP server changes before adding new tools or data sources.</tspan></text>
+            
+    </svg>

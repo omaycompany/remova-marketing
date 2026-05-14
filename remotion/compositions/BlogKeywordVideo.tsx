@@ -40,7 +40,6 @@ export const BlogKeywordVideo = (rawProps: Record<string, unknown>) => {
         volume = 14800,
         cpc = "$3.51-$28.77",
         competition = "Medium",
-        angle = "Enterprise AI governance guide",
         controlGoal = "Make AI adoption visible, enforceable, measurable, and useful.",
         primaryControl = "Enterprise AI control layer",
         checklist = [
@@ -75,10 +74,9 @@ export const BlogKeywordVideo = (rawProps: Record<string, unknown>) => {
                 <div style={{ ...panel, opacity: intro, transform: `translateY(${interpolate(intro, [0, 1], [28, 0])}px)` }}>
                     <div style={eyebrow}>{keyword}</div>
                     <div style={{ fontSize: 56, lineHeight: 0.94, letterSpacing: 0, fontWeight: 950, maxWidth: 660 }}>{title}</div>
-                    <div style={{ marginTop: 24, fontSize: 24, lineHeight: 1.24, fontWeight: 750, color: colors.text }}>{angle}</div>
-                    <div style={{ marginTop: 30, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+                    <div style={{ marginTop: 36, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
                         <Metric label="Monthly searches" value={volume.toLocaleString("en-US")} color={colors.blue} />
-                        <Metric label="CPC range" value={cpc} color={colors.green} />
+                        <Metric label="CPC signal" value={cpc} color={colors.green} />
                         <Metric label="Competition" value={competition} color={colors.amber} />
                     </div>
                 </div>

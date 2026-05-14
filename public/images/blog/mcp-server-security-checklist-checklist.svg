@@ -26,26 +26,25 @@
         <text class="eyebrow" x="112" y="126">Implementation checklist</text>
         <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
         <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
-        <text class="subtitle" x="112" y="156"><tspan x="112" dy="0">MCP Server Security Checklist for Enterprise</tspan><tspan x="112" dy="31">Teams</tspan></text>
         
-                <circle cx="128" cy="227" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="233" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="235"><tspan x="168" dy="0">Inventory every MCP server, owner, transport, and exposed tool.</tspan></text>
+                <circle cx="128" cy="184" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="190" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="192"><tspan x="168" dy="0">Inventory every MCP server, owner, transport, and exposed tool.</tspan></text>
             
-                <circle cx="128" cy="275" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="281" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="283"><tspan x="168" dy="0">Require authentication and authorization for restricted resources.</tspan></text>
+                <circle cx="128" cy="232" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="238" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="240"><tspan x="168" dy="0">Require authentication and authorization for restricted resources.</tspan></text>
             
-                <circle cx="128" cy="323" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="329" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="331"><tspan x="168" dy="0">Use narrow scopes and separate read, write, admin, and execution tools.</tspan></text>
+                <circle cx="128" cy="280" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="286" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="288"><tspan x="168" dy="0">Use narrow scopes and separate read, write, admin, and execution tools.</tspan></text>
             
-                <circle cx="128" cy="371" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="377" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="379"><tspan x="168" dy="0">Validate tool arguments and block command injection patterns.</tspan></text>
+                <circle cx="128" cy="328" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="334" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="336"><tspan x="168" dy="0">Validate tool arguments and block command injection patterns.</tspan></text>
             
-                <circle cx="128" cy="419" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="425" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="427"><tspan x="168" dy="0">Log prompts, tool calls, arguments, responses, and approval decisions.</tspan></text>
+                <circle cx="128" cy="376" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="382" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="384"><tspan x="168" dy="0">Log prompts, tool calls, arguments, responses, and approval decisions.</tspan></text>
             
     </svg>

@@ -241,6 +241,26 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         })),
     } : null;
 
+    const articleVideo = () => post.video ? (
+        <figure id="article-video" className="overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 bg-slate-950 shadow-2xl shadow-slate-900/10">
+            <video
+                className="block aspect-video w-full"
+                controls
+                preload="metadata"
+                poster={post.video.thumbnailUrl}
+                aria-label={post.video.title}
+            >
+                <source src={post.video.contentUrl} type="video/mp4" />
+                {post.video.captionsUrl && (
+                    <track src={post.video.captionsUrl} kind="captions" srcLang="en" label="English" default />
+                )}
+            </video>
+            <figcaption className="border-t border-white/10 bg-white px-4 py-3 text-sm font-medium text-slate-600 dark:bg-[#131314] dark:text-slate-300">
+                {post.video.description}
+            </figcaption>
+        </figure>
+    ) : null;
+
 
     return (
         <div className="flex flex-col">
@@ -305,26 +325,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         </figure>
                     )}
 
-                    {post.video && (
-                        <figure id="article-video" className="mt-12 overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 bg-slate-950 shadow-2xl shadow-slate-900/10">
-                            <video
-                                className="block aspect-video w-full"
-                                controls
-                                preload="metadata"
-                                poster={post.video.thumbnailUrl}
-                                aria-label={post.video.title}
-                            >
-                                <source src={post.video.contentUrl} type="video/mp4" />
-                                {post.video.captionsUrl && (
-                                    <track src={post.video.captionsUrl} kind="captions" srcLang="en" label="English" default />
-                                )}
-                            </video>
-                            <figcaption className="border-t border-white/10 bg-white px-4 py-3 text-sm font-medium text-slate-600 dark:bg-[#131314] dark:text-slate-300">
-                                {post.video.description}
-                            </figcaption>
-                        </figure>
-                    )}
-
                     {/* TL;DR Section */}
                     <div className="mt-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
                         <h2 className="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4 flex items-center gap-2">
@@ -368,6 +368,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                                         ))}
                                     </div>
                                 </div>
+
+                                {i === 0 && articleVideo()}
 
                                 {sectionImages.map((image) => (
                                     <figure key={image.src} className="overflow-hidden rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5">

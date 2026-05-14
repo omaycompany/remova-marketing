@@ -25,9 +25,15 @@ const commonSources = {
     nist: { label: "NIST AI RMF", href: "https://www.nist.gov/itl/ai-risk-management-framework" },
     owaspLlm: { label: "OWASP Top 10 for LLM Applications", href: "https://owasp.org/www-project-top-10-for-large-language-model-applications/" },
     owaspMcp: { label: "OWASP MCP Top 10", href: "https://owasp.org/www-project-mcp-top-10/" },
+    mcpIntro: { label: "Model Context Protocol documentation", href: "https://modelcontextprotocol.io/docs/getting-started/intro" },
     mcpAuth: { label: "MCP authorization specification", href: "https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization" },
     euAiAct: { label: "EU AI Act overview", href: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
+    euDataProtection: { label: "EU data protection legal framework", href: "https://commission.europa.eu/law/law-topic/data-protection/legal-framework-eu-data-protection_en" },
+    nistCyber: { label: "NIST Cybersecurity Framework", href: "https://www.nist.gov/cyberframework" },
     openAiData: { label: "OpenAI business data commitments", href: "https://openai.com/business-data/" },
+    claudeRetention: { label: "Claude API data retention", href: "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention" },
+    microsoftCopilotEdp: { label: "Microsoft 365 Copilot enterprise data protection", href: "https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" },
+    githubCopilotContentExclusion: { label: "GitHub Copilot content exclusion", href: "https://docs.github.com/en/copilot/concepts/context/content-exclusion" },
 };
 
 const commonInternal = {
@@ -1123,6 +1129,618 @@ export const keywordPostData: KeywordPostData[] = [
             "Focusing only on text chat",
             "Leaving code, images, audio, video, and agents out of scope",
             "Failing to update policy after model and provider changes"
+        ]
+    },
+    {
+        slug: "generative-ai-enterprise-governance",
+        keyword: "generative ai",
+        title: "Generative AI Governance Guide for Enterprise Teams",
+        metaDescription: "Govern generative AI with policies, approved workflows, data protection, model routing, budgets, and audit evidence across the enterprise.",
+        category: "Governance",
+        volume: 79000,
+        cpc: "$4.26-$8.47",
+        competition: "Medium",
+        angle: "Generative AI governance for enterprises",
+        reader: "CIOs, CISOs, legal leaders, compliance owners, and AI program teams",
+        coreProblem: "Generative AI adoption spreads across writing, coding, analysis, search, images, meeting notes, and agents faster than traditional policy programs can govern it.",
+        riskEvent: "employees use different generative AI tools for customer data, contracts, code, and strategy work before the company has approved models, logging, or review controls",
+        controlGoal: "turn generative AI adoption into approved workflows with enforceable policies and evidence",
+        primaryControl: "generative AI control layer",
+        sourceLinks: [commonSources.nist, commonSources.euAiAct, commonSources.owaspLlm],
+        internalLinks: [commonInternal.safeChat, commonInternal.policy, commonInternal.redaction, commonInternal.audit],
+        checklist: [
+            "Inventory generative AI usage across chat, APIs, copilots, files, and agents.",
+            "Define allowed use cases by data class, department, model, and review requirement.",
+            "Route approved workflows through governed model and data controls.",
+            "Require logs for prompts, policy decisions, exceptions, costs, and output reviews.",
+            "Review adoption, incidents, and policy drift on a monthly governance cadence."
+        ],
+        metrics: [
+            "Approved generative AI workflows by department",
+            "Sensitive data redactions before model calls",
+            "Policy exception volume by use case",
+            "Audit evidence completeness for AI controls"
+        ],
+        pitfalls: [
+            "Treating generative AI as one tool instead of many workflows",
+            "Approving usage without model routing and data controls",
+            "Letting pilots become production systems without evidence"
+        ]
+    },
+    {
+        slug: "eu-ai-act-compliance-guide",
+        keyword: "eu ai act",
+        title: "EU AI Act Compliance Guide for Enterprise AI Teams",
+        metaDescription: "Prepare for EU AI Act compliance with AI inventory, risk classification, policy controls, evidence, and governed Remova workflows.",
+        category: "Compliance",
+        volume: 14700,
+        cpc: "$4.12-$5.00",
+        competition: "Low",
+        angle: "EU AI Act compliance readiness",
+        reader: "legal, compliance, risk, security, and AI governance teams",
+        coreProblem: "The EU AI Act pushes organizations to understand where AI is used, how risk is classified, and which controls prove that systems are managed responsibly.",
+        riskEvent: "a business unit deploys an AI workflow that affects customers or employees before legal and compliance teams can classify risk, document obligations, or preserve evidence",
+        controlGoal: "map AI systems to risk categories, owners, controls, and reusable compliance evidence",
+        primaryControl: "EU AI Act AI system inventory",
+        sourceLinks: [commonSources.euAiAct, commonSources.nist, commonSources.iso42001],
+        internalLinks: [commonInternal.compliance, commonInternal.audit, commonInternal.modelGovernance, commonInternal.policy],
+        checklist: [
+            "Build an inventory of AI systems, models, workflows, users, and data classes.",
+            "Classify AI use cases by risk tier and regulatory exposure.",
+            "Assign owners for documentation, human oversight, monitoring, and exceptions.",
+            "Connect each policy obligation to a runtime control and evidence source.",
+            "Review high-risk changes before model, data, or workflow updates go live."
+        ],
+        metrics: [
+            "AI systems classified by risk tier",
+            "High-risk workflows with assigned owners",
+            "Evidence completeness by obligation",
+            "Open exceptions past review SLA"
+        ],
+        pitfalls: [
+            "Waiting for legal review after AI workflows are already live",
+            "Tracking systems in spreadsheets without runtime evidence",
+            "Ignoring employee-facing copilots and internal agents"
+        ]
+    },
+    {
+        slug: "ai-agent-enterprise-governance-guide",
+        keyword: "ai agent",
+        title: "AI Agent Governance Guide for Enterprise Teams",
+        metaDescription: "Govern AI agents with scoped tools, approval gates, identity, budgets, prompt controls, and audit trails before autonomous workflows scale.",
+        category: "Security",
+        volume: 60500,
+        cpc: "$34.35",
+        competition: "Medium",
+        angle: "AI agent governance and security checklist",
+        reader: "AI platform teams, security engineers, CISOs, product owners, and operations leaders",
+        coreProblem: "An AI agent can take actions across tools, data, and business systems, so the risk is no longer limited to a single model response.",
+        riskEvent: "an agent reads untrusted context, calls a sensitive tool, updates a system of record, or sends information outside the company without enough approval or logging",
+        controlGoal: "make every agent action scoped, permissioned, observable, and reversible",
+        primaryControl: "agent tool permission and approval policy",
+        sourceLinks: [commonSources.owaspLlm, commonSources.nist, commonSources.mcpAuth],
+        internalLinks: [commonInternal.rbac, commonInternal.api, commonInternal.policy, commonInternal.audit],
+        checklist: [
+            "Define which tools, data stores, and actions each agent can access.",
+            "Separate read-only, draft, approval-required, and autonomous actions.",
+            "Apply identity, role access, budgets, and policy checks before tool calls.",
+            "Log prompts, retrieved context, tool requests, denials, approvals, and outputs.",
+            "Run red-team tests for prompt injection, excessive agency, and data leakage."
+        ],
+        metrics: [
+            "Agent tool calls by risk tier",
+            "Denied or approval-required actions",
+            "Agent runs with complete audit trails",
+            "Incidents caused by tool or permission drift"
+        ],
+        pitfalls: [
+            "Giving agents broad API keys instead of scoped permissions",
+            "Letting the model decide its own authority",
+            "Skipping rollback, review, and incident playbooks"
+        ]
+    },
+    {
+        slug: "model-context-protocol-security-guide",
+        keyword: "model context protocol",
+        title: "Model Context Protocol Security Guide for Enterprise Teams",
+        metaDescription: "Secure Model Context Protocol adoption with server inventory, OAuth, tool scopes, prompt injection controls, and audit evidence.",
+        category: "Security",
+        volume: 18100,
+        cpc: "$8.63",
+        competition: "Low",
+        angle: "Model Context Protocol enterprise security guide",
+        reader: "AI platform teams, security architects, developer productivity teams, and CISOs",
+        coreProblem: "Model Context Protocol makes tools and data easier for AI systems to reach, which also makes authorization, server trust, and tool misuse harder to govern.",
+        riskEvent: "a user connects an MCP server that exposes sensitive data or privileged tools to an AI client without inventory, scopes, approval, or audit logs",
+        controlGoal: "govern MCP servers as enterprise integration points with explicit trust and permission boundaries",
+        primaryControl: "MCP server inventory and authorization control",
+        sourceLinks: [commonSources.mcpIntro, commonSources.mcpAuth, commonSources.owaspMcp],
+        internalLinks: [commonInternal.api, commonInternal.rbac, commonInternal.audit, commonInternal.policy],
+        checklist: [
+            "Inventory approved MCP servers, owners, transports, scopes, and exposed tools.",
+            "Require secure authorization for remote MCP servers and sensitive resources.",
+            "Classify tools by data access, write capability, external reach, and business impact.",
+            "Block unapproved MCP servers and log tool-call denials.",
+            "Review MCP server changes before adding new tools or data sources."
+        ],
+        metrics: [
+            "Approved MCP servers by owner",
+            "Tool calls denied by policy",
+            "MCP servers without current review",
+            "Sensitive tool scopes used by agents"
+        ],
+        pitfalls: [
+            "Treating MCP servers like harmless developer plugins",
+            "Approving servers without tool-level scopes",
+            "Forgetting prompt injection risk from tool outputs"
+        ]
+    },
+    {
+        slug: "prompt-engineering-policy-guide",
+        keyword: "prompt engineering",
+        title: "Prompt Engineering Policy Guide for Enterprise Teams",
+        metaDescription: "Turn prompt engineering into governed AI workflows with reusable templates, data rules, review gates, and audit trails.",
+        category: "Policy",
+        volume: 33100,
+        cpc: "$7.01",
+        competition: "Medium",
+        angle: "Prompt engineering policy for enterprise teams",
+        reader: "AI enablement teams, department leaders, security, legal, and operations owners",
+        coreProblem: "Prompt engineering creates business value, but unmanaged prompts can leak data, create inconsistent outputs, and hide risky decision logic in individual user behavior.",
+        riskEvent: "teams share powerful prompts in docs, Slack, or personal notebooks that include sensitive examples, unsafe instructions, or unapproved model routes",
+        controlGoal: "convert useful prompts into approved, reusable, policy-aware workflows",
+        primaryControl: "prompt template governance",
+        sourceLinks: [commonSources.nist, commonSources.owaspLlm, commonSources.openAiData],
+        internalLinks: [commonInternal.policy, commonInternal.safeChat, commonInternal.redaction, commonInternal.audit],
+        checklist: [
+            "Collect high-value prompts and classify their data, output, and review needs.",
+            "Turn repeatable prompts into approved templates or preset workflows.",
+            "Add data handling, model route, and human review rules to each template.",
+            "Prevent sensitive examples from being copied into public or personal tools.",
+            "Track prompt usage, edits, exceptions, and output review outcomes."
+        ],
+        metrics: [
+            "Approved prompt templates by workflow",
+            "Template adoption by department",
+            "Sensitive prompt redactions",
+            "Output review failures by template"
+        ],
+        pitfalls: [
+            "Training everyone to prompt without giving them safe workflows",
+            "Embedding confidential examples in shared prompt libraries",
+            "Letting prompt templates bypass legal and security review"
+        ]
+    },
+    {
+        slug: "large-language-models-enterprise-governance",
+        keyword: "large language models",
+        title: "Large Language Models Governance Guide for Enterprise Teams",
+        metaDescription: "Govern large language models with approved use cases, model routing, redaction, access control, budgets, and audit-ready evidence.",
+        category: "Governance",
+        volume: 27100,
+        cpc: "$8.10",
+        competition: "Low",
+        angle: "Large language models governance guide",
+        reader: "CIOs, AI platform teams, CISOs, compliance leaders, and enterprise architects",
+        coreProblem: "Large language models are now embedded into apps, copilots, agents, APIs, and workflows, but many organizations still govern them as isolated experiments.",
+        riskEvent: "different teams use different LLMs for regulated data, customer work, code, and internal knowledge without a shared approval or evidence model",
+        controlGoal: "standardize LLM use through approved routes, controls, and performance evidence",
+        primaryControl: "LLM model routing and evidence policy",
+        sourceLinks: [commonSources.nist, commonSources.owaspLlm, commonSources.iso42001],
+        internalLinks: [commonInternal.modelGovernance, commonInternal.redaction, commonInternal.budgets, commonInternal.audit],
+        checklist: [
+            "Create an approved LLM catalog with owners, use cases, and data limits.",
+            "Route requests by data class, department, risk tier, and model capability.",
+            "Apply redaction, policy checks, and logging before model calls.",
+            "Track cost, quality, latency, incidents, and exception requests by model.",
+            "Review model changes before production workflows switch providers or versions."
+        ],
+        metrics: [
+            "LLM requests by approved model",
+            "Unapproved model attempts",
+            "Model cost by department",
+            "Policy events by model and workflow"
+        ],
+        pitfalls: [
+            "Approving models without use-case boundaries",
+            "Letting teams choose providers based only on convenience",
+            "Skipping evidence when model versions change"
+        ]
+    },
+    {
+        slug: "openai-api-governance-guide",
+        keyword: "openai api",
+        title: "OpenAI API Governance Guide for Enterprise Teams",
+        metaDescription: "Use OpenAI API safely with policy enforcement, data controls, model routing, budgets, logging, and audit evidence.",
+        category: "Developer Governance",
+        volume: 49500,
+        cpc: "$9.59",
+        competition: "Low",
+        angle: "OpenAI API governance, logging, and data controls",
+        reader: "engineering leaders, platform teams, security architects, and AI product owners",
+        coreProblem: "OpenAI API adoption often starts with a developer key and grows into production workflows before the company has centralized controls for data, spend, and evidence.",
+        riskEvent: "teams send customer data, code, or regulated documents to the OpenAI API from separate apps without consistent redaction, access control, or logs",
+        controlGoal: "route OpenAI API usage through a governed control layer with consistent policy and evidence",
+        primaryControl: "OpenAI API gateway policy",
+        sourceLinks: [commonSources.openAiData, commonSources.nist, commonSources.owaspLlm],
+        internalLinks: [commonInternal.api, commonInternal.redaction, commonInternal.budgets, commonInternal.audit],
+        checklist: [
+            "Centralize OpenAI API access behind approved keys, projects, and routes.",
+            "Classify prompts and files before sending them to any model endpoint.",
+            "Apply model, budget, retention, and logging rules by application and team.",
+            "Require review for workflows that process regulated or customer data.",
+            "Monitor exceptions, spend spikes, blocked prompts, and model changes."
+        ],
+        metrics: [
+            "OpenAI API calls by app and team",
+            "Sensitive data redactions before API calls",
+            "Monthly spend by project",
+            "Applications without complete audit logs"
+        ],
+        pitfalls: [
+            "Letting every developer manage their own API key",
+            "Shipping prototypes without production data controls",
+            "Treating API logs as audit evidence without prompt-level policy context"
+        ]
+    },
+    {
+        slug: "chatgpt-api-security-guide",
+        keyword: "chatgpt api",
+        title: "ChatGPT API Security Guide for Enterprise Teams",
+        metaDescription: "Secure ChatGPT API usage with redaction, identity, approved model routes, prompt injection controls, budgets, and audit trails.",
+        category: "Security",
+        volume: 22200,
+        cpc: "$4.70",
+        competition: "Low",
+        angle: "ChatGPT API security and compliance controls",
+        reader: "security teams, developers, AI platform owners, and compliance leaders",
+        coreProblem: "ChatGPT API integrations can move from prototypes to customer-facing workflows quickly, but security controls often remain app-specific and inconsistent.",
+        riskEvent: "a product feature sends sensitive user content or retrieved documents through a ChatGPT API call without redaction, tool restrictions, or policy logging",
+        controlGoal: "secure every ChatGPT API call before data leaves the enterprise boundary",
+        primaryControl: "ChatGPT API request inspection and policy enforcement",
+        sourceLinks: [commonSources.openAiData, commonSources.owaspLlm, commonSources.nist],
+        internalLinks: [commonInternal.api, commonInternal.policy, commonInternal.redaction, commonInternal.audit],
+        checklist: [
+            "Route ChatGPT API calls through centralized policy enforcement.",
+            "Detect PII, secrets, code, contracts, and customer data before model calls.",
+            "Apply prompt injection and tool-use controls to retrieved context.",
+            "Log request metadata, policy outcomes, model route, and exceptions.",
+            "Set budget and rate controls by app, environment, and department."
+        ],
+        metrics: [
+            "ChatGPT API calls by environment",
+            "Blocked or redacted requests",
+            "Prompt injection detections",
+            "Policy exceptions by app owner"
+        ],
+        pitfalls: [
+            "Assuming API usage is safer than employee chat by default",
+            "Skipping governance in staging and internal tools",
+            "Letting app teams define inconsistent retention and logging rules"
+        ]
+    },
+    {
+        slug: "claude-api-governance-guide",
+        keyword: "claude api",
+        title: "Claude API Governance Guide for Enterprise Teams",
+        metaDescription: "Govern Claude API usage with provider policy, data retention review, redaction, access control, model routing, and audit evidence.",
+        category: "Developer Governance",
+        volume: 14800,
+        cpc: "$8.99",
+        competition: "Low",
+        angle: "Claude API governance for enterprise teams",
+        reader: "AI platform teams, engineering leaders, compliance owners, and security architects",
+        coreProblem: "Claude API usage raises the same governance questions as other LLM APIs: which data is allowed, who owns retention decisions, and how evidence is preserved.",
+        riskEvent: "a team chooses Claude for long-context analysis and uploads contracts, code, support tickets, or customer records without policy review or audit logging",
+        controlGoal: "make Claude API usage provider-aware, data-aware, and audit-ready",
+        primaryControl: "Claude API data handling and route policy",
+        sourceLinks: [commonSources.claudeRetention, commonSources.nist, commonSources.owaspLlm],
+        internalLinks: [commonInternal.api, commonInternal.modelGovernance, commonInternal.redaction, commonInternal.audit],
+        checklist: [
+            "Document approved Claude models, routes, apps, and data categories.",
+            "Review retention, privacy, and contractual requirements before production use.",
+            "Apply redaction and policy checks before sending prompts or files.",
+            "Log model route, data class, policy outcome, and exception owner.",
+            "Compare Claude usage against other approved model providers each quarter."
+        ],
+        metrics: [
+            "Claude API usage by app",
+            "Sensitive files blocked or redacted",
+            "Provider-specific exceptions",
+            "Model route changes reviewed on schedule"
+        ],
+        pitfalls: [
+            "Assuming all model providers have identical data handling terms",
+            "Approving long-context uploads without file controls",
+            "Leaving provider selection to individual engineering teams"
+        ]
+    },
+    {
+        slug: "microsoft-365-copilot-governance-checklist",
+        keyword: "microsoft 365 copilot",
+        title: "Microsoft 365 Copilot Governance Checklist",
+        metaDescription: "Prepare Microsoft 365 Copilot governance with permissions review, data protection, sensitivity labels, audit evidence, and adoption controls.",
+        category: "Governance",
+        volume: 33100,
+        cpc: "$4.32",
+        competition: "Low",
+        angle: "Microsoft 365 Copilot governance checklist",
+        reader: "Microsoft 365 admins, CIOs, CISOs, compliance teams, and AI adoption leaders",
+        coreProblem: "Microsoft 365 Copilot can surface content from Microsoft Graph, so governance depends on permissions, labels, retention, audit, and user readiness before rollout.",
+        riskEvent: "employees discover sensitive documents, overshared SharePoint content, or regulated records through Copilot because permissions were never cleaned up",
+        controlGoal: "prepare Microsoft 365 data, permissions, and controls before Copilot becomes a daily workflow",
+        primaryControl: "Copilot readiness and permission review",
+        sourceLinks: [commonSources.microsoftCopilotEdp, commonSources.nist, commonSources.euDataProtection],
+        internalLinks: [commonInternal.rbac, commonInternal.audit, commonInternal.policy, commonInternal.analytics],
+        checklist: [
+            "Review SharePoint, Teams, OneDrive, and Graph permissions before rollout.",
+            "Confirm sensitivity labels, retention, DLP, and audit settings are working.",
+            "Define approved Copilot use cases by department and data class.",
+            "Train users on what Copilot can access and how to report oversharing.",
+            "Monitor adoption, sensitive results, permission drift, and exception requests."
+        ],
+        metrics: [
+            "Overshared sites remediated before rollout",
+            "Copilot users by department",
+            "Sensitive content events",
+            "Permission drift findings after launch"
+        ],
+        pitfalls: [
+            "Licensing Copilot before cleaning up permissions",
+            "Treating Microsoft 365 controls as separate from AI governance",
+            "Ignoring user education around inherited access"
+        ]
+    },
+    {
+        slug: "github-copilot-policy-guide",
+        keyword: "github copilot",
+        title: "GitHub Copilot Policy Guide for Enterprise Code Teams",
+        metaDescription: "Govern GitHub Copilot with code policy, content exclusion, access control, logging, secure review, and developer adoption metrics.",
+        category: "Security",
+        volume: 74000,
+        cpc: "$5.80",
+        competition: "Low",
+        angle: "GitHub Copilot policy and code leakage controls",
+        reader: "engineering leaders, AppSec teams, CISOs, developer platform teams, and compliance owners",
+        coreProblem: "GitHub Copilot can accelerate development, but code assistants need clear rules for repository access, secrets, proprietary code, generated output, and review.",
+        riskEvent: "developers use Copilot in repositories containing secrets, regulated code, or proprietary algorithms without content exclusions, review requirements, or policy evidence",
+        controlGoal: "make AI-assisted coding productive while protecting sensitive repositories and code quality",
+        primaryControl: "AI coding assistant policy",
+        sourceLinks: [commonSources.githubCopilotContentExclusion, commonSources.nistCyber, commonSources.owaspLlm],
+        internalLinks: [commonInternal.policy, commonInternal.rbac, commonInternal.audit, commonInternal.analytics],
+        checklist: [
+            "Define which teams, repositories, and data classes can use Copilot.",
+            "Configure content exclusions for sensitive files and repositories.",
+            "Require secure code review for AI-assisted changes.",
+            "Monitor secrets, license, and vulnerable-pattern findings in generated code.",
+            "Track adoption, productivity, policy exceptions, and security review outcomes."
+        ],
+        metrics: [
+            "Copilot adoption by engineering team",
+            "Repositories covered by content exclusion",
+            "AI-assisted changes with required review",
+            "Security findings tied to generated code"
+        ],
+        pitfalls: [
+            "Rolling out coding assistants without repository-level rules",
+            "Assuming generated code is safe because it compiles",
+            "Forgetting secrets, tests, licenses, and dependency risk"
+        ]
+    },
+    {
+        slug: "retrieval-augmented-generation-governance",
+        keyword: "retrieval augmented generation",
+        title: "Retrieval Augmented Generation Governance Guide",
+        metaDescription: "Govern retrieval augmented generation with data source approval, access control, freshness, redaction, hallucination controls, and audit logs.",
+        category: "Governance",
+        volume: 12100,
+        cpc: "$9.96",
+        competition: "Medium",
+        angle: "RAG governance and data leakage prevention",
+        reader: "AI platform teams, knowledge management owners, security architects, and compliance teams",
+        coreProblem: "Retrieval augmented generation improves AI answers by adding enterprise context, but it also makes permissions, data quality, and source traceability central governance problems.",
+        riskEvent: "a RAG app retrieves confidential documents for a user who should not see them, then summarizes the content without source-level access checks",
+        controlGoal: "make retrieval permission-aware, source-grounded, fresh, and auditable",
+        primaryControl: "RAG source and permission governance",
+        sourceLinks: [commonSources.nist, commonSources.owaspLlm, commonSources.euDataProtection],
+        internalLinks: [commonInternal.rbac, commonInternal.redaction, commonInternal.audit, commonInternal.modelGovernance],
+        checklist: [
+            "Inventory approved retrieval sources, owners, freshness rules, and access boundaries.",
+            "Enforce document-level permissions before retrieval and response generation.",
+            "Redact sensitive content before model calls when policy requires it.",
+            "Return citations or source references for important enterprise answers.",
+            "Log retrieval sources, user identity, policy decisions, and output reviews."
+        ],
+        metrics: [
+            "Retrieval requests by source",
+            "Permission-denied retrieval attempts",
+            "Stale or unowned data sources",
+            "Cited answers versus uncited answers"
+        ],
+        pitfalls: [
+            "Indexing documents without preserving access controls",
+            "Treating vector search results as safe by default",
+            "Ignoring source freshness and deletion requirements"
+        ]
+    },
+    {
+        slug: "rag-ai-security-checklist",
+        keyword: "rag ai",
+        title: "RAG AI Security Checklist for Enterprise Teams",
+        metaDescription: "Secure RAG AI systems with trusted sources, document permissions, prompt injection controls, redaction, citations, and audit evidence.",
+        category: "Security",
+        volume: 12100,
+        cpc: "$22.26",
+        competition: "Medium",
+        angle: "RAG AI security checklist",
+        reader: "security engineers, AI platform teams, knowledge owners, and CISOs",
+        coreProblem: "RAG AI systems combine retrieval, prompts, embeddings, and generation, which means a weakness in any layer can leak data or produce unsafe answers.",
+        riskEvent: "a malicious or stale document is retrieved into a prompt and causes the model to reveal restricted context, follow hostile instructions, or cite unreliable information",
+        controlGoal: "secure the retrieval path before the model sees enterprise context",
+        primaryControl: "RAG retrieval trust boundary",
+        sourceLinks: [commonSources.owaspLlm, commonSources.nist, commonSources.nistCyber],
+        internalLinks: [commonInternal.redaction, commonInternal.policy, commonInternal.rbac, commonInternal.audit],
+        checklist: [
+            "Approve and classify every RAG data source before indexing.",
+            "Preserve access controls from source systems through retrieval.",
+            "Filter retrieved content for prompt injection and sensitive data.",
+            "Require citations, confidence signals, and human review for high-risk answers.",
+            "Log retrieved chunks, policy outcomes, and user-visible citations."
+        ],
+        metrics: [
+            "RAG answers with citations",
+            "Prompt injection detections in retrieved context",
+            "Restricted chunks blocked before generation",
+            "High-risk answers reviewed by humans"
+        ],
+        pitfalls: [
+            "Indexing everything because storage is cheap",
+            "Trusting retrieved text as model instructions",
+            "Skipping deletion, retention, and access revocation checks"
+        ]
+    },
+    {
+        slug: "vector-database-security-guide",
+        keyword: "vector database",
+        title: "Vector Database Security Guide for Enterprise AI",
+        metaDescription: "Secure vector databases for enterprise AI with source controls, embedding governance, access boundaries, deletion handling, and audit trails.",
+        category: "Security",
+        volume: 12100,
+        cpc: "$16.37",
+        competition: "Medium",
+        angle: "Vector database security for AI apps",
+        reader: "AI platform engineers, data teams, security architects, and compliance owners",
+        coreProblem: "Vector databases often become the memory layer for AI apps, but embeddings, chunks, metadata, and source permissions are easy to under-govern.",
+        riskEvent: "sensitive documents are embedded into a vector database and remain retrievable after source access changes, deletion requests, or policy updates",
+        controlGoal: "treat vector stores as governed data systems with source lineage and access enforcement",
+        primaryControl: "vector store source and access governance",
+        sourceLinks: [commonSources.nistCyber, commonSources.owaspLlm, commonSources.euDataProtection],
+        internalLinks: [commonInternal.rbac, commonInternal.redaction, commonInternal.audit, commonInternal.modelGovernance],
+        checklist: [
+            "Track the source, owner, sensitivity, and retention rule for every indexed dataset.",
+            "Preserve document permissions in metadata and retrieval filters.",
+            "Define deletion and re-indexing workflows for changed or removed source data.",
+            "Protect embedding pipelines from sensitive data, poisoning, and unapproved sources.",
+            "Audit vector searches, returned chunks, policy denials, and admin changes."
+        ],
+        metrics: [
+            "Indexed datasets with owners",
+            "Retrievals filtered by access policy",
+            "Deletion requests completed",
+            "Vector store admin changes reviewed"
+        ],
+        pitfalls: [
+            "Assuming embeddings are not sensitive",
+            "Forgetting to remove deleted or permission-changed content",
+            "Separating vector security from app and model governance"
+        ]
+    },
+    {
+        slug: "ai-hallucination-risk-controls",
+        keyword: "ai hallucination",
+        title: "AI Hallucination Risk Controls for Enterprise Teams",
+        metaDescription: "Reduce AI hallucination risk with grounded sources, confidence thresholds, human review, policy controls, and audit-ready evidence.",
+        category: "Risk",
+        volume: 12100,
+        cpc: "$1.21",
+        competition: "Low",
+        angle: "AI hallucination risk controls and audit evidence",
+        reader: "risk leaders, legal teams, AI product owners, support leaders, and compliance teams",
+        coreProblem: "AI hallucination becomes an enterprise risk when generated answers influence customers, employees, legal work, finance decisions, or regulated operations.",
+        riskEvent: "an AI system produces a confident but false answer that is sent to a customer, used in a contract review, or copied into a business decision",
+        controlGoal: "separate low-risk drafting from answers that require grounding, confidence, or review",
+        primaryControl: "grounded answer and review policy",
+        sourceLinks: [commonSources.nist, commonSources.owaspLlm, commonSources.iso42001],
+        internalLinks: [commonInternal.policy, commonInternal.audit, commonInternal.modelGovernance, commonInternal.analytics],
+        checklist: [
+            "Classify outputs by business impact and review requirement.",
+            "Require grounding and citations for factual, legal, financial, or customer answers.",
+            "Set confidence thresholds and fallback paths for uncertain responses.",
+            "Log sources, prompts, outputs, reviews, corrections, and incidents.",
+            "Review repeated hallucination patterns by workflow and model route."
+        ],
+        metrics: [
+            "High-risk outputs reviewed",
+            "Answers with citations",
+            "Corrections after AI-generated output",
+            "Hallucination incidents by workflow"
+        ],
+        pitfalls: [
+            "Treating every AI answer as equal risk",
+            "Relying on user judgment without workflow controls",
+            "Failing to measure false answers after rollout"
+        ]
+    },
+    {
+        slug: "gdpr-compliance-ai-prompts",
+        keyword: "gdpr compliance",
+        title: "GDPR Compliance for AI Prompts and LLM Workflows",
+        metaDescription: "Support GDPR compliance in AI workflows with data minimization, redaction, lawful access, retention controls, and audit evidence.",
+        category: "Compliance",
+        volume: 12100,
+        cpc: "$19.56",
+        competition: "Medium",
+        angle: "GDPR compliance for employee AI and LLM prompts",
+        reader: "privacy teams, DPOs, legal teams, compliance owners, and security leaders",
+        coreProblem: "GDPR compliance becomes harder when personal data moves through prompts, files, copilots, RAG systems, and API calls outside normal data workflows.",
+        riskEvent: "an employee uploads personal data into an AI tool or API without a lawful purpose, minimization, retention rule, or audit record",
+        controlGoal: "make personal data handling explicit before AI prompts or files reach models",
+        primaryControl: "AI prompt data protection policy",
+        sourceLinks: [commonSources.euDataProtection, commonSources.nist, commonSources.openAiData],
+        internalLinks: [commonInternal.redaction, commonInternal.policy, commonInternal.audit, commonInternal.compliance],
+        checklist: [
+            "Identify where AI workflows process personal data or special-category data.",
+            "Apply data minimization and redaction before model calls.",
+            "Define approved models, regions, retention rules, and access paths.",
+            "Log personal data events, policy decisions, exceptions, and deletion actions.",
+            "Review AI workflows with privacy, legal, and security before expansion."
+        ],
+        metrics: [
+            "Personal data redactions in AI prompts",
+            "AI workflows with privacy review",
+            "Retention exceptions",
+            "Subject-rights requests involving AI logs"
+        ],
+        pitfalls: [
+            "Assuming employee prompts are outside privacy scope",
+            "Logging personal data without a retention plan",
+            "Forgetting vendors, APIs, and copilots in data maps"
+        ]
+    },
+    {
+        slug: "data-loss-prevention-ai-prompts",
+        keyword: "data loss prevention",
+        title: "Data Loss Prevention for AI Prompts and Copilots",
+        metaDescription: "Apply data loss prevention to AI prompts, copilots, APIs, and agents with redaction, policy enforcement, and audit evidence.",
+        category: "Security",
+        volume: 14800,
+        cpc: "$89.89",
+        competition: "Low",
+        angle: "Data loss prevention for AI prompts and copilots",
+        reader: "CISOs, security operations teams, DLP owners, AI platform teams, and compliance leaders",
+        coreProblem: "Traditional data loss prevention tools were not designed for natural-language prompts, long documents, model APIs, copilots, or agent tool calls.",
+        riskEvent: "a user pastes source code, customer records, credentials, contract terms, or financial data into an AI workflow that sends it to an external model",
+        controlGoal: "inspect and control sensitive data before it enters AI prompts, retrieval context, or tool calls",
+        primaryControl: "AI-native DLP and redaction",
+        sourceLinks: [commonSources.nistCyber, commonSources.owaspLlm, commonSources.euDataProtection],
+        internalLinks: [commonInternal.redaction, commonInternal.policy, commonInternal.audit, commonInternal.ciso],
+        checklist: [
+            "Define sensitive data classes for AI prompts, files, retrieval, and tool calls.",
+            "Detect secrets, PII, regulated data, source code, contracts, and customer records.",
+            "Redact, block, or reroute requests based on data class and model route.",
+            "Give users contextual feedback when a DLP policy changes the request.",
+            "Log detections, actions, exceptions, and repeat patterns for investigation."
+        ],
+        metrics: [
+            "Sensitive data detections by workflow",
+            "Redacted versus blocked AI requests",
+            "Repeat DLP events by user or team",
+            "Exception age for sensitive workflows"
+        ],
+        pitfalls: [
+            "Using legacy regex-only DLP for AI prompts",
+            "Blocking everything without a safe approved workflow",
+            "Ignoring files, retrieved chunks, tool outputs, and agent actions"
         ]
     }
 ];

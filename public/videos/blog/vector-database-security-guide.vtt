@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+Vector Database Security Guide for Enterprise AI. vector database has 12,100 monthly searches and clear enterprise intent.
+
+00:03.000 --> 00:06.000
+The primary control is vector store source and access governance: treat vector stores as governed data systems with source lineage and access enforcement.
+
+00:06.000 --> 00:09.000
+Use Remova to enforce policy, redaction, access, budgets, and audit trails. Sign up today.

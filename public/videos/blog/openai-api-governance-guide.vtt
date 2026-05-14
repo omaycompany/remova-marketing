@@ -1,0 +1,10 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+OpenAI API Governance Guide for Enterprise Teams. openai api has 49,500 monthly searches and clear enterprise intent.
+
+00:03.000 --> 00:06.000
+The primary control is openai api gateway policy: route OpenAI API usage through a governed control layer with consistent policy and evidence.
+
+00:06.000 --> 00:09.000
+Use Remova to enforce policy, redaction, access, budgets, and audit trails. Sign up today.

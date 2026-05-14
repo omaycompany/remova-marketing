@@ -26,26 +26,25 @@
         <text class="eyebrow" x="112" y="126">Implementation checklist</text>
         <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
         <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
-        <text class="subtitle" x="112" y="156"><tspan x="112" dy="0">LLM Observability vs AI Governance: What Is</tspan><tspan x="112" dy="31">the Difference?</tspan></text>
         
-                <circle cx="128" cy="227" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="233" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="235"><tspan x="168" dy="0">Define which metrics are for debugging and which are for governance.</tspan></text>
+                <circle cx="128" cy="184" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="190" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="192"><tspan x="168" dy="0">Define which metrics are for debugging and which are for governance.</tspan></text>
             
-                <circle cx="128" cy="275" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="281" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="283"><tspan x="168" dy="0">Route policy, redaction, budget, and model decisions before inference.</tspan></text>
+                <circle cx="128" cy="232" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="238" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="240"><tspan x="168" dy="0">Route policy, redaction, budget, and model decisions before inference.</tspan></text>
             
-                <circle cx="128" cy="323" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="329" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="331"><tspan x="168" dy="0">Restrict access to prompt content in observability tools.</tspan></text>
+                <circle cx="128" cy="280" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="286" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="288"><tspan x="168" dy="0">Restrict access to prompt content in observability tools.</tspan></text>
             
-                <circle cx="128" cy="371" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="377" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="379"><tspan x="168" dy="0">Feed recurring quality and risk issues into model and policy review.</tspan></text>
+                <circle cx="128" cy="328" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="334" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="336"><tspan x="168" dy="0">Feed recurring quality and risk issues into model and policy review.</tspan></text>
             
-                <circle cx="128" cy="419" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="425" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="427"><tspan x="168" dy="0">Tie telemetry to owners, workflows, and departments.</tspan></text>
+                <circle cx="128" cy="376" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="382" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="384"><tspan x="168" dy="0">Tie telemetry to owners, workflows, and departments.</tspan></text>
             
     </svg>

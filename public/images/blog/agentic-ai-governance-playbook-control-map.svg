@@ -24,25 +24,25 @@
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="126">Runtime control map</text>
-        <text class="subtitle" x="112" y="178"><tspan x="112" dy="0">govern agent autonomy with scoped tools, explicit</tspan><tspan x="112" dy="32">approvals, budgets, and audit trails</tspan></text>
         
-                <rect x="95" y="282" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
-                <text class="node" x="190" y="355" text-anchor="middle">Input</text>
-                <path d="M 285 345 L 347 345" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 341 329 L 365 345 L 341 361" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="95" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
+                <text class="node" x="190" y="261" text-anchor="middle">Input</text>
+                <path d="M 285 251 L 347 251" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 341 235 L 365 251 L 341 267" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
             
-                <rect x="365" y="282" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
-                <text class="node" x="460" y="355" text-anchor="middle">Policy</text>
-                <path d="M 555 345 L 617 345" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 611 329 L 635 345 L 611 361" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="365" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
+                <text class="node" x="460" y="261" text-anchor="middle">Policy</text>
+                <path d="M 555 251 L 617 251" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 611 235 L 635 251 L 611 267" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
             
-                <rect x="635" y="282" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
-                <text class="node" x="730" y="355" text-anchor="middle">Model</text>
-                <path d="M 825 345 L 887 345" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 881 329 L 905 345 L 881 361" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="635" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
+                <text class="node" x="730" y="261" text-anchor="middle">Model</text>
+                <path d="M 825 251 L 887 251" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 881 235 L 905 251 L 881 267" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
             
-                <rect x="905" y="282" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
-                <text class="node" x="1000" y="355" text-anchor="middle">Audit</text>
+                <rect x="905" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
+                <text class="node" x="1000" y="261" text-anchor="middle">Audit</text>
                 
             
-        <rect x="112" y="454" width="976" height="86" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
-        <text class="label" x="142" y="486">Primary control</text>
-        <text class="body" x="142" y="519"><tspan x="142" dy="0">agentic workflow governance</tspan></text>
+        <rect x="112" y="384" width="976" height="104" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+        <text class="label" x="142" y="416">Primary control</text>
+        <text class="body" x="142" y="449"><tspan x="142" dy="0">agentic workflow governance</tspan></text>
+        <text class="small" x="142" y="474"><tspan x="142" dy="0">Govern agent autonomy with scoped tools, explicit approvals, budgets, and audit trails</tspan></text>
     </svg>

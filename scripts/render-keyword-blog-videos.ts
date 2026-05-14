@@ -35,6 +35,10 @@ function escapeVtt(value: string) {
     return value.replace(/\s+/g, " ").trim();
 }
 
+function startSentence(value: string) {
+    return value ? `${value.charAt(0).toUpperCase()}${value.slice(1)}` : value;
+}
+
 function wrapWords(value: string, maxChars: number) {
     const words = value.replace(/\s+/g, " ").trim().split(" ");
     const lines: string[] = [];
@@ -145,30 +149,32 @@ function baseStyles() {
 }
 
 function buildHeroSvg(data: KeywordPostData) {
+    const titleLines = textLines(data.title, 31, 3);
+    const titleY = 204;
+    const titleLineHeight = 60;
+    const metricsY = Math.max(390, titleY + (titleLines.length - 1) * titleLineHeight + 90);
+
     return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${xmlEscape(data.title)}">
         ${baseStyles()}
         <rect width="1200" height="630" fill="#ffffff"/>
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="76" width="1060" height="478" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="132">${xmlEscape(data.keyword)} / ${xmlEscape(data.category)}</text>
-        ${multilineText({ value: data.title, x: 112, y: 208, maxChars: 30, lineHeight: 62, className: "title" })}
-        ${multilineText({ value: data.angle, x: 112, y: 374, maxChars: 48, lineHeight: 34, className: "subtitle" })}
-        ${metricCard("Monthly searches", data.volume.toLocaleString("en-US"), 112, 442, "#2563eb")}
-        ${metricCard("CPC range", data.cpc, 347, 442, "#10b981")}
-        ${metricCard("Competition", data.competition, 582, 442, "#f59e0b")}
-        <rect x="838" y="440" width="230" height="54" rx="27" fill="#111827"/>
-        <text x="868" y="475" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Sign up for Remova</text>
-        <text class="small" x="838" y="526">Policy, redaction, access, budgets, and audit trails.</text>
+        ${multilineTextFromLines({ lines: titleLines, x: 112, y: titleY, lineHeight: titleLineHeight, className: "title" })}
+        ${metricCard("Monthly searches", data.volume.toLocaleString("en-US"), 112, metricsY, "#2563eb")}
+        ${metricCard("CPC signal", data.cpc, 347, metricsY, "#10b981")}
+        ${metricCard("Competition", data.competition, 582, metricsY, "#f59e0b")}
+        <rect x="826" y="${metricsY}" width="244" height="54" rx="27" fill="#111827"/>
+        <text x="858" y="${metricsY + 35}" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Sign up for Remova</text>
+        ${multilineText({ value: "Policy, redaction, access, budgets, and audit trails.", x: 826, y: metricsY + 84, maxChars: 34, lineHeight: 22, className: "small", maxLines: 2 })}
     </svg>`;
 }
 
 function buildControlMapSvg(data: KeywordPostData) {
     const nodes = ["Input", "Policy", "Model", "Audit"];
-    const goalLines = textLines(data.controlGoal, 56, 3);
-    const goalY = 178;
-    const nodeY = Math.max(272, goalY + (goalLines.length - 1) * 32 + 72);
+    const nodeY = 188;
     const nodeCenterY = nodeY + 63;
-    const primaryY = Math.min(nodeY + 172, 462);
+    const primaryY = 384;
     const nodeMarkup = nodes
         .map((node, index) => {
             const x = 95 + index * 270;
@@ -187,18 +193,16 @@ function buildControlMapSvg(data: KeywordPostData) {
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="126">Runtime control map</text>
-        ${multilineTextFromLines({ lines: goalLines, x: 112, y: goalY, lineHeight: 32, className: "subtitle" })}
         ${nodeMarkup}
-        <rect x="112" y="${primaryY}" width="976" height="86" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+        <rect x="112" y="${primaryY}" width="976" height="104" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
         <text class="label" x="142" y="${primaryY + 32}">Primary control</text>
         ${multilineText({ value: data.primaryControl, x: 142, y: primaryY + 65, maxChars: 74, lineHeight: 27, className: "body", maxLines: 1 })}
+        ${multilineText({ value: startSentence(data.controlGoal), x: 142, y: primaryY + 90, maxChars: 94, lineHeight: 22, className: "small", maxLines: 1 })}
     </svg>`;
 }
 
 function buildChecklistSvg(data: KeywordPostData) {
-    const titleLines = textLines(data.title, 45, 2);
-    const titleY = 156;
-    let currentY = titleY + (titleLines.length - 1) * 31 + 48;
+    let currentY = 192;
     const items = data.checklist.slice(0, 5);
     const itemMarkup = items
         .map((item, index) => {
@@ -221,7 +225,6 @@ function buildChecklistSvg(data: KeywordPostData) {
         <text class="eyebrow" x="112" y="126">Implementation checklist</text>
         <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
         <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
-        ${multilineTextFromLines({ lines: titleLines, x: 112, y: titleY, lineHeight: 31, className: "subtitle" })}
         ${itemMarkup}
     </svg>`;
 }

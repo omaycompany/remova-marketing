@@ -26,26 +26,25 @@
         <text class="eyebrow" x="112" y="126">Implementation checklist</text>
         <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
         <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
-        <text class="subtitle" x="112" y="156"><tspan x="112" dy="0">Model Governance Explained for Enterprise AI</tspan></text>
         
-                <circle cx="128" cy="196" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="202" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="204"><tspan x="168" dy="0">Create approved, conditional, experimental, deprecated, and blocked model</tspan><tspan x="168" dy="22">states.</tspan></text>
+                <circle cx="128" cy="184" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="190" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="192"><tspan x="168" dy="0">Create approved, conditional, experimental, deprecated, and blocked model</tspan><tspan x="168" dy="22">states.</tspan></text>
             
-                <circle cx="128" cy="260" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="266" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="268"><tspan x="168" dy="0">Record provider, region, context, modality, cost, data terms, and owner.</tspan></text>
+                <circle cx="128" cy="248" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="254" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="256"><tspan x="168" dy="0">Record provider, region, context, modality, cost, data terms, and owner.</tspan></text>
             
-                <circle cx="128" cy="308" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="314" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="316"><tspan x="168" dy="0">Tie model access to roles, teams, data classes, and workflows.</tspan></text>
+                <circle cx="128" cy="296" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="302" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="304"><tspan x="168" dy="0">Tie model access to roles, teams, data classes, and workflows.</tspan></text>
             
-                <circle cx="128" cy="356" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="362" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="364"><tspan x="168" dy="0">Review models after provider, pricing, quality, or safety changes.</tspan></text>
+                <circle cx="128" cy="344" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="350" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="352"><tspan x="168" dy="0">Review models after provider, pricing, quality, or safety changes.</tspan></text>
             
-                <circle cx="128" cy="404" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="410" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="412"><tspan x="168" dy="0">Document fallback routes and deprecation plans.</tspan></text>
+                <circle cx="128" cy="392" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="398" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="400"><tspan x="168" dy="0">Document fallback routes and deprecation plans.</tspan></text>
             
     </svg>
