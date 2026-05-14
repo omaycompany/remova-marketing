@@ -3,6 +3,17 @@ import { keywordPostData, type KeywordPostData } from "./keyword-post-data";
 
 const publishDate = "2026-05-14";
 const signupLink = `<a href="https://app.remova.org/register">Sign up for Remova</a>`;
+const minimumAuthorityLinks = 5;
+
+const defaultAuthorityLinks = [
+    { label: "NIST AI RMF", href: "https://www.nist.gov/itl/ai-risk-management-framework" },
+    { label: "ISO/IEC 42001", href: "https://www.iso.org/standard/81230.html" },
+    { label: "EU AI Act overview", href: "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" },
+    { label: "OWASP Top 10 for LLM Applications", href: "https://owasp.org/www-project-top-10-for-large-language-model-applications/" },
+    { label: "OpenAI business data commitments", href: "https://openai.com/business-data/" },
+    { label: "NIST Cybersecurity Framework", href: "https://www.nist.gov/cyberframework" },
+    { label: "EU data protection legal framework", href: "https://commission.europa.eu/law/law-topic/data-protection/legal-framework-eu-data-protection_en" },
+];
 
 function formatNumber(value: number) {
     return value.toLocaleString("en-US");
@@ -16,6 +27,18 @@ function linkedList(links: { label: string; href: string }[]) {
             return `<a href="${link.href}"${attrs}>${link.label}</a>`;
         })
         .join(", ");
+}
+
+function authorityLinksFor(data: KeywordPostData) {
+    const links = [...data.sourceLinks, ...defaultAuthorityLinks];
+    const seen = new Set<string>();
+    const uniqueLinks = links.filter((link) => {
+        if (seen.has(link.href)) return false;
+        seen.add(link.href);
+        return true;
+    });
+
+    return uniqueLinks.slice(0, Math.max(minimumAuthorityLinks, data.sourceLinks.length));
 }
 
 function sentenceSeries(items: string[]) {
@@ -33,7 +56,7 @@ function buildTranscript(data: KeywordPostData) {
 }
 
 function buildSections(data: KeywordPostData): BlogPost["sections"] {
-    const externalLinks = linkedList(data.sourceLinks);
+    const externalLinks = linkedList(authorityLinksFor(data));
     const internalLinks = linkedList(data.internalLinks);
     const checklistText = numberedSeries(data.checklist);
     const metricsText = sentenceSeries(data.metrics);
