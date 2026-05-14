@@ -54,6 +54,38 @@ function wrapWords(value: string, maxChars: number) {
     return lines;
 }
 
+function textLines(value: string, maxChars: number, maxLines?: number) {
+    const lines = wrapWords(value, maxChars);
+    if (!maxLines || lines.length <= maxLines) return lines;
+
+    const visible = lines.slice(0, maxLines);
+    const lastIndex = visible.length - 1;
+    const lastLine = visible[lastIndex];
+    visible[lastIndex] = lastLine.length > maxChars - 3
+        ? `${lastLine.slice(0, maxChars - 3).trimEnd()}...`
+        : `${lastLine}...`;
+    return visible;
+}
+
+function multilineTextFromLines({
+    lines,
+    x,
+    y,
+    lineHeight,
+    className,
+}: {
+    lines: string[];
+    x: number;
+    y: number;
+    lineHeight: number;
+    className: string;
+}) {
+    const tspans = lines
+        .map((line, index) => `<tspan x="${x}" dy="${index === 0 ? 0 : lineHeight}">${xmlEscape(line)}</tspan>`)
+        .join("");
+    return `<text class="${className}" x="${x}" y="${y}">${tspans}</text>`;
+}
+
 function multilineText({
     value,
     x,
@@ -61,6 +93,7 @@ function multilineText({
     maxChars,
     lineHeight,
     className,
+    maxLines,
 }: {
     value: string;
     x: number;
@@ -68,12 +101,15 @@ function multilineText({
     maxChars: number;
     lineHeight: number;
     className: string;
+    maxLines?: number;
 }) {
-    const lines = wrapWords(value, maxChars);
-    const tspans = lines
-        .map((line, index) => `<tspan x="${x}" dy="${index === 0 ? 0 : lineHeight}">${xmlEscape(line)}</tspan>`)
-        .join("");
-    return `<text class="${className}" x="${x}" y="${y}">${tspans}</text>`;
+    return multilineTextFromLines({
+        lines: textLines(value, maxChars, maxLines),
+        x,
+        y,
+        lineHeight,
+        className,
+    });
 }
 
 function metricCard(label: string, value: string, x: number, y: number, color: string) {
@@ -89,13 +125,13 @@ function baseStyles() {
         <style>
             .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
             .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #111827; }
-            .subtitle { font: 750 25px Inter, Arial, sans-serif; fill: #334155; }
+            .subtitle { font: 800 24px Inter, Arial, sans-serif; fill: #334155; }
             .body { font: 700 22px Inter, Arial, sans-serif; fill: #475569; }
             .small { font: 800 18px Inter, Arial, sans-serif; fill: #64748b; }
             .label { font: 900 16px Inter, Arial, sans-serif; fill: #64748b; }
             .metric { font: 950 28px Inter, Arial, sans-serif; }
             .node { font: 950 23px Inter, Arial, sans-serif; fill: #111827; }
-            .check { font: 800 21px Inter, Arial, sans-serif; fill: #334155; }
+            .check { font: 800 18px Inter, Arial, sans-serif; fill: #334155; }
         </style>
         <defs>
             <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
@@ -128,13 +164,18 @@ function buildHeroSvg(data: KeywordPostData) {
 
 function buildControlMapSvg(data: KeywordPostData) {
     const nodes = ["Input", "Policy", "Model", "Audit"];
+    const goalLines = textLines(data.controlGoal, 56, 3);
+    const goalY = 178;
+    const nodeY = Math.max(272, goalY + (goalLines.length - 1) * 32 + 72);
+    const nodeCenterY = nodeY + 63;
+    const primaryY = Math.min(nodeY + 172, 462);
     const nodeMarkup = nodes
         .map((node, index) => {
             const x = 95 + index * 270;
-            const connector = index < nodes.length - 1 ? `<path d="M ${x + 190} 268 L ${x + 252} 268" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M ${x + 246} 252 L ${x + 270} 268 L ${x + 246} 284" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>` : "";
+            const connector = index < nodes.length - 1 ? `<path d="M ${x + 190} ${nodeCenterY} L ${x + 252} ${nodeCenterY}" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M ${x + 246} ${nodeCenterY - 16} L ${x + 270} ${nodeCenterY} L ${x + 246} ${nodeCenterY + 16}" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>` : "";
             return `
-                <rect x="${x}" y="205" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
-                <text class="node" x="${x + 95}" y="278" text-anchor="middle">${node}</text>
+                <rect x="${x}" y="${nodeY}" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
+                <text class="node" x="${x + 95}" y="${nodeY + 73}" text-anchor="middle">${node}</text>
                 ${connector}
             `;
         })
@@ -146,23 +187,28 @@ function buildControlMapSvg(data: KeywordPostData) {
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="126">Runtime control map</text>
-        ${multilineText({ value: data.controlGoal, x: 112, y: 180, maxChars: 66, lineHeight: 33, className: "subtitle" })}
+        ${multilineTextFromLines({ lines: goalLines, x: 112, y: goalY, lineHeight: 32, className: "subtitle" })}
         ${nodeMarkup}
-        <rect x="112" y="388" width="976" height="98" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
-        <text class="label" x="142" y="426">Primary control</text>
-        ${multilineText({ value: data.primaryControl, x: 142, y: 462, maxChars: 74, lineHeight: 29, className: "body" })}
+        <rect x="112" y="${primaryY}" width="976" height="86" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+        <text class="label" x="142" y="${primaryY + 32}">Primary control</text>
+        ${multilineText({ value: data.primaryControl, x: 142, y: primaryY + 65, maxChars: 74, lineHeight: 27, className: "body", maxLines: 1 })}
     </svg>`;
 }
 
 function buildChecklistSvg(data: KeywordPostData) {
+    const titleLines = textLines(data.title, 45, 2);
+    const titleY = 156;
+    let currentY = titleY + (titleLines.length - 1) * 31 + 48;
     const items = data.checklist.slice(0, 5);
     const itemMarkup = items
         .map((item, index) => {
-            const y = 180 + index * 72;
+            const lines = textLines(item, 78, 2);
+            const y = currentY;
+            currentY += Math.max(48, lines.length * 22 + 20);
             return `
                 <circle cx="128" cy="${y - 8}" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
                 <text x="128" y="${y - 2}" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                ${multilineText({ value: item, x: 168, y, maxChars: 80, lineHeight: 26, className: "check" })}
+                ${multilineTextFromLines({ lines, x: 168, y, lineHeight: 22, className: "check" })}
             `;
         })
         .join("");
@@ -173,10 +219,10 @@ function buildChecklistSvg(data: KeywordPostData) {
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="126">Implementation checklist</text>
-        ${multilineText({ value: data.title, x: 112, y: 164, maxChars: 50, lineHeight: 35, className: "subtitle" })}
+        <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
+        <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
+        ${multilineTextFromLines({ lines: titleLines, x: 112, y: titleY, lineHeight: 31, className: "subtitle" })}
         ${itemMarkup}
-        <rect x="812" y="454" width="236" height="58" rx="29" fill="#111827"/>
-        <text x="844" y="491" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
     </svg>`;
 }
 

@@ -71,7 +71,7 @@ export const BlogKeywordVideo = (rawProps: Record<string, unknown>) => {
 
             <Header />
 
-            <div style={{ position: "absolute", left: 76, top: 126, right: 76, bottom: 86, display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 32 }}>
+            <div style={{ position: "absolute", left: 76, top: 116, right: 76, bottom: 44, display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: 32 }}>
                 <div style={{ ...panel, opacity: intro, transform: `translateY(${interpolate(intro, [0, 1], [28, 0])}px)` }}>
                     <div style={eyebrow}>{keyword}</div>
                     <div style={{ fontSize: 56, lineHeight: 0.94, letterSpacing: 0, fontWeight: 950, maxWidth: 660 }}>{title}</div>
@@ -83,16 +83,16 @@ export const BlogKeywordVideo = (rawProps: Record<string, unknown>) => {
                     </div>
                 </div>
 
-                <div style={{ display: "grid", gap: 18 }}>
+                <div style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: 16, minHeight: 0 }}>
                     <div style={{ ...panel, opacity: flowIn, transform: `translateY(${interpolate(flowIn, [0, 1], [34, 0])}px)` }}>
                         <div style={{ ...eyebrow, color: colors.green }}>Control model</div>
-                        <div style={{ fontSize: 31, lineHeight: 1.04, fontWeight: 930 }}>{primaryControl}</div>
-                        <div style={{ marginTop: 16, fontSize: 19, lineHeight: 1.32, color: colors.text, fontWeight: 720 }}>{controlGoal}</div>
+                        <div style={{ fontSize: 28, lineHeight: 1.02, fontWeight: 930 }}>{primaryControl}</div>
+                        <div style={{ marginTop: 12, fontSize: 17, lineHeight: 1.24, color: colors.text, fontWeight: 720 }}>{controlGoal}</div>
                         <Flow frame={frame} />
                     </div>
                     <div style={{ ...panel, opacity: ctaIn, transform: `translateY(${interpolate(ctaIn, [0, 1], [34, 0])}px)` }}>
                         <div style={{ ...eyebrow, color: colors.red }}>First controls</div>
-                        <div style={{ display: "grid", gap: 10, marginTop: 12 }}>
+                        <div style={{ display: "grid", gap: 8, marginTop: 10 }}>
                             {checklist.slice(0, 3).map((item, index) => (
                                 <CheckItem key={item} label={item} frame={frame} delay={184 + index * 10} />
                             ))}
@@ -126,11 +126,11 @@ const Flow = ({ frame }: { frame: number }) => {
     const steps = ["Input", "Policy", "Model", "Audit"];
 
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginTop: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginTop: 18 }}>
             {steps.map((step, index) => {
                 const active = interpolate(frame, [92 + index * 18, 122 + index * 18], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
                 return (
-                    <div key={step} style={{ borderRadius: 14, border: `2px solid ${active > 0.6 ? colors.blue : colors.line}`, background: active > 0.6 ? "#eff6ff" : "#ffffff", padding: "18px 10px", textAlign: "center", fontSize: 19, fontWeight: 950, color: active > 0.6 ? colors.blue : colors.text }}>
+                    <div key={step} style={{ borderRadius: 14, border: `2px solid ${active > 0.6 ? colors.blue : colors.line}`, background: active > 0.6 ? "#eff6ff" : "#ffffff", padding: "14px 10px", textAlign: "center", fontSize: 18, fontWeight: 950, color: active > 0.6 ? colors.blue : colors.text }}>
                         {step}
                     </div>
                 );
@@ -142,9 +142,9 @@ const Flow = ({ frame }: { frame: number }) => {
 const CheckItem = ({ label, frame, delay }: { label: string; frame: number; delay: number }) => {
     const opacity = interpolate(frame, [delay, delay + 16], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "30px 1fr", gap: 12, alignItems: "start", opacity }}>
-            <div style={{ width: 30, height: 30, borderRadius: 999, background: "#dcfce7", color: colors.green, display: "grid", placeItems: "center", fontSize: 11, fontWeight: 950 }}>OK</div>
-            <div style={{ fontSize: 18, lineHeight: 1.24, fontWeight: 760, color: colors.text }}>{label}</div>
+        <div style={{ display: "grid", gridTemplateColumns: "26px 1fr", gap: 10, alignItems: "start", opacity }}>
+            <div style={{ width: 26, height: 26, borderRadius: 999, background: "#dcfce7", color: colors.green, display: "grid", placeItems: "center", fontSize: 10, fontWeight: 950 }}>OK</div>
+            <div style={{ fontSize: 15, lineHeight: 1.18, fontWeight: 760, color: colors.text }}>{label}</div>
         </div>
     );
 };
@@ -154,7 +154,8 @@ const panel = {
     borderRadius: 22,
     background: "rgba(255,255,255,0.94)",
     boxShadow: "0 24px 70px rgba(15,23,42,0.12)",
-    padding: 28,
+    padding: 24,
+    overflow: "hidden",
 };
 
 const eyebrow = {
@@ -163,23 +164,23 @@ const eyebrow = {
     fontWeight: 950,
     textTransform: "uppercase" as const,
     letterSpacing: 0,
-    marginBottom: 18,
+    marginBottom: 14,
 };
 
 const ctaRow = {
-    marginTop: 20,
-    paddingTop: 18,
+    marginTop: 12,
+    paddingTop: 12,
     borderTop: `2px solid ${colors.line}`,
     display: "flex",
     alignItems: "center",
-    gap: 18,
+    gap: 14,
 };
 
 const ctaButton = {
     borderRadius: 999,
     background: colors.ink,
     color: "#ffffff",
-    padding: "13px 19px",
-    fontSize: 18,
+    padding: "11px 16px",
+    fontSize: 15,
     fontWeight: 950,
 };

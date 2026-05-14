@@ -3,13 +3,13 @@
         <style>
             .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
             .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #111827; }
-            .subtitle { font: 750 25px Inter, Arial, sans-serif; fill: #334155; }
+            .subtitle { font: 800 24px Inter, Arial, sans-serif; fill: #334155; }
             .body { font: 700 22px Inter, Arial, sans-serif; fill: #475569; }
             .small { font: 800 18px Inter, Arial, sans-serif; fill: #64748b; }
             .label { font: 900 16px Inter, Arial, sans-serif; fill: #64748b; }
             .metric { font: 950 28px Inter, Arial, sans-serif; }
             .node { font: 950 23px Inter, Arial, sans-serif; fill: #111827; }
-            .check { font: 800 21px Inter, Arial, sans-serif; fill: #334155; }
+            .check { font: 800 18px Inter, Arial, sans-serif; fill: #334155; }
         </style>
         <defs>
             <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
@@ -24,28 +24,28 @@
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="126">Implementation checklist</text>
-        <text class="subtitle" x="112" y="164"><tspan x="112" dy="0">AI Data Leakage: How to Prevent Sensitive Data</tspan><tspan x="112" dy="35">Exposure</tspan></text>
+        <rect x="850" y="100" width="198" height="52" rx="26" fill="#111827"/>
+        <text x="878" y="133" style="font: 950 17px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
+        <text class="subtitle" x="112" y="156"><tspan x="112" dy="0">AI Data Leakage: How to Prevent Sensitive</tspan><tspan x="112" dy="31">Data Exposure</tspan></text>
         
-                <circle cx="128" cy="172" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="178" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="180"><tspan x="168" dy="0">Classify data before AI use and define allowed model routes.</tspan></text>
+                <circle cx="128" cy="227" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="233" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="235"><tspan x="168" dy="0">Classify data before AI use and define allowed model routes.</tspan></text>
             
-                <circle cx="128" cy="244" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="250" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="252"><tspan x="168" dy="0">Scan prompts, files, retrieved context, and outputs for sensitive data.</tspan></text>
+                <circle cx="128" cy="275" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="281" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="283"><tspan x="168" dy="0">Scan prompts, files, retrieved context, and outputs for sensitive data.</tspan></text>
             
-                <circle cx="128" cy="316" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="322" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="324"><tspan x="168" dy="0">Set retention rules for prompts, responses, logs, and embeddings.</tspan></text>
+                <circle cx="128" cy="323" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="329" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="331"><tspan x="168" dy="0">Set retention rules for prompts, responses, logs, and embeddings.</tspan></text>
             
-                <circle cx="128" cy="388" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="394" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="396"><tspan x="168" dy="0">Restrict prompt content access in analytics and investigations.</tspan></text>
+                <circle cx="128" cy="371" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="377" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="379"><tspan x="168" dy="0">Restrict prompt content access in analytics and investigations.</tspan></text>
             
-                <circle cx="128" cy="460" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-                <text x="128" y="466" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
-                <text class="check" x="168" y="468"><tspan x="168" dy="0">Build an AI incident response playbook for leakage events.</tspan></text>
+                <circle cx="128" cy="419" r="17" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+                <text x="128" y="425" text-anchor="middle" style="font: 950 11px Inter, Arial, sans-serif; fill: #047857;">OK</text>
+                <text class="check" x="168" y="427"><tspan x="168" dy="0">Build an AI incident response playbook for leakage events.</tspan></text>
             
-        <rect x="812" y="454" width="236" height="58" rx="29" fill="#111827"/>
-        <text x="844" y="491" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Start in Remova</text>
     </svg>

@@ -3,13 +3,13 @@
         <style>
             .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
             .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #111827; }
-            .subtitle { font: 750 25px Inter, Arial, sans-serif; fill: #334155; }
+            .subtitle { font: 800 24px Inter, Arial, sans-serif; fill: #334155; }
             .body { font: 700 22px Inter, Arial, sans-serif; fill: #475569; }
             .small { font: 800 18px Inter, Arial, sans-serif; fill: #64748b; }
             .label { font: 900 16px Inter, Arial, sans-serif; fill: #64748b; }
             .metric { font: 950 28px Inter, Arial, sans-serif; }
             .node { font: 950 23px Inter, Arial, sans-serif; fill: #111827; }
-            .check { font: 800 21px Inter, Arial, sans-serif; fill: #334155; }
+            .check { font: 800 18px Inter, Arial, sans-serif; fill: #334155; }
         </style>
         <defs>
             <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
