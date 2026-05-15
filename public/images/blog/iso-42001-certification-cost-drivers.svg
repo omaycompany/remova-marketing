@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="9 ISO 42001 Certification Cost Drivers to Plan Before an Audit">
+  <style>
+    .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
+    .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #0f172a; }
+    .label { font: 900 16px Inter, Arial, sans-serif; fill: #64748b; }
+    .metric { font: 950 27px Inter, Arial, sans-serif; fill: #111827; }
+    .small { font: 850 18px Inter, Arial, sans-serif; fill: #475569; }
+  </style>
+  <defs>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#e8eef6" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect x="70" y="76" width="1060" height="478" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
+  <text class="eyebrow" x="112" y="132">ISO 42001 / COST PLANNING</text>
+  <text class="title" x="112" y="206">
+    <tspan x="112" dy="0">9 ISO 42001 Certification</tspan>
+    <tspan x="112" dy="64">Cost Drivers to Plan</tspan>
+    <tspan x="112" dy="64">Before an Audit</tspan>
+  </text>
+  <rect x="112" y="430" width="250" height="82" rx="18" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <text class="label" x="134" y="463">Largest driver</text>
+  <text class="metric" x="134" y="499">Scope size</text>
+  <rect x="390" y="430" width="250" height="82" rx="18" fill="#ecfdf5" stroke="#bbf7d0" stroke-width="2"/>
+  <text class="label" x="412" y="463">Recurring driver</text>
+  <text class="metric" x="412" y="499">Evidence effort</text>
+  <rect x="668" y="430" width="250" height="82" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+  <text class="label" x="690" y="463">Hidden driver</text>
+  <text class="metric" x="690" y="499">Remediation</text>
+  <text class="small" x="112" y="558">Plan for inventory work, control gaps, suppliers, tooling, training, and corrective actions.</text>
+</svg>
