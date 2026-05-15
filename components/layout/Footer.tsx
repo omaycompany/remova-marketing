@@ -59,6 +59,7 @@ export default function Footer() {
                         {
                             title: "Product",
                             links: [
+                                { name: "About", href: "/about" },
                                 { name: "Features", href: "/features" },
                                 { name: "Use Cases", href: "/use-cases" },
                                 { name: "Models", href: "/models" },
