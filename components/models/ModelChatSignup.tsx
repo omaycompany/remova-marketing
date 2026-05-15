@@ -5,6 +5,8 @@ import { Mail, Send, Sparkles, X } from "lucide-react";
 
 type LeadStatus = "idle" | "submitting" | "success" | "error";
 
+const REGISTER_URL = "https://app.remova.org/register";
+
 type Props = {
     modelName: string;
     provider: string;
@@ -56,9 +58,10 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
             }
 
             setStatus("success");
-            setStatusText(payload.message || "Done. Check your inbox.");
+            setStatusText(payload.message || "Redirecting...");
             setEmail("");
             setPrompt("");
+            window.location.href = REGISTER_URL;
         } catch (error) {
             setStatus("error");
             setStatusText(error instanceof Error ? error.message : "Something went wrong. Please try again.");
@@ -73,75 +76,54 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
     }
 
     return (
-        <section className="border-t border-slate-100 bg-slate-50 px-4 py-20 dark:border-white/5 dark:bg-white/5 sm:px-6 lg:px-8">
-            <div className="container mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-                <div>
-                    <p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">
-                        Chat Preview
-                    </p>
-                    <h2 className="mb-5 text-3xl font-black leading-[0.92] tracking-tighter text-slate-900 dark:text-white sm:text-5xl">
-                        Chat with {modelName}
-                    </h2>
-                    <p className="max-w-xl text-lg font-medium leading-relaxed text-slate-600 dark:text-slate-300">
-                        Try the governed chat flow before routing this model to your team workspace.
-                    </p>
-                </div>
-
-                <div className="rounded-3xl border-2 border-slate-900 bg-white shadow-[0_28px_90px_-50px_rgba(15,23,42,0.65)] dark:border-white dark:bg-[#131314]">
-                    <div className="flex items-center justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
-                        <div className="flex min-w-0 items-center gap-3">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">
-                                <Sparkles className="h-5 w-5" />
-                            </div>
-                            <div className="min-w-0">
-                                <p className="truncate text-sm font-black text-slate-900 dark:text-white">{modelName}</p>
-                                <p className="truncate text-xs font-bold text-slate-500 dark:text-slate-400">{provider}</p>
-                            </div>
+        <>
+            <div className="rounded-3xl border-2 border-slate-900 bg-white shadow-[0_28px_90px_-50px_rgba(15,23,42,0.65)] dark:border-white dark:bg-[#131314]">
+                <div className="flex items-center justify-between gap-4 border-b border-slate-200 px-5 py-4 dark:border-white/10">
+                    <div className="flex min-w-0 items-center gap-3">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-slate-900 text-white dark:bg-white dark:text-slate-900">
+                            <Sparkles className="h-5 w-5" />
                         </div>
-                        <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
-                            Preview
-                        </span>
-                    </div>
-
-                    <div className="space-y-4 p-5">
-                        <div className="max-w-[82%] rounded-2xl rounded-tl-sm bg-slate-100 p-4 text-sm font-medium leading-relaxed text-slate-700 dark:bg-white/10 dark:text-slate-200">
-                            Ask a question, draft an answer, or test how this model would handle your work.
-                        </div>
-                        <div className="ml-auto max-w-[82%] rounded-2xl rounded-tr-sm bg-slate-900 p-4 text-sm font-medium leading-relaxed text-white dark:bg-white dark:text-slate-900">
-                            Remova will open signup before sending prompts to the model.
+                        <div className="min-w-0">
+                            <p className="truncate text-sm font-black text-slate-900 dark:text-white">{modelName}</p>
+                            <p className="truncate text-xs font-bold text-slate-500 dark:text-slate-400">{provider}</p>
                         </div>
                     </div>
-
-                    <form onSubmit={onChatSubmit} className="border-t border-slate-200 p-4 dark:border-white/10">
-                        <label htmlFor={`model-chat-${sourceSlug}`} className="sr-only">
-                            Message
-                        </label>
-                        <div className="flex items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-2 dark:border-white/10 dark:bg-white/5">
-                            <textarea
-                                id={`model-chat-${sourceSlug}`}
-                                value={prompt}
-                                onChange={(event) => setPrompt(event.target.value)}
-                                onKeyDown={(event) => {
-                                    if (event.key === "Enter" && !event.shiftKey) {
-                                        event.preventDefault();
-                                        event.currentTarget.form?.requestSubmit();
-                                    }
-                                }}
-                                rows={2}
-                                placeholder={`Message ${modelName}`}
-                                className="min-h-12 flex-1 resize-none bg-transparent px-3 py-2 text-sm font-medium text-slate-900 outline-none placeholder:text-slate-500 dark:text-white dark:placeholder:text-slate-400"
-                            />
-                            <button
-                                type="submit"
-                                disabled={!prompt.trim()}
-                                aria-label="Send message"
-                                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
-                            >
-                                <Send className="h-4 w-4" />
-                            </button>
-                        </div>
-                    </form>
+                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
+                        Preview
+                    </span>
                 </div>
+
+                <div className="min-h-[13rem] border-b border-slate-200 bg-slate-50/70 dark:border-white/10 dark:bg-white/[0.03]" />
+
+                <form onSubmit={onChatSubmit} className="p-4">
+                    <label htmlFor={`model-chat-${sourceSlug}`} className="sr-only">
+                        Message
+                    </label>
+                    <div className="flex items-end gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-2 dark:border-white/10 dark:bg-white/5">
+                        <textarea
+                            id={`model-chat-${sourceSlug}`}
+                            value={prompt}
+                            onChange={(event) => setPrompt(event.target.value)}
+                            onKeyDown={(event) => {
+                                if (event.key === "Enter" && !event.shiftKey) {
+                                    event.preventDefault();
+                                    event.currentTarget.form?.requestSubmit();
+                                }
+                            }}
+                            rows={2}
+                            placeholder={`Message ${modelName}`}
+                            className="min-h-12 flex-1 resize-none bg-transparent px-3 py-2 text-sm font-medium text-slate-900 outline-none placeholder:text-slate-500 dark:text-white dark:placeholder:text-slate-400"
+                        />
+                        <button
+                            type="submit"
+                            disabled={!prompt.trim()}
+                            aria-label="Send message"
+                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+                        >
+                            <Send className="h-4 w-4" />
+                        </button>
+                    </div>
+                </form>
             </div>
 
             {showSignup ? (
@@ -212,6 +194,6 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
                     </div>
                 </div>
             ) : null}
-        </section>
+        </>
     );
 }

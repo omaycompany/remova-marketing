@@ -97,25 +97,33 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings, 
                         <span className="text-slate-900 dark:text-white truncate">{landing.heroTitle}</span>
                     </nav>
 
-                    <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-6 py-2 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md">
-                        <Sparkles className="h-4 w-4" /> {landing.heroLabel}
-                    </div>
+                    <div className={showChatSignup ? "grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.82fr)] lg:items-center" : ""}>
+                        <div>
+                            <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-6 py-2 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md">
+                                <Sparkles className="h-4 w-4" /> {landing.heroLabel}
+                            </div>
 
-                    <h1 className="mb-6 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.85]">
-                        {landing.heroTitle}
-                    </h1>
-                    <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-8">
-                        {landing.heroSubtitle}
-                    </p>
-                    <ExternalAppLink
-                        href="https://app.remova.org/register"
-                        className="mb-8 inline-block rounded-[2.5rem] bg-slate-900 dark:bg-white px-8 py-4 text-base font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95"
-                    >
-                        Try {landing.heroTitle} with your team
-                    </ExternalAppLink>
-                    <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                        Last reviewed: {landing.sourceCheckedAt}
-                    </p>
+                            <h1 className="mb-6 text-5xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-7xl lg:text-8xl leading-[0.85]">
+                                {landing.heroTitle}
+                            </h1>
+                            <p className="max-w-3xl text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed mb-8">
+                                {landing.heroSubtitle}
+                            </p>
+                            <ExternalAppLink
+                                href="https://app.remova.org/register"
+                                className="mb-8 inline-block rounded-[2.5rem] bg-slate-900 dark:bg-white px-8 py-4 text-base font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95"
+                            >
+                                Try {landing.heroTitle} with your team
+                            </ExternalAppLink>
+                            <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                                Last reviewed: {landing.sourceCheckedAt}
+                            </p>
+                        </div>
+
+                        {showChatSignup && (
+                            <ModelChatSignup modelName={landing.heroTitle} provider={model.provider} sourceSlug={landing.slug} />
+                        )}
+                    </div>
                 </div>
             </section>
 
@@ -135,10 +143,6 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings, 
                     </div>
                 </div>
             </section>
-
-            {showChatSignup && (
-                <ModelChatSignup modelName={landing.heroTitle} provider={model.provider} sourceSlug={landing.slug} />
-            )}
 
             {video && (
                 <section id="model-video" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
