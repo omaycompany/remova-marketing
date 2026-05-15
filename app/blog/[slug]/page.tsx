@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!post && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!post) return {};
     const title = post.title;
-    const description = `Learn about ${post.title}. ${post.metaDescription}`;
+    const description = post.metaDescription;
     const publishedTime = `${post.date}T00:00:00.000Z`;
     const modifiedTime = `${post.lastModified ?? post.date}T00:00:00.000Z`;
     const heroImage = post.images?.find((image) => image.hero);
@@ -154,6 +154,38 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const dateModified = post.lastModified ?? post.date;
     const heroImage = post.images?.find((image) => image.hero);
     const structuredImage = post.video?.thumbnailUrl ?? heroImage?.src ?? DEFAULT_OG_IMAGE_URL;
+    const isIso42001Post = post.slug === "iso-42001-ai-governance-checklist";
+    const structuredKeywords = buildKeywords([
+        post.title,
+        post.category,
+        "enterprise ai governance",
+        "ai policy controls",
+        "ai operations",
+    ], isIso42001Post ? [
+        "ISO 42001",
+        "AI management system",
+        "AI governance checklist",
+        "AI risk management",
+        "audit evidence",
+        "NIST AI RMF",
+        "EU AI Act",
+    ] : []);
+    const structuredAbout = [
+        { "@type": "Thing", "name": post.category },
+        { "@type": "Thing", "name": "Enterprise AI governance" },
+        { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
+        ...(isIso42001Post ? [
+            { "@type": "Thing", "name": "AI risk management" },
+            { "@type": "Thing", "name": "Audit evidence" },
+        ] : []),
+    ];
+    const structuredMentions = isIso42001Post ? [
+        { "@type": "Thing", "name": "ISO 42001" },
+        { "@type": "Thing", "name": "AI management system" },
+        { "@type": "Thing", "name": "NIST AI RMF" },
+        { "@type": "Thing", "name": "EU AI Act" },
+        { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
+    ] : undefined;
 
     const jsonLd = {
         "@context": "https://schema.org",
@@ -178,10 +210,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "datePublished": `${post.date}T00:00:00.000Z`,
         "dateModified": `${dateModified}T00:00:00.000Z`,
         "image": absoluteUrl(structuredImage),
-        "keywords": post.category,
+        "keywords": structuredKeywords.join(", "),
         "articleSection": post.category,
         "inLanguage": "en-US",
         "wordCount": post.sections.reduce((acc, s) => acc + s.content.split(" ").length, 0),
+        "about": structuredAbout,
+        ...(structuredMentions && { "mentions": structuredMentions }),
         ...(post.video && {
             "video": {
                 "@type": "VideoObject",
@@ -339,7 +373,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                 <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>Use these practices with governed controls for AI for companies.</span>
+                                <span>{post.excerpt}</span>
                             </li>
                         </ul>
                     </div>

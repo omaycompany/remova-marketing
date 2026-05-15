@@ -53,9 +53,9 @@ const commonInternal = {
 export const keywordPostData: KeywordPostData[] = [
     {
         slug: "iso-42001-ai-governance-checklist",
-        keyword: "iso 42001",
+        keyword: "ISO 42001",
         title: "ISO 42001 AI Governance Checklist for Enterprise Teams",
-        metaDescription: "Use this ISO 42001 checklist to turn AI management system requirements into operating controls, evidence, owners, and Remova workflows.",
+        metaDescription: "Use this ISO 42001 checklist to map AI management system requirements to controls, audit evidence, owners, and governed Remova workflows.",
         category: "Compliance",
         volume: 33100,
         cpc: "$0.71-$11.17",
@@ -69,10 +69,10 @@ export const keywordPostData: KeywordPostData[] = [
         sourceLinks: [commonSources.iso42001, commonSources.nist, commonSources.euAiAct],
         internalLinks: [commonInternal.policy, commonInternal.audit, commonInternal.modelGovernance, commonInternal.compliance],
         checklist: [
-            "Define AI system scope, owners, intended uses, and excluded uses.",
+            "Define AI system scope, owners, intended uses, risk tiers, and excluded uses.",
             "Map AI risks to policies, controls, evidence, and review owners.",
             "Require approved model routes for employee chat, API calls, and agent workflows.",
-            "Record exceptions, policy changes, incidents, and management reviews.",
+            "Record exceptions, policy changes, incidents, impact assessments, and management reviews.",
             "Tie continuous improvement to usage data, audit events, and control drift."
         ],
         metrics: [
