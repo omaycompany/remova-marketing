@@ -3418,11 +3418,23 @@ That is why automatic capture should be designed with the reviewer in mind. The 
         excerpt: "A practical prompt injection defense checklist for enterprise AI apps: untrusted input handling, tool permissions, retrieval controls, human review, logging, red teaming, and incident response.",
         images: [
             {
-                src: "/images/blog/prompt-injection-defense-checklist-enterprise-ai-apps.svg",
-                alt: "Prompt injection defense checklist for enterprise AI apps",
-                caption: "Prompt injection defense works when hostile instructions are treated as untrusted input, tool permissions are constrained, and every risky decision leaves evidence.",
+                src: "/images/blog/prompt-injection-defense-checklist-enterprise-ai-apps-hero.webp",
+                alt: "Enterprise AI security team reviewing prompt injection defenses in a bright office",
+                caption: "Prompt injection defense starts with application security teams treating hostile instructions as untrusted input across users, files, tools, and retrieval sources.",
                 afterSection: 0,
                 hero: true,
+            },
+            {
+                src: "/images/blog/prompt-injection-defense-checklist-enterprise-ai-apps-review.webp",
+                alt: "AI application security reviewers discussing prompt injection attack paths",
+                caption: "Security review should map direct and indirect injection paths before the AI app receives production data or tool access.",
+                afterSection: 2,
+            },
+            {
+                src: "/images/blog/prompt-injection-defense-checklist-enterprise-ai-apps-workshop.webp",
+                alt: "Enterprise AI team workshop for prompt injection testing and incident response",
+                caption: "Red-team drills and response workshops help teams prove that prompt injection controls still work after model, retrieval, or tool changes.",
+                afterSection: 9,
             },
         ],
         sections: [
