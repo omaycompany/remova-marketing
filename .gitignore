@@ -38,6 +38,7 @@ yarn-error.log*
 
 # internal working docs
 /.internal/
+/remova-skills/
 
 # local env files
 .env*.local
