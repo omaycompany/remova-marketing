@@ -20,6 +20,12 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
     const [status, setStatus] = useState<LeadStatus>("idle");
     const [statusText, setStatusText] = useState("");
 
+    function registerUrlForEmail(emailAddress: string) {
+        const url = new URL(REGISTER_URL);
+        url.searchParams.set("email", emailAddress);
+        return url.toString();
+    }
+
     function onChatSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
         if (!prompt.trim()) return;
@@ -34,6 +40,7 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
         setStatusText("");
 
         try {
+            const submittedEmail = email.trim();
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
@@ -42,7 +49,7 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
                 },
                 body: JSON.stringify({
                     access_key: "605d5350-f21e-4531-bd3c-219ad374486c",
-                    email,
+                    email: submittedEmail,
                     subject: `New Model Chat Signup: ${modelName}`,
                     model: modelName,
                     provider,
@@ -61,7 +68,7 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
             setStatusText(payload.message || "Redirecting...");
             setEmail("");
             setPrompt("");
-            window.location.href = REGISTER_URL;
+            window.location.href = registerUrlForEmail(submittedEmail);
         } catch (error) {
             setStatus("error");
             setStatusText(error instanceof Error ? error.message : "Something went wrong. Please try again.");

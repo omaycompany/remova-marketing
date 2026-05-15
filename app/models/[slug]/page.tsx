@@ -122,14 +122,12 @@ export default function ModelLandingPage({ params }: { params: { slug: string } 
         .slice(0, 8)
         .map((entry) => ({ slug: entry.landing.slug, title: entry.landing.heroTitle }));
 
-    const showChatSignup = landing.slug === "gpt-5-4";
-
     return (
         <ModelLandingTemplate
             model={model}
             landing={landing}
             relatedLandings={relatedLandings}
-            showChatSignup={showChatSignup}
+            showChatSignup
         />
     );
 }
