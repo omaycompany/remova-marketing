@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight, Check, ChevronRight, Gauge, Layers, Sparkles } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
+import ModelChatSignup from "@/components/models/ModelChatSignup";
 import { ModelEntry } from "@/content/models";
 import { ModelLanding } from "@/content/model-landings";
 import { applicationsForModel } from "@/content/model-applications";
@@ -32,9 +33,10 @@ interface Props {
     model: ModelEntry;
     landing: ModelLanding;
     relatedLandings: { slug: string; title: string }[];
+    showChatSignup?: boolean;
 }
 
-export default function ModelLandingTemplate({ model, landing, relatedLandings }: Props) {
+export default function ModelLandingTemplate({ model, landing, relatedLandings, showChatSignup = false }: Props) {
     const video = getModelVideo(landing.slug);
     const applications = applicationsForModel(model);
     const softwareLd = {
@@ -133,6 +135,10 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings }
                     </div>
                 </div>
             </section>
+
+            {showChatSignup && (
+                <ModelChatSignup modelName={landing.heroTitle} provider={model.provider} sourceSlug={landing.slug} />
+            )}
 
             {video && (
                 <section id="model-video" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
