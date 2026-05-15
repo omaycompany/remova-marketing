@@ -18,6 +18,10 @@ const ISO_42001_CLUSTER_SLUGS = new Set([
     "iso-42001-audit-evidence-items-ai-teams",
 ]);
 
+const PROMPT_INJECTION_CLUSTER_SLUGS = new Set([
+    "prompt-injection-defense-checklist-enterprise-ai-apps",
+]);
+
 export async function generateStaticParams() {
     return [
         ...allBlogPosts.map((p) => ({ slug: p.slug })),
@@ -36,6 +40,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const isPromptEngineeringPost = post.slug === "prompt-engineering-policy-guide";
     const isDataLossPreventionPost = post.slug === "data-loss-prevention-ai-prompts";
     const isIso42001ClusterPost = ISO_42001_CLUSTER_SLUGS.has(post.slug);
+    const isPromptInjectionClusterPost = PROMPT_INJECTION_CLUSTER_SLUGS.has(post.slug);
     const publishedTime = `${post.date}T00:00:00.000Z`;
     const modifiedTime = `${post.lastModified ?? post.date}T00:00:00.000Z`;
     const heroImage = post.images?.find((image) => image.hero);
@@ -62,7 +67,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         keywords: buildKeywords([
             post.title,
             post.category,
-            isDataLossPreventionPost ? "data loss prevention for AI prompts" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
+            isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
             "ai policy controls",
             "ai operations"
         ]),
@@ -189,10 +194,11 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const isMicrosoft365CopilotSecurityPost = post.slug === "microsoft-365-copilot-security-checklist";
     const isPromptEngineeringPost = post.slug === "prompt-engineering-policy-guide";
     const isIso42001ClusterPost = ISO_42001_CLUSTER_SLUGS.has(post.slug);
+    const isPromptInjectionClusterPost = PROMPT_INJECTION_CLUSTER_SLUGS.has(post.slug);
     const structuredKeywords = buildKeywords([
         post.title,
         post.category,
-        isDataLossPreventionPost ? "data loss prevention for AI prompts" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
+        isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
         "ai policy controls",
         "ai operations",
     ], [
@@ -243,10 +249,21 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             "DLP for ChatGPT",
             "AI prompt security",
         ] : []),
+        ...(isPromptInjectionClusterPost ? [
+            "prompt injection",
+            "prompt injection defense",
+            "indirect prompt injection",
+            "LLM security",
+            "AI security",
+            "AI guardrails",
+            "agent security",
+            "tool permission controls",
+            "AI red team testing",
+        ] : []),
     ]);
     const structuredAbout = [
         { "@type": "Thing", "name": post.category },
-        { "@type": "Thing", "name": isDataLossPreventionPost ? "Data loss prevention" : isIso42001ClusterPost ? "ISO 42001" : isPromptEngineeringPost ? "Prompt engineering" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "Enterprise AI governance" },
+        { "@type": "Thing", "name": isDataLossPreventionPost ? "Data loss prevention" : isPromptInjectionClusterPost ? "Prompt injection defense" : isIso42001ClusterPost ? "ISO 42001" : isPromptEngineeringPost ? "Prompt engineering" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "Enterprise AI governance" },
         { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
         ...(isIso42001Post ? [
             { "@type": "Thing", "name": "AI risk management" },
@@ -272,6 +289,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             { "@type": "Thing", "name": "Sensitive data protection" },
             { "@type": "Thing", "name": "Prompt redaction" },
             { "@type": "Thing", "name": "Secret detection" },
+        ] : []),
+        ...(isPromptInjectionClusterPost ? [
+            { "@type": "Thing", "name": "Prompt injection" },
+            { "@type": "Thing", "name": "LLM security" },
+            { "@type": "Thing", "name": "AI guardrails" },
+            { "@type": "Thing", "name": "Indirect prompt injection" },
         ] : []),
     ];
     const structuredMentions = isIso42001Post ? [
@@ -304,6 +327,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         { "@type": "Thing", "name": "Prompt redaction" },
         { "@type": "Thing", "name": "Sensitive data" },
         { "@type": "Thing", "name": "Large language model security" },
+        { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
+    ] : isPromptInjectionClusterPost ? [
+        { "@type": "Thing", "name": "Prompt injection" },
+        { "@type": "Thing", "name": "Indirect prompt injection" },
+        { "@type": "Thing", "name": "LLM security" },
+        { "@type": "Thing", "name": "AI guardrails" },
         { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
     ] : undefined;
 
@@ -348,7 +377,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 "contentUrl": absoluteUrl(post.video.contentUrl),
                 "embedUrl": absoluteUrl(`/blog/${post.slug}#article-video`),
                 "transcript": post.video.transcript,
-                "keywords": [post.title, post.category, "Remova", isDataLossPreventionPost ? "data loss prevention for AI prompts" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise AI governance"].join(", "),
+                "keywords": [post.title, post.category, "Remova", isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise AI governance"].join(", "),
             },
         }),
     };

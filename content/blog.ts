@@ -3405,6 +3405,156 @@ That is why automatic capture should be designed with the reviewer in mind. The 
             { question: "How does Remova help capture ISO 42001 evidence?", answer: "Remova can capture evidence from AI usage, including model routes, role access, policy decisions, sensitive-data detections, redactions, blocked requests, budgets, and audit trails." },
         ],
     },
+    {
+        slug: "prompt-injection-defense-checklist-enterprise-ai-apps",
+        title: "Prompt Injection Defense Checklist for Enterprise AI Apps",
+        metaDescription: "Use this prompt injection defense checklist to secure enterprise AI apps, RAG systems, copilots, and agents against hostile instructions, tool misuse, and data exfiltration.",
+        category: "Security",
+        date: "2026-05-14",
+        lastModified: "2026-05-14",
+        articleType: "BlogPosting",
+        author: "Remova Threat Intelligence",
+        readTime: "22 min",
+        excerpt: "A practical prompt injection defense checklist for enterprise AI apps: untrusted input handling, tool permissions, retrieval controls, human review, logging, red teaming, and incident response.",
+        images: [
+            {
+                src: "/images/blog/prompt-injection-defense-checklist-enterprise-ai-apps.svg",
+                alt: "Prompt injection defense checklist for enterprise AI apps",
+                caption: "Prompt injection defense works when hostile instructions are treated as untrusted input, tool permissions are constrained, and every risky decision leaves evidence.",
+                afterSection: 0,
+                hero: true,
+            },
+        ],
+        sections: [
+            {
+                heading: "1. Treat Prompt Injection as an Application Security Problem",
+                content: `Prompt injection is not just a model behavior problem. It is an application security problem created when natural-language instructions, user input, retrieved documents, tool outputs, and system prompts meet inside the same reasoning context. In a simple chatbot, the damage may be limited to a bad answer. In an enterprise AI app with retrieval, files, email, ticketing, code repositories, CRM data, or tools, a successful injection can expose data, trigger unsafe actions, or corrupt business output.
+
+The first defense is to stop treating the model as the control boundary. The control boundary should be the full AI application: identity, prompt construction, retrieval, model route, tool permissions, output handling, logging, and incident response. If an attacker can place instructions in a support ticket, web page, document, spreadsheet, email, or repository comment, the app must assume those instructions are untrusted even when the source system is internal.
+
+Security teams should classify prompt injection by path. Direct prompt injection comes from a user who intentionally tries to override rules. Indirect prompt injection comes from content the AI app reads while completing a task. Indirect injection is often more dangerous for enterprise apps because the human user may be innocent. The malicious instruction is hidden in a document, ticket, email, or web page, and the AI app may treat it as task context unless the system separates data from instructions.
+
+This is why prompt injection belongs in the same threat model as data exfiltration, access abuse, and insecure automation. The attacker is not always trying to make the model say something offensive. They may be trying to make the application reveal internal context, summarize documents the user should not see, call an API, change an output recipient, or bypass a review step. A good defense checklist therefore focuses on what the app can do, not only what the model can say.`
+            },
+            {
+                heading: "2. Keep System Instructions Out of User-Reachable Context",
+                content: `Every enterprise AI app should define which instructions are trusted and which content is merely data. System prompts, policy rules, tool contracts, routing logic, and security constraints should not be mixed casually with user input. If the app builds one giant prompt that blends trusted rules with untrusted text, it becomes easier for hostile content to imitate authority.
+
+The practical pattern is layered prompt construction. Keep immutable system rules in the highest-priority layer. Place developer instructions and workflow instructions in their own layer. Place user requests, retrieved documents, and tool outputs in clearly labeled data sections. Tell the model explicitly that data sections may contain hostile instructions and must not override the system or workflow rules. This does not eliminate prompt injection, but it improves the app's ability to reason about instruction hierarchy.
+
+Do not expose sensitive system prompts as a security control. Assume that users may eventually infer, leak, or extract parts of the prompt. The real defense is not secrecy alone. It is enforced behavior outside the model: allowed tools, route policies, redaction, output checks, human approval, and audit logs. A prompt can ask the model not to reveal secrets. A control layer can prevent the app from calling a secret-bearing tool in the first place.
+
+The team should also version prompts like production configuration. If a prompt controls tool behavior, retrieval rules, output format, or safety posture, a change can alter the app's risk profile. Keep version history, reviewer approval, test results, and rollback options. A prompt update that weakens instruction boundaries can create a security regression even when application code does not change.`
+            },
+            {
+                heading: "3. Sanitize and Label Untrusted Inputs Before the Model Sees Them",
+                content: `Prompt injection defense starts before the model call. Every source that can carry text into the AI context should be treated as untrusted input: user prompts, uploaded files, PDFs, emails, tickets, web pages, database rows, code comments, retrieved documents, OCR text, transcripts, and tool responses. The app should normalize, inspect, classify, and label that content before it reaches the model.
+
+Sanitization does not mean deleting all suspicious text. It means making risk visible and reducing the chance that hostile instructions are interpreted as authority. The app can strip hidden text, remove invisible characters, flag instruction-like language, segment external content, and wrap retrieved text with labels such as "untrusted document content." For files and pages, the app should preserve source metadata so analysts can later identify where a malicious instruction came from.
+
+The app should also maintain a policy for risky patterns. Examples include instructions to ignore prior rules, reveal system prompts, export secrets, call tools outside the task, modify records, change recipients, disable safety checks, or summarize confidential context for an unauthorized audience. These patterns should not rely on brittle string matching alone. Use a combination of deterministic checks, semantic classifiers, and workflow-specific rules.
+
+Sanitization should preserve enough evidence for investigation. If a file contains hidden text, the system should record the source, location, detection type, action taken, and user workflow. If content is stripped, analysts should be able to see that a transformation occurred without exposing sensitive content broadly. This turns input handling into a security control that can be tested and improved.`
+            },
+            {
+                heading: "4. Limit Retrieval Scope and Remove Overshared Context",
+                content: `RAG systems create a major prompt injection surface because they retrieve content that the user did not write during the current conversation. If a malicious instruction is stored in a document, wiki page, customer ticket, or code comment, the AI app may retrieve it later and treat it as relevant context. The retrieval layer therefore needs security controls, not just relevance scoring.
+
+First, retrieval should respect identity and permissions. The AI app should only retrieve documents the user is allowed to access, and it should avoid broad indexes where stale permissions expose sensitive context. Second, retrieval should be scoped to the task. If the user asks for a customer-support summary, the app should not retrieve unrelated HR, finance, legal, or engineering documents just because vector similarity finds a match.
+
+Third, retrieved content should be filtered for injection risk. A retrieved document that contains instruction-like text should be labeled, downranked, stripped, or escalated depending on the workflow. The app should log which chunks were retrieved, which were excluded, and which policy decision applied. Without retrieval evidence, it is hard to investigate whether the model followed a malicious instruction or merely produced a poor answer.
+
+Retrieval controls should also defend against oversharing. A prompt injection does not need to defeat the model if the retrieval system already provides too much sensitive context. Limit top-k retrieval, scope indexes by workflow, remove stale permissions, and avoid passing whole documents when a smaller cited excerpt is enough. Less unnecessary context means fewer opportunities for hostile text to influence the model.`
+            },
+            {
+                heading: "5. Design Tools With Least Privilege and Hard Boundaries",
+                content: `Prompt injection becomes dangerous when the AI app can take action. A chatbot that can only answer questions has limited blast radius. An agent that can search email, read files, update CRM records, create tickets, send messages, commit code, or call APIs can cause real damage if hostile instructions reach the reasoning loop. Tool design is therefore one of the strongest prompt injection defenses.
+
+Each tool should have a narrow contract. The app should define who can use it, what workflow can invoke it, what input schema is allowed, what data it can access, what actions it can perform, and what approval is required. Do not give an agent broad credentials just because the workflow might need flexibility. A support summarizer does not need outbound email permission. A contract analysis assistant does not need production database write access. A code review assistant does not need secrets management access.
+
+Tool calls should be validated outside the model. The model can propose a tool action, but the application should enforce policy before execution. Check the user, workflow, data class, destination, action type, and approval state. If the request is outside scope, block it and log the decision. This turns prompt injection from a catastrophic action path into a contained policy event.
+
+Use separate credentials for separate tools and workflows. A single broad service account makes every successful injection more dangerous. Short-lived, scoped credentials reduce blast radius. If an agent needs to draft a ticket comment, it should receive only that permission for that workflow and that task. It should not inherit access to unrelated records, admin APIs, export endpoints, or outbound messaging.`
+            },
+            {
+                heading: "6. Add Human Approval for State-Changing and High-Impact Actions",
+                content: `Human approval should be reserved for actions where a prompt injection could create meaningful harm: sending customer messages, changing records, approving financial actions, modifying code, exporting sensitive data, updating access, or publishing external content. The goal is not to put a human in front of every AI output. The goal is to require human approval before the app crosses a risk boundary.
+
+Approval should include context, not just a button. The reviewer should see the proposed action, source content, retrieved context, tool call, model output, policy warnings, and any injection signals. If the model proposes an outbound email, the reviewer should know whether the text came from a user prompt, a retrieved document, or a tool response. If the app detected instruction-like content in a source document, that warning should be visible.
+
+The approval record should be captured as audit evidence. Record reviewer identity, decision, timestamp, proposed action, final action, policy warnings, and whether the output was edited before approval. This evidence matters for both security and compliance. It proves that high-impact AI actions are not fully autonomous and that reviewers can reject or modify risky outputs.
+
+Approval should be resistant to social pressure from the model. Do not show reviewers only a polished recommendation that says the action is safe. Show the raw sources, flagged content, requested tool call, and policy reason. The reviewer interface should make it easy to reject, edit, or escalate. If rejection is harder than approval, the control will drift toward rubber-stamping.`
+            },
+            {
+                heading: "7. Use Output Checks Before Data Leaves the AI App",
+                content: `Prompt injection defense should inspect outputs as well as inputs. A hostile instruction may cause the model to reveal confidential context, include hidden prompt text, produce unauthorized instructions, or draft a message that violates policy. If the app only checks incoming prompts, it may miss the moment where data actually leaves the system.
+
+Output checks should look for sensitive data, unsupported claims, system prompt leakage, secret-like material, unsafe tool instructions, unauthorized recipients, and policy violations specific to the workflow. For customer-facing workflows, check whether the output makes commitments, discloses internal context, or invents facts. For developer workflows, check whether the output includes secrets, insecure commands, or code that violates policy. For legal or HR workflows, check whether the output requires review before use.
+
+The app should decide whether to allow, redact, block, route for review, or rewrite the output. That decision should be logged with the prompt, workflow, model route, retrieved sources, and policy rule. Output controls are especially important for agents because the output may become the input to another tool or system. Once unsafe output enters email, CRM, Slack, Jira, GitHub, or a customer portal, containment becomes harder.
+
+Output checks should be workflow-specific. A sales email needs different checks than a code suggestion or HR summary. The app should know whether the output is internal, customer-facing, regulated, executable, or used for a decision. This context determines whether the right action is allow, warn, redact, require review, or block.`
+            },
+            {
+                heading: "8. Monitor for Direct and Indirect Attack Signals",
+                content: `Security teams need telemetry that makes prompt injection visible. Useful signals include requests to ignore instructions, reveal prompts, bypass policies, export data, call unauthorized tools, change recipients, disable logging, summarize hidden content, or treat external text as a command. The app should also detect unusual tool-call patterns, repeated blocked actions, sudden retrieval of unrelated sensitive documents, and outputs that include policy language or system-like text.
+
+Indirect prompt injection signals can be subtle. A support ticket might contain text that tells the AI to send customer data elsewhere. A web page might include hidden instructions in metadata. A PDF might contain white text or tiny-font instructions. A repository issue might ask an AI coding assistant to reveal secrets. Monitoring should connect the suspicious instruction to the source object so responders can remove or quarantine the content.
+
+Do not bury prompt injection events in generic application logs. Security teams need structured fields: user, workflow, source document, model route, tool requested, action taken, severity, policy rule, and downstream destination. Those logs should feed <a href='/features/audit-trails'>audit trails</a> and, for serious events, the security operations workflow.
+
+Monitoring should separate curiosity from attack patterns. A single employee asking how prompt injection works may be training or research. Repeated attempts to reveal system prompts, change tool destinations, or bypass output review are different. Correlate attempts by user, team, workflow, source object, and tool. Pattern detection helps security teams focus on real risk instead of drowning in isolated low-severity events.`
+            },
+            {
+                heading: "9. Red Team the Full Workflow, Not Just the Model",
+                content: `Many teams test prompt injection by trying jailbreak prompts against a model. That is useful, but it is not enough for enterprise AI apps. The real target is the workflow: how prompts are assembled, what documents are retrieved, which tools can be called, what outputs are exported, and what evidence is recorded. Red teaming should test the whole chain.
+
+Build test cases for direct injection, indirect injection, retrieval poisoning, hidden text, file uploads, tool misuse, output exfiltration, multi-turn escalation, and approval bypass. For each test, record whether the app detected the attack, contained the action, protected sensitive data, warned the user or reviewer, logged evidence, and created an incident if needed. A failed attack that leaves no log is still a control gap because the security team cannot learn from it.
+
+Red team tests should be repeated after model changes, retrieval changes, new tools, new vendors, major prompt updates, or workflow expansion. A defense that works for a chat-only app may fail once the app can call tools. A defense that works for plain text may fail when users upload PDFs, images, or spreadsheets. The test suite should evolve with the application.
+
+Make red team results operational. Each finding should map to a control improvement: better source labeling, tighter retrieval, stricter tool permission, clearer review, stronger output check, or improved logging. A red team report that does not change the product is theater. The value is in turning attack evidence into safer defaults.`
+            },
+            {
+                heading: "10. Prepare an Incident Response Path for Prompt Injection",
+                content: `Prompt injection events should have their own incident path. The response questions are different from traditional web attacks. What instruction was injected? Where did it come from? Which model saw it? Which sources were retrieved? Which tool calls were proposed or executed? Did the output reveal data? Did the output enter another system? Was the user malicious, careless, or simply exposed to hostile content?
+
+The incident playbook should define triage, containment, evidence access, stakeholder notification, corrective action, and closure. Containment may involve quarantining a source document, disabling a tool, rotating credentials, restricting a workflow, blocking a model route, removing downstream messages, or adding a new detection rule. If the event involved regulated or customer data, privacy and legal teams may need to assess obligations.
+
+Corrective action should improve the system, not just close a ticket. If an injected document reached the model, improve input labeling or retrieval filtering. If a tool call almost executed, tighten tool permission checks. If a reviewer missed a warning, improve the review interface. If logs were incomplete, fix evidence capture. Prompt injection defense matures through incident learning.
+
+The incident path should include content cleanup. If the source of the attack is a document, ticket, page, or repository issue, remove or quarantine it so the same content is not retrieved again. If the output entered downstream systems, mark what was removed, corrected, or left in place. Prompt injection incidents often leave artifacts behind; cleanup is part of containment.`
+            },
+            {
+                heading: "11. Give Employees Safe Routes Instead of Only Blocking",
+                content: `Security controls fail when they only say no. If employees are trying to use AI to summarize tickets, analyze documents, draft customer replies, or review code, blocking every risky prompt will push them toward unsanctioned tools. Prompt injection defense should provide safe routes: approved workflows, constrained tools, redacted data paths, and clear review rules.
+
+Just-in-time guidance helps. When a prompt or file is blocked, the app should explain the reason and recommend the approved alternative. If a user tries to upload a customer export into a general model, route them to a workflow approved for customer data. If a user tries to run an agent action that requires approval, show the review step. If a document contains hostile instructions, explain that the source content is being treated as untrusted data.
+
+This matters because prompt injection is often encountered by well-intentioned users. A support agent may not know that a customer email contains malicious instructions. A researcher may not know a web page contains hidden text. The app should protect the user while preserving a useful path to complete the task.
+
+Safe routes also create better telemetry. If users have an approved workflow for customer summaries, support replies, document analysis, and code review, security teams can see how those workflows behave. If users are forced into personal tools, there is no prompt injection telemetry, no evidence, and no containment path.`
+            },
+            {
+                heading: "12. Make Prompt Injection Evidence Audit-Ready",
+                content: `A mature prompt injection defense program should be able to prove what happened. For each risky event, capture the user, workflow, prompt source, retrieved content references, model route, tool requested, policy decision, output action, reviewer decision, and downstream destination. This does not mean every reviewer gets full prompt content. Sensitive records should be protected with role-based access, metadata views, and scoped exports.
+
+Evidence should support sampling. A security lead should be able to ask for prompt injection detections over the last 30 days, blocked tool calls by workflow, indirect injection attempts by source type, high-severity events, repeated attempts by user or team, and corrective actions. These records help leadership see whether controls are improving, whether employees need guidance, and whether specific workflows need stronger boundaries.
+
+Remova fits this layer by helping teams enforce <a href='/features/policy-guardrails'>policy guardrails</a>, limit model and tool access, protect sensitive data through <a href='/features/sensitive-data-protection'>sensitive data protection</a>, and retain <a href='/features/audit-trails'>audit trails</a> for AI activity. The practical goal is simple: hostile instructions should be detected, contained, and evidenced before they become data loss or unauthorized action.
+
+The final test is whether a security owner can explain the event without asking engineering to reconstruct it manually. Which source carried the hostile instruction? Which control detected it? Which tool action was blocked? Which output was reviewed? Which corrective action followed? If the answer is available in the audit trail, prompt injection defense has moved from theory to operations.`
+            },
+        ],
+        faqs: [
+            { question: "What is prompt injection?", answer: "Prompt injection is an attack where hostile instructions are placed in a user prompt, document, web page, email, ticket, or other content so an AI app follows the attacker's instructions instead of the trusted workflow rules." },
+            { question: "What is indirect prompt injection?", answer: "Indirect prompt injection happens when the AI app reads malicious instructions from external or retrieved content, such as a document, email, web page, support ticket, or code comment, rather than from the human user's direct prompt." },
+            { question: "Can prompt injection be solved with a better system prompt?", answer: "No. Strong prompts help, but enterprise defense also needs input labeling, retrieval controls, least-privilege tools, output checks, human approval, logging, red teaming, and incident response." },
+            { question: "What is the most important prompt injection defense for AI agents?", answer: "Least-privilege tool access is the most important defense. If an injected instruction reaches the model, the agent still should not be able to call unauthorized tools, access unrelated data, or execute high-impact actions without review." },
+            { question: "How does Remova help with prompt injection defense?", answer: "Remova helps enforce policy guardrails, restrict model and tool access, protect sensitive data, log prompt injection signals, and produce audit trails for blocked, reviewed, and allowed AI activity." },
+        ],
+    },
 ];
 
 const now = new Date();
