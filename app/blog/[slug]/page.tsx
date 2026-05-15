@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { allBlogPosts, type BlogPost } from "@/content/blog";
+import { blogCategoryPath, getBlogCategorySeo } from "@/content/blog-taxonomy";
 import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
@@ -21,6 +22,18 @@ const ISO_42001_CLUSTER_SLUGS = new Set([
 const PROMPT_INJECTION_CLUSTER_SLUGS = new Set([
     "prompt-injection-defense-checklist-enterprise-ai-apps",
 ]);
+
+const POST_SEO_KEYWORDS: Record<string, string[]> = {
+    "ai-customer-service": ["ai customer service", "ai customer service tools", "customer support ai", "ai ticket triage", "ai chatbot for customer service"],
+    "artificial-intelligence-in-companies": ["artificial intelligence in companies", "ai in companies", "enterprise ai adoption", "ai for business operations"],
+    "artificial-intelligence-tools-for-business": ["artificial intelligence tools for business", "ai tools for business", "business ai tools", "enterprise ai tools"],
+    "artificial-intelligence-tools-list-enterprise-ai-stack": ["artificial intelligence tools list", "enterprise ai stack", "ai tools list", "ai software stack"],
+    "best-ai-for-coding": ["best ai for coding", "ai coding tools", "ai code assistant", "ai for software development"],
+    "best-artificial-intelligence-tools-for-employees": ["best artificial intelligence tools for employees", "employee ai tools", "workplace ai tools", "ai productivity tools"],
+    "best-email-marketing-tools-small-sales-teams": ["best email marketing tools for small sales teams", "email marketing tools", "sales email automation", "small business email marketing tools"],
+    "free-artificial-intelligence-tools-at-work": ["free artificial intelligence tools", "free ai tools for work", "free workplace ai tools", "safe free ai tools"],
+    "how-to-choose-artificial-intelligence-tools-enterprise": ["how to choose artificial intelligence tools", "enterprise ai tool evaluation", "ai vendor evaluation", "ai software selection"],
+};
 
 type BlogInlineCta = NonNullable<BlogPost["inlineCtas"]>[number];
 
@@ -87,6 +100,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!post) return {};
     const title = post.title;
     const description = post.metaDescription;
+    const categorySeo = getBlogCategorySeo(post.category);
+    const postSeoKeywords = POST_SEO_KEYWORDS[post.slug] ?? [];
+    const primarySeoTopic = categorySeo.keywords[0] ?? "enterprise ai controls";
     const isMicrosoft365CopilotSecurityPost = post.slug === "microsoft-365-copilot-security-checklist";
     const isPromptEngineeringPost = post.slug === "prompt-engineering-policy-guide";
     const isDataLossPreventionPost = post.slug === "data-loss-prevention-ai-prompts";
@@ -118,9 +134,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         keywords: buildKeywords([
             post.title,
             post.category,
-            isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
+            isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : primarySeoTopic,
             "ai policy controls",
             "ai operations"
+        ], categorySeo.keywords, postSeoKeywords, [
+            categorySeo.title
         ]),
         openGraph: {
             title,
@@ -162,7 +180,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         },
         ...(post.articleType === "NewsArticle" && {
             other: {
-                "news_keywords": [post.title, post.category, "enterprise ai governance"].join(", ")
+                "news_keywords": [post.title, post.category, primarySeoTopic].join(", ")
             }
         }),
     };
@@ -174,6 +192,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     if (!post && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!post) return <div>Not found</div>;
     const isDataLossPreventionPost = post.slug === "data-loss-prevention-ai-prompts";
+    const categorySeo = getBlogCategorySeo(post.category);
+    const postSeoKeywords = POST_SEO_KEYWORDS[post.slug] ?? [];
+    const primarySeoTopic = categorySeo.keywords[0] ?? "enterprise ai controls";
     const metricsByCategory: Record<string, string[]> = {
         Guide: [
             "Control adoption rate by team",
@@ -249,10 +270,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const structuredKeywords = buildKeywords([
         post.title,
         post.category,
-        isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
+        isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : primarySeoTopic,
         "ai policy controls",
         "ai operations",
-    ], [
+    ], categorySeo.keywords, postSeoKeywords, [
         ...(isIso42001Post ? [
             "ISO 42001",
             "AI management system",
@@ -314,7 +335,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     ]);
     const structuredAbout = [
         { "@type": "Thing", "name": post.category },
-        { "@type": "Thing", "name": isDataLossPreventionPost ? "Data loss prevention" : isPromptInjectionClusterPost ? "Prompt injection defense" : isIso42001ClusterPost ? "ISO 42001" : isPromptEngineeringPost ? "Prompt engineering" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "Enterprise AI governance" },
+        { "@type": "Thing", "name": isDataLossPreventionPost ? "Data loss prevention" : isPromptInjectionClusterPost ? "Prompt injection defense" : isIso42001ClusterPost ? "ISO 42001" : isPromptEngineeringPost ? "Prompt engineering" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : primarySeoTopic },
+        ...categorySeo.keywords.slice(0, 4).map((keyword) => ({ "@type": "Thing", "name": keyword })),
         { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
         ...(isIso42001Post ? [
             { "@type": "Thing", "name": "AI risk management" },
@@ -428,7 +450,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 "contentUrl": absoluteUrl(post.video.contentUrl),
                 "embedUrl": absoluteUrl(`/blog/${post.slug}#article-video`),
                 "transcript": post.video.transcript,
-                "keywords": [post.title, post.category, "Remova", isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise AI governance"].join(", "),
+                "keywords": [post.title, post.category, "Remova", isDataLossPreventionPost ? "data loss prevention for AI prompts" : isPromptInjectionClusterPost ? "prompt injection defense" : isIso42001ClusterPost ? "ISO 42001 AI management system" : isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : primarySeoTopic].join(", "),
             },
         }),
     };
@@ -439,7 +461,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": absoluteUrl("/") },
             { "@type": "ListItem", "position": 2, "name": "Blog", "item": absoluteUrl("/blog") },
-            { "@type": "ListItem", "position": 3, "name": post.title },
+            { "@type": "ListItem", "position": 3, "name": post.category, "item": absoluteUrl(blogCategoryPath(post.category)) },
+            { "@type": "ListItem", "position": 4, "name": post.title },
         ],
     };
 
@@ -523,13 +546,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         <ChevronRight className="h-4 w-4 shrink-0" />
                         <Link href="/blog" className="hover:text-slate-900 transition-colors">Blog</Link>
                         <ChevronRight className="h-4 w-4 shrink-0" />
+                        <Link href={blogCategoryPath(post.category)} className="hover:text-slate-900 transition-colors">{post.category}</Link>
+                        <ChevronRight className="h-4 w-4 shrink-0" />
                         <span className="text-slate-900 dark:text-white truncate">{post.title}</span>
                     </nav>
 
                     <div className="flex items-center gap-4 mb-8">
-                        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-4 py-1.5 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md">
+                        <Link href={blogCategoryPath(post.category)} className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50/50 dark:bg-white/5 px-4 py-1.5 text-sm font-bold text-slate-900 dark:text-white backdrop-blur-md transition hover:border-blue-300 hover:text-blue-700 dark:hover:border-blue-300/50 dark:hover:text-blue-300">
                             <Tag className="h-3.5 w-3.5" /> {post.category}
-                        </span>
+                        </Link>
                         <time dateTime={post.date} className="flex items-center gap-1.5 text-sm text-slate-500 dark:text-slate-400 font-medium">
                             <Calendar className="h-3.5 w-3.5" />
                             {new Date(`${post.date}T00:00:00.000Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}

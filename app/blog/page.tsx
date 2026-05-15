@@ -2,24 +2,28 @@ import { Metadata } from "next";
 import Link from "next/link";
 import type { BlogPost } from "@/content/blog";
 import { allBlogPosts } from "@/content/blog";
+import { blogCategoryPath, blogCategorySlug, getBlogCategorySeo } from "@/content/blog-taxonomy";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Enterprise AI Governance Blog",
-    description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
+    title: "Enterprise AI Blog: Tools, Security, Compliance, Workflows",
+    description: "Practical guides on AI tools, coding, customer service, security, compliance, and workflow controls for teams running AI at work.",
     keywords: buildKeywords([
         "enterprise ai blog",
-        "ai governance guides",
-        "ai policy enforcement",
+        "artificial intelligence tools",
+        "best ai for coding",
+        "ai customer service",
         "ai security operations",
-        "ai cost management"
+        "ai compliance",
+        "prompt engineering",
+        "ai cost management",
     ]),
     openGraph: {
-        title: "Enterprise AI Governance Blog",
-        description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
+        title: "Enterprise AI Blog: Tools, Security, Compliance, Workflows",
+        description: "Practical guides on AI tools, coding, customer service, security, compliance, and workflow controls for teams running AI at work.",
         url: absoluteUrl("/blog"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -27,8 +31,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Governance Blog",
-        description: "Practical guides on AI governance, policy enforcement, security, and cost control for enterprise teams.",
+        title: "Enterprise AI Blog: Tools, Security, Compliance, Workflows",
+        description: "Practical guides on AI tools, coding, customer service, security, compliance, and workflow controls for teams running AI at work.",
         images: [DEFAULT_OG_IMAGE_URL]
     },
     alternates: { canonical: "/blog" },
@@ -106,29 +110,6 @@ const latestPostPeopleArt: Record<string, { primary: string; secondary: string; 
     },
 };
 
-const categoryThemes = [
-    {
-        title: "Governance",
-        id: "governance",
-        description: "Frameworks, operating models, and rollout decisions for enterprise AI programs.",
-        artSlug: "enterprise-ai-governance-guide",
-    },
-    {
-        title: "Security",
-        id: "security",
-        description: "Controls for prompt injection, data leakage, tool use, and model access.",
-        artSlug: "prompt-injection-prevention-guide",
-    },
-    {
-        title: "Compliance",
-        id: "compliance",
-        description: "Evidence, policy, audit trails, and regulatory readiness for AI adoption.",
-        artSlug: "iso-42001-ai-governance-checklist",
-    },
-] satisfies { title: string; id: string; description: string; artSlug: string }[];
-
-const categoryPath = (slug: string) => `/blog/category/${slug}`;
-
 const categoryFallbackArt: Record<string, string> = {
     Compliance: "iso-42001-ai-governance-checklist",
     Governance: "enterprise-ai-governance-guide",
@@ -141,6 +122,22 @@ const categoryFallbackArt: Record<string, string> = {
     Architecture: "ai-gateway-vs-governance-platform",
     "Buyer Guide": "enterprise-ai-governance-guide",
 };
+
+const categoryThemes = Array.from(new Set(allBlogPosts.map((post) => post.category)))
+    .map((category) => {
+        const seo = getBlogCategorySeo(category);
+        const posts = allBlogPosts.filter((post) => post.category === category);
+        return {
+            title: category,
+            id: blogCategorySlug(category),
+            description: seo.description,
+            artSlug: seo.artSlug,
+            priority: seo.priority,
+            postCount: posts.length,
+            latestDate: posts[0]?.date ?? "1970-01-01",
+        };
+    })
+    .sort((a, b) => b.priority - a.priority || b.postCount - a.postCount || b.latestDate.localeCompare(a.latestDate) || a.title.localeCompare(b.title));
 
 const youtubeVideos = [
     {
@@ -205,7 +202,8 @@ function postImageSrc(post: BlogPost) {
     if (peopleArt) return peopleArt.primary;
 
     const rasterImage = post.images?.find((image) => isRasterImage(image.src));
-    const fallbackArt = latestPostPeopleArt[categoryFallbackArt[post.category]];
+    const fallbackArtSlug = categoryFallbackArt[post.category] ?? getBlogCategorySeo(post.category).artSlug;
+    const fallbackArt = latestPostPeopleArt[fallbackArtSlug];
     return rasterImage?.src ?? fallbackArt?.primary ?? DEFAULT_OG_IMAGE_URL;
 }
 
@@ -214,12 +212,22 @@ function postImageAlt(post: BlogPost) {
     if (peopleArt) return peopleArt.alt;
 
     const rasterImage = post.images?.find((image) => isRasterImage(image.src));
-    const fallbackArt = latestPostPeopleArt[categoryFallbackArt[post.category]];
+    const fallbackArtSlug = categoryFallbackArt[post.category] ?? getBlogCategorySeo(post.category).artSlug;
+    const fallbackArt = latestPostPeopleArt[fallbackArtSlug];
     return rasterImage?.alt ?? fallbackArt?.alt ?? post.video?.title ?? `${post.title} article visual`;
 }
 
-function categoryArt(section: { artSlug: string }) {
-    return latestPostPeopleArt[section.artSlug];
+function categoryArt(section: { artSlug: string; title: string }) {
+    const indexedArt = latestPostPeopleArt[section.artSlug];
+    if (indexedArt) return indexedArt;
+
+    const leadPost = categoryPosts(section.title, 1)[0];
+    const src = leadPost ? postImageSrc(leadPost) : DEFAULT_OG_IMAGE_URL;
+    return {
+        primary: src,
+        secondary: src,
+        alt: leadPost ? postImageAlt(leadPost) : `${section.title} article visual`,
+    };
 }
 
 function categoryPosts(category: string, limit = 4) {
@@ -385,12 +393,12 @@ export default function BlogIndex() {
                                 Remova blog
                             </p>
                             <h1 className="text-5xl font-black tracking-tighter text-slate-950 sm:text-6xl lg:text-7xl dark:text-white">
-                                AI governance reads for teams running real systems
+                                AI reads for teams running real systems
                             </h1>
                         </div>
                         <div className="max-w-md">
                             <p className="text-base font-medium leading-relaxed text-slate-600 dark:text-slate-300">
-                                Practical security, compliance, architecture, and cost-control guidance for enterprise AI programs. {allBlogPosts.length} articles and growing.
+                                Practical guidance on AI tools, coding, support, security, compliance, architecture, and cost control. {allBlogPosts.length} articles and growing.
                             </p>
                             <div className="mt-5 flex flex-wrap gap-3">
                                 <ExternalAppLink
@@ -470,7 +478,7 @@ export default function BlogIndex() {
                             href="https://app.remova.org/register"
                             className="inline-flex items-center justify-center rounded-lg bg-slate-950 px-4 py-3 text-sm font-black text-white transition hover:bg-blue-700 dark:bg-white dark:text-slate-950"
                         >
-                            Govern this in Remova
+                            Run this in Remova
                         </ExternalAppLink>
                     </div>
 
@@ -531,7 +539,7 @@ export default function BlogIndex() {
                                         </p>
                                     </div>
                                     <Link
-                                        href={categoryPath(section.id)}
+                                        href={blogCategoryPath(section.title)}
                                         className="inline-flex items-center gap-2 border-b-2 border-blue-600 pb-1 text-sm font-black text-slate-950 transition hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
                                     >
                                         See more articles <span aria-hidden="true">-&gt;</span>
@@ -592,7 +600,7 @@ export default function BlogIndex() {
                             return (
                                 <a
                                     key={topic.title}
-                                    href={categoryPath(topic.id)}
+                                    href={blogCategoryPath(topic.title)}
                                     className="group block rounded-lg border border-slate-200 bg-white p-6 text-left transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg dark:border-white/10 dark:bg-[#131314] dark:hover:border-blue-300/50"
                                 >
                                     {topicArt ? (

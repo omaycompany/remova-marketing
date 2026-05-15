@@ -2,16 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type { BlogPost } from "@/content/blog";
 import { allBlogPosts } from "@/content/blog";
+import { blogCategoryPath, blogCategorySlug, getBlogCategorySeo } from "@/content/blog-taxonomy";
 import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyBlogCategoryRedirect, legacyBlogCategoryStaticParams } from "@/lib/legacy-redirects";
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, legacyRedirectMetadata } from "@/lib/seo";
-
-function categorySlug(category: string) {
-    return category.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata } from "@/lib/seo";
 
 function categoryFromSlug(slug: string) {
-    return Array.from(new Set(allBlogPosts.map((post) => post.category))).find((category) => categorySlug(category) === slug);
+    return Array.from(new Set(allBlogPosts.map((post) => post.category))).find((category) => blogCategorySlug(category) === slug);
 }
 
 function formatDate(date: string) {
@@ -37,7 +34,7 @@ function postImageAlt(post: BlogPost) {
 
 export async function generateStaticParams() {
     const currentCategoryParams = Array.from(new Set(allBlogPosts.map((post) => post.category))).map((category) => ({
-        slug: categorySlug(category),
+        slug: blogCategorySlug(category),
     }));
 
     return [...currentCategoryParams, ...legacyBlogCategoryStaticParams];
@@ -46,24 +43,32 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const category = categoryFromSlug(params.slug);
     if (category) {
+        const seo = getBlogCategorySeo(category);
+        const canonicalPath = blogCategoryPath(category);
         return {
-            title: `${category} AI Articles`,
-            description: `Read Remova articles about ${category.toLowerCase()} for enterprise AI governance, security, compliance, and operations teams.`,
+            title: seo.title,
+            description: seo.description,
+            keywords: buildKeywords([
+                category,
+                "enterprise ai blog",
+                "ai tools",
+                ...seo.keywords,
+            ]),
             openGraph: {
-                title: `${category} AI Articles`,
-                description: `Read Remova articles about ${category.toLowerCase()} for enterprise AI teams.`,
-                url: absoluteUrl(`/blog/category/${params.slug}`),
+                title: seo.title,
+                description: seo.description,
+                url: absoluteUrl(canonicalPath),
                 siteName: SITE_NAME,
                 images: [DEFAULT_OG_IMAGE],
                 type: "website",
             },
             twitter: {
                 card: "summary_large_image",
-                title: `${category} AI Articles`,
-                description: `Read Remova articles about ${category.toLowerCase()} for enterprise AI teams.`,
+                title: seo.title,
+                description: seo.description,
                 images: [DEFAULT_OG_IMAGE_URL],
             },
-            alternates: { canonical: `/blog/category/${params.slug}` },
+            alternates: { canonical: canonicalPath },
         };
     }
 
@@ -74,6 +79,7 @@ export default function BlogCategoryLegacyPage({ params }: { params: { slug: str
     const category = categoryFromSlug(params.slug);
     if (category) {
         const posts = allBlogPosts.filter((post) => post.category === category);
+        const seo = getBlogCategorySeo(category);
 
         return (
             <div className="bg-white px-4 pb-20 pt-36 dark:bg-[#131314] sm:px-6 lg:px-8">
@@ -83,9 +89,9 @@ export default function BlogCategoryLegacyPage({ params }: { params: { slug: str
                             &lt;- Back to blog
                         </Link>
                         <p className="mb-3 text-sm font-black uppercase tracking-[0.22em] text-blue-700 dark:text-blue-300">Category</p>
-                        <h1 className="text-5xl font-black tracking-tighter text-slate-950 sm:text-6xl dark:text-white">{category}</h1>
+                        <h1 className="text-5xl font-black tracking-tighter text-slate-950 sm:text-6xl dark:text-white">{seo.title}</h1>
                         <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-slate-600 dark:text-slate-300">
-                            {posts.length} articles for enterprise AI teams working on {category.toLowerCase()}.
+                            {seo.description} Browse {posts.length} articles in this topic.
                         </p>
                     </div>
 

@@ -5,6 +5,7 @@ import { comparisons } from '@/content/comparisons'
 import { useCases } from '@/content/use-cases'
 import { glossaryTerms } from '@/content/glossary'
 import { allBlogPosts } from '@/content/blog'
+import { blogCategoryPath, getBlogCategorySeo } from '@/content/blog-taxonomy'
 import { modelsLastUpdated } from '@/content/models'
 import { modelLandings } from '@/content/model-landings'
 import { SITE_LAST_UPDATED_DATE, SITE_URL, dateFromIsoDate, isRecentDate } from '@/lib/seo'
@@ -22,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const latestBlogDate = allBlogPosts.length > 0
         ? dateFromIsoDate(allBlogPosts[0].date)
         : SITE_LAST_UPDATED_DATE
+    const blogCategoryDates = new Map<string, string>()
+    for (const post of allBlogPosts) {
+        const modified = post.lastModified ?? post.date
+        const current = blogCategoryDates.get(post.category)
+        if (!current || modified > current) blogCategoryDates.set(post.category, modified)
+    }
 
     return [
         { url: SITE_URL, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 1 },
@@ -44,6 +51,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...comparisons.map((c) => m(`/compare/${c.slug}`, 0.7)),
         ...useCases.map((u) => m(`/use-cases/${u.slug}`, 0.8)),
         ...glossaryTerms.map((g) => m(`/glossary/${g.slug}`, 0.5)),
+        ...Array.from(blogCategoryDates.entries()).map(([category, lastModified]) => {
+            const seo = getBlogCategorySeo(category)
+            return {
+                url: `${SITE_URL}${blogCategoryPath(category)}`,
+                lastModified: dateFromIsoDate(lastModified),
+                changeFrequency: 'weekly' as const,
+                priority: Math.min(0.78, Math.max(0.55, seo.priority - 0.04)),
+            }
+        }),
         // Recent posts (< 30 days) get higher priority + weekly crawl frequency
         ...allBlogPosts.map((p) => {
             const recent = isRecentDate(p.date)

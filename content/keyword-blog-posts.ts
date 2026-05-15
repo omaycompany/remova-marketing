@@ -865,12 +865,95 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
     ];
 }
 
+function buildInlineCtas(data: KeywordPostData, sectionCount: number): NonNullable<BlogPost["inlineCtas"]> {
+    const secondaryLink = data.internalLinks[0] ?? { label: "platform controls", href: "/features/policy-guardrails" };
+    const placements = sectionCount >= 10 ? [2, 5, 8] : sectionCount >= 7 ? [1, 3, 5] : [1, Math.max(1, sectionCount - 1)];
+
+    return [
+        {
+            afterSection: placements[0],
+            eyebrow: `${data.category} execution`,
+            title: `Put ${data.keyword} controls into the workflow`,
+            description: `Remova helps teams turn ${data.angle.toLowerCase()} into live AI controls: data checks, role-aware access, model routes, budget limits, and audit trails inside the employee workflow.`,
+            primaryLabel: "Start in Remova",
+            primaryHref: "https://app.remova.org/register",
+            secondaryLabel: `See ${secondaryLink.label}`,
+            secondaryHref: secondaryLink.href,
+        },
+        {
+            afterSection: placements[1],
+            eyebrow: "Runtime protection",
+            title: `Catch risky ${data.keyword} activity before it spreads`,
+            description: `Apply ${data.primaryControl.toLowerCase()} before prompts, files, retrieved context, or agent actions reach the wrong model, tool, department, or destination.`,
+            primaryLabel: "Create a workspace",
+            primaryHref: "https://app.remova.org/register",
+            secondaryLabel: "View audit trails",
+            secondaryHref: "/features/audit-trails",
+        },
+        {
+            afterSection: placements[2] ?? placements[placements.length - 1],
+            eyebrow: "Proof for reviewers",
+            title: "Keep every AI decision reviewable",
+            description: `Capture who used the workflow, which model route applied, what policy decision fired, whether data was redacted or blocked, and which owner reviewed the exception.`,
+            primaryLabel: "Build the evidence trail",
+            primaryHref: "https://app.remova.org/register",
+            secondaryLabel: "See sensitive data protection",
+            secondaryHref: "/features/sensitive-data-protection",
+        },
+    ];
+}
+
+function keywordRasterHeroFor(data: KeywordPostData) {
+    switch (data.slug) {
+        case "iso-42001-ai-governance-checklist":
+            return {
+                src: "/images/blog-index/iso-42001-ai-governance-checklist-people-1.webp",
+                alt: "Enterprise AI team reviewing an ISO 42001 checklist with control and evidence mapping",
+                caption: "ISO 42001 work should be visible in the operating workflow: owners, controls, evidence, reviews, and improvement actions.",
+            };
+        case "prompt-injection-prevention-guide":
+            return {
+                src: "/images/blog-index/prompt-injection-prevention-guide-people-1.webp",
+                alt: "Security team reviewing prompt injection defenses for enterprise AI applications",
+                caption: "Prompt injection defense needs runtime checks around retrieved content, tool calls, data access, and approvals.",
+            };
+        case "enterprise-ai-governance-guide":
+            return {
+                src: "/images/blog-index/enterprise-ai-governance-guide-people-1.webp",
+                alt: "Enterprise leaders reviewing AI controls, model access, and audit evidence",
+                caption: "Enterprise AI programs become practical when employee workflows, model access, data controls, and evidence are connected.",
+            };
+        case "prompt-engineering-policy-guide":
+            return {
+                src: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+                alt: "Prompt engineering rules overview for enterprise teams",
+                caption: "Prompt engineering scales when high-value prompts become approved workflows with data checks, review steps, and evidence.",
+            };
+        case "microsoft-365-copilot-security-checklist":
+            return {
+                src: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+                alt: "Microsoft 365 Copilot security checklist overview for enterprise teams",
+                caption: "Copilot rollout should be tied to permissions, labels, DLP, audit logs, training, and cross-model AI controls.",
+            };
+        case "data-loss-prevention-ai-prompts":
+            return {
+                src: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+                alt: "Data loss prevention for AI prompts overview",
+                caption: "AI prompt DLP should inspect prompts, uploads, retrieval context, and agent tool inputs before data reaches a model.",
+            };
+        default:
+            return null;
+    }
+}
+
 export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) => {
     const isMicrosoft365CopilotSecurity = data.slug === "microsoft-365-copilot-security-checklist";
     const isPromptEngineeringRules = data.slug === "prompt-engineering-policy-guide";
     const isDataLossPrevention = data.slug === "data-loss-prevention-ai-prompts";
     const publishDate = isMicrosoft365CopilotSecurity || isPromptEngineeringRules || isDataLossPrevention ? "2026-05-15" : distributedPublishDate(index, keywordPostData.length);
     const isIso42001 = data.slug === "iso-42001-ai-governance-checklist";
+    const sections = buildSections(data);
+    const rasterHero = keywordRasterHeroFor(data);
 
     return {
         slug: data.slug,
@@ -891,12 +974,13 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
                     : isPromptEngineeringRules
                         ? "A practical prompt engineering rulebook for turning high-value prompts into reusable workflows with data controls, review steps, testing, and audit evidence."
             : `${data.angle} for ${data.reader}, with practical controls, evidence, metrics, and Remova implementation guidance.`,
-        sections: buildSections(data),
+        sections,
+        inlineCtas: buildInlineCtas(data, sections.length),
         images: [
             {
-                src: `/images/blog/${data.slug}-hero.svg?v=${keywordMediaVersion}`,
-                alt: isDataLossPrevention ? `${data.title} AI prompt DLP controls graphic` : isMicrosoft365CopilotSecurity ? `${data.title} Microsoft 365 security checklist graphic` : isPromptEngineeringRules ? `${data.title} prompt engineering rules graphic` : `${data.title} enterprise AI control diagram`,
-                caption: isDataLossPrevention ? "AI prompt DLP should inspect and control sensitive data before it reaches models, tools, or agents." : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security starts with permissions, labels, DLP, audit logs, and user training." : isPromptEngineeringRules ? "Prompt engineering should become reusable workflows with data rules, review steps, and audit evidence." : `${data.keyword} needs a working control model, not just a policy document.`,
+                src: rasterHero?.src ?? `/images/blog/${data.slug}-hero.svg?v=${keywordMediaVersion}`,
+                alt: rasterHero?.alt ?? (isDataLossPrevention ? `${data.title} AI prompt DLP controls graphic` : isMicrosoft365CopilotSecurity ? `${data.title} Microsoft 365 security checklist graphic` : isPromptEngineeringRules ? `${data.title} prompt engineering rules graphic` : `${data.title} enterprise AI control diagram`),
+                caption: rasterHero?.caption ?? (isDataLossPrevention ? "AI prompt DLP should inspect and control sensitive data before it reaches models, tools, or agents." : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security starts with permissions, labels, DLP, audit logs, and user training." : isPromptEngineeringRules ? "Prompt engineering should become reusable workflows with data rules, review steps, and audit evidence." : `${data.keyword} needs a working control model, not just a policy document.`),
                 afterSection: 0,
                 hero: true,
             },
