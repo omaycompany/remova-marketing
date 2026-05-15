@@ -1,7 +1,8 @@
 import type { BlogPost } from "./blog";
 import { keywordPostData, type KeywordPostData } from "./keyword-post-data";
 
-const publishDate = "2026-05-14";
+const latestPublishDate = "2026-05-14";
+const earliestPublishDate = "2026-03-14";
 const signupLink = `<a href="https://app.remova.org/register">Sign up for Remova</a>`;
 const minimumAuthorityLinks = 5;
 const keywordMediaVersion = "2026-05-14-c";
@@ -15,6 +16,18 @@ const defaultAuthorityLinks = [
     { label: "NIST Cybersecurity Framework", href: "https://www.nist.gov/cyberframework" },
     { label: "EU data protection legal framework", href: "https://commission.europa.eu/law/law-topic/data-protection/legal-framework-eu-data-protection_en" },
 ];
+
+function distributedPublishDate(index: number, total: number) {
+    if (total <= 1) return latestPublishDate;
+
+    const latest = Date.parse(`${latestPublishDate}T00:00:00.000Z`);
+    const earliest = Date.parse(`${earliestPublishDate}T00:00:00.000Z`);
+    const span = latest - earliest;
+    const offset = Math.round((span * index) / (total - 1));
+    const date = new Date(latest - offset);
+
+    return date.toISOString().slice(0, 10);
+}
 
 function formatNumber(value: number) {
     return value.toLocaleString("en-US");
@@ -145,48 +158,52 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
     ];
 }
 
-export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data) => ({
-    slug: data.slug,
-    title: data.title,
-    metaDescription: data.metaDescription,
-    category: data.category,
-    date: publishDate,
-    lastModified: publishDate,
-    articleType: "BlogPosting",
-    author: "Remova Research Team",
-    readTime: "8 min",
-    excerpt: `${data.angle} for ${data.reader}, with practical controls, evidence, metrics, and Remova implementation guidance.`,
-    sections: buildSections(data),
-    images: [
-        {
-            src: `/images/blog/${data.slug}-hero.svg?v=${keywordMediaVersion}`,
-            alt: `${data.title} enterprise governance diagram`,
-            caption: `${data.keyword} needs a working control model, not just a policy document.`,
-            afterSection: 0,
-            hero: true,
+export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) => {
+    const publishDate = distributedPublishDate(index, keywordPostData.length);
+
+    return {
+        slug: data.slug,
+        title: data.title,
+        metaDescription: data.metaDescription,
+        category: data.category,
+        date: publishDate,
+        lastModified: publishDate,
+        articleType: "BlogPosting",
+        author: "Remova Research Team",
+        readTime: "8 min",
+        excerpt: `${data.angle} for ${data.reader}, with practical controls, evidence, metrics, and Remova implementation guidance.`,
+        sections: buildSections(data),
+        images: [
+            {
+                src: `/images/blog/${data.slug}-hero.svg?v=${keywordMediaVersion}`,
+                alt: `${data.title} enterprise governance diagram`,
+                caption: `${data.keyword} needs a working control model, not just a policy document.`,
+                afterSection: 0,
+                hero: true,
+            },
+            {
+                src: `/images/blog/${data.slug}-control-map.svg?v=${keywordMediaVersion}`,
+                alt: `${data.keyword} control map showing policy, data protection, model routing, and audit evidence`,
+                caption: `Map ${data.keyword} to runtime decisions, evidence, owners, and review cycles.`,
+                afterSection: 2,
+            },
+            {
+                src: `/images/blog/${data.slug}-checklist.svg?v=${keywordMediaVersion}`,
+                alt: `${data.keyword} implementation checklist for enterprise teams`,
+                caption: `Use the checklist to move from search intent to enforceable AI governance work.`,
+                afterSection: 3,
+            },
+        ],
+        video: {
+            title: `${data.title} Video Overview`,
+            description: `A short Remova overview of ${data.keyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
+            contentUrl: `/videos/blog/${data.slug}.mp4?v=${keywordMediaVersion}`,
+            thumbnailUrl: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+            captionsUrl: `/videos/blog/${data.slug}.vtt?v=${keywordMediaVersion}`,
+            duration: "PT9S",
+            uploadDate: publishDate,
+            transcript: buildTranscript(data),
         },
-        {
-            src: `/images/blog/${data.slug}-control-map.svg?v=${keywordMediaVersion}`,
-            alt: `${data.keyword} control map showing policy, data protection, model routing, and audit evidence`,
-            caption: `Map ${data.keyword} to runtime decisions, evidence, owners, and review cycles.`,
-            afterSection: 2,
-        },
-        {
-            src: `/images/blog/${data.slug}-checklist.svg?v=${keywordMediaVersion}`,
-            alt: `${data.keyword} implementation checklist for enterprise teams`,
-            caption: `Use the checklist to move from search intent to enforceable AI governance work.`,
-            afterSection: 3,
-        },
-    ],
-    video: {
-        title: `${data.title} Video Overview`,
-        description: `A short Remova overview of ${data.keyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
-        contentUrl: `/videos/blog/${data.slug}.mp4?v=${keywordMediaVersion}`,
-        thumbnailUrl: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
-        captionsUrl: `/videos/blog/${data.slug}.vtt?v=${keywordMediaVersion}`,
-        duration: "PT9S",
-        uploadDate: publishDate,
-        transcript: buildTranscript(data),
-    },
-    faqs: buildFaqs(data),
-}));
+        faqs: buildFaqs(data),
+    };
+});

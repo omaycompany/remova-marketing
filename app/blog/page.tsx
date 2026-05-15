@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     alternates: { canonical: "/blog" },
 };
 
-const categories = Array.from(new Set(allBlogPosts.map(p => p.category)));
 const relatedHubs = [
     { href: "/features", label: "Features" },
     { href: "/use-cases", label: "Use Cases" },
@@ -50,6 +49,11 @@ const blogItems = allBlogPosts.map((post) => ({
 }));
 
 const latestPostPeopleArt: Record<string, { primary: string; secondary: string; alt: string }> = {
+    "nist-ai-rmf-2-enterprise-update": {
+        primary: "/images/blog-index/nist-ai-rmf-enterprise-guide-people-1.webp",
+        secondary: "/images/blog-index/nist-ai-rmf-enterprise-guide-people-2.webp",
+        alt: "Risk and compliance leaders reviewing AI risk management framework updates",
+    },
     "iso-42001-ai-governance-checklist": {
         primary: "/images/blog-index/iso-42001-ai-governance-checklist-people-1.webp",
         secondary: "/images/blog-index/iso-42001-ai-governance-checklist-people-2.webp",
@@ -129,47 +133,44 @@ const youtubeVideos = [
         title: "How to Create a Business Report with AI | Remova Enterprise AI",
         duration: "5:48",
         published: "May 13, 2026",
+        thumbnail: "/images/video-thumbnails/remova-ai-enterprise2.png",
     },
     {
         id: "6DWMKpU4DKQ",
         title: "How to Turn Meeting Notes into Action Items with AI | Remova Enterprise AI",
         duration: "6:12",
         published: "May 13, 2026",
+        thumbnail: "/images/video-thumbnails/remova-ai-enterprise3.png",
     },
     {
         id: "9vTS6pOomOw",
         title: "How to Create a Meeting Agenda in Seconds with AI | Remova Enterprise AI",
         duration: "6:19",
         published: "May 13, 2026",
+        thumbnail: "/images/video-thumbnails/remova-ai-enterprise4.png",
     },
     {
         id: "WJbasO3o6qM",
         title: "How to Write Professional Emails Faster with AI | Remova Enterprise AI",
         duration: "3:24",
         published: "May 13, 2026",
+        thumbnail: "/images/video-thumbnails/remova-ai-enterprise5.png",
     },
     {
         id: "aL5FLabJ6do",
         title: "How to Use AI to Summarize Emails in Seconds | Remova AI Productivity Tip",
         duration: "3:54",
         published: "May 13, 2026",
+        thumbnail: "/images/video-thumbnails/remova-ai-enterprise6.png",
     },
     {
         id: "uouQuzFC94k",
         title: "What is Remova AI? Secure Enterprise AI Access for ChatGPT, Claude, and Gemini",
         duration: "18:03",
         published: "May 5, 2026",
+        thumbnail: "/images/video-thumbnails/remova-ai-enterprise1.png",
     },
-] satisfies { id: string; title: string; duration: string; published: string }[];
-
-const videoLibraryPeopleArt = [
-    latestPostPeopleArt["enterprise-ai-governance-guide"],
-    latestPostPeopleArt["prompt-injection-prevention-guide"],
-    latestPostPeopleArt["ai-governance-framework-template"],
-    latestPostPeopleArt["nist-ai-rmf-enterprise-guide"],
-    latestPostPeopleArt["what-is-an-llm-gateway"],
-    latestPostPeopleArt["mcp-security-enterprise-guide"],
-] as const;
+] satisfies { id: string; title: string; duration: string; published: string; thumbnail: string }[];
 
 function formatDate(date: string) {
     return new Intl.DateTimeFormat("en-US", {
@@ -300,16 +301,15 @@ function CategoryArticleRow({ post, withImage = false }: { post: BlogPost; withI
     );
 }
 
-function YouTubeVideoCard({ video, index }: { video: (typeof youtubeVideos)[number]; index: number }) {
+function YouTubeVideoCard({ video }: { video: (typeof youtubeVideos)[number] }) {
     const href = `https://www.youtube.com/watch?v=${video.id}`;
-    const art = videoLibraryPeopleArt[index % videoLibraryPeopleArt.length];
 
     return (
         <a href={href} target="_blank" rel="noreferrer" className="group block min-w-0">
             <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-slate-200">
                 <img
-                    src={art.secondary}
-                    alt={art.alt}
+                    src={video.thumbnail}
+                    alt={`${video.title} thumbnail`}
                     className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
                     loading="lazy"
                 />
@@ -392,16 +392,6 @@ export default function BlogIndex() {
                         </div>
                     </div>
 
-                    <div className="flex gap-2 overflow-x-auto pb-2">
-                        {categories.map((cat) => (
-                            <span
-                                key={cat}
-                                className="shrink-0 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
-                            >
-                                {cat}
-                            </span>
-                        ))}
-                    </div>
                 </div>
             </section>
 
@@ -490,8 +480,8 @@ export default function BlogIndex() {
                         </a>
                     </div>
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {youtubeVideos.map((video, index) => (
-                            <YouTubeVideoCard key={video.id} video={video} index={index} />
+                        {youtubeVideos.map((video) => (
+                            <YouTubeVideoCard key={video.id} video={video} />
                         ))}
                     </div>
                 </div>
