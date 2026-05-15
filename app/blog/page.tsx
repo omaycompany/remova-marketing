@@ -127,6 +127,19 @@ const categoryThemes = [
     },
 ] satisfies { title: string; id: string; description: string; artSlug: string }[];
 
+const categoryFallbackArt: Record<string, string> = {
+    Compliance: "iso-42001-ai-governance-checklist",
+    Governance: "enterprise-ai-governance-guide",
+    Security: "prompt-injection-prevention-guide",
+    Risk: "nist-ai-rmf-enterprise-guide",
+    Privacy: "mcp-security-enterprise-guide",
+    Policy: "ai-governance-framework-template",
+    "Developer Governance": "ai-gateway-vs-governance-platform",
+    Operations: "what-is-an-llm-gateway",
+    Architecture: "ai-gateway-vs-governance-platform",
+    "Buyer Guide": "enterprise-ai-governance-guide",
+};
+
 const youtubeVideos = [
     {
         id: "ULZB1YYl6V8",
@@ -190,7 +203,8 @@ function postImageSrc(post: BlogPost) {
     if (peopleArt) return peopleArt.primary;
 
     const rasterImage = post.images?.find((image) => isRasterImage(image.src));
-    return rasterImage?.src ?? DEFAULT_OG_IMAGE_URL;
+    const fallbackArt = latestPostPeopleArt[categoryFallbackArt[post.category]];
+    return rasterImage?.src ?? fallbackArt?.primary ?? DEFAULT_OG_IMAGE_URL;
 }
 
 function postImageAlt(post: BlogPost) {
@@ -198,7 +212,8 @@ function postImageAlt(post: BlogPost) {
     if (peopleArt) return peopleArt.alt;
 
     const rasterImage = post.images?.find((image) => isRasterImage(image.src));
-    return rasterImage?.alt ?? post.video?.title ?? `${post.title} article visual`;
+    const fallbackArt = latestPostPeopleArt[categoryFallbackArt[post.category]];
+    return rasterImage?.alt ?? fallbackArt?.alt ?? post.video?.title ?? `${post.title} article visual`;
 }
 
 function categoryArt(section: { artSlug: string }) {
