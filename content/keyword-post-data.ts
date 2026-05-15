@@ -1711,38 +1711,38 @@ export const keywordPostData: KeywordPostData[] = [
     },
     {
         slug: "data-loss-prevention-ai-prompts",
-        keyword: "data loss prevention",
-        title: "Data Loss Prevention for AI Prompts and Copilots",
-        metaDescription: "Apply data loss prevention to AI prompts, copilots, APIs, and agents with redaction, policy enforcement, and audit evidence.",
+        keyword: "Data Loss Prevention",
+        title: "Data Loss Prevention for AI Prompts: 12 Controls That Stop Leaks",
+        metaDescription: "Use these AI prompt DLP controls to detect, redact, block, reroute, and audit sensitive data before it reaches copilots, LLM APIs, or agents.",
         category: "Security",
         volume: 14800,
         cpc: "$89.89",
         competition: "Low",
-        angle: "Data loss prevention for AI prompts and copilots",
+        angle: "Data loss prevention for AI prompts, copilots, APIs, and agents",
         reader: "CISOs, security operations teams, DLP owners, AI platform teams, and compliance leaders",
-        coreProblem: "Traditional data loss prevention tools were not designed for natural-language prompts, long documents, model APIs, copilots, or agent tool calls.",
-        riskEvent: "a user pastes source code, customer records, credentials, contract terms, or financial data into an AI workflow that sends it to an external model",
-        controlGoal: "inspect and control sensitive data before it enters AI prompts, retrieval context, or tool calls",
-        primaryControl: "AI-native DLP and redaction",
-        sourceLinks: [commonSources.nistCyber, commonSources.owaspLlm, commonSources.euDataProtection],
-        internalLinks: [commonInternal.redaction, commonInternal.policy, commonInternal.audit, commonInternal.ciso],
+        coreProblem: "Traditional data loss prevention tools were built for email, endpoints, files, and networks; AI leaks happen inside natural-language prompts, uploaded documents, retrieved context, model APIs, copilots, and agent tool calls.",
+        riskEvent: "a user pastes source code, customer records, credentials, contract terms, financial forecasts, or regulated data into an AI workflow that sends it to the wrong model or tool",
+        controlGoal: "inspect and control sensitive data before it enters prompts, retrieved context, model APIs, copilots, or agent tool calls",
+        primaryControl: "AI-native prompt DLP and redaction",
+        sourceLinks: [commonSources.nistCyber, commonSources.owaspLlm, commonSources.openAiData, commonSources.euDataProtection],
+        internalLinks: [commonInternal.redaction, commonInternal.policy, commonInternal.audit, commonInternal.analytics],
         checklist: [
-            "Define sensitive data classes for AI prompts, files, retrieval, and tool calls.",
-            "Detect secrets, PII, regulated data, source code, contracts, and customer records.",
-            "Redact, block, or reroute requests based on data class and model route.",
-            "Give users contextual feedback when a DLP policy changes the request.",
-            "Log detections, actions, exceptions, and repeat patterns for investigation."
+            "Classify the sensitive data that must never reach the wrong AI model or tool.",
+            "Inspect prompts, uploads, retrieved context, API payloads, and agent tool calls inline.",
+            "Redact, block, warn, or reroute requests based on data class, user role, and model route.",
+            "Give users clear feedback and safe alternatives when DLP changes a request.",
+            "Log detections, actions, exceptions, repeat patterns, and reviewer decisions."
         ],
         metrics: [
-            "Sensitive data detections by workflow",
+            "Prompt DLP detections by data class",
             "Redacted versus blocked AI requests",
-            "Repeat DLP events by user or team",
-            "Exception age for sensitive workflows"
+            "Repeat sensitive-data events by team",
+            "Exception age for high-risk workflows"
         ],
         pitfalls: [
-            "Using legacy regex-only DLP for AI prompts",
-            "Blocking everything without a safe approved workflow",
-            "Ignoring files, retrieved chunks, tool outputs, and agent actions"
+            "Using email-era regex rules as the only AI prompt defense",
+            "Blocking useful work without offering a safe approved route",
+            "Ignoring uploads, retrieved chunks, API payloads, tool outputs, and agent actions"
         ]
     }
 ];

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="data loss prevention control map">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Data Loss Prevention control map">
         
         <style>
             .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
@@ -43,6 +43,6 @@
             
         <rect x="112" y="384" width="976" height="104" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
         <text class="label" x="142" y="416">Primary control</text>
-        <text class="body" x="142" y="449"><tspan x="142" dy="0">AI-native DLP and redaction</tspan></text>
-        <text class="small" x="142" y="474"><tspan x="142" dy="0">Inspect and control sensitive data before it enters AI prompts, retrieval context, or tool...</tspan></text>
+        <text class="body" x="142" y="449"><tspan x="142" dy="0">AI-native prompt DLP and redaction</tspan></text>
+        <text class="small" x="142" y="474"><tspan x="142" dy="0">Inspect and control sensitive data before it enters prompts, retrieved context, model APIs,...</tspan></text>
     </svg>

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { allBlogPosts } from "@/content/blog";
+import { allBlogPosts, type BlogPost } from "@/content/blog";
 import { ArrowRight, Clock, Calendar, Tag, ChevronRight, Zap } from "lucide-react";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
@@ -21,6 +21,57 @@ const ISO_42001_CLUSTER_SLUGS = new Set([
 const PROMPT_INJECTION_CLUSTER_SLUGS = new Set([
     "prompt-injection-defense-checklist-enterprise-ai-apps",
 ]);
+
+type BlogInlineCta = NonNullable<BlogPost["inlineCtas"]>[number];
+
+function InlineCtaAction({ href, label, variant }: { href: string; label: string; variant: "primary" | "secondary" }) {
+    const className = variant === "primary"
+        ? "inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-blue-100"
+        : "inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-3 text-sm font-black text-white transition hover:border-white hover:bg-white/10";
+
+    const content = (
+        <>
+            {label}
+            {variant === "primary" ? <ArrowRight className="ml-2 h-4 w-4" /> : null}
+        </>
+    );
+
+    if (href.startsWith("/")) {
+        return (
+            <Link href={href} className={className}>
+                {content}
+            </Link>
+        );
+    }
+
+    return (
+        <ExternalAppLink href={href} className={className}>
+            {content}
+        </ExternalAppLink>
+    );
+}
+
+function InlineArticleCta({ cta }: { cta: BlogInlineCta }) {
+    return (
+        <aside className="overflow-hidden rounded-lg border border-slate-900 bg-slate-950 p-6 shadow-xl shadow-slate-900/10 dark:border-white/10">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-emerald-300">
+                {cta.eyebrow}
+            </p>
+            <h3 className="max-w-2xl text-2xl font-black leading-tight tracking-tight text-white sm:text-3xl">
+                {cta.title}
+            </h3>
+            <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-slate-300">
+                {cta.description}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+                <InlineCtaAction href={cta.primaryHref} label={cta.primaryLabel} variant="primary" />
+                {cta.secondaryHref && cta.secondaryLabel ? (
+                    <InlineCtaAction href={cta.secondaryHref} label={cta.secondaryLabel} variant="secondary" />
+                ) : null}
+            </div>
+        </aside>
+    );
+}
 
 export async function generateStaticParams() {
     return [
@@ -534,6 +585,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <div className="container mx-auto max-w-4xl space-y-16">
                     {post.sections.map((section, i) => {
                         const sectionImages = post.images?.filter((image) => !image.hero && image.afterSection === i) ?? [];
+                        const sectionCtas = post.inlineCtas?.filter((cta) => cta.afterSection === i) ?? [];
 
                         return (
                             <div key={i} className="space-y-8">
@@ -566,6 +618,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                                             {image.caption}
                                         </figcaption>
                                     </figure>
+                                ))}
+
+                                {sectionCtas.map((cta) => (
+                                    <InlineArticleCta key={`${cta.afterSection}-${cta.title}`} cta={cta} />
                                 ))}
                             </div>
                         );

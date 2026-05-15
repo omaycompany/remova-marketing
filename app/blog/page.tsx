@@ -127,6 +127,8 @@ const categoryThemes = [
     },
 ] satisfies { title: string; id: string; description: string; artSlug: string }[];
 
+const categoryPath = (slug: string) => `/blog/category/${slug}`;
+
 const categoryFallbackArt: Record<string, string> = {
     Compliance: "iso-42001-ai-governance-checklist",
     Governance: "enterprise-ai-governance-guide",
@@ -529,7 +531,7 @@ export default function BlogIndex() {
                                         </p>
                                     </div>
                                     <Link
-                                        href="#latest"
+                                        href={categoryPath(section.id)}
                                         className="inline-flex items-center gap-2 border-b-2 border-blue-600 pb-1 text-sm font-black text-slate-950 transition hover:text-blue-700 dark:text-white dark:hover:text-blue-300"
                                     >
                                         See more articles <span aria-hidden="true">-&gt;</span>
@@ -590,7 +592,7 @@ export default function BlogIndex() {
                             return (
                                 <a
                                     key={topic.title}
-                                    href={`#category-${topic.id}`}
+                                    href={categoryPath(topic.id)}
                                     className="group block rounded-lg border border-slate-200 bg-white p-6 text-left transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-lg dark:border-white/10 dark:bg-[#131314] dark:hover:border-blue-300/50"
                                 >
                                     {topicArt ? (

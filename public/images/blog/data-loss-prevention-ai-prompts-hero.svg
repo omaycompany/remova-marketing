@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Data Loss Prevention for AI Prompts and Copilots">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Data Loss Prevention for AI Prompts: 12 Controls That Stop Leaks">
         
         <style>
             .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
@@ -23,24 +23,24 @@
         <rect width="1200" height="630" fill="#ffffff"/>
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="76" width="1060" height="478" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
-        <text class="eyebrow" x="112" y="132">data loss prevention / Security</text>
-        <text class="title" x="112" y="204"><tspan x="112" dy="0">Data Loss Prevention for AI</tspan><tspan x="112" dy="60">Prompts and Copilots</tspan></text>
+        <text class="eyebrow" x="112" y="132">Data Loss Prevention / Security</text>
+        <text class="title" x="112" y="204"><tspan x="112" dy="0">Data Loss Prevention for AI</tspan><tspan x="112" dy="60">Prompts: 12 Controls That Stop</tspan><tspan x="112" dy="60">Leaks</tspan></text>
         
-        <rect x="112" y="390" width="205" height="112" rx="18" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
-        <text class="label" x="132" y="426">Monthly searches</text>
-        <text class="metric" x="132" y="468" fill="#2563eb">14,800</text>
+        <rect x="112" y="414" width="205" height="112" rx="18" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+        <text class="label" x="132" y="450">Monthly searches</text>
+        <text class="metric" x="132" y="492" fill="#2563eb">14,800</text>
     
         
-        <rect x="347" y="390" width="205" height="112" rx="18" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
-        <text class="label" x="367" y="426">CPC signal</text>
-        <text class="metric" x="367" y="468" fill="#10b981">$89.89</text>
+        <rect x="347" y="414" width="205" height="112" rx="18" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+        <text class="label" x="367" y="450">CPC signal</text>
+        <text class="metric" x="367" y="492" fill="#10b981">$89.89</text>
     
         
-        <rect x="582" y="390" width="205" height="112" rx="18" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
-        <text class="label" x="602" y="426">Competition</text>
-        <text class="metric" x="602" y="468" fill="#f59e0b">Low</text>
+        <rect x="582" y="414" width="205" height="112" rx="18" fill="#ffffff" stroke="#dbe3ef" stroke-width="2"/>
+        <text class="label" x="602" y="450">Competition</text>
+        <text class="metric" x="602" y="492" fill="#f59e0b">Low</text>
     
-        <rect x="826" y="390" width="244" height="54" rx="27" fill="#111827"/>
-        <text x="858" y="425" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Sign up for Remova</text>
-        <text class="small" x="826" y="474"><tspan x="826" dy="0">Policy, redaction, access,</tspan><tspan x="826" dy="22">budgets, and audit trails.</tspan></text>
+        <rect x="826" y="414" width="244" height="54" rx="27" fill="#111827"/>
+        <text x="858" y="449" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Sign up for Remova</text>
+        <text class="small" x="826" y="498"><tspan x="826" dy="0">Policy, redaction, access,</tspan><tspan x="826" dy="22">budgets, and audit trails.</tspan></text>
     </svg>

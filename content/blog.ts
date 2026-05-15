@@ -15,6 +15,16 @@ export interface BlogPost {
     excerpt: string;
     sections: { heading: string; content: string }[];
     images?: { src: string; alt: string; caption: string; afterSection: number; hero?: boolean }[];
+    inlineCtas?: {
+        afterSection: number;
+        eyebrow: string;
+        title: string;
+        description: string;
+        primaryLabel: string;
+        primaryHref: string;
+        secondaryLabel?: string;
+        secondaryHref?: string;
+    }[];
     video?: {
         title: string;
         description: string;
@@ -3435,6 +3445,38 @@ That is why automatic capture should be designed with the reviewer in mind. The 
                 alt: "Enterprise AI team workshop for prompt injection testing and incident response",
                 caption: "Red-team drills and response workshops help teams prove that prompt injection controls still work after model, retrieval, or tool changes.",
                 afterSection: 9,
+            },
+        ],
+        inlineCtas: [
+            {
+                afterSection: 2,
+                eyebrow: "Prompt injection readiness",
+                title: "Find risky AI inputs before they reach production",
+                description: "Use Remova to inspect prompts, uploaded files, retrieved context, and tool-bound requests before hostile instructions become a data leak or unsafe action.",
+                primaryLabel: "Start in Remova",
+                primaryHref: "https://app.remova.org/register",
+                secondaryLabel: "Explore policy guardrails",
+                secondaryHref: "/features/policy-guardrails",
+            },
+            {
+                afterSection: 5,
+                eyebrow: "Agent and tool control",
+                title: "Stop unsafe tool calls before the model can execute them",
+                description: "Put model routes, user roles, data classes, approval steps, and action limits in one control path so a successful injection still cannot cross a business boundary.",
+                primaryLabel: "Create a workspace",
+                primaryHref: "https://app.remova.org/register",
+                secondaryLabel: "See role access controls",
+                secondaryHref: "/features/role-access-control",
+            },
+            {
+                afterSection: 8,
+                eyebrow: "Evidence for security teams",
+                title: "Turn blocked prompt attacks into reviewable audit trails",
+                description: "Capture the user, workflow, source content, model route, policy decision, reviewer action, and downstream destination in records your security team can actually use.",
+                primaryLabel: "Build the audit trail",
+                primaryHref: "https://app.remova.org/register",
+                secondaryLabel: "View audit trails",
+                secondaryHref: "/features/audit-trails",
             },
         ],
         sections: [
