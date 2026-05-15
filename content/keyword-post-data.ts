@@ -1379,7 +1379,7 @@ export const keywordPostData: KeywordPostData[] = [
         ],
         pitfalls: [
             "Letting every developer manage their own API key",
-            "Shipping prototypes without production data controls",
+            "Launching prototypes without production data controls",
             "Treating API logs as audit evidence without prompt-level policy context"
         ]
     },

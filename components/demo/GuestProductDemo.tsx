@@ -127,7 +127,7 @@ const initialConversations: DemoConversation[] = [
             {
                 id: "pii-u1",
                 role: "user",
-                text: "Please email the shipping delay update to ozzy@example.com and send the replacement to 25 Ibrahim Tatlises Apt, Tarabya Boulevard.",
+                text: "Please email the delivery delay update to ozzy@example.com and send the replacement to 25 Ibrahim Tatlises Apt, Tarabya Boulevard.",
             },
             {
                 id: "pii-a1",

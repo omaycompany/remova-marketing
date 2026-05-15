@@ -383,7 +383,7 @@ export default function BlogIndex() {
                                 Remova blog
                             </p>
                             <h1 className="text-5xl font-black tracking-tighter text-slate-950 sm:text-6xl lg:text-7xl dark:text-white">
-                                AI governance reads for teams shipping real systems
+                                AI governance reads for teams running real systems
                             </h1>
                         </div>
                         <div className="max-w-md">
@@ -474,7 +474,7 @@ export default function BlogIndex() {
 
                     <div className="grid gap-x-10 gap-y-5 lg:grid-cols-2">
                         {latestPosts.map((post) => (
-                            <CategoryArticleRow key={post.slug} post={post} withImage={Boolean(latestPostPeopleArt[post.slug])} />
+                            <CategoryArticleRow key={post.slug} post={post} withImage />
                         ))}
                     </div>
                 </div>
