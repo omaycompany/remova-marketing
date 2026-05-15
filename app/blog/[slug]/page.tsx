@@ -23,6 +23,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!post) return {};
     const title = post.title;
     const description = post.metaDescription;
+    const isMicrosoft365CopilotSecurityPost = post.slug === "microsoft-365-copilot-security-checklist";
+    const isPromptEngineeringPost = post.slug === "prompt-engineering-policy-guide";
     const publishedTime = `${post.date}T00:00:00.000Z`;
     const modifiedTime = `${post.lastModified ?? post.date}T00:00:00.000Z`;
     const heroImage = post.images?.find((image) => image.hero);
@@ -49,7 +51,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         keywords: buildKeywords([
             post.title,
             post.category,
-            "enterprise ai governance",
+            isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
             "ai policy controls",
             "ai operations"
         ]),
@@ -129,6 +131,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             "Policy violation recurrence rate",
             "Review cycle SLA adherence",
         ],
+        Security: [
+            "Overshared content remediated",
+            "Sensitive content events reviewed",
+            "Permission drift findings by department",
+            "Security report closure time",
+        ],
+        Policy: [
+            "Approved templates by workflow",
+            "Template adoption by department",
+            "Sensitive prompt redactions",
+            "Output review failures by template",
+        ],
         Governance: [
             "Governance meeting action closure rate",
             "Control drift incidents",
@@ -155,28 +169,60 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const heroImage = post.images?.find((image) => image.hero);
     const structuredImage = post.video?.thumbnailUrl ?? heroImage?.src ?? DEFAULT_OG_IMAGE_URL;
     const isIso42001Post = post.slug === "iso-42001-ai-governance-checklist";
+    const isMicrosoft365CopilotSecurityPost = post.slug === "microsoft-365-copilot-security-checklist";
+    const isPromptEngineeringPost = post.slug === "prompt-engineering-policy-guide";
     const structuredKeywords = buildKeywords([
         post.title,
         post.category,
-        "enterprise ai governance",
+        isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise ai governance",
         "ai policy controls",
         "ai operations",
-    ], isIso42001Post ? [
-        "ISO 42001",
-        "AI management system",
-        "AI governance checklist",
-        "AI risk management",
-        "audit evidence",
-        "NIST AI RMF",
-        "EU AI Act",
-    ] : []);
+    ], [
+        ...(isIso42001Post ? [
+            "ISO 42001",
+            "AI management system",
+            "AI governance checklist",
+            "AI risk management",
+            "audit evidence",
+            "NIST AI RMF",
+            "EU AI Act",
+        ] : []),
+        ...(isMicrosoft365CopilotSecurityPost ? [
+            "Microsoft 365 Copilot",
+            "Microsoft Graph",
+            "SharePoint permissions",
+            "Microsoft Purview",
+            "DLP",
+            "sensitivity labels",
+            "Copilot audit logs",
+        ] : []),
+        ...(isPromptEngineeringPost ? [
+            "prompt engineering",
+            "prompt templates",
+            "prompt library",
+            "prompt injection",
+            "AI prompt rules",
+            "preset workflows",
+            "prompt audit trails",
+        ] : []),
+    ]);
     const structuredAbout = [
         { "@type": "Thing", "name": post.category },
-        { "@type": "Thing", "name": "Enterprise AI governance" },
+        { "@type": "Thing", "name": isPromptEngineeringPost ? "Prompt engineering" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "Enterprise AI governance" },
         { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
         ...(isIso42001Post ? [
             { "@type": "Thing", "name": "AI risk management" },
             { "@type": "Thing", "name": "Audit evidence" },
+        ] : []),
+        ...(isMicrosoft365CopilotSecurityPost ? [
+            { "@type": "Thing", "name": "Microsoft Graph" },
+            { "@type": "Thing", "name": "SharePoint permissions" },
+            { "@type": "Thing", "name": "Data loss prevention" },
+        ] : []),
+        ...(isPromptEngineeringPost ? [
+            { "@type": "Thing", "name": "Prompt templates" },
+            { "@type": "Thing", "name": "Prompt injection" },
+            { "@type": "Thing", "name": "AI audit trails" },
         ] : []),
     ];
     const structuredMentions = isIso42001Post ? [
@@ -184,6 +230,18 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         { "@type": "Thing", "name": "AI management system" },
         { "@type": "Thing", "name": "NIST AI RMF" },
         { "@type": "Thing", "name": "EU AI Act" },
+        { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
+    ] : isMicrosoft365CopilotSecurityPost ? [
+        { "@type": "Thing", "name": "Microsoft 365 Copilot" },
+        { "@type": "Thing", "name": "Microsoft Graph" },
+        { "@type": "Thing", "name": "Microsoft Purview" },
+        { "@type": "Thing", "name": "SharePoint" },
+        { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
+    ] : isPromptEngineeringPost ? [
+        { "@type": "Thing", "name": "Prompt engineering" },
+        { "@type": "Thing", "name": "Prompt template" },
+        { "@type": "Thing", "name": "Prompt injection" },
+        { "@type": "Thing", "name": "AI audit trails" },
         { "@type": "Organization", "name": "Remova", "url": absoluteUrl("/") },
     ] : undefined;
 
@@ -228,7 +286,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 "contentUrl": absoluteUrl(post.video.contentUrl),
                 "embedUrl": absoluteUrl(`/blog/${post.slug}#article-video`),
                 "transcript": post.video.transcript,
-                "keywords": [post.title, post.category, "Remova", "enterprise AI governance"].join(", "),
+                "keywords": [post.title, post.category, "Remova", isPromptEngineeringPost ? "prompt engineering rules" : isMicrosoft365CopilotSecurityPost ? "Microsoft 365 Copilot security" : "enterprise AI governance"].join(", "),
             },
         }),
     };

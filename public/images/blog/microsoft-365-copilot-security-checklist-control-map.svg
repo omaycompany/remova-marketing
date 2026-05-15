@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Prompt Engineering control map">
-        
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Microsoft 365 Copilot control map">
+
         <style>
             .eyebrow { font: 900 18px Inter, Arial, sans-serif; letter-spacing: 0; text-transform: uppercase; fill: #2563eb; }
             .title { font: 950 58px Inter, Arial, sans-serif; letter-spacing: 0; fill: #111827; }
@@ -19,30 +19,30 @@
                 <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.13"/>
             </filter>
         </defs>
-    
+
         <rect width="1200" height="630" fill="#ffffff"/>
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="70" width="1060" height="490" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
         <text class="eyebrow" x="112" y="126">Runtime control map</text>
-        
+
                 <rect x="95" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
                 <text class="node" x="190" y="261" text-anchor="middle">Input</text>
                 <path d="M 285 251 L 347 251" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 341 235 L 365 251 L 341 267" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            
+
                 <rect x="365" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
                 <text class="node" x="460" y="261" text-anchor="middle">Policy</text>
                 <path d="M 555 251 L 617 251" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 611 235 L 635 251 L 611 267" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            
+
                 <rect x="635" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
                 <text class="node" x="730" y="261" text-anchor="middle">Model</text>
                 <path d="M 825 251 L 887 251" stroke="#2563eb" stroke-width="5" stroke-linecap="round"/><path d="M 881 235 L 905 251 L 881 267" fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-            
+
                 <rect x="905" y="188" width="190" height="126" rx="22" fill="#f8fafc" stroke="#dbe3ef" stroke-width="2"/>
                 <text class="node" x="1000" y="261" text-anchor="middle">Audit</text>
-                
-            
+
+
         <rect x="112" y="384" width="976" height="104" rx="20" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
         <text class="label" x="142" y="416">Primary control</text>
-        <text class="body" x="142" y="449"><tspan x="142" dy="0">approved prompt template library</tspan></text>
-        <text class="small" x="142" y="474"><tspan x="142" dy="0">Convert useful prompts into approved, reusable, safe workflows</tspan></text>
+        <text class="body" x="142" y="449"><tspan x="142" dy="0">Copilot data-access security review</tspan></text>
+        <text class="small" x="142" y="474"><tspan x="142" dy="0">Prepare Microsoft 365 data, permissions, and security controls before Copilot becomes a dai...</tspan></text>
     </svg>

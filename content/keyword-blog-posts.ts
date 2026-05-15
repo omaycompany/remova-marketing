@@ -5,7 +5,7 @@ const latestPublishDate = "2026-05-14";
 const earliestPublishDate = "2026-03-14";
 const signupLink = `<a href="https://app.remova.org/register">Sign up for Remova</a>`;
 const minimumAuthorityLinks = 5;
-const keywordMediaVersion = "2026-05-14-c";
+const keywordMediaVersion = "2026-05-15-a";
 
 const defaultAuthorityLinks = [
     { label: "NIST AI RMF", href: "https://www.nist.gov/itl/ai-risk-management-framework" },
@@ -66,6 +66,14 @@ function numberedSeries(items: string[]) {
 }
 
 function buildTranscript(data: KeywordPostData) {
+    if (data.slug === "prompt-engineering-policy-guide") {
+        return `${data.title}. The article explains how enterprise teams should turn useful prompts into reusable templates, data-safe workflows, review steps, tests, and audit evidence instead of leaving prompt quality to individual trial and error.`;
+    }
+
+    if (data.slug === "microsoft-365-copilot-security-checklist") {
+        return `${data.title}. The article explains how Microsoft 365 Copilot changes data-access risk, then walks through permissions, sensitivity labels, DLP, audit logs, rollout controls, and Remova's role in protecting prompts and employee AI workflows.`;
+    }
+
     return `${data.title}. The article explains why ${data.keyword} matters for ${data.reader}, then maps the risk scenario to practical enterprise controls. It highlights ${data.primaryControl}, shows the core checklist, and closes with how Remova helps teams enforce policy, redaction, access, budgets, and audit evidence in one governed AI workspace.`;
 }
 
@@ -217,9 +225,281 @@ That is the operating standard to aim for. ISO 42001 should not slow down useful
     ];
 }
 
+function buildMicrosoft365CopilotSecuritySections(data: KeywordPostData): BlogPost["sections"] {
+    const externalLinks = linkedList(authorityLinksFor(data));
+    const internalLinks = linkedList(data.internalLinks);
+    const checklistText = numberedSeries(data.checklist);
+    const metricsText = sentenceSeries(data.metrics);
+    const pitfallsText = sentenceSeries(data.pitfalls);
+    const volume = formatNumber(data.volume);
+
+    return [
+        {
+            heading: "1. Start With the Direct Security Answer",
+            content: `Microsoft 365 Copilot security starts with a simple rule: Copilot can only be as safe as the Microsoft 365 tenant it can read. The product is designed to respect existing identity, permissions, sensitivity labels, retention settings, audit features, and administrative controls. That is useful, but it also means Copilot can make old permission mistakes easier to find. A file that was overshared in SharePoint yesterday may become a fast answer in Copilot tomorrow.
+
+The practical answer is not to delay AI forever. It is to run a focused security review before broad rollout. Review SharePoint, Teams, OneDrive, Exchange, and Microsoft Graph exposure. Confirm sensitivity labels and DLP settings. Decide which teams can use Copilot for which data classes. Turn on the audit views that security teams will actually use. Give employees clear guidance about what Copilot can access and how to report unexpected results.
+
+This topic is worth prioritizing because "${data.keyword}" has about ${volume} verified US monthly searches, a CPC signal of ${data.cpc}, and ${data.competition.toLowerCase()} competition. The search demand is broad, but the buyer problem is specific. IT and security leaders are not only asking what Copilot does. They are asking whether Copilot will reveal sensitive content, amplify bad permissions, create new audit requirements, or confuse employees about where company data can go.
+
+Use official references such as ${externalLinks} for the baseline. Microsoft explains that Copilot works within Microsoft 365 controls and uses data the user is already permitted to access. The operating question for your team is whether those permissions, labels, and audit settings are already clean enough for AI-assisted search, summarization, and drafting.`
+        },
+        {
+            heading: "2. Map What Copilot Can Reach",
+            content: `The first security task is to map the real data surface. Microsoft 365 Copilot is not a separate empty chatbot. It can use Microsoft 365 context through Microsoft Graph, including content from the services your tenant already uses. That may include SharePoint sites, OneDrive files, Teams conversations, Outlook content, calendar context, user profile information, and recent collaboration signals, subject to the user's permissions and product settings.
+
+Security teams should create a simple inventory before expanding access. Which repositories contain sensitive customer records? Which SharePoint sites were created for old projects and never cleaned up? Which Teams have guest users? Which OneDrive folders contain copied exports? Which mailboxes or shared folders contain HR, legal, finance, incident-response, or M&A material? Which labels are applied consistently, and which sensitive files are unlabeled?
+
+The goal is not to document every file manually. The goal is to identify high-risk locations and patterns that Copilot could make more visible. Look for broad groups such as "Everyone", "Everyone except external users", stale project teams, anonymous sharing links, external guests with lingering access, and sites where owners have left the company. Those issues were already security risks. Copilot raises the priority because it can help users find and summarize content that would otherwise stay buried.
+
+Remediation should be staged. Start with the most sensitive sites and the largest audiences. Remove broad links, replace individual access sprawl with managed groups, confirm site ownership, and document why remaining broad access is legitimate. Treat this as a data-access cleanup project, not an AI-only project. Copilot is the trigger, but the underlying issue is permission hygiene across the tenant.`
+        },
+        {
+            heading: "3. Fix Permission Rot Before Rollout",
+            content: `Permission rot is the most common Microsoft 365 Copilot risk. It happens when files, folders, sites, teams, or groups accumulate access that no longer matches the business need. A finance workbook may be shared with an old cross-functional team. A customer list may sit in a project site with broad internal access. A confidential strategy deck may have a sharing link that was created for one meeting and never expired. Copilot does not need to break access controls to create a problem. It only needs to use the access that already exists.
+
+Run the cleanup like a security release gate. Define the sensitive data classes that must be reviewed first: employee records, customer records, financial plans, source material for legal matters, contracts, healthcare or education data, authentication secrets, board materials, unreleased product plans, and regulated records. Then identify where those classes live in SharePoint, OneDrive, Teams, and Exchange. The first milestone is not a perfect tenant. It is reducing obvious overexposure in the places where harm would be highest.
+
+Access reviews should have owners. A central IT team can produce reports, but business owners usually understand whether a team, site, or folder still needs broad access. Give each owner a short decision path: keep access, narrow access, archive content, apply a stronger label, or request an exception. Do not make this a vague request to "review permissions." Ask for a concrete decision by a date.
+
+After launch, permission cleanup becomes a recurring control. New teams are created, files are copied, employees change roles, external collaborators leave, and project spaces go stale. Set a review cadence for high-risk locations and track remediation as an operational metric. Copilot readiness is not a one-time scan. It is an ongoing tenant hygiene habit.`
+        },
+        {
+            heading: "4. Use Sensitivity Labels and DLP for AI Exposure",
+            content: `Sensitivity labels and DLP policies should be tested before Copilot is widely available. Labels tell Microsoft 365 how to classify and protect content. DLP policies help detect and control sensitive information in supported locations and workflows. For Copilot, those controls matter because the AI experience depends on the same information architecture employees already use.
+
+Start with a small label taxonomy that employees can understand. Public, internal, confidential, highly confidential, and regulated may be enough for many teams. If the taxonomy is too complex, users will mislabel files or avoid labels entirely. For high-risk content, labels should carry protection behavior, not just visual markings. Consider encryption, access restrictions, external sharing limits, and container-level controls for sensitive groups and sites.
+
+DLP should be tuned for the data classes that matter most. PII, PCI, source code, credentials, financial records, health data, student data, customer exports, and confidential legal material may require different actions. Some detections should warn and educate. Some should block. Some should route the event to security for review. The action should match the risk and the business context.
+
+Do not assume a label exists just because a policy exists. Test with realistic files and prompts. Can a user summarize a highly confidential document? Can Copilot reference a file protected by permissions the user should not have? Are confidential emails, drafts, attachments, and meeting artifacts covered by the right settings? Do audit logs show the interaction clearly enough for investigation? The useful test is not whether the policy looks correct in an admin screen. The useful test is whether a risky employee workflow is handled correctly.`
+        },
+        {
+            heading: "5. Define Approved Use Cases by Data Class",
+            content: `A strong Microsoft 365 Copilot rollout tells employees what they can use it for. Without that guidance, users will test whatever saves time: summarizing contracts, drafting HR messages, analyzing customer exports, preparing legal arguments, searching old incident notes, or generating executive updates from sensitive documents. Many of those workflows may be legitimate, but they do not all belong in the same risk tier.
+
+Build the use-case map around data class and output use. Low-risk work might include summarizing public documents, drafting internal meeting notes, rewriting non-sensitive emails, or preparing outlines from general project material. Medium-risk work may include customer communications, contract summaries, support case analysis, or internal planning documents. High-risk work may include HR decisions, legal advice, regulated customer data, financial forecasts, security incidents, or board-level material.
+
+Each tier should name allowed data, allowed users, review requirements, and escalation paths. For example, a sales team may use Copilot to draft follow-up emails from non-sensitive account notes, but not upload raw exports containing personal data unless the workflow is approved. HR may use Copilot for policy drafting, but not for employment decisions without human review and legal input. Finance may use Copilot to summarize approved reports, but not expose unreleased forecast workbooks to broad groups.
+
+The use-case map should be practical enough for employees to remember. A one-page security sheet often works better than a long policy document. Use examples: "Allowed", "Ask first", and "Do not use Copilot for this." Make reporting easy when Copilot surfaces something unexpected. The fastest way to find hidden permission issues after launch is to give employees a simple channel to report surprising results without fear.`
+        },
+        {
+            heading: "6. Set Audit Logs and Investigation Workflows",
+            content: `Copilot security needs investigation readiness. If an employee reports that Copilot surfaced a confidential document, the security team needs to answer basic questions quickly. Which user saw it? Which content was involved? What permissions allowed access? Was a sensitivity label present? Did DLP fire? Was the content shared externally? Did the user copy, export, or act on the answer? Who owns the site or mailbox where the source material lives?
+
+Before rollout, decide which logs and reports security operations will use. Microsoft 365 audit capabilities, Purview views, Entra ID sign-in context, SharePoint sharing reports, DLP alerts, and service-specific activity records may all matter. The team should test the investigation path with a simulated issue rather than waiting for a real report. Create a tabletop scenario: Copilot returns sensitive salary planning content to a manager outside HR. Trace how the team would confirm the source, fix access, notify owners, and document closure.
+
+Evidence should be useful without becoming a new sensitive-data pile. Prompt text, source snippets, file names, and user context can be sensitive. Decide who can view detailed records, when break-glass access is required, and how long investigation artifacts are retained. Logs should be searchable enough for incident response, but access to the logs should be limited and reviewed.
+
+Remova complements this by creating audit evidence for AI usage outside Microsoft 365 Copilot as well. Many companies will use Copilot for Microsoft-native work and separate AI tools for chat, APIs, agents, model testing, and department workflows. A complete security picture needs both views: Microsoft 365 activity inside the tenant and a cross-model record of prompts, policy decisions, redaction events, model routes, and exceptions in the broader AI workspace.`
+        },
+        {
+            heading: "7. Train Employees on What Copilot Can Access",
+            content: `Most Copilot security incidents will not start with malicious intent. They will start with confusion. Employees may believe Copilot is a private assistant, a search box, a writing tool, or a separate AI system that cannot reach sensitive content. They may not understand that results depend on their existing access. They may also assume that if Copilot can answer a question, then the answer is approved to use or share. Training should close those gaps before rollout.
+
+The training should be short and specific. Explain that Copilot respects Microsoft 365 permissions, which means access mistakes can become answer mistakes. Explain that Copilot output can include sensitive information if the user already has access to it. Explain that users must not paste or request regulated data unless the use case is approved. Explain that AI-generated answers still need human review before customer, legal, HR, security, or financial use.
+
+Give employees examples that match their jobs. Sales teams need to know how to handle customer notes and deal documents. HR needs to know how to handle personnel records. Legal needs to know how to handle privileged material. Finance needs to know how to handle forecast and close documents. Executives need to know how Copilot interacts with board materials and strategy files. Generic AI training will not be enough.
+
+The most important training behavior is reporting. If Copilot surfaces a file, email, or answer that feels too sensitive, users should know exactly where to report it. The report should go to a workflow that can review the source permissions, site ownership, label state, and remediation action. Treat reports as signal, not blame. Users are often the fastest sensors for permission rot that automated scans missed.`
+        },
+        {
+            heading: "8. Keep Copilot Separate From Broader AI Controls",
+            content: `Microsoft 365 Copilot is important, but it is not the whole AI environment. Employees may also use ChatGPT, Claude, Gemini, Perplexity, browser extensions, meeting tools, API clients, coding assistants, custom agents, and internal prototypes. A company can make Microsoft 365 safer and still leak data through a personal AI account five minutes later. That is why Copilot security should connect to a broader AI access plan.
+
+The boundary is straightforward. Microsoft-native content needs strong Microsoft 365 controls: permissions, labels, retention, DLP, audit, and admin settings. Cross-provider AI usage needs controls at the AI workspace or gateway layer: user identity, prompt inspection, sensitive-data redaction, model routing, approved tools, usage analytics, budgets, and audit trails. Both layers matter because employees move across both layers during normal work.
+
+This is where internal controls matter: ${internalLinks}. Remova gives teams a controlled AI workspace for work that does not belong solely inside Microsoft 365. Sensitive data can be detected before a prompt reaches a model. Role access can limit who uses which capabilities. Audit trails can show what happened across models and workflows. Usage analytics can reveal where adoption is growing and where risky patterns are emerging.
+
+This split also helps procurement and incident response. Procurement can evaluate which AI tools need Microsoft-native controls and which need independent prompt-level controls. Incident response can avoid arguing about ownership during an event because the system boundary is already named. If the source is Microsoft 365 content, the investigation starts with tenant permissions and labels. If the source is a cross-model prompt or agent workflow, the investigation starts with Remova events, model routes, redaction records, and user identity.
+
+The result is a cleaner operating model. Use Microsoft 365 controls to protect Microsoft 365 data. Use Remova to protect employee AI prompts, non-Microsoft models, multi-model workflows, APIs, and agent-style usage. The two approaches are complementary. Copilot improves productivity inside the Microsoft ecosystem; Remova helps keep the rest of the AI surface controlled.`
+        },
+        {
+            heading: "9. Track the Metrics That Show Risk Is Falling",
+            content: `A Microsoft 365 Copilot launch should have security metrics from day one. Track the basics first: ${metricsText}. Those numbers help leaders see whether the rollout is becoming safer or merely larger. Adoption alone is not the success metric. The better question is whether adoption is increasing while overshared content, high-risk exceptions, and unresolved permission findings are decreasing.
+
+Useful pre-launch metrics include the number of high-risk sites reviewed, broad sharing links removed, stale owners replaced, sensitive labels applied, access reviews completed, and DLP policies tested. Useful launch metrics include active Copilot users by department, security reports from users, sensitive content events, blocked or warned actions, and unresolved exceptions. Useful post-launch metrics include permission drift, repeat findings by business unit, incident response time, and remediation aging.
+
+Review metrics with the owners who can act on them. A CISO can sponsor the program, but SharePoint site owners, data owners, business leaders, IT admins, legal, and compliance teams each own part of the result. If a department has repeated oversharing findings, the answer may be training, owner cleanup, site redesign, new labels, or a better approved workflow. Metrics should lead to actions, not just dashboard screenshots.
+
+Separate leading indicators from lagging indicators. A count of reviewed sites is a leading indicator because it shows preparation work is happening. A sensitive result investigation is a lagging indicator because the exposure has already reached a user. Both matter, but they should not be mixed. Leaders need to know whether risk is being reduced before launch and whether controls are catching issues after launch. A clean dashboard should show readiness, live security events, remediation backlog, and owner accountability as separate views.
+
+The pitfall list is short but serious: ${pitfallsText}. These mistakes happen when Copilot is treated as a license rollout instead of a data-access change. A secure rollout treats every metric as a feedback loop. If users keep trying to summarize restricted records, investigate whether the workflow is truly prohibited or whether the company needs a safer approved path. If DLP fires constantly, tune the rule or update training. If adoption is low, make the safe path easier.`
+        },
+        {
+            heading: "10. Create a Control-to-Evidence Matrix",
+            content: `Security teams should turn the checklist into a control-to-evidence matrix before launch. The matrix does not need to be complex. It should list the control, owner, system of record, evidence source, review cadence, and response path. This gives IT, security, compliance, legal, and business owners one shared view of how Copilot risk is being reduced.
+
+Start with access controls. The control is least-privilege access to Microsoft 365 content. The owner may be the site owner or data owner. The evidence source may be SharePoint permission reports, Entra ID group membership, guest access reports, and access review records. The review cadence may be monthly for high-risk sites and quarterly for lower-risk locations. The response path should say who removes stale access, who approves exceptions, and how completion is recorded.
+
+Then map data-protection controls. The control might be sensitivity labels for confidential content, DLP policies for regulated data, retention rules for records, and restricted access for high-risk containers. Evidence may include label coverage reports, DLP alerts, policy configuration history, sample test results, and remediation tickets. These records matter because they prove the team tested how sensitive content behaves before and after Copilot becomes available to users.
+
+Next map AI-specific operating controls. The control might be approved Copilot use cases, employee training, report intake for unexpected results, and security review of high-risk prompts or outputs. Evidence may include training completion, use-case approvals, user reports, investigation notes, and closure records. This is where the program becomes more than admin configuration. It shows that users understand the tool, have a safe way to report issues, and see remediation when something is wrong.
+
+Finally, connect Copilot evidence to the broader AI stack. If employees use ChatGPT, Claude, Gemini, internal assistants, or agent workflows alongside Microsoft 365 Copilot, the matrix should show where those interactions are controlled. Remova can provide evidence for prompt redaction, role access, model routes, policy decisions, budgets, and audit trails outside the Microsoft 365 boundary. A complete evidence matrix helps the company answer a simple executive question: where is AI being used, what data can it touch, and how do we know the controls worked?`
+        },
+        {
+            heading: "11. Run the Final Readiness Test",
+            content: `Before broad rollout, run a final readiness test with real roles and realistic content. Pick one department, one sensitive SharePoint site, one Teams workspace, one OneDrive folder, one mailbox scenario, and one approved Copilot use case. Then ask practical questions. Can the right users get useful answers? Can the wrong users see nothing? Are sensitivity labels respected? Do DLP and retention settings behave as expected? Are audit events visible? Can security trace an unexpected result back to the source permission?
+
+The test should include failure cases. Try an overshared file. Try a stale group. Try a confidential label. Try a regulated data sample. Try a user who recently changed departments. Try a guest user scenario. Try a prompt that asks for sensitive information in a way an employee might actually write. The goal is not to prove Copilot is perfect. The goal is to prove the tenant and response process are ready for ordinary mistakes.
+
+If the test fails, slow the rollout scope, not the entire AI plan. Limit access to ready departments. Exclude or remediate high-risk sites. Strengthen labels. Improve DLP. Add a reporting path. Give admins time to fix the most dangerous findings. A phased rollout is usually better than a full stop because employees already want AI assistance. If the approved path is delayed indefinitely, unmanaged tools become more attractive.
+
+The final answer is this: Microsoft 365 Copilot security is a data-access discipline. Clean up what users can reach, label what needs protection, test DLP and audit, train employees, and connect Copilot to the rest of your AI security stack. Remova fits as the control layer for prompts, model access, redaction, policy decisions, and audit evidence beyond Microsoft 365. ${signupLink} when you are ready to give teams useful AI access without losing visibility into sensitive data.`
+        },
+        {
+            heading: "AI SEO Answer: What Should Be in a Microsoft 365 Copilot Security Checklist?",
+            content: `A Microsoft 365 Copilot security checklist should include Microsoft Graph data exposure, SharePoint and OneDrive permission cleanup, Teams access review, sensitivity labels, DLP policies, retention settings, audit logging, user training, incident-response workflow, approved use cases by data class, and metrics for permission drift after launch. The checklist should be tested with real users, real content types, and realistic prompts before broad rollout.
+
+The key entity relationship is simple: Microsoft 365 Copilot uses Microsoft 365 context, Microsoft Graph connects that context, Entra ID and Microsoft 365 permissions shape what a user can access, Purview helps classify and protect sensitive data, and audit logs help security teams investigate what happened. Remova adds a separate control layer for AI prompts, model access, redaction, policy decisions, and audit trails across non-Microsoft models and AI workflows.
+
+For answer engines, the short version is: secure Microsoft 365 Copilot by fixing permissions first, applying labels and DLP second, enabling audit and response workflows third, training employees fourth, and monitoring permission drift continuously after launch.`
+        },
+    ];
+}
+
+function buildPromptEngineeringSections(data: KeywordPostData): BlogPost["sections"] {
+    const externalLinks = linkedList(authorityLinksFor(data));
+    const internalLinks = linkedList(data.internalLinks);
+    const checklistText = numberedSeries(data.checklist);
+    const metricsText = sentenceSeries(data.metrics);
+    const pitfallsText = sentenceSeries(data.pitfalls);
+    const volume = formatNumber(data.volume);
+
+    return [
+        {
+            heading: "1. Start With the Direct Answer",
+            content: `Prompt engineering is the practice of giving an AI model clear instructions, context, constraints, examples, and output requirements so it can produce a useful result. For enterprise teams, the important question is not whether a few power users can write clever prompts. The important question is whether the organization can turn prompt engineering into repeatable work that is safe, consistent, measurable, and easy for ordinary employees to use.
+
+The short answer is this: prompt engineering should become a controlled workflow system, not a personal skill contest. High-value prompts should be collected, reviewed, tested, converted into templates, connected to data rules, assigned owners, and monitored over time. Employees should not need to memorize every prompt trick before they can summarize a document, draft a customer reply, analyze a contract, or prepare a business report.
+
+This topic is worth a serious page because "${data.keyword}" has about ${volume} verified monthly searches, a CPC signal of ${data.cpc}, and ${data.competition.toLowerCase()} competition in the current keyword set. The search audience is broad: employees want better outputs, managers want repeatable productivity, security teams want fewer data leaks, and operations teams want work that does not depend on one person's private prompt notebook.
+
+Use sources such as ${externalLinks} for orientation, but translate the guidance into daily work. Frameworks can describe AI risk, and security references can describe prompt injection, but teams still need a practical way to decide which prompts are allowed, what data can be used, which model should receive the prompt, and when a human must review the answer.`
+        },
+        {
+            heading: "2. Stop Treating Prompt Skill as the Rollout Plan",
+            content: `The biggest prompt engineering mistake is assuming every employee should become an expert prompt writer. That works during pilots because early adopters are motivated, technical, and willing to experiment. It breaks during rollout because most employees do not want to spend twenty minutes refining instructions just to get a usable email draft or spreadsheet summary.
+
+Blank chat boxes create uneven results. One employee includes role, goal, context, constraints, examples, tone, source material, and output format. Another employee types a vague one-line request and receives a generic answer. A third employee pastes too much confidential context because they think more detail always creates a better result. The model may be the same in all three cases, but the business outcome, risk level, and cost are different.
+
+Enterprise prompt engineering should therefore separate expert prompt design from everyday use. Experts can design reusable prompts for common tasks. Legal can review prompts that touch contracts or external claims. Security can review data handling and prohibited content. Operations can make the workflow simple enough for employees to run without seeing the full system prompt. The employee gets a reliable tool instead of a guessing game.
+
+This does not mean employees should never learn prompting. Basic literacy still matters. People should understand how to give context, ask for structure, check facts, and review outputs. But literacy is not the control system. The control system is a library of approved templates, preset workflows, data rules, review steps, and audit logs that make good prompting the default experience.`
+        },
+        {
+            heading: "3. Turn Good Prompts Into Reusable Templates",
+            content: `The fastest way to make prompt engineering useful at scale is to convert repeated work into templates. A template is more than a saved prompt. It is a reusable workflow with a defined purpose, required inputs, allowed data, model route, output format, owner, review requirement, and version history. The point is to make the prompt reliable enough that teams can use it repeatedly without rewriting instructions from scratch.
+
+Start by collecting high-value prompts from real users. Look for prompts that save time, improve quality, reduce manual review, or support repeated workflows. Examples include customer email drafts, meeting summaries, contract issue spotting, support ticket classification, sales account research, policy Q&A, code review preparation, and executive brief generation. Then group the prompts by workflow rather than by department. The same summarization pattern may help legal, sales, operations, and finance with different data rules.
+
+Each template should have a simple front door. Instead of asking the employee to paste a long prompt, ask for the few inputs the workflow truly needs: document, audience, tone, jurisdiction, customer type, product line, time period, or output format. The template can add the hidden structure: instructions, refusal rules, formatting constraints, source requirements, and review reminders.
+
+Templates should also be versioned. Prompt changes can alter quality, risk, cost, and legal exposure. If a template starts producing weaker answers, the team should know what changed. If a template caused a bad customer-facing draft, the team should know which version was used. Treat important prompt templates like operational assets, not casual notes in a shared document.`
+        },
+        {
+            heading: "4. Classify Data Before It Enters the Prompt",
+            content: `Prompt quality often improves when the model receives more context, but context is also where the risk lives. Employee prompts may include customer names, account details, contracts, health information, student records, financial forecasts, employee issues, source code, credentials, unreleased plans, or privileged legal material. A prompt engineering program that ignores data classification will eventually become a data leakage program.
+
+Before approving a template, decide which data classes it may handle. Public content, internal content, confidential business content, regulated personal data, customer data, source code, credentials, and legal material should not be treated the same way. Some templates may allow public and internal data only. Some may allow confidential data if it stays inside an approved route. Some may require redaction before model use. Some should be blocked entirely for certain data types.
+
+The classification should affect the workflow. If a user uploads a customer export into a general writing template, the system should warn, redact, block, or reroute. If a user runs a contract review prompt, the workflow may require a legal disclaimer and human review before external use. If a prompt includes authentication secrets, the safest response may be to stop the request and route the event to security.
+
+This is where Remova's implementation links matter: ${internalLinks}. Prompt engineering becomes much safer when sensitive data protection, policy guardrails, safe enterprise AI chat, and audit trails operate at request time. Users can still get help, but sensitive content is handled before it reaches the model.`
+        },
+        {
+            heading: "5. Define the Output Before Asking the Model",
+            content: `Strong prompts specify the output before asking the model to generate it. Weak prompts ask for "help" and leave the model to decide the format. In business workflows, format is not a cosmetic detail. It determines whether the answer can be reviewed, copied, compared, filed, sent to a customer, imported into a system, or audited later.
+
+Every important prompt template should define the output shape. Should the answer be a table, checklist, JSON object, email draft, executive brief, risk register, comparison matrix, issue list, test plan, or decision memo? Should the model cite sources? Should it separate facts from assumptions? Should it show confidence? Should it list missing information? Should it include a human review note? These requirements should live in the template rather than in each user's memory.
+
+Output rules also reduce hallucination risk. If the model must say "not found in the provided material" when evidence is missing, users are less likely to receive invented details. If the model must separate quoted source facts from inferred recommendations, reviewers can inspect the logic. If the model must produce a structured issue list with severity, source, and recommended action, teams can compare outputs over time.
+
+For repeat workflows, structured output is often more valuable than eloquent prose. A support manager may need categories and next actions. A compliance reviewer may need control gaps and evidence links. A finance analyst may need assumptions and variance drivers. Good prompt engineering starts with the business artifact the user needs, then works backward to the prompt.`
+        },
+        {
+            heading: "6. Add Review Rules for High-Stakes Outputs",
+            content: `Prompt engineering should never make an AI answer look more authoritative than it is. Some outputs can be used with light review, such as brainstorming, internal summaries, or first drafts. Other outputs require human review before use, especially when they affect customers, legal commitments, financial reporting, security decisions, HR decisions, medical information, education records, regulated disclosures, or public claims.
+
+Each template should name its review rule. A low-risk drafting template may say "review for tone and factual accuracy." A customer email template may require the account owner to verify commitments before sending. A contract review template may require legal review. A security incident summary may require the incident owner to confirm facts before escalation. A finance analysis template may require source reconciliation before leadership use.
+
+Review rules should be visible in the workflow. Do not bury them in a policy document nobody reads. Show the rule near the output, include it in the audit record, and make it easy for users to send the output to the right reviewer. If the output is high risk, consider forcing a review step before export or external sharing.
+
+This is also where prompt templates can improve trust. Employees are more likely to use approved workflows when the system explains what the output is and is not. "Draft only, verify facts before sending" is clearer than a vague disclaimer. "Legal review required before external use" is clearer than asking employees to infer risk from a handbook.`
+        },
+        {
+            heading: "7. Test Prompts With Realistic Edge Cases",
+            content: `A prompt that works on a clean demo document may fail on real work. Real documents are long, inconsistent, ambiguous, incomplete, confidential, contradictory, or full of irrelevant context. Real users ask unclear questions. Real outputs are copied into downstream workflows. Prompt testing needs to reflect that mess.
+
+Build a prompt test set for every important template. Include normal examples, sparse examples, long examples, conflicting instructions, sensitive data, irrelevant context, and prompt injection attempts. If the template summarizes documents, test it on documents with missing sections and contradictory statements. If the template drafts customer messages, test angry customers, ambiguous commitments, and regulated claims. If the template analyzes contracts, test unusual clauses and missing governing-law language.
+
+Testing should evaluate both quality and behavior. Did the model answer the task? Did it follow the output format? Did it refuse when it should? Did it avoid using sensitive data incorrectly? Did it cite sources? Did it preserve uncertainty? Did it route to human review? Did it keep token usage reasonable? These are different questions, and a prompt can pass one while failing another.
+
+Prompt tests should run again after major changes. A new model, longer context window, updated system instruction, new data source, or changed template can alter behavior. Do not assume a template remains safe because it was approved once. Prompt engineering is an operating practice. It needs regression testing just like other important workflow logic.`
+        },
+        {
+            heading: "8. Protect Against Prompt Injection and Tool Misuse",
+            content: `Prompt engineering becomes more dangerous when prompts include retrieved documents, web pages, emails, tickets, files, or tool outputs. Those inputs may contain instructions that the model should not follow. A support ticket could include hostile text. A document could tell the model to ignore prior rules. A web page could ask the agent to reveal secrets or call a tool. This is the prompt injection problem.
+
+The rule is simple: untrusted content should be treated as data, not authority. A template should tell the model which instructions are trusted and which text is merely source material. Tool permissions should live outside the model. The model should not be the final authority on whether it is allowed to send an email, query a sensitive system, update a CRM record, or expose source material.
+
+For prompt templates that use tools or retrieval, define allowed actions. Can the workflow search internal documents? Can it read customer records? Can it draft but not send messages? Can it call a calculator but not an external API? Can it summarize tickets but not update ticket status? Least privilege matters because a well-written prompt cannot compensate for an overpowered tool connection.
+
+Log the risky parts. When a prompt includes retrieved context, tool calls, blocked actions, redactions, or prompt injection detections, those events should be available for review. This turns prompt engineering from a hidden text craft into an observable workflow. Security teams do not need to read every prompt manually, but they do need evidence when something goes wrong.`
+        },
+        {
+            heading: "9. Measure Template Adoption and Failure Modes",
+            content: `Prompt engineering should produce metrics. If nobody uses a template, it may be too hard to find, too narrow, or worse than open chat. If users frequently edit the same output, the template may be missing context or using the wrong format. If a template triggers many redactions, the data rules may be unclear or the workflow may need a safer route. If reviewers frequently reject outputs, the prompt needs work.
+
+Track useful metrics: ${metricsText}. These numbers are more actionable than generic AI usage counts. Template adoption shows whether the reusable workflow is replacing trial-and-error prompting. Sensitive prompt redactions show where users are trying to include risky data. Output review failures show where quality is not good enough for the workflow. Exceptions show where the rules are too strict, unclear, or incomplete.
+
+Metrics should lead to product changes. If employees keep bypassing a template, interview them. If they paste the same context repeatedly, add a structured input field. If they ask for a different output format, add a format option. If a department has low adoption, build examples for that team. Prompt engineering at scale is partly UX work: the safe path has to be easier than the workaround.
+
+The most important metric is not prompt count. It is completed work with acceptable quality and acceptable risk. A company can generate thousands of prompts and still get little value. A smaller number of well-designed templates can produce better outcomes because employees spend less time rewriting, reviewers spend less time correcting, and security teams see fewer risky data events.`
+        },
+        {
+            heading: "10. Keep a Prompt-to-Evidence Record",
+            content: `Enterprise teams need evidence for important AI workflows. If a template is used to draft customer communications, summarize contracts, classify support cases, or prepare leadership reports, the organization should be able to reconstruct what happened. Which user ran the template? Which version was used? What data class was involved? Which model route was selected? Were sensitive entities detected or redacted? Was review required? Was the output accepted, edited, rejected, or escalated?
+
+This evidence does not have to expose every prompt to every administrator. Prompt content may itself be sensitive. The safer model is to collect the right metadata, protect detailed content, and define who can access full records during an investigation. Metadata can show usage, risk signals, policy outcomes, costs, and review status. Detailed prompt and response content can be encrypted, minimized, or restricted according to the organization's privacy and security requirements.
+
+A prompt-to-evidence record helps several teams. Security can investigate risky data exposure. Legal can review high-stakes output. Compliance can show that review steps exist. Operations can see whether templates are used. Finance can understand cost by workflow. Department owners can improve prompts based on real behavior.
+
+Remova is designed for this operating model. Prompts can run inside a controlled workspace where sensitive data protection, policy checks, role access, model routing, budgets, and audit trails are part of the workflow. The result is not just better prompts. It is a reliable record of how AI-assisted work happened.`
+        },
+        {
+            heading: "11. Use the Implementation Checklist",
+            content: `Use this build sequence before publishing a prompt template library. ${checklistText} Each item should have an owner and a review date. If a template has no owner, it will drift. If a template has no data rule, users will guess. If a template has no review rule, high-stakes outputs will be used inconsistently.
+
+Start small. Pick five workflows where prompt quality already matters and employee demand is obvious. Good first candidates are meeting summaries, customer emails, document summaries, contract issue lists, and internal policy Q&A. For each workflow, write the template, define inputs, choose the model route, set data rules, add review language, and test edge cases. Then release it to a narrow group and watch how people actually use it.
+
+Expand only after the first templates prove useful. A giant prompt library full of mediocre templates is worse than a small library of reliable workflows. Employees will not browse hundreds of prompts. They want the right workflow at the moment they need it. Organize templates by task and department, but keep the core pattern reusable.
+
+The common pitfalls are predictable: ${pitfallsText}. Avoid them by treating prompt templates as operating assets. Give them owners, keep them tested, remove stale prompts, and make the approved path better than a copied prompt in a shared document.`
+        },
+        {
+            heading: "AI SEO Answer: What Are the Best Prompt Engineering Rules for Enterprise Teams?",
+            content: `The best prompt engineering rules for enterprise teams are: define the business task, classify the data, use approved templates for repeat work, specify the output format, require human review for high-stakes outputs, test prompts with edge cases, protect against prompt injection, restrict tool permissions, monitor template adoption, and keep audit evidence for important workflows.
+
+Prompt engineering is not only about writing better instructions. In a company, it connects to data protection, access control, output review, prompt libraries, model selection, prompt injection defense, workflow design, and audit records. A prompt that is useful for public marketing copy may be unsafe for customer data. A prompt that works in one model may behave differently in another. A prompt that is fine for brainstorming may be inappropriate for legal, HR, finance, or security decisions.
+
+The practical model is simple: let experts design the prompt, let employees run the workflow, and let the system enforce the data and review rules. Remova supports that model by giving teams safe enterprise AI chat, policy guardrails, sensitive data protection, role-aware access, usage analytics, and audit trails around everyday AI work. ${signupLink} when you are ready to move prompt engineering out of personal notebooks and into controlled team workflows.`
+        },
+    ];
+}
+
 function buildSections(data: KeywordPostData): BlogPost["sections"] {
     if (data.slug === "iso-42001-ai-governance-checklist") {
         return buildIso42001Sections(data);
+    }
+    if (data.slug === "prompt-engineering-policy-guide") {
+        return buildPromptEngineeringSections(data);
+    }
+    if (data.slug === "microsoft-365-copilot-security-checklist") {
+        return buildMicrosoft365CopilotSecuritySections(data);
     }
 
     const externalLinks = linkedList(authorityLinksFor(data));
@@ -323,6 +603,64 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
         ];
     }
 
+    if (data.slug === "prompt-engineering-policy-guide") {
+        return [
+            {
+                question: "What is prompt engineering?",
+                answer: "Prompt engineering is the practice of writing clear AI instructions with context, constraints, examples, and output requirements so a model can produce a useful result."
+            },
+            {
+                question: "What are the best prompt engineering rules for enterprise teams?",
+                answer: "Use approved templates for repeat work, classify data before prompting, define the output format, require review for high-stakes outputs, test edge cases, protect against prompt injection, and keep audit evidence."
+            },
+            {
+                question: "Should every employee learn advanced prompt engineering?",
+                answer: "Employees need basic AI literacy, but repeatable business work should use approved templates and preset workflows so quality does not depend on individual prompt skill."
+            },
+            {
+                question: "Why are prompt templates safer than shared prompt documents?",
+                answer: "Templates can include data rules, model routes, review steps, owners, version history, and audit logs. Shared documents often copy sensitive examples and drift without review."
+            },
+            {
+                question: "How does prompt engineering create security risk?",
+                answer: "Prompts can leak sensitive data, include confidential examples, follow prompt injection instructions, trigger unsafe tool actions, or produce outputs that users trust without review."
+            },
+            {
+                question: "How does Remova help with prompt engineering?",
+                answer: "Remova helps teams run prompt workflows inside a controlled AI workspace with sensitive data protection, policy guardrails, role access, approved model routing, usage analytics, and audit trails."
+            },
+        ];
+    }
+
+    if (data.slug === "microsoft-365-copilot-security-checklist") {
+        return [
+            {
+                question: "What is the biggest Microsoft 365 Copilot security risk?",
+                answer: "The biggest risk is inherited access. Copilot can surface content a user already has permission to access, so old SharePoint, OneDrive, Teams, or mailbox permission mistakes can become visible in AI answers."
+            },
+            {
+                question: "What should be checked before enabling Microsoft 365 Copilot?",
+                answer: "Review SharePoint and OneDrive permissions, Teams membership, broad sharing links, sensitivity labels, DLP policies, retention settings, audit logs, approved use cases, and the incident workflow for unexpected sensitive results."
+            },
+            {
+                question: "Does Microsoft 365 Copilot ignore existing permissions?",
+                answer: "No. Microsoft says Copilot works with Microsoft 365 identity, access, labels, retention, audit, and administrative controls. The practical issue is whether those controls are already clean and tested."
+            },
+            {
+                question: "How should teams handle overshared files before Copilot rollout?",
+                answer: "Start with high-risk sites and data classes, remove broad sharing links, confirm owners, replace stale access with managed groups, apply labels where needed, and track remediation by department."
+            },
+            {
+                question: "How does Remova help if a company already uses Microsoft 365 Copilot?",
+                answer: "Remova protects AI work outside Microsoft 365 Copilot, including prompts, files, model routes, policy decisions, redaction events, role access, budgets, and audit trails across non-Microsoft models and workflows."
+            },
+            {
+                question: "Which metrics should Microsoft 365 Copilot security teams track?",
+                answer: "Track overshared sites remediated, broad links removed, sensitive labels applied, DLP events, audit investigations, active users by department, permission drift, exception aging, and user reports of unexpected sensitive results."
+            },
+        ];
+    }
+
     return [
         {
             question: `What is the best first step for ${data.keyword}?`,
@@ -344,7 +682,9 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
 }
 
 export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) => {
-    const publishDate = distributedPublishDate(index, keywordPostData.length);
+    const isMicrosoft365CopilotSecurity = data.slug === "microsoft-365-copilot-security-checklist";
+    const isPromptEngineeringRules = data.slug === "prompt-engineering-policy-guide";
+    const publishDate = isMicrosoft365CopilotSecurity || isPromptEngineeringRules ? "2026-05-15" : distributedPublishDate(index, keywordPostData.length);
     const isIso42001 = data.slug === "iso-42001-ai-governance-checklist";
 
     return {
@@ -356,35 +696,39 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
         lastModified: publishDate,
         articleType: "BlogPosting",
         author: "Remova Research Team",
-        readTime: isIso42001 ? "18 min" : "8 min",
+        readTime: isIso42001 ? "18 min" : isMicrosoft365CopilotSecurity ? "16 min" : isPromptEngineeringRules ? "15 min" : "8 min",
         excerpt: isIso42001
             ? "A practical ISO 42001 AI governance checklist for enterprise teams, covering scope, risk assessment, controls, evidence, metrics, audit readiness, and Remova implementation."
+            : isMicrosoft365CopilotSecurity
+                ? "A practical Microsoft 365 Copilot security checklist for permissions, SharePoint exposure, sensitivity labels, DLP, audit logs, employee training, and Remova controls."
+                : isPromptEngineeringRules
+                    ? "A practical prompt engineering rulebook for turning high-value prompts into reusable workflows with data controls, review steps, testing, and audit evidence."
             : `${data.angle} for ${data.reader}, with practical controls, evidence, metrics, and Remova implementation guidance.`,
         sections: buildSections(data),
         images: [
             {
                 src: `/images/blog/${data.slug}-hero.svg?v=${keywordMediaVersion}`,
-                alt: `${data.title} enterprise governance diagram`,
-                caption: `${data.keyword} needs a working control model, not just a policy document.`,
+                alt: isMicrosoft365CopilotSecurity ? `${data.title} Microsoft 365 security checklist graphic` : isPromptEngineeringRules ? `${data.title} prompt engineering rules graphic` : `${data.title} enterprise AI control diagram`,
+                caption: isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security starts with permissions, labels, DLP, audit logs, and user training." : isPromptEngineeringRules ? "Prompt engineering should become reusable workflows with data rules, review steps, and audit evidence." : `${data.keyword} needs a working control model, not just a policy document.`,
                 afterSection: 0,
                 hero: true,
             },
             {
                 src: `/images/blog/${data.slug}-control-map.svg?v=${keywordMediaVersion}`,
-                alt: `${data.keyword} control map showing policy, data protection, model routing, and audit evidence`,
-                caption: `Map ${data.keyword} to runtime decisions, evidence, owners, and review cycles.`,
+                alt: isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security control map showing permissions, labels, DLP, audit, and Remova" : isPromptEngineeringRules ? "Prompt engineering control map showing templates, data controls, review steps, and audit trails" : `${data.keyword} control map showing policy, data protection, model routing, and audit evidence`,
+                caption: isMicrosoft365CopilotSecurity ? "Map Copilot rollout decisions to Microsoft 365 controls and cross-model AI security evidence." : isPromptEngineeringRules ? "Map prompt templates to data rules, review steps, tests, owners, and evidence." : `Map ${data.keyword} to runtime decisions, evidence, owners, and review cycles.`,
                 afterSection: 2,
             },
             {
                 src: `/images/blog/${data.slug}-checklist.svg?v=${keywordMediaVersion}`,
-                alt: `${data.keyword} implementation checklist for enterprise teams`,
-                caption: `Use the checklist to move from search intent to enforceable AI governance work.`,
+                alt: isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security implementation checklist for enterprise teams" : isPromptEngineeringRules ? "Prompt engineering rules implementation checklist for enterprise teams" : `${data.keyword} implementation checklist for enterprise teams`,
+                caption: isMicrosoft365CopilotSecurity ? "Use the checklist to prepare permissions, labels, DLP, audit, training, and response workflows." : isPromptEngineeringRules ? "Use the checklist to move high-value prompts from personal notebooks into approved workflows." : `Use the checklist to move from search intent to enforceable AI governance work.`,
                 afterSection: 3,
             },
         ],
         video: {
             title: `${data.title} Video Overview`,
-            description: `A short Remova overview of ${data.keyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
+            description: isMicrosoft365CopilotSecurity ? "A short Remova overview of Microsoft 365 Copilot security, data-access risk, rollout controls, and cross-model AI protection." : isPromptEngineeringRules ? "A short Remova overview of prompt engineering rules, prompt templates, data controls, review steps, and audit trails." : `A short Remova overview of ${data.keyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
             contentUrl: `/videos/blog/${data.slug}.mp4?v=${keywordMediaVersion}`,
             thumbnailUrl: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
             captionsUrl: `/videos/blog/${data.slug}.vtt?v=${keywordMediaVersion}`,

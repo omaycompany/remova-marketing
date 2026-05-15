@@ -191,6 +191,7 @@ const legacyBlogSlugs = [
     "calculating-true-cost-supplier-data-leak",
     "usa-customs-data-removal-complete-guide-2025",
     "panjiva-data-removal",
+    "microsoft-365-copilot-governance-checklist",
 ] as const;
 
 export const legacyResourceSlugs = [
@@ -355,6 +356,7 @@ const legacyBlogRedirectTargets: Record<string, string> = {
     "ai-vendor-evaluation-checklist": "/blog/ai-vendor-risk-management-llm-tools",
     "enterprise-ai-security-architecture": "/blog/enterprise-ai-security-ciso-playbook",
     "ai-product-management": "/blog",
+    "microsoft-365-copilot-governance-checklist": "/blog/microsoft-365-copilot-security-checklist",
 };
 
 const legacyResourceRedirectTargets: Record<string, string> = {

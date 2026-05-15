@@ -32,7 +32,9 @@ const commonSources = {
     nistCyber: { label: "NIST Cybersecurity Framework", href: "https://www.nist.gov/cyberframework" },
     openAiData: { label: "OpenAI business data commitments", href: "https://openai.com/business-data/" },
     claudeRetention: { label: "Claude API data retention", href: "https://platform.claude.com/docs/en/manage-claude/api-and-data-retention" },
-    microsoftCopilotEdp: { label: "Microsoft 365 Copilot enterprise data protection", href: "https://learn.microsoft.com/en-us/microsoft-365/copilot/enterprise-data-protection" },
+    microsoftCopilotEdp: { label: "Microsoft 365 Copilot enterprise data protection", href: "https://learn.microsoft.com/copilot/microsoft-365/enterprise-data-protection" },
+    microsoftCopilotDataProtection: { label: "Microsoft 365 Copilot data protection architecture", href: "https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-architecture-data-protection-auditing?view=o365-worldwide" },
+    microsoftCopilotReadiness: { label: "Microsoft 365 Copilot data and compliance readiness", href: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-minimum-requirements-data-compliance" },
     githubCopilotContentExclusion: { label: "GitHub Copilot content exclusion", href: "https://docs.github.com/en/copilot/concepts/context/content-exclusion" },
 };
 
@@ -1277,19 +1279,19 @@ export const keywordPostData: KeywordPostData[] = [
     },
     {
         slug: "prompt-engineering-policy-guide",
-        keyword: "prompt engineering",
-        title: "Prompt Engineering Policy Guide for Enterprise Teams",
-        metaDescription: "Turn prompt engineering into governed AI workflows with reusable templates, data rules, review gates, and audit trails.",
+        keyword: "Prompt Engineering",
+        title: "Prompt Engineering Rules for Enterprise Teams",
+        metaDescription: "Use these prompt engineering rules to turn high-value prompts into reusable workflows with data controls, review steps, testing, and audit trails.",
         category: "Policy",
         volume: 33100,
         cpc: "$7.01",
         competition: "Medium",
-        angle: "Prompt engineering policy for enterprise teams",
+        angle: "Prompt engineering rules for enterprise teams",
         reader: "AI enablement teams, department leaders, security, legal, and operations owners",
         coreProblem: "Prompt engineering creates business value, but unmanaged prompts can leak data, create inconsistent outputs, and hide risky decision logic in individual user behavior.",
         riskEvent: "teams share powerful prompts in docs, Slack, or personal notebooks that include sensitive examples, unsafe instructions, or unapproved model routes",
-        controlGoal: "convert useful prompts into approved, reusable, policy-aware workflows",
-        primaryControl: "prompt template governance",
+        controlGoal: "convert useful prompts into approved, reusable, safe workflows",
+        primaryControl: "approved prompt template library",
         sourceLinks: [commonSources.nist, commonSources.owaspLlm, commonSources.openAiData],
         internalLinks: [commonInternal.policy, commonInternal.safeChat, commonInternal.redaction, commonInternal.audit],
         checklist: [
@@ -1308,7 +1310,7 @@ export const keywordPostData: KeywordPostData[] = [
         pitfalls: [
             "Training everyone to prompt without giving them safe workflows",
             "Embedding confidential examples in shared prompt libraries",
-            "Letting prompt templates bypass legal and security review"
+            "Letting prompt quality depend on individual user skill"
         ]
     },
     {
@@ -1456,22 +1458,22 @@ export const keywordPostData: KeywordPostData[] = [
         ]
     },
     {
-        slug: "microsoft-365-copilot-governance-checklist",
-        keyword: "microsoft 365 copilot",
-        title: "Microsoft 365 Copilot Governance Checklist",
-        metaDescription: "Prepare Microsoft 365 Copilot governance with permissions review, data protection, sensitivity labels, audit evidence, and adoption controls.",
-        category: "Governance",
+        slug: "microsoft-365-copilot-security-checklist",
+        keyword: "Microsoft 365 Copilot",
+        title: "Microsoft 365 Copilot Security Checklist",
+        metaDescription: "Use this Microsoft 365 Copilot security checklist to review permissions, SharePoint exposure, DLP, sensitivity labels, audit logs, and rollout controls.",
+        category: "Security",
         volume: 33100,
         cpc: "$4.32",
         competition: "Low",
-        angle: "Microsoft 365 Copilot governance checklist",
-        reader: "Microsoft 365 admins, CIOs, CISOs, compliance teams, and AI adoption leaders",
-        coreProblem: "Microsoft 365 Copilot can surface content from Microsoft Graph, so governance depends on permissions, labels, retention, audit, and user readiness before rollout.",
+        angle: "Microsoft 365 Copilot security checklist",
+        reader: "Microsoft 365 admins, CIOs, CISOs, compliance teams, IT leaders, and security operations owners",
+        coreProblem: "Microsoft 365 Copilot can surface content through Microsoft Graph, so security depends on permission hygiene, sensitivity labels, retention, DLP, audit, and user readiness before rollout.",
         riskEvent: "employees discover sensitive documents, overshared SharePoint content, or regulated records through Copilot because permissions were never cleaned up",
-        controlGoal: "prepare Microsoft 365 data, permissions, and controls before Copilot becomes a daily workflow",
-        primaryControl: "Copilot readiness and permission review",
-        sourceLinks: [commonSources.microsoftCopilotEdp, commonSources.nist, commonSources.euDataProtection],
-        internalLinks: [commonInternal.rbac, commonInternal.audit, commonInternal.policy, commonInternal.analytics],
+        controlGoal: "prepare Microsoft 365 data, permissions, and security controls before Copilot becomes a daily workflow",
+        primaryControl: "Copilot data-access security review",
+        sourceLinks: [commonSources.microsoftCopilotEdp, commonSources.microsoftCopilotDataProtection, commonSources.microsoftCopilotReadiness, commonSources.nistCyber, commonSources.euDataProtection],
+        internalLinks: [commonInternal.rbac, commonInternal.redaction, commonInternal.audit, commonInternal.policy, commonInternal.analytics],
         checklist: [
             "Review SharePoint, Teams, OneDrive, and Graph permissions before rollout.",
             "Confirm sensitivity labels, retention, DLP, and audit settings are working.",
@@ -1487,7 +1489,7 @@ export const keywordPostData: KeywordPostData[] = [
         ],
         pitfalls: [
             "Licensing Copilot before cleaning up permissions",
-            "Treating Microsoft 365 controls as separate from AI governance",
+            "Treating Microsoft 365 controls as separate from AI security",
             "Ignoring user education around inherited access"
         ]
     },

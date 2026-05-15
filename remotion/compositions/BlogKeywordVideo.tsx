@@ -109,7 +109,7 @@ export const BlogKeywordVideo = (rawProps: Record<string, unknown>) => {
 const Header = () => (
     <div style={{ position: "absolute", left: 76, right: 76, top: 44, height: 54, display: "flex", alignItems: "center" }}>
         <Img src={staticFile("images/remova logo (4).png")} style={{ width: 138, height: "auto", objectFit: "contain" }} />
-        <div style={{ marginLeft: "auto", fontSize: 18, fontWeight: 900, color: colors.muted, textTransform: "uppercase", letterSpacing: 0 }}>AI governance brief</div>
+        <div style={{ marginLeft: "auto", fontSize: 18, fontWeight: 900, color: colors.muted, textTransform: "uppercase", letterSpacing: 0 }}>AI control brief</div>
     </div>
 );
 

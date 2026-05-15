@@ -5,6 +5,8 @@
 
 # testing
 /coverage
+/.playwright-cli/*.yml
+/.playwright-cli/console-*.log
 
 # next.js
 /.next/
