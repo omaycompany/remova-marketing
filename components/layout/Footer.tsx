@@ -1,7 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Instagram, Linkedin, MessageCircle, Music2, Twitter, Youtube } from "lucide-react";
 import SafeEmailLink from "@/components/ui/SafeEmailLink";
+
+const socialLinks = [
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/remova.org/", Icon: Linkedin },
+    { name: "YouTube", href: "https://www.youtube.com/@RemovaInc", Icon: Youtube },
+    { name: "GitHub", href: "https://github.com/removainc", Icon: Github },
+    { name: "Reddit", href: "https://www.reddit.com/user/RemovaInc/", Icon: MessageCircle },
+    { name: "Instagram", href: "https://www.instagram.com/removainc/", Icon: Instagram },
+    { name: "X", href: "https://x.com/RemovaInc", Icon: Twitter },
+    { name: "TikTok", href: "https://www.tiktok.com/@removainc", Icon: Music2 },
+];
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -27,23 +37,20 @@ export default function Footer() {
                         <p className="mb-8 max-w-sm text-lg font-medium text-slate-600 dark:text-slate-400 leading-relaxed">
                             Enterprise AI governance with policy controls, access boundaries, and predictable cost ownership across teams.
                         </p>
-                        <div className="flex gap-5">
-                            <a
-                                href="https://www.linkedin.com/company/remova.org/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
-                            >
-                                <Linkedin className="h-5 w-5 transition-transform group-hover:scale-110" />
-                            </a>
-                            <a
-                                href="https://github.com/remova"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
-                            >
-                                <Github className="h-5 w-5 transition-transform group-hover:scale-110" />
-                            </a>
+                        <div className="flex flex-wrap gap-3">
+                            {socialLinks.map(({ name, href, Icon }) => (
+                                <a
+                                    key={name}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Remova on ${name}`}
+                                    title={`Remova on ${name}`}
+                                    className="group rounded-xl border border-slate-200 dark:border-white/10 p-3 text-slate-600 dark:text-slate-400 transition-all hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
+                                >
+                                    <Icon className="h-5 w-5 transition-transform group-hover:scale-110" />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
