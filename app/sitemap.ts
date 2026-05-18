@@ -8,7 +8,9 @@ import { allBlogPosts } from '@/content/blog'
 import { blogCategoryPath, getBlogCategorySeo } from '@/content/blog-taxonomy'
 import { modelsLastUpdated } from '@/content/models'
 import { modelLandings } from '@/content/model-landings'
+import { modelVideos } from '@/content/model-videos'
 import { SITE_LAST_UPDATED_DATE, SITE_URL, dateFromIsoDate, isRecentDate } from '@/lib/seo'
+import { modelVideoWatchPath } from '@/lib/video-seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const m = (p: string, pr: number, lastModified = SITE_LAST_UPDATED_DATE) => ({
@@ -46,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/compare`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/llms.txt`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.3 },
         ...modelLandings.map((landing) => m(`/models/${landing.slug}`, 0.45, dateFromIsoDate(landing.sourceCheckedAt))),
+        ...modelVideos.map((video) => m(modelVideoWatchPath(video.slug), 0.35, dateFromIsoDate(video.uploadDate))),
         ...features.map((f) => m(`/features/${f.slug}`, 0.8)),
         ...alternatives.map((a) => m(`/alternative/${a.slug}`, 0.7)),
         ...comparisons.map((c) => m(`/compare/${c.slug}`, 0.7)),

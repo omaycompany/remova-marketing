@@ -1,6 +1,5 @@
 export interface IndexedVideoEntry {
     pagePath: string;
-    anchor: string;
     title: string;
     description: string;
     contentUrl: string;
@@ -10,6 +9,10 @@ export interface IndexedVideoEntry {
     uploadDate: string;
     transcript?: string;
     tags: string[];
+}
+
+export function modelVideoWatchPath(slug: string) {
+    return `/watch/models/${slug}`;
 }
 
 export function durationToSeconds(duration: string) {
@@ -24,7 +27,6 @@ export function durationToSeconds(duration: string) {
 
 export const featureHeroVideo: IndexedVideoEntry = {
     pagePath: "/features",
-    anchor: "features-video",
     title: "Remova Features Overview",
     description:
         "A 30-second overview of Remova's governed AI workspace, showing model access, policy checks, analytics, routing, and zero data retention controls for enterprise teams.",

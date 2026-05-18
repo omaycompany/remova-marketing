@@ -2,7 +2,7 @@ import { allBlogPosts } from "@/content/blog";
 import { modelVideos } from "@/content/model-videos";
 import { useCases } from "@/content/use-cases";
 import { SITE_URL, absoluteUrl } from "@/lib/seo";
-import { durationToSeconds, featureHeroVideo, type IndexedVideoEntry } from "@/lib/video-seo";
+import { durationToSeconds, featureHeroVideo, modelVideoWatchPath, type IndexedVideoEntry } from "@/lib/video-seo";
 
 export const dynamic = "force-static";
 
@@ -18,8 +18,7 @@ function escapeXml(value: string) {
 export function GET() {
     const videoEntries: IndexedVideoEntry[] = [
         ...modelVideos.map((video) => ({
-            pagePath: `/models/${video.slug}`,
-            anchor: "model-video",
+            pagePath: modelVideoWatchPath(video.slug),
             title: video.title,
             description: video.description,
             contentUrl: video.contentUrl,
@@ -36,7 +35,6 @@ export function GET() {
 
             return [{
                 pagePath: `/use-cases/${useCase.slug}`,
-                anchor: "use-case-video",
                 title: useCase.video.title,
                 description: useCase.video.description,
                 contentUrl: useCase.video.contentUrl,
@@ -59,7 +57,6 @@ export function GET() {
 
             return [{
                 pagePath: `/blog/${post.slug}`,
-                anchor: "article-video",
                 title: post.video.title,
                 description: post.video.description,
                 contentUrl: post.video.contentUrl,
@@ -90,7 +87,6 @@ export function GET() {
             <video:title>${escapeXml(video.title)}</video:title>
             <video:description>${escapeXml(video.description)}</video:description>
             <video:content_loc>${escapeXml(absoluteUrl(video.contentUrl))}</video:content_loc>
-            <video:player_loc>${escapeXml(`${pageUrl}#${video.anchor}`)}</video:player_loc>
             <video:duration>${video.durationSeconds}</video:duration>
             <video:publication_date>${escapeXml(`${video.uploadDate}T00:00:00+00:00`)}</video:publication_date>
             <video:family_friendly>yes</video:family_friendly>

@@ -28,7 +28,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     const seoTitle = trimForTitle(landing.metaTitle, 80);
     const video = getModelVideo(landing.slug);
-    const ogVideoUrl = video ? absoluteUrl(video.contentUrl) : undefined;
     const ogImage = video
         ? {
             url: absoluteUrl(video.thumbnailUrl),
@@ -56,17 +55,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             url: absoluteUrl(`/models/${landing.slug}`),
             siteName: SITE_NAME,
             images: [ogImage],
-            videos: video && ogVideoUrl
-                ? [
-                    {
-                        url: ogVideoUrl,
-                        secureUrl: ogVideoUrl,
-                        type: "video/mp4",
-                        width: 1920,
-                        height: 1080,
-                    },
-                ]
-                : undefined,
             type: "website",
         },
         twitter: {
