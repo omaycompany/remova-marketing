@@ -2,7 +2,7 @@ import { allBlogPosts } from "@/content/blog";
 import { modelVideos } from "@/content/model-videos";
 import { useCases } from "@/content/use-cases";
 import { SITE_URL, absoluteUrl } from "@/lib/seo";
-import { durationToSeconds, featureHeroVideo, modelVideoWatchPath, type IndexedVideoEntry } from "@/lib/video-seo";
+import { durationToSeconds, featureHeroVideo, type IndexedVideoEntry } from "@/lib/video-seo";
 
 export const dynamic = "force-static";
 
@@ -18,7 +18,7 @@ function escapeXml(value: string) {
 export function GET() {
     const videoEntries: IndexedVideoEntry[] = [
         ...modelVideos.map((video) => ({
-            pagePath: modelVideoWatchPath(video.slug),
+            pagePath: `/models/${video.slug}`,
             title: video.title,
             description: video.description,
             contentUrl: video.contentUrl,

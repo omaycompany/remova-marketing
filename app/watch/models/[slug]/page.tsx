@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import LazyModelVideo from "@/components/video/LazyModelVideo";
-import { modelLandings } from "@/content/model-landings";
+import { modelLandingSeoTitle, modelLandings } from "@/content/model-landings";
 import { getModelVideo, modelVideos } from "@/content/model-videos";
+import { models } from "@/content/models";
 import { SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 import { modelVideoWatchPath } from "@/lib/video-seo";
 
@@ -23,8 +24,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const landing = findLanding(params.slug);
     if (!video || !landing) return {};
 
-    const pagePath = modelVideoWatchPath(video.slug);
-    const title = `${video.title} | Remova Video`;
+    const canonicalPath = `/models/${landing.slug}`;
+    const model = models.find((entry) => entry.id === landing.modelId);
+    const title = model ? `${modelLandingSeoTitle(landing, model)} Video` : `${video.title} | Remova Video`;
     const videoUrl = absoluteUrl(video.contentUrl);
     const thumbnailUrl = absoluteUrl(video.thumbnailUrl);
 
@@ -42,7 +44,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title,
             description: video.description,
-            url: absoluteUrl(pagePath),
+            url: absoluteUrl(canonicalPath),
             siteName: SITE_NAME,
             images: [
                 {
@@ -70,17 +72,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             images: [thumbnailUrl],
         },
         robots: {
-            index: true,
+            index: false,
             follow: true,
             googleBot: {
-                index: true,
+                index: false,
                 follow: true,
                 "max-video-preview": -1,
                 "max-image-preview": "large",
                 "max-snippet": -1,
             },
         },
-        alternates: { canonical: pagePath },
+        alternates: { canonical: canonicalPath },
     };
 }
 

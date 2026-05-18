@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ModelLandingTemplate from "@/components/models/ModelLandingTemplate";
 import LegacyRedirect from "@/components/seo/LegacyRedirect";
-import { getModelLandingRedirect, modelLandingRedirectStaticParams, modelLandings } from "@/content/model-landings";
+import { getModelLandingRedirect, modelLandingRedirectStaticParams, modelLandingSeoDescription, modelLandingSeoTitle, modelLandings } from "@/content/model-landings";
 import { modelVideoSlugs } from "@/content/model-video-manifest.generated";
 import { getModelVideo } from "@/content/model-videos";
 import { models } from "@/content/models";
@@ -39,7 +39,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!landing && retiredVideoRedirect) return legacyRedirectMetadata(retiredVideoRedirect);
     if (!landing) return {};
 
-    const seoTitle = trimForTitle(landing.metaTitle, 80);
+    const model = models.find((entry) => entry.id === landing.modelId);
+    if (!model) return {};
+
+    const seoTitle = trimForTitle(modelLandingSeoTitle(landing, model), 88);
+    const seoDescription = modelLandingSeoDescription(landing, model);
     const video = getModelVideo(landing.slug);
     const ogImage = video
         ? {
@@ -52,7 +56,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     return {
         title: { absolute: seoTitle },
-        description: landing.metaDescription,
+        description: seoDescription,
         keywords: buildKeywords([
             landing.heroTitle,
             landing.heroLabel,
@@ -64,7 +68,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         ]),
         openGraph: {
             title: seoTitle,
-            description: landing.metaDescription,
+            description: seoDescription,
             url: absoluteUrl(`/models/${landing.slug}`),
             siteName: SITE_NAME,
             images: [ogImage],
@@ -73,7 +77,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         twitter: {
             card: "summary_large_image",
             title: seoTitle,
-            description: landing.metaDescription,
+            description: seoDescription,
             images: [video ? absoluteUrl(video.thumbnailUrl) : DEFAULT_OG_IMAGE_URL],
         },
         robots: {

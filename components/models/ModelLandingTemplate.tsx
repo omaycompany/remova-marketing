@@ -4,13 +4,13 @@ import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import ModelChatSignup from "@/components/models/ModelChatSignup";
 import { ModelEntry } from "@/content/models";
-import { ModelLanding } from "@/content/model-landings";
+import { ModelLanding, modelLandingSeoDescription } from "@/content/model-landings";
 import { applicationsForModel } from "@/content/model-applications";
 import { getModelVideo } from "@/content/model-videos";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import { absoluteUrl } from "@/lib/seo";
-import { modelVideoWatchPath } from "@/lib/video-seo";
 import { formatPublicModelPrice } from "@/lib/model-pricing";
+import LazyModelVideo from "@/components/video/LazyModelVideo";
 
 const fmtNumber = new Intl.NumberFormat("en-US");
 
@@ -39,6 +39,7 @@ interface Props {
 export default function ModelLandingTemplate({ model, landing, relatedLandings, showChatSignup = false }: Props) {
     const video = getModelVideo(landing.slug);
     const applications = applicationsForModel(model);
+    const seoDescription = modelLandingSeoDescription(landing, model);
     const softwareLd = {
         "@type": "SoftwareApplication",
         "@id": absoluteUrl(`/models/${landing.slug}#software`),
@@ -46,7 +47,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings, 
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         url: absoluteUrl(`/models/${landing.slug}`),
-        description: landing.metaDescription,
+        description: seoDescription,
         brand: { "@type": "Brand", name: model.provider },
     };
     const jsonLd = {
@@ -128,34 +129,14 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings, 
                             </p>
                         </div>
                         <figure className="overflow-hidden rounded-3xl border-2 border-slate-900 dark:border-white bg-white dark:bg-[#131314] shadow-[0_28px_90px_-45px_rgba(15,23,42,0.55)]">
-                            <Link
-                                href={modelVideoWatchPath(video.slug)}
-                                className="group relative block aspect-video overflow-hidden bg-slate-950"
-                                aria-label={`Watch ${video.title}`}
-                            >
-                                <img
-                                    src={video.thumbnailUrl}
-                                    alt={video.title}
-                                    loading="lazy"
-                                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                                />
-                                <span className="absolute inset-0 flex items-center justify-center bg-slate-950/20 transition-colors group-hover:bg-slate-950/30">
-                                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-black text-slate-900 shadow-2xl shadow-slate-950/20">
-                                        <PlayCircle className="h-5 w-5" />
-                                        Watch video
-                                    </span>
-                                </span>
-                            </Link>
+                            <LazyModelVideo video={video} />
                             <figcaption className="border-t border-slate-200 dark:border-white/10 p-6">
                                 <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                     <h3 className="text-xl font-black text-slate-900 dark:text-white">{video.title}</h3>
-                                    <Link
-                                        href={modelVideoWatchPath(video.slug)}
-                                        className="inline-flex items-center gap-2 text-sm font-black text-slate-900 underline decoration-slate-300 underline-offset-4 transition-colors hover:decoration-slate-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
-                                    >
-                                        Video page
-                                        <ArrowRight className="h-4 w-4" />
-                                    </Link>
+                                    <span className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-[0.14em] text-slate-500 dark:text-slate-400">
+                                        <PlayCircle className="h-4 w-4" />
+                                        Model demo
+                                    </span>
                                 </div>
                                 <p className="text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">{video.description}</p>
                                 <details className="mt-4">

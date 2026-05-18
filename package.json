@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build && node scripts/generate-feed.mjs",
+        "build": "next build && node scripts/generate-feed.mjs && tsx scripts/generate-redirects.ts",
         "start": "next start",
         "lint": "next lint",
         "video:studio": "remotion studio remotion/index.ts",

@@ -1556,6 +1556,67 @@ const autoLandings = models
 export const modelLandings: ModelLanding[] = [...curatedLandings, ...autoLandings];
 
 const currentModelLandingSlugs = new Set(modelLandings.map((entry) => entry.slug));
+const modelLandingTitleCounts = modelLandings.reduce((counts, landing) => {
+    counts.set(landing.heroTitle, (counts.get(landing.heroTitle) ?? 0) + 1);
+    return counts;
+}, new Map<string, number>());
+
+function titleCaseToken(value: string) {
+    if (/^(ai|api|pdf|url|llm|vl|tts|stt|3d|4k)$/i.test(value)) return value.toUpperCase();
+    if (/^v\d/i.test(value)) return value.toUpperCase();
+    return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
+function modelNameTokens(value: string) {
+    return new Set(normalizeSlug(value).split("-").filter(Boolean));
+}
+
+function humanizeModelVariant(model: ModelEntry, landing: ModelLanding) {
+    const nameTokens = modelNameTokens(landing.heroTitle);
+    let segments = model.id.split("/").slice(1).filter(Boolean);
+
+    if (segments[0] === "fal-ai") {
+        segments = segments.slice(1);
+    }
+
+    const variantSegments = segments.filter((segment) => {
+        const segmentTokens = normalizeSlug(segment).split("-").filter(Boolean);
+        if (segmentTokens.length === 0) return false;
+        return !segmentTokens.every((token) => nameTokens.has(token));
+    });
+
+    const variant = variantSegments
+        .slice(-4)
+        .flatMap((segment) => normalizeSlug(segment).split("-").filter(Boolean))
+        .filter((token) => !nameTokens.has(token))
+        .map(titleCaseToken)
+        .join(" ");
+
+    if (variant) return variant;
+    if (model.modelType) return model.modelType.split("-").map(titleCaseToken).join(" ");
+    if (model.provider && !landing.heroTitle.toLowerCase().includes(model.provider.toLowerCase())) return model.provider;
+    return "Enterprise Profile";
+}
+
+function trimSeoCopy(value: string, maxLength: number) {
+    if (value.length <= maxLength) return value;
+    return `${value.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
+}
+
+export function modelLandingSeoTitle(landing: ModelLanding, model: ModelEntry) {
+    if ((modelLandingTitleCounts.get(landing.heroTitle) ?? 0) <= 1) return landing.metaTitle;
+    const variant = humanizeModelVariant(model, landing);
+    return trimSeoCopy(`${landing.heroTitle} ${variant}: Pricing, Context, and Rollout Fit`, 88);
+}
+
+export function modelLandingSeoDescription(landing: ModelLanding, model: ModelEntry) {
+    if ((modelLandingTitleCounts.get(landing.heroTitle) ?? 0) <= 1) return landing.metaDescription;
+    const variant = humanizeModelVariant(model, landing);
+    return trimSeoCopy(
+        `${landing.heroTitle} ${variant} enterprise profile: ${contextSpecValue(model)} context, ${inputPriceSpecValue(model)} input, ${outputPriceSpecValue(model)} output, and governed rollout notes for ${defaultModality(model)} workflows.`,
+        168
+    );
+}
 
 function uniqueValues(values: string[]) {
     return Array.from(new Set(values.filter(Boolean)));

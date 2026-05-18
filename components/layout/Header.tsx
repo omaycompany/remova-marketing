@@ -10,7 +10,9 @@ export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const navLinks = [
         { label: "Features", href: "/features" },
+        { label: "Use Cases", href: "/use-cases" },
         { label: "Models", href: "/models" },
+        { label: "Resources", href: "/resources" },
         { label: "About", href: "/about" },
         { label: "Blog", href: "/blog" },
         { label: "Glossary", href: "/glossary" },
@@ -34,7 +36,7 @@ export default function Header() {
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-8">
+                    <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
                         {navLinks.map((item) => (
                             <Link
                                 key={item.label}
@@ -47,7 +49,7 @@ export default function Header() {
                     </nav>
 
                     {/* Desktop Actions */}
-                    <div className="hidden md:flex items-center">
+                    <div className="hidden lg:flex items-center">
                         <ExternalAppLink
                             href="https://app.remova.org/register"
                             className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-5 py-2.5 text-sm font-bold text-white dark:text-slate-900 transition hover:scale-105 active:scale-95"
@@ -58,7 +60,7 @@ export default function Header() {
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden p-2 text-slate-600 dark:text-slate-300"
+                        className="lg:hidden p-2 text-slate-600 dark:text-slate-300"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? (
@@ -72,7 +74,7 @@ export default function Header() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314]">
+                <div className="lg:hidden border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314]">
                     <div className="space-y-1 px-4 py-6">
                         {navLinks.map((item) => (
                             <Link

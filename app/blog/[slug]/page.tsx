@@ -35,6 +35,52 @@ const POST_SEO_KEYWORDS: Record<string, string[]> = {
     "how-to-choose-artificial-intelligence-tools-enterprise": ["how to choose artificial intelligence tools", "enterprise ai tool evaluation", "ai vendor evaluation", "ai software selection"],
 };
 
+type RelatedResourceLink = {
+    label: string;
+    href: string;
+    description: string;
+};
+
+const DEFAULT_RESOURCE_LINKS: RelatedResourceLink[] = [
+    {
+        label: "Resources hub",
+        href: "/resources",
+        description: "Downloadable guides and operating notes for teams turning AI policy into repeatable work.",
+    },
+    {
+        label: "Enterprise AI glossary",
+        href: "/glossary",
+        description: "Plain-language definitions for the governance, privacy, security, and model terms used across Remova.",
+    },
+];
+
+const RESOURCE_LINKS_BY_CATEGORY: Record<string, RelatedResourceLink[]> = {
+    Architecture: [
+        { label: "Models hub", href: "/models", description: "Compare model families and route AI work through approved, governed model choices." },
+        { label: "Use cases", href: "/use-cases", description: "See how model access, workflow routing, and controls show up in real company workflows." },
+    ],
+    "Buyer Guide": [
+        { label: "Features", href: "/features", description: "Review the product controls that matter when evaluating an enterprise AI governance layer." },
+        { label: "Compare Remova", href: "/compare", description: "Understand how Remova compares with point tools and single-model assistants." },
+    ],
+    Compliance: [
+        { label: "ISMS scope statement", href: "/resources/isms-scope-statement", description: "A practical note for drawing the boundary around systems, teams, vendors, and AI evidence." },
+        { label: "Compliance use case", href: "/use-cases/compliance-lead", description: "How compliance teams use Remova to keep AI rollout tied to evidence and review cycles." },
+    ],
+    Governance: [
+        { label: "Features", href: "/features", description: "The core controls for policy enforcement, model governance, budgets, and auditability." },
+        { label: "Use cases", href: "/use-cases", description: "Role and function pages that show where governance work lands operationally." },
+    ],
+    Privacy: [
+        { label: "Trade privacy guide", href: "/resources/ultimate-guide-trade-privacy-2025", description: "A field guide for mapping public exposure, evidence, removal work, and follow-up checks." },
+        { label: "Coverage windows explained", href: "/resources/coverage-windows-explained", description: "How to think about recurring exposure after a removal request appears complete." },
+    ],
+    Security: [
+        { label: "CISO use case", href: "/use-cases/ciso", description: "How security leaders keep AI adoption from becoming unmanaged data exposure." },
+        { label: "Sensitive data protection", href: "/features/sensitive-data-protection", description: "Controls for identifying and reducing sensitive prompt exposure before model calls leave the workflow." },
+    ],
+};
+
 type BlogInlineCta = NonNullable<BlogPost["inlineCtas"]>[number];
 
 function InlineCtaAction({ href, label, variant }: { href: string; label: string; variant: "primary" | "secondary" }) {
@@ -257,6 +303,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "Repeat sensitive-data events by team",
         "Exception age for high-risk workflows",
     ] : metricsByCategory[post.category] || metricsByCategory.Guide;
+    const relatedPosts = allBlogPosts
+        .filter((candidate) => candidate.slug !== post.slug && candidate.category === post.category)
+        .slice(0, 3);
+    const relatedResourceLinks = RESOURCE_LINKS_BY_CATEGORY[post.category] ?? DEFAULT_RESOURCE_LINKS;
 
     const articleType = post.articleType ?? "BlogPosting";
     const dateModified = post.lastModified ?? post.date;
@@ -653,6 +703,62 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     })}
                 </div>
             </article>
+
+            <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                <div className="container mx-auto max-w-5xl">
+                    <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                            <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">
+                                Keep reading
+                            </p>
+                            <h2 className="text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-4xl leading-[0.92]">
+                                More on {post.category.toLowerCase()}
+                            </h2>
+                        </div>
+                        <Link href={blogCategoryPath(post.category)} className="inline-flex items-center gap-2 text-sm font-black text-slate-900 transition hover:text-blue-700 dark:text-white dark:hover:text-blue-300">
+                            View {post.category} hub <ArrowRight className="h-4 w-4" />
+                        </Link>
+                    </div>
+
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                        {relatedPosts.map((relatedPost) => (
+                            <Link
+                                key={relatedPost.slug}
+                                href={`/blog/${relatedPost.slug}`}
+                                className="rounded-lg border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-lg dark:border-white/10 dark:bg-[#131314] dark:hover:border-white/30"
+                            >
+                                <span className="text-xs font-black uppercase tracking-[0.18em] text-blue-600 dark:text-blue-300">
+                                    Article
+                                </span>
+                                <h3 className="mt-3 text-lg font-black leading-tight text-slate-900 dark:text-white">
+                                    {relatedPost.title}
+                                </h3>
+                                <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                    {relatedPost.excerpt}
+                                </p>
+                            </Link>
+                        ))}
+
+                        {relatedResourceLinks.map((resource) => (
+                            <Link
+                                key={resource.href}
+                                href={resource.href}
+                                className="rounded-lg border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-lg dark:border-white/10 dark:bg-[#131314] dark:hover:border-white/30"
+                            >
+                                <span className="text-xs font-black uppercase tracking-[0.18em] text-emerald-600 dark:text-emerald-300">
+                                    Resource
+                                </span>
+                                <h3 className="mt-3 text-lg font-black leading-tight text-slate-900 dark:text-white">
+                                    {resource.label}
+                                </h3>
+                                <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                    {resource.description}
+                                </p>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             <LeadMagnetSection magnet="employee-safety-checklist" tone="slate" />
 

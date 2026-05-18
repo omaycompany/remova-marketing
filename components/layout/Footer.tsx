@@ -72,6 +72,9 @@ export default function Footer() {
                                 { name: "Blog", href: "/blog" },
                                 { name: "Glossary", href: "/glossary" },
                                 { name: "Resources", href: "/resources" },
+                                { name: "Trade Privacy Guide", href: "/resources/ultimate-guide-trade-privacy-2025" },
+                                { name: "ImportYeti Removal", href: "/resources/importyeti-removal-guide" },
+                                { name: "Coverage Windows", href: "/resources/coverage-windows-explained" },
                             ],
                         },
                         {
