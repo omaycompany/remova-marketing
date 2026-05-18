@@ -25,12 +25,18 @@ const PROMPT_INJECTION_CLUSTER_SLUGS = new Set([
 
 const POST_SEO_KEYWORDS: Record<string, string[]> = {
     "ai-customer-service": ["ai customer service", "ai customer service tools", "customer support ai", "ai ticket triage", "ai chatbot for customer service"],
+    "ai-chatbot-builder-customer-checklist": ["ai chatbot builder", "ai chatbot builder for website", "customer service chatbot builder", "ai chatbot for customer support", "chatbot builder", "customer support ai agent"],
+    "ai-code-generator-work-source-code-secrets-review-approval-rules": ["ai code generator", "ai code generator at work", "ai coding assistant security", "ai generated code review", "source code ai tools", "ai code review rules"],
+    "ai-security-risks-employees-use-ai-tools": ["ai security", "ai security risks", "employee ai tools", "shadow ai security", "ai data leakage", "ai tool security", "enterprise ai security"],
+    "agentic-workflows-business-processes": ["agentic workflows", "ai agents for business", "agentic ai workflows", "business process automation ai", "ai workflow automation", "safe ai agents"],
+    "ai-writing-assistant-for-teams": ["ai writing assistant", "ai writing assistant for teams", "best ai writing tools", "ai writing tools for business", "ai content assistant", "writing assistant for teams"],
     "artificial-intelligence-in-companies": ["artificial intelligence in companies", "ai in companies", "enterprise ai adoption", "ai for business operations"],
     "artificial-intelligence-tools-for-business": ["artificial intelligence tools for business", "ai tools for business", "business ai tools", "enterprise ai tools"],
     "artificial-intelligence-tools-list-enterprise-ai-stack": ["artificial intelligence tools list", "enterprise ai stack", "ai tools list", "ai software stack"],
     "best-ai-for-coding": ["best ai for coding", "ai coding tools", "ai code assistant", "ai for software development"],
     "best-artificial-intelligence-tools-for-employees": ["best artificial intelligence tools for employees", "employee ai tools", "workplace ai tools", "ai productivity tools"],
     "best-email-marketing-tools-small-sales-teams": ["best email marketing tools for small sales teams", "email marketing tools", "sales email automation", "small business email marketing tools"],
+    "chatgpt-alternatives-for-work": ["chatgpt alternatives", "chatgpt alternatives for work", "claude vs chatgpt", "gemini vs chatgpt", "microsoft 365 copilot alternatives", "perplexity enterprise", "enterprise ai assistants"],
     "free-artificial-intelligence-tools-at-work": ["free artificial intelligence tools", "free ai tools for work", "free workplace ai tools", "safe free ai tools"],
     "how-to-choose-artificial-intelligence-tools-enterprise": ["how to choose artificial intelligence tools", "enterprise ai tool evaluation", "ai vendor evaluation", "ai software selection"],
 };
