@@ -1,4 +1,5 @@
 import { agenticWorkflowsBlogPosts } from "./agentic-workflows-blog-posts";
+import { aiChatbotArchiveBlogPosts } from "./ai-chatbot-archive-blog-posts";
 import { aiChatbotBuilderBlogPosts } from "./ai-chatbot-builder-blog-posts";
 import { aiCodeGeneratorBlogPosts } from "./ai-code-generator-blog-posts";
 import { aiSecurityRisksBlogPosts } from "./ai-security-risks-blog-posts";
@@ -8,6 +9,7 @@ import { chatgptAlternativesBlogPosts } from "./chatgpt-alternatives-blog-posts"
 import { codingAiBlogPosts } from "./coding-ai-blog-posts";
 import { companyAiBlogPosts } from "./company-ai-blog-posts";
 import { customerServiceAiBlogPosts } from "./customer-service-ai-blog-posts";
+import { euAiActTimelineBlogPosts } from "./eu-ai-act-timeline-blog-posts";
 import { keywordBlogPosts } from "./keyword-blog-posts";
 import { salesEmailBlogPosts } from "./sales-email-blog-posts";
 
@@ -3917,7 +3919,7 @@ The final test is whether a security owner can explain the event without asking 
 const now = new Date();
 const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
-const combinedBlogPosts = [...rawBlogPosts, ...aiToolsBlogPosts, ...aiCodeGeneratorBlogPosts, ...aiSecurityRisksBlogPosts, ...aiChatbotBuilderBlogPosts, ...aiWritingAssistantBlogPosts, ...agenticWorkflowsBlogPosts, ...chatgptAlternativesBlogPosts, ...companyAiBlogPosts, ...codingAiBlogPosts, ...customerServiceAiBlogPosts, ...salesEmailBlogPosts, ...keywordBlogPosts];
+const combinedBlogPosts = [...rawBlogPosts, ...euAiActTimelineBlogPosts, ...aiToolsBlogPosts, ...aiCodeGeneratorBlogPosts, ...aiSecurityRisksBlogPosts, ...aiChatbotArchiveBlogPosts, ...aiChatbotBuilderBlogPosts, ...aiWritingAssistantBlogPosts, ...agenticWorkflowsBlogPosts, ...chatgptAlternativesBlogPosts, ...companyAiBlogPosts, ...codingAiBlogPosts, ...customerServiceAiBlogPosts, ...salesEmailBlogPosts, ...keywordBlogPosts];
 
 export const allBlogPosts = combinedBlogPosts
     .filter((post) => post.date <= today)
