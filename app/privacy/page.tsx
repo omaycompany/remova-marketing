@@ -173,7 +173,13 @@ export default function PrivacyPage() {
                                 <li><strong>Right to Delete:</strong> You may request deletion of your personal information, subject to certain exceptions.</li>
                                 <li><strong>Right to Non-Discrimination:</strong> We will not discriminate against you for exercising your CCPA rights.</li>
                             </ul>
-                            <p>To submit a CCPA request, please contact us at notifications@remova.org. We may need to verify your identity before processing your request.</p>
+                            <p>
+                                To submit a CCPA request, please contact us at{" "}
+                                <SafeEmailLink subject="CCPA request" className="font-bold text-slate-900 underline dark:text-white">
+                                    notifications at remova dot org
+                                </SafeEmailLink>
+                                . We may need to verify your identity before processing your request.
+                            </p>
                         </div>
                     </section>
 

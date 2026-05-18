@@ -1554,3 +1554,70 @@ const autoLandings = models
     .map((model, index) => autoLandingForModel(model, index, usedSlugs));
 
 export const modelLandings: ModelLanding[] = [...curatedLandings, ...autoLandings];
+
+const currentModelLandingSlugs = new Set(modelLandings.map((entry) => entry.slug));
+
+function uniqueValues(values: string[]) {
+    return Array.from(new Set(values.filter(Boolean)));
+}
+
+function slugWithoutPrefix(slug: string, prefix: string) {
+    if (!prefix) return "";
+    const normalizedPrefix = normalizeSlug(prefix);
+    if (!normalizedPrefix) return "";
+    const slugPrefix = `${normalizedPrefix}-`;
+    if (!slug.startsWith(slugPrefix)) return "";
+    return slug.slice(slugPrefix.length);
+}
+
+function normalizeAliasSlug(value: string) {
+    return normalizeSlug(value.replace(/\+/g, " plus "));
+}
+
+function aliasCandidatesForLanding(landing: ModelLanding) {
+    const model = models.find((entry) => entry.id === landing.modelId);
+    const heroProviderPrefix = landing.heroTitle.includes(":") ? landing.heroTitle.split(":")[0] ?? "" : "";
+    const titleWithoutProvider = landing.heroTitle.replace(/^[^:]+:\s*/, "");
+    const idWithoutProvider = landing.modelId.split("/").slice(1).join("-");
+    const idProvider = landing.modelId.split("/")[0] ?? "";
+    const providerPrefixAliases = heroProviderPrefix
+        ? [
+            slugWithoutPrefix(landing.slug, model?.provider ?? ""),
+            slugWithoutPrefix(landing.slug, idProvider),
+            slugWithoutPrefix(landing.slug, heroProviderPrefix),
+        ]
+        : [];
+
+    return uniqueValues([
+        normalizeAliasSlug(titleWithoutProvider),
+        normalizeAliasSlug(idWithoutProvider.replace(/[:/]/g, " ")),
+        ...providerPrefixAliases,
+    ]).filter((alias) => alias && alias !== landing.slug && !currentModelLandingSlugs.has(alias));
+}
+
+function buildModelLandingRedirects() {
+    const redirects = new Map<string, string>();
+    const collisions = new Set<string>();
+
+    for (const landing of modelLandings) {
+        const target = `/models/${landing.slug}`;
+        for (const alias of aliasCandidatesForLanding(landing)) {
+            const existing = redirects.get(alias);
+            if (existing && existing !== target) {
+                collisions.add(alias);
+                redirects.delete(alias);
+                continue;
+            }
+            if (!collisions.has(alias)) redirects.set(alias, target);
+        }
+    }
+
+    return Object.fromEntries(redirects);
+}
+
+export const modelLandingRedirects: Record<string, string> = buildModelLandingRedirects();
+export const modelLandingRedirectStaticParams = Object.keys(modelLandingRedirects).map((slug) => ({ slug }));
+
+export function getModelLandingRedirect(slug: string): string | undefined {
+    return modelLandingRedirects[slug];
+}

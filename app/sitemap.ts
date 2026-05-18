@@ -42,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/blog`, lastModified: latestBlogDate, changeFrequency: 'daily', priority: 0.95 },
         { url: `${SITE_URL}/features`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.9 },
         { url: `${SITE_URL}/models`, lastModified: modelsLastUpdatedDate, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${SITE_URL}/demo`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.75 },
         { url: `${SITE_URL}/glossary`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/use-cases`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },
         { url: `${SITE_URL}/alternative`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 0.8 },

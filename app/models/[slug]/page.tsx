@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ModelLandingTemplate from "@/components/models/ModelLandingTemplate";
 import LegacyRedirect from "@/components/seo/LegacyRedirect";
-import { modelLandings } from "@/content/model-landings";
+import { getModelLandingRedirect, modelLandingRedirectStaticParams, modelLandings } from "@/content/model-landings";
+import { modelVideoSlugs } from "@/content/model-video-manifest.generated";
 import { getModelVideo } from "@/content/model-videos";
 import { models } from "@/content/models";
 import { getLegacyModelRedirect, legacyModelStaticParams } from "@/lib/legacy-redirects";
@@ -13,17 +14,29 @@ function trimForTitle(value: string, maxLength: number) {
     return `${value.slice(0, Math.max(0, maxLength - 1)).trimEnd()}…`;
 }
 
+const retiredModelVideoSlugSet = new Set<string>(modelVideoSlugs);
+
+function getRetiredModelVideoRedirect(slug: string) {
+    return retiredModelVideoSlugSet.has(slug) ? "/models" : undefined;
+}
+
 export async function generateStaticParams() {
-    return [
-        ...modelLandings.map((entry) => ({ slug: entry.slug })),
-        ...legacyModelStaticParams,
-    ];
+    return Array.from(new Set([
+        ...modelLandings.map((entry) => entry.slug),
+        ...modelLandingRedirectStaticParams.map((entry) => entry.slug),
+        ...legacyModelStaticParams.map((entry) => entry.slug),
+        ...modelVideoSlugs,
+    ])).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const landing = modelLandings.find((entry) => entry.slug === params.slug);
+    const modelLandingRedirect = getModelLandingRedirect(params.slug);
     const legacyRedirect = getLegacyModelRedirect(params.slug);
+    const retiredVideoRedirect = getRetiredModelVideoRedirect(params.slug);
+    if (!landing && modelLandingRedirect) return legacyRedirectMetadata(modelLandingRedirect);
     if (!landing && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
+    if (!landing && retiredVideoRedirect) return legacyRedirectMetadata(retiredVideoRedirect);
     if (!landing) return {};
 
     const seoTitle = trimForTitle(landing.metaTitle, 80);
@@ -80,8 +93,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default function ModelLandingPage({ params }: { params: { slug: string } }) {
     const landing = modelLandings.find((entry) => entry.slug === params.slug);
+    const modelLandingRedirect = getModelLandingRedirect(params.slug);
     const legacyRedirect = getLegacyModelRedirect(params.slug);
+    const retiredVideoRedirect = getRetiredModelVideoRedirect(params.slug);
+    if (!landing && modelLandingRedirect) return <LegacyRedirect to={modelLandingRedirect} />;
     if (!landing && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
+    if (!landing && retiredVideoRedirect) return <LegacyRedirect to={retiredVideoRedirect} />;
     if (!landing) notFound();
 
     const model = models.find((entry) => entry.id === landing.modelId);
