@@ -1388,6 +1388,22 @@ function rotatePick<T>(items: T[], start: number, count: number) {
     return selected;
 }
 
+function isTranscriptionModel(model: ModelEntry) {
+    const output = new Set(model.outputModalities ?? []);
+    const text = [model.name, model.summary, model.description, model.modelType, model.modality]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+    return output.has("transcription")
+        || text.includes("transcription")
+        || text.includes("transcribe")
+        || text.includes("speech-to-text")
+        || text.includes("automatic speech recognition")
+        || /\basr\b/.test(text)
+        || text.includes("whisper");
+}
+
 function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, modality: string, autoIndex: number) {
     const commonTradeoffs = [
         "Quality and latency should be benchmarked against your internal prompt set before broad rollout.",
@@ -1411,9 +1427,17 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
         premium: "Premium tiers should be restricted to high-value workflows to avoid unnecessary spend concentration.",
     };
 
-    const modalityTradeoff = modality.includes("+")
-        ? "Multimodal pipelines require strict input handling and validation policies for reliability."
-        : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
+    const modalityTradeoff = isTranscriptionModel(model)
+        ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
+        : modality.includes("->speech") || modality.includes("->audio")
+        ? "Audio generation workflows need approval gates for voice, language, and brand use."
+        : modality.includes("->video")
+            ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
+            : modality.includes("->image")
+                ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
+                : modality.includes("+")
+                    ? "Multimodal pipelines require strict input handling and validation policies for reliability."
+                    : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
 
     const hash = numericHash(`${model.id}-${autoIndex}`);
     const selectedCommon = rotatePick(commonTradeoffs, hash % commonTradeoffs.length, 2);
@@ -1426,15 +1450,60 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
     ];
 }
 
-function useCaseFromTag(tag: string, modelName: string) {
+function useCaseFromTag(tag: string, model: ModelEntry) {
     const value = tag.toLowerCase();
-    if (value.includes("code")) return `${modelName} for software delivery workflows with policy-enforced prompts.`;
-    if (value.includes("reason")) return `${modelName} for complex analysis and long-form decision support.`;
-    if (value.includes("multimodal")) return `${modelName} for document, image, or mixed-input processing pipelines.`;
-    if (value.includes("agent")) return `${modelName} for tool-driven automation with governance checkpoints.`;
-    if (value.includes("latency")) return `${modelName} for high-volume assistant traffic with low-response targets.`;
-    if (value.includes("cost")) return `${modelName} for scaled deployment under strict budget constraints.`;
-    return `${modelName} for internal productivity assistants and knowledge workflows.`;
+    if (value.includes("code")) return `${model.name} for software delivery workflows with policy-enforced prompts.`;
+    if (value.includes("reason")) return `${model.name} for complex analysis and long-form decision support.`;
+    if (value.includes("multimodal")) return `${model.name} for document, image, or mixed-input processing pipelines.`;
+    if (value.includes("audio") && isTranscriptionModel(model)) return `${model.name} for governed speech-to-text pipelines across meetings, calls, and recordings.`;
+    if (value.includes("audio")) return `${model.name} for governed speech, audio, and narration workflows.`;
+    if (value.includes("video")) return `${model.name} for approved video generation, editing, and review workflows.`;
+    if (value.includes("image")) return `${model.name} for governed image generation, editing, and visual review workflows.`;
+    if (value.includes("agent")) return `${model.name} for tool-driven automation with governance checkpoints.`;
+    if (value.includes("latency")) return `${model.name} for high-volume assistant traffic with low-response targets.`;
+    if (value.includes("cost")) return `${model.name} for scaled deployment under strict budget constraints.`;
+    return `${model.name} for internal productivity assistants and knowledge workflows.`;
+}
+
+function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: number) {
+    const output = new Set(model.outputModalities ?? []);
+    const isTranscription = isTranscriptionModel(model);
+    const fallbackSets = {
+        transcription: [
+            `${model.name} for governed speech-to-text pipelines across meetings, calls, and recordings.`,
+            `${model.name} for searchable transcript assets with retention and access controls.`,
+            `${model.name} for routing spoken-content insights into support, sales, and compliance workflows.`,
+            `${model.name} for quality review and routing of regulated spoken-content records.`,
+        ],
+        audio: [
+            `${model.name} for approved narration, voiceover, and localized audio production workflows.`,
+            `${model.name} for governed speech assets with review, access, and audit controls.`,
+            `${model.name} for media teams that need repeatable audio generation under budget limits.`,
+        ],
+        video: [
+            `${model.name} for approved video generation and editing workflows with review checkpoints.`,
+            `${model.name} for campaign, enablement, and product video assets under governance controls.`,
+            `${model.name} for repeatable visual production where teams need auditability and budget limits.`,
+        ],
+        image: [
+            `${model.name} for governed image generation, editing, and creative review workflows.`,
+            `${model.name} for campaign, product, and enablement visuals with approval checkpoints.`,
+            `${model.name} for repeatable visual production under brand and budget controls.`,
+        ],
+    };
+
+    if (isTranscription) return fallbackSets.transcription[index % fallbackSets.transcription.length];
+    if (output.has("speech") || output.has("audio") || modality.includes("->speech") || modality.includes("->audio")) {
+        return fallbackSets.audio[index % fallbackSets.audio.length];
+    }
+    if (output.has("video") || modality.includes("->video")) {
+        return fallbackSets.video[index % fallbackSets.video.length];
+    }
+    if (output.has("image") || modality.includes("->image")) {
+        return fallbackSets.image[index % fallbackSets.image.length];
+    }
+
+    return `${model.name} for governed enterprise assistant workflows across teams.`;
 }
 
 function parameterNotesForModel(model: ModelEntry) {
@@ -1465,14 +1534,14 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
     const fitPhrase = bestFitPhrase(model);
     const contextArticle = articleFor(context);
     const landingBestFor = displayBestFor(model);
-    const useCases = landingBestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model.name));
+    const useCases = landingBestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model));
     const bestFitList = landingBestFor.length > 0 ? landingBestFor.join(", ") : "General assistants";
     const topUseCasesText =
         landingBestFor.length > 1
             ? `${landingBestFor[0].toLowerCase()} and ${landingBestFor[1].toLowerCase()}`
             : landingBestFor[0]?.toLowerCase() ?? "general assistants";
     while (useCases.length < 4) {
-        useCases.push(`${model.name} for governed enterprise assistant workflows across teams.`);
+        useCases.push(fallbackUseCaseForModel(model, modality, useCases.length));
     }
 
     const strengths = [
