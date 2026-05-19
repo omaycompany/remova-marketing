@@ -39,7 +39,6 @@ function modelReleasedAt(modelId: string) {
 
 function needsModalitySpecificApplications(model: { name: string; summary: string; description?: string; modelType?: string; modality?: string; bestFor: string[]; inputModalities?: string[]; outputModalities?: string[] }) {
     const output = new Set(model.outputModalities ?? []);
-    const input = new Set(model.inputModalities ?? []);
     const text = [
         model.name,
         model.summary,
@@ -48,24 +47,37 @@ function needsModalitySpecificApplications(model: { name: string; summary: strin
     ].filter(Boolean).join(" ").toLowerCase();
     const modelType = `${model.modelType ?? ""}`.toLowerCase();
     const modality = `${model.modality ?? ""}`.toLowerCase();
-
-    return output.has("video")
-        || output.has("image")
-        || output.has("audio")
-        || output.has("transcription")
-        || (input.has("audio") && output.has("text"))
-        || modelType.includes("video")
-        || modelType.includes("image")
+    const isTranscriptionModel = output.has("transcription")
+        || modelType.includes("transcription")
+        || modelType.includes("speech-to-text")
+        || modelType.includes("audio-to-text")
+        || modality.includes("audio->transcription")
+        || text.includes("transcription")
+        || text.includes("transcribe")
+        || text.includes("speech-to-text")
+        || text.includes("automatic speech recognition")
+        || /\basr\b/.test(text)
+        || text.includes("whisper");
+    const isAudioGenerationModel = output.has("audio")
+        || output.has("speech")
         || modelType.includes("audio")
         || modelType.includes("speech")
         || modelType.includes("tts")
         || modelType.includes("music")
+        || modality.includes("->audio")
+        || modality.includes("->speech")
+        || modality.includes("->music")
+        || text.includes("text-to-speech")
+        || text.includes("tts");
+
+    return output.has("video")
+        || output.has("image")
+        || isAudioGenerationModel
+        || isTranscriptionModel
+        || modelType.includes("video")
+        || modelType.includes("image")
         || modality.includes("->video")
         || modality.includes("->image")
-        || modality.includes("->audio")
-        || text.includes("transcription")
-        || text.includes("transcribe")
-        || text.includes("whisper")
         || text.includes("embed")
         || text.includes("rerank")
         || text.includes("retrieval");

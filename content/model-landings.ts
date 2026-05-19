@@ -1356,10 +1356,39 @@ function defaultModality(model: ModelEntry) {
 }
 
 function bestFitPhrase(model: ModelEntry) {
-    const topTags = model.bestFor.slice(0, 2);
+    const topTags = bestForForLanding(model).slice(0, 2);
     if (topTags.length === 0) return "enterprise assistant operations";
     if (topTags.length === 1) return topTags[0].toLowerCase();
     return `${topTags[0].toLowerCase()} and ${topTags[1].toLowerCase()}`;
+}
+
+function bestForForLanding(model: ModelEntry) {
+    const output = new Set(model.outputModalities ?? []);
+    const input = new Set(model.inputModalities ?? []);
+    const isTextOutputModel = output.has("text")
+        && !output.has("image")
+        && !output.has("video")
+        && !output.has("audio")
+        && !output.has("speech")
+        && !output.has("transcription");
+    const hasMultimodalInput = input.has("image") || input.has("video") || input.has("audio") || input.has("file");
+
+    if (!isTextOutputModel || !hasMultimodalInput) return model.bestFor;
+
+    const text = [
+        model.name,
+        model.summary,
+        model.description,
+        ...(model.supportedParameters ?? []),
+    ].filter(Boolean).join(" ").toLowerCase();
+    const normalized = model.bestFor.map((entry) =>
+        /^(image|video|audio) workflows$/i.test(entry) ? "Multimodal analysis" : entry
+    );
+    if (text.includes("code") || text.includes("coding") || text.includes("software")) normalized.push("Code generation");
+    if (text.includes("agent") || text.includes("tool")) normalized.push("Agent workflows");
+    if (text.includes("reason")) normalized.push("Advanced reasoning");
+
+    return Array.from(new Set(normalized));
 }
 
 function articleFor(phrase: string) {
@@ -1463,18 +1492,19 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
     const slug = ensureUniqueSlug(model, usedSlugs);
     const fitPhrase = bestFitPhrase(model);
     const contextArticle = articleFor(context);
-    const useCases = model.bestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model.name));
-    const bestFitList = model.bestFor.length > 0 ? model.bestFor.join(", ") : "General assistants";
+    const landingBestFor = bestForForLanding(model);
+    const useCases = landingBestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model.name));
+    const bestFitList = landingBestFor.length > 0 ? landingBestFor.join(", ") : "General assistants";
     const topUseCasesText =
-        model.bestFor.length > 1
-            ? `${model.bestFor[0].toLowerCase()} and ${model.bestFor[1].toLowerCase()}`
-            : model.bestFor[0]?.toLowerCase() ?? "general assistants";
+        landingBestFor.length > 1
+            ? `${landingBestFor[0].toLowerCase()} and ${landingBestFor[1].toLowerCase()}`
+            : landingBestFor[0]?.toLowerCase() ?? "general assistants";
     while (useCases.length < 4) {
         useCases.push(`${model.name} for governed enterprise assistant workflows across teams.`);
     }
 
     const strengths = [
-        `${model.name} is suited for ${model.bestFor[0]?.toLowerCase() ?? "general enterprise assistants"}.`,
+        `${model.name} is suited for ${landingBestFor[0]?.toLowerCase() ?? "general enterprise assistants"}.`,
         context === "non-token"
             ? `Supports ${modality} workflows for governed media and automation use cases.`
             : `Supports ${context} for multi-step prompts and larger working sets.`,

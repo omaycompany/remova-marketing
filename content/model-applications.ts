@@ -161,25 +161,48 @@ function modelText(model: ModelEntry) {
 
 function applicationsByModality(model: ModelEntry) {
     const output = new Set(model.outputModalities ?? []);
-    const input = new Set(model.inputModalities ?? []);
     const text = modelText(model);
     const modelType = `${model.modelType ?? ""}`.toLowerCase();
     const modality = `${model.modality ?? ""}`.toLowerCase();
+    const isTranscriptionModel =
+        output.has("transcription")
+        || modelType.includes("transcription")
+        || modelType.includes("speech-to-text")
+        || modelType.includes("audio-to-text")
+        || modality.includes("audio->transcription")
+        || text.includes("transcription")
+        || text.includes("transcribe")
+        || text.includes("speech-to-text")
+        || text.includes("automatic speech recognition")
+        || /\basr\b/.test(text)
+        || text.includes("whisper");
+    const isAudioGenerationModel =
+        output.has("audio")
+        || output.has("speech")
+        || modelType.includes("audio")
+        || modelType.includes("speech")
+        || modelType.includes("tts")
+        || modelType.includes("music")
+        || modality.includes("->audio")
+        || modality.includes("->speech")
+        || modality.includes("->music")
+        || text.includes("text-to-speech")
+        || text.includes("tts");
 
-    if ((input.has("audio") && (output.has("text") || output.has("transcription"))) || text.includes("transcription") || text.includes("transcribe") || text.includes("whisper")) return transcriptionApplications;
+    if (isTranscriptionModel) return transcriptionApplications;
     if (output.has("video") || modelType.includes("video") || modality.includes("->video")) return videoApplications;
     if (output.has("image") || modelType.includes("image") || modality.includes("->image")) return imageApplications;
-    if (output.has("audio") || modelType.includes("audio") || modelType.includes("speech") || modelType.includes("tts") || modelType.includes("music") || modality.includes("->audio")) return audioApplications;
+    if (isAudioGenerationModel) return audioApplications;
     if (text.includes("embed") || text.includes("rerank") || text.includes("retrieval")) return retrievalApplications;
 
     return priorityTextApplications(model);
 }
 
 function priorityTextApplications(model: ModelEntry) {
-    const bestFor = model.bestFor.join(" ").toLowerCase();
+    const bestFor = modelText(model);
     const applications = [...textApplications];
 
-    if (bestFor.includes("code")) {
+    if (bestFor.includes("code") || bestFor.includes("coding") || bestFor.includes("software")) {
         return moveToFront(applications, ["Code and debug", "Build workflow automations", "Improve security reviews"]);
     }
 
