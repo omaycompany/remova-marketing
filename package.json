@@ -26,6 +26,7 @@
         "models:update": "node scripts/update_models.mjs",
         "models:update:openrouter": "node scripts/update_models.mjs --openrouter-only",
         "models:update:vertex": "node scripts/update_models.mjs --with-vertex",
+        "resources:pdfs": "tsx scripts/generate-resource-pdfs.ts",
         "feed": "node scripts/generate-feed.mjs",
         "sitemap:ping": "curl -s \"https://www.google.com/ping?sitemap=https://www.remova.org/sitemap.xml\" && echo \" — Google sitemap pinged\"",
         "indexnow:submit": "node scripts/indexnow-submit.mjs",

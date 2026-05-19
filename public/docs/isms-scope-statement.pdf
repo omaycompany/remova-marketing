@@ -3,30 +3,77 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
-endobj
-4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
 5 0 obj
-<< /Length 150 >>
+<< /Length 3422 >>
 stream
-BT /F1 18 Tf 72 720 Td (ISMS scope statement) Tj 0 -30 Td /F1 11 Tf (This legacy Remova document has moved to https://www.remova.org/resources.) Tj ET
+BT /F1 22 Tf 1 0 0 1 54 738 Tm (ISMS Scope Statement) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 711 Tm (Security Review Packet) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 688 Tm (A short security review artifact describing how to frame an information security) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 672 Tm (management system scope for teams evaluating AI governance and privacy controls.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 646 Tm (Audience: Security, procurement, and compliance teams reviewing Remova or documenting their own) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 631 Tm (control boundary.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 598 Tm (What This Resource Covers) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 577 Tm (- What an ISMS scope statement should clarify before a vendor review starts.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 559 Tm (- How to distinguish product controls, operational controls, and customer responsibilities.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 541 Tm (- Which follow-up questions help security teams avoid vague platform claims.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 515 Tm (Why scope matters) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 494 Tm (Security review gets muddy when a vendor says a control exists but nobody knows where it) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 479 Tm (applies. A scope statement narrows the conversation: systems, people, data types, support) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 464 Tm (processes, and boundaries. That makes procurement faster and keeps technical reviewers from) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 449 Tm (chasing irrelevant proof.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 418 Tm (Use it as a question list) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 397 Tm (This artifact is most useful when paired with a live review. Ask which systems process customer) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 382 Tm (data, which subprocessors are in scope, how logs are retained, what administrators can see, and) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 367 Tm (which responsibilities stay with the customer. Good answers should be specific enough to map) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 352 Tm (into a risk register.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 321 Tm (Where it fits in AI governance) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 300 Tm (AI governance depends on more than model behavior. Identity, retention, logging, data) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 285 Tm (minimization, and incident handling all sit around the model call. A clear scope statement) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 270 Tm (helps buyers understand which controls are part of the product and which controls belong in) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 255 Tm (their own operating process.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 224 Tm (Before You Use This PDF) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 203 Tm (- Confirm which environments and support processes are included in the stated scope.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 185 Tm (- Ask how customer data, prompt data, logs, and generated files are handled.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 167 Tm (- Map the scope to procurement requirements before requesting evidence.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 149 Tm (- Keep customer responsibilities explicit so rollout assumptions do not drift.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 123 Tm (Fact-Check Notes) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 102 Tm (- Source context: ISO/IEC 27001:2022 defines requirements for an information security management system) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 88 Tm (and treats scope as part of the management-system boundary.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 63 Tm (Related Links) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 393 >>
+stream
+BT /F1 9 Tf 1 0 0 1 64 738 Tm (- Security review checklist: https://www.remova.org/resources) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 721 Tm (- Audit trails: https://www.remova.org/features/audit-trails) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 704 Tm (- Privacy policy: https://www.remova.org/privacy) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 687 Tm (Canonical page: https://www.remova.org/resources/isms-scope-statement) Tj ET
 endstream
 endobj
 xref
-0 6
+0 8
 0000000000 65535 f
 0000000009 00000 n
 0000000058 00000 n
-0000000115 00000 n
-0000000241 00000 n
-0000000311 00000 n
+0000000121 00000 n
+0000000191 00000 n
+0000000317 00000 n
+0000003791 00000 n
+0000003917 00000 n
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 8 /Root 1 0 R >>
 startxref
-512
+4361
 %%EOF

@@ -3,30 +3,78 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
-endobj
-4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
 5 0 obj
-<< /Length 156 >>
+<< /Length 3467 >>
 stream
-BT /F1 18 Tf 72 720 Td (Coverage windows explained) Tj 0 -30 Td /F1 11 Tf (This legacy Remova document has moved to https://www.remova.org/resources.) Tj ET
+BT /F1 22 Tf 1 0 0 1 54 738 Tm (Coverage Windows Explained) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 711 Tm (Monitoring Note) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 688 Tm (A plain-English explainer for understanding why removal coverage is time-bound, how) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 672 Tm (data refreshes create new exposure, and what cadence teams should use for follow-up) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 656 Tm (checks.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 630 Tm (Audience: Teams that have already filed removals and need a realistic monitoring cadence.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 597 Tm (What This Resource Covers) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 576 Tm (- What a coverage window means in practical terms: public manifest data, platform refreshes,) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 561 Tm (and mirrored records.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 543 Tm (- Why a removed result can come back without anyone intentionally reversing the removal.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 525 Tm (- How to set a monitoring schedule that is useful without becoming busywork.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 499 Tm (Coverage is not a permanent state) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 478 Tm (A removal can clear a visible page today while new records arrive tomorrow from public vessel) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 463 Tm (manifest data, paid subscriber datasets, or platform refreshes. That does not always mean the) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 448 Tm (original request failed. It means the team needs to know which sources are covered, which dates) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 433 Tm (were reviewed, and when the next refresh is likely to matter.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 402 Tm (The useful unit is the relationship) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 381 Tm (Companies often track pages, but competitors care about relationships: which supplier serves) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 366 Tm (which customer, which product moves through which route, and which shipment pattern repeats.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 351 Tm (Coverage reviews should ask whether the relationship is still discoverable, not only whether) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 336 Tm (one URL disappeared.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 305 Tm (A realistic cadence) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 284 Tm (High-risk supplier or customer relationships deserve a tighter review loop after new shipment) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 269 Tm (periods. Older, low-risk records can be checked less often. The point is not to search) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 254 Tm (constantly; it is to set a repeatable cadence that matches the commercial sensitivity of the) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 239 Tm (relationship.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 208 Tm (Before You Use This PDF) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 187 Tm (- Define which relationships are high-risk before scheduling monitoring.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 169 Tm (- Track the last checked date separately from the original removal request date.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 151 Tm (- Review public pages, search snippets, and mirrored supplier/customer views.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 133 Tm (- Escalate only when the same sensitive relationship is visible again.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 107 Tm (Fact-Check Notes) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 86 Tm (- Source context: CBP vessel manifest data can be compiled daily, and trade platforms may refresh from) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 72 Tm (public or subscriber data after a prior page-level change.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 508 >>
+stream
+BT /F1 14 Tf 1 0 0 1 54 738 Tm (Related Links) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 717 Tm (- ImportYeti removal guide: https://www.remova.org/resources/importyeti-removal-guide) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 700 Tm (- Trade privacy guide: https://www.remova.org/resources/ultimate-guide-trade-privacy-2025) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 683 Tm (- Trust and privacy: https://www.remova.org/privacy) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 666 Tm (Canonical page: https://www.remova.org/resources/coverage-windows-explained) Tj ET
 endstream
 endobj
 xref
-0 6
+0 8
 0000000000 65535 f
 0000000009 00000 n
 0000000058 00000 n
-0000000115 00000 n
-0000000241 00000 n
-0000000311 00000 n
+0000000121 00000 n
+0000000191 00000 n
+0000000317 00000 n
+0000003836 00000 n
+0000003962 00000 n
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 8 /Root 1 0 R >>
 startxref
-518
+4521
 %%EOF

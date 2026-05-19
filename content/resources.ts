@@ -32,10 +32,10 @@ export const resourceGuides: ResourceGuide[] = [
         pdfPath: "/docs/ultimate-guide-trade-privacy-2025.pdf",
         pdfLabel: "Download the trade privacy PDF",
         audience: "Founders, operations leaders, import teams, and privacy owners handling supplier visibility risk.",
-        readTime: "22-page guide",
+        readTime: "Guide packet",
         summary: [
             "Where public shipment records can expose customers, suppliers, routes, and buying patterns.",
-            "Which evidence to gather before asking a data broker or trade platform to suppress records.",
+            "Which evidence to gather before asking CBP, a trade-data platform, or a search platform to review exposed records.",
             "How to track coverage windows after removal so the same exposure does not quietly reappear.",
         ],
         sections: [
@@ -47,17 +47,18 @@ export const resourceGuides: ResourceGuide[] = [
             {
                 heading: "How to use it",
                 body:
-                    "Start by mapping the records that matter most: current suppliers, strategic customers, seasonal routes, and product lines that reveal margin or sourcing strategy. Then use the guide to decide which records need removal, which should be monitored, and which can be left alone because they do not create meaningful commercial risk.",
+                    "Start by mapping the records that matter most: current suppliers, strategic customers, seasonal routes, and product lines that reveal margin or sourcing strategy. Then use the guide to decide which records need a CBP confidentiality request, which platform pages or search snippets should be reviewed, which relationships should be monitored, and which records can be left alone because they do not create meaningful commercial risk.",
             },
             {
                 heading: "What Remova adds",
                 body:
-                    "Remova treats removal as an ongoing coverage problem. A filed request is not the finish line. The useful work is keeping a source list, recording dates, tracking platforms that mirror the data, and checking whether new shipments recreate the same exposure under a slightly different spelling.",
+                    "Remova treats removal as an ongoing coverage problem. A filed request is not the finish line, especially when public vessel manifest data, platform indexes, and search snippets move on different schedules. The useful work is keeping a source list, recording dates, tracking platforms that mirror the data, and checking whether new shipments recreate the same exposure under a slightly different spelling.",
             },
         ],
         checklist: [
             "Create a list of customer and supplier names that should not appear together publicly.",
             "Record the platform, URL, entity name, shipment date, and exposed relationship for each finding.",
+            "Check whether CBP vessel manifest confidentiality is the right path for importer, consignee, exporter, or shipper names and addresses.",
             "Keep a follow-up calendar because some platforms refresh from new source data after an initial removal.",
             "Separate urgent competitive exposure from low-risk historical records so the team does not waste effort.",
         ],
@@ -72,16 +73,16 @@ export const resourceGuides: ResourceGuide[] = [
         title: "ImportYeti Removal Guide",
         eyebrow: "Removal Workflow",
         description:
-            "A step-by-step guide for finding company exposure on ImportYeti, preparing the right evidence, and keeping a record of what changed after a removal request.",
+            "A step-by-step guide for finding company exposure on ImportYeti, preserving the right evidence, understanding the CBP confidentiality path, and tracking what changed after a request.",
         metaDescription:
-            "Use Remova's ImportYeti removal guide to identify exposed shipment data, prepare evidence, request removal, and track follow-up checks.",
+            "Use Remova's ImportYeti removal guide to identify exposed shipment data, prepare evidence, understand CBP confidentiality requests, and track follow-up checks.",
         pdfPath: "/docs/importyeti-removal-guide.pdf",
         pdfLabel: "Download the ImportYeti PDF",
         audience: "Operators and founders who want a documented process before contacting trade data platforms.",
         readTime: "Field checklist",
         summary: [
             "How to search for the company names, alternate spellings, and supplier names that usually create the first exposure trail.",
-            "What evidence to save before filing a request so the team can prove what was visible later.",
+            "What evidence to save before asking CBP, ImportYeti, or a search platform to review exposed records.",
             "How to verify whether removal changed the public page, search snippets, and linked supplier records.",
         ],
         sections: [
@@ -98,12 +99,13 @@ export const resourceGuides: ResourceGuide[] = [
             {
                 heading: "Treat removal as a loop",
                 body:
-                    "After a request is handled, rerun the same searches and check whether linked pages still reveal the relationship. If supplier pages or public snippets keep the connection alive, document those separately instead of assuming the original request covered everything.",
+                    "After CBP, ImportYeti, or a search platform handles a request, rerun the same searches and check whether linked pages still reveal the relationship. If supplier pages or public snippets keep the connection alive, document those separately instead of assuming the original request covered everything.",
             },
         ],
         checklist: [
             "Search company legal name, DBA names, old names, and common misspellings.",
             "Save source URLs and screenshots before submitting a request.",
+            "Do not assume one ImportYeti page request suppresses future vessel manifest data; track CBP confidentiality and platform follow-up separately.",
             "Check supplier pages, customer pages, and search snippets after removal.",
             "Schedule a later review for newly imported records or refreshed indexes.",
         ],
@@ -126,7 +128,7 @@ export const resourceGuides: ResourceGuide[] = [
         audience: "Teams that have already filed removals and need a realistic monitoring cadence.",
         readTime: "Operational explainer",
         summary: [
-            "What a coverage window means in practical terms: source data, platform refreshes, and mirrored records.",
+            "What a coverage window means in practical terms: public manifest data, platform refreshes, and mirrored records.",
             "Why a removed result can come back without anyone intentionally reversing the removal.",
             "How to set a monitoring schedule that is useful without becoming busywork.",
         ],
@@ -134,7 +136,7 @@ export const resourceGuides: ResourceGuide[] = [
             {
                 heading: "Coverage is not a permanent state",
                 body:
-                    "A removal can clear a visible page today while new records arrive tomorrow from customs feeds, partner datasets, or platform refreshes. That does not always mean the original request failed. It means the team needs to know which sources are covered, which dates were reviewed, and when the next refresh is likely to matter.",
+                    "A removal can clear a visible page today while new records arrive tomorrow from public vessel manifest data, paid subscriber datasets, or platform refreshes. That does not always mean the original request failed. It means the team needs to know which sources are covered, which dates were reviewed, and when the next refresh is likely to matter.",
             },
             {
                 heading: "The useful unit is the relationship",

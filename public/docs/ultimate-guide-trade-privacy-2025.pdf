@@ -3,30 +3,88 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
-endobj
-4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
 5 0 obj
-<< /Length 161 >>
+<< /Length 3761 >>
 stream
-BT /F1 18 Tf 72 720 Td (Ultimate guide to trade privacy) Tj 0 -30 Td /F1 11 Tf (This legacy Remova document has moved to https://www.remova.org/resources.) Tj ET
+BT /F1 22 Tf 1 0 0 1 54 738 Tm (Ultimate Guide to Trade Privacy 2025) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 711 Tm (Trade Privacy Guide) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 688 Tm (A practical manual for companies that need to understand where public trade records) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 672 Tm (create exposure, how removal windows work, and what to document before filing) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 656 Tm (requests.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 630 Tm (Audience: Founders, operations leaders, import teams, and privacy owners handling supplier) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 615 Tm (visibility risk.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 582 Tm (What This Resource Covers) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 561 Tm (- Where public shipment records can expose customers, suppliers, routes, and buying patterns.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 543 Tm (- Which evidence to gather before asking CBP, a trade-data platform, or a search platform to) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 528 Tm (review exposed records.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 510 Tm (- How to track coverage windows after removal so the same exposure does not quietly reappear.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 484 Tm (Why this guide exists) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 463 Tm (Trade privacy work is easy to underestimate because the sensitive data rarely looks like a) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 448 Tm (password or a bank account number. A supplier name, consignee, container route, or product) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 433 Tm (description can still reveal a business relationship that competitors can use. This guide is) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 418 Tm (written for teams that want a calm operating process instead of one-off panic searches.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 387 Tm (How to use it) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 366 Tm (Start by mapping the records that matter most: current suppliers, strategic customers, seasonal) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 351 Tm (routes, and product lines that reveal margin or sourcing strategy. Then use the guide to decide) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 336 Tm (which records need a CBP confidentiality request, which platform pages or search snippets) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 321 Tm (should be reviewed, which relationships should be monitored, and which records can be left) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 306 Tm (alone because they do not create meaningful commercial risk.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 275 Tm (What Remova adds) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 254 Tm (Remova treats removal as an ongoing coverage problem. A filed request is not the finish line,) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 239 Tm (especially when public vessel manifest data, platform indexes, and search snippets move on) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 224 Tm (different schedules. The useful work is keeping a source list, recording dates, tracking) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 209 Tm (platforms that mirror the data, and checking whether new shipments recreate the same exposure) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 194 Tm (under a slightly different spelling.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 163 Tm (Before You Use This PDF) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 142 Tm (- Create a list of customer and supplier names that should not appear together publicly.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 124 Tm (- Record the platform, URL, entity name, shipment date, and exposed relationship for each) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 109 Tm (finding.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 91 Tm (- Check whether CBP vessel manifest confidentiality is the right path for importer,) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 76 Tm (consignee, exporter, or shipper names and addresses.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 58 Tm (- Keep a follow-up calendar because some platforms refresh from new source data after an) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1252 >>
+stream
+BT /F1 10 Tf 1 0 0 1 64 738 Tm (initial removal.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 720 Tm (- Separate urgent competitive exposure from low-risk historical records so the team does not) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 705 Tm (waste effort.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 679 Tm (Fact-Check Notes) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 658 Tm (- Source context: 19 CFR 103.31 allows publication of vessel manifest fields and provides a) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 644 Tm (confidentiality process for importer, consignee, exporter, and shipper names and addresses.) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 627 Tm (- CBP states that vessel manifest information may be shared with paid subscribers unless a) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 613 Tm (confidentiality request is granted.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 588 Tm (Related Links) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 567 Tm (- Sensitive data protection: https://www.remova.org/features/sensitive-data-protection) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 550 Tm (- AI privacy articles: https://www.remova.org/blog/category/privacy) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 533 Tm (- Resources hub: https://www.remova.org/resources) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 516 Tm (Canonical page: https://www.remova.org/resources/ultimate-guide-trade-privacy-2025) Tj ET
 endstream
 endobj
 xref
-0 6
+0 8
 0000000000 65535 f
 0000000009 00000 n
 0000000058 00000 n
-0000000115 00000 n
-0000000241 00000 n
-0000000311 00000 n
+0000000121 00000 n
+0000000191 00000 n
+0000000317 00000 n
+0000004130 00000 n
+0000004256 00000 n
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 8 /Root 1 0 R >>
 startxref
-523
+5560
 %%EOF

@@ -3,30 +3,84 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
-endobj
-4 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
 5 0 obj
-<< /Length 154 >>
+<< /Length 3458 >>
 stream
-BT /F1 18 Tf 72 720 Td (ImportYeti removal guide) Tj 0 -30 Td /F1 11 Tf (This legacy Remova document has moved to https://www.remova.org/resources.) Tj ET
+BT /F1 22 Tf 1 0 0 1 54 738 Tm (ImportYeti Removal Guide) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 711 Tm (Removal Workflow) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 688 Tm (A step-by-step guide for finding company exposure on ImportYeti, preserving the right) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 672 Tm (evidence, understanding the CBP confidentiality path, and tracking what changed after) Tj ET
+BT /F1 11 Tf 1 0 0 1 54 656 Tm (a request.) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 630 Tm (Audience: Operators and founders who want a documented process before contacting trade data) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 615 Tm (platforms.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 582 Tm (What This Resource Covers) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 561 Tm (- How to search for the company names, alternate spellings, and supplier names that usually) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 546 Tm (create the first exposure trail.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 528 Tm (- What evidence to save before asking CBP, ImportYeti, or a search platform to review exposed) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 513 Tm (records.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 495 Tm (- How to verify whether removal changed the public page, search snippets, and linked supplier) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 480 Tm (records.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 454 Tm (Start with a clean record) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 433 Tm (Before sending any request, capture what exists. Save the visible company page, exposed) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 418 Tm (suppliers, shipment descriptions, dates, and any search result snippets that summarize the) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 403 Tm (relationship. This avoids the common problem of not being able to prove what changed after the) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 388 Tm (platform updates a page.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 357 Tm (Search beyond the exact legal name) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 336 Tm (Import records often include abbreviations, punctuation differences, old addresses, freight) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 321 Tm (forwarder spellings, and translated supplier names. The guide walks through those variations) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 306 Tm (because most missed exposure comes from assuming the company only appears one way.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 275 Tm (Treat removal as a loop) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 254 Tm (After CBP, ImportYeti, or a search platform handles a request, rerun the same searches and) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 239 Tm (check whether linked pages still reveal the relationship. If supplier pages or public snippets) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 224 Tm (keep the connection alive, document those separately instead of assuming the original request) Tj ET
+BT /F1 10 Tf 1 0 0 1 54 209 Tm (covered everything.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 178 Tm (Before You Use This PDF) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 157 Tm (- Search company legal name, DBA names, old names, and common misspellings.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 139 Tm (- Save source URLs and screenshots before submitting a request.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 121 Tm (- Do not assume one ImportYeti page request suppresses future vessel manifest data; track CBP) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 106 Tm (confidentiality and platform follow-up separately.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 88 Tm (- Check supplier pages, customer pages, and search snippets after removal.) Tj ET
+BT /F1 10 Tf 1 0 0 1 64 70 Tm (- Schedule a later review for newly imported records or refreshed indexes.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1060 >>
+stream
+BT /F1 14 Tf 1 0 0 1 54 738 Tm (Fact-Check Notes) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 717 Tm (- Source context: ImportYeti describes its database as public customs shipment records from bills of) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 703 Tm (lading and says companies may be missing when records are private or shipment mode is not sea freight.) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 686 Tm (- ImportYeti points people with publicly filed personal information to the CBP Vessel Manifest) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 672 Tm (Confidentiality Request and its contact form.) Tj ET
+BT /F1 14 Tf 1 0 0 1 54 647 Tm (Related Links) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 626 Tm (- Trade privacy guide: https://www.remova.org/resources/ultimate-guide-trade-privacy-2025) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 609 Tm (- Coverage windows explained: https://www.remova.org/resources/coverage-windows-explained) Tj ET
+BT /F1 9 Tf 1 0 0 1 64 592 Tm (- Privacy policy: https://www.remova.org/privacy) Tj ET
+BT /F1 9 Tf 1 0 0 1 54 575 Tm (Canonical page: https://www.remova.org/resources/importyeti-removal-guide) Tj ET
 endstream
 endobj
 xref
-0 6
+0 8
 0000000000 65535 f
 0000000009 00000 n
 0000000058 00000 n
-0000000115 00000 n
-0000000241 00000 n
-0000000311 00000 n
+0000000121 00000 n
+0000000191 00000 n
+0000000317 00000 n
+0000003827 00000 n
+0000003953 00000 n
 trailer
-<< /Size 6 /Root 1 0 R >>
+<< /Size 8 /Root 1 0 R >>
 startxref
-516
+5065
 %%EOF
