@@ -1,10 +1,616 @@
 // Auto-generated snapshot from model catalog sources.
-// Generated at 2026-05-07T10:01:38.185Z
-// Source counts: source1=433, source2=197
+// Generated at 2026-05-19T17:51:06.950Z
+// Source counts: source1=437, source2=197
 
-export const generatedModelsLastUpdated = "2026-05-07";
+export const generatedModelsLastUpdated = "2026-05-19";
 
 export const generatedModels = [
+    {
+        "id": "x-ai/grok-imagine-image-quality",
+        "name": "xAI: Grok Imagine Image Quality",
+        "provider": "xAI",
+        "releasedAt": "2026-05-18",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Grok Imagine Image Quality is xAI's fast, high-fidelity image generation and editing model. It accepts text prompts and optional reference images, producing photorealistic outputs at 1K or 2K across a...",
+        "description": "Grok Imagine Image Quality is xAI's fast, high-fidelity image generation and editing model. It accepts text prompts and optional reference images, producing photorealistic outputs at 1K or 2K across a...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "x-ai/grok-imagine-video",
+        "name": "xAI: Grok Imagine Video",
+        "provider": "xAI",
+        "releasedAt": "2026-05-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Grok Imagine Video is xAI's fast, text-, image-, and reference-conditioned video generation model. It produces short videos (1–15 seconds, 24 fps) at 480p or 720p across seven aspect ratios -...",
+        "description": "Grok Imagine Video is xAI's fast, text-, image-, and reference-conditioned video generation model. It produces short videos (1–15 seconds, 24 fps) at 480p or 720p across seven aspect ratios -...",
+        "bestFor": [
+            "Video workflows",
+            "Image workflows"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "mistralai/voxtral-mini-transcribe",
+        "name": "Mistral: Voxtral Mini Transcribe",
+        "provider": "Mistral AI",
+        "releasedAt": "2026-05-15",
+        "contextLength": 0,
+        "inputPer1M": 3000,
+        "outputPer1M": 0,
+        "summary": "Voxtral Mini Transcribe is Mistral's speech-to-text model, derived from the Voxtral Mini family. It accepts audio input and returns transcribed text via the standard transcription API. Suited for transcribing meetings,.…",
+        "description": "Voxtral Mini Transcribe is Mistral's speech-to-text model, derived from the Voxtral Mini family. It accepts audio input and returns transcribed text via the standard transcription API. Suited for transcribing meetings,.…",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "x-ai/grok-voice-tts-1.0",
+        "name": "xAI: Grok Voice TTS 1.0",
+        "provider": "xAI",
+        "releasedAt": "2026-05-15",
+        "contextLength": 15000,
+        "inputPer1M": 15,
+        "outputPer1M": 0,
+        "summary": "Grok Voice TTS 1.0 is a text-to-speech model from xAI. It converts text into spoken audio across 20+ languages with automatic language detection, and offers five built-in voices (Eve, Ara,...",
+        "description": "Grok Voice TTS 1.0 is a text-to-speech model from xAI. It converts text into spoken audio across 20+ languages with automatic language detection, and offers five built-in voices (Eve, Ara,...",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "qwen/qwen3-asr-flash-2026-02-10",
+        "name": "Qwen: Qwen3 ASR Flash",
+        "provider": "Qwen",
+        "releasedAt": "2026-05-14",
+        "contextLength": 0,
+        "inputPer1M": 35,
+        "outputPer1M": 0,
+        "summary": "Qwen3-ASR-Flash is Alibaba's automatic speech recognition service, built on the Qwen3-Omni foundation and trained on tens of millions of hours of multimodal speech data. The model handles 11 languages —...",
+        "description": "Qwen3-ASR-Flash is Alibaba's automatic speech recognition service, built on the Qwen3-Omni foundation and trained on tens of millions of hours of multimodal speech data. The model handles 11 languages —...",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "recraft/recraft-v4-pro-vector",
+        "name": "Recraft: Recraft V4 Pro Vector",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4 Pro Vector is the vector (SVG) variant of Recraft V4 Pro. It supports text and image inputs and produces vector image output across multiple aspect ratios at the...",
+        "description": "Recraft V4 Pro Vector is the vector (SVG) variant of Recraft V4 Pro. It supports text and image inputs and produces vector image output across multiple aspect ratios at the...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4-vector",
+        "name": "Recraft: Recraft V4 Vector",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4 Vector is the vector (SVG) variant of Recraft V4. It supports text and image inputs and produces vector image output across multiple aspect ratios. Compared to the raster...",
+        "description": "Recraft V4 Vector is the vector (SVG) variant of Recraft V4. It supports text and image inputs and produces vector image output across multiple aspect ratios. Compared to the raster...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4.1",
+        "name": "Recraft: Recraft V4.1",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4.1 is an image generation model from Recraft tuned for high aesthetics. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios, with...",
+        "description": "Recraft V4.1 is an image generation model from Recraft tuned for high aesthetics. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios, with...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4.1-pro",
+        "name": "Recraft: Recraft V4.1 Pro",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4.1 Pro is an image generation model from Recraft tuned for high aesthetics. It supports text and image inputs with image output at ~2K resolution across multiple aspect ratios...",
+        "description": "Recraft V4.1 Pro is an image generation model from Recraft tuned for high aesthetics. It supports text and image inputs with image output at ~2K resolution across multiple aspect ratios...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4.1-pro-vector",
+        "name": "Recraft: Recraft V4.1 Pro Vector",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4.1 Pro Vector is the vector (SVG) variant of Recraft V4.1 Pro, tuned for high aesthetics. It supports text and image inputs and produces higher-resolution SVG image output across...",
+        "description": "Recraft V4.1 Pro Vector is the vector (SVG) variant of Recraft V4.1 Pro, tuned for high aesthetics. It supports text and image inputs and produces higher-resolution SVG image output across...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4.1-utility",
+        "name": "Recraft: Recraft V4.1 Utility",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4.1 Utility is a general-purpose image generation model from Recraft. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios, with typical generation...",
+        "description": "Recraft V4.1 Utility is a general-purpose image generation model from Recraft. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios, with typical generation...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4.1-utility-pro",
+        "name": "Recraft: Recraft V4.1 Utility Pro",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4.1 Utility Pro is a general-purpose image generation model from Recraft. It supports text and image inputs with image output at ~2K resolution across multiple aspect ratios — double...",
+        "description": "Recraft V4.1 Utility Pro is a general-purpose image generation model from Recraft. It supports text and image inputs with image output at ~2K resolution across multiple aspect ratios — double...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4.1-vector",
+        "name": "Recraft: Recraft V4.1 Vector",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-13",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4.1 Vector is the vector (SVG) variant of Recraft V4.1, tuned for high aesthetics. It supports text and image inputs and produces SVG image output across multiple aspect ratios,...",
+        "description": "Recraft V4.1 Vector is the vector (SVG) variant of Recraft V4.1, tuned for high aesthetics. It supports text and image inputs and produces SVG image output across multiple aspect ratios,...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "anthropic/claude-opus-4.7-fast",
+        "name": "Anthropic: Claude Opus 4.7 (Fast)",
+        "provider": "Anthropic",
+        "releasedAt": "2026-05-12",
+        "contextLength": 1000000,
+        "inputPer1M": 30,
+        "outputPer1M": 150,
+        "summary": "Fast-mode variant of [Opus 4.7](/anthropic/claude-opus-4.7) - identical capabilities with higher output speed at premium 6x pricing. Learn more in Anthropic's docs:",
+        "description": "Fast-mode variant of [Opus 4.7](/anthropic/claude-opus-4.7) - identical capabilities with higher output speed at premium 6x pricing. Learn more in Anthropic's docs:",
+        "bestFor": [
+            "Image workflows",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "verbosity"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "perceptron/perceptron-mk1",
+        "name": "Perceptron: Perceptron Mk1",
+        "provider": "Perceptron",
+        "releasedAt": "2026-05-12",
+        "contextLength": 32768,
+        "inputPer1M": 0.15,
+        "outputPer1M": 1.5,
+        "summary": "Perceptron Mk1 (Mark One) is Perceptron's highest-quality vision-language model for video and embodied reasoning.** It accepts image and video inputs paired with natural language queries, and produces detailed visual un…",
+        "description": "Perceptron Mk1 (Mark One) is Perceptron's highest-quality vision-language model for video and embodied reasoning.** It accepts image and video inputs paired with natural language queries, and produces detailed visual un…",
+        "bestFor": [
+            "Video workflows",
+            "Image workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "structured_outputs",
+            "temperature",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "inclusionai/ring-2.6-1t",
+        "name": "inclusionAI: Ring-2.6-1T",
+        "provider": "Inclusionai",
+        "releasedAt": "2026-05-08",
+        "contextLength": 262144,
+        "inputPer1M": 0.075,
+        "outputPer1M": 0.625,
+        "summary": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool…",
+        "description": "Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool…",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "google/gemini-3.1-flash-lite",
+        "name": "Google: Gemini 3.1 Flash Lite",
+        "provider": "Google",
+        "releasedAt": "2026-05-07",
+        "contextLength": 1048576,
+        "inputPer1M": 0.25,
+        "outputPer1M": 1.5,
+        "summary": "Gemini 3.1 Flash Lite is Google’s GA high-efficiency multimodal model optimized for low-latency, high-volume workloads. It supports text, image, video, audio, and PDF inputs, and is designed for lightweight agentic...",
+        "description": "Gemini 3.1 Flash Lite is Google’s GA high-efficiency multimodal model optimized for low-latency, high-volume workloads. It supports text, image, video, audio, and PDF inputs, and is designed for lightweight agentic...",
+        "bestFor": [
+            "Video workflows",
+            "Image workflows",
+            "Audio workflows"
+        ],
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "recraft/recraft-v3",
+        "name": "Recraft: Recraft V3",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-07",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V3 is an image generation model from Recraft. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios. Supports the following `image_config` parameters:...",
+        "description": "Recraft V3 is an image generation model from Recraft. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios. Supports the following `image_config` parameters:...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4",
+        "name": "Recraft: Recraft V4",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-07",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4 is an image generation model from Recraft. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios. It delivers stronger compositional judgment,...",
+        "description": "Recraft V4 is an image generation model from Recraft. It supports text and image inputs with image output at ~1K resolution across multiple aspect ratios. It delivers stronger compositional judgment,...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "recraft/recraft-v4-pro",
+        "name": "Recraft: Recraft V4 Pro",
+        "provider": "Recraft",
+        "releasedAt": "2026-05-07",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Recraft V4 Pro is an image generation model from Recraft. It supports text and image inputs with image output at ~2K resolution across multiple aspect ratios, double the resolution of...",
+        "description": "Recraft V4 Pro is an image generation model from Recraft. It supports text and image inputs with image output at ~2K resolution across multiple aspect ratios, double the resolution of...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
     {
         "id": "baidu/cobuddy:free",
         "name": "Baidu Qianfan: CoBuddy (free)",
@@ -260,10 +866,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -506,10 +1113,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
+            "text",
             "image",
-            "text"
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -545,10 +1153,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -715,8 +1324,8 @@ export const generatedModels = [
         "provider": "~moonshotai",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.75,
-        "outputPer1M": 3.5,
+        "inputPer1M": 0.73,
+        "outputPer1M": 3.49,
         "summary": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "bestFor": [
@@ -914,8 +1523,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 1000000,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 2.4,
+        "inputPer1M": 0.3,
+        "outputPer1M": 1.7999999999999998,
         "summary": "Qwen3.5 Plus (April 2026) is a large-scale multimodal language model from Alibaba. It accepts text, image, and video input and produces text output, with a 1M token context window. This...",
         "description": "Qwen3.5 Plus (April 2026) is a large-scale multimodal language model from Alibaba. It accepts text, image, and video input and produces text output, with a 1M token context window. This...",
         "bestFor": [
@@ -1048,8 +1657,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 1000000,
-        "inputPer1M": 0.25,
-        "outputPer1M": 1.5,
+        "inputPer1M": 0.1875,
+        "outputPer1M": 1.125,
         "summary": "Qwen3.6 Flash is a fast, efficient language model from Alibaba's Qwen 3.6 series. It supports text, image, and video input with a 1M token context window. Tiered pricing kicks in...",
         "description": "Qwen3.6 Flash is a fast, efficient language model from Alibaba's Qwen 3.6 series. It supports text, image, and video input with a 1M token context window. Tiered pricing kicks in...",
         "bestFor": [
@@ -1127,8 +1736,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2026-04-24",
         "contextLength": 1048576,
-        "inputPer1M": 0.14,
-        "outputPer1M": 0.28,
+        "inputPer1M": 0.112,
+        "outputPer1M": 0.224,
         "summary": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
         "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
         "bestFor": [
@@ -1162,6 +1771,36 @@ export const generatedModels = [
             "top_k",
             "top_logprobs",
             "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "deepseek/deepseek-v4-flash:free",
+        "name": "DeepSeek: DeepSeek V4 Flash (free)",
+        "provider": "DeepSeek",
+        "releasedAt": "2026-04-24",
+        "contextLength": 1048576,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
+        "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "reasoning",
+            "tool_choice",
+            "tools"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -1511,13 +2150,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "inclusionai/ling-2.6-1t:free",
-        "name": "inclusionAI: Ling-2.6-1T (free)",
+        "id": "inclusionai/ling-2.6-1t",
+        "name": "inclusionAI: Ling-2.6-1T",
         "provider": "Inclusionai",
         "releasedAt": "2026-04-23",
         "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
+        "inputPer1M": 0.3,
+        "outputPer1M": 2.5,
         "summary": "Ling-2.6-1T is an instant (instruct) model from inclusionAI and the company’s trillion-parameter flagship, designed for real-world agents that require fast execution and high efficiency at scale. It uses a “fast...",
         "description": "Ling-2.6-1T is an instant (instruct) model from inclusionAI and the company’s trillion-parameter flagship, designed for real-world agents that require fast execution and high efficiency at scale. It uses a “fast...",
         "bestFor": [
@@ -1687,13 +2326,13 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "tencent/hy3-preview:free",
-        "name": "Tencent: Hy3 preview (free)",
+        "id": "tencent/hy3-preview",
+        "name": "Tencent: Hy3 preview",
         "provider": "Tencent",
         "releasedAt": "2026-04-22",
         "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
+        "inputPer1M": 0.06599999999999999,
+        "outputPer1M": 0.26,
         "summary": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
         "description": "Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...",
         "bestFor": [
@@ -1788,14 +2427,20 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "reasoning",
+            "repetition_penalty",
             "response_format",
+            "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -1816,10 +2461,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -1844,8 +2490,8 @@ export const generatedModels = [
         "provider": "Inclusionai",
         "releasedAt": "2026-04-21",
         "contextLength": 262144,
-        "inputPer1M": 0.08,
-        "outputPer1M": 0.24,
+        "inputPer1M": 0.01,
+        "outputPer1M": 0.03,
         "summary": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficien…",
         "description": "Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficien…",
         "bestFor": [
@@ -1918,13 +2564,13 @@ export const generatedModels = [
         "modelType": "image"
     },
     {
-        "id": "baidu/qianfan-ocr-fast:free",
-        "name": "Baidu: Qianfan-OCR-Fast (free)",
+        "id": "baidu/qianfan-ocr-fast",
+        "name": "Baidu: Qianfan-OCR-Fast",
         "provider": "Baidu",
         "releasedAt": "2026-04-20",
         "contextLength": 65536,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
+        "inputPer1M": 0.6799999999999999,
+        "outputPer1M": 2.81,
         "summary": "Qianfan-OCR-Fast is a domain-specific multimodal large model purpose-built for OCR. By leveraging specialized OCR training data while preserving versatile multimodal intelligence, it provides a powerful performance upgr…",
         "description": "Qianfan-OCR-Fast is a domain-specific multimodal large model purpose-built for OCR. By leveraging specialized OCR training data while preserving versatile multimodal intelligence, it provides a powerful performance upgr…",
         "bestFor": [
@@ -2071,8 +2717,8 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-04-20",
         "contextLength": 262144,
-        "inputPer1M": 0.75,
-        "outputPer1M": 3.5,
+        "inputPer1M": 0.73,
+        "outputPer1M": 3.49,
         "summary": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "bestFor": [
@@ -2196,13 +2842,17 @@ export const generatedModels = [
         "summary": "Gemini Embedding 2 Preview is Google's first multimodal embedding model. We currently support mapping text and images into a unified vector space for semantic search and retrieval-augmented generation (RAG). It...",
         "description": "Gemini Embedding 2 Preview is Google's first multimodal embedding model. We currently support mapping text and images into a unified vector space for semantic search and retrieval-augmented generation (RAG). It...",
         "bestFor": [
+            "Video workflows",
             "Image workflows",
-            "Embeddings"
+            "Audio workflows"
         ],
-        "modality": "text+image->embeddings",
+        "modality": "text+image+file+audio+video->embeddings",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file",
+            "audio",
+            "video"
         ],
         "outputModalities": [
             "embeddings"
@@ -2232,10 +2882,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -2380,10 +3031,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -2409,9 +3061,9 @@ export const generatedModels = [
         "name": "Z.ai: GLM 5.1",
         "provider": "Z.ai",
         "releasedAt": "2026-04-07",
-        "contextLength": 202752,
-        "inputPer1M": 1.0499999999999998,
-        "outputPer1M": 3.5,
+        "contextLength": 202800,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
         "summary": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and c…",
         "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and c…",
         "bestFor": [
@@ -2676,8 +3328,8 @@ export const generatedModels = [
         "provider": "Google",
         "releasedAt": "2026-04-02",
         "contextLength": 262144,
-        "inputPer1M": 0.13,
-        "outputPer1M": 0.38,
+        "inputPer1M": 0.12,
+        "outputPer1M": 0.37,
         "summary": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "bestFor": [
@@ -2830,6 +3482,41 @@ export const generatedModels = [
             "seed",
             "stop",
             "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "arcee-ai/trinity-large-thinking:free",
+        "name": "Arcee AI: Trinity Large Thinking (free)",
+        "provider": "Arcee Ai",
+        "releasedAt": "2026-04-01",
+        "contextLength": 262144,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video:",
+        "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video:",
+        "bestFor": [
+            "Video workflows",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
             "temperature",
             "tool_choice",
             "tools",
@@ -3152,8 +3839,8 @@ export const generatedModels = [
         "contextLength": 2000000,
         "inputPer1M": 1.25,
         "outputPer1M": 2.5,
-        "summary": "Grok 4.20 is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently...",
-        "description": "Grok 4.20 is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently...",
+        "summary": "Grok 4.20 is a reasoning model from xAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
+        "description": "Grok 4.20 is a reasoning model from xAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
         "bestFor": [
             "Image workflows",
             "Agent workflows",
@@ -3557,8 +4244,8 @@ export const generatedModels = [
         "name": "MiniMax: MiniMax M2.7",
         "provider": "Minimax",
         "releasedAt": "2026-03-18",
-        "contextLength": 196608,
-        "inputPer1M": 0.3,
+        "contextLength": 204800,
+        "inputPer1M": 0.27899999999999997,
         "outputPer1M": 1.2,
         "summary": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
@@ -3904,7 +4591,7 @@ export const generatedModels = [
         "name": "NVIDIA: Nemotron 3 Super",
         "provider": "Nvidia",
         "releasedAt": "2026-03-11",
-        "contextLength": 262144,
+        "contextLength": 1000000,
         "inputPer1M": 0.09,
         "outputPer1M": 0.44999999999999996,
         "summary": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
@@ -3948,7 +4635,7 @@ export const generatedModels = [
         "name": "NVIDIA: Nemotron 3 Super (free)",
         "provider": "Nvidia",
         "releasedAt": "2026-03-11",
-        "contextLength": 262144,
+        "contextLength": 1000000,
         "inputPer1M": 0,
         "outputPer1M": 0,
         "summary": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
@@ -4025,7 +4712,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-03-10",
         "contextLength": 262144,
-        "inputPer1M": 0.09999999999999999,
+        "inputPer1M": 0.04,
         "outputPer1M": 0.15,
         "summary": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language de…",
         "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language de…",
@@ -4054,6 +4741,7 @@ export const generatedModels = [
             "reasoning",
             "repetition_penalty",
             "response_format",
+            "seed",
             "stop",
             "structured_outputs",
             "temperature",
@@ -4536,7 +5224,7 @@ export const generatedModels = [
         "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
         "provider": "Google",
         "releasedAt": "2026-02-26",
-        "contextLength": 65536,
+        "contextLength": 131072,
         "inputPer1M": 0.5,
         "outputPer1M": 3,
         "summary": "Gemini 3.1 Flash Image Preview, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines...",
@@ -4624,7 +5312,7 @@ export const generatedModels = [
         "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
         "provider": "Google",
         "releasedAt": "2026-02-25",
-        "contextLength": 1048576,
+        "contextLength": 1048756,
         "inputPer1M": 2,
         "outputPer1M": 12,
         "summary": "Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party...",
@@ -4666,7 +5354,7 @@ export const generatedModels = [
         "name": "LiquidAI: LFM2-24B-A2B",
         "provider": "Liquid",
         "releasedAt": "2026-02-25",
-        "contextLength": 32768,
+        "contextLength": 128000,
         "inputPer1M": 0.03,
         "outputPer1M": 0.12,
         "summary": "LFM2-24B-A2B is the largest model in the LFM2 family of hybrid architectures designed for efficient on-device deployment. Built as a 24B parameter Mixture-of-Experts model with only 2B active parameters per...",
@@ -4830,7 +5518,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-02-25",
         "contextLength": 262144,
-        "inputPer1M": 0.14,
+        "inputPer1M": 0.13899999999999998,
         "outputPer1M": 1,
         "summary": "The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inference efficiency.…",
         "description": "The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inference efficiency.…",
@@ -5088,10 +5776,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -5207,7 +5896,7 @@ export const generatedModels = [
         "name": "MiniMax: MiniMax M2.5",
         "provider": "Minimax",
         "releasedAt": "2026-02-12",
-        "contextLength": 196608,
+        "contextLength": 204800,
         "inputPer1M": 0.15,
         "outputPer1M": 1.15,
         "summary": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
@@ -5254,7 +5943,7 @@ export const generatedModels = [
         "name": "MiniMax: MiniMax M2.5 (free)",
         "provider": "Minimax",
         "releasedAt": "2026-02-12",
-        "contextLength": 196608,
+        "contextLength": 204800,
         "inputPer1M": 0,
         "outputPer1M": 0,
         "summary": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
@@ -5358,7 +6047,6 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -5372,7 +6060,6 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -5430,10 +6117,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -6024,8 +6712,8 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-01-27",
         "contextLength": 262144,
-        "inputPer1M": 0.44,
-        "outputPer1M": 2,
+        "inputPer1M": 0.39999999999999997,
+        "outputPer1M": 1.9,
         "summary": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed…",
         "description": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed…",
         "bestFor": [
@@ -6048,7 +6736,6 @@ export const generatedModels = [
             "logprobs",
             "max_tokens",
             "min_p",
-            "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
@@ -6697,7 +7384,7 @@ export const generatedModels = [
         "name": "MiniMax: MiniMax M2.1",
         "provider": "Minimax",
         "releasedAt": "2025-12-23",
-        "contextLength": 196608,
+        "contextLength": 204800,
         "inputPer1M": 0.29,
         "outputPer1M": 0.95,
         "summary": "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in re…",
@@ -6766,8 +7453,8 @@ export const generatedModels = [
         "provider": "Z.ai",
         "releasedAt": "2025-12-22",
         "contextLength": 202752,
-        "inputPer1M": 0.38,
-        "outputPer1M": 1.74,
+        "inputPer1M": 0.39999999999999997,
+        "outputPer1M": 1.75,
         "summary": "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements in executing compl…",
         "description": "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements in executing compl…",
         "bestFor": [
@@ -7291,8 +7978,8 @@ export const generatedModels = [
         "provider": "Xiaomi",
         "releasedAt": "2025-12-14",
         "contextLength": 262144,
-        "inputPer1M": 0.09,
-        "outputPer1M": 0.29,
+        "inputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.3,
         "summary": "MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash…",
         "description": "MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash…",
         "bestFor": [
@@ -7316,7 +8003,6 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -7477,9 +8163,10 @@ export const generatedModels = [
         "bestFor": [
             "Agent workflows"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -8294,10 +8981,11 @@ export const generatedModels = [
             "Image workflows",
             "Agent workflows"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -8912,52 +9600,11 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "x-ai/grok-4.1-fast",
-        "name": "xAI: Grok 4.1 Fast",
-        "provider": "xAI",
-        "releasedAt": "2025-11-19",
-        "contextLength": 2000000,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.5,
-        "summary": "Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window. Reasoning can be enabled/disabled using...",
-        "description": "Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window. Reasoning can be enabled/disabled using...",
-        "bestFor": [
-            "Image workflows",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "text",
-            "image",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "baai/bge-base-en-v1.5",
         "name": "BAAI: bge-base-en-v1.5",
         "provider": "Baai",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The bge-base-en-v1.5 embedding model converts English sentences and paragraphs into 768-dimensional dense vectors, delivering efficient, high-quality semantic embeddings optimized for retrieval, semantic search, and doc…",
@@ -8993,7 +9640,7 @@ export const generatedModels = [
         "name": "BAAI: bge-large-en-v1.5",
         "provider": "Baai",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The bge-large-en-v1.5 embedding model maps English sentences, paragraphs, and documents into a 1024-dimensional dense vector space, delivering high-fidelity semantic embeddings optimized for semantic search, document re…",
@@ -9067,7 +9714,7 @@ export const generatedModels = [
         "name": "Intfloat: E5-Base-v2",
         "provider": "Intfloat",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The e5-base-v2 embedding model encodes English sentences and paragraphs into a 768-dimensional dense vector space, producing efficient and high-quality semantic embeddings optimized for tasks such as semantic search, si…",
@@ -9104,7 +9751,7 @@ export const generatedModels = [
         "name": "Intfloat: E5-Large-v2",
         "provider": "Intfloat",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The e5-large-v2 embedding model maps English sentences, paragraphs, and documents into a 1024-dimensional dense vector space, delivering high-accuracy semantic embeddings optimized for retrieval, semantic search, rerank…",
@@ -9140,7 +9787,7 @@ export const generatedModels = [
         "name": "Intfloat: Multilingual-E5-Large",
         "provider": "Intfloat",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The multilingual-e5-large embedding model encodes sentences, paragraphs, and documents across over 90 languages into a 1024-dimensional dense vector space, delivering robust semantic embeddings optimized for multilingua…",
@@ -9177,7 +9824,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: all-MiniLM-L12-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The all-MiniLM-L12-v2 embedding model maps sentences and short paragraphs into a 384-dimensional dense vector space, producing efficient and high-quality semantic embeddings optimized for tasks such as semantic search,…",
@@ -9213,7 +9860,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: multi-qa-mpnet-base-dot-v1",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The multi-qa-mpnet-base-dot-v1 embedding model transforms sentences and short paragraphs into a 768-dimensional dense vector space, generating high-quality semantic embeddings optimized for question-and-answer retrieval…",
@@ -9249,7 +9896,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: paraphrase-MiniLM-L6-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The paraphrase-MiniLM-L6-v2 embedding model converts sentences and short paragraphs into a 384-dimensional dense vector space, producing high-quality semantic embeddings optimized for paraphrase detection, semantic simi…",
@@ -9285,7 +9932,7 @@ export const generatedModels = [
         "name": "Thenlper: GTE-Base",
         "provider": "Thenlper",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The gte-base embedding model encodes English sentences and paragraphs into a 768-dimensional dense vector space, delivering efficient and effective semantic embeddings optimized for textual similarity, semantic search,…",
@@ -9322,7 +9969,7 @@ export const generatedModels = [
         "name": "Thenlper: GTE-Large",
         "provider": "Thenlper",
         "releasedAt": "2025-11-18",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The gte-large embedding model converts English sentences, paragraphs and moderate-length documents into a 1024-dimensional dense vector space, delivering high-quality semantic embeddings optimized for information retrie…",
@@ -9358,7 +10005,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: all-MiniLM-L6-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-17",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The all-MiniLM-L6-v2 embedding model maps sentences and short paragraphs into a 384-dimensional dense vector space, enabling high-quality semantic representations that are ideal for downstream tasks such as information…",
@@ -9394,7 +10041,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: all-mpnet-base-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-17",
-        "contextLength": 512,
+        "contextLength": 8192,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The all-mpnet-base-v2 embedding model encodes sentences and short paragraphs into a 768-dimensional dense vector space, providing high-fidelity semantic embeddings well suited for tasks like information retrieval, clust…",
@@ -9828,10 +10475,11 @@ export const generatedModels = [
             "Audio workflows",
             "Agent workflows"
         ],
-        "modality": "text+audio->text",
+        "modality": "text+file+audio->text",
         "inputModalities": [
             "text",
-            "audio"
+            "audio",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -10182,7 +10830,7 @@ export const generatedModels = [
         "name": "MiniMax: MiniMax M2",
         "provider": "Minimax",
         "releasedAt": "2025-10-23",
-        "contextLength": 196608,
+        "contextLength": 204800,
         "inputPer1M": 0.255,
         "outputPer1M": 1,
         "summary": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence acros…",
@@ -10225,7 +10873,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 32B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-10-23",
-        "contextLength": 131072,
+        "contextLength": 262144,
         "inputPer1M": 0.10400000000000001,
         "outputPer1M": 0.41600000000000004,
         "summary": "Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines deep visual percept…",
@@ -10290,7 +10938,7 @@ export const generatedModels = [
         "releasedAt": "2025-10-20",
         "contextLength": 131000,
         "inputPer1M": 0.017,
-        "outputPer1M": 0.11,
+        "outputPer1M": 0.112,
         "summary": "Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long...",
         "description": "Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long...",
         "bestFor": [
@@ -10306,10 +10954,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
@@ -10322,7 +10973,7 @@ export const generatedModels = [
         "name": "Microsoft: Phi 4 Mini Instruct",
         "provider": "Microsoft",
         "releasedAt": "2025-10-17",
-        "contextLength": 128000,
+        "contextLength": 131072,
         "inputPer1M": 0.08,
         "outputPer1M": 0.35,
         "summary": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
@@ -10411,10 +11062,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
+            "text",
             "image",
-            "text"
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -10484,7 +11136,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 8B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-10-14",
-        "contextLength": 131072,
+        "contextLength": 256000,
         "inputPer1M": 0.08,
         "outputPer1M": 0.5,
         "summary": "Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interl…",
@@ -10527,7 +11179,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 8B Thinking",
         "provider": "Qwen",
         "releasedAt": "2025-10-14",
-        "contextLength": 131072,
+        "contextLength": 256000,
         "inputPer1M": 0.117,
         "outputPer1M": 1.365,
         "summary": "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enh…",
@@ -10990,7 +11642,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 30B A3B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-10-06",
-        "contextLength": 131072,
+        "contextLength": 262144,
         "inputPer1M": 0.13,
         "outputPer1M": 0.52,
         "summary": "Qwen3-VL-30B-A3B-Instruct is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Instruct variant optimizes instruction-following for general multimodal tasks. It…",
@@ -11186,9 +11838,9 @@ export const generatedModels = [
         "name": "Z.ai: GLM 4.6",
         "provider": "Z.ai",
         "releasedAt": "2025-09-30",
-        "contextLength": 204800,
-        "inputPer1M": 0.39,
-        "outputPer1M": 1.9,
+        "contextLength": 202752,
+        "inputPer1M": 0.43,
+        "outputPer1M": 1.74,
         "summary": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
         "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
         "bestFor": [
@@ -11832,47 +12484,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "x-ai/grok-4-fast",
-        "name": "xAI: Grok 4 Fast",
-        "provider": "xAI",
-        "releasedAt": "2025-09-19",
-        "contextLength": 2000000,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.5,
-        "summary": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model...",
-        "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model...",
-        "bestFor": [
-            "Image workflows",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "text",
-            "image",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "alibaba/tongyi-deepresearch-30b-a3b",
         "name": "Tongyi DeepResearch 30B A3B",
         "provider": "Alibaba",
@@ -12034,7 +12645,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 Next 80B A3B Thinking",
         "provider": "Qwen",
         "releasedAt": "2025-09-11",
-        "contextLength": 131072,
+        "contextLength": 262144,
         "inputPer1M": 0.0975,
         "outputPer1M": 0.78,
         "summary": "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging,…",
@@ -12280,8 +12891,8 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2025-09-04",
         "contextLength": 262144,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 2,
+        "inputPer1M": 0.6,
+        "outputPer1M": 2.5,
         "summary": "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32...",
         "description": "Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32...",
         "bestFor": [
@@ -12504,53 +13115,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "x-ai/grok-code-fast-1",
-        "name": "xAI: Grok Code Fast 1",
-        "provider": "xAI",
-        "releasedAt": "2025-08-26",
-        "contextLength": 256000,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 1.5,
-        "summary": "Grok Code Fast 1 is a speedy and economical reasoning model that excels at agentic coding. With reasoning traces visible in the response, developers can steer Grok Code for high-quality...",
-        "description": "Grok Code Fast 1 is a speedy and economical reasoning model that excels at agentic coding. With reasoning traces visible in the response, developers can steer Grok Code for high-quality...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "deepseek/deepseek-chat-v3.1",
         "name": "DeepSeek: DeepSeek V3.1",
         "provider": "DeepSeek",
         "releasedAt": "2025-08-21",
-        "contextLength": 32768,
-        "inputPer1M": 0.15,
-        "outputPer1M": 0.75,
+        "contextLength": 163840,
+        "inputPer1M": 0.21,
+        "outputPer1M": 0.7899999999999999,
         "summary": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context...",
         "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context...",
         "bestFor": [
@@ -12568,7 +13139,6 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -12582,7 +13152,6 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -12720,10 +13289,11 @@ export const generatedModels = [
             "Image workflows",
             "Agent workflows"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -12749,7 +13319,7 @@ export const generatedModels = [
         "name": "Baidu: ERNIE 4.5 21B A3B",
         "provider": "Baidu",
         "releasedAt": "2025-08-12",
-        "contextLength": 120000,
+        "contextLength": 131072,
         "inputPer1M": 0.07,
         "outputPer1M": 0.28,
         "summary": "A sophisticated text-based Mixture-of-Experts (MoE) model featuring 21B total parameters with 3B activated per token, delivering exceptional multimodal understanding and generation through heterogeneous MoE structures a…",
@@ -12785,7 +13355,7 @@ export const generatedModels = [
         "name": "Baidu: ERNIE 4.5 VL 28B A3B",
         "provider": "Baidu",
         "releasedAt": "2025-08-12",
-        "contextLength": 30000,
+        "contextLength": 131072,
         "inputPer1M": 0.14,
         "outputPer1M": 0.56,
         "summary": "A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure wit…",
@@ -12876,6 +13446,7 @@ export const generatedModels = [
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -13328,9 +13899,10 @@ export const generatedModels = [
             "Agent workflows",
             "Code generation"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -13516,7 +14088,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 235B A22B Thinking 2507",
         "provider": "Qwen",
         "releasedAt": "2025-07-25",
-        "contextLength": 131072,
+        "contextLength": 262144,
         "inputPer1M": 0.14950000000000002,
         "outputPer1M": 1.495,
         "summary": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively suppo…",
@@ -13702,7 +14274,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 Coder 480B A35B",
         "provider": "Qwen",
         "releasedAt": "2025-07-23",
-        "contextLength": 262144,
+        "contextLength": 1048576,
         "inputPer1M": 0.22,
         "outputPer1M": 1.7999999999999998,
         "summary": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over…",
@@ -13744,7 +14316,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 Coder 480B A35B (free)",
         "provider": "Qwen",
         "releasedAt": "2025-07-23",
-        "contextLength": 262000,
+        "contextLength": 1048576,
         "inputPer1M": 0,
         "outputPer1M": 0,
         "summary": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over…",
@@ -13979,9 +14551,10 @@ export const generatedModels = [
             "Advanced reasoning",
             "Code generation"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -14015,9 +14588,10 @@ export const generatedModels = [
         "bestFor": [
             "Agent workflows"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -14126,47 +14700,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "x-ai/grok-4",
-        "name": "xAI: Grok 4",
-        "provider": "xAI",
-        "releasedAt": "2025-07-09",
-        "contextLength": 256000,
-        "inputPer1M": 3,
-        "outputPer1M": 15,
-        "summary": "Grok 4 is xAI's latest reasoning model with a 256k context window. It supports parallel tool calling, structured outputs, and both image and text inputs. Note that reasoning is not...",
-        "description": "Grok 4 is xAI's latest reasoning model with a 256k context window. It supports parallel tool calling, structured outputs, and both image and text inputs. Note that reasoning is not...",
-        "bestFor": [
-            "Image workflows",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "image",
-            "text",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "tencent/hunyuan-a13b-instruct",
         "name": "Tencent: Hunyuan A13B Instruct",
         "provider": "Tencent",
@@ -14194,47 +14727,6 @@ export const generatedModels = [
             "response_format",
             "structured_outputs",
             "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "tngtech/deepseek-r1t2-chimera",
-        "name": "TNG: DeepSeek R1T2 Chimera",
-        "provider": "Tngtech",
-        "releasedAt": "2025-07-08",
-        "contextLength": 163840,
-        "inputPer1M": 0.3,
-        "outputPer1M": 1.1,
-        "summary": "DeepSeek-TNG-R1T2-Chimera is the second-generation Chimera model from TNG Tech. It is a 671 B-parameter mixture-of-experts text-generation model assembled from DeepSeek-AI’s R1-0528, R1, and V3-0324 checkpoints with an…",
-        "description": "DeepSeek-TNG-R1T2-Chimera is the second-generation Chimera model from TNG Tech. It is a 671 B-parameter mixture-of-experts text-generation model assembled from DeepSeek-AI’s R1-0528, R1, and V3-0324 checkpoints with an…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
             "top_k",
             "top_p"
         ],
@@ -14302,7 +14794,7 @@ export const generatedModels = [
         "name": "Baidu: ERNIE 4.5 300B A47B",
         "provider": "Baidu",
         "releasedAt": "2025-06-30",
-        "contextLength": 123000,
+        "contextLength": 131072,
         "inputPer1M": 0.28,
         "outputPer1M": 1.1,
         "summary": "ERNIE-4.5-300B-A47B is a 300B parameter Mixture-of-Experts (MoE) language model developed by Baidu as part of the ERNIE 4.5 series. It activates 47B parameters per token and supports text generation in...",
@@ -14323,6 +14815,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -14337,7 +14830,7 @@ export const generatedModels = [
         "name": "Baidu: ERNIE 4.5 VL 424B A47B",
         "provider": "Baidu",
         "releasedAt": "2025-06-30",
-        "contextLength": 123000,
+        "contextLength": 131072,
         "inputPer1M": 0.42,
         "outputPer1M": 1.25,
         "summary": "ERNIE-4.5-VL-424B-A47B is a multimodal Mixture-of-Experts (MoE) model from Baidu’s ERNIE 4.5 series, featuring 424B total parameters with 47B active per token. It is trained jointly on text and image data...",
@@ -14855,83 +15348,6 @@ export const generatedModels = [
             "structured_outputs",
             "tool_choice",
             "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "x-ai/grok-3",
-        "name": "xAI: Grok 3",
-        "provider": "xAI",
-        "releasedAt": "2025-06-10",
-        "contextLength": 131072,
-        "inputPer1M": 3,
-        "outputPer1M": 15,
-        "summary": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-        "description": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logprobs",
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "x-ai/grok-3-mini",
-        "name": "xAI: Grok 3 Mini",
-        "provider": "xAI",
-        "releasedAt": "2025-06-10",
-        "contextLength": 131072,
-        "inputPer1M": 0.3,
-        "outputPer1M": 0.5,
-        "summary": "A lightweight model that thinks before responding. Fast, smart, and great for logic-based tasks that do not require deep domain knowledge. The raw thinking traces are accessible.",
-        "description": "A lightweight model that thinks before responding. Fast, smart, and great for logic-based tasks that do not require deep domain knowledge. The raw thinking traces are accessible.",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -15577,10 +15993,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -15890,8 +16307,8 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 14B",
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
-        "contextLength": 40960,
-        "inputPer1M": 0.06,
+        "contextLength": 131702,
+        "inputPer1M": 0.09999999999999999,
         "outputPer1M": 0.24,
         "summary": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
         "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
@@ -15971,7 +16388,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 30B A3B",
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
-        "contextLength": 40960,
+        "contextLength": 131072,
         "inputPer1M": 0.09,
         "outputPer1M": 0.44999999999999996,
         "summary": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
@@ -16016,9 +16433,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 32B",
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
-        "contextLength": 40960,
+        "contextLength": 131072,
         "inputPer1M": 0.08,
-        "outputPer1M": 0.24,
+        "outputPer1M": 0.28,
         "summary": "Qwen3-32B is a dense 32.8B parameter causal language model from the Qwen3 series, optimized for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
         "description": "Qwen3-32B is a dense 32.8B parameter causal language model from the Qwen3 series, optimized for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
         "bestFor": [
@@ -16059,7 +16476,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 8B",
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
-        "contextLength": 40960,
+        "contextLength": 131072,
         "inputPer1M": 0.049999999999999996,
         "outputPer1M": 0.39999999999999997,
         "summary": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math,...",
@@ -16383,81 +16800,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "x-ai/grok-3-beta",
-        "name": "xAI: Grok 3 Beta",
-        "provider": "xAI",
-        "releasedAt": "2025-04-09",
-        "contextLength": 131072,
-        "inputPer1M": 3,
-        "outputPer1M": 15,
-        "summary": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-        "description": "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logprobs",
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "x-ai/grok-3-mini-beta",
-        "name": "xAI: Grok 3 Mini Beta",
-        "provider": "xAI",
-        "releasedAt": "2025-04-09",
-        "contextLength": 131072,
-        "inputPer1M": 0.3,
-        "outputPer1M": 0.5,
-        "summary": "Grok 3 Mini is a lightweight, smaller thinking model. Unlike traditional models that generate answers immediately, Grok 3 Mini thinks before responding. It’s ideal for reasoning-heavy tasks that don’t demand...",
-        "description": "Grok 3 Mini is a lightweight, smaller thinking model. Unlike traditional models that generate answers immediately, Grok 3 Mini thinks before responding. It’s ideal for reasoning-heavy tasks that don’t demand...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "meta-llama/llama-4-maverick",
         "name": "Meta: Llama 4 Maverick",
         "provider": "Meta",
@@ -16501,7 +16843,7 @@ export const generatedModels = [
         "name": "Meta: Llama 4 Scout",
         "provider": "Meta",
         "releasedAt": "2025-04-05",
-        "contextLength": 327680,
+        "contextLength": 10000000,
         "inputPer1M": 0.08,
         "outputPer1M": 0.3,
         "summary": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
@@ -16669,8 +17011,8 @@ export const generatedModels = [
         "provider": "Mistral AI",
         "releasedAt": "2025-03-17",
         "contextLength": 128000,
-        "inputPer1M": 0.35,
-        "outputPer1M": 0.56,
+        "inputPer1M": 0.351,
+        "outputPer1M": 0.5549999999999999,
         "summary": "Mistral Small 3.1 24B Instruct is an upgraded variant of Mistral Small 3 (2501), featuring 24 billion parameters with advanced multimodal capabilities. It provides state-of-the-art performance in text-based reasoning an…",
         "description": "Mistral Small 3.1 24B Instruct is an upgraded variant of Mistral Small 3 (2501), featuring 24 billion parameters with advanced multimodal capabilities. It provides state-of-the-art performance in text-based reasoning an…",
         "bestFor": [
@@ -16687,10 +17029,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
@@ -17210,80 +17555,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "anthropic/claude-3.7-sonnet",
-        "name": "Anthropic: Claude 3.7 Sonnet",
-        "provider": "Anthropic",
-        "releasedAt": "2025-02-24",
-        "contextLength": 200000,
-        "inputPer1M": 3,
-        "outputPer1M": 15,
-        "summary": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and...",
-        "description": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and...",
-        "bestFor": [
-            "Image workflows",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "text",
-            "image",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "anthropic/claude-3.7-sonnet:thinking",
-        "name": "Anthropic: Claude 3.7 Sonnet (thinking)",
-        "provider": "Anthropic",
-        "releasedAt": "2025-02-24",
-        "contextLength": 200000,
-        "inputPer1M": 3,
-        "outputPer1M": 15,
-        "summary": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and...",
-        "description": "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and...",
-        "bestFor": [
-            "Image workflows",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "text",
-            "image",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "mistralai/mistral-saba",
         "name": "Mistral: Saba",
         "provider": "Mistral AI",
@@ -17296,9 +17567,10 @@ export const generatedModels = [
         "bestFor": [
             "Agent workflows"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -17325,7 +17597,7 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2025-02-12",
         "contextLength": 131072,
-        "inputPer1M": 0.48,
+        "inputPer1M": 0.48400000000000004,
         "outputPer1M": 0.03,
         "summary": "Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification)...",
         "description": "Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification)...",
@@ -17342,10 +17614,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
@@ -17423,38 +17698,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "qwen/qwen-vl-plus",
-        "name": "Qwen: Qwen VL Plus",
-        "provider": "Qwen",
-        "releasedAt": "2025-02-05",
-        "contextLength": 131072,
-        "inputPer1M": 0.1365,
-        "outputPer1M": 0.40950000000000003,
-        "summary": "Qwen's Enhanced Large Visual Language Model. Significantly upgraded for detailed recognition capabilities and text recognition abilities, supporting ultra-high pixel resolutions up to millions of pixels and extreme aspe…",
-        "description": "Qwen's Enhanced Large Visual Language Model. Significantly upgraded for detailed recognition capabilities and text recognition abilities, supporting ultra-high pixel resolutions up to millions of pixels and extreme aspe…",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "temperature",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -17550,74 +17793,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "qwen/qwen-vl-max",
-        "name": "Qwen: Qwen VL Max",
-        "provider": "Qwen",
-        "releasedAt": "2025-02-01",
-        "contextLength": 131072,
-        "inputPer1M": 0.52,
-        "outputPer1M": 2.08,
-        "summary": "Qwen VL Max is a visual understanding model with 7500 tokens context length. It excels in delivering optimal performance for a broader spectrum of complex tasks.",
-        "description": "Qwen VL Max is a visual understanding model with 7500 tokens context length. It excels in delivering optimal performance for a broader spectrum of complex tasks.",
-        "bestFor": [
-            "Image workflows",
-            "Agent workflows"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "qwen/qwen-max",
-        "name": "Qwen: Qwen-Max",
-        "provider": "Qwen",
-        "releasedAt": "2025-02-01",
-        "contextLength": 32768,
-        "inputPer1M": 1.04,
-        "outputPer1M": 4.16,
-        "summary": "Qwen-Max, based on Qwen2.5, provides the best inference performance among [Qwen models](/qwen), especially for complex multi-step tasks. It's a large-scale MoE model that has been pretrained on over 20 trillion...",
-        "description": "Qwen-Max, based on Qwen2.5, provides the best inference performance among [Qwen models](/qwen), especially for complex multi-step tasks. It's a large-scale MoE model that has been pretrained on over 20 trillion...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "qwen/qwen-plus",
         "name": "Qwen: Qwen-Plus",
         "provider": "Qwen",
@@ -17651,44 +17826,11 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "qwen/qwen-turbo",
-        "name": "Qwen: Qwen-Turbo",
-        "provider": "Qwen",
-        "releasedAt": "2025-02-01",
-        "contextLength": 131072,
-        "inputPer1M": 0.0325,
-        "outputPer1M": 0.13,
-        "summary": "Qwen-Turbo, based on Qwen2.5, is a 1M context model that provides fast speed and low cost, suitable for simple tasks.",
-        "description": "Qwen-Turbo, based on Qwen2.5, is a 1M context model that provides fast speed and low cost, suitable for simple tasks.",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "qwen/qwen2.5-vl-72b-instruct",
         "name": "Qwen: Qwen2.5 VL 72B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-02-01",
-        "contextLength": 32000,
+        "contextLength": 131072,
         "inputPer1M": 0.25,
         "outputPer1M": 0.75,
         "summary": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
@@ -17800,7 +17942,7 @@ export const generatedModels = [
         "name": "DeepSeek: R1 Distill Qwen 32B",
         "provider": "DeepSeek",
         "releasedAt": "2025-01-29",
-        "contextLength": 32768,
+        "contextLength": 128000,
         "inputPer1M": 0.29,
         "outputPer1M": 0.29,
         "summary": "DeepSeek R1 Distill Qwen 32B is a distilled large language model based on Qwen 2.5 32B, using outputs from [DeepSeek R1](/deepseek/deepseek-r1). It outperforms OpenAI's o1-mini across various benchmarks, achieving new...",
@@ -17936,7 +18078,7 @@ export const generatedModels = [
         "name": "DeepSeek: R1",
         "provider": "DeepSeek",
         "releasedAt": "2025-01-20",
-        "contextLength": 64000,
+        "contextLength": 163840,
         "inputPer1M": 0.7,
         "outputPer1M": 2.5,
         "summary": "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass....",
@@ -17960,8 +18102,10 @@ export const generatedModels = [
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -18323,10 +18467,8 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
-            "logit_bias",
             "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "response_format",
@@ -18334,7 +18476,6 @@ export const generatedModels = [
             "stop",
             "structured_outputs",
             "temperature",
-            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -18510,7 +18651,7 @@ export const generatedModels = [
         "name": "Meta: Llama 3.3 70B Instruct (free)",
         "provider": "Meta",
         "releasedAt": "2024-12-06",
-        "contextLength": 65536,
+        "contextLength": 131072,
         "inputPer1M": 0,
         "outputPer1M": 0,
         "summary": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
@@ -18771,9 +18912,10 @@ export const generatedModels = [
             "Advanced reasoning",
             "Code generation"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -18807,9 +18949,10 @@ export const generatedModels = [
         "bestFor": [
             "Agent workflows"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -18844,10 +18987,11 @@ export const generatedModels = [
             "Image workflows",
             "Agent workflows"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -18873,7 +19017,7 @@ export const generatedModels = [
         "name": "Qwen2.5 Coder 32B Instruct",
         "provider": "Qwen",
         "releasedAt": "2024-11-11",
-        "contextLength": 32768,
+        "contextLength": 128000,
         "inputPer1M": 0.66,
         "outputPer1M": 1,
         "summary": "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improvements in **code gener…",
@@ -18890,10 +19034,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
@@ -19057,7 +19204,7 @@ export const generatedModels = [
         "name": "Magnum v4 72B",
         "provider": "Anthracite Org",
         "releasedAt": "2024-10-22",
-        "contextLength": 16384,
+        "contextLength": 32768,
         "inputPer1M": 3,
         "outputPer1M": 5,
         "summary": "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet( and Opus( The model is fine-tuned on top of Qwen2.5 72B.",
@@ -19098,50 +19245,11 @@ export const generatedModels = [
         "name": "Qwen: Qwen2.5 7B Instruct",
         "provider": "Qwen",
         "releasedAt": "2024-10-16",
-        "contextLength": 32768,
+        "contextLength": 131072,
         "inputPer1M": 0.04,
         "outputPer1M": 0.09999999999999999,
         "summary": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
         "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "nvidia/llama-3.1-nemotron-70b-instruct",
-        "name": "NVIDIA: Llama 3.1 Nemotron 70B Instruct",
-        "provider": "Nvidia",
-        "releasedAt": "2024-10-15",
-        "contextLength": 131072,
-        "inputPer1M": 1.2,
-        "outputPer1M": 1.2,
-        "summary": "NVIDIA's Llama 3.1 Nemotron 70B is a language model designed for generating precise and useful responses. Leveraging [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) architecture and Reinforcement Learning fro…",
-        "description": "NVIDIA's Llama 3.1 Nemotron 70B is a language model designed for generating precise and useful responses. Leveraging [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) architecture and Reinforcement Learning fro…",
         "bestFor": [
             "Agent workflows"
         ],
@@ -19316,9 +19424,9 @@ export const generatedModels = [
         "name": "Meta: Llama 3.2 1B Instruct",
         "provider": "Meta",
         "releasedAt": "2024-09-25",
-        "contextLength": 60000,
+        "contextLength": 131072,
         "inputPer1M": 0.027,
-        "outputPer1M": 0.19999999999999998,
+        "outputPer1M": 0.201,
         "summary": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
         "description": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
         "bestFor": [
@@ -19334,10 +19442,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
@@ -19350,9 +19461,9 @@ export const generatedModels = [
         "name": "Meta: Llama 3.2 3B Instruct",
         "provider": "Meta",
         "releasedAt": "2024-09-25",
-        "contextLength": 80000,
-        "inputPer1M": 0.051,
-        "outputPer1M": 0.33999999999999997,
+        "contextLength": 131072,
+        "inputPer1M": 0.0509,
+        "outputPer1M": 0.335,
         "summary": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transfor…",
         "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transfor…",
         "bestFor": [
@@ -19367,10 +19478,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
@@ -19415,7 +19529,7 @@ export const generatedModels = [
         "name": "Qwen2.5 72B Instruct",
         "provider": "Qwen",
         "releasedAt": "2024-09-19",
-        "contextLength": 32768,
+        "contextLength": 131072,
         "inputPer1M": 0.36,
         "outputPer1M": 0.39999999999999997,
         "summary": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
@@ -19852,7 +19966,7 @@ export const generatedModels = [
         "name": "Meta: Llama 3.1 8B Instruct",
         "provider": "Meta",
         "releasedAt": "2024-07-23",
-        "contextLength": 16384,
+        "contextLength": 131072,
         "inputPer1M": 0.02,
         "outputPer1M": 0.049999999999999996,
         "summary": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
@@ -19912,7 +20026,6 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -19925,7 +20038,6 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -20294,6 +20406,7 @@ export const generatedModels = [
             "repetition_penalty",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
@@ -20329,6 +20442,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -20351,9 +20465,10 @@ export const generatedModels = [
         "bestFor": [
             "Agent workflows"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -20379,7 +20494,7 @@ export const generatedModels = [
         "name": "WizardLM-2 8x22B",
         "provider": "Microsoft",
         "releasedAt": "2024-04-16",
-        "contextLength": 65535,
+        "contextLength": 65536,
         "inputPer1M": 0.62,
         "outputPer1M": 0.62,
         "summary": "WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state-of-the-art opensou…",
@@ -20400,6 +20515,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -20576,9 +20692,10 @@ export const generatedModels = [
             "Advanced reasoning",
             "Code generation"
         ],
-        "modality": "text->text",
+        "modality": "text+file->text",
         "inputModalities": [
-            "text"
+            "text",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -20755,87 +20872,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "mistralai/mixtral-8x7b-instruct",
-        "name": "Mistral: Mixtral 8x7B Instruct",
-        "provider": "Mistral AI",
-        "releasedAt": "2023-12-10",
-        "contextLength": 32768,
-        "inputPer1M": 0.54,
-        "outputPer1M": 0.54,
-        "summary": "Mixtral 8x7B Instruct is a pretrained generative Sparse Mixture of Experts, by Mistral AI, for chat and instruction use. Incorporates 8 experts (feed-forward networks) for a total of 47 billion...",
-        "description": "Mixtral 8x7B Instruct is a pretrained generative Sparse Mixture of Experts, by Mistral AI, for chat and instruction use. Incorporates 8 experts (feed-forward networks) for a total of 47 billion...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "alpindale/goliath-120b",
-        "name": "Goliath 120B",
-        "provider": "Alpindale",
-        "releasedAt": "2023-11-10",
-        "contextLength": 6144,
-        "inputPer1M": 3.75,
-        "outputPer1M": 7.5,
-        "summary": "A large LLM created by combining two fine-tuned Llama 70B models into one 120B model. Combines Xwin and Euryale. Credits to - @chargoddard for developing the framework used to merge...",
-        "description": "A large LLM created by combining two fine-tuned Llama 70B models into one 120B model. Combines Xwin and Euryale. Credits to - @chargoddard for developing the framework used to merge...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "logprobs",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "top_a",
-            "top_k",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "openai/gpt-4-1106-preview",
         "name": "OpenAI: GPT-4 Turbo (older v1106)",
         "provider": "OpenAI",
@@ -20931,7 +20967,7 @@ export const generatedModels = [
         "name": "Mistral: Mistral 7B Instruct v0.1",
         "provider": "Mistral AI",
         "releasedAt": "2023-09-28",
-        "contextLength": 2824,
+        "contextLength": 4096,
         "inputPer1M": 0.11,
         "outputPer1M": 0.19,
         "summary": "A 7.3B parameter model that outperforms Llama 2 13B on all benchmarks, with optimizations for speed and context length.",
@@ -20949,10 +20985,13 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "seed",
+            "stop",
             "temperature",
             "top_k",
             "top_p"
