@@ -15,8 +15,15 @@ export function modelText(model: ModelEntry) {
     ].filter(Boolean).join(" ").toLowerCase();
 }
 
+function codingSignalText(text: string) {
+    return text
+        .replace(/\bsource code\b/g, "")
+        .replace(/\bcode and weights\b/g, "")
+        .replace(/\bcode\/weights\b/g, "");
+}
+
 export function hasCodingSignal(model: ModelEntry) {
-    const sourceText = [
+    const sourceText = codingSignalText([
         model.name,
         model.id,
         model.summary,
@@ -24,11 +31,11 @@ export function hasCodingSignal(model: ModelEntry) {
         model.modelType,
         model.modality,
         ...(model.supportedParameters ?? []),
-    ].filter(Boolean).join(" ").toLowerCase();
-    const bestForText = (model.bestFor ?? [])
+    ].filter(Boolean).join(" ").toLowerCase());
+    const bestForText = codingSignalText((model.bestFor ?? [])
         .filter((entry) => !/^code generation$/i.test(entry))
         .join(" ")
-        .toLowerCase();
+        .toLowerCase());
 
     return /\b(code|coding|software|developer|programming|codex)\b/.test(sourceText)
         || /\b(code|coding|software|developer|programming|codex)\b/.test(bestForText);
@@ -67,6 +74,10 @@ export function isRetrievalModel(model: ModelEntry) {
         || text.includes("retrieval")
         || text.includes("semantic search")
         || text.includes("vector search");
+}
+
+export function isCodeRetrievalModel(model: ModelEntry) {
+    return isRetrievalModel(model) && hasCodingSignal(model);
 }
 
 export function isSafetyModel(model: ModelEntry) {
@@ -118,14 +129,48 @@ export function isMusicModel(model: ModelEntry) {
     const output = new Set(model.outputModalities ?? []);
     const text = modelText(model);
 
+    return output.has("audio")
+        && !text.includes("sound effect")
+        && !text.includes("sound effects")
+        && (
+            text.includes("music")
+            || text.includes("song")
+            || text.includes("songs")
+            || text.includes("soundtrack")
+            || text.includes("lyria")
+            || text.includes("compose")
+        );
+}
+
+export function isSoundEffectsModel(model: ModelEntry) {
+    const output = new Set(model.outputModalities ?? []);
+    const text = modelText(model);
+
     return output.has("audio") && (
-        text.includes("music")
-        || text.includes("song")
-        || text.includes("songs")
-        || text.includes("soundtrack")
-        || text.includes("lyria")
-        || text.includes("compose")
+        text.includes("sound effect")
+        || text.includes("sound effects")
+        || /\bsfx\b/.test(text)
+        || text.includes("foley")
     );
+}
+
+export function isSpeechGenerationModel(model: ModelEntry) {
+    const output = new Set(model.outputModalities ?? []);
+    const text = modelText(model);
+
+    return (output.has("speech") || output.has("audio"))
+        && !isTranscriptionModel(model)
+        && !isMusicModel(model)
+        && !isSoundEffectsModel(model)
+        && (
+            output.has("speech")
+            || text.includes("text-to-speech")
+            || /\btts\b/.test(text)
+            || text.includes("voiceover")
+            || text.includes("voice over")
+            || text.includes("narration")
+            || text.includes("generate speech")
+        );
 }
 
 export function isSearchModel(model: ModelEntry) {
@@ -195,6 +240,7 @@ export function displayBestFor(model: ModelEntry) {
 
     if (isTranscriptionModel(model)) return ["Transcription workflows", "Audio analysis", "Transcript governance"];
     if (isSearchModel(model)) return ["Web research", "Search-grounded answers", "Source-backed analysis"];
+    if (isCodeRetrievalModel(model)) return ["Code retrieval", "Repository search", "Coding assistant retrieval"];
     if (isRetrievalModel(model)) return ["Semantic retrieval", "Enterprise search", "Knowledge indexing"];
     if (isSafetyModel(model)) return ["Safety classification", "Policy enforcement", "Moderation workflows"];
     if (isCreativeModel(model)) return ["Creative writing", "Roleplay evaluation", "Narrative generation"];
@@ -202,6 +248,8 @@ export function displayBestFor(model: ModelEntry) {
     if (isTrainingModel(model)) return ["Model training", "Dataset workflows", "Style adaptation"];
     if (isMediaUtilityModel(model)) return ["Video editing", "Media composition", "Asset enhancement"];
     if (isVoiceAgentModel(model)) return ["Voice agents", "Audio conversation", "Speech generation"];
+    if (isSoundEffectsModel(model)) return ["Sound effects", "Audio design", "Media production"];
+    if (isSpeechGenerationModel(model)) return ["Speech generation", "Voiceover production", "Narration workflows"];
 
     if (output.has("video")) {
         const labels = ["Video generation"];
@@ -234,6 +282,15 @@ export function displayBestFor(model: ModelEntry) {
         if (!hasMultimodalInput && (text.includes("mobile") || text.includes("low-resource") || text.includes("edge"))) {
             normalized.push("Edge-friendly workloads");
         }
+
+        return normalizeBestForLabels(normalized, model);
+    }
+
+    if (isTextOutputModel) {
+        const normalized = [...model.bestFor];
+        if (hasCodingSignal(model)) normalized.push("Code generation");
+        if (text.includes("agent") || text.includes("tool")) normalized.push("Agent workflows");
+        if (text.includes("reason")) normalized.push("Advanced reasoning");
 
         return normalizeBestForLabels(normalized, model);
     }

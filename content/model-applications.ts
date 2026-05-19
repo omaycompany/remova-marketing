@@ -1,12 +1,15 @@
 import type { ModelEntry } from "@/content/models";
 import {
     hasCodingSignal,
+    isCodeRetrievalModel,
     isCreativeModel,
     isMediaUtilityModel,
     isMusicModel,
     isRetrievalModel,
     isSafetyModel,
     isSearchModel,
+    isSoundEffectsModel,
+    isSpeechGenerationModel,
     isTrainingModel,
     isTranscriptionModel,
     isVoiceAgentModel,
@@ -141,6 +144,15 @@ const audioApplications: ModelApplication[] = [
     { title: "Govern audio generation", description: "Keep generated speech behind approvals, role access, budget controls, and audit logs.", icon: "shield", color: colors.red },
 ];
 
+const soundEffectsApplications: ModelApplication[] = [
+    { title: "Create sound effects", description: "Generate approved effects, stingers, transitions, and ambient sounds for media workflows.", icon: "audio", color: colors.blue },
+    { title: "Design product audio", description: "Prototype interface sounds, notification tones, demos, and branded audio moments.", icon: "spark", color: colors.violet },
+    { title: "Prepare video effects", description: "Create sound beds, motion accents, and scene-specific effects for governed video production.", icon: "video", color: colors.teal },
+    { title: "Localize audio assets", description: "Adapt effects and ambience for regions, campaigns, channels, and accessibility needs.", icon: "flow", color: colors.emerald },
+    { title: "Review audio rights", description: "Route generated effects through brand, licensing, and publication review before release.", icon: "shield", color: colors.red },
+    { title: "Govern sound generation", description: "Keep generated effects behind access controls, budgets, approvals, and audit logs.", icon: "chart", color: colors.amber },
+];
+
 const musicApplications: ModelApplication[] = [
     { title: "Generate music concepts", description: "Create music drafts, loops, and mood options for campaign and product-review workflows.", icon: "audio", color: colors.violet },
     { title: "Create campaign soundtracks", description: "Prototype soundtrack directions for ads, launch videos, explainers, and social assets.", icon: "spark", color: colors.blue },
@@ -175,6 +187,15 @@ const retrievalApplications: ModelApplication[] = [
     { title: "Route support requests", description: "Classify incoming questions and connect them with the most relevant internal resources.", icon: "flow", color: colors.emerald },
     { title: "Rank compliance evidence", description: "Surface the most relevant policies, logs, and documents during audits and reviews.", icon: "shield", color: colors.red },
     { title: "Measure content similarity", description: "Compare records, tickets, snippets, and documents for matching or recommendation workflows.", icon: "chart", color: colors.amber },
+];
+
+const codeRetrievalApplications: ModelApplication[] = [
+    { title: "Search codebases", description: "Embed repositories, snippets, and technical docs so developers can find relevant implementation context.", icon: "code", color: colors.blue },
+    { title: "Power coding assistants", description: "Retrieve related files, APIs, examples, and dependency context for governed developer workflows.", icon: "layers", color: colors.violet },
+    { title: "Index repositories", description: "Create searchable vectors for source files, documentation, issues, and engineering knowledge bases.", icon: "search", color: colors.teal },
+    { title: "Deduplicate code knowledge", description: "Cluster similar snippets, docs, tickets, and examples for cleaner engineering support systems.", icon: "flow", color: colors.emerald },
+    { title: "Rank technical evidence", description: "Surface relevant code, logs, docs, and tickets during incident and compliance reviews.", icon: "shield", color: colors.red },
+    { title: "Measure code similarity", description: "Compare snippets, repositories, and technical records for recommendations or migration planning.", icon: "chart", color: colors.amber },
 ];
 
 const safetyApplications: ModelApplication[] = [
@@ -245,10 +266,13 @@ function applicationsByModality(model: ModelEntry) {
     if (isTrainingModel(model)) return trainingApplications;
     if (isMediaUtilityModel(model)) return mediaUtilityApplications;
     if (isVoiceAgentModel(model)) return voiceAgentApplications;
+    if (isSoundEffectsModel(model)) return soundEffectsApplications;
+    if (isSpeechGenerationModel(model)) return audioApplications;
     if (output.has("video") || modelType.includes("video") || modality.includes("->video")) return videoApplications;
     if (output.has("image") || modelType.includes("image") || modality.includes("->image")) return imageApplications;
     if (isMusicModel(model)) return musicApplications;
     if (isAudioGenerationModel) return audioApplications;
+    if (isCodeRetrievalModel(model)) return codeRetrievalApplications;
     if (isRetrievalModel(model)) return retrievalApplications;
     if (isSafetyModel(model)) return safetyApplications;
     if (isCreativeModel(model)) return creativeApplications;

@@ -109,14 +109,39 @@ function bestForFromModalities(inputModalities = [], outputModalities = [], supp
     const tags = [];
     const hasInput = (modality) => inputModalities.includes(modality);
     const hasOutput = (modality) => outputModalities.includes(modality);
-    const hasCodingSignal = /\b(code|coding|software|developer|programming)\b/.test(text);
-    const isMusic = hasOutput("audio") && (
-        descriptionText.includes("music")
-        || descriptionText.includes("song")
-        || descriptionText.includes("soundtrack")
-        || descriptionText.includes("lyria")
-        || descriptionText.includes("compose")
+    const codingText = text
+        .replace(/\bsource code\b/g, "")
+        .replace(/\bcode and weights\b/g, "")
+        .replace(/\bcode\/weights\b/g, "");
+    const hasCodingSignal = /\b(code|coding|software|developer|programming)\b/.test(codingText);
+    const isMusic = hasOutput("audio")
+        && !descriptionText.includes("sound effect")
+        && !descriptionText.includes("sound effects")
+        && (
+            descriptionText.includes("music")
+            || descriptionText.includes("song")
+            || descriptionText.includes("soundtrack")
+            || descriptionText.includes("lyria")
+            || descriptionText.includes("compose")
+        );
+    const isSoundEffects = hasOutput("audio") && (
+        descriptionText.includes("sound effect")
+        || descriptionText.includes("sound effects")
+        || /\bsfx\b/.test(descriptionText)
+        || descriptionText.includes("foley")
     );
+    const isSpeechGeneration = (hasOutput("speech") || hasOutput("audio"))
+        && !isMusic
+        && !isSoundEffects
+        && (
+            hasOutput("speech")
+            || descriptionText.includes("text-to-speech")
+            || /\btts\b/.test(descriptionText)
+            || descriptionText.includes("voiceover")
+            || descriptionText.includes("voice over")
+            || descriptionText.includes("narration")
+            || descriptionText.includes("generate speech")
+        );
     const isSearch = hasOutput("text") && (
         descriptionText.includes("web search")
         || descriptionText.includes("search preview")
@@ -159,6 +184,12 @@ function bestForFromModalities(inputModalities = [], outputModalities = [], supp
         tags.push("Image workflows");
     } else if (isMusic) {
         tags.push("Music generation", "Audio production", "Campaign soundtracks");
+    } else if (isSoundEffects) {
+        tags.push("Sound effects", "Audio design", "Media production");
+    } else if (isSpeechGeneration) {
+        tags.push("Speech generation", "Voiceover production", "Narration workflows");
+    } else if (hasOutput("embeddings") && hasCodingSignal) {
+        tags.push("Code retrieval", "Repository search", "Coding assistant retrieval");
     } else if (hasOutput("audio") || hasOutput("speech")) {
         tags.push("Audio workflows");
     } else if (hasOutput("embeddings")) {
@@ -168,7 +199,9 @@ function bestForFromModalities(inputModalities = [], outputModalities = [], supp
     }
     if (text.includes("tool")) tags.push("Agent workflows");
     if (text.includes("reason")) tags.push("Advanced reasoning");
-    if (hasCodingSignal) tags.push("Code generation");
+    if (hasCodingSignal && hasOutput("text") && !hasOutput("embeddings") && !hasOutput("image") && !hasOutput("video") && !hasOutput("audio") && !hasOutput("speech")) {
+        tags.push("Code generation");
+    }
     if (tags.length === 0) tags.push("General chat", "Enterprise assistants");
 
     return Array.from(new Set(tags)).slice(0, 3);

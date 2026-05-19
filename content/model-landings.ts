@@ -1,12 +1,15 @@
 import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
 import {
     displayBestFor,
+    isCodeRetrievalModel,
     isCreativeModel,
     isMediaUtilityModel,
     isMusicModel,
     isRetrievalModel,
     isSafetyModel,
     isSearchModel,
+    isSoundEffectsModel,
+    isSpeechGenerationModel,
     isTrainingModel,
     isTranscriptionModel,
     isVoiceAgentModel,
@@ -1426,29 +1429,35 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
         ? "Safety classifiers need threshold testing, escalation handling, and audit review before enforcement."
         : isSearchModel(model)
             ? "Search-grounded models need citation checks, source freshness review, and hallucination monitoring."
-        : isRetrievalModel(model)
-            ? "Embedding and retrieval systems need benchmark sets to catch ranking drift and stale indexes."
-        : isCreativeModel(model)
-            ? "Creative-writing models need brand, safety, and audience review before production use."
-            : isMusicModel(model)
-                ? "Music generation workflows need rights, brand, and usage review before production release."
-                : isTrainingModel(model)
-                        ? "Model training workflows need dataset consent, version control, and output review before reuse."
-                        : isMediaUtilityModel(model)
-                            ? "Media utility workflows need asset rights, export checks, and approval gates before publication."
-                            : isVoiceAgentModel(model)
-                                ? "Voice-agent workflows need consent, retention, escalation, and transcript governance controls."
-                                : isTranscriptionModel(model)
-                                    ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
-                                    : modality.includes("->speech") || modality.includes("->audio")
-                                    ? "Audio generation workflows need approval gates for voice, language, and brand use."
-                                    : modality.includes("->video")
-                                        ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
-                                        : modality.includes("->image")
-                                            ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
-                                            : modality.includes("+")
-                                                ? "Multimodal pipelines require strict input handling and validation policies for reliability."
-                                                : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
+            : isCodeRetrievalModel(model)
+                ? "Code retrieval systems need repository access controls, freshness checks, and relevance benchmarks."
+                : isRetrievalModel(model)
+                    ? "Embedding and retrieval systems need benchmark sets to catch ranking drift and stale indexes."
+                    : isCreativeModel(model)
+                        ? "Creative-writing models need brand, safety, and audience review before production use."
+                        : isMusicModel(model)
+                            ? "Music generation workflows need rights, brand, and usage review before production release."
+                            : isTrainingModel(model)
+                                ? "Model training workflows need dataset consent, version control, and output review before reuse."
+                                : isMediaUtilityModel(model)
+                                    ? "Media utility workflows need asset rights, export checks, and approval gates before publication."
+                                    : isVoiceAgentModel(model)
+                                        ? "Voice-agent workflows need consent, retention, escalation, and transcript governance controls."
+                                        : isSoundEffectsModel(model)
+                                            ? "Sound-effects workflows need rights, brand, loudness, and publication review before release."
+                                            : isSpeechGenerationModel(model)
+                                                ? "Speech generation workflows need voice, consent, localization, and review controls."
+                                                : isTranscriptionModel(model)
+                                                    ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
+                                                    : modality.includes("->speech") || modality.includes("->audio")
+                                                        ? "Audio generation workflows need approval gates for voice, language, and brand use."
+                                                        : modality.includes("->video")
+                                                            ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
+                                                            : modality.includes("->image")
+                                                                ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
+                                                                : modality.includes("+")
+                                                                    ? "Multimodal pipelines require strict input handling and validation policies for reliability."
+                                                                    : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
 
     const hash = numericHash(`${model.id}-${autoIndex}`);
     const selectedCommon = rotatePick(commonTradeoffs, hash % commonTradeoffs.length, 2);
@@ -1481,9 +1490,17 @@ function useCaseFromTag(tag: string, model: ModelEntry) {
     if (value.includes("voice agents")) return `${model.name} for governed spoken assistants across support, sales, and internal workflows.`;
     if (value.includes("audio conversation")) return `${model.name} for audio conversations with consent, retention, and escalation controls.`;
     if (value.includes("speech generation")) return `${model.name} for spoken responses with brand, policy, and review safeguards.`;
+    if (value.includes("voiceover")) return `${model.name} for approved voiceover, narration, and localized speech assets.`;
+    if (value.includes("narration")) return `${model.name} for narration workflows with brand, voice, and publication review controls.`;
+    if (value.includes("sound effects")) return `${model.name} for generating sound effects, transitions, and ambient audio under review controls.`;
+    if (value.includes("audio design")) return `${model.name} for product audio, interface sounds, and branded sound design workflows.`;
+    if (value.includes("media production")) return `${model.name} for governed media production that needs approved audio assets.`;
     if (value.includes("safety")) return `${model.name} for content safety classification across prompts, responses, and user submissions.`;
     if (value.includes("policy")) return `${model.name} for policy guardrails that route unsafe or uncertain outputs into review.`;
     if (value.includes("moderation")) return `${model.name} for moderation queues with auditable labels and escalation handling.`;
+    if (value.includes("code retrieval")) return `${model.name} for codebase retrieval across repositories, docs, issues, and technical records.`;
+    if (value.includes("repository search")) return `${model.name} for repository search with access controls and relevance benchmarks.`;
+    if (value.includes("coding assistant retrieval")) return `${model.name} for grounding coding assistants in approved repository context.`;
     if (value.includes("semantic") || value.includes("retrieval")) return `${model.name} for semantic retrieval, ranking, and enterprise search workflows.`;
     if (value.includes("search")) return `${model.name} for enterprise search across policies, product docs, and support knowledge bases.`;
     if (value.includes("knowledge indexing")) return `${model.name} for indexing internal knowledge assets into searchable vector workflows.`;
@@ -1519,6 +1536,7 @@ function useCaseFromTag(tag: string, model: ModelEntry) {
 function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: number) {
     const output = new Set(model.outputModalities ?? []);
     const isTranscription = isTranscriptionModel(model);
+    const isCodeRetrieval = isCodeRetrievalModel(model);
     const isRetrieval = isRetrievalModel(model);
     const isSafety = isSafetyModel(model);
     const isCreative = isCreativeModel(model);
@@ -1527,6 +1545,8 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
     const isTraining = isTrainingModel(model);
     const isMediaUtility = isMediaUtilityModel(model);
     const isVoiceAgent = isVoiceAgentModel(model);
+    const isSoundEffects = isSoundEffectsModel(model);
+    const isSpeechGeneration = isSpeechGenerationModel(model);
     const fallbackSets = {
         transcription: [
             `${model.name} for governed speech-to-text pipelines across meetings, calls, and recordings.`,
@@ -1539,6 +1559,12 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
             `${model.name} for ranking and retrieval pipelines with benchmarked relevance checks.`,
             `${model.name} for indexing internal knowledge assets into searchable vector workflows.`,
             `${model.name} for surfacing compliance evidence and related records during audits.`,
+        ],
+        codeRetrieval: [
+            `${model.name} for codebase retrieval across repositories, docs, issues, and technical records.`,
+            `${model.name} for repository search with access controls and relevance benchmarks.`,
+            `${model.name} for grounding coding assistants in approved repository context.`,
+            `${model.name} for surfacing relevant code, logs, and tickets during engineering reviews.`,
         ],
         safety: [
             `${model.name} for content safety classification across prompts, responses, and user submissions.`,
@@ -1582,6 +1608,18 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
             `${model.name} for spoken responses with brand, policy, and review safeguards.`,
             `${model.name} for prototyping voice UX with auditability and access controls.`,
         ],
+        soundEffects: [
+            `${model.name} for generating sound effects, transitions, and ambient audio under review controls.`,
+            `${model.name} for product audio, interface sounds, and branded sound design workflows.`,
+            `${model.name} for video and campaign assets that need approved effects or ambience.`,
+            `${model.name} for governed media production with rights, loudness, and brand checks.`,
+        ],
+        speechGeneration: [
+            `${model.name} for approved voiceover, narration, and localized speech assets.`,
+            `${model.name} for spoken responses with brand, policy, and review safeguards.`,
+            `${model.name} for narration workflows with voice, consent, and publication controls.`,
+            `${model.name} for media teams that need repeatable speech generation under budget limits.`,
+        ],
         audio: [
             `${model.name} for approved narration, voiceover, and localized audio production workflows.`,
             `${model.name} for governed speech assets with review, access, and audit controls.`,
@@ -1607,6 +1645,7 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
 
     if (isTranscription) return fallbackSets.transcription[index % fallbackSets.transcription.length];
     if (isSearch) return fallbackSets.search[index % fallbackSets.search.length];
+    if (isCodeRetrieval) return fallbackSets.codeRetrieval[index % fallbackSets.codeRetrieval.length];
     if (isRetrieval) return fallbackSets.retrieval[index % fallbackSets.retrieval.length];
     if (isSafety) return fallbackSets.safety[index % fallbackSets.safety.length];
     if (isCreative) return fallbackSets.creative[index % fallbackSets.creative.length];
@@ -1614,6 +1653,8 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
     if (isTraining) return fallbackSets.training[index % fallbackSets.training.length];
     if (isMediaUtility) return fallbackSets.mediaUtility[index % fallbackSets.mediaUtility.length];
     if (isVoiceAgent) return fallbackSets.voiceAgent[index % fallbackSets.voiceAgent.length];
+    if (isSoundEffects) return fallbackSets.soundEffects[index % fallbackSets.soundEffects.length];
+    if (isSpeechGeneration) return fallbackSets.speechGeneration[index % fallbackSets.speechGeneration.length];
     if (output.has("speech") || output.has("audio") || modality.includes("->speech") || modality.includes("->audio")) {
         return fallbackSets.audio[index % fallbackSets.audio.length];
     }
