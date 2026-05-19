@@ -1,4 +1,11 @@
 import type { ModelEntry } from "@/content/models";
+import {
+    isCreativeModel,
+    isRetrievalModel,
+    isSafetyModel,
+    isTranscriptionModel,
+    modelText,
+} from "@/lib/model-best-for";
 
 export type ModelApplication = {
     title: string;
@@ -146,36 +153,29 @@ const retrievalApplications: ModelApplication[] = [
     { title: "Measure content similarity", description: "Compare records, tickets, snippets, and documents for matching or recommendation workflows.", icon: "chart", color: colors.amber },
 ];
 
-function modelText(model: ModelEntry) {
-    return [
-        model.name,
-        model.summary,
-        model.description,
-        model.modelType,
-        model.modality,
-        ...(model.bestFor ?? []),
-        ...(model.inputModalities ?? []),
-        ...(model.outputModalities ?? []),
-    ].filter(Boolean).join(" ").toLowerCase();
-}
+const safetyApplications: ModelApplication[] = [
+    { title: "Classify content safety", description: "Evaluate prompts, responses, and user-generated content against policy categories before release.", icon: "shield", color: colors.red },
+    { title: "Moderate prompts and outputs", description: "Route risky requests, policy violations, and unsafe responses into review or block workflows.", icon: "flow", color: colors.violet },
+    { title: "Build policy filters", description: "Create structured safety checks for chat, support, community, and content production systems.", icon: "layers", color: colors.blue },
+    { title: "Review risky requests", description: "Flag sensitive user inputs for human review, escalation, or stricter response handling.", icon: "search", color: colors.amber },
+    { title: "Audit safety decisions", description: "Store classifications, policy labels, and review outcomes for compliance and quality analysis.", icon: "chart", color: colors.emerald },
+    { title: "Route escalations", description: "Send high-risk conversations and uncertain classifications to the right moderation or trust team.", icon: "shield", color: colors.rose },
+];
+
+const creativeApplications: ModelApplication[] = [
+    { title: "Draft creative writing", description: "Generate fiction, narrative scenes, long-form prose, and exploratory writing variants.", icon: "spark", color: colors.violet },
+    { title: "Develop character dialogue", description: "Create character voices, roleplay turns, scene beats, and conversational drafts for review.", icon: "doc", color: colors.blue },
+    { title: "Prototype story variants", description: "Compare plot directions, tone options, pacing changes, and alternate endings before production.", icon: "layers", color: colors.teal },
+    { title: "Review tone and style", description: "Evaluate drafts for voice, audience fit, emotional intent, and brand or safety constraints.", icon: "search", color: colors.amber },
+    { title: "Generate campaign concepts", description: "Turn creative briefs into hooks, concepts, scripts, taglines, and message variants.", icon: "slides", color: colors.cyan },
+    { title: "Evaluate chatbot personas", description: "Test persona behavior, dialogue consistency, scenario handling, and roleplay boundaries.", icon: "flow", color: colors.emerald },
+];
 
 function applicationsByModality(model: ModelEntry) {
     const output = new Set(model.outputModalities ?? []);
     const text = modelText(model);
     const modelType = `${model.modelType ?? ""}`.toLowerCase();
     const modality = `${model.modality ?? ""}`.toLowerCase();
-    const isTranscriptionModel =
-        output.has("transcription")
-        || modelType.includes("transcription")
-        || modelType.includes("speech-to-text")
-        || modelType.includes("audio-to-text")
-        || modality.includes("audio->transcription")
-        || text.includes("transcription")
-        || text.includes("transcribe")
-        || text.includes("speech-to-text")
-        || text.includes("automatic speech recognition")
-        || /\basr\b/.test(text)
-        || text.includes("whisper");
     const isAudioGenerationModel =
         output.has("audio")
         || output.has("speech")
@@ -189,11 +189,13 @@ function applicationsByModality(model: ModelEntry) {
         || text.includes("text-to-speech")
         || text.includes("tts");
 
-    if (isTranscriptionModel) return transcriptionApplications;
+    if (isTranscriptionModel(model)) return transcriptionApplications;
     if (output.has("video") || modelType.includes("video") || modality.includes("->video")) return videoApplications;
     if (output.has("image") || modelType.includes("image") || modality.includes("->image")) return imageApplications;
     if (isAudioGenerationModel) return audioApplications;
-    if (text.includes("embed") || text.includes("rerank") || text.includes("retrieval")) return retrievalApplications;
+    if (isRetrievalModel(model)) return retrievalApplications;
+    if (isSafetyModel(model)) return safetyApplications;
+    if (isCreativeModel(model)) return creativeApplications;
 
     return priorityTextApplications(model);
 }
