@@ -101,16 +101,46 @@ function sanitizePublicName(value) {
 }
 
 function bestForFromModalities(inputModalities = [], outputModalities = [], supportedParameters = [], description = "") {
-    const text = `${inputModalities.join(" ")} ${outputModalities.join(" ")} ${supportedParameters.join(" ")} ${description}`.toLowerCase();
+    const inputText = inputModalities.join(" ").toLowerCase();
+    const outputText = outputModalities.join(" ").toLowerCase();
+    const parameterText = supportedParameters.join(" ").toLowerCase();
+    const descriptionText = `${description}`.toLowerCase();
+    const text = `${inputText} ${outputText} ${parameterText} ${descriptionText}`;
     const tags = [];
+    const hasInput = (modality) => inputModalities.includes(modality);
+    const hasOutput = (modality) => outputModalities.includes(modality);
+    const isMusic = hasOutput("audio") && (
+        descriptionText.includes("music")
+        || descriptionText.includes("song")
+        || descriptionText.includes("soundtrack")
+        || descriptionText.includes("lyria")
+        || descriptionText.includes("compose")
+    );
 
-    if (text.includes("video")) tags.push("Video workflows");
-    if (text.includes("image")) tags.push("Image workflows");
-    if (text.includes("audio")) tags.push("Audio workflows");
+    if (hasOutput("video")) {
+        tags.push("Video generation");
+        if (hasInput("image") || descriptionText.includes("image-to-video") || descriptionText.includes("reference-to-video")) tags.push("Image-to-video");
+        if (
+            hasInput("audio")
+            || descriptionText.includes("audio-to-video")
+            || descriptionText.includes("audio file")
+            || descriptionText.includes("audio clips")
+            || descriptionText.includes("native audio")
+        ) tags.push("Audio-aware video");
+    } else if (hasOutput("image")) {
+        tags.push("Image workflows");
+    } else if (isMusic) {
+        tags.push("Music generation", "Audio production", "Campaign soundtracks");
+    } else if (hasOutput("audio") || hasOutput("speech")) {
+        tags.push("Audio workflows");
+    } else if (hasOutput("embeddings")) {
+        tags.push("Embeddings");
+    } else if (hasOutput("text") && inputModalities.some((modality) => ["image", "video", "audio", "file"].includes(modality))) {
+        tags.push("Multimodal analysis");
+    }
     if (text.includes("tool")) tags.push("Agent workflows");
     if (text.includes("reason")) tags.push("Advanced reasoning");
     if (text.includes("code")) tags.push("Code generation");
-    if (text.includes("embedding")) tags.push("Embeddings");
     if (tags.length === 0) tags.push("General chat", "Enterprise assistants");
 
     return Array.from(new Set(tags)).slice(0, 3);

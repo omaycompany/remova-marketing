@@ -91,9 +91,24 @@ export function isCreativeModel(model: ModelEntry) {
     );
 }
 
+export function isMusicModel(model: ModelEntry) {
+    const output = new Set(model.outputModalities ?? []);
+    const text = modelText(model);
+
+    return output.has("audio") && (
+        text.includes("music")
+        || text.includes("song")
+        || text.includes("songs")
+        || text.includes("soundtrack")
+        || text.includes("lyria")
+        || text.includes("compose")
+    );
+}
+
 export function displayBestFor(model: ModelEntry) {
     const output = new Set(model.outputModalities ?? []);
     const input = new Set(model.inputModalities ?? []);
+    const text = modelText(model);
     const isTextOutputModel = output.has("text")
         && !output.has("image")
         && !output.has("video")
@@ -106,16 +121,42 @@ export function displayBestFor(model: ModelEntry) {
     if (isRetrievalModel(model)) return ["Semantic retrieval", "Enterprise search", "Knowledge indexing"];
     if (isSafetyModel(model)) return ["Safety classification", "Policy enforcement", "Moderation workflows"];
     if (isCreativeModel(model)) return ["Creative writing", "Roleplay evaluation", "Narrative generation"];
+    if (isMusicModel(model)) return ["Music generation", "Audio production", "Campaign soundtracks"];
 
-    if (!isTextOutputModel || !hasMultimodalInput) return model.bestFor;
+    if (output.has("video")) {
+        const labels = ["Video generation"];
+        if (input.has("image") || text.includes("image-to-video") || text.includes("reference-to-video")) {
+            labels.push("Image-to-video");
+        }
+        if (
+            input.has("audio")
+            || text.includes("audio-to-video")
+            || text.includes("audio file")
+            || text.includes("audio clips")
+            || text.includes("native audio")
+        ) {
+            labels.push("Audio-aware video");
+        }
 
-    const text = modelText(model);
-    const normalized = model.bestFor.map((entry) =>
-        /^(image|video|audio) workflows$/i.test(entry) ? "Multimodal analysis" : entry
-    );
-    if (text.includes("code") || text.includes("coding") || text.includes("software")) normalized.push("Code generation");
-    if (text.includes("agent") || text.includes("tool")) normalized.push("Agent workflows");
-    if (text.includes("reason")) normalized.push("Advanced reasoning");
+        return labels;
+    }
 
-    return Array.from(new Set(normalized));
+    const hasMediaWorkflowTag = model.bestFor.some((entry) => /^(image|video|audio) workflows$/i.test(entry));
+    if (isTextOutputModel && (hasMultimodalInput || hasMediaWorkflowTag)) {
+        const normalized = model.bestFor.map((entry) =>
+            /^(image|video|audio) workflows$/i.test(entry)
+                ? hasMultimodalInput ? "Multimodal analysis" : "General chat"
+                : entry
+        );
+        if (text.includes("code") || text.includes("coding") || text.includes("software")) normalized.push("Code generation");
+        if (text.includes("agent") || text.includes("tool")) normalized.push("Agent workflows");
+        if (text.includes("reason")) normalized.push("Advanced reasoning");
+        if (!hasMultimodalInput && (text.includes("mobile") || text.includes("low-resource") || text.includes("edge"))) {
+            normalized.push("Edge-friendly workloads");
+        }
+
+        return Array.from(new Set(normalized));
+    }
+
+    return model.bestFor;
 }

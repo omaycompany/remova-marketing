@@ -2,6 +2,7 @@ import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
 import {
     displayBestFor,
     isCreativeModel,
+    isMusicModel,
     isRetrievalModel,
     isSafetyModel,
     isTranscriptionModel,
@@ -1423,17 +1424,19 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
             ? "Embedding and retrieval systems need benchmark sets to catch ranking drift and stale indexes."
             : isCreativeModel(model)
                 ? "Creative-writing models need brand, safety, and audience review before production use."
-                : isTranscriptionModel(model)
-                    ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
-                    : modality.includes("->speech") || modality.includes("->audio")
-                    ? "Audio generation workflows need approval gates for voice, language, and brand use."
-                    : modality.includes("->video")
-                        ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
-                        : modality.includes("->image")
-                            ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
-                            : modality.includes("+")
-                                ? "Multimodal pipelines require strict input handling and validation policies for reliability."
-                                : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
+                : isMusicModel(model)
+                    ? "Music generation workflows need rights, brand, and usage review before production release."
+                    : isTranscriptionModel(model)
+                        ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
+                        : modality.includes("->speech") || modality.includes("->audio")
+                        ? "Audio generation workflows need approval gates for voice, language, and brand use."
+                        : modality.includes("->video")
+                            ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
+                            : modality.includes("->image")
+                                ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
+                                : modality.includes("+")
+                                    ? "Multimodal pipelines require strict input handling and validation policies for reliability."
+                                    : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
 
     const hash = numericHash(`${model.id}-${autoIndex}`);
     const selectedCommon = rotatePick(commonTradeoffs, hash % commonTradeoffs.length, 2);
@@ -1448,8 +1451,12 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
 
 function useCaseFromTag(tag: string, model: ModelEntry) {
     const value = tag.toLowerCase();
+    const output = new Set(model.outputModalities ?? []);
     if (value.includes("transcription")) return `${model.name} for governed speech-to-text pipelines across meetings, calls, and recordings.`;
     if (value.includes("transcript")) return `${model.name} for searchable transcript assets with retention and access controls.`;
+    if (value.includes("music generation")) return `${model.name} for music drafts, soundtrack ideas, and campaign audio concepts.`;
+    if (value.includes("audio production")) return `${model.name} for governed music and audio production with review checkpoints.`;
+    if (value.includes("campaign soundtrack")) return `${model.name} for campaign soundtracks with rights, brand, and usage review.`;
     if (value.includes("safety")) return `${model.name} for content safety classification across prompts, responses, and user submissions.`;
     if (value.includes("policy")) return `${model.name} for policy guardrails that route unsafe or uncertain outputs into review.`;
     if (value.includes("moderation")) return `${model.name} for moderation queues with auditable labels and escalation handling.`;
@@ -1461,10 +1468,23 @@ function useCaseFromTag(tag: string, model: ModelEntry) {
     if (value.includes("narrative")) return `${model.name} for story variants, campaign concepts, and tone experiments before approval.`;
     if (value.includes("code")) return `${model.name} for software delivery workflows with policy-enforced prompts.`;
     if (value.includes("reason")) return `${model.name} for complex analysis and long-form decision support.`;
+    if (value.includes("math") || value.includes("quantitative") || value.includes("stem")) return `${model.name} for quantitative analysis, technical validation, and calculation-heavy workflows.`;
+    if (value.includes("high-stakes") || value.includes("strategic") || value.includes("decision")) return `${model.name} for high-consequence analysis with review, escalation, and audit controls.`;
+    if (value.includes("long-context") || value.includes("long context") || value.includes("long document")) return `${model.name} for long-context document work with scoped prompts and budget controls.`;
+    if (value.includes("fast") || value.includes("latency")) return `${model.name} for low-latency assistant traffic with response-time and quality checks.`;
+    if (value.includes("general chat")) return `${model.name} for governed chat, team assistance, and everyday knowledge workflows.`;
+    if (value.includes("assistant") || value.includes("copilot")) return `${model.name} for governed team assistants with role access, policy checks, and audit trails.`;
+    if (value.includes("knowledge")) return `${model.name} for internal knowledge work with policy controls and audit trails.`;
+    if (value.includes("edge") || value.includes("mobile") || value.includes("low-resource")) return `${model.name} for mobile, edge, or low-resource assistant deployments with policy controls.`;
+    if (value.includes("operational")) return `${model.name} for operational assistant workflows that need routing, review, and auditability.`;
     if (value.includes("multimodal")) return `${model.name} for document, image, or mixed-input processing pipelines.`;
+    if (value.includes("image-to-video")) return `${model.name} for image-guided video generation and visual-reference workflows.`;
+    if (value.includes("audio-aware")) return `${model.name} for video generation workflows that include audio references, native sound, or audio-aware review.`;
     if (value.includes("audio") && isTranscriptionModel(model)) return `${model.name} for analyzing spoken-content topics, sentiment, and escalation signals from recordings.`;
+    if (value.includes("audio") && output.has("video")) return `${model.name} for video generation workflows that include audio references, native sound, or audio-aware review.`;
     if (value.includes("audio")) return `${model.name} for governed speech, audio, and narration workflows.`;
     if (value.includes("video")) return `${model.name} for approved video generation, editing, and review workflows.`;
+    if (value.includes("image") && output.has("video")) return `${model.name} for image-guided video generation and visual-reference workflows.`;
     if (value.includes("image")) return `${model.name} for governed image generation, editing, and visual review workflows.`;
     if (value.includes("agent")) return `${model.name} for tool-driven automation with governance checkpoints.`;
     if (value.includes("latency")) return `${model.name} for high-volume assistant traffic with low-response targets.`;
@@ -1478,6 +1498,7 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
     const isRetrieval = isRetrievalModel(model);
     const isSafety = isSafetyModel(model);
     const isCreative = isCreativeModel(model);
+    const isMusic = isMusicModel(model);
     const fallbackSets = {
         transcription: [
             `${model.name} for governed speech-to-text pipelines across meetings, calls, and recordings.`,
@@ -1503,6 +1524,12 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
             `${model.name} for story variants, campaign concepts, and tone experiments before approval.`,
             `${model.name} for brand and audience review of expressive chatbot or writing workflows.`,
         ],
+        music: [
+            `${model.name} for music drafts, soundtrack ideas, and campaign audio concepts.`,
+            `${model.name} for governed music and audio production with review checkpoints.`,
+            `${model.name} for campaign soundtracks with rights, brand, and usage review.`,
+            `${model.name} for audio concepts that need budget, approval, and audit controls.`,
+        ],
         audio: [
             `${model.name} for approved narration, voiceover, and localized audio production workflows.`,
             `${model.name} for governed speech assets with review, access, and audit controls.`,
@@ -1518,12 +1545,19 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
             `${model.name} for campaign, product, and enablement visuals with approval checkpoints.`,
             `${model.name} for repeatable visual production under brand and budget controls.`,
         ],
+        general: [
+            `${model.name} for governed enterprise assistant workflows across teams.`,
+            `${model.name} for internal knowledge work with policy controls and audit trails.`,
+            `${model.name} for repeatable team workflows that need budget and access governance.`,
+            `${model.name} for productivity use cases that still need review and escalation paths.`,
+        ],
     };
 
     if (isTranscription) return fallbackSets.transcription[index % fallbackSets.transcription.length];
     if (isRetrieval) return fallbackSets.retrieval[index % fallbackSets.retrieval.length];
     if (isSafety) return fallbackSets.safety[index % fallbackSets.safety.length];
     if (isCreative) return fallbackSets.creative[index % fallbackSets.creative.length];
+    if (isMusic) return fallbackSets.music[index % fallbackSets.music.length];
     if (output.has("speech") || output.has("audio") || modality.includes("->speech") || modality.includes("->audio")) {
         return fallbackSets.audio[index % fallbackSets.audio.length];
     }
@@ -1534,7 +1568,7 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
         return fallbackSets.image[index % fallbackSets.image.length];
     }
 
-    return `${model.name} for governed enterprise assistant workflows across teams.`;
+    return fallbackSets.general[index % fallbackSets.general.length];
 }
 
 function parameterNotesForModel(model: ModelEntry) {
@@ -1565,14 +1599,22 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
     const fitPhrase = bestFitPhrase(model);
     const contextArticle = articleFor(context);
     const landingBestFor = displayBestFor(model);
-    const useCases = landingBestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model));
+    const useCases: string[] = [];
+    for (const entry of landingBestFor.slice(0, 4)) {
+        const useCase = useCaseFromTag(entry, model);
+        if (!useCases.includes(useCase)) useCases.push(useCase);
+    }
     const bestFitList = landingBestFor.length > 0 ? landingBestFor.join(", ") : "General assistants";
     const topUseCasesText =
         landingBestFor.length > 1
             ? `${landingBestFor[0].toLowerCase()} and ${landingBestFor[1].toLowerCase()}`
             : landingBestFor[0]?.toLowerCase() ?? "general assistants";
+    let fallbackIndex = useCases.length;
     while (useCases.length < 4) {
-        useCases.push(fallbackUseCaseForModel(model, modality, useCases.length));
+        const fallback = fallbackUseCaseForModel(model, modality, fallbackIndex);
+        fallbackIndex += 1;
+        if (useCases.includes(fallback) && fallbackIndex < 12) continue;
+        useCases.push(fallback);
     }
 
     const strengths = [

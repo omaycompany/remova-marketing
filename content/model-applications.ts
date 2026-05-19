@@ -1,6 +1,7 @@
 import type { ModelEntry } from "@/content/models";
 import {
     isCreativeModel,
+    isMusicModel,
     isRetrievalModel,
     isSafetyModel,
     isTranscriptionModel,
@@ -135,6 +136,15 @@ const audioApplications: ModelApplication[] = [
     { title: "Govern audio generation", description: "Keep generated speech behind approvals, role access, budget controls, and audit logs.", icon: "shield", color: colors.red },
 ];
 
+const musicApplications: ModelApplication[] = [
+    { title: "Generate music concepts", description: "Create music drafts, loops, and mood options for campaign and product-review workflows.", icon: "audio", color: colors.violet },
+    { title: "Create campaign soundtracks", description: "Prototype soundtrack directions for ads, launch videos, explainers, and social assets.", icon: "spark", color: colors.blue },
+    { title: "Explore sonic branding", description: "Draft audio identities, motif ideas, and brand-safe music directions before production.", icon: "layers", color: colors.teal },
+    { title: "Localize music moods", description: "Create region, audience, or format-specific music variants for controlled creative review.", icon: "flow", color: colors.emerald },
+    { title: "Review music rights", description: "Route generated music through approval, usage, rights, and attribution checks before release.", icon: "shield", color: colors.red },
+    { title: "Govern music generation", description: "Keep song generation behind budget controls, audit logs, and brand review workflows.", icon: "chart", color: colors.amber },
+];
+
 const transcriptionApplications: ModelApplication[] = [
     { title: "Transcribe meetings", description: "Convert calls, interviews, and recordings into searchable text for governed team workflows.", icon: "audio", color: colors.blue },
     { title: "Create call summaries", description: "Turn transcripts into action items, decisions, risks, and customer follow-up drafts.", icon: "doc", color: colors.violet },
@@ -192,6 +202,7 @@ function applicationsByModality(model: ModelEntry) {
     if (isTranscriptionModel(model)) return transcriptionApplications;
     if (output.has("video") || modelType.includes("video") || modality.includes("->video")) return videoApplications;
     if (output.has("image") || modelType.includes("image") || modality.includes("->image")) return imageApplications;
+    if (isMusicModel(model)) return musicApplications;
     if (isAudioGenerationModel) return audioApplications;
     if (isRetrievalModel(model)) return retrievalApplications;
     if (isSafetyModel(model)) return safetyApplications;
