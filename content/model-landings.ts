@@ -1,4 +1,5 @@
 import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
+import { displayBestFor } from "@/lib/model-best-for";
 import { formatPublicModelPricePer1M, publicModelPrice } from "@/lib/model-pricing";
 
 export interface ModelLanding {
@@ -1356,39 +1357,10 @@ function defaultModality(model: ModelEntry) {
 }
 
 function bestFitPhrase(model: ModelEntry) {
-    const topTags = bestForForLanding(model).slice(0, 2);
+    const topTags = displayBestFor(model).slice(0, 2);
     if (topTags.length === 0) return "enterprise assistant operations";
     if (topTags.length === 1) return topTags[0].toLowerCase();
     return `${topTags[0].toLowerCase()} and ${topTags[1].toLowerCase()}`;
-}
-
-function bestForForLanding(model: ModelEntry) {
-    const output = new Set(model.outputModalities ?? []);
-    const input = new Set(model.inputModalities ?? []);
-    const isTextOutputModel = output.has("text")
-        && !output.has("image")
-        && !output.has("video")
-        && !output.has("audio")
-        && !output.has("speech")
-        && !output.has("transcription");
-    const hasMultimodalInput = input.has("image") || input.has("video") || input.has("audio") || input.has("file");
-
-    if (!isTextOutputModel || !hasMultimodalInput) return model.bestFor;
-
-    const text = [
-        model.name,
-        model.summary,
-        model.description,
-        ...(model.supportedParameters ?? []),
-    ].filter(Boolean).join(" ").toLowerCase();
-    const normalized = model.bestFor.map((entry) =>
-        /^(image|video|audio) workflows$/i.test(entry) ? "Multimodal analysis" : entry
-    );
-    if (text.includes("code") || text.includes("coding") || text.includes("software")) normalized.push("Code generation");
-    if (text.includes("agent") || text.includes("tool")) normalized.push("Agent workflows");
-    if (text.includes("reason")) normalized.push("Advanced reasoning");
-
-    return Array.from(new Set(normalized));
 }
 
 function articleFor(phrase: string) {
@@ -1492,7 +1464,7 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
     const slug = ensureUniqueSlug(model, usedSlugs);
     const fitPhrase = bestFitPhrase(model);
     const contextArticle = articleFor(context);
-    const landingBestFor = bestForForLanding(model);
+    const landingBestFor = displayBestFor(model);
     const useCases = landingBestFor.slice(0, 4).map((entry) => useCaseFromTag(entry, model.name));
     const bestFitList = landingBestFor.length > 0 ? landingBestFor.join(", ") : "General assistants";
     const topUseCasesText =

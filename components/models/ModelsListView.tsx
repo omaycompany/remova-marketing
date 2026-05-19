@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, CalendarDays, Layers, Search, SlidersHorizontal, X } from "lucide-react";
 import type { ModelEntry } from "@/content/models";
+import { displayBestFor } from "@/lib/model-best-for";
 import { formatPublicModelPrice, publicModelPrice } from "@/lib/model-pricing";
 
 interface ModelsListViewProps {
@@ -77,7 +78,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                 model.id,
                 model.provider,
                 model.summary,
-                model.bestFor.join(" "),
+                displayBestFor(model).join(" "),
             ]
                 .join(" ")
                 .toLowerCase();
@@ -196,69 +197,73 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
             </div>
 
             <div className="space-y-6">
-                {visibleModels.map((model) => (
-                    <article
-                        key={model.id}
-                        className="rounded-3xl border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-7 sm:p-8"
-                    >
-                        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                            <span className="inline-flex items-center rounded-full border border-slate-200 dark:border-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">
-                                {model.provider}
-                            </span>
-                            <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 dark:text-slate-400">
-                                <CalendarDays className="h-3.5 w-3.5" /> {model.releasedAt}
-                            </span>
-                        </div>
+                {visibleModels.map((model) => {
+                    const bestFor = displayBestFor(model);
 
-                        <h2 className="mb-3 text-2xl font-black leading-tight text-slate-900 dark:text-white">{model.name}</h2>
-                        <p className="mb-6 text-base leading-relaxed text-slate-600 dark:text-slate-300">{model.summary}</p>
+                    return (
+                        <article
+                            key={model.id}
+                            className="rounded-3xl border-2 border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] p-7 sm:p-8"
+                        >
+                            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                                <span className="inline-flex items-center rounded-full border border-slate-200 dark:border-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                                    {model.provider}
+                                </span>
+                                <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 dark:text-slate-400">
+                                    <CalendarDays className="h-3.5 w-3.5" /> {model.releasedAt}
+                                </span>
+                            </div>
 
-                        <div className="mb-6 grid gap-3 sm:grid-cols-3">
-                            <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
-                                <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Context</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatContextLabel(model)}</div>
-                            </div>
-                            <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
-                                <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Input / 1M</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatInputPriceLabel(model)}</div>
-                            </div>
-                            <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
-                                <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Output / 1M</div>
-                                <div className="text-base font-black text-slate-900 dark:text-white">{formatOutputPriceLabel(model)}</div>
-                            </div>
-                        </div>
+                            <h2 className="mb-3 text-2xl font-black leading-tight text-slate-900 dark:text-white">{model.name}</h2>
+                            <p className="mb-6 text-base leading-relaxed text-slate-600 dark:text-slate-300">{model.summary}</p>
 
-                        <div className="mb-6">
-                            <div className="mb-2 text-[11px] font-black uppercase tracking-wide text-slate-500">Best For</div>
-                            <ul className="flex flex-wrap gap-2">
-                                {model.bestFor.map((item) => (
-                                    <li
-                                        key={item}
-                                        className="inline-flex items-center gap-1 rounded-full border border-slate-200 dark:border-white/10 px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300"
+                            <div className="mb-6 grid gap-3 sm:grid-cols-3">
+                                <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
+                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Context</div>
+                                    <div className="text-base font-black text-slate-900 dark:text-white">{formatContextLabel(model)}</div>
+                                </div>
+                                <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
+                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Input / 1M</div>
+                                    <div className="text-base font-black text-slate-900 dark:text-white">{formatInputPriceLabel(model)}</div>
+                                </div>
+                                <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
+                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Output / 1M</div>
+                                    <div className="text-base font-black text-slate-900 dark:text-white">{formatOutputPriceLabel(model)}</div>
+                                </div>
+                            </div>
+
+                            <div className="mb-6">
+                                <div className="mb-2 text-[11px] font-black uppercase tracking-wide text-slate-500">Best For</div>
+                                <ul className="flex flex-wrap gap-2">
+                                    {bestFor.map((item) => (
+                                        <li
+                                            key={item}
+                                            className="inline-flex items-center gap-1 rounded-full border border-slate-200 dark:border-white/10 px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300"
+                                        >
+                                            <Layers className="h-3.5 w-3.5 text-slate-400" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="flex flex-wrap items-center justify-between gap-3">
+                                <code className="rounded-md bg-slate-100 dark:bg-white/10 px-2 py-1 text-xs font-bold text-slate-600 dark:text-slate-300">
+                                    {publicModelId(model, landingByModelId[model.id])}
+                                </code>
+
+                                {landingByModelId[model.id] && (
+                                    <Link
+                                        href={`/models/${landingByModelId[model.id]}`}
+                                        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white shadow-[0_16px_35px_-22px_rgba(15,23,42,0.9)] transition-all hover:-translate-y-0.5 hover:bg-slate-700 hover:shadow-[0_20px_45px_-24px_rgba(15,23,42,0.95)] focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 dark:focus:ring-white/30"
                                     >
-                                        <Layers className="h-3.5 w-3.5 text-slate-400" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                            <code className="rounded-md bg-slate-100 dark:bg-white/10 px-2 py-1 text-xs font-bold text-slate-600 dark:text-slate-300">
-                                {publicModelId(model, landingByModelId[model.id])}
-                            </code>
-
-                            {landingByModelId[model.id] && (
-                                <Link
-                                    href={`/models/${landingByModelId[model.id]}`}
-                                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-black text-white shadow-[0_16px_35px_-22px_rgba(15,23,42,0.9)] transition-all hover:-translate-y-0.5 hover:bg-slate-700 hover:shadow-[0_20px_45px_-24px_rgba(15,23,42,0.95)] focus:outline-none focus:ring-4 focus:ring-slate-300 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 dark:focus:ring-white/30"
-                                >
-                                    View model details <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                                </Link>
-                            )}
-                        </div>
-                    </article>
-                ))}
+                                        View model details <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                    </Link>
+                                )}
+                            </div>
+                        </article>
+                    );
+                })}
 
                 {filteredModels.length === 0 && (
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-8 text-center">
