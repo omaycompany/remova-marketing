@@ -1,10 +1,52 @@
 // Auto-generated snapshot from model catalog sources.
-// Generated at 2026-05-19T17:51:06.950Z
-// Source counts: source1=437, source2=197
+// Generated at 2026-05-19T18:14:42.258Z
+// Source counts: source1=438, source2=197
 
 export const generatedModelsLastUpdated = "2026-05-19";
 
 export const generatedModels = [
+    {
+        "id": "google/gemini-3.5-flash",
+        "name": "Google: Gemini 3.5 Flash",
+        "provider": "Google",
+        "releasedAt": "2026-05-19",
+        "contextLength": 1048576,
+        "inputPer1M": 1.5,
+        "outputPer1M": 9,
+        "summary": "Gemini 3.5 Flash is Google's high-efficiency multimodal model, bringing near-Pro level coding and reasoning at Flash-tier cost and speed. It is highly optimized for coding proficiency and parallel agentic execution...",
+        "description": "Gemini 3.5 Flash is Google's high-efficiency multimodal model, bringing near-Pro level coding and reasoning at Flash-tier cost and speed. It is highly optimized for coding proficiency and parallel agentic execution...",
+        "bestFor": [
+            "Video workflows",
+            "Image workflows",
+            "Audio workflows"
+        ],
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
     {
         "id": "x-ai/grok-imagine-image-quality",
         "name": "xAI: Grok Imagine Image Quality",
@@ -1186,8 +1228,8 @@ export const generatedModels = [
         "provider": "~google",
         "releasedAt": "2026-04-27",
         "contextLength": 1048576,
-        "inputPer1M": 0.5,
-        "outputPer1M": 3,
+        "inputPer1M": 1.5,
+        "outputPer1M": 9,
         "summary": "This model always redirects to the latest model in the Google Gemini Flash family.",
         "description": "This model always redirects to the latest model in the Google Gemini Flash family.",
         "bestFor": [
@@ -1199,9 +1241,9 @@ export const generatedModels = [
         "inputModalities": [
             "text",
             "image",
+            "video",
             "file",
-            "audio",
-            "video"
+            "audio"
         ],
         "outputModalities": [
             "text"
@@ -17668,7 +17710,7 @@ export const generatedModels = [
         "name": "Google: Gemini 2.0 Flash",
         "provider": "Google",
         "releasedAt": "2025-02-05",
-        "contextLength": 1000000,
+        "contextLength": 1048576,
         "inputPer1M": 0.09999999999999999,
         "outputPer1M": 0.39999999999999997,
         "summary": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemin…",

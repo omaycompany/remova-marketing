@@ -541,6 +541,7 @@ source_url,target_url,status_code
 "https://www.remova.org/models/gemini-31-pro-preview","https://www.remova.org/models/gemini-3-1-pro-preview","301"
 "https://www.remova.org/models/gemini-31-pro-preview-custom-tools","https://www.remova.org/models/gemini-3-1-pro-preview-custom-tools","301"
 "https://www.remova.org/models/gemini-31-pro-preview-customtools","https://www.remova.org/models/gemini-3-1-pro-preview-custom-tools","301"
+"https://www.remova.org/models/gemini-35-flash","https://www.remova.org/models/google-gemini-35-flash","301"
 "https://www.remova.org/models/gemini-embedding-001","https://www.remova.org/models/google-gemini-embedding-001","301"
 "https://www.remova.org/models/gemini-embedding-2-preview","https://www.remova.org/models/google-gemini-embedding-2-preview","301"
 "https://www.remova.org/models/gemini-flash-latest","https://www.remova.org/models/google-gemini-flash-latest","301"
