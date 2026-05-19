@@ -2,10 +2,14 @@ import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
 import {
     displayBestFor,
     isCreativeModel,
+    isMediaUtilityModel,
     isMusicModel,
     isRetrievalModel,
     isSafetyModel,
+    isSearchModel,
+    isTrainingModel,
     isTranscriptionModel,
+    isVoiceAgentModel,
 } from "@/lib/model-best-for";
 import { formatPublicModelPricePer1M, publicModelPrice } from "@/lib/model-pricing";
 
@@ -1420,23 +1424,31 @@ function tradeoffsForModel(model: ModelEntry, context: string, pricing: string, 
 
     const modalityTradeoff = isSafetyModel(model)
         ? "Safety classifiers need threshold testing, escalation handling, and audit review before enforcement."
+        : isSearchModel(model)
+            ? "Search-grounded models need citation checks, source freshness review, and hallucination monitoring."
         : isRetrievalModel(model)
             ? "Embedding and retrieval systems need benchmark sets to catch ranking drift and stale indexes."
-            : isCreativeModel(model)
-                ? "Creative-writing models need brand, safety, and audience review before production use."
-                : isMusicModel(model)
-                    ? "Music generation workflows need rights, brand, and usage review before production release."
-                    : isTranscriptionModel(model)
-                        ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
-                        : modality.includes("->speech") || modality.includes("->audio")
-                        ? "Audio generation workflows need approval gates for voice, language, and brand use."
-                        : modality.includes("->video")
-                            ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
-                            : modality.includes("->image")
-                                ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
-                                : modality.includes("+")
-                                    ? "Multimodal pipelines require strict input handling and validation policies for reliability."
-                                    : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
+        : isCreativeModel(model)
+            ? "Creative-writing models need brand, safety, and audience review before production use."
+            : isMusicModel(model)
+                ? "Music generation workflows need rights, brand, and usage review before production release."
+                : isTrainingModel(model)
+                        ? "Model training workflows need dataset consent, version control, and output review before reuse."
+                        : isMediaUtilityModel(model)
+                            ? "Media utility workflows need asset rights, export checks, and approval gates before publication."
+                            : isVoiceAgentModel(model)
+                                ? "Voice-agent workflows need consent, retention, escalation, and transcript governance controls."
+                                : isTranscriptionModel(model)
+                                    ? "Speech-to-text workflows need retention, redaction, and access policies for transcript data."
+                                    : modality.includes("->speech") || modality.includes("->audio")
+                                    ? "Audio generation workflows need approval gates for voice, language, and brand use."
+                                    : modality.includes("->video")
+                                        ? "Video generation workflows need review steps for brand, rights, and factual accuracy."
+                                        : modality.includes("->image")
+                                            ? "Image generation workflows need review steps for brand, rights, and visual accuracy."
+                                            : modality.includes("+")
+                                                ? "Multimodal pipelines require strict input handling and validation policies for reliability."
+                                                : "Text-only modality can limit workflows that rely on image, audio, or document interpretation.";
 
     const hash = numericHash(`${model.id}-${autoIndex}`);
     const selectedCommon = rotatePick(commonTradeoffs, hash % commonTradeoffs.length, 2);
@@ -1457,6 +1469,18 @@ function useCaseFromTag(tag: string, model: ModelEntry) {
     if (value.includes("music generation")) return `${model.name} for music drafts, soundtrack ideas, and campaign audio concepts.`;
     if (value.includes("audio production")) return `${model.name} for governed music and audio production with review checkpoints.`;
     if (value.includes("campaign soundtrack")) return `${model.name} for campaign soundtracks with rights, brand, and usage review.`;
+    if (value.includes("web research")) return `${model.name} for current web research with citations, source review, and policy controls.`;
+    if (value.includes("search-grounded")) return `${model.name} for search-grounded answers that need source freshness and audit trails.`;
+    if (value.includes("source-backed")) return `${model.name} for sourced briefs, claim checks, and evidence-backed research workflows.`;
+    if (value.includes("model training")) return `${model.name} for training governed model variants from approved datasets.`;
+    if (value.includes("dataset workflows")) return `${model.name} for preparing, reviewing, and controlling training datasets.`;
+    if (value.includes("style adaptation")) return `${model.name} for style, subject, or brand adaptation with versioned approvals.`;
+    if (value.includes("video editing")) return `${model.name} for editing and enhancing existing video assets under review controls.`;
+    if (value.includes("media composition")) return `${model.name} for composing media timelines from approved source assets.`;
+    if (value.includes("asset enhancement")) return `${model.name} for upscaling, standardizing, and quality-checking media assets.`;
+    if (value.includes("voice agents")) return `${model.name} for governed spoken assistants across support, sales, and internal workflows.`;
+    if (value.includes("audio conversation")) return `${model.name} for audio conversations with consent, retention, and escalation controls.`;
+    if (value.includes("speech generation")) return `${model.name} for spoken responses with brand, policy, and review safeguards.`;
     if (value.includes("safety")) return `${model.name} for content safety classification across prompts, responses, and user submissions.`;
     if (value.includes("policy")) return `${model.name} for policy guardrails that route unsafe or uncertain outputs into review.`;
     if (value.includes("moderation")) return `${model.name} for moderation queues with auditable labels and escalation handling.`;
@@ -1499,6 +1523,10 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
     const isSafety = isSafetyModel(model);
     const isCreative = isCreativeModel(model);
     const isMusic = isMusicModel(model);
+    const isSearch = isSearchModel(model);
+    const isTraining = isTrainingModel(model);
+    const isMediaUtility = isMediaUtilityModel(model);
+    const isVoiceAgent = isVoiceAgentModel(model);
     const fallbackSets = {
         transcription: [
             `${model.name} for governed speech-to-text pipelines across meetings, calls, and recordings.`,
@@ -1530,6 +1558,30 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
             `${model.name} for campaign soundtracks with rights, brand, and usage review.`,
             `${model.name} for audio concepts that need budget, approval, and audit controls.`,
         ],
+        search: [
+            `${model.name} for current web research with citations, source review, and policy controls.`,
+            `${model.name} for search-grounded answers that need source freshness and audit trails.`,
+            `${model.name} for sourced briefs, claim checks, and evidence-backed research workflows.`,
+            `${model.name} for monitoring market, competitor, policy, and customer signals.`,
+        ],
+        training: [
+            `${model.name} for training governed model variants from approved datasets.`,
+            `${model.name} for preparing, reviewing, and controlling training datasets.`,
+            `${model.name} for style, subject, or brand adaptation with versioned approvals.`,
+            `${model.name} for validating trained outputs before production reuse.`,
+        ],
+        mediaUtility: [
+            `${model.name} for editing and enhancing existing video assets under review controls.`,
+            `${model.name} for composing media timelines from approved source assets.`,
+            `${model.name} for upscaling, standardizing, and quality-checking media assets.`,
+            `${model.name} for governed media operations with export, rights, and budget controls.`,
+        ],
+        voiceAgent: [
+            `${model.name} for governed spoken assistants across support, sales, and internal workflows.`,
+            `${model.name} for audio conversations with consent, retention, and escalation controls.`,
+            `${model.name} for spoken responses with brand, policy, and review safeguards.`,
+            `${model.name} for prototyping voice UX with auditability and access controls.`,
+        ],
         audio: [
             `${model.name} for approved narration, voiceover, and localized audio production workflows.`,
             `${model.name} for governed speech assets with review, access, and audit controls.`,
@@ -1554,10 +1606,14 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
     };
 
     if (isTranscription) return fallbackSets.transcription[index % fallbackSets.transcription.length];
+    if (isSearch) return fallbackSets.search[index % fallbackSets.search.length];
     if (isRetrieval) return fallbackSets.retrieval[index % fallbackSets.retrieval.length];
     if (isSafety) return fallbackSets.safety[index % fallbackSets.safety.length];
     if (isCreative) return fallbackSets.creative[index % fallbackSets.creative.length];
     if (isMusic) return fallbackSets.music[index % fallbackSets.music.length];
+    if (isTraining) return fallbackSets.training[index % fallbackSets.training.length];
+    if (isMediaUtility) return fallbackSets.mediaUtility[index % fallbackSets.mediaUtility.length];
+    if (isVoiceAgent) return fallbackSets.voiceAgent[index % fallbackSets.voiceAgent.length];
     if (output.has("speech") || output.has("audio") || modality.includes("->speech") || modality.includes("->audio")) {
         return fallbackSets.audio[index % fallbackSets.audio.length];
     }

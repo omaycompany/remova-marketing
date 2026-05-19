@@ -109,6 +109,7 @@ function bestForFromModalities(inputModalities = [], outputModalities = [], supp
     const tags = [];
     const hasInput = (modality) => inputModalities.includes(modality);
     const hasOutput = (modality) => outputModalities.includes(modality);
+    const hasCodingSignal = /\b(code|coding|software|developer|programming)\b/.test(text);
     const isMusic = hasOutput("audio") && (
         descriptionText.includes("music")
         || descriptionText.includes("song")
@@ -116,8 +117,35 @@ function bestForFromModalities(inputModalities = [], outputModalities = [], supp
         || descriptionText.includes("lyria")
         || descriptionText.includes("compose")
     );
+    const isSearch = hasOutput("text") && (
+        descriptionText.includes("web search")
+        || descriptionText.includes("search preview")
+        || descriptionText.includes("search queries")
+        || descriptionText.includes("perplexity")
+        || descriptionText.includes("sonar")
+    );
+    const isTraining = hasInput("dataset")
+        || hasOutput("model")
+        || descriptionText.includes("training")
+        || descriptionText.includes("model training")
+        || descriptionText.includes("fine-tuning")
+        || descriptionText.includes("fine tuning")
+        || descriptionText.includes("train lora")
+        || descriptionText.includes("train ");
+    const isMediaUtility = hasOutput("media")
+        || descriptionText.includes("video-to-video")
+        || descriptionText.includes("ffmpeg")
+        || descriptionText.includes("upscale")
+        || descriptionText.includes("compose videos")
+        || descriptionText.includes("media sources");
 
-    if (hasOutput("video")) {
+    if (isSearch) {
+        tags.push("Web research", "Search-grounded answers", "Source-backed analysis");
+    } else if (isTraining) {
+        tags.push("Model training", "Dataset workflows", "Style adaptation");
+    } else if (isMediaUtility) {
+        tags.push("Video editing", "Media composition", "Asset enhancement");
+    } else if (hasOutput("video")) {
         tags.push("Video generation");
         if (hasInput("image") || descriptionText.includes("image-to-video") || descriptionText.includes("reference-to-video")) tags.push("Image-to-video");
         if (
@@ -140,7 +168,7 @@ function bestForFromModalities(inputModalities = [], outputModalities = [], supp
     }
     if (text.includes("tool")) tags.push("Agent workflows");
     if (text.includes("reason")) tags.push("Advanced reasoning");
-    if (text.includes("code")) tags.push("Code generation");
+    if (hasCodingSignal) tags.push("Code generation");
     if (tags.length === 0) tags.push("General chat", "Enterprise assistants");
 
     return Array.from(new Set(tags)).slice(0, 3);

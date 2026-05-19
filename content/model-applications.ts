@@ -1,10 +1,15 @@
 import type { ModelEntry } from "@/content/models";
 import {
+    hasCodingSignal,
     isCreativeModel,
+    isMediaUtilityModel,
     isMusicModel,
     isRetrievalModel,
     isSafetyModel,
+    isSearchModel,
+    isTrainingModel,
     isTranscriptionModel,
+    isVoiceAgentModel,
     modelText,
 } from "@/lib/model-best-for";
 
@@ -145,6 +150,15 @@ const musicApplications: ModelApplication[] = [
     { title: "Govern music generation", description: "Keep song generation behind budget controls, audit logs, and brand review workflows.", icon: "chart", color: colors.amber },
 ];
 
+const voiceAgentApplications: ModelApplication[] = [
+    { title: "Build voice agents", description: "Create governed spoken assistants for support, onboarding, sales, and internal workflows.", icon: "audio", color: colors.blue },
+    { title: "Handle spoken requests", description: "Interpret audio input, preserve conversation context, and route requests into approved systems.", icon: "flow", color: colors.violet },
+    { title: "Generate voice responses", description: "Return natural spoken answers with policy checks, review paths, and brand controls.", icon: "audio", color: colors.teal },
+    { title: "Prototype voice UX", description: "Test voice tone, turn-taking, escalation points, and multimodal assistant behavior.", icon: "spark", color: colors.cyan },
+    { title: "Localize voice interactions", description: "Adapt spoken assistant behavior for regions, languages, and accessibility needs.", icon: "layers", color: colors.emerald },
+    { title: "Govern audio conversations", description: "Apply retention, consent, audit, and access controls to spoken interaction data.", icon: "shield", color: colors.red },
+];
+
 const transcriptionApplications: ModelApplication[] = [
     { title: "Transcribe meetings", description: "Convert calls, interviews, and recordings into searchable text for governed team workflows.", icon: "audio", color: colors.blue },
     { title: "Create call summaries", description: "Turn transcripts into action items, decisions, risks, and customer follow-up drafts.", icon: "doc", color: colors.violet },
@@ -181,6 +195,33 @@ const creativeApplications: ModelApplication[] = [
     { title: "Evaluate chatbot personas", description: "Test persona behavior, dialogue consistency, scenario handling, and roleplay boundaries.", icon: "flow", color: colors.emerald },
 ];
 
+const searchApplications: ModelApplication[] = [
+    { title: "Research live topics", description: "Answer current questions with search-grounded context, citations, and review checkpoints.", icon: "search", color: colors.blue },
+    { title: "Monitor market signals", description: "Track competitor, customer, policy, and industry changes with governed research workflows.", icon: "chart", color: colors.emerald },
+    { title: "Prepare sourced briefs", description: "Create sourced summaries for executives, analysts, sales teams, and compliance reviews.", icon: "doc", color: colors.violet },
+    { title: "Verify claims", description: "Check factual claims against current sources before content, support, or sales teams publish.", icon: "shield", color: colors.red },
+    { title: "Compare vendors", description: "Gather current product, pricing, positioning, and risk signals for procurement workflows.", icon: "layers", color: colors.amber },
+    { title: "Govern web research", description: "Keep source-backed answers behind citation, retention, and approval controls.", icon: "flow", color: colors.cyan },
+];
+
+const trainingApplications: ModelApplication[] = [
+    { title: "Train LoRA adapters", description: "Create style, product, person, or subject adapters from approved training datasets.", icon: "layers", color: colors.violet },
+    { title: "Prepare training data", description: "Package images, captions, examples, and labels for repeatable model-training runs.", icon: "doc", color: colors.blue },
+    { title: "Validate training outputs", description: "Review sample generations, quality drift, and unsafe memorization before production use.", icon: "search", color: colors.amber },
+    { title: "Govern dataset access", description: "Restrict sensitive training data with access controls, retention rules, and audit logs.", icon: "shield", color: colors.red },
+    { title: "Manage model variants", description: "Track trained adapters, versions, prompts, and approval status across creative workflows.", icon: "flow", color: colors.emerald },
+    { title: "Estimate training cost", description: "Compare dataset size, run count, and model usage before scaling training jobs.", icon: "chart", color: colors.cyan },
+];
+
+const mediaUtilityApplications: ModelApplication[] = [
+    { title: "Compose media timelines", description: "Assemble source clips, images, audio, and overlays into governed video deliverables.", icon: "video", color: colors.blue },
+    { title: "Enhance video assets", description: "Upscale, clean, and prepare existing footage for campaign, training, and product workflows.", icon: "spark", color: colors.violet },
+    { title: "Standardize media exports", description: "Create repeatable output formats, resolutions, and review-ready versions for teams.", icon: "flow", color: colors.teal },
+    { title: "Localize video versions", description: "Adapt existing assets for markets, languages, aspect ratios, and approval paths.", icon: "layers", color: colors.emerald },
+    { title: "Review media quality", description: "Check visual quality, brand fit, rights, and factual accuracy before publication.", icon: "search", color: colors.amber },
+    { title: "Govern media operations", description: "Keep media processing behind budget, role access, approval, and audit controls.", icon: "shield", color: colors.red },
+];
+
 function applicationsByModality(model: ModelEntry) {
     const output = new Set(model.outputModalities ?? []);
     const text = modelText(model);
@@ -200,6 +241,10 @@ function applicationsByModality(model: ModelEntry) {
         || text.includes("tts");
 
     if (isTranscriptionModel(model)) return transcriptionApplications;
+    if (isSearchModel(model)) return searchApplications;
+    if (isTrainingModel(model)) return trainingApplications;
+    if (isMediaUtilityModel(model)) return mediaUtilityApplications;
+    if (isVoiceAgentModel(model)) return voiceAgentApplications;
     if (output.has("video") || modelType.includes("video") || modality.includes("->video")) return videoApplications;
     if (output.has("image") || modelType.includes("image") || modality.includes("->image")) return imageApplications;
     if (isMusicModel(model)) return musicApplications;
@@ -215,7 +260,7 @@ function priorityTextApplications(model: ModelEntry) {
     const bestFor = modelText(model);
     const applications = [...textApplications];
 
-    if (bestFor.includes("code") || bestFor.includes("coding") || bestFor.includes("software")) {
+    if (hasCodingSignal(model)) {
         return moveToFront(applications, ["Code and debug", "Build workflow automations", "Improve security reviews"]);
     }
 
