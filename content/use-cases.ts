@@ -1,3 +1,5 @@
+import { videoAssetUrl } from "../lib/video-assets";
+
 export interface UseCase {
     slug: string;
     category: "industry" | "role" | "function";
@@ -48,8 +50,8 @@ export const useCases: UseCase[] = [
         video: {
             title: "Example: Drafting a Clear Email with AI",
             description: "A short walkthrough showing how an employee can use Remova to turn rough notes into a polished email draft, review the result, and keep the workflow inside an approved company AI workspace.",
-            contentUrl: "/videos/use-cases/writing-better-emails.mp4",
-            thumbnailUrl: "/videos/use-cases/writing-better-emails-poster.png",
+            contentUrl: videoAssetUrl("/videos/use-cases/writing-better-emails.mp4"),
+            thumbnailUrl: videoAssetUrl("/videos/use-cases/writing-better-emails-poster.png"),
             duration: "PT30S",
             uploadDate: "2026-04-30",
             transcript: "An employee opens Remova, chooses an approved AI workspace, and pastes rough notes for a follow-up email. The assistant rewrites the notes into a clear message with a subject line, concise body, and next step. The employee reviews the draft, adjusts the tone, and copies the approved version into their email client."
@@ -106,8 +108,8 @@ export const useCases: UseCase[] = [
         video: {
             title: "Example: Reviewing an Excel File with AI",
             description: "A short walkthrough showing how AI can check spreadsheet data, explain formulas, summarize trends, and produce plain-English insights for human review.",
-            contentUrl: "/videos/use-cases/checking-understanding-excel-files.mp4",
-            thumbnailUrl: "/videos/use-cases/checking-understanding-excel-files-poster.png",
+            contentUrl: videoAssetUrl("/videos/use-cases/checking-understanding-excel-files.mp4"),
+            thumbnailUrl: videoAssetUrl("/videos/use-cases/checking-understanding-excel-files-poster.png"),
             duration: "PT30S",
             uploadDate: "2026-04-30",
             transcript: "An employee uploads a spreadsheet into Remova and asks AI to find errors, explain formulas, summarize trends, and clean inconsistent data. The assistant flags duplicate customers, blank values, unusual numbers, formula risks, and business insights. The employee reviews the findings before updating or sharing the spreadsheet."
@@ -164,8 +166,8 @@ export const useCases: UseCase[] = [
         video: {
             title: "Example: Summarizing and Comparing Documents with AI",
             description: "A short walkthrough showing how AI can summarize documents, extract action items, compare two files, and turn long material into a briefing.",
-            contentUrl: "/videos/use-cases/analyzing-documents-quickly.mp4",
-            thumbnailUrl: "/videos/use-cases/analyzing-documents-quickly-poster.png",
+            contentUrl: videoAssetUrl("/videos/use-cases/analyzing-documents-quickly.mp4"),
+            thumbnailUrl: videoAssetUrl("/videos/use-cases/analyzing-documents-quickly-poster.png"),
             duration: "PT30S",
             uploadDate: "2026-04-30",
             transcript: "An employee uploads a report or contract into Remova and asks AI to summarize the file, extract action items, compare it with another version, and create a leadership briefing. The assistant identifies key points, owners, deadlines, changes, missing sections, and next steps for review."
@@ -222,8 +224,8 @@ export const useCases: UseCase[] = [
         video: {
             title: "Example: Turning Notes into Reports and Presentations",
             description: "A short walkthrough showing how AI can structure rough notes into reports, executive summaries, PDF-ready sections, and slide outlines.",
-            contentUrl: "/videos/use-cases/preparing-reports-pdfs-presentations.mp4",
-            thumbnailUrl: "/videos/use-cases/preparing-reports-pdfs-presentations-poster.png",
+            contentUrl: videoAssetUrl("/videos/use-cases/preparing-reports-pdfs-presentations.mp4"),
+            thumbnailUrl: videoAssetUrl("/videos/use-cases/preparing-reports-pdfs-presentations-poster.png"),
             duration: "PT30S",
             uploadDate: "2026-04-30",
             transcript: "An employee pastes project notes into Remova and asks AI to create a structured report, executive summary, slide outline, and client-ready rewrite. The assistant organizes rough material into headings, key messages, recommendations, and final draft sections for human review."
@@ -280,8 +282,8 @@ export const useCases: UseCase[] = [
         video: {
             title: "Example: Organizing Daily Admin Work with AI",
             description: "A short walkthrough showing how AI can turn messy notes into task lists, meeting agendas, call summaries, checklists, SOPs, and next steps.",
-            contentUrl: "/videos/use-cases/daily-admin-productivity-tasks.mp4",
-            thumbnailUrl: "/videos/use-cases/daily-admin-productivity-tasks-poster.png",
+            contentUrl: videoAssetUrl("/videos/use-cases/daily-admin-productivity-tasks.mp4"),
+            thumbnailUrl: videoAssetUrl("/videos/use-cases/daily-admin-productivity-tasks-poster.png"),
             duration: "PT30S",
             uploadDate: "2026-04-30",
             transcript: "An employee pastes messy notes or a meeting transcript into Remova and asks AI to organize the work. The assistant creates a task list, agenda, call summary, checklist, SOP structure, timeline, and next-step plan. The employee reviews owners, deadlines, decisions, and open questions before sharing."

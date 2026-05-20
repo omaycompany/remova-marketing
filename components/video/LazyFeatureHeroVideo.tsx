@@ -3,7 +3,12 @@
 import { Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-export default function LazyFeatureHeroVideo() {
+interface LazyFeatureHeroVideoProps {
+    contentUrl: string;
+    posterUrl: string;
+}
+
+export default function LazyFeatureHeroVideo({ contentUrl, posterUrl }: LazyFeatureHeroVideoProps) {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
@@ -50,10 +55,10 @@ export default function LazyFeatureHeroVideo() {
                     loop
                     playsInline
                     preload="none"
-                    poster="/videos/features-page-hero-poster.png"
+                    poster={posterUrl}
                     aria-label="Remova native chat workflow showing governed AI workspaces, policy checks, analytics, model routing, and zero data retention"
                 >
-                    <source src="/videos/features-page-hero.mp4" type="video/mp4" />
+                    <source src={contentUrl} type="video/mp4" />
                 </video>
             </div>
             {!isPlaying ? (

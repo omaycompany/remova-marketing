@@ -8,15 +8,15 @@ Model pages use `LazyModelVideo`, which renders a real `<video>` element and MP4
 
 ## Asset rules
 
-Video assets live at:
+Video assets are generated locally under:
 
 - `public/videos/models/{slug}.mp4`
 - `public/videos/models/{slug}.png`
 - `public/videos/models/{slug}.vtt`
 
-`content/model-videos.ts` only exposes video metadata when all three files exist locally, or when `R2_PUBLIC_BASE_URL` is configured and the slug is listed in `content/model-video-manifest.generated.ts`. This prevents broken embeds and keeps video SEO entries limited to pages with complete assets.
+The site serves published video assets from the public R2/CDN base URL, defaulting to `https://assets.remova.org`. `content/model-videos.ts` only exposes model video metadata when the slug is listed in `content/model-video-manifest.generated.ts`. This prevents broken embeds and keeps video SEO entries limited to pages with uploaded assets.
 
-Generated model video binaries are intentionally ignored by git. Keep large MP4/poster/caption files in object storage and commit only the generated manifest plus code changes.
+Generated video binaries are intentionally ignored by git. Keep large MP4/poster/caption files in object storage and commit only manifests, metadata, and code changes. After uploading to R2, local `public/videos` files can be deleted safely because production pages reference the CDN URLs.
 
 ## Rendering
 

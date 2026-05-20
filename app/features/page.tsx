@@ -133,7 +133,10 @@ export default function FeaturesIndex() {
                         Frontier AI models for every department. Sensitive data gets masked. Costs are tracked per team.
                         Safety rules apply to every interaction. All of it runs behind your own governance layer.
                     </p>
-                    <LazyFeatureHeroVideo />
+                    <LazyFeatureHeroVideo
+                        contentUrl={featureHeroVideo.contentUrl}
+                        posterUrl={featureHeroVideo.thumbnailUrl}
+                    />
                 </div>
             </section>
 

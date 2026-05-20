@@ -1,9 +1,8 @@
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { applicationsForModel } from "@/content/model-applications";
 import { modelLandings } from "@/content/model-landings";
 import { modelVideoSlugs } from "@/content/model-video-manifest.generated";
 import { models } from "@/content/models";
+import { videoAssetUrl } from "@/lib/video-assets";
 
 export interface ModelVideo {
     slug: string;
@@ -23,44 +22,12 @@ const durationSeconds = 36;
 const uploadDate = "2026-04-28";
 const uploadedModelVideoSlugs = new Set<string>(modelVideoSlugs);
 
-function normalizePublicVideoBaseUrl(value: string | undefined) {
-    const normalized = value?.trim().replace(/\/+$/, "");
-    if (!normalized) return undefined;
-
-    let url: URL;
-    try {
-        url = new URL(normalized);
-    } catch {
-        throw new Error(`R2_PUBLIC_BASE_URL must be a full public URL, received "${value}".`);
-    }
-
-    if (!["http:", "https:"].includes(url.protocol)) {
-        throw new Error("R2_PUBLIC_BASE_URL must use http or https.");
-    }
-
-    if (url.hostname === "remova.org" || url.hostname === "www.remova.org") {
-        throw new Error("R2_PUBLIC_BASE_URL must point to the R2 asset hostname, not remova.org or www.remova.org.");
-    }
-
-    return normalized;
-}
-
-const publicVideoBaseUrl = normalizePublicVideoBaseUrl(process.env.R2_PUBLIC_BASE_URL);
-
-function publicAssetExists(pathname: string) {
-    return existsSync(join(process.cwd(), "public", pathname.replace(/^\//, "")));
-}
-
 function assetSetExists(slug: string) {
-    if (publicVideoBaseUrl) return uploadedModelVideoSlugs.has(slug);
-    return publicAssetExists(`/videos/models/${slug}.mp4`)
-        && publicAssetExists(`/videos/models/${slug}.png`)
-        && publicAssetExists(`/videos/models/${slug}.vtt`);
+    return uploadedModelVideoSlugs.has(slug);
 }
 
 function modelVideoAssetUrl(slug: string, extension: "mp4" | "png" | "vtt") {
-    const pathname = `/videos/models/${slug}.${extension}`;
-    return publicVideoBaseUrl ? `${publicVideoBaseUrl}${pathname}` : pathname;
+    return videoAssetUrl(`/videos/models/${slug}.${extension}`);
 }
 
 export function buildModelVideo(slug: string): ModelVideo | null {

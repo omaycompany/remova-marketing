@@ -17,9 +17,7 @@
 /remotion-output/
 /.remotion/
 /remotion/.cache/
-/public/videos/models/*.mp4
-/public/videos/models/*.png
-/public/videos/models/*.vtt
+/public/videos/
 
 # youtube upload automation
 /youtube-oauth-client.json

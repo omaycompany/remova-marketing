@@ -1,3 +1,5 @@
+import { videoAssetUrl } from "./video-assets";
+
 export interface IndexedVideoEntry {
     pagePath: string;
     title: string;
@@ -30,8 +32,8 @@ export const featureHeroVideo: IndexedVideoEntry = {
     title: "Remova Features Overview",
     description:
         "A 30-second overview of Remova's governed AI workspace, showing model access, policy checks, analytics, routing, and zero data retention controls for enterprise teams.",
-    contentUrl: "/videos/features-page-hero.mp4",
-    thumbnailUrl: "/videos/features-page-hero-poster.png",
+    contentUrl: videoAssetUrl("/videos/features-page-hero.mp4"),
+    thumbnailUrl: videoAssetUrl("/videos/features-page-hero-poster.png"),
     duration: "PT30S",
     durationSeconds: 30,
     uploadDate: "2026-04-30",

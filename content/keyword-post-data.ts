@@ -132,7 +132,7 @@ export const keywordPostData: KeywordPostData[] = [
         metaDescription: "A practical AI governance guide for enterprises that need policies, access controls, audit trails, redaction, budgets, and operating evidence.",
         category: "Governance",
         volume: 14800,
-        cpc: "$3.51-$28.77",
+        cpc: "$3.11-$28.35",
         competition: "Medium",
         angle: "Enterprise AI governance guide",
         reader: "CIOs, CISOs, compliance leaders, AI Center of Excellence teams, and operations owners",
@@ -140,7 +140,7 @@ export const keywordPostData: KeywordPostData[] = [
         riskEvent: "employees adopt AI faster than security, legal, and finance can see what data is sent, which models are used, and who owns the risk",
         controlGoal: "make AI adoption visible, enforceable, measurable, and useful without blocking productive work",
         primaryControl: "enterprise AI control layer",
-        sourceLinks: [commonSources.nist, commonSources.iso42001, commonSources.euAiAct],
+        sourceLinks: [commonSources.nist, commonSources.iso42001, commonSources.euAiAct, commonSources.openAiData, commonSources.microsoftCopilotEdp],
         internalLinks: [commonInternal.safeChat, commonInternal.policy, commonInternal.redaction, commonInternal.budgets],
         checklist: [
             "Inventory approved and unapproved AI usage across teams.",
@@ -167,8 +167,8 @@ export const keywordPostData: KeywordPostData[] = [
         title: "Shadow AI Risks and Controls: A Practical Guide",
         metaDescription: "Shadow AI is already inside most companies. Learn how to detect, reduce, and govern unapproved AI use without killing productivity.",
         category: "Security",
-        volume: 9900,
-        cpc: "$2.89-$35.40",
+        volume: 12100,
+        cpc: "$3.78-$33.35",
         competition: "Low",
         angle: "Shadow AI risks and controls",
         reader: "security leaders, IT teams, AI governance owners, and department heads",
@@ -176,7 +176,13 @@ export const keywordPostData: KeywordPostData[] = [
         riskEvent: "a user pastes customer data, source code, contract terms, or unreleased financial information into a personal AI tool outside company controls",
         controlGoal: "replace unapproved usage with a sanctioned AI workspace that is easier to use than the risky workaround",
         primaryControl: "sanctioned AI workspace with inline policy",
-        sourceLinks: [commonSources.nist, commonSources.openAiData],
+        sourceLinks: [
+            commonSources.nist,
+            commonSources.openAiData,
+            commonSources.microsoftCopilotEdp,
+            { label: "IBM shadow AI overview", href: "https://www.ibm.com/think/topics/shadow-ai" },
+            { label: "Gartner shadow AI data security governance", href: "https://www.gartner.com/en/documents/7526685" }
+        ],
         internalLinks: [commonInternal.safeChat, commonInternal.redaction, commonInternal.policy, commonInternal.analytics],
         checklist: [
             "Discover AI domains, browser extensions, SaaS tools, and API usage patterns.",
@@ -595,38 +601,38 @@ export const keywordPostData: KeywordPostData[] = [
     },
     {
         slug: "ai-security-tools-for-cisos",
-        keyword: "ai security tools",
-        title: "AI Security Tools for CISOs: What Actually Matters",
-        metaDescription: "Compare AI security tools by the controls CISOs need: AI DLP, prompt injection defense, model access, agent permissions, logging, and response.",
+        keyword: "ai security",
+        title: "AI Security: A Practical Enterprise Guide",
+        metaDescription: "A practical AI security guide covering data leakage, prompt injection, model routes, agent permissions, audit evidence, and Remova controls.",
         category: "Security",
-        volume: 1000,
-        cpc: "$2.16-$32.79",
-        competition: "Low",
-        angle: "AI security tools for CISOs",
+        volume: 12100,
+        cpc: "$1.96-$34.71",
+        competition: "Medium",
+        angle: "Enterprise AI security controls",
         reader: "CISOs, security architects, SOC leaders, and security operations teams",
-        coreProblem: "AI security tools should reduce real exposure, not just add another dashboard. CISOs need prevention, detection, response, and evidence across employee AI and AI applications.",
-        riskEvent: "a team deploys AI tools that expose sensitive data, execute unsafe actions, or create unreviewed audit logs outside security operations",
-        controlGoal: "choose AI security tools that enforce policy and integrate with security workflows",
-        primaryControl: "AI security tool evaluation",
-        sourceLinks: [commonSources.owaspLlm, commonSources.owaspMcp, commonSources.nist],
+        coreProblem: "AI security has to protect prompts, files, model routes, retrieved context, tool calls, agents, outputs, and audit evidence across employee AI and AI applications.",
+        riskEvent: "a user, workflow, or agent sends sensitive data to an unapproved model, follows hostile instructions, or calls a tool outside its intended permission boundary",
+        controlGoal: "protect the model path before data, prompts, tools, or outputs create security exposure",
+        primaryControl: "runtime AI security control layer",
+        sourceLinks: [commonSources.owaspLlm, commonSources.owaspMcp, commonSources.nistCyber, commonSources.nist, commonSources.openAiData, commonSources.microsoftCopilotDataProtection],
         internalLinks: [commonInternal.ciso, commonInternal.redaction, commonInternal.policy, commonInternal.audit],
         checklist: [
-            "Require coverage for human chat, AI apps, APIs, files, and agents.",
-            "Evaluate prevention controls before observability claims.",
-            "Check how alerts route to SOC, SIEM, or incident workflows.",
-            "Test sensitive data, prompt injection, and tool misuse scenarios.",
-            "Confirm least-privilege model and tool access."
+            "Map human chat, file uploads, model APIs, RAG context, copilots, MCP servers, and agents.",
+            "Inspect prompts, files, retrieved context, API payloads, and tool outputs before model use.",
+            "Apply allow, warn, redact, block, or reroute decisions by data class, role, workflow, and model route.",
+            "Restrict agent and tool permissions with least privilege and human approval for sensitive actions.",
+            "Keep audit evidence for policy events, redactions, tool calls, exceptions, incidents, and model route decisions."
         ],
         metrics: [
-            "High-risk AI events detected and blocked",
-            "AI incidents routed to security workflow",
-            "Coverage across sanctioned AI surfaces",
-            "Policy violations repeated by user or team"
+            "Sensitive data redacted or blocked before model use",
+            "Prompt injection and untrusted-context detections by workflow",
+            "Denied agent or tool calls by risk level",
+            "AI incidents routed to security workflow with complete evidence"
         ],
         pitfalls: [
-            "Buying AI security tools that only scan prompts after the fact",
-            "Overlooking employee AI because app security owns production systems",
-            "Creating alert noise without clear response ownership"
+            "Treating system prompts or vendor settings as the whole security boundary",
+            "Protecting production AI apps while leaving employee AI chat and file uploads unmanaged",
+            "Buying dashboards that observe exposure after the model has already received sensitive data"
         ]
     },
     {

@@ -1,5 +1,7 @@
 import type { BlogPost } from "./blog";
+import { buildDeepConceptFaqs, buildDeepConceptSections, deepConceptExcerptFor, isDeepConceptGuide } from "./deep-concept-blog-sections";
 import { keywordPostData, type KeywordPostData } from "./keyword-post-data";
+import { videoAssetUrl } from "../lib/video-assets";
 
 const latestPublishDate = "2026-05-15";
 const earliestPublishDate = "2026-03-14";
@@ -640,6 +642,11 @@ Before launch, run one realistic end-to-end test for each major AI path. Paste a
 }
 
 function buildSections(data: KeywordPostData): BlogPost["sections"] {
+    const deepConceptSections = buildDeepConceptSections(data);
+    if (deepConceptSections) {
+        return deepConceptSections;
+    }
+
     if (data.slug === "iso-42001-ai-governance-checklist") {
         return buildIso42001Sections(data);
     }
@@ -721,6 +728,11 @@ The best time to implement controls is before AI usage sprawls across personal a
 }
 
 function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
+    const deepConceptFaqs = buildDeepConceptFaqs(data);
+    if (deepConceptFaqs) {
+        return deepConceptFaqs;
+    }
+
     if (data.slug === "iso-42001-ai-governance-checklist") {
         return [
             {
@@ -925,19 +937,19 @@ function keywordRasterHeroFor(data: KeywordPostData) {
             };
         case "prompt-engineering-policy-guide":
             return {
-                src: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+                src: videoAssetUrl(`/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`),
                 alt: "Prompt engineering rules overview for enterprise teams",
                 caption: "Prompt engineering scales when high-value prompts become approved workflows with data checks, review steps, and evidence.",
             };
         case "microsoft-365-copilot-security-checklist":
             return {
-                src: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+                src: videoAssetUrl(`/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`),
                 alt: "Microsoft 365 Copilot security checklist overview for enterprise teams",
                 caption: "Copilot rollout should be tied to permissions, labels, DLP, audit logs, training, and cross-model AI controls.",
             };
         case "data-loss-prevention-ai-prompts":
             return {
-                src: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
+                src: videoAssetUrl(`/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`),
                 alt: "Data loss prevention for AI prompts overview",
                 caption: "AI prompt DLP should inspect prompts, uploads, retrieval context, and agent tool inputs before data reaches a model.",
             };
@@ -950,7 +962,8 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
     const isMicrosoft365CopilotSecurity = data.slug === "microsoft-365-copilot-security-checklist";
     const isPromptEngineeringRules = data.slug === "prompt-engineering-policy-guide";
     const isDataLossPrevention = data.slug === "data-loss-prevention-ai-prompts";
-    const publishDate = isMicrosoft365CopilotSecurity || isPromptEngineeringRules || isDataLossPrevention ? "2026-05-15" : distributedPublishDate(index, keywordPostData.length);
+    const isDeepConcept = isDeepConceptGuide(data.slug);
+    const publishDate = isDeepConcept ? "2026-05-20" : isMicrosoft365CopilotSecurity || isPromptEngineeringRules || isDataLossPrevention ? "2026-05-15" : distributedPublishDate(index, keywordPostData.length);
     const isIso42001 = data.slug === "iso-42001-ai-governance-checklist";
     const sections = buildSections(data);
     const rasterHero = keywordRasterHeroFor(data);
@@ -964,8 +977,10 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
         lastModified: publishDate,
         articleType: "BlogPosting",
         author: "Remova Research Team",
-        readTime: isIso42001 ? "18 min" : isDataLossPrevention ? "17 min" : isMicrosoft365CopilotSecurity ? "16 min" : isPromptEngineeringRules ? "15 min" : "8 min",
-        excerpt: isIso42001
+        readTime: isDeepConcept ? "24 min" : isIso42001 ? "18 min" : isDataLossPrevention ? "17 min" : isMicrosoft365CopilotSecurity ? "16 min" : isPromptEngineeringRules ? "15 min" : "8 min",
+        excerpt: isDeepConcept
+            ? deepConceptExcerptFor(data)
+            : isIso42001
             ? "A practical ISO 42001 AI governance checklist for enterprise teams, covering scope, risk assessment, controls, evidence, metrics, audit readiness, and Remova implementation."
             : isDataLossPrevention
                 ? "A practical AI prompt DLP guide for detecting, redacting, blocking, rerouting, and auditing sensitive data before it reaches copilots, LLM APIs, RAG, or agents."
@@ -1000,9 +1015,9 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
         video: {
             title: `${data.title} Video Overview`,
             description: isDataLossPrevention ? "A short Remova overview of AI prompt DLP, sensitive data detection, redaction, blocking, rerouting, and audit evidence across copilots, APIs, RAG, and agents." : isMicrosoft365CopilotSecurity ? "A short Remova overview of Microsoft 365 Copilot security, data-access risk, rollout controls, and cross-model AI protection." : isPromptEngineeringRules ? "A short Remova overview of prompt engineering rules, prompt templates, data controls, review steps, and audit trails." : `A short Remova overview of ${data.keyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
-            contentUrl: `/videos/blog/${data.slug}.mp4?v=${keywordMediaVersion}`,
-            thumbnailUrl: `/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`,
-            captionsUrl: `/videos/blog/${data.slug}.vtt?v=${keywordMediaVersion}`,
+            contentUrl: videoAssetUrl(`/videos/blog/${data.slug}.mp4?v=${keywordMediaVersion}`),
+            thumbnailUrl: videoAssetUrl(`/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`),
+            captionsUrl: videoAssetUrl(`/videos/blog/${data.slug}.vtt?v=${keywordMediaVersion}`),
             duration: "PT9S",
             uploadDate: publishDate,
             transcript: buildTranscript(data),
