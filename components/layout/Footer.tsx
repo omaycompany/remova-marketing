@@ -60,9 +60,11 @@ export default function Footer() {
                             title: "Product",
                             links: [
                                 { name: "About", href: "/about" },
+                                { name: "What is Remova?", href: "/what-is-remova" },
                                 { name: "Features", href: "/features" },
                                 { name: "Use Cases", href: "/use-cases" },
                                 { name: "Models", href: "/models" },
+                                { name: "Pricing", href: "/pricing" },
                                 { name: "Compare", href: "/compare" }
                             ],
                         },
@@ -87,6 +89,8 @@ export default function Footer() {
                         {
                             title: "Legal",
                             links: [
+                                { name: "Trust Center", href: "/trust" },
+                                { name: "Contact", href: "/contact" },
                                 { name: "Privacy Policy", href: "/privacy" },
                                 { name: "Terms of Service", href: "/terms" },
                                 { name: "Legal Inquiry", href: "email:legal" }

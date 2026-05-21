@@ -34,6 +34,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
         { url: SITE_URL, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'weekly', priority: 1 },
         { url: `${SITE_URL}/about`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.7 },
+        { url: `${SITE_URL}/what-is-remova`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.78 },
+        { url: `${SITE_URL}/pricing`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.72 },
+        { url: `${SITE_URL}/contact`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.62 },
+        { url: `${SITE_URL}/trust`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.7 },
         { url: `${SITE_URL}/privacy`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'yearly', priority: 0.3 },
         { url: `${SITE_URL}/terms`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'yearly', priority: 0.3 },
         { url: `${SITE_URL}/resources`, lastModified: SITE_LAST_UPDATED_DATE, changeFrequency: 'monthly', priority: 0.6 },

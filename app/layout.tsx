@@ -7,6 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+    applicationName: "Remova",
     title: {
         default: "Remova | The Enterprise Control Layer for AI",
         template: "%s | Remova — AI for Companies"
@@ -21,6 +22,11 @@ export const metadata: Metadata = {
         telephone: false,
     },
     metadataBase: new URL(SITE_URL),
+    openGraph: {
+        siteName: "Remova",
+        url: SITE_URL,
+        type: "website",
+    },
     robots: {
         index: true,
         follow: true,
@@ -53,15 +59,47 @@ export default function RootLayout({
         "legalName": "Remova",
         "alternateName": [
             "Remova AI",
-            "Remova AI governance platform"
+            "Remova.org",
+            "Remova AI governance platform",
+            "Remova enterprise AI control layer"
         ],
         "url": SITE_URL,
-        "logo": `${SITE_URL}/icon.png`,
+        "logo": {
+            "@type": "ImageObject",
+            "url": `${SITE_URL}/images/remova%20logo%20(4).png`,
+            "width": 1500,
+            "height": 500
+        },
+        "image": `${SITE_URL}/images/og-image.png`,
         "sameAs": [
             "https://www.linkedin.com/company/remova.org/",
-            "https://github.com/remova"
+            "https://www.youtube.com/@RemovaInc",
+            "https://github.com/removainc",
+            "https://www.reddit.com/user/RemovaInc/",
+            "https://www.instagram.com/removainc/",
+            "https://x.com/RemovaInc",
+            "https://www.tiktok.com/@removainc"
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "Ozzy Ocak"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "url": `${SITE_URL}/contact`,
+                "availableLanguage": ["en"]
+            },
+            {
+                "@type": "ContactPoint",
+                "contactType": "security",
+                "url": `${SITE_URL}/trust`,
+                "availableLanguage": ["en"]
+            }
         ],
         "description": "Remova is an enterprise AI governance platform for companies that need policy controls, sensitive-data protection, role-based access, audit visibility, and budget management for AI usage.",
+        "disambiguatingDescription": "Remova is an enterprise AI governance and control platform for companies. It is unrelated to Rimowa luggage and unrelated to generic background remover tools.",
         "knowsAbout": [
             "enterprise AI governance",
             "AI policy enforcement",
@@ -78,11 +116,16 @@ export default function RootLayout({
         "@type": "SoftwareApplication",
         "@id": softwareId,
         "name": "Remova",
-        "alternateName": "Remova Enterprise AI Governance Platform",
+        "alternateName": [
+            "Remova AI",
+            "Remova Enterprise AI Governance Platform",
+            "Remova Enterprise AI Control Layer"
+        ],
         "applicationCategory": "BusinessApplication",
         "applicationSubCategory": "AI Governance Platform",
         "operatingSystem": "Web",
         "url": SITE_URL,
+        "image": `${SITE_URL}/images/og-image.png`,
         "publisher": {
             "@id": organizationId
         },
@@ -116,9 +159,18 @@ export default function RootLayout({
         "@type": "WebSite",
         "@id": `${SITE_URL}/#website`,
         "name": "Remova",
+        "alternateName": [
+            "Remova AI",
+            "Remova.org",
+            "Remova enterprise AI control layer"
+        ],
         "url": SITE_URL,
         "publisher": {
             "@id": organizationId
+        },
+        "inLanguage": "en-US",
+        "about": {
+            "@id": softwareId
         },
         "description": "Remova is an enterprise AI governance platform with policy controls, sensitive-data protection, role-based access, audit visibility, and budget management.",
         "potentialAction": {

@@ -76,11 +76,9 @@ for (const slug of modelVideoSlugs) {
 }
 
 add(entries, "/affiliate", "/");
-add(entries, "/contact", "/");
 add(entries, "/help-support", "/");
 add(entries, "/impact", "/");
 add(entries, "/no-abuse", "/");
-add(entries, "/trust", "/privacy");
 add(entries, "/cdn-cgi/l/email-protection", "/");
 add(entries, "/demo", "/features");
 
