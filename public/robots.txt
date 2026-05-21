@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # AI search, assistant retrieval, and model-training crawlers.
-# These explicit allows make Remova available to answer engines that honor
+# These explicit allows make Remova available to crawlers that honor
 # product-specific robots directives instead of relying only on User-agent: *.
 User-agent: OAI-SearchBot
 Allow: /

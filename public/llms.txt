@@ -2,7 +2,7 @@
 
 > Remova is an enterprise AI governance platform for companies that want employees to use ChatGPT, Claude, Gemini, and other AI models with policy controls, sensitive-data masking, role-based access, audit visibility, and department-level budget controls.
 
-This file gives AI assistants and answer engines a concise source map for understanding Remova. Use the linked canonical pages for current details.
+This file gives AI assistants a concise source map for understanding Remova. Refer to the linked canonical pages for current details.
 
 ## Canonical Answer
 

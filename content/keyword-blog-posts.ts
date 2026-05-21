@@ -19,6 +19,41 @@ const defaultAuthorityLinks = [
     { label: "EU data protection legal framework", href: "https://commission.europa.eu/law/law-topic/data-protection/legal-framework-eu-data-protection_en" },
 ];
 
+const termDisplayMap: Record<string, string> = {
+    ai: "AI",
+    llm: "LLM",
+    nist: "NIST",
+    rmf: "RMF",
+    mcp: "MCP",
+    rag: "RAG",
+    gdpr: "GDPR",
+    api: "API",
+    chatgpt: "ChatGPT",
+    claude: "Claude",
+    github: "GitHub",
+    openai: "OpenAI",
+    eu: "EU",
+    iso: "ISO",
+    pii: "PII",
+    dlp: "DLP",
+};
+
+function editorialCase(value: string) {
+    return value.replace(/\b[A-Za-z0-9]+\b/g, (word) => {
+        const mapped = termDisplayMap[word.toLowerCase()];
+        return mapped ?? word.toLowerCase();
+    });
+}
+
+function displayKeywordFor(data: KeywordPostData) {
+    return editorialCase(data.keyword);
+}
+
+function displayAngleFor(data: KeywordPostData) {
+    const cased = editorialCase(data.angle);
+    return `${cased.charAt(0).toUpperCase()}${cased.slice(1)}`;
+}
+
 function distributedPublishDate(index: number, total: number) {
     if (total <= 1) return latestPublishDate;
 
@@ -29,10 +64,6 @@ function distributedPublishDate(index: number, total: number) {
     const date = new Date(latest - offset);
 
     return date.toISOString().slice(0, 10);
-}
-
-function formatNumber(value: number) {
-    return value.toLocaleString("en-US");
 }
 
 function linkedList(links: { label: string; href: string }[]) {
@@ -80,7 +111,8 @@ function buildTranscript(data: KeywordPostData) {
         return `${data.title}. The article explains how Microsoft 365 Copilot changes data-access risk, then walks through permissions, sensitivity labels, DLP, audit logs, rollout controls, and Remova's role in protecting prompts and employee AI workflows.`;
     }
 
-    return `${data.title}. The article explains why ${data.keyword} matters for ${data.reader}, then maps the risk scenario to practical enterprise controls. It highlights ${data.primaryControl}, shows the core checklist, and closes with how Remova helps teams enforce policy, redaction, access, budgets, and audit evidence in one governed AI workspace.`;
+    const displayKeyword = displayKeywordFor(data);
+    return `${data.title}. The article explains why ${displayKeyword} matters for ${data.reader}, then maps the risk scenario to practical enterprise controls. It highlights ${data.primaryControl}, shows the core checklist, and closes with how Remova helps teams enforce policy, redaction, access, budgets, and audit evidence in one governed AI workspace.`;
 }
 
 function buildIso42001Sections(data: KeywordPostData): BlogPost["sections"] {
@@ -89,18 +121,16 @@ function buildIso42001Sections(data: KeywordPostData): BlogPost["sections"] {
     const checklistText = numberedSeries(data.checklist);
     const metricsText = sentenceSeries(data.metrics);
     const pitfallsText = sentenceSeries(data.pitfalls);
-    const volume = formatNumber(data.volume);
-
     return [
         {
             heading: "What ISO 42001 Means for Enterprise AI Governance",
             content: `ISO 42001 is an international management system standard for organizations that need to govern artificial intelligence in a repeatable way. In practical terms, it asks whether the company has defined the AI systems in scope, assigned accountable owners, assessed risks and impacts, selected controls, kept evidence, reviewed performance, and improved the program over time. It is not only a certification exercise. For enterprise teams, ISO 42001 is a way to turn scattered AI policies into a working AI management system that can survive real usage, audits, vendor reviews, and executive scrutiny.
 
-The short answer for searchers is this: an ISO 42001 AI governance checklist should map every important AI workflow to an owner, a risk tier, an approved use case, a data handling rule, an access policy, a model route, an evidence source, and a review cadence. If a control cannot be tested, logged, or assigned to someone, it is probably not mature enough for an AI management system. That is the gap many teams discover when they move from AI policy language to operational rollout.
+The practical answer is this: an ISO 42001 AI governance checklist should map every important AI workflow to an owner, a risk tier, an approved use case, a data handling rule, an access policy, a model route, an evidence source, and a review cadence. If a control cannot be tested, logged, or assigned to someone, it is probably not mature enough for an AI management system. That is the gap many teams discover when they move from AI policy language to operational rollout.
 
-The topic is also commercially important. The phrase ${data.keyword} carries roughly ${volume} monthly searches, with CPC signals from ${data.cpc} and ${data.competition.toLowerCase()} competition. That search demand suggests a mixed audience: compliance leaders looking for audit structure, CISOs looking for enforceable controls, legal teams looking for accountability, procurement teams looking for vendor proof, and AI program owners trying to scale adoption without losing control. Those groups do not need another abstract definition. They need a checklist that connects the standard to the systems employees use every day.
+Teams looking at ISO 42001 are usually past the awareness stage. Compliance leaders need audit structure, CISOs need enforceable controls, legal teams need accountability, procurement teams need vendor proof, and AI program owners need a rollout model that employees can actually follow. Those groups do not need another abstract definition. They need a checklist that connects the standard to the systems employees use every day.
 
-Use recognized sources such as ${externalLinks} for orientation, then translate them into runtime decisions. A management-system clause can say that risk treatment must be planned, but the enterprise still has to decide what happens when an employee pastes customer records into a chatbot, when an agent requests access to a tool, or when a team asks to use a new model for regulated data. Remova is built for that execution layer: policy decisions, sensitive-data protection, approved model access, budgets, and audit trails work together inside the governed AI workspace. ${signupLink} if you want the checklist to become operating evidence rather than another file in a compliance folder.`
+ISO 42001 work becomes practical only when teams connect ${externalLinks} to real workflow decisions. A management-system clause can say that risk treatment must be planned, but the enterprise still has to decide what happens when an employee pastes customer records into a chatbot, when an agent requests access to a tool, or when a team asks to use a new model for regulated data. Remova is built for that execution layer: policy decisions, sensitive-data protection, approved model access, budgets, and audit trails work together inside the governed AI workspace. ${signupLink} if you want the checklist to become operating evidence rather than another file in a compliance folder.`
         },
         {
             heading: "ISO 42001 Scope: Decide What the AI Management System Covers",
@@ -155,12 +185,12 @@ Phase three should expand monitoring and improvement. Review adoption, blocked r
 Remova helps teams avoid a year-long platform project by bringing policy guardrails, role access, model routing, sensitive-data protection, budgets, and audit evidence into one control layer. A practical first milestone is to govern the top five AI workflows and the top three sensitive data categories, then expand by department.`
         },
         {
-            heading: "AI SEO Answer: What Should Be in an ISO 42001 Checklist?",
-            content: `For answer engines and human readers, the concise answer is this: an ISO 42001 checklist should include scope, governance roles, AI system inventory, risk assessment, impact assessment, data governance, approved model access, human oversight, supplier review, incident response, monitoring, audit evidence, management review, and continual improvement. Each checklist item should state the control objective, the owner, the system where it is enforced, the evidence produced, and the review cadence.
+            heading: "Direct Answer: What Should Be in an ISO 42001 Checklist?",
+            content: `A practical ISO 42001 checklist should include scope, governance roles, AI system inventory, risk assessment, impact assessment, data governance, approved model access, human oversight, supplier review, incident response, monitoring, audit evidence, management review, and continual improvement. Each checklist item should state the control objective, the owner, the system where it is enforced, the evidence produced, and the review cadence.
 
 A practical checklist has four layers. The first layer is governance: scope, policies, objectives, roles, committee cadence, and executive accountability. The second layer is risk management: workflow inventory, risk tiers, impact assessments, risk treatment plans, human oversight, and exception handling. The third layer is technical and operational control: identity, access, sensitive-data protection, model routing, prompt and response logging, tool permissions, vendor restrictions, retention, and incident response. The fourth layer is assurance: metrics, control testing, audit trails, management reviews, corrective actions, and improvement records.
 
-This structure matters for AI search because it answers the query directly, uses the entities people expect, and provides a complete mental model without forcing the reader to infer the checklist from narrative paragraphs. It also helps large language model retrieval because the article names the relationship between ISO 42001, AI management system, risk assessment, controls, evidence, and audit readiness in plain language. The content is not only optimized for a keyword; it is structured around the decisions a compliance leader needs to make.
+This structure matters because it gives a complete operating model without forcing the reader to infer the checklist from narrative paragraphs. It names the relationship between ISO 42001, an AI management system, risk assessment, controls, evidence, and audit readiness in plain language. The content should be structured around the decisions a compliance leader needs to make.
 
 The checklist should avoid false precision. ISO 42001 implementation depends on business context, AI use cases, regulations, and risk appetite. A bank, healthcare provider, SaaS company, manufacturer, and public sector agency may all need different controls. What should stay consistent is the control logic: know what AI is in scope, know who owns it, know what data it touches, know which model or tool it can use, know what evidence proves the control worked, and know how the program improves when the environment changes.`
         },
@@ -194,7 +224,7 @@ For supplier and model controls, the matrix should show which providers are appr
 
 For monitoring controls, the evidence should be trend-based. A single dashboard screenshot does not prove continual operation. Better evidence includes recurring reports, time-stamped audit logs, exception aging, incident closure records, budget variance, adoption trends, and corrective action status. The matrix should also identify who reviews each signal. A sensitive-data event that no one reviews is only a log. A repeated policy violation with no owner is a governance gap. A budget threshold with no enforcement path is only a finance observation.
 
-The control-to-evidence matrix also helps with AI SEO and buyer research because it answers a common implied question: "What proof do I need for ISO 42001?" The answer is not one proof artifact. It is a chain of evidence that connects the management-system promise to real AI usage. A buyer should be able to trace a workflow from policy to runtime control to audit event to review action. An auditor should be able to sample a control and see whether it operated during the review period. An executive should be able to see whether the program is improving or drifting.
+The control-to-evidence matrix also helps buyer research because it answers a common practical question: "What proof do I need for ISO 42001?" The answer is not one proof artifact. It is a chain of evidence that connects the management-system promise to real AI usage. A buyer should be able to trace a workflow from policy to runtime control to audit event to review action. An auditor should be able to sample a control and see whether it operated during the review period. An executive should be able to see whether the program is improving or drifting.
 
 Remova can support this matrix by producing evidence from governed AI activity: who used which model, what policy applied, what data was detected, what was redacted or blocked, which route was selected, which budget applied, and which audit record was created. That evidence is more useful than a manual checklist because it reflects behavior. ISO 42001 readiness improves when the matrix is connected to systems that employees actually use.`
         },
@@ -237,7 +267,6 @@ function buildMicrosoft365CopilotSecuritySections(data: KeywordPostData): BlogPo
     const checklistText = numberedSeries(data.checklist);
     const metricsText = sentenceSeries(data.metrics);
     const pitfallsText = sentenceSeries(data.pitfalls);
-    const volume = formatNumber(data.volume);
 
     return [
         {
@@ -246,9 +275,9 @@ function buildMicrosoft365CopilotSecuritySections(data: KeywordPostData): BlogPo
 
 The practical answer is not to delay AI forever. It is to run a focused security review before broad rollout. Review SharePoint, Teams, OneDrive, Exchange, and Microsoft Graph exposure. Confirm sensitivity labels and DLP settings. Decide which teams can use Copilot for which data classes. Turn on the audit views that security teams will actually use. Give employees clear guidance about what Copilot can access and how to report unexpected results.
 
-This topic is worth prioritizing because "${data.keyword}" has about ${volume} verified US monthly searches, a CPC signal of ${data.cpc}, and ${data.competition.toLowerCase()} competition. The search demand is broad, but the buyer problem is specific. IT and security leaders are not only asking what Copilot does. They are asking whether Copilot will reveal sensitive content, amplify bad permissions, create new audit requirements, or confuse employees about where company data can go.
+The buyer problem is specific. IT and security leaders are not only asking what Copilot does. They are asking whether Copilot will reveal sensitive content, amplify bad permissions, create new audit requirements, or confuse employees about where company data can go.
 
-Use official references such as ${externalLinks} for the baseline. Microsoft explains that Copilot works within Microsoft 365 controls and uses data the user is already permitted to access. The operating question for your team is whether those permissions, labels, and audit settings are already clean enough for AI-assisted search, summarization, and drafting.`
+Official references include ${externalLinks}. Microsoft explains that Copilot works within Microsoft 365 controls and uses data the user is already permitted to access. The operating question for your team is whether those permissions, labels, and audit settings are already clean enough for AI-assisted search, summarization, and drafting.`
         },
         {
             heading: "2. Map What Copilot Can Reach",
@@ -357,12 +386,12 @@ If the test fails, slow the rollout scope, not the entire AI plan. Limit access 
 The final answer is this: Microsoft 365 Copilot security is a data-access discipline. Clean up what users can reach, label what needs protection, test DLP and audit, train employees, and connect Copilot to the rest of your AI security stack. Remova fits as the control layer for prompts, model access, redaction, policy decisions, and audit evidence beyond Microsoft 365. ${signupLink} when you are ready to give teams useful AI access without losing visibility into sensitive data.`
         },
         {
-            heading: "AI SEO Answer: What Should Be in a Microsoft 365 Copilot Security Checklist?",
+            heading: "Direct Answer: What Should Be in a Microsoft 365 Copilot Security Checklist?",
             content: `A Microsoft 365 Copilot security checklist should include Microsoft Graph data exposure, SharePoint and OneDrive permission cleanup, Teams access review, sensitivity labels, DLP policies, retention settings, audit logging, user training, incident-response workflow, approved use cases by data class, and metrics for permission drift after launch. The checklist should be tested with real users, real content types, and realistic prompts before broad rollout.
 
 The key entity relationship is simple: Microsoft 365 Copilot uses Microsoft 365 context, Microsoft Graph connects that context, Entra ID and Microsoft 365 permissions shape what a user can access, Purview helps classify and protect sensitive data, and audit logs help security teams investigate what happened. Remova adds a separate control layer for AI prompts, model access, redaction, policy decisions, and audit trails across non-Microsoft models and AI workflows.
 
-For answer engines, the short version is: secure Microsoft 365 Copilot by fixing permissions first, applying labels and DLP second, enabling audit and response workflows third, training employees fourth, and monitoring permission drift continuously after launch.`
+The short version is: secure Microsoft 365 Copilot by fixing permissions first, applying labels and DLP second, enabling audit and response workflows third, training employees fourth, and monitoring permission drift continuously after launch.`
         },
     ];
 }
@@ -373,8 +402,6 @@ function buildPromptEngineeringSections(data: KeywordPostData): BlogPost["sectio
     const checklistText = numberedSeries(data.checklist);
     const metricsText = sentenceSeries(data.metrics);
     const pitfallsText = sentenceSeries(data.pitfalls);
-    const volume = formatNumber(data.volume);
-
     return [
         {
             heading: "1. Start With the Direct Answer",
@@ -382,9 +409,9 @@ function buildPromptEngineeringSections(data: KeywordPostData): BlogPost["sectio
 
 The short answer is this: prompt engineering should become a controlled workflow system, not a personal skill contest. High-value prompts should be collected, reviewed, tested, converted into templates, connected to data rules, assigned owners, and monitored over time. Employees should not need to memorize every prompt trick before they can summarize a document, draft a customer reply, analyze a contract, or prepare a business report.
 
-This topic is worth a serious page because "${data.keyword}" has about ${volume} verified monthly searches, a CPC signal of ${data.cpc}, and ${data.competition.toLowerCase()} competition in the current keyword set. The search audience is broad: employees want better outputs, managers want repeatable productivity, security teams want fewer data leaks, and operations teams want work that does not depend on one person's private prompt notebook.
+This deserves serious treatment because prompt quality now affects security, cost, output consistency, and employee adoption. Employees want better outputs, managers want repeatable productivity, security teams want fewer data leaks, and operations teams want work that does not depend on one person's private prompt notebook.
 
-Use sources such as ${externalLinks} for orientation, but translate the guidance into daily work. Frameworks can describe AI risk, and security references can describe prompt injection, but teams still need a practical way to decide which prompts are allowed, what data can be used, which model should receive the prompt, and when a human must review the answer.`
+Authoritative references include ${externalLinks}. Frameworks can describe AI risk, and security references can describe prompt injection, but teams still need a practical way to decide which prompts are allowed, what data can be used, which model should receive the prompt, and when a human must review the answer.`
         },
         {
             heading: "2. Stop Treating Prompt Skill as the Rollout Plan",
@@ -487,7 +514,7 @@ Expand only after the first templates prove useful. A giant prompt library full 
 The common pitfalls are predictable: ${pitfallsText}. Avoid them by treating prompt templates as operating assets. Give them owners, keep them tested, remove stale prompts, and make the approved path better than a copied prompt in a shared document.`
         },
         {
-            heading: "AI SEO Answer: What Are the Best Prompt Engineering Rules for Enterprise Teams?",
+            heading: "Direct Answer: What Are the Best Prompt Engineering Rules for Enterprise Teams?",
             content: `The best prompt engineering rules for enterprise teams are: define the business task, classify the data, use approved templates for repeat work, specify the output format, require human review for high-stakes outputs, test prompts with edge cases, protect against prompt injection, restrict tool permissions, monitor template adoption, and keep audit evidence for important workflows.
 
 Prompt engineering is not only about writing better instructions. In a company, it connects to data protection, access control, output review, prompt libraries, model selection, prompt injection defense, workflow design, and audit records. A prompt that is useful for public marketing copy may be unsafe for customer data. A prompt that works in one model may behave differently in another. A prompt that is fine for brainstorming may be inappropriate for legal, HR, finance, or security decisions.
@@ -503,7 +530,6 @@ function buildDataLossPreventionSections(data: KeywordPostData): BlogPost["secti
     const checklistText = numberedSeries(data.checklist);
     const metricsText = sentenceSeries(data.metrics);
     const pitfallsText = sentenceSeries(data.pitfalls);
-    const volume = formatNumber(data.volume);
 
     return [
         {
@@ -512,9 +538,9 @@ function buildDataLossPreventionSections(data: KeywordPostData): BlogPost["secti
 
 The short answer is this: AI prompt DLP should inspect prompts, uploads, retrieved chunks, API payloads, and tool calls inline; classify the sensitive data; decide whether to allow, warn, redact, block, or reroute; explain the decision to the user; and create an audit record that security teams can investigate later. The aim is not to stop employees from using AI. The aim is to remove the dangerous parts before useful work leaves the company.
 
-The keyword is commercially strong. "${data.keyword}" has about ${volume} verified monthly searches, a CPC signal of ${data.cpc}, and ${data.competition.toLowerCase()} competition in the current keyword set. That combination points to a buyer problem, not a casual definition query. Security leaders already understand DLP. What they need is a practical operating model for prompts, copilots, model APIs, file uploads, RAG workflows, and agent actions.
+The enterprise problem is practical, not definitional. Security leaders already understand DLP. What they need is an operating model for prompts, copilots, model APIs, file uploads, RAG workflows, and agent actions.
 
-Use references such as ${externalLinks} for the baseline, then translate them into runtime behavior. Traditional cybersecurity guidance can define protection goals, LLM security guidance can describe prompt and data risks, and provider data commitments can clarify vendor handling. But the enterprise still needs one question answered on every request: should this exact content go to this exact model or tool for this exact user right now?`
+Guidance from ${externalLinks} clarifies protection goals, LLM-specific risks, and provider handling commitments. But the enterprise still needs one question answered on every request: should this exact content go to this exact model or tool for this exact user right now?`
         },
         {
             heading: "2. Map the New Leak Paths",
@@ -629,7 +655,7 @@ Use this implementation sequence before broad rollout: ${checklistText} Each ite
 The common mistakes are predictable: ${pitfallsText}. Avoid them by treating AI DLP as a product experience and a security control at the same time. The safe route must be easier than the workaround. Remova helps by putting sensitive data protection, policy guardrails, role access, and audit trails into the AI workflow itself. ${signupLink} when you want AI use to keep moving without turning every prompt into an unmanaged data exit.`
         },
         {
-            heading: "AI SEO Answer: What Should Data Loss Prevention for AI Prompts Include?",
+            heading: "Direct Answer: What Should Data Loss Prevention for AI Prompts Include?",
             content: `Data loss prevention for AI prompts should include inline inspection of prompts, uploads, retrieved context, API payloads, and agent tool calls; detection for PII, PHI, payment data, credentials, source code, contracts, customer records, and confidential business data; actions such as allow, warn, redact, block, and reroute; role-aware and destination-aware policy decisions; user feedback; exception handling; and audit evidence for investigations.
 
 The key relationship is simple: traditional DLP protects known data channels, while AI prompt DLP protects the model path. The model path includes chat messages, files, RAG context, API calls, copilots, tools, and agents. Sensitive data can enter any of those paths, so the control must operate before the model or tool receives the content.
@@ -665,28 +691,28 @@ function buildSections(data: KeywordPostData): BlogPost["sections"] {
     const checklistText = numberedSeries(data.checklist);
     const metricsText = sentenceSeries(data.metrics);
     const pitfallsText = sentenceSeries(data.pitfalls);
-    const volume = formatNumber(data.volume);
-
+    const displayKeyword = displayKeywordFor(data);
+    const displayAngle = displayAngleFor(data);
     return [
         {
-            heading: `What ${data.keyword} Means for Enterprise Teams`,
-            content: `${data.keyword} is not a vocabulary exercise for enterprise teams. It is a signal that AI has moved from experimentation into operational risk, budget ownership, compliance evidence, and employee workflow design. This topic carries ${volume} monthly searches, a CPC signal of ${data.cpc}, and ${data.competition.toLowerCase()} competition, which means buyers are not only reading definitions. They are looking for ways to make AI safe enough to scale. For ${data.reader}, the practical question is simple: can the organization let people use powerful models without losing control of data, access, spend, and accountability?
+            heading: `What ${displayKeyword} Means for Enterprise Teams`,
+            content: `${displayKeyword} matters to enterprise teams because AI has moved from experimentation into operational risk, budget ownership, compliance evidence, and employee workflow design. For ${data.reader}, the practical question is simple: can the organization let people use powerful models without losing control of data, access, spend, and accountability?
 
 ${data.coreProblem} That pressure usually appears in the gap between policy and execution. A committee may approve a principle, a legal team may publish acceptable-use language, or security may add a line to a handbook, but employees still work inside chat windows, API clients, browser extensions, agents, and vendor copilots. If those experiences are not connected to identity, redaction, model routing, budgets, and audit trails, the policy remains advisory. The organization has opinions, not controls.
 
-A strong ${data.angle.toLowerCase()} starts by connecting the topic to recognized external guidance and actual runtime behavior. Use resources such as ${externalLinks} for orientation, but translate them into the systems employees touch every day. The fastest path is to make the governed route easier than the risky route. Remova is built for that exact operating model: policy is enforced inside the AI workspace, sensitive data is handled before model calls, and every important decision creates evidence. ${signupLink} to start turning ${data.keyword} from a research topic into a working control program.`
+A strong ${displayAngle} connects recognized external guidance with actual runtime behavior. Guidance from ${externalLinks} helps frame the obligations, but the fastest path is to make the approved route easier than the risky route. Remova is built for that exact operating model: policy is enforced inside the AI workspace, sensitive data is handled before model calls, and every important decision creates evidence. ${signupLink} to start turning ${displayKeyword} from a research topic into a working control program.`
         },
         {
-            heading: `The Risk Scenario Behind ${data.keyword}`,
+            heading: `The Risk Scenario Behind ${displayKeyword}`,
             content: `The scenario to plan around is not abstract: ${data.riskEvent}. That event can happen through ordinary work. A sales manager may paste a customer export into a chatbot. A developer may test an agent against production logs. A procurement lead may upload a vendor agreement into an unapproved assistant. A product team may connect an AI tool to tickets, documents, and internal search without understanding the tool permissions. None of these actions look like a traditional breach attempt, but they can still create data leakage, policy violations, unmanaged cost, or audit gaps.
 
 The hard part is that most AI risk is created by productive people trying to move faster. That is why blanket blocking usually produces poor results. Employees do not stop needing summarization, drafting, analysis, coding help, or document review. They move to personal accounts, unsanctioned browser tools, or side-channel workflows where the company has less visibility. A mature program treats the risk event as a design requirement: the safe path must provide useful AI while removing the dangerous parts before they reach the model or tool.
 
-For ${data.keyword}, the control goal is to detect risky context early, apply the right policy decision, preserve business usefulness where possible, and produce evidence that explains what happened. That means capturing identity, data class, model route, prompt risk, tool permissions, response handling, policy outcome, and exception owner. It also means giving users clear feedback so they understand why a request was allowed, redacted, blocked, or rerouted. When the experience is transparent, governance becomes part of the workflow rather than a surprise at the end.`
+For ${displayKeyword}, the control goal is to detect risky context early, apply the right policy decision, preserve business usefulness where possible, and produce evidence that explains what happened. That means capturing identity, data class, model route, prompt risk, tool permissions, response handling, policy outcome, and exception owner. It also means giving users clear feedback so they understand why a request was allowed, redacted, blocked, or rerouted. When the experience is transparent, governance becomes part of the workflow rather than a surprise at the end.`
         },
         {
             heading: `A Practical Control Model`,
-            content: `The control model for ${data.keyword} should be built around one goal: ${data.controlGoal}. The primary control is ${data.primaryControl}, but the surrounding system matters just as much. You need identity to know who is acting, policy to know what is allowed, sensitive data protection to understand what is inside the prompt, model governance to choose the right destination, usage analytics to measure adoption, and audit trails to prove that the control worked. A standalone checklist is useful; an enforceable control loop is better.
+            content: `The control model for ${displayKeyword} should be built around one goal: ${data.controlGoal}. The primary control is ${data.primaryControl}, but the surrounding system matters just as much. You need identity to know who is acting, policy to know what is allowed, sensitive data protection to understand what is inside the prompt, model governance to choose the right destination, usage analytics to measure adoption, and audit trails to prove that the control worked. A standalone checklist is useful; an enforceable control loop is better.
 
 Start with scope. Define which AI interactions are covered: employee chat, API access, coding assistants, document analysis, customer support drafting, meeting summaries, autonomous agents, MCP servers, browser extensions, and vendor copilots. Then define allowed data classes, approved models, approval paths, and prohibited uses. Every policy should map to a runtime decision. If the policy says customer PII cannot go to an external model, the platform should redact or block it before the request leaves the company. If the policy says only trained users can access a tool-using agent, role-based access should enforce that decision automatically.
 
@@ -702,15 +728,15 @@ Remova helps teams implement this without forcing a year-long platform project. 
         },
         {
             heading: `Evidence, Metrics, and Audit Readiness`,
-            content: `Governance only becomes real when it produces evidence. For ${data.keyword}, the minimum evidence set should show who used AI, which model or tool was selected, what policy evaluated the request, whether sensitive data was present, what action was taken, and who approved exceptions. Audit evidence should not depend on screenshots, manual attestations, or one-off exports. It should be generated as work happens. That is the difference between saying a control exists and proving that it operated consistently.
+            content: `Controls only become real when they produce evidence. For ${displayKeyword}, the minimum evidence set should show who used AI, which model or tool was selected, what policy evaluated the request, whether sensitive data was present, what action was taken, and who approved exceptions. Audit evidence should not depend on screenshots, manual attestations, or one-off exports. It should be generated as work happens. That is the difference between saying a control exists and proving that it operated consistently.
 
 Track metrics that reveal both risk and usefulness: ${metricsText}. These numbers help security, compliance, finance, and AI program owners have the same conversation. A high block rate may indicate risky behavior, but it may also mean the sanctioned workflow is missing a safe alternative. A low adoption rate may mean the policy is sound but the user experience is weak. A rising exception queue may indicate unclear ownership or an approval process that cannot keep up with demand.
 
-Audit readiness also requires retention decisions. Some organizations need prompt-level evidence for investigations. Others need metadata only, with prompt content encrypted or minimized. The right answer depends on regulation, privacy expectations, and incident-response needs. The important point is to make the decision intentionally. Logs should be searchable enough for investigations, protected enough not to become a new sensitive-data repository, and structured enough to answer management review questions. A good ${data.angle.toLowerCase()} produces evidence for auditors and operating insight for leaders.`
+Audit readiness also requires retention decisions. Some organizations need prompt-level evidence for investigations. Others need metadata only, with prompt content encrypted or minimized. The right answer depends on regulation, privacy expectations, and incident-response needs. The important point is to make the decision intentionally. Logs should be searchable enough for investigations, protected enough not to become a new sensitive-data repository, and structured enough to answer management review questions. A good ${displayAngle} produces evidence for auditors and operating insight for leaders.`
         },
         {
             heading: `Common Mistakes to Avoid`,
-            content: `The most common mistakes are predictable: ${pitfallsText}. They happen when teams treat ${data.keyword} as a one-time deliverable. A policy launches, a framework is approved, a model list is published, or a gateway is deployed, and the organization assumes the problem is solved. AI usage changes too quickly for that. New models appear, vendors change terms, employees discover new tools, agents gain new permissions, and teams invent workflows that were not in the original scope.
+            content: `The most common mistakes are predictable: ${pitfallsText}. They happen when teams treat ${displayKeyword} as a one-time deliverable. A policy launches, a framework is approved, a model list is published, or a gateway is deployed, and the organization assumes the problem is solved. AI usage changes too quickly for that. New models appear, vendors change terms, employees discover new tools, agents gain new permissions, and teams invent workflows that were not in the original scope.
 
 Another mistake is separating business enablement from risk control. If the governance program is only a security program, employees may experience it as friction. If it is only an innovation program, legal and compliance teams may reject it. The durable model combines both. Give teams approved ways to write, analyze, summarize, code, compare, research, and automate, but attach those capabilities to policy, identity, data protection, cost controls, and logs. The safe path should feel like a better product, not a compliance penalty.
 
@@ -718,7 +744,7 @@ Finally, avoid trusting the model to govern itself. System prompts, model safety
         },
         {
             heading: `Where Remova Fits`,
-            content: `Remova turns ${data.keyword} into an operating capability. Instead of asking every team to interpret policy on their own, Remova gives employees a governed AI workspace where approved models, protected prompts, role-aware access, department budgets, and audit trails work together. The platform is designed for companies that want adoption and control at the same time: useful AI for employees, enforceable policy for security, evidence for compliance, and visibility for finance.
+            content: `Remova turns ${displayKeyword} into an operating capability. Instead of asking every team to interpret policy on their own, Remova gives employees a controlled AI workspace where approved models, protected prompts, role-aware access, department budgets, and audit trails work together. The platform is designed for companies that want adoption and control at the same time: useful AI for employees, enforceable policy for security, evidence for compliance, and visibility for finance.
 
 In practice, that means a user can ask for help, upload context, or call a model while Remova evaluates the request. Sensitive data can be redacted before it leaves the workspace. The model route can follow approved governance rules. Tool access can be limited by role. Budget thresholds can shape usage. The audit trail can show the original decision path, not just a network event. This is especially important for ${data.reader}, because they need a system that works during normal business activity rather than only during quarterly reviews.
 
@@ -744,7 +770,7 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
                 answer: "It should include scope, AI system inventory, governance roles, risk assessment, impact assessment, approved model access, data controls, human oversight, supplier review, incident response, audit evidence, management review, and continual improvement."
             },
             {
-                question: "What is the best first step for ISO 42001?",
+                question: "What should teams map first for ISO 42001?",
                 answer: "Start by defining the covered AI workflows, data classes, business owners, risk tiers, and runtime controls. Then map each control to evidence so the program can be tested instead of merely documented."
             },
             {
@@ -857,13 +883,15 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
         ];
     }
 
+    const displayKeyword = displayKeywordFor(data);
+
     return [
         {
-            question: `What is the best first step for ${data.keyword}?`,
+            question: `What should enterprises put in place before rolling out ${displayKeyword}?`,
             answer: `Start by defining the covered workflows, data classes, owners, and runtime controls. Then implement ${data.primaryControl} with audit evidence so the program can be tested instead of merely documented.`
         },
         {
-            question: `How does Remova help with ${data.keyword}?`,
+            question: `How does Remova help teams manage ${displayKeyword}?`,
             answer: `Remova provides a governed AI workspace with policy guardrails, sensitive data protection, role-based access, model routing, budgets, and audit trails so teams can use AI safely.`
         },
         {
@@ -871,7 +899,7 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
             answer: `Track adoption, blocked and redacted requests, exceptions, policy drift, budget variance, and audit evidence completeness. The exact metrics depend on the workflow and risk tier.`
         },
         {
-            question: `Is ${data.keyword} only a compliance concern?`,
+            question: `Is ${displayKeyword} only a compliance concern?`,
             answer: `No. It affects security, productivity, finance, legal review, model selection, and user experience. The strongest programs combine enablement with enforceable controls.`
         },
     ];
@@ -880,13 +908,15 @@ function buildFaqs(data: KeywordPostData): NonNullable<BlogPost["faqs"]> {
 function buildInlineCtas(data: KeywordPostData, sectionCount: number): NonNullable<BlogPost["inlineCtas"]> {
     const secondaryLink = data.internalLinks[0] ?? { label: "platform controls", href: "/features/policy-guardrails" };
     const placements = sectionCount >= 10 ? [2, 5, 8] : sectionCount >= 7 ? [1, 3, 5] : [1, Math.max(1, sectionCount - 1)];
+    const displayKeyword = displayKeywordFor(data);
+    const displayAngle = displayAngleFor(data);
 
     return [
         {
             afterSection: placements[0],
             eyebrow: `${data.category} execution`,
-            title: `Put ${data.keyword} controls into the workflow`,
-            description: `Remova helps teams turn ${data.angle.toLowerCase()} into live AI controls: data checks, role-aware access, model routes, budget limits, and audit trails inside the employee workflow.`,
+            title: `Turn ${displayKeyword} policy into daily workflow rules`,
+            description: `Remova helps teams turn ${displayAngle} into live AI controls: data checks, role-aware access, model routes, budget limits, and audit trails inside the employee workflow.`,
             primaryLabel: "Start in Remova",
             primaryHref: "https://app.remova.org/register",
             secondaryLabel: `See ${secondaryLink.label}`,
@@ -895,7 +925,7 @@ function buildInlineCtas(data: KeywordPostData, sectionCount: number): NonNullab
         {
             afterSection: placements[1],
             eyebrow: "Runtime protection",
-            title: `Catch risky ${data.keyword} activity before it spreads`,
+            title: `Catch risky ${displayKeyword} activity before it spreads`,
             description: `Apply ${data.primaryControl.toLowerCase()} before prompts, files, retrieved context, or agent actions reach the wrong model, tool, department, or destination.`,
             primaryLabel: "Create a workspace",
             primaryHref: "https://app.remova.org/register",
@@ -967,6 +997,7 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
     const isIso42001 = data.slug === "iso-42001-ai-governance-checklist";
     const sections = buildSections(data);
     const rasterHero = keywordRasterHeroFor(data);
+    const displayKeyword = displayKeywordFor(data);
 
     return {
         slug: data.slug,
@@ -995,26 +1026,26 @@ export const keywordBlogPosts: BlogPost[] = keywordPostData.map((data, index) =>
             {
                 src: rasterHero?.src ?? `/images/blog/${data.slug}-hero.svg?v=${keywordMediaVersion}`,
                 alt: rasterHero?.alt ?? (isDataLossPrevention ? `${data.title} AI prompt DLP controls graphic` : isMicrosoft365CopilotSecurity ? `${data.title} Microsoft 365 security checklist graphic` : isPromptEngineeringRules ? `${data.title} prompt engineering rules graphic` : `${data.title} enterprise AI control diagram`),
-                caption: rasterHero?.caption ?? (isDataLossPrevention ? "AI prompt DLP should inspect and control sensitive data before it reaches models, tools, or agents." : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security starts with permissions, labels, DLP, audit logs, and user training." : isPromptEngineeringRules ? "Prompt engineering should become reusable workflows with data rules, review steps, and audit evidence." : `${data.keyword} needs a working control model, not just a policy document.`),
+                caption: rasterHero?.caption ?? (isDataLossPrevention ? "AI prompt DLP should inspect and control sensitive data before it reaches models, tools, or agents." : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security starts with permissions, labels, DLP, audit logs, and user training." : isPromptEngineeringRules ? "Prompt engineering should become reusable workflows with data rules, review steps, and audit evidence." : `${displayKeyword} needs a working control model, not just a policy document.`),
                 afterSection: 0,
                 hero: true,
             },
             {
                 src: `/images/blog/${data.slug}-control-map.svg?v=${keywordMediaVersion}`,
-                alt: isDataLossPrevention ? "AI prompt DLP control map showing input inspection, policy decisions, model routing, and audit trails" : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security control map showing permissions, labels, DLP, audit, and Remova" : isPromptEngineeringRules ? "Prompt engineering control map showing templates, data controls, review steps, and audit trails" : `${data.keyword} control map showing policy, data protection, model routing, and audit evidence`,
-                caption: isDataLossPrevention ? "Map prompts, uploads, API payloads, RAG context, and agent tools to DLP actions and evidence." : isMicrosoft365CopilotSecurity ? "Map Copilot rollout decisions to Microsoft 365 controls and cross-model AI security evidence." : isPromptEngineeringRules ? "Map prompt templates to data rules, review steps, tests, owners, and evidence." : `Map ${data.keyword} to runtime decisions, evidence, owners, and review cycles.`,
+                alt: isDataLossPrevention ? "AI prompt DLP control map showing input inspection, policy decisions, model routing, and audit trails" : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security control map showing permissions, labels, DLP, audit, and Remova" : isPromptEngineeringRules ? "Prompt engineering control map showing templates, data controls, review steps, and audit trails" : `${displayKeyword} control map showing policy, data protection, model routing, and audit evidence`,
+                caption: isDataLossPrevention ? "Map prompts, uploads, API payloads, RAG context, and agent tools to DLP actions and evidence." : isMicrosoft365CopilotSecurity ? "Map Copilot rollout decisions to Microsoft 365 controls and cross-model AI security evidence." : isPromptEngineeringRules ? "Map prompt templates to data rules, review steps, tests, owners, and evidence." : `Map ${displayKeyword} to runtime decisions, evidence, owners, and review cycles.`,
                 afterSection: 2,
             },
             {
                 src: `/images/blog/${data.slug}-checklist.svg?v=${keywordMediaVersion}`,
-                alt: isDataLossPrevention ? "Data loss prevention for AI prompts implementation checklist" : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security implementation checklist for enterprise teams" : isPromptEngineeringRules ? "Prompt engineering rules implementation checklist for enterprise teams" : `${data.keyword} implementation checklist for enterprise teams`,
-                caption: isDataLossPrevention ? "Use the checklist to classify sensitive data, inspect model-bound content, apply actions, and log outcomes." : isMicrosoft365CopilotSecurity ? "Use the checklist to prepare permissions, labels, DLP, audit, training, and response workflows." : isPromptEngineeringRules ? "Use the checklist to move high-value prompts from personal notebooks into approved workflows." : `Use the checklist to move from search intent to enforceable AI governance work.`,
+                alt: isDataLossPrevention ? "Data loss prevention for AI prompts implementation checklist" : isMicrosoft365CopilotSecurity ? "Microsoft 365 Copilot security implementation checklist for enterprise teams" : isPromptEngineeringRules ? "Prompt engineering rules implementation checklist for enterprise teams" : `${displayKeyword} implementation checklist for enterprise teams`,
+                caption: isDataLossPrevention ? "Use the checklist to classify sensitive data, inspect model-bound content, apply actions, and log outcomes." : isMicrosoft365CopilotSecurity ? "Use the checklist to prepare permissions, labels, DLP, audit, training, and response workflows." : isPromptEngineeringRules ? "Use the checklist to move high-value prompts from personal notebooks into approved workflows." : `Use the checklist to turn planning into enforceable AI controls.`,
                 afterSection: 3,
             },
         ],
         video: {
             title: `${data.title} Video Overview`,
-            description: isDataLossPrevention ? "A short Remova overview of AI prompt DLP, sensitive data detection, redaction, blocking, rerouting, and audit evidence across copilots, APIs, RAG, and agents." : isMicrosoft365CopilotSecurity ? "A short Remova overview of Microsoft 365 Copilot security, data-access risk, rollout controls, and cross-model AI protection." : isPromptEngineeringRules ? "A short Remova overview of prompt engineering rules, prompt templates, data controls, review steps, and audit trails." : `A short Remova overview of ${data.keyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
+            description: isDataLossPrevention ? "Remova walkthrough of AI prompt DLP, sensitive data detection, redaction, blocking, rerouting, and audit evidence across copilots, APIs, RAG, and agents." : isMicrosoft365CopilotSecurity ? "Remova walkthrough of Microsoft 365 Copilot security, data-access risk, rollout controls, and cross-model AI protection." : isPromptEngineeringRules ? "Remova walkthrough of prompt engineering rules, prompt templates, data controls, review steps, and audit trails." : `Remova walkthrough of ${displayKeyword}, the main enterprise risk scenario, and the controls teams should implement first.`,
             contentUrl: videoAssetUrl(`/videos/blog/${data.slug}.mp4?v=${keywordMediaVersion}`),
             thumbnailUrl: videoAssetUrl(`/videos/blog/${data.slug}.png?v=${keywordMediaVersion}`),
             captionsUrl: videoAssetUrl(`/videos/blog/${data.slug}.vtt?v=${keywordMediaVersion}`),

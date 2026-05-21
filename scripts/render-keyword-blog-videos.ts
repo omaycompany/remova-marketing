@@ -39,6 +39,29 @@ function startSentence(value: string) {
     return value ? `${value.charAt(0).toUpperCase()}${value.slice(1)}` : value;
 }
 
+const termDisplayMap: Record<string, string> = {
+    ai: "AI",
+    llm: "LLM",
+    nist: "NIST",
+    rmf: "RMF",
+    mcp: "MCP",
+    rag: "RAG",
+    gdpr: "GDPR",
+    api: "API",
+    chatgpt: "ChatGPT",
+    claude: "Claude",
+    github: "GitHub",
+    openai: "OpenAI",
+    eu: "EU",
+    iso: "ISO",
+    pii: "PII",
+    dlp: "DLP",
+};
+
+function editorialCase(value: string) {
+    return value.replace(/\b[A-Za-z0-9]+\b/g, (word) => termDisplayMap[word.toLowerCase()] ?? word.toLowerCase());
+}
+
 function wrapWords(value: string, maxChars: number) {
     const words = value.replace(/\s+/g, " ").trim().split(" ");
     const lines: string[] = [];
@@ -150,6 +173,7 @@ function baseStyles() {
 
 function buildHeroSvg(data: KeywordPostData) {
     const titleLines = textLines(data.title, 31, 3);
+    const displayKeyword = editorialCase(data.keyword);
     const titleY = 204;
     const titleLineHeight = 60;
     const metricsY = Math.max(390, titleY + (titleLines.length - 1) * titleLineHeight + 90);
@@ -159,11 +183,11 @@ function buildHeroSvg(data: KeywordPostData) {
         <rect width="1200" height="630" fill="#ffffff"/>
         <rect width="1200" height="630" fill="url(#grid)"/>
         <rect x="70" y="76" width="1060" height="478" rx="28" fill="#ffffff" stroke="#dbe3ef" stroke-width="2" filter="url(#shadow)"/>
-        <text class="eyebrow" x="112" y="132">${xmlEscape(data.keyword)} / ${xmlEscape(data.category)}</text>
+        <text class="eyebrow" x="112" y="132">${xmlEscape(displayKeyword)} / ${xmlEscape(data.category)}</text>
         ${multilineTextFromLines({ lines: titleLines, x: 112, y: titleY, lineHeight: titleLineHeight, className: "title" })}
-        ${metricCard("Monthly searches", data.volume.toLocaleString("en-US"), 112, metricsY, "#2563eb")}
-        ${metricCard("CPC signal", data.cpc, 347, metricsY, "#10b981")}
-        ${metricCard("Competition", data.competition, 582, metricsY, "#f59e0b")}
+        ${metricCard("Control area", "Workflow", 112, metricsY, "#2563eb")}
+        ${metricCard("Review focus", "Evidence", 347, metricsY, "#10b981")}
+        ${metricCard("Next step", "Review", 582, metricsY, "#f59e0b")}
         <rect x="826" y="${metricsY}" width="244" height="54" rx="27" fill="#111827"/>
         <text x="858" y="${metricsY + 35}" style="font: 950 20px Inter, Arial, sans-serif; fill: #ffffff;">Sign up for Remova</text>
         ${multilineText({ value: "Policy, redaction, access, budgets, and audit trails.", x: 826, y: metricsY + 84, maxChars: 34, lineHeight: 22, className: "small", maxLines: 2 })}
@@ -171,6 +195,7 @@ function buildHeroSvg(data: KeywordPostData) {
 }
 
 function buildControlMapSvg(data: KeywordPostData) {
+    const displayKeyword = editorialCase(data.keyword);
     const nodes = ["Input", "Policy", "Model", "Audit"];
     const nodeY = 188;
     const nodeCenterY = nodeY + 63;
@@ -187,7 +212,7 @@ function buildControlMapSvg(data: KeywordPostData) {
         })
         .join("");
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${xmlEscape(data.keyword)} control map">
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${xmlEscape(displayKeyword)} control map">
         ${baseStyles()}
         <rect width="1200" height="630" fill="#ffffff"/>
         <rect width="1200" height="630" fill="url(#grid)"/>
@@ -202,6 +227,7 @@ function buildControlMapSvg(data: KeywordPostData) {
 }
 
 function buildChecklistSvg(data: KeywordPostData) {
+    const displayKeyword = editorialCase(data.keyword);
     let currentY = 192;
     const items = data.checklist.slice(0, 5);
     const itemMarkup = items
@@ -217,7 +243,7 @@ function buildChecklistSvg(data: KeywordPostData) {
         })
         .join("");
 
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${xmlEscape(data.keyword)} implementation checklist">
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${xmlEscape(displayKeyword)} implementation checklist">
         ${baseStyles()}
         <rect width="1200" height="630" fill="#ffffff"/>
         <rect width="1200" height="630" fill="url(#grid)"/>
@@ -242,6 +268,7 @@ function run(command: string, args: string[]) {
 }
 
 async function writeAssets(data: KeywordPostData) {
+    const displayKeyword = editorialCase(data.keyword);
     await writeFile(join(imageDir, `${data.slug}-hero.svg`), buildHeroSvg(data));
     await writeFile(join(imageDir, `${data.slug}-control-map.svg`), buildControlMapSvg(data));
     await writeFile(join(imageDir, `${data.slug}-checklist.svg`), buildChecklistSvg(data));
@@ -251,7 +278,7 @@ async function writeAssets(data: KeywordPostData) {
         `WEBVTT
 
 00:00.000 --> 00:03.000
-${escapeVtt(`${data.title}. ${data.keyword} has ${data.volume.toLocaleString("en-US")} monthly searches and clear enterprise intent.`)}
+${escapeVtt(`${data.title}. This guide maps ${displayKeyword} to practical enterprise controls, owners, evidence, and review steps.`)}
 
 00:03.000 --> 00:06.000
 ${escapeVtt(`The primary control is ${data.primaryControl.toLowerCase()}: ${data.controlGoal}.`)}
@@ -266,9 +293,6 @@ ${escapeVtt(`Use Remova to enforce policy, redaction, access, budgets, and audit
         JSON.stringify({
             keyword: data.keyword,
             title: data.title,
-            volume: data.volume,
-            cpc: data.cpc,
-            competition: data.competition,
             angle: data.angle,
             controlGoal: data.controlGoal,
             primaryControl: data.primaryControl,

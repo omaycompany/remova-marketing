@@ -140,6 +140,186 @@ function InlineArticleCta({ cta }: { cta: BlogInlineCta }) {
     );
 }
 
+const TAKEAWAYS_BY_SLUG: Record<string, string[]> = {
+    "preset-workflows-standardize-ai-usage": [
+        "Replace repeated blank-chat work with approved presets that define required inputs, allowed data, model route, output format, owner, and review rule.",
+        "Assign one owner per preset, review adoption and rework monthly, and retire workflows that no longer match policy or team practice.",
+        "Use presets for recurring tasks such as contract summaries, customer-support drafts, incident reviews, and security-review preparation.",
+        "Track adoption by team, override rate, sensitive-data events, output rework, and time saved instead of counting prompts alone.",
+    ],
+    "knowledge-grounding-rag-enterprise-governance": [
+        "RAG can reduce unsupported answers, but it does not eliminate hallucinations or access-control risk.",
+        "Propagate the user's identity through retrieval so the model only sees documents that user is allowed to read.",
+        "Control source quality with freshness rules, approved repositories, chunking standards, citation confidence, and conflict handling.",
+        "Test groundedness, retrieval precision, answer abstention, and unauthorized-source prevention before rollout.",
+    ],
+    "multi-agent-ai-governance-playbook": [
+        "Multi-agent controls should be scoped to the workload, such as research agents, coding agents, support orchestrators, or operations workflows.",
+        "Separate planner, executor, reviewer, tool broker, memory, and policy roles so permissions and logs are clear.",
+        "Set per-agent tool allowlists, spend limits, max call counts, timeouts, and human approval gates before production use.",
+        "Monitor loops, tool misuse, conflicting agents, memory poisoning, privilege escalation, and budget spikes as distinct failure modes.",
+    ],
+    "enterprise-ai-governance-guide": [
+        "Start with an AI inventory that names workflows, owners, data classes, model routes, review rules, budgets, and evidence sources.",
+        "Turn written policy into runtime decisions: allow, warn, redact, block, reroute, or require review based on user, data, model, and workflow.",
+        "Give security, legal, finance, IT, and department owners separate responsibilities so AI decisions do not bottleneck in one committee.",
+        "Review adoption, exceptions, redactions, incidents, spend, and evidence completeness on a recurring cadence.",
+    ],
+    "eu-ai-act-timeline-companies-2026-delay": [
+        "The EU AI Act timeline has changed for some high-risk systems, so older August 2026 planning assumptions need review.",
+        "Keep August 2026 work focused on transparency obligations, enforcement readiness, inventory quality, and role classification.",
+        "Map each system to provider, deployer, GPAI, transparency, prohibited-practice, and high-risk obligations before assigning work.",
+        "Use the timeline as a planning control, not a reason to pause evidence collection or owner assignment.",
+    ],
+    "eu-ai-act-enterprise-readiness-checklist": [
+        "This older EU AI Act page has been updated to point readers to the newer timeline and revised high-risk application dates.",
+        "Do not treat August 2, 2026 as the only high-risk deadline; some high-risk categories now have later application dates.",
+        "Keep inventory, risk classification, documentation, human oversight, and monitoring work moving because the preparation workload remains large.",
+        "Confirm final legal applicability with counsel and use Remova-style evidence trails to keep operational proof close to the workflow.",
+    ],
+    "chatgpt-alternatives-for-work": [
+        "Compare Claude, Gemini, Copilot, Perplexity, ChatGPT, and Remova by data handling, identity, admin controls, auditability, and workflow fit.",
+        "The best tool depends on whether the team needs open research, writing help, productivity-suite context, model choice, or controlled employee workflows.",
+        "Do not let one vendor become the default for every task; route work by sensitivity, quality need, cost, and review requirement.",
+        "Standardize evaluation questions so procurement, security, legal, and team owners compare the same evidence across vendors.",
+    ],
+    "prompt-engineering-policy-guide": [
+        "Treat prompt engineering as workflow design, not a requirement that every employee become an expert prompt writer.",
+        "Convert high-value prompts into reviewed templates with allowed data classes, required inputs, output formats, and named owners.",
+        "Test prompt templates with realistic edge cases, prompt injection attempts, sensitive data, and reviewer feedback before broad rollout.",
+        "Measure output acceptance, rework, data events, template adoption, exception rate, and owner review freshness.",
+    ],
+    "prompt-injection-prevention-guide": [
+        "Treat retrieved documents, web pages, tickets, emails, and tool outputs as untrusted data, not instructions.",
+        "Separate system instructions, user requests, retrieved content, tool results, and agent memory with policy rules outside the model.",
+        "Test direct and indirect prompt injection against realistic workflows, especially RAG, agents, support tools, and code assistants.",
+        "Log the source, policy decision, blocked instruction, tool request, and reviewer outcome when prompt injection defenses fire.",
+    ],
+    "ai-security-tools-for-cisos": [
+        "AI security should cover the whole model path: user, prompt, file, retrieval source, model route, tool call, output, and evidence record.",
+        "Protect data before model calls with detection, redaction, blocking, rerouting, and clear user feedback.",
+        "Give agents and connected tools least-privilege permissions with allowlists, rate limits, and human approval gates.",
+        "Measure repeat sensitive-data events, prompt injection attempts, denied tool calls, unresolved exceptions, and incident reconstruction time.",
+    ],
+    "ai-cost-overruns-hidden-expenses": [
+        "AI cost overruns usually come from routing mistakes, tool sprawl, integration work, monitoring, reviews, and unowned usage, not only model invoices.",
+        "Give every major workflow a budget owner, approved model route, usage threshold, and review cadence.",
+        "Route routine tasks away from premium models when cheaper routes meet the quality bar.",
+        "Review cost alongside adoption and quality so savings do not break the workflows employees actually need.",
+    ],
+};
+
+const TAKEAWAYS_BY_CATEGORY: Record<string, string[]> = {
+    Security: [
+        "Name the security owner, data owner, and audit-log owner before expanding AI access.",
+        "Inspect prompts, uploads, retrieved context, and tool calls before data reaches a model.",
+        "Use role-aware blocking, redaction, and rerouting instead of relying on employee memory.",
+        "Keep enough evidence to reconstruct incidents without exposing unnecessary prompt content.",
+    ],
+    Compliance: [
+        "Map each AI workflow to an owner, applicable requirement, evidence source, and review cadence.",
+        "Keep inventory, policy, approvals, exceptions, and audit trails connected to actual AI usage.",
+        "Treat external frameworks as inputs to operating controls, not as substitutes for implementation.",
+        "Review stale evidence, expired exceptions, and control drift before an auditor or buyer asks.",
+    ],
+    FinOps: [
+        "Assign AI spend to the team and workflow creating the demand.",
+        "Route each task to the lowest-cost model that still meets the quality and review requirement.",
+        "Track spend by model, workflow, department, exception, and business outcome.",
+        "Review cost spikes together with usage quality so optimization does not become a blind budget cut.",
+    ],
+    Operations: [
+        "Start with repeatable workflows, not generic chat volume.",
+        "Define the owner, inputs, allowed data, output format, review rule, and escalation path for each workflow.",
+        "Measure adoption, completion, rework, exceptions, and user feedback after launch.",
+        "Retire or revise workflows that create drift, repeated overrides, or low-quality outputs.",
+    ],
+    Playbook: [
+        "Turn the playbook into a launch sequence with owners, approval gates, test cases, and rollback steps.",
+        "Start with a bounded pilot and expand only when evidence shows the controls work.",
+        "Track exceptions, incidents, adoption, cost, and reviewer capacity while the workflow scales.",
+        "Keep a named owner for each step so review does not disappear after launch.",
+    ],
+};
+
+const OPERATIONAL_CHECKLIST_BY_SLUG: Record<string, string[]> = {
+    "preset-workflows-standardize-ai-usage": [
+        "Assign a prompt or preset lifecycle owner for each approved workflow.",
+        "Assign a data classification owner to approve allowed and blocked input classes.",
+        "Assign an output-review owner for workflows that affect customers, contracts, security, finance, HR, or external claims.",
+        "Assign an analytics owner to review adoption, override rate, policy events, rework, and retirement candidates monthly.",
+    ],
+    "knowledge-grounding-rag-enterprise-governance": [
+        "Assign a retrieval owner for chunking, ranking, freshness, citation confidence, and source-quality tests.",
+        "Assign an access-control owner for identity propagation, group sync, tenant boundaries, and document-level permissions.",
+        "Assign an evaluation owner for groundedness tests, retrieval precision and recall, abstention rate, and citation accuracy.",
+        "Assign an incident owner for stale, conflicting, wrong, or unauthorized source citations.",
+    ],
+    "multi-agent-ai-governance-playbook": [
+        "Assign an orchestrator owner for planning rules, delegation boundaries, and termination conditions.",
+        "Assign a tool-permission owner for per-agent allowlists, credentials, scopes, and human approval gates.",
+        "Assign a cost owner for token budgets, maximum calls, timeouts, model routes, and spend alerts.",
+        "Assign an incident owner for loops, tool misuse, memory poisoning, conflicting agents, and privilege escalation.",
+    ],
+    "ai-cost-overruns-hidden-expenses": [
+        "Assign a model-routing owner for task tiers, default routes, quality thresholds, and routing exceptions.",
+        "Assign a department budget owner for forecasts, alerts, chargeback rules, and variance review.",
+        "Assign a vendor-cost owner for AI add-on fees, renewal terms, usage commitments, and duplicate tools.",
+        "Assign a workflow-value owner for adoption, output quality, rework, and business outcome review.",
+    ],
+};
+
+const OPERATIONAL_CHECKLIST_BY_CATEGORY: Record<string, string[]> = {
+    Security: [
+        "Assign a model access owner for approved models, role restrictions, and route exceptions.",
+        "Assign a data classification owner for prompt, file, retrieval, connector, and tool-output rules.",
+        "Assign an audit-log owner for event retention, investigation access, and evidence exports.",
+        "Assign an exception-review owner for blocked requests, approvals, expiry dates, and escalation paths.",
+    ],
+    Compliance: [
+        "Assign a requirement owner for each framework, law, customer obligation, or internal policy in scope.",
+        "Assign an evidence owner for inventory, approvals, exceptions, testing, audit logs, and review notes.",
+        "Assign a review-cadence owner for stale controls, overdue evidence, and expired exceptions.",
+        "Assign a legal escalation owner for high-risk use cases, unclear roles, and external commitments.",
+    ],
+    FinOps: [
+        "Assign a budget owner for each department, workspace, model tier, and major AI workflow.",
+        "Assign a routing owner for model tier defaults, override rules, and quality thresholds.",
+        "Assign a vendor owner for renewals, AI add-on charges, duplicate subscriptions, and contract changes.",
+        "Assign a reporting owner for spend variance, cost per workflow, adoption, and savings decisions.",
+    ],
+    Operations: [
+        "Assign a workflow owner for purpose, users, inputs, outputs, review rules, and support path.",
+        "Assign a preset lifecycle owner for drafting, approval, production, monitoring, and retirement.",
+        "Assign a data owner for allowed data classes, redaction rules, and blocked inputs.",
+        "Assign an adoption owner for training, usage analytics, rework rate, and user feedback.",
+    ],
+    Playbook: [
+        "Assign a rollout owner for pilot scope, approval gates, user groups, and launch criteria.",
+        "Assign a control owner for access, data handling, model routes, logging, and exception handling.",
+        "Assign a metrics owner for adoption, incidents, cost, reviewer capacity, and control pass rate.",
+        "Assign a rollback owner for pause criteria, incident response, communications, and remediation.",
+    ],
+};
+
+function takeawaysForPost(post: BlogPost) {
+    return TAKEAWAYS_BY_SLUG[post.slug] ?? TAKEAWAYS_BY_CATEGORY[post.category] ?? [
+        "Name the workflow owner, data owner, access owner, evidence owner, and exception reviewer before rollout.",
+        "Classify the data, model route, user group, output use, review rule, and retention need for each AI workflow.",
+        "Turn policy into runtime decisions such as allow, warn, redact, block, reroute, or require review.",
+        "Track adoption, exceptions, data events, cost, output quality, and audit evidence on a recurring cadence.",
+    ];
+}
+
+function operationalChecklistForPost(post: BlogPost) {
+    return OPERATIONAL_CHECKLIST_BY_SLUG[post.slug] ?? OPERATIONAL_CHECKLIST_BY_CATEGORY[post.category] ?? [
+        "Assign a workflow owner for purpose, user group, data classes, and output review.",
+        "Assign a model access owner for approved routes, exceptions, and route changes.",
+        "Assign a data protection owner for prompt, file, retrieval, and connector rules.",
+        "Assign an audit-log owner for evidence retention, search, exports, and investigation access.",
+    ];
+}
+
 export async function generateStaticParams() {
     return [
         ...allBlogPosts.map((p) => ({ slug: p.slug })),
@@ -299,12 +479,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             "User adoption trend after rollout",
         ],
     };
-    const operationalChecklist = [
-        `Assign an owner for "${post.sections[0]?.heading}".`,
-        "Define baseline controls and exception paths before broad rollout.",
-        "Track outcomes weekly and publish a short operational summary.",
-        "Review controls monthly and adjust based on incident patterns.",
-    ];
+    const articleTakeaways = takeawaysForPost(post);
+    const operationalChecklist = operationalChecklistForPost(post);
     const priorityMetrics = isDataLossPreventionPost ? [
         "Prompt DLP detections by data class",
         "Redacted versus blocked AI requests",
@@ -648,16 +824,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                             <Zap className="h-5 w-5" /> TL;DR
                         </h2>
                         <ul className="space-y-3">
-                            {post.sections.slice(0, 3).map((s, i) => (
+                            {articleTakeaways.map((takeaway, i) => (
                                 <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
                                     <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span dangerouslySetInnerHTML={{ __html: `${s.heading}: ${s.content.split('.')[0]}.` }} />
+                                    <span>{takeaway}</span>
                                 </li>
                             ))}
-                            <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
-                                <span className="text-emerald-500 italic shrink-0">—</span>
-                                <span>{post.excerpt}</span>
-                            </li>
                         </ul>
                     </div>
                 </div>

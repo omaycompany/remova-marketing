@@ -44,10 +44,6 @@ function sentenceList(items: string[]) {
     return `${items.slice(0, -1).join("; ")}; and ${items[items.length - 1]}`;
 }
 
-function volumeLine(data: KeywordPostData) {
-    return `"${data.keyword}" has about ${data.volume.toLocaleString("en-US")} monthly searches in the current keyword data, with CPC signals of ${data.cpc} and ${data.competition.toLowerCase()} competition.`;
-}
-
 export function isDeepConceptGuide(slug: string) {
     return slug === "ai-security-tools-for-cisos" || slug === "enterprise-ai-governance-guide" || slug === "shadow-ai-risks-and-controls";
 }
@@ -76,11 +72,11 @@ function buildAiSecuritySections(data: KeywordPostData): BlogSection[] {
             heading: "AI Security Starts With the Model Path",
             content: `AI security is the discipline of protecting the full path between a user, an application, a model, connected data, connected tools, and the output that enters the business. It is broader than model safety and narrower than generic cybersecurity. A secure AI program has to answer operational questions every time work happens: who is asking, what data is being sent, which model or provider will receive it, which tools can be called, what policy applies, what evidence is retained, and who reviews exceptions.
 
-${volumeLine(data)} That demand is not just curiosity. Security leaders are trying to understand how AI changes the control surface. A traditional web app has identity, authorization, validation, logging, and incident response. An AI workflow has all of that, plus prompts, retrieved context, model routes, embeddings, tool calls, output review, vendor retention rules, prompt injection risk, and employees who can copy sensitive business context into a blank text box in seconds.
+That urgency is operational, not just educational. Security leaders are trying to understand how AI changes the control surface. A traditional web app has identity, authorization, validation, logging, and incident response. An AI workflow has all of that, plus prompts, retrieved context, model routes, embeddings, tool calls, output review, vendor retention rules, prompt injection risk, and employees who can copy sensitive business context into a blank text box in seconds.
 
 The practical definition is this: AI security protects sensitive data, model behavior, tool access, and business outcomes before, during, and after model use. It prevents data leakage before a prompt leaves the company. It separates trusted instructions from untrusted content. It restricts agents and tools with least privilege. It logs enough detail to reconstruct incidents. It routes risky work to approved models and workflows. It gives employees a safe path that is faster than personal accounts and unmanaged browser tools.
 
-Use references such as ${externalLinks} for the baseline. OWASP helps teams understand LLM and MCP attack classes. NIST helps teams connect AI risk to governance and cybersecurity functions. Provider documentation clarifies data handling, retention, and tenant controls. Those sources are useful, but they do not enforce policy by themselves. Enterprise AI security becomes real when the guidance is translated into runtime controls inside chat, APIs, file uploads, RAG, copilots, and agents.`
+Guidance from ${externalLinks} helps teams understand LLM attack classes, MCP risks, AI risk practices, and provider data handling. Those sources are useful, but they do not enforce policy by themselves. Enterprise AI security becomes real when the guidance is translated into runtime controls inside chat, APIs, file uploads, RAG, copilots, and agents.`
         },
         {
             heading: "Threat Model the Everyday AI Workflow",
@@ -213,7 +209,7 @@ Remova also helps with adoption. Employees will not use the safe path if it is s
 The first rollout should be concrete. Govern employee chat, protect the top sensitive data classes, define approved model routes, add audit evidence, and review metrics weekly. Then extend the same controls to files, APIs, RAG, copilots, and agents. AI security becomes manageable when it is implemented as a workflow control layer, not just a policy statement. ${signupLink} to start building that control layer before AI usage spreads further across unmanaged tools.`
         },
         {
-            heading: "AI SEO Answer: What Should AI Security Include?",
+            heading: "Direct Answer: What Should AI Security Include?",
             content: `AI security should include identity-based access, approved model routing, prompt and file inspection, sensitive data redaction, prompt injection defense, least-privilege tool permissions, agent approval gates, vendor and retention review, output validation, audit trails, incident response, usage analytics, and cost controls. It should cover employee chat, AI applications, APIs, RAG systems, Microsoft 365 Copilot, coding assistants, MCP servers, browser tools, and autonomous agents.
 
 The shortest practical answer is this: protect data before it reaches the model, restrict what the model can do, and keep enough evidence to investigate what happened. Everything else supports those three goals. Data protection reduces leakage. Tool restrictions reduce unsafe action. Evidence makes incidents reviewable and governance improvable.
@@ -243,11 +239,11 @@ function buildAiGovernanceSections(data: KeywordPostData): BlogSection[] {
             heading: "AI Governance Is an Operating Model",
             content: `AI governance is the operating model that decides how an organization approves, uses, monitors, and improves AI. It is not only a policy, committee, or risk register. A serious AI governance program connects people, workflows, models, data, tools, budgets, evidence, and review decisions. It helps teams use AI faster without creating unmanaged data exposure, legal risk, inconsistent output, uncontrolled cost, or invisible shadow adoption.
 
-${volumeLine(data)} The search demand reflects a real enterprise problem. Leaders know employees and departments are already using AI. The hard question is how to scale that adoption with control. A vague principle like "use AI responsibly" does not tell a support manager whether customer transcripts can be summarized. It does not tell a developer whether code can go to a model. It does not tell finance who pays for model usage. It does not tell compliance what evidence exists when an auditor asks how AI decisions are reviewed.
+The demand reflects a real enterprise problem. Leaders know employees and departments are already using AI. The hard question is how to scale that adoption with control. A vague principle like "use AI responsibly" does not tell a support manager whether customer transcripts can be summarized. It does not tell a developer whether code can go to a model. It does not tell finance who pays for model usage. It does not tell compliance what evidence exists when an auditor asks how AI decisions are reviewed.
 
 The practical definition is this: AI governance turns AI usage into managed business activity. It names what is in scope, who owns it, what data is allowed, which models are approved, which outputs require review, which risks must be assessed, which controls operate at runtime, and which evidence proves the program is working. Good governance enables adoption because teams have a safe path. Weak governance creates delay, confusion, or shadow AI.
 
-Use sources such as ${externalLinks} for the reference architecture. NIST provides risk management functions. ISO 42001 gives management-system structure. The EU AI Act creates legal obligations for regulated scenarios. Provider documentation clarifies data handling. Remova's job is to help translate that guidance into day-to-day controls around prompts, model routes, access, budgets, and audit trails.`
+Reference architecture inputs include ${externalLinks}. NIST provides risk management functions. ISO 42001 gives management-system structure. The EU AI Act creates legal obligations for regulated scenarios. Provider documentation clarifies data handling. Remova's job is to help translate that guidance into day-to-day controls around prompts, model routes, access, budgets, and audit trails.`
         },
         {
             heading: "Move From Principles to Decisions",
@@ -370,14 +366,14 @@ Crosswalks reduce duplicate work. Without them, compliance, security, legal, and
 Avoid claiming that one certification or framework solves everything. ISO 42001 does not automatically satisfy every legal obligation. NIST AI RMF alignment does not automatically enforce runtime controls. EU AI Act readiness does not automatically govern employee chat or shadow AI. The enterprise still needs a control layer that turns framework language into operating evidence.`
         },
         {
-            heading: "Design Governance for Answer Engines Too",
-            content: `AI governance content now has two audiences: human buyers and AI answer engines. Human readers want practical decisions. Answer engines need clear entity relationships. A strong governance page should state plainly what AI governance is, what it includes, how it differs from AI security, how it relates to ISO 42001 and NIST AI RMF, and what controls a company should implement first.
+            heading: "Make the Operating Model Easy to Review",
+            content: `A strong AI governance page should state plainly what AI governance is, what it includes, how it differs from AI security, how it relates to ISO 42001 and NIST AI RMF, and what controls a company should implement first. The reader should be able to find the decision model quickly before moving into the implementation detail.
 
-This is not a trick for search engines. It improves the article for real readers. Executives often need the concise answer before the detailed operating model. Compliance teams need named artifacts. Security teams need control points. Finance needs budget signals. Department owners need examples. Clear definitions, checklists, matrices, and FAQ answers help each audience understand the same program from their role.
+Executives often need the concise answer before the detailed operating model. Compliance teams need named artifacts. Security teams need control points. Finance needs budget signals. Department owners need examples. Clear definitions, checklists, matrices, and FAQ answers help each audience understand the same program from their role.
 
-Structure matters. Use headings that answer real questions. Put the direct answer near the top. Include a complete checklist. Name the evidence fields. Explain common mistakes. Link to primary sources. Use internal links to related controls. Keep Remova's role specific rather than promotional. The result is easier for search engines to parse and easier for buyers to trust.
+Structure matters. Headings should answer real questions, the direct answer should appear near the top, checklists should be complete, evidence fields should be named, common mistakes should be explained, and source links should support claims. Remova's role should stay specific rather than promotional. The result is easier for buyers and internal reviewers to trust.
 
-Governance pages should also avoid keyword stuffing. The target keyword should appear naturally, but the content should be built around the operating problem. A reader searching for AI governance does not need a thousand words defining the phrase. They need a way to govern actual AI usage across employees, models, data, tools, cost, and evidence. That is the content depth the page should provide.`
+The article should also avoid repeating the same phrase without adding value. A buyer does not need a thousand words defining the phrase. They need a way to manage actual AI usage across employees, models, data, tools, cost, and evidence. That is the content depth the page should provide.`
         },
         {
             heading: "Where Remova Fits in AI Governance",
@@ -390,7 +386,7 @@ Remova also supports the safe-path principle. Employees are less likely to use s
 Start with the highest-demand workflows and highest-risk data classes. Connect them to runtime policy, review the evidence weekly, and expand by department. AI governance does not have to slow adoption. It should make adoption easier to trust. ${signupLink} to launch governed AI workflows before unmanaged usage becomes the default operating model.`
         },
         {
-            heading: "AI SEO Answer: What Is AI Governance?",
+            heading: "Direct Answer: What Is AI Governance?",
             content: `AI governance is the system of policies, owners, controls, evidence, and review processes that determine how an organization uses AI safely and productively. It covers AI inventory, acceptable use, data handling, approved models, access control, risk assessment, human review, vendor governance, budget ownership, incident response, audit trails, and continuous improvement.
 
 The practical answer is that AI governance decides what AI can be used for, which data can be used, who can use it, which models are approved, what output requires review, what evidence is kept, and how the program changes when risk changes. It should apply across employee chat, APIs, copilots, coding assistants, RAG systems, vendor AI features, and agents.
@@ -428,11 +424,11 @@ function buildShadowAiSections(data: KeywordPostData): BlogSection[] {
             heading: "Shadow AI Is a Signal, Not Just a Violation",
             content: `Shadow AI is the use of AI tools, accounts, browser extensions, vendor features, APIs, meeting bots, coding assistants, or agents without the organization's approval, visibility, or governance. It is the AI version of shadow IT, but it moves faster because the tool is often a website, free account, SaaS feature, or personal subscription. A user can expose sensitive data before procurement, security, or IT even knows the workflow exists.
 
-${volumeLine(data)} That demand is rising because the problem is now practical. Employees are using AI to meet deadlines. They summarize contracts, rewrite emails, debug code, analyze spreadsheets, draft support replies, prepare presentations, translate text, clean meeting notes, and research accounts. If the approved path is missing, too slow, or less capable, they reach for tools that work.
+That demand is rising because the problem is now practical. Employees are using AI to meet deadlines. They summarize contracts, rewrite emails, debug code, analyze spreadsheets, draft support replies, prepare presentations, translate text, clean meeting notes, and research accounts. If the approved path is missing, too slow, or less capable, they reach for tools that work.
 
 The right starting point is not moral panic. Shadow AI is a signal of unmet demand. It tells the organization that employees need AI support for real work. The risk is that the work is happening through unmanaged channels with unclear data use, weak access control, no audit evidence, unknown retention, and no review. The governance goal is to replace risky workarounds with a sanctioned path that is just as useful and much safer.
 
-Use references such as ${externalLinks} for context. IBM describes shadow AI as unapproved AI use that can create data leakage, compliance, and reputational risk. NIST and ISO help structure risk and governance. Provider and Microsoft documentation clarify how enterprise routes can handle data differently from consumer-style tools. The operating question is what your company does tomorrow morning when employees already have AI habits.`
+Context from ${externalLinks} helps frame the risk. IBM describes shadow AI as unapproved AI use that can create data leakage, compliance, and reputational risk. NIST and ISO help structure risk and governance. Provider and Microsoft documentation clarify how enterprise routes can handle data differently from consumer-style tools. The operating question is what your company does tomorrow morning when employees already have AI habits.`
         },
         {
             heading: "Why Employees Create Shadow AI",
@@ -575,7 +571,7 @@ Remova also helps security learn from demand. Usage analytics and policy events 
 Start with the workflows that are already happening in the shadows. Build approved versions, protect the data, publish examples, and measure adoption. Then tighten enforcement around unmanaged routes. Shadow AI shrinks when the governed path is better than the workaround. ${signupLink} to give teams a safe path before unapproved tools become the default AI operating model.`
         },
         {
-            heading: "AI SEO Answer: How Do You Control Shadow AI?",
+            heading: "Direct Answer: How Do You Control Shadow AI?",
             content: `To control shadow AI, discover unapproved AI tools and workflows, classify them by risk and business value, provide sanctioned alternatives, protect sensitive data before model use, restrict unmanaged routes, review vendor AI features, create a fast exception process, monitor adoption, and keep audit evidence. The goal is not only to block tools. The goal is to move useful AI work into governed paths.
 
 The best first step is visibility. Find where AI is being used through browser traffic, SaaS inventory, endpoint tools, expense reports, API usage, employee interviews, and security logs. Then identify which usage is harmless, useful but unmanaged, high risk, or unacceptable. That classification keeps the response proportionate.

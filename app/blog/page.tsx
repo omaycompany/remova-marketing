@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import type { BlogPost } from "@/content/blog";
 import { allBlogPosts } from "@/content/blog";
 import { blogCategoryPath, blogCategorySlug, getBlogCategorySeo } from "@/content/blog-taxonomy";
+import BlogSearch, { type BlogSearchPost } from "@/components/blog/BlogSearch";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
@@ -234,6 +236,76 @@ function categoryPosts(category: string, limit = 4) {
     return allBlogPosts.filter((post) => post.category === category).slice(0, limit);
 }
 
+const CATEGORY_CTA_COPY: Record<string, { eyebrow: string; title: string; description: string; tone: string }> = {
+    Security: {
+        eyebrow: "Security takeaway",
+        title: "Control model access before data moves.",
+        description: "Use Remova to enforce role access, inspect prompts and files, redact sensitive data, and keep audit logs ready for incident review.",
+        tone: "bg-slate-950",
+    },
+    Compliance: {
+        eyebrow: "Compliance takeaway",
+        title: "Keep evidence tied to real AI usage.",
+        description: "Map policies to workflow events, approvals, exceptions, retention choices, and review trails that auditors and buyers can inspect.",
+        tone: "bg-emerald-700",
+    },
+    FinOps: {
+        eyebrow: "FinOps takeaway",
+        title: "Make AI spend visible by workflow.",
+        description: "Track model routes, department budgets, usage spikes, override patterns, and cost per completed workflow before invoices surprise finance.",
+        tone: "bg-amber-600",
+    },
+    Engineering: {
+        eyebrow: "Engineering takeaway",
+        title: "Test prompts, routes, and tools before release.",
+        description: "Compare model behavior, validate prompt templates, restrict tool access, and log workflow evidence across AI apps and coding assistants.",
+        tone: "bg-sky-700",
+    },
+    Operations: {
+        eyebrow: "Operations takeaway",
+        title: "Turn repeated AI work into owned workflows.",
+        description: "Standardize inputs, approved models, review rules, exception paths, and adoption metrics so teams do not rely on private prompt habits.",
+        tone: "bg-indigo-700",
+    },
+    Playbook: {
+        eyebrow: "Playbook takeaway",
+        title: "Launch AI in controlled waves.",
+        description: "Give every rollout a pilot owner, approval gate, test set, rollback path, and metrics review before expanding access.",
+        tone: "bg-slate-950",
+    },
+    Guide: {
+        eyebrow: "Guide takeaway",
+        title: "Move from concept to operating rule.",
+        description: "Convert each AI topic into owners, allowed data, model routes, review steps, audit events, and measurable outcomes.",
+        tone: "bg-teal-700",
+    },
+};
+
+function categoryCtaCopy(category: string, index: number) {
+    return CATEGORY_CTA_COPY[category] ?? {
+        eyebrow: `${category} takeaway`,
+        title: "Turn the article into an operating control.",
+        description: "Use Remova to connect model access, data rules, workflow owners, review steps, and audit evidence inside daily AI work.",
+        tone: index === 1 ? "bg-emerald-700" : index === 2 ? "bg-amber-600" : "bg-slate-950",
+    };
+}
+
+function stripHtml(value: string) {
+    return value.replace(/<[^>]*>/g, " ");
+}
+
+function searchTextForPost(post: BlogPost) {
+    return [
+        post.title,
+        post.excerpt,
+        post.category,
+        post.author,
+        post.slug.replace(/-/g, " "),
+        ...post.sections.map((section) => `${section.heading} ${stripHtml(section.content).slice(0, 600)}`),
+        ...(post.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
+    ].filter(Boolean).join(" ");
+}
+
 function ArticleMeta({ post, compact = false }: { post: BlogPost; compact?: boolean }) {
     return (
         <div className={`flex flex-wrap items-center gap-x-4 gap-y-2 ${compact ? "text-xs" : "text-sm"} text-slate-500 dark:text-slate-400`}>
@@ -380,6 +452,18 @@ export default function BlogIndex() {
         .map((theme) => ({ ...theme, posts: categoryPosts(theme.title, 4) }))
         .filter((section) => section.posts.length > 0);
     const latestPosts = allBlogPosts.slice(10, 18);
+    const searchPosts: BlogSearchPost[] = allBlogPosts.map((post) => ({
+        slug: post.slug,
+        title: post.title,
+        excerpt: post.excerpt,
+        category: post.category,
+        date: post.date,
+        readTime: post.readTime,
+        author: post.author ?? "Remova Editorial",
+        imageSrc: postImageSrc(post),
+        imageAlt: postImageAlt(post),
+        searchText: searchTextForPost(post),
+    }));
 
     return (
         <div className="flex flex-col bg-white dark:bg-[#131314]">
@@ -417,6 +501,9 @@ export default function BlogIndex() {
                         </div>
                     </div>
 
+                    <Suspense fallback={<div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm font-bold text-slate-500 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-400">Loading blog search...</div>}>
+                        <BlogSearch posts={searchPosts} />
+                    </Suspense>
                 </div>
             </section>
 
@@ -518,6 +605,7 @@ export default function BlogIndex() {
                         const firstColumn = section.posts.slice(0, 2);
                         const secondColumn = section.posts.slice(2, 4);
                         const sectionArt = categoryArt(section);
+                        const ctaCopy = categoryCtaCopy(section.title, sectionIndex);
 
                         return (
                             <div key={section.title} id={`category-${section.id}`}>
@@ -557,19 +645,13 @@ export default function BlogIndex() {
                                             <CategoryArticleRow key={post.slug} post={post} withImage={index === 0 && Boolean(latestPostPeopleArt[post.slug])} />
                                         ))}
                                     </div>
-                                    <div className={`rounded-lg p-8 text-white ${
-                                        sectionIndex === 1
-                                            ? "bg-emerald-700"
-                                            : sectionIndex === 2
-                                                ? "bg-amber-600"
-                                                : "bg-slate-950"
-                                    }`}>
-                                        <p className="mb-3 text-sm font-black uppercase tracking-[0.2em] opacity-80">Operational takeaway</p>
+                                    <div className={`rounded-lg p-8 text-white ${ctaCopy.tone}`}>
+                                        <p className="mb-3 text-sm font-black uppercase tracking-[0.2em] opacity-80">{ctaCopy.eyebrow}</p>
                                         <h3 className="text-2xl font-black leading-tight">
-                                            Turn reading into governed AI workflows.
+                                            {ctaCopy.title}
                                         </h3>
                                         <p className="mt-4 text-sm font-medium leading-relaxed opacity-85">
-                                            Use Remova to route model access, enforce policies, redact sensitive data, and keep audit evidence tied to real usage.
+                                            {ctaCopy.description}
                                         </p>
                                         <ExternalAppLink
                                             href="https://app.remova.org/register"
