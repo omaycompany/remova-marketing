@@ -68,7 +68,7 @@ const homepageFaqs = [
     },
     {
         question: "What security documents are available for procurement review?",
-        answer: "Remova can provide a security review packet with DPA language, subprocessors, architecture diagrams, encryption and retention details, incident-response process, and current SOC 2 status."
+        answer: "Remova can provide a security review packet with DPA language, subprocessors, architecture diagrams, encryption and retention details, incident-response process, and a current SOC 2 status summary."
     }
 ];
 
@@ -112,10 +112,10 @@ export default function LandingPage() {
 
                 <div className="container mx-auto text-center max-w-[90rem] relative z-10">
                     <h1 className="mb-8 text-6xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-8xl lg:text-[9rem] xl:text-[9.5rem] leading-[0.92] select-none uppercase">
-                        A Safer Way <br /> To Use Ai
+                        A Safer Way <br /> To Use AI
                     </h1>
                     <p className="mx-auto mb-12 max-w-3xl text-2xl text-slate-600 dark:text-slate-300 sm:text-3xl leading-relaxed font-medium">
-                        Let your team use ChatGPT, Claude, and Gemini without exposing company data.
+                        Let your team use ChatGPT, Claude, and Gemini without losing control of company data.
                     </p>
                     <div className="flex flex-col items-center justify-center gap-6 sm:flex-row mb-20">
                         <ExternalAppLink
@@ -131,12 +131,12 @@ export default function LandingPage() {
             {/* AI Provider Slider */}
             <section aria-label="AI providers on Remova" className="relative overflow-hidden border-y border-slate-200/80 bg-white px-4 py-10 dark:border-white/10 dark:bg-[#131314] sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-[90rem]">
-                    <div className="group relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
-                        <div className="ai-provider-marquee flex w-max items-center gap-12 group-hover:[animation-play-state:paused]">
-                            {[...aiProviders, ...aiProviders].map((provider, providerIndex) => (
+                    <div className="relative overflow-hidden">
+                        <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+                            {aiProviders.map((provider) => (
                                 <div
-                                    key={`${provider.name}-${providerIndex}`}
-                                    className="flex h-10 min-w-[12rem] items-center justify-center gap-3 opacity-75 grayscale transition duration-300 hover:opacity-100 dark:opacity-80 dark:hover:opacity-100"
+                                    key={provider.name}
+                                    className="flex h-10 min-w-[10rem] items-center justify-center gap-3 opacity-75 grayscale transition duration-300 hover:opacity-100 dark:opacity-80 dark:hover:opacity-100"
                                 >
                                     <img
                                         src={provider.logoSrc}
@@ -154,12 +154,12 @@ export default function LandingPage() {
 
                     <div className="mt-10 grid gap-4 text-base font-black text-slate-500 dark:text-slate-400 sm:grid-cols-[auto_1fr_auto] sm:items-center">
                         <span>
-                            Govern access to <strong className="text-slate-900 dark:text-white">300+ AI models</strong> from one Remova workspace.
+                            Govern access to <strong className="text-slate-900 dark:text-white">300+ AI models</strong> from one Remova workspace
                         </span>
                         <span className="hidden h-px bg-slate-200 dark:bg-white/10 sm:block" />
                         <span className="inline-flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
                             <ShieldCheck className="h-5 w-5" />
-                            Extra safety controls
+                            with extra safety controls
                         </span>
                     </div>
                 </div>
@@ -169,12 +169,12 @@ export default function LandingPage() {
                 <div className="container mx-auto max-w-[96rem]">
                     <div className="grid gap-6 lg:grid-cols-3">
                         {[
-                            { layer: "Layer - 1", title: "Remove AI Data Leaks", visual: "leaks" },
-                            { layer: "Layer - 2", title: "Remove AI Misuse", visual: "misuse" },
-                            { layer: "Layer - 3", title: "Remove Third Parties", visual: "third-parties" },
-                        ].map((item, index) => (
+                            { eyebrow: "Data protection", title: "Reduce AI Data Leaks", visual: "leaks" },
+                            { eyebrow: "Policy control", title: "Reduce AI Misuse", visual: "misuse" },
+                            { eyebrow: "Vendor control", title: "Control Third-Party AI Access", visual: "third-parties" },
+                        ].map((item) => (
                             <div
-                                key={item.layer}
+                                key={item.title}
                                 className="group relative min-h-[22rem] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-9 transition-colors hover:border-slate-400 dark:border-white/10 dark:bg-[#17181a] dark:hover:border-white/30 xl:p-10"
                             >
                                 <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.018)_1px,transparent_1px)] bg-[size:3.25rem_3.25rem] dark:bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)]" />
@@ -212,11 +212,9 @@ export default function LandingPage() {
                                 <div className="relative flex min-h-[18rem] flex-col justify-between">
                                     <div className="flex items-start justify-between gap-6">
                                         <p className="text-xs font-black uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-                                            {item.layer}
+                                            {item.eyebrow}
                                         </p>
-                                        <span className="font-mono text-xs font-bold text-slate-300 dark:text-white/20">
-                                            0{index + 1}
-                                        </span>
+                                        <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500/70" />
                                     </div>
 
                                     <div className="relative max-w-[15rem]">
@@ -594,7 +592,7 @@ export default function LandingPage() {
                                         <div className="absolute h-64 w-64 border border-dashed border-slate-300 dark:border-white/20 rounded-full animate-spin-slow duration-[10s]" />
                                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 mt-32">
                                             <span className="text-xs font-sans font-bold bg-white dark:bg-black px-3 py-1 rounded-full border border-slate-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 shadow-xl">
-                                                Local Storage Only
+                                                Controlled Retention
                                             </span>
                                         </div>
                                     </div>
@@ -613,11 +611,11 @@ export default function LandingPage() {
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-emerald-500" />
-                                        <span>No shared history logs</span>
+                                        <span>Workspace history follows your retention rules</span>
                                     </li>
                                     <li className="flex items-start gap-4 text-lg font-bold text-slate-900 dark:text-white">
                                         <div className="mt-1.5 h-3 w-3 rounded-full bg-emerald-500" />
-                                        <span>No personal data shared with Remova</span>
+                                        <span>Sensitive data controls before model routing</span>
                                     </li>
                                 </ul>
                             </div>
@@ -765,8 +763,7 @@ export default function LandingPage() {
                                 <p className="opacity-60 font-sans mb-8 uppercase tracking-widest text-sm">Dedicated Private AI</p>
 
                                 <div className="mb-8">
-                                    <span className="block text-lg font-sans font-bold uppercase tracking-widest opacity-60 mb-2">Starting from</span>
-                                    <span className="text-5xl font-black tracking-tighter uppercase">$5,000 / month</span>
+                                    <span className="block text-5xl font-black tracking-tighter uppercase">Starting from $5,000 / month</span>
                                 </div>
 
                                 <ul className="space-y-4 mb-12">
@@ -775,7 +772,7 @@ export default function LandingPage() {
                                         "Deployment of Full Control Layer",
                                         "Local AI Model Serving",
                                         "Full Source Code Access Option",
-                                        "Zero-Data-Outbound Guarantee"
+                                        "Configurable Data Outbound Controls"
                                     ].map((feat, i) => (
                                         <li key={i} className="flex items-start gap-3">
                                             <div className="h-2 w-2 bg-white dark:bg-slate-900 mt-1.5 flex-shrink-0" />
@@ -785,6 +782,7 @@ export default function LandingPage() {
                                 </ul>
                             </div>
                             <SafeEmailLink
+                                mailbox="sales"
                                 subject="On-Prem Architecture Inquiry"
                                 className="w-full py-4 text-center bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-lg font-black uppercase hover:opacity-90 transition-opacity rounded-[2.5rem]"
                             >

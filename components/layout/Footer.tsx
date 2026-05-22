@@ -74,9 +74,9 @@ export default function Footer() {
                                 { name: "Blog", href: "/blog" },
                                 { name: "Glossary", href: "/glossary" },
                                 { name: "Resources", href: "/resources" },
-                                { name: "Trade Privacy Guide", href: "/resources/ultimate-guide-trade-privacy-2025" },
-                                { name: "ImportYeti Removal", href: "/resources/importyeti-removal-guide" },
-                                { name: "Coverage Windows", href: "/resources/coverage-windows-explained" },
+                                { name: "ISMS Scope", href: "/resources/isms-scope-statement" },
+                                { name: "Trust Center", href: "/trust" },
+                                { name: "AI Governance Blog", href: "/blog/category/governance" },
                             ],
                         },
                         {
@@ -106,6 +106,7 @@ export default function Footer() {
                                     <li key={link.name}>
                                         {link.href === "email:legal" ? (
                                             <SafeEmailLink
+                                                mailbox="legal"
                                                 subject="Legal Inquiry"
                                                 className="text-base font-bold text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors relative group inline-block"
                                             >

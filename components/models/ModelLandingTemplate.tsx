@@ -9,7 +9,12 @@ import { applicationsForModel } from "@/content/model-applications";
 import { getModelVideo } from "@/content/model-videos";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import { absoluteUrl } from "@/lib/seo";
-import { formatPublicModelPrice } from "@/lib/model-pricing";
+import {
+    formatModelInputPrice,
+    formatModelOutputPrice,
+    modelInputPriceHeading,
+    modelOutputPriceHeading,
+} from "@/lib/model-pricing";
 import LazyModelVideo from "@/components/video/LazyModelVideo";
 
 const fmtNumber = new Intl.NumberFormat("en-US");
@@ -20,13 +25,19 @@ function formatContextLabel(model: ModelEntry) {
 }
 
 function formatInputPriceLabel(model: ModelEntry) {
-    if (model.pricingDescription) return model.pricingDescription;
-    return formatPublicModelPrice(model.inputPer1M);
+    return formatModelInputPrice(model);
 }
 
 function formatOutputPriceLabel(model: ModelEntry) {
-    if (model.pricingDescription) return "Usage-based";
-    return formatPublicModelPrice(model.outputPer1M);
+    return formatModelOutputPrice(model);
+}
+
+function modelStatusLabel(model: ModelEntry) {
+    const text = `${model.id} ${model.name}`.toLowerCase();
+    if (text.includes("preview")) return "Preview";
+    if (text.includes("beta")) return "Beta";
+    if (text.includes("experimental")) return "Experimental";
+    return "Stable";
 }
 
 interface Props {
@@ -94,7 +105,7 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings, 
                         </div>
 
                         {showChatSignup && (
-                            <ModelChatSignup modelName={landing.heroTitle} provider={model.provider} sourceSlug={landing.slug} />
+                            <ModelChatSignup modelName={landing.heroTitle} provider={model.provider} sourceSlug={landing.slug} statusLabel={modelStatusLabel(model)} />
                         )}
                     </div>
                 </div>
@@ -107,11 +118,11 @@ export default function ModelLandingTemplate({ model, landing, relatedLandings, 
                         <div className="text-3xl font-black text-slate-900 dark:text-white">{formatContextLabel(model)}</div>
                     </div>
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
-                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Input / 1M</div>
+                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">{modelInputPriceHeading(model)}</div>
                         <div className="text-3xl font-black text-slate-900 dark:text-white">{formatInputPriceLabel(model)}</div>
                     </div>
                     <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-6">
-                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">Output / 1M</div>
+                        <div className="mb-2 text-xs font-black uppercase tracking-[0.18em] text-slate-500">{modelOutputPriceHeading(model)}</div>
                         <div className="text-3xl font-black text-slate-900 dark:text-white">{formatOutputPriceLabel(model)}</div>
                     </div>
                 </div>

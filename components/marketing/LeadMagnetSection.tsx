@@ -195,6 +195,7 @@ export default function LeadMagnetSection({ magnet, tone = "white" }: Props) {
 
                                 {item.showDemo ? (
                                     <SafeEmailLink
+                                        mailbox="sales"
                                         subject="Book a Remova Demo"
                                         body={"Hi Remova,\n\nI want to book a demo.\n\nCompany:\nRole:\n"}
                                         className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-3 text-sm font-black text-slate-900 transition hover:bg-slate-100 dark:border-white/15 dark:text-white dark:hover:bg-white/5"

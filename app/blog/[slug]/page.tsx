@@ -80,8 +80,8 @@ const RESOURCE_LINKS_BY_CATEGORY: Record<string, RelatedResourceLink[]> = {
         { label: "Use cases", href: "/use-cases", description: "Role and function pages that show where governance work lands operationally." },
     ],
     Privacy: [
-        { label: "Trade privacy guide", href: "/resources/ultimate-guide-trade-privacy-2025", description: "A field guide for mapping public exposure, evidence, removal work, and follow-up checks." },
-        { label: "Coverage windows explained", href: "/resources/coverage-windows-explained", description: "How to think about recurring exposure after a removal request appears complete." },
+        { label: "Privacy policy", href: "/privacy", description: "How Remova handles account, workspace, and operational data across the service." },
+        { label: "Sensitive data protection", href: "/features/sensitive-data-protection", description: "Controls for identifying and reducing sensitive prompt exposure before model calls leave the workflow." },
     ],
     Security: [
         { label: "CISO use case", href: "/use-cases/ciso", description: "How security leaders keep AI adoption from becoming unmanaged data exposure." },

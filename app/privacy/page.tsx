@@ -175,8 +175,8 @@ export default function PrivacyPage() {
                             </ul>
                             <p>
                                 To submit a CCPA request, please contact us at{" "}
-                                <SafeEmailLink subject="CCPA request" className="font-bold text-slate-900 underline dark:text-white">
-                                    notifications at remova dot org
+                                <SafeEmailLink mailbox="privacy" subject="CCPA request" className="font-bold text-slate-900 underline dark:text-white">
+                                    privacy at remova dot org
                                 </SafeEmailLink>
                                 . We may need to verify your identity before processing your request.
                             </p>
@@ -249,6 +249,7 @@ export default function PrivacyPage() {
                         If you have any questions about this Privacy Policy or wish to exercise your privacy rights, please contact us.
                     </p>
                     <SafeEmailLink
+                        mailbox="privacy"
                         subject="Privacy Policy Inquiry"
                         className="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-full font-black uppercase tracking-wider hover:opacity-90 transition-opacity"
                     >

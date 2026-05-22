@@ -61,6 +61,22 @@ const trustAreas = [
     },
 ];
 
+const procurementPacket = [
+    "DPA language and subprocessors for legal review",
+    "Architecture overview and model-routing data flow",
+    "Encryption, retention, redaction, and audit-record details",
+    "Incident-response process and support escalation path",
+    "Current SOC 2 status summary for buyer diligence",
+    "Security questionnaire responses for procurement teams",
+];
+
+const controlDetails = [
+    { title: "Data flow", text: "Prompts, files, logs, model routes, generated assets, and retention settings should be reviewed as one workflow.", Icon: Database },
+    { title: "Access boundaries", text: "Role-based controls define who can use models, view audit evidence, manage budgets, and approve exceptions.", Icon: KeyRound },
+    { title: "Evidence exports", text: "Audit records can support reviews of usage, policy decisions, model routes, sensitive-data events, and exceptions.", Icon: FileClock },
+    { title: "Legal path", text: "Privacy, terms, DPA, subprocessors, and procurement questions route through explicit review channels.", Icon: Scale },
+];
+
 export default function TrustPage() {
     const trustSchema = {
         "@context": "https://schema.org",
@@ -132,12 +148,7 @@ export default function TrustPage() {
                         </h2>
                     </div>
                     <div className="grid gap-4 md:grid-cols-2">
-                        {[
-                            { title: "Data handling", text: "How prompts, files, model routes, redaction, and retention are handled.", Icon: Database },
-                            { title: "Access control", text: "How admins assign access by team, role, workflow, and model family.", Icon: KeyRound },
-                            { title: "Audit evidence", text: "What records exist for usage, policy decisions, exceptions, and reviews.", Icon: FileClock },
-                            { title: "Legal review", text: "Where privacy policy, terms, and procurement questions should be routed.", Icon: Scale },
-                        ].map(({ title, text, Icon }) => (
+                        {controlDetails.map(({ title, text, Icon }) => (
                             <article key={title} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#131314]">
                                 <Icon className="mb-4 h-6 w-6 text-emerald-500" />
                                 <h3 className="text-lg font-black uppercase">{title}</h3>
@@ -149,6 +160,30 @@ export default function TrustPage() {
             </section>
 
             <section className="px-4 py-20 sm:px-6 lg:px-8">
+                <div className="container mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+                    <div>
+                        <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-slate-500">
+                            Review packet
+                        </p>
+                        <h2 className="text-4xl font-black uppercase tracking-tight sm:text-5xl">
+                            Procurement materials buyers ask for.
+                        </h2>
+                        <p className="mt-5 font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                            The packet is scoped for vendor diligence and security review, so buyers can separate product controls, customer responsibilities, and deployment assumptions.
+                        </p>
+                    </div>
+                    <ul className="grid gap-4 md:grid-cols-2">
+                        {procurementPacket.map((item) => (
+                            <li key={item} className="flex gap-3 rounded-2xl border border-slate-200 p-5 dark:border-white/10">
+                                <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-emerald-500" />
+                                <span className="font-bold leading-relaxed text-slate-700 dark:text-slate-200">{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+
+            <section className="border-t border-slate-200 px-4 py-20 dark:border-white/10 sm:px-6 lg:px-8">
                 <div className="container mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl bg-slate-950 p-8 text-white sm:p-12 lg:flex-row lg:items-center lg:justify-between">
                     <div>
                         <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-emerald-300">

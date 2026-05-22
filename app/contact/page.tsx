@@ -41,6 +41,7 @@ const contactOptions = [
         Icon: Building2,
         action: "Start workspace",
         href: "https://app.remova.org/register",
+        mailbox: "sales" as const,
         external: true,
     },
     {
@@ -49,6 +50,7 @@ const contactOptions = [
         Icon: ShieldCheck,
         action: "Contact security",
         href: "email:security",
+        mailbox: "security" as const,
         external: false,
     },
     {
@@ -57,6 +59,7 @@ const contactOptions = [
         Icon: Headphones,
         action: "Contact support",
         href: "email:support",
+        mailbox: "support" as const,
         external: false,
     },
 ];
@@ -101,7 +104,7 @@ export default function ContactPage() {
 
             <section className="px-4 py-20 sm:px-6 lg:px-8">
                 <div className="container mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-                    {contactOptions.map(({ title, description, Icon, action, href, external }) => (
+                    {contactOptions.map(({ title, description, Icon, action, href, mailbox, external }) => (
                         <article key={title} className="rounded-3xl border border-slate-200 p-6 dark:border-white/10">
                             <Icon className="mb-5 h-8 w-8 text-emerald-500" />
                             <h2 className="text-2xl font-black uppercase tracking-tight">{title}</h2>
@@ -118,6 +121,7 @@ export default function ContactPage() {
                                 </ExternalAppLink>
                             ) : (
                                 <SafeEmailLink
+                                    mailbox={mailbox}
                                     subject={title}
                                     body={`Hi Remova,\n\nI want help with ${title.toLowerCase()}.\n\nCompany:\nRole:\nQuestion:\n`}
                                     className="mt-6 inline-flex items-center text-sm font-black uppercase tracking-wide text-slate-950 hover:text-emerald-600 dark:text-white dark:hover:text-emerald-300"

@@ -195,6 +195,9 @@ const legacyBlogSlugs = [
 ] as const;
 
 export const legacyResourceSlugs = [
+    "ultimate-guide-trade-privacy-2025",
+    "importyeti-removal-guide",
+    "coverage-windows-explained",
     "ai-governance-starter-kit",
     "enterprise-ai-security-checklist",
     "ai-vendor-evaluation-scorecard",

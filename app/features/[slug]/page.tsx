@@ -51,6 +51,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
+function sentenceWithTerminalPunctuation(value: string) {
+    const trimmed = value.trim();
+    if (/[.!?]$/.test(trimmed)) return trimmed;
+    return `${trimmed}.`;
+}
+
 export default function FeaturePage({ params }: { params: { slug: string } }) {
     const feature = features.find((f) => f.slug === params.slug);
     const legacyRedirect = getLegacyFeatureRedirect(params.slug);
@@ -74,7 +80,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
     const defaultFaqs = [
         {
             question: `How does Remova's ${feature.title} benefit my company?`,
-            answer: `${feature.title} helps your company operationalize governance in a specific area instead of relying on policy documents and manual review alone. It is designed to make ${feature.subheadline.toLowerCase()} a repeatable system behavior across teams.`
+            answer: `${feature.title} helps your company operationalize governance in a specific area instead of relying on policy documents and manual review alone. It turns the page promise "${feature.subheadline}" into repeatable system behavior across teams.`
         },
         {
             question: `Is ${feature.title} compatible with all AI models?`,
@@ -82,7 +88,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         },
         {
             question: `How quickly can we deploy ${feature.title}?`,
-            answer: `Teams can deploy ${feature.title.toLowerCase()} quickly once ownership, policy defaults, and rollout scope are defined. The actual timeline depends less on setup effort and more on how clearly your organization has decided which workflows and departments should be governed first.`
+            answer: `Teams can deploy ${feature.title} quickly once ownership, policy defaults, and rollout scope are defined. The actual timeline depends less on setup effort and more on how clearly your organization has decided which workflows and departments should be governed first.`
         }
     ];
 
@@ -111,8 +117,8 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
         })),
     };
     const rolloutChecklist = [
-        `Define policy scope and ownership for ${feature.title.toLowerCase()}.`,
-        `Pilot ${feature.title.toLowerCase()} with one department and measure adoption quality.`,
+        `Define policy scope and ownership for ${feature.title}.`,
+        `Pilot ${feature.title} with one department and measure adoption quality.`,
         `Set alert thresholds for governance events and escalation workflows.`,
         `Review outcomes monthly and tune controls based on operational feedback.`,
     ];
@@ -170,12 +176,12 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                         <ul className="space-y-3">
                             {feature.benefits.slice(0, 3).map((b, i) => (
                                 <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
-                                    <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span dangerouslySetInnerHTML={{ __html: `${b}.` }} />
+                                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                                    <span dangerouslySetInnerHTML={{ __html: sentenceWithTerminalPunctuation(b) }} />
                                 </li>
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
-                                <span className="text-emerald-500 italic shrink-0">—</span>
+                                <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
                                 <span>Designed for governed enterprise AI usage.</span>
                             </li>
                         </ul>
@@ -186,7 +192,7 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
                             href="https://app.remova.org/register"
                             className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-10 py-5 text-lg font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 text-center"
                         >
-                            Sign Up
+                            Start with Remova
                         </ExternalAppLink>
                         <Link
                             href="/features"
@@ -290,16 +296,16 @@ export default function FeaturePage({ params }: { params: { slug: string } }) {
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl leading-[0.9]">
-                        AI FOR COMPANIES
+                        Deploy {feature.title}
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        Deploy {feature.title.toLowerCase()} and related controls with Remova&apos;s enterprise AI governance platform.
+                        Bring {feature.title} and related controls into Remova&apos;s enterprise AI governance platform.
                     </p>
                     <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
-                        Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
+                        Start rollout <ArrowRight className="inline h-5 w-5 ml-2" />
                     </ExternalAppLink>
                 </div>
             </section>

@@ -7,17 +7,16 @@ import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKe
 
 export const metadata: Metadata = {
     title: "Enterprise AI Resources and Docs",
-    description: "Download practical Remova resources for AI governance, security review, trade privacy, and removal workflows.",
+    description: "Download practical Remova resources for AI governance, security review, procurement, and control scoping.",
     keywords: buildKeywords([
         "enterprise ai resources",
         "ai governance documents",
-        "trade privacy guide",
         "security review checklist",
         "ai policy generator",
     ]),
     openGraph: {
         title: "Enterprise AI Resources and Docs",
-        description: "Practical Remova resources for AI governance, security review, trade privacy, and removal workflows.",
+        description: "Practical Remova resources for AI governance, security review, procurement, and control scoping.",
         url: absoluteUrl("/resources"),
         siteName: SITE_NAME,
         images: [DEFAULT_OG_IMAGE],
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Enterprise AI Resources and Docs",
-        description: "Download practical Remova resources for governance, privacy, and security review.",
+        description: "Download practical Remova resources for governance, procurement, and security review.",
         images: [DEFAULT_OG_IMAGE_URL],
     },
     alternates: { canonical: "/resources" },
@@ -41,10 +40,10 @@ export default function ResourcesPage() {
                         Remova resources
                     </p>
                     <h1 className="max-w-4xl text-5xl font-black tracking-tighter text-slate-950 dark:text-white sm:text-7xl">
-                        Practical docs for AI governance and privacy work.
+                        Practical docs for AI governance and security review.
                     </h1>
                     <p className="mt-6 max-w-3xl text-xl font-medium leading-relaxed text-slate-600 dark:text-slate-300">
-                        These are working documents, not brochureware: removal guides, scope notes, and review artifacts that help teams make a decision, file a request, or document a control.
+                        These are working documents, not brochureware: scope notes and review artifacts that help teams make a decision, map responsibilities, or document a control.
                     </p>
                 </div>
             </section>
@@ -54,7 +53,7 @@ export default function ResourcesPage() {
                     {[
                         "Use the PDF when you need an offline packet for legal, operations, or procurement.",
                         "Use the landing page when you need the context, checklist, and related internal links.",
-                        "Keep screenshots, dates, and owners with each request so follow-up does not become folklore.",
+                        "Keep dates, owners, and review evidence with each control so follow-up does not become folklore.",
                     ].map((note) => (
                         <div key={note} className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-[#131314]">
                             <ShieldCheck className="mb-4 h-6 w-6 text-emerald-600 dark:text-emerald-300" />

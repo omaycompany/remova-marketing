@@ -14,7 +14,12 @@ import {
     isTranscriptionModel,
     isVoiceAgentModel,
 } from "@/lib/model-best-for";
-import { formatPublicModelPricePer1M, publicModelPrice } from "@/lib/model-pricing";
+import {
+    formatModelInputPriceDetail,
+    formatModelOutputPriceDetail,
+    isUsageBasedPriceModel,
+    publicModelPrice,
+} from "@/lib/model-pricing";
 
 export interface ModelLanding {
     slug: string;
@@ -1219,10 +1224,10 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
         parameterNotes: seed.parameterNotes,
         specNotes: [
             { label: "Model ID", value: model.id },
-            { label: "Context Window", value: `${fmtNumber.format(model.contextLength)} tokens` },
+            { label: "Context Window", value: contextSpecValue(model) },
             { label: "Modality", value: seed.modality },
-            { label: "Input Price", value: formatPublicModelPricePer1M(model.inputPer1M) },
-            { label: "Output Price", value: formatPublicModelPricePer1M(model.outputPer1M) },
+            { label: "Input Price", value: inputPriceSpecValue(model) },
+            { label: "Output Price", value: outputPriceSpecValue(model) },
             { label: "Provider", value: model.provider },
             { label: "Listing Date", value: model.releasedAt },
         ],
@@ -1335,7 +1340,7 @@ function contextBand(model: ModelEntry) {
 }
 
 function pricingBand(model: ModelEntry) {
-    if (model.pricingDescription) return "usage-based";
+    if (isUsageBasedPriceModel(model)) return "usage-based";
     const publicInputPrice = publicModelPrice(model.inputPer1M);
     if (publicInputPrice <= 0.3) return "cost-efficient";
     if (publicInputPrice <= 2.5) return "balanced";
@@ -1348,13 +1353,11 @@ function contextSpecValue(model: ModelEntry) {
 }
 
 function inputPriceSpecValue(model: ModelEntry) {
-    if (model.pricingDescription) return model.pricingDescription;
-    return formatPublicModelPricePer1M(model.inputPer1M);
+    return formatModelInputPriceDetail(model);
 }
 
 function outputPriceSpecValue(model: ModelEntry) {
-    if (model.pricingDescription) return "Usage-based";
-    return formatPublicModelPricePer1M(model.outputPer1M);
+    return formatModelOutputPriceDetail(model);
 }
 
 function publicModelId(model: ModelEntry, slug: string) {
@@ -1634,6 +1637,7 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
             `${model.name} for governed image generation, editing, and creative review workflows.`,
             `${model.name} for campaign, product, and enablement visuals with approval checkpoints.`,
             `${model.name} for repeatable visual production under brand and budget controls.`,
+            `${model.name} for visual QA workflows that need rights checks, brand review, and export evidence.`,
         ],
         general: [
             `${model.name} for governed enterprise assistant workflows across teams.`,
@@ -1668,7 +1672,52 @@ function fallbackUseCaseForModel(model: ModelEntry, modality: string, index: num
     return fallbackSets.general[index % fallbackSets.general.length];
 }
 
+function modalityParameterNotesForModel(model: ModelEntry) {
+    const output = new Set(model.outputModalities ?? []);
+
+    if (isTranscriptionModel(model)) {
+        return [
+            { name: "audio_quality", note: "Check recording quality, language coverage, and speaker separation before routing transcripts into downstream workflows." },
+            { name: "redaction", note: "Apply transcript redaction and retention rules before sharing meeting, call, or support-call output." },
+            { name: "timestamps", note: "Keep timestamps or source references when transcripts need audit review or follow-up evidence." },
+            { name: "review_queue", note: "Route regulated or customer-facing transcript summaries into human review before publication or action." },
+        ];
+    }
+
+    if (output.has("image")) {
+        return [
+            { name: "prompt", note: "Use approved brand, rights, and factual-accuracy rules in image prompts before employees generate assets." },
+            { name: "reference_image", note: "Only use reference images that the team has permission to process and reuse." },
+            { name: "aspect_ratio", note: "Set approved output sizes for campaign, product, and enablement workflows before broad rollout." },
+            { name: "seed", note: "Use repeatable seeds when a team needs controlled visual variants for review." },
+        ];
+    }
+
+    if (output.has("video")) {
+        return [
+            { name: "prompt", note: "Keep video prompts tied to approved claims, brand rules, and source assets." },
+            { name: "duration", note: "Set duration limits by workflow so review effort and spend stay predictable." },
+            { name: "reference_media", note: "Confirm rights for reference images, audio, and source clips before generation." },
+            { name: "review_queue", note: "Route generated video through brand, rights, and factual review before publication." },
+        ];
+    }
+
+    if (output.has("speech") || output.has("audio")) {
+        return [
+            { name: "voice", note: "Use approved voices and consent rules before generating narration or spoken responses." },
+            { name: "language", note: "Validate pronunciation, localization, and audience fit for each target language." },
+            { name: "retention", note: "Apply retention rules to source text, generated audio, and review records." },
+            { name: "review_queue", note: "Route customer-facing audio through brand and policy review before publication." },
+        ];
+    }
+
+    return null;
+}
+
 function parameterNotesForModel(model: ModelEntry) {
+    const modalityNotes = modalityParameterNotesForModel(model);
+    if (modalityNotes) return modalityNotes;
+
     const supported = Array.from(new Set(model.supportedParameters ?? []));
     const notes = supported
         .map((parameter) => ({

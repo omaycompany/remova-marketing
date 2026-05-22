@@ -6,7 +6,7 @@ import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKe
 
 export const metadata: Metadata = {
     title: "Remova Pricing",
-    description: "Remova pricing starts at $50 per seat per month with a 10-seat minimum, monthly model credits, approved model access, policy controls, audit trails, and optional concierge support.",
+    description: "Remova pricing starts at $50 per seat per month with a 10-seat minimum, monthly model credits, approved model access, policy controls, audit trails, optional $2,500/month concierge support, and private deployment estimates.",
     keywords: buildKeywords([
         "remova pricing",
         "remova price",
@@ -59,6 +59,21 @@ const notes = [
         title: "Budget Ownership",
         description: "Admins can understand usage by team and set budgets around the AI work that matters most.",
         Icon: Receipt,
+    },
+];
+
+const optionalAddOns = [
+    {
+        title: "Monthly concierge",
+        price: "$2,500 / month",
+        description: "Strategic rollout support for workflow design, integration planning, adoption reviews, and model governance operations.",
+        features: ["Dedicated AI strategy support", "Priority integration planning"],
+    },
+    {
+        title: "On-prem AI setup",
+        price: "Starting from $5,000 / month",
+        description: "Private deployment planning for organizations that need dedicated infrastructure, local model serving, and tighter data-routing controls.",
+        features: ["Private AI infrastructure planning", "Local model serving options"],
     },
 ];
 
@@ -171,6 +186,34 @@ export default function PricingPage() {
             </section>
 
             <section className="px-4 py-20 sm:px-6 lg:px-8">
+                <div className="container mx-auto max-w-6xl">
+                    <div className="mb-10 max-w-3xl">
+                        <p className="mb-4 text-sm font-black uppercase tracking-[0.18em] text-slate-500">Optional add-ons</p>
+                        <h2 className="text-4xl font-black uppercase tracking-tight sm:text-5xl">
+                            Deployment support when teams need more.
+                        </h2>
+                    </div>
+                    <div className="grid gap-6 lg:grid-cols-2">
+                        {optionalAddOns.map((addOn) => (
+                            <article key={addOn.title} className="rounded-3xl border border-slate-200 p-8 dark:border-white/10">
+                                <h3 className="text-3xl font-black uppercase tracking-tight">{addOn.title}</h3>
+                                <p className="mt-4 text-4xl font-black tracking-tight text-slate-950 dark:text-white">{addOn.price}</p>
+                                <p className="mt-5 font-medium leading-relaxed text-slate-600 dark:text-slate-300">{addOn.description}</p>
+                                <ul className="mt-6 space-y-3">
+                                    {addOn.features.map((feature) => (
+                                        <li key={feature} className="flex gap-3 text-sm font-bold leading-6 text-slate-700 dark:text-slate-200">
+                                            <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                                            <span>{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="px-4 py-20 sm:px-6 lg:px-8">
                 <div className="container mx-auto grid max-w-6xl gap-8 lg:grid-cols-2">
                     <div className="rounded-3xl border border-slate-200 p-8 dark:border-white/10">
                         <KeyRound className="mb-5 h-8 w-8 text-emerald-500" />
@@ -183,7 +226,7 @@ export default function PricingPage() {
                         <ShieldCheck className="mb-5 h-8 w-8 text-emerald-500" />
                         <h2 className="text-3xl font-black uppercase tracking-tight">Concierge support</h2>
                         <p className="mt-4 font-medium leading-relaxed text-slate-600 dark:text-slate-300">
-                            Teams that want rollout help can add monthly concierge support for strategy, workflow design, integration planning, and adoption reviews.
+                            Teams that want rollout help can add monthly concierge support at $2,500/month for strategy, workflow design, integration planning, and adoption reviews.
                         </p>
                     </div>
                 </div>

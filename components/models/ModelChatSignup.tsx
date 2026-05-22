@@ -11,9 +11,10 @@ type Props = {
     modelName: string;
     provider: string;
     sourceSlug: string;
+    statusLabel?: string;
 };
 
-export default function ModelChatSignup({ modelName, provider, sourceSlug }: Props) {
+export default function ModelChatSignup({ modelName, provider, sourceSlug, statusLabel = "Stable" }: Props) {
     const [prompt, setPrompt] = useState("");
     const [email, setEmail] = useState("");
     const [showSignup, setShowSignup] = useState(false);
@@ -96,7 +97,7 @@ export default function ModelChatSignup({ modelName, provider, sourceSlug }: Pro
                         </div>
                     </div>
                     <span className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-black text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
-                        Preview
+                        {statusLabel}
                     </span>
                 </div>
 

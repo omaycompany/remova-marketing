@@ -313,6 +313,7 @@ export default function TermsPage() {
                         If you have any questions about these Terms of Service, please contact our legal team.
                     </p>
                     <SafeEmailLink
+                        mailbox="legal"
                         subject="Terms of Service Inquiry"
                         className="inline-block bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-3 rounded-full font-black uppercase tracking-wider hover:opacity-90 transition-opacity"
                     >

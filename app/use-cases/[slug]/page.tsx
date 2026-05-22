@@ -83,6 +83,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 const categoryIcon = { industry: Building2, role: User, function: Cog };
 const categoryLabel = { industry: "Industry", role: "Role", function: "Solution" };
 
+function sentenceWithTerminalPunctuation(value: string) {
+    const trimmed = value.trim();
+    if (/[.!?]$/.test(trimmed)) return trimmed;
+    return `${trimmed}.`;
+}
+
+function firstSentence(value: string) {
+    const [sentence] = value.split(".");
+    return sentenceWithTerminalPunctuation(sentence);
+}
+
 export default function UseCasePage({ params }: { params: { slug: string } }) {
     const uc = useCases.find((u) => u.slug === params.slug);
     const legacyRedirect = getLegacyUseCaseRedirect(params.slug);
@@ -134,11 +145,11 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
     const defaultFaqs = [
         {
             question: `Is Remova suitable for ${uc.headline}?`,
-            answer: `Yes. Remova is designed for organizations that need to support ${uc.headline.toLowerCase()} with clearer policy enforcement, role ownership, and operational visibility instead of treating AI adoption as an unmanaged tool rollout.`
+            answer: `Yes. Remova is designed for organizations that need to support ${uc.headline} with clearer policy enforcement, role ownership, and operational visibility instead of treating AI adoption as an unmanaged tool rollout.`
         },
         {
-            question: `How does Remova address ${uc.challenges[0].toLowerCase()}?`,
-            answer: `Remova addresses ${uc.challenges[0].toLowerCase()} through ${uc.solutions[0].title.toLowerCase()} plus supporting controls for access, monitoring, and workflow governance. That gives teams an operating model for the problem instead of a single isolated feature.`
+            question: `How does Remova address ${uc.challenges[0]}?`,
+            answer: `Remova addresses this through ${uc.solutions[0].title} plus supporting controls for access, monitoring, and workflow governance. That gives teams an operating model for the problem instead of a single isolated feature.`
         },
         {
             question: `Can we use any AI model with this solution?`,
@@ -187,12 +198,12 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                         <ul className="space-y-3">
                             {uc.solutions.slice(0, 3).map((s, i) => (
                                 <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
-                                    <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span>{s.title}: {s.description.split('.')[0]}.</span>
+                                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                                    <span>{s.title}: {firstSentence(s.description)}</span>
                                 </li>
                             ))}
                             <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
-                                <span className="text-emerald-500 italic shrink-0">—</span>
+                                <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
                                 <span>Governed controls help teams adopt AI safely and consistently.</span>
                             </li>
                         </ul>
@@ -202,7 +213,7 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
                         href="https://app.remova.org/register"
                         className="rounded-[2.5rem] bg-slate-900 dark:bg-white px-10 py-5 text-lg font-black text-white dark:text-slate-900 transition-all hover:scale-105 active:scale-95 inline-block"
                     >
-                        Sign Up
+                        Start with Remova
                     </ExternalAppLink>
                 </div>
             </section>
@@ -357,16 +368,16 @@ export default function UseCasePage({ params }: { params: { slug: string } }) {
             <section className="py-24 px-4 text-center bg-white dark:bg-[#131314] border-t-2 border-slate-900 dark:border-white">
                 <div className="container mx-auto max-w-4xl">
                     <h2 className="mb-8 text-4xl font-black uppercase tracking-tighter text-slate-900 dark:text-white sm:text-6xl leading-[0.9]">
-                        SAFE AI FOR COMPANIES
+                        Govern {uc.headline}
                     </h2>
                     <p className="mb-12 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-                        See how Remova can help your {uc.category === "industry" ? "organization" : "team"} handle {uc.headline.toLowerCase()} with clearer controls, accountability, and rollout discipline.
+                        See how Remova can help your {uc.category === "industry" ? "organization" : "team"} handle this workflow with clearer controls, accountability, and rollout discipline.
                     </p>
                     <ExternalAppLink
                         href="https://app.remova.org/register"
                         className="inline-block rounded-[2.5rem] border-4 border-slate-900 dark:border-white bg-transparent px-10 py-5 text-xl font-black uppercase tracking-wider text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300"
                     >
-                        Sign Up <ArrowRight className="inline h-5 w-5 ml-2" />
+                        Plan this rollout <ArrowRight className="inline h-5 w-5 ml-2" />
                     </ExternalAppLink>
                 </div>
             </section>
