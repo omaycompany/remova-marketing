@@ -83,7 +83,7 @@ function sentence(value, fallback) {
 
 function sanitizePublicText(value) {
     return String(value ?? "")
-        .replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1")
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
         .replace(/https?:\/\/\S+/g, "")
         .replace(/\bOpenRouter\b/gi, "Remova")
         .replace(/\bfal\.ai\b/gi, "Remova")
