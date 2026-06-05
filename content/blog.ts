@@ -11,6 +11,7 @@ import { companyAiBlogPosts } from "./company-ai-blog-posts";
 import { customerServiceAiBlogPosts } from "./customer-service-ai-blog-posts";
 import { euAiActTimelineBlogPosts } from "./eu-ai-act-timeline-blog-posts";
 import { keywordBlogPosts } from "./keyword-blog-posts";
+import { localizedAiGovernanceBlogPosts } from "./localized-ai-governance-blog-posts";
 import { salesEmailBlogPosts } from "./sales-email-blog-posts";
 
 export interface BlogPost {
@@ -3962,7 +3963,7 @@ The final test is whether a security owner can explain the event without asking 
 const now = new Date();
 const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 
-const combinedBlogPosts = [...rawBlogPosts, ...euAiActTimelineBlogPosts, ...aiToolsBlogPosts, ...aiCodeGeneratorBlogPosts, ...aiSecurityRisksBlogPosts, ...aiChatbotArchiveBlogPosts, ...aiChatbotBuilderBlogPosts, ...aiWritingAssistantBlogPosts, ...agenticWorkflowsBlogPosts, ...chatgptAlternativesBlogPosts, ...companyAiBlogPosts, ...codingAiBlogPosts, ...customerServiceAiBlogPosts, ...salesEmailBlogPosts, ...keywordBlogPosts];
+const combinedBlogPosts = [...rawBlogPosts, ...euAiActTimelineBlogPosts, ...aiToolsBlogPosts, ...aiCodeGeneratorBlogPosts, ...aiSecurityRisksBlogPosts, ...aiChatbotArchiveBlogPosts, ...aiChatbotBuilderBlogPosts, ...aiWritingAssistantBlogPosts, ...agenticWorkflowsBlogPosts, ...chatgptAlternativesBlogPosts, ...companyAiBlogPosts, ...codingAiBlogPosts, ...customerServiceAiBlogPosts, ...salesEmailBlogPosts, ...localizedAiGovernanceBlogPosts, ...keywordBlogPosts];
 
 function dedupeBlogPostsBySlug(posts: BlogPost[]) {
     const postsBySlug = new Map<string, BlogPost>();
