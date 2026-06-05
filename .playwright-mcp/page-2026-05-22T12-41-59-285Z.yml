@@ -1,0 +1,321 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Main navigation" [ref=e3]:
+      - generic [ref=e4]:
+        - link "Home" [ref=e5] [cursor=pointer]:
+          - /url: /en
+          - img "LargeMI Logo - Your AI Tools Directory" [ref=e7]
+          - generic [ref=e8]:
+            - generic [ref=e9]: LargeMI
+            - generic [ref=e10]: AI Tools Directory
+        - navigation [ref=e237]:
+          - generic [ref=e238]:
+            - button "Explore ▾" [ref=e239] [cursor=pointer]:
+              - text: Explore
+              - generic [ref=e240]: ▾
+            - generic:
+              - generic: Explore AI Tools
+              - generic: 🔥 Top Categories
+              - generic:
+                - link "AI Chatbots":
+                  - /url: /en/category/chatbots-tools
+                - link "AI Image Generators":
+                  - /url: /en/category/image-tools
+                - link "AI Video Tools":
+                  - /url: /en/category/video-tools
+                - link "AI Coding Tools":
+                  - /url: /en/category/code-tools
+                - link "AI Writing Tools":
+                  - /url: /en/category/writing-tools
+                - link "AI Productivity":
+                  - /url: /en/category/productivity-tools
+              - link "View all categories →":
+                - /url: /en/categories
+          - generic [ref=e241]:
+            - button "Use Cases ▾" [ref=e242] [cursor=pointer]:
+              - text: Use Cases
+              - generic [ref=e243]: ▾
+            - generic:
+              - generic:
+                - link "✍️ Writing & Content":
+                  - /url: /en/use-cases/writing-content
+                - link "🎨 Image Generation":
+                  - /url: /en/use-cases/image-generation
+                - link "🎬 Video Creation":
+                  - /url: /en/use-cases/video-creation
+                - link "🧑‍💻 Coding & Development":
+                  - /url: /en/use-cases/coding-development
+                - link "🌍 Translation & Localization":
+                  - /url: /en/use-cases/translation-localization
+                - link "📊 Productivity & Meetings":
+                  - /url: /en/use-cases/productivity-meetings
+                - link "⚖️ Legal & Contracts":
+                  - /url: /en/use-cases/legal-contracts
+          - link "Tool Pricing" [ref=e244] [cursor=pointer]:
+            - /url: /en/tool-pricing
+          - link "Blog" [ref=e245] [cursor=pointer]:
+            - /url: /en/blog
+        - generic [ref=e11]:
+          - link "Submit a Tool" [ref=e246] [cursor=pointer]:
+            - /url: /en/submit-tool
+          - button "Search" [ref=e14] [cursor=pointer]:
+            - img [ref=e15]
+          - generic [ref=e18]:
+            - button "Select language" [ref=e19] [cursor=pointer]:
+              - img [ref=e20]
+              - img [ref=e24]
+            - button "Toggle theme" [ref=e26] [cursor=pointer]:
+              - img [ref=e27]
+              - img
+              - generic [ref=e33]: Toggle theme
+    - main [ref=e34]:
+      - main [ref=e36]:
+        - generic [ref=e37]:
+          - navigation "breadcrumb" [ref=e39]:
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Home" [ref=e42] [cursor=pointer]:
+                  - /url: /en
+              - listitem [ref=e43]: ›
+              - listitem [ref=e44]:
+                - link "Submit Tool" [disabled] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e48]:
+              - heading "Submit Your AI Tool" [level=3] [ref=e49]
+              - paragraph [ref=e50]:
+                - text: Help more users discover your product. We’ll review and publish it in the LargeMI AI directory.
+                - link "Machine Learning & Artificial Intelligence" [ref=e247] [cursor=pointer]:
+                  - img [ref=e249]
+                  - text: Machine Learning & Artificial Intelligence
+              - generic [ref=e51]:
+                - generic [ref=e52]:
+                  - img [ref=e53]
+                  - generic [ref=e56]: Dedicated detail page for your tool
+                - generic [ref=e57]:
+                  - img [ref=e58]
+                  - generic [ref=e61]: Indexable by search engines
+                - generic [ref=e62]:
+                  - img [ref=e63]
+                  - generic [ref=e66]: Shown across categories and search
+                - generic [ref=e67]:
+                  - img [ref=e68]
+                  - generic [ref=e71]: Claim and update info later
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - img [ref=e75]
+                  - generic [ref=e79]:
+                    - paragraph [ref=e80]: To keep quality high, we do manual review with anti-spam checks. More complete info earns better placement.
+                    - paragraph [ref=e81]: Please provide the official website and accurate pricing; richer info speeds up approval.
+                - generic [ref=e82]:
+                  - button "Required Basics" [expanded] [ref=e83] [cursor=pointer]:
+                    - generic [ref=e86]: Required Basics
+                    - img [ref=e87]
+                  - generic [ref=e89]:
+                    - generic [ref=e90]:
+                      - generic [ref=e91]:
+                        - paragraph [ref=e92]: Tool name
+                        - textbox "Tool name" [ref=e93]: Remova
+                        - generic [ref=e94]:
+                          - paragraph [ref=e95]: ✔ Use your official product name
+                          - paragraph [ref=e96]: ✘ No keyword stuffing (e.g. “Best Free AI Tool 2026”)
+                      - generic [ref=e97]:
+                        - paragraph [ref=e98]: Website URL
+                        - textbox "Website URL" [ref=e99]: https://www.remova.org/
+                        - generic [ref=e100]:
+                          - img [ref=e278]
+                          - generic [ref=e275]: "Website detected: HTTPS ✓ | Responding ✓"
+                        - generic [ref=e281]:
+                          - img "preview logo" [ref=e283]
+                          - generic [ref=e284]:
+                            - paragraph [ref=e285]: Remova | Enterprise AI Governance for Teams
+                            - paragraph [ref=e286]: Remova helps companies give teams access to ChatGPT, Claude, Gemini, and other AI models with policy controls, sensitive-data masking, role-based access, audit visibility, and department-level budget controls.
+                      - generic [ref=e101]:
+                        - paragraph [ref=e102]: Logo
+                        - generic [ref=e103]:
+                          - button "Logo URL" [ref=e104] [cursor=pointer]
+                          - button "Logo file" [ref=e105] [cursor=pointer]
+                        - textbox "Logo URL" [ref=e106]: https://www.remova.org/images/remova%20logo%20%284%29.png
+                        - paragraph [ref=e107]: Provide a logo URL or upload a logo file (PNG/JPG/SVG).
+                      - generic [ref=e108]:
+                        - text: Category
+                        - combobox [ref=e109]:
+                          - option "AI Chatbots"
+                          - option "AI Search"
+                          - option "AI Image Generators"
+                          - option "AI Voice & Audio"
+                          - option "AI Video Tools"
+                          - option "AI Coding Tools"
+                          - option "AI Writing Tools"
+                          - option "Annotation & Labeling"
+                          - option "AI Productivity" [selected]
+                          - option "AI Translation"
+                          - option "AI Legal Tools"
+                          - option "AI Detection"
+                        - paragraph [ref=e110]: Category • Tags / Label (e.g., “Image Generation”, “Meeting Assistant”)
+                      - generic [ref=e111]:
+                        - paragraph [ref=e112]: Pricing
+                        - generic [ref=e113]:
+                          - generic [ref=e114] [cursor=pointer]:
+                            - radio "Free" [checked] [ref=e115]
+                            - generic [ref=e116]: Free
+                          - generic [ref=e117] [cursor=pointer]:
+                            - radio "Free Tier" [ref=e118]
+                            - generic [ref=e119]: Free Tier
+                          - generic [ref=e120] [cursor=pointer]:
+                            - radio "Paid" [ref=e121]
+                            - generic [ref=e122]: Paid
+                    - generic [ref=e123]:
+                      - paragraph [ref=e124]: One-line description (ideally under 300 chars)
+                      - textbox "One-line description (ideally under 300 chars)" [ref=e125]:
+                        - /placeholder: An AI-powered writing assistant that helps marketers generate SEO-friendly blog posts and social captions in minutes.
+                        - text: Enterprise AI governance workspace for secure ChatGPT, Claude, and Gemini use with data controls.
+                      - generic [ref=e126]:
+                        - generic [ref=e127]: Describe what the tool does + who it’s for.
+                        - generic [ref=e128]: 97 / 300
+                      - paragraph [ref=e129]: Avoid contact info, pricing, or external links.
+                    - generic [ref=e130]:
+                      - paragraph [ref=e131]: Contact email (for follow-up & spam check)
+                      - textbox "Contact email (for follow-up & spam check)" [ref=e132]: contact@remova.org
+                      - paragraph [ref=e133]: Email is only used for review updates and will not be made public.
+                      - paragraph [ref=e134]: Using a domain email (e.g. @yourproduct.com) helps faster approval.
+                - generic [ref=e135]:
+                  - button "Content Details" [expanded] [ref=e136] [cursor=pointer]:
+                    - generic [ref=e139]: Content Details
+                    - img [ref=e140]
+                  - generic [ref=e142]:
+                    - paragraph [ref=e143]: These details affect review quality and ranking.
+                    - generic [ref=e144]:
+                      - generic [ref=e145]:
+                        - paragraph [ref=e146]: Key features
+                        - generic [ref=e147]: Keep it concise and specific.
+                      - generic [ref=e148]:
+                        - generic [ref=e149]:
+                          - generic [ref=e150]: •
+                          - textbox "Key features 1" [ref=e151]:
+                            - /placeholder: Feature 1 (what it does)
+                            - text: Prevents AI data leaks with policy controls and sensitive data masking.
+                        - generic [ref=e152]:
+                          - generic [ref=e153]: •
+                          - textbox "Key features 2" [ref=e154]:
+                            - /placeholder: Feature 2 (why it matters)
+                            - text: Gives teams role-based access controls and audit visibility across AI usage.
+                        - generic [ref=e155]:
+                          - generic [ref=e156]: •
+                          - textbox "Key features 3" [ref=e157]:
+                            - /placeholder: Feature 3 (who it's for)
+                            - text: Supports secure ChatGPT, Claude, and Gemini workflows with department budget controls.
+                        - button "+ Add more" [ref=e158] [cursor=pointer]:
+                          - img [ref=e159]
+                          - text: + Add more
+                    - generic [ref=e160]:
+                      - generic [ref=e161]:
+                        - paragraph [ref=e162]: Use cases
+                        - generic [ref=e163]: Describe real scenarios.
+                      - generic [ref=e164]:
+                        - generic [ref=e165]:
+                          - generic [ref=e166]: •
+                          - textbox "Use cases 1" [ref=e167]:
+                            - /placeholder: Use case 1 (primary scenario)
+                            - text: Govern enterprise use of ChatGPT, Claude, Gemini, and other AI models.
+                        - generic [ref=e168]:
+                          - generic [ref=e169]: •
+                          - textbox "Use cases 2" [ref=e170]:
+                            - /placeholder: Use case 2 (team or role)
+                            - text: Reduce sensitive data exposure when employees use AI assistants.
+                        - generic [ref=e171]:
+                          - generic [ref=e172]: •
+                          - textbox "Use cases 3" [active] [ref=e173]:
+                            - /placeholder: Use case 3 (outcome)
+                            - text: Track team AI activity for audits, compliance reviews, and budget management.
+                        - button "+ Add more" [ref=e174] [cursor=pointer]:
+                          - img [ref=e175]
+                          - text: + Add more
+                - generic [ref=e177]:
+                  - generic [ref=e178]:
+                    - paragraph [ref=e179]: ✨ Optional (Not required)
+                    - paragraph [ref=e180]: Improve visibility & ranking
+                  - generic [ref=e181]:
+                    - generic [ref=e182]: CTR boost
+                    - generic [ref=e183]: SEO
+                    - generic [ref=e184]: Trust
+                  - button "+ Add optional details" [ref=e185] [cursor=pointer]:
+                    - img [ref=e186]
+                    - text: + Add optional details
+              - generic [ref=e187]:
+                - paragraph [ref=e189]: We’ll review within 24–72h.
+                - button "Submit" [ref=e276] [cursor=pointer]
+    - button "Back to top" [ref=e190] [cursor=pointer]:
+      - img [ref=e191]
+    - contentinfo [ref=e193]:
+      - generic [ref=e194]:
+        - generic [ref=e195]:
+          - generic [ref=e196]: LargeMI
+          - paragraph [ref=e197]: Discover and compare AI tools
+          - paragraph [ref=e198]: Curated by humans · Updated regularly · 1,200+ tools
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - heading "Explore AI Tools" [level=4] [ref=e201]
+            - link "AI Chatbots" [ref=e202] [cursor=pointer]:
+              - /url: /en/category/chatbots-tools
+            - link "AI Search" [ref=e203] [cursor=pointer]:
+              - /url: /en/category/search-tools
+            - link "AI Image" [ref=e204] [cursor=pointer]:
+              - /url: /en/category/image-tools
+            - link "AI Video" [ref=e205] [cursor=pointer]:
+              - /url: /en/category/video-tools
+            - link "AI Code" [ref=e206] [cursor=pointer]:
+              - /url: /en/category/code-tools
+            - link "AI Writing" [ref=e207] [cursor=pointer]:
+              - /url: /en/category/writing-tools
+            - link "View all →" [ref=e208] [cursor=pointer]:
+              - /url: /en/categories
+          - generic [ref=e209]:
+            - heading "By Use Case" [level=4] [ref=e210]
+            - link "Content Writing" [ref=e211] [cursor=pointer]:
+              - /url: /en/use-cases/writing-content
+            - link "Image Generation" [ref=e212] [cursor=pointer]:
+              - /url: /en/use-cases/image-generation
+            - link "Video Creation" [ref=e213] [cursor=pointer]:
+              - /url: /en/use-cases/video-creation
+            - link "Coding & Development" [ref=e214] [cursor=pointer]:
+              - /url: /en/use-cases/coding-development
+            - link "Translation & Localization" [ref=e215] [cursor=pointer]:
+              - /url: /en/use-cases/translation-localization
+            - link "Productivity" [ref=e216] [cursor=pointer]:
+              - /url: /en/use-cases/productivity-meetings
+          - generic [ref=e217]:
+            - heading "Platform" [level=4] [ref=e218]
+            - link "Submit Tool" [ref=e219] [cursor=pointer]:
+              - /url: /en/submit-tool
+            - link "Tool Pricing" [ref=e220] [cursor=pointer]:
+              - /url: /en/tool-pricing
+            - link "Blog" [ref=e221] [cursor=pointer]:
+              - /url: /en/blog
+            - link "Weekly Picks" [ref=e222] [cursor=pointer]:
+              - /url: /en/weekly-picks
+            - link "Feedback" [ref=e223] [cursor=pointer]:
+              - /url: /en/feedback
+            - link "About" [ref=e224] [cursor=pointer]:
+              - /url: /en/about
+        - generic [ref=e225]:
+          - generic [ref=e226]: © 2026 LargeMI · All rights reserved
+          - generic [ref=e227]:
+            - generic [ref=e228]:
+              - link "Privacy Policy" [ref=e229] [cursor=pointer]:
+                - /url: /en/privacy
+              - generic [ref=e230]: ·
+            - generic [ref=e231]:
+              - link "Terms of Use" [ref=e232] [cursor=pointer]:
+                - /url: /en/terms
+              - generic [ref=e233]: ·
+            - link "Contact" [ref=e235] [cursor=pointer]:
+              - /url: /en/contact
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e264]
+  - generic [ref=e265]:
+    - generic [ref=e266] [cursor=pointer]:
+      - img [ref=e268]
+      - link "Go to shopping options for Graphics & Animation Software" [ref=e277]: Graphics & Animation Software
+    - button "Close shopping anchor" [ref=e271]

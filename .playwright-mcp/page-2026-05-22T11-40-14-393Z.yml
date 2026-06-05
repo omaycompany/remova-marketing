@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "FindAIDir home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: FindAIDir
+      - navigation "Primary navigation" [ref=e6]:
+        - link "Browse Tools" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "List Your Tool" [ref=e8] [cursor=pointer]:
+          - /url: /submit-tool
+        - link "Contact" [ref=e9] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - heading "List your AI tool" [level=1] [ref=e12]
+      - paragraph [ref=e13]: Submit your product details for review. Approved tools are added to the directory with profile pages and searchable tags.
+    - generic [ref=e14]:
+      - heading "Submission form" [level=2] [ref=e15]
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]:
+            - text: Tool name
+            - textbox "Tool name" [ref=e19]
+          - generic [ref=e20]:
+            - text: Website URL
+            - textbox "Website URL" [ref=e21]:
+              - /placeholder: https://example.com
+          - generic [ref=e22]:
+            - text: Category
+            - textbox "Category" [ref=e23]:
+              - /placeholder: Writing, Video, Productivity
+          - generic [ref=e24]:
+            - text: Tags (comma separated)
+            - textbox "Tags (comma separated)" [ref=e25]:
+              - /placeholder: automation, research, analytics
+          - generic [ref=e26]:
+            - text: Your name
+            - textbox "Your name" [ref=e27]
+          - generic [ref=e28]:
+            - text: Your email
+            - textbox "Your email" [ref=e29]
+        - generic [ref=e30]:
+          - text: Short description
+          - textbox "Short description" [ref=e31]
+        - generic [ref=e32]:
+          - text: Company website
+          - textbox [ref=e33]
+        - generic [ref=e34]:
+          - button "Submit for review" [ref=e35] [cursor=pointer]
+          - status [ref=e42]: Submission received. We will review it.
+        - paragraph [ref=e36]: We review listings before publishing. Please submit accurate information.
+  - contentinfo [ref=e37]:
+    - paragraph [ref=e38]: FindAIDir - AI tool discovery directory.
+    - paragraph [ref=e39]:
+      - link "Browse tools" [ref=e40] [cursor=pointer]:
+        - /url: /
+      - link "Contact us" [ref=e41] [cursor=pointer]:
+        - /url: /contact

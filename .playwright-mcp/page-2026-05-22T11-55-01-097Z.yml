@@ -1,0 +1,157 @@
+- generic [active] [ref=e202]:
+  - banner [ref=e203]:
+    - navigation [ref=e204]:
+      - generic [ref=e205]:
+        - link "InfraBase.ai" [ref=e206] [cursor=pointer]:
+          - /url: /
+          - img "InfraBase.ai" [ref=e207]
+        - generic [ref=e208]:
+          - link "AI Landscape" [ref=e209] [cursor=pointer]:
+            - /url: /landscape
+            - img [ref=e210]
+            - text: AI Landscape
+          - link "European AI" [ref=e215] [cursor=pointer]:
+            - /url: /european
+            - img [ref=e216]
+            - text: European AI
+          - link "Compare" [ref=e219] [cursor=pointer]:
+            - /url: /compare/inference-apis
+            - img [ref=e220]
+            - text: Compare
+          - link "Blog" [ref=e221] [cursor=pointer]:
+            - /url: /blog
+            - img [ref=e222]
+            - text: Blog
+          - link "Submit" [ref=e225] [cursor=pointer]:
+            - /url: /submit
+            - img [ref=e226]
+            - text: Submit
+  - main [ref=e228]:
+    - generic [ref=e230]:
+      - generic [ref=e231]:
+        - heading "Thank you!" [level=1] [ref=e232]
+        - paragraph [ref=e233]: Your submission has been received, and will be reviewed shortly.
+        - paragraph [ref=e234]:
+          - link "← Back to homepage" [ref=e235] [cursor=pointer]:
+            - /url: /
+      - link "Localhero.ai Sponsored Stop waiting for translations Push code, get translations. On-brand, quality-checked, editable without code. Try free \"Instant results, at a better price. Rolled out across all our services.\" — Tech Lead, Kundo" [ref=e238] [cursor=pointer]:
+        - /url: https://localhero.ai/?utm_source=infrabase&utm_medium=banner&utm_campaign=i18n_directory&utm_content=submit
+        - generic [ref=e240]:
+          - generic [ref=e241]:
+            - generic [ref=e242]: Localhero.ai
+            - generic [ref=e243]: Sponsored
+          - heading "Stop waiting for translations" [level=3] [ref=e244]
+          - paragraph [ref=e245]:
+            - strong [ref=e246]: Push code, get translations.
+            - text: On-brand, quality-checked, editable without code.
+          - generic [ref=e247]:
+            - text: Try free
+            - img [ref=e248]
+          - paragraph [ref=e250]:
+            - text: "\"Instant results, at a better price. Rolled out across all our services.\""
+            - text: — Tech Lead, Kundo
+    - generic [ref=e251]:
+      - generic [ref=e252]:
+        - img [ref=e253]
+        - paragraph [ref=e255]: Is your product missing?
+      - link "Add it here →" [ref=e256] [cursor=pointer]:
+        - /url: /submit
+  - contentinfo [ref=e257]:
+    - generic [ref=e258]:
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - paragraph [ref=e261]: Infrabase.ai
+          - paragraph [ref=e262]: A directory for discovering AI infrastructure tools and services. Find the right solutions for your AI projects.
+        - generic [ref=e263]:
+          - paragraph [ref=e264]: Categories
+          - list [ref=e265]:
+            - listitem [ref=e266]:
+              - link "🕵️‍♀️ Agents" [ref=e267] [cursor=pointer]:
+                - /url: /agents
+            - listitem [ref=e268]:
+              - link "🔊 Audio" [ref=e269] [cursor=pointer]:
+                - /url: /audio
+            - listitem [ref=e270]:
+              - link "🧠 Fine-tuning" [ref=e271] [cursor=pointer]:
+                - /url: /fine-tuning
+            - listitem [ref=e272]:
+              - link "🏗️ Frameworks & Stacks" [ref=e273] [cursor=pointer]:
+                - /url: /frameworks-stacks
+            - listitem [ref=e274]:
+              - link "🤖 Inference APIs" [ref=e275] [cursor=pointer]:
+                - /url: /inference-apis
+            - listitem [ref=e276]:
+              - link "📊 Observability & Analytics" [ref=e277] [cursor=pointer]:
+                - /url: /observability-analytics
+            - listitem [ref=e278]:
+              - link "✍️ Prompt engineering" [ref=e279] [cursor=pointer]:
+                - /url: /prompt-engineering
+            - listitem [ref=e280]:
+              - link "🗄️ Vector databases" [ref=e281] [cursor=pointer]:
+                - /url: /vector-databases
+        - generic [ref=e282]:
+          - paragraph [ref=e283]: Resources
+          - list [ref=e284]:
+            - listitem [ref=e285]:
+              - link "Blog" [ref=e286] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e287]:
+              - link "AI Stacks" [ref=e288] [cursor=pointer]:
+                - /url: /stacks
+            - listitem [ref=e289]:
+              - link "Builder Radar" [ref=e290] [cursor=pointer]:
+                - /url: /builder-radar
+            - listitem [ref=e291]:
+              - link "AI Inference API Providers Compared" [ref=e292] [cursor=pointer]:
+                - /url: /blog/ai-inference-api-providers-compared
+            - listitem [ref=e293]:
+              - link "LLM Observability Tools Compared" [ref=e294] [cursor=pointer]:
+                - /url: /blog/llm-observability-tools-compared
+            - listitem [ref=e295]:
+              - link "AI Voice and TTS Tools Compared" [ref=e296] [cursor=pointer]:
+                - /url: /blog/ai-voice-text-to-speech-tools-compared
+            - listitem [ref=e297]:
+              - link "Choosing a Vector Database" [ref=e298] [cursor=pointer]:
+                - /url: /blog/choosing-a-vector-database
+        - generic [ref=e299]:
+          - paragraph [ref=e300]: Quick Links
+          - list [ref=e301]:
+            - listitem [ref=e302]:
+              - link "AI Landscape" [ref=e303] [cursor=pointer]:
+                - /url: /landscape
+                - img [ref=e304]
+                - text: AI Landscape
+            - listitem [ref=e309]:
+              - link "Inference API Pricing" [ref=e310] [cursor=pointer]:
+                - /url: /compare/inference-apis
+                - img [ref=e311]
+                - text: Inference API Pricing
+            - listitem [ref=e312]:
+              - link "European AI Infrastructure" [ref=e313] [cursor=pointer]:
+                - /url: /european
+                - img [ref=e314]
+                - text: European AI Infrastructure
+            - listitem [ref=e317]:
+              - link "Submit a Product" [ref=e318] [cursor=pointer]:
+                - /url: /submit
+                - img [ref=e319]
+                - text: Submit a Product
+            - listitem [ref=e321]:
+              - link "About" [ref=e322] [cursor=pointer]:
+                - /url: /about
+                - img [ref=e323]
+                - text: About
+            - listitem [ref=e325]:
+              - link "Contact" [ref=e326] [cursor=pointer]:
+                - /url: mailto:hi@infrabase.ai
+                - img [ref=e327]
+                - text: Contact
+      - generic [ref=e330]:
+        - paragraph [ref=e331]: © 2026 Infrabase.ai
+        - generic [ref=e332]:
+          - link "AITS Verified Tool" [ref=e333] [cursor=pointer]:
+            - /url: https://www.aitechsuite.com/tools/31197?ref=featured&v=601
+            - img "AITS Verified Tool" [ref=e334]
+          - link "Listed on Sell With Boost" [ref=e335] [cursor=pointer]:
+            - /url: https://sellwithboost.com
+            - img "Listed on Sell With Boost" [ref=e336]

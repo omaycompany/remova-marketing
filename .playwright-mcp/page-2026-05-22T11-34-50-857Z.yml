@@ -1,0 +1,193 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e4]:
+    - link "AI Tools by New Horizon Code home" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e7]: AI Directory
+    - generic [ref=e8]:
+      - generic [ref=e11]:
+        - img [ref=e12]
+        - combobox "Search tools" [ref=e15]
+      - link "Help" [ref=e16] [cursor=pointer]:
+        - /url: /help
+      - radiogroup [ref=e113]:
+        - radio "Switch to system theme" [checked] [ref=e114]:
+          - img [ref=e115]
+        - radio "Switch to light theme" [ref=e118]:
+          - img [ref=e119]
+        - radio "Switch to dark theme" [ref=e125]:
+          - img [ref=e126]
+  - main [ref=e18]:
+    - main [ref=e19]:
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - navigation "breadcrumb" [ref=e130]:
+            - list [ref=e131]:
+              - listitem [ref=e132]:
+                - link "Choose" [disabled] [ref=e133]
+              - listitem [ref=e134]:
+                - img [ref=e135]
+              - listitem [ref=e137]:
+                - link "Submit" [disabled] [ref=e138]
+          - button "Change type" [ref=e139]
+        - heading "Submit a tool" [level=1] [ref=e140]
+        - paragraph [ref=e141]: Share your AI tool with the community. Submissions are moderated out-of-band.
+        - generic [ref=e142]:
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - text: Name*
+                - generic [ref=e146]: required
+              - generic [ref=e147]: "0"
+            - textbox "Name required" [ref=e148]
+            - paragraph [ref=e149]: Public name shown on your listing.
+          - generic [ref=e150]:
+            - generic [ref=e152]:
+              - text: Website URL*
+              - generic [ref=e153]: required
+            - textbox "Website URL required" [ref=e154]:
+              - /placeholder: https://example.com
+            - paragraph [ref=e155]: Landing page users will visit. Include https://
+          - generic [ref=e156]:
+            - generic [ref=e158]: Repository URL(optional)
+            - textbox "Repository URL(optional)" [ref=e159]:
+              - /placeholder: https://github.com/org/repo
+            - paragraph [ref=e160]: Public code repository (e.g., GitHub).
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - generic [ref=e163]:
+                - text: Short description*
+                - generic [ref=e164]: required
+              - generic [ref=e166]: 0 / 240
+            - textbox "Short description required" [ref=e167]
+            - paragraph [ref=e168]: One sentence summary (around 80–120 characters).
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - generic [ref=e171]: Long description(optional)
+              - generic [ref=e172]: "0"
+            - textbox "Long description(optional)" [ref=e173]
+            - paragraph [ref=e174]: A few sentences about your tool. You can include key features or use cases.
+          - generic [ref=e175]:
+            - generic [ref=e176]:
+              - generic [ref=e177]:
+                - text: Pricing*
+                - generic [ref=e178]: required
+              - link "Learn about pricing tiers" [ref=e180] [cursor=pointer]:
+                - /url: /help/pricing-tiers
+            - combobox [ref=e181]:
+              - generic: Free
+              - img
+            - combobox [ref=e182]
+            - paragraph [ref=e183]: Choose how your tool is priced. This helps users filter.
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - generic [ref=e186]: Categories(optional)
+              - generic [ref=e188]: 0 tags
+            - textbox "Categories(optional)" [ref=e189]
+            - paragraph [ref=e190]: "Comma separated. Examples: Developer Tools, Productivity."
+          - generic [ref=e191]:
+            - generic [ref=e192]:
+              - generic [ref=e193]: Tags(optional)
+              - generic [ref=e195]: 0 tags
+            - textbox "Tags(optional)" [ref=e196]
+            - paragraph [ref=e197]: Comma separated keywords to improve discovery.
+          - generic [ref=e198]:
+            - generic [ref=e200]: Logo URL(optional)
+            - textbox "Logo URL(optional)" [ref=e201]:
+              - /placeholder: https://example.com/logo.png
+            - paragraph [ref=e202]: Square logo URL (SVG or PNG). 64–512px recommended.
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - generic [ref=e205]: Screenshots(optional)
+              - generic [ref=e207]: 0 screenshots
+            - textbox "Screenshots(optional)" [ref=e208]
+            - paragraph [ref=e209]: Comma separated image URLs. First image appears first.
+          - generic [ref=e210]:
+            - heading "Notifications" [level=3] [ref=e211]
+            - generic [ref=e212]:
+              - generic [ref=e214]: Email for status updates(optional)
+              - textbox "Email for status updates(optional)" [ref=e215]:
+                - /placeholder: you@example.com
+              - paragraph [ref=e216]: We’ll email you when your submission is approved or requires changes.
+          - generic [ref=e217]:
+            - generic [ref=e218]:
+              - checkbox "I agree to the Terms of Service and Submission Guidelines. I confirm this is a real, live tool and all information is accurate." [ref=e219] [cursor=pointer]
+              - generic [ref=e220] [cursor=pointer]:
+                - text: I agree to the
+                - link "Terms of Service" [ref=e221]:
+                  - /url: /legal/terms
+                - text: and
+                - link "Submission Guidelines" [ref=e222]:
+                  - /url: /legal/guidelines
+                - text: . I confirm this is a real, live tool and all information is accurate.
+            - generic "Human verification" [ref=e223]
+            - generic [ref=e225]:
+              - button "Complete verification" [disabled]
+  - contentinfo [ref=e60]:
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - link "AI Tools by New Horizon Code home" [ref=e66] [cursor=pointer]:
+            - /url: /
+            - text: AI Tools
+          - paragraph [ref=e67]: By Syrup, a trading name of New Horizon Code.
+        - navigation "Explore" [ref=e68]:
+          - heading "Explore" [level=3] [ref=e69]
+          - list [ref=e70]:
+            - listitem [ref=e71]:
+              - link "Home" [ref=e72] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e73]:
+              - link "All tools" [ref=e74] [cursor=pointer]:
+                - /url: /tools
+            - listitem [ref=e75]:
+              - link "Submit a tool" [ref=e76] [cursor=pointer]:
+                - /url: /submit
+            - listitem [ref=e77]:
+              - link "About" [ref=e78] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e79]:
+              - link "Pricing" [ref=e80] [cursor=pointer]:
+                - /url: /pricing
+        - navigation "Help" [ref=e81]:
+          - heading "Help" [level=3] [ref=e82]
+          - list [ref=e83]:
+            - listitem [ref=e84]:
+              - link "Help center" [ref=e85] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e86]:
+              - link "Submit a ticket" [ref=e87] [cursor=pointer]:
+                - /url: /help/ticket/submit
+            - listitem [ref=e88]:
+              - link "Changelog" [ref=e89] [cursor=pointer]:
+                - /url: /changelog
+        - navigation "Legal" [ref=e90]:
+          - heading "Legal" [level=3] [ref=e91]
+          - list [ref=e92]:
+            - listitem [ref=e93]:
+              - link "Terms" [ref=e94] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e95]:
+              - link "Privacy" [ref=e96] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e97]:
+              - link "Guidelines" [ref=e98] [cursor=pointer]:
+                - /url: /legal/guidelines
+      - generic [ref=e100]:
+        - paragraph [ref=e101]: © 2026 New Horizon Code
+        - list [ref=e102]:
+          - listitem [ref=e103]:
+            - link "Sitemap" [ref=e104] [cursor=pointer]:
+              - /url: /sitemap.xml
+          - listitem [ref=e105]:
+            - link "Robots" [ref=e106] [cursor=pointer]:
+              - /url: /robots.txt
+          - listitem [ref=e107]:
+            - link "LLMs" [ref=e108] [cursor=pointer]:
+              - /url: /llms.txt
+          - listitem [ref=e109]:
+            - link "Admin" [ref=e110] [cursor=pointer]:
+              - /url: /admin/login
+  - button "Open chat" [ref=e111]: Chat
+  - alert [ref=e112]

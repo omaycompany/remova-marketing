@@ -1,0 +1,30 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]: LaunchBoosts - Premier AI Tools Directory & Launch Platform
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "LaunchBoosts Logo LaunchBoosts" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "LaunchBoosts Logo" [ref=e8]
+        - generic [ref=e9]: LaunchBoosts
+      - heading "Sign in to your account" [level=2] [ref=e10]
+    - generic [ref=e11]:
+      - textbox "Email Address" [ref=e13]
+      - textbox "Password" [ref=e15]
+      - button "Sign In" [ref=e16]
+    - generic [ref=e21]: Or continue with
+    - generic [ref=e22]:
+      - button "Google Google" [ref=e23]:
+        - img "Google" [ref=e24]
+        - generic [ref=e25]: Google
+      - button "GitHub" [ref=e26]:
+        - img [ref=e27]
+        - generic [ref=e29]: GitHub
+    - paragraph [ref=e30]:
+      - text: Don't have an account?
+      - button "Sign Up" [ref=e31]
+  - generic [ref=e33]:
+    - paragraph [ref=e35]:
+      - text: We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By continuing to use this site, you agree to our use of cookies.
+      - link "Learn more" [ref=e36] [cursor=pointer]:
+        - /url: /privacy-policy
+    - button "Got it" [ref=e38] [cursor=pointer]

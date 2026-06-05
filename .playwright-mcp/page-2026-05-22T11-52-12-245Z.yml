@@ -1,0 +1,40 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T":
+    - list:
+      - status [ref=e309]:
+        - img [ref=e311]
+        - generic [ref=e314]: Please sign in to submit your AI tool
+  - generic [ref=e315]:
+    - generic [ref=e317]:
+      - generic [ref=e318]:
+        - img "AI You Imagine Logo" [ref=e320]
+        - heading "Welcome back" [level=1] [ref=e321]
+        - paragraph [ref=e322]: Sign in to your account
+      - generic [ref=e324]:
+        - generic [ref=e325]:
+          - button "Continue with Google" [ref=e326] [cursor=pointer]:
+            - img
+            - text: Continue with Google
+          - button "Continue with GitHub" [ref=e327] [cursor=pointer]:
+            - img
+            - text: Continue with GitHub
+        - generic [ref=e332]: OR
+        - generic [ref=e333]:
+          - generic [ref=e334]:
+            - text: Email
+            - textbox "Email" [ref=e335]:
+              - /placeholder: Enter your email
+          - generic [ref=e336]:
+            - text: Password
+            - generic [ref=e337]:
+              - textbox "Password" [ref=e338]:
+                - /placeholder: Enter your password
+              - button [ref=e339] [cursor=pointer]:
+                - img [ref=e340]
+          - button "Sign In" [ref=e343] [cursor=pointer]
+        - button "Don't have an account? Sign up" [ref=e345] [cursor=pointer]
+    - generic [ref=e352]:
+      - img "AI You Imagine - Realistic 3D Robot" [ref=e353]
+      - paragraph [ref=e359]: AI You Imagine

@@ -1,0 +1,354 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: ⚡ Unlock AI Workbench Pro — $10 One-Time Upgrade Priority placement, Pro badge, increased visibility. Instant activation. No subscription.
+    - link "Upgrade Now — $10" [ref=e5] [cursor=pointer]:
+      - /url: https://paypal.me/aiworkbench
+  - banner [ref=e6]:
+    - navigation [ref=e7]:
+      - generic [ref=e8]:
+        - link "AI Workbench Logo AI Workbench" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - img "AI Workbench Logo" [ref=e11]
+          - generic [ref=e12]: AI Workbench
+        - generic [ref=e13]:
+          - link "AI Tools" [ref=e14] [cursor=pointer]:
+            - /url: /ai-tools
+          - link "Generators" [ref=e15] [cursor=pointer]:
+            - /url: /ai-generators
+          - link "New Releases" [ref=e16] [cursor=pointer]:
+            - /url: /new-ai-releases
+          - link "Submit AI" [ref=e17] [cursor=pointer]:
+            - /url: /submit-ai-tool
+          - link "Promote AI" [ref=e18] [cursor=pointer]:
+            - /url: /submit
+          - button "Grow Your Reach" [ref=e20]:
+            - text: Grow Your Reach
+            - img [ref=e21]
+          - button "Resources" [ref=e24]:
+            - text: Resources
+            - img [ref=e25]
+          - link "☕ Buy us a Coffee" [ref=e27] [cursor=pointer]:
+            - /url: https://paypal.me/aiworkbench
+  - main [ref=e28]:
+    - generic [ref=e31]:
+      - generic [ref=e32]: ⚡
+      - paragraph [ref=e33]: Most AI listings are reviewed and published within 24 hours after payment confirmation.
+      - generic [ref=e34]: ⚡
+    - generic [ref=e35]:
+      - heading "Get Your AI Tool Discovered by AI Founders & Creators" [level=1] [ref=e36]
+      - paragraph [ref=e37]: Join 1000+ AI tools already listed on AI Workbench. Get exposure to 500,000+ monthly visitors, reach founders and builders, and grow your user base.
+      - paragraph [ref=e38]: ⚡ Most listings are reviewed and published within 24 hours of payment.
+    - generic [ref=e39]:
+      - heading "Why List Your AI on AI Workbench?" [level=2] [ref=e40]
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e44]: ✓
+          - generic [ref=e45]:
+            - heading "AI-Focused Audience" [level=3] [ref=e46]
+            - paragraph [ref=e47]: Reach 500,000+ monthly visitors actively searching for AI solutions and tools.
+        - generic [ref=e48]:
+          - generic [ref=e50]: ✓
+          - generic [ref=e51]:
+            - heading "Founder Ecosystem" [level=3] [ref=e52]
+            - paragraph [ref=e53]: Connect with 1000+ AI founders, creators, and builders in a growing startup community.
+        - generic [ref=e54]:
+          - generic [ref=e56]: ✓
+          - generic [ref=e57]:
+            - heading "SEO & Visibility" [level=3] [ref=e58]
+            - paragraph [ref=e59]: Get discovered through search engines with optimized tool pages and category placement.
+        - generic [ref=e60]:
+          - generic [ref=e62]: ✓
+          - generic [ref=e63]:
+            - heading "Newsletter Distribution" [level=3] [ref=e64]
+            - paragraph [ref=e65]: Featured in AI Workbench Weekly reaching 50,000+ AI entrepreneurs and creators.
+    - generic [ref=e66]:
+      - heading "Why AI Founders Trust AI Workbench" [level=3] [ref=e67]
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: 500K+
+          - paragraph [ref=e71]: Monthly Visitors
+        - generic [ref=e72]:
+          - generic [ref=e73]: 1000+
+          - paragraph [ref=e74]: AI Tools Listed
+        - generic [ref=e75]:
+          - generic [ref=e76]: 180+
+          - paragraph [ref=e77]: Countries Reached
+      - paragraph [ref=e78]: AI Workbench is a trusted platform powered by Meridian Global, committed to helping AI founders, creators, and innovators reach the global AI community.
+    - paragraph [ref=e80]: All approved tools may be listed, but promoted tools receive significantly higher visibility and priority placement across all platform sections.
+    - generic [ref=e81]:
+      - heading "Pricing & Promotion Packages" [level=2] [ref=e82]
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - heading "Category Featured Listing" [level=3] [ref=e85]
+          - generic [ref=e86]:
+            - generic [ref=e87]: $20/month
+            - generic [ref=e88]: ~R380 ZAR
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - generic [ref=e91]: ✓
+              - generic [ref=e92]: Featured placement in your category
+            - listitem [ref=e93]:
+              - generic [ref=e94]: ✓
+              - generic [ref=e95]: Highlighted with "Featured" badge
+            - listitem [ref=e96]:
+              - generic [ref=e97]: ✓
+              - generic [ref=e98]: Premium visibility in category pages
+        - generic [ref=e99]:
+          - generic [ref=e100]: MOST POPULAR
+          - heading "Featured Tool Listing" [level=3] [ref=e101]
+          - generic [ref=e102]:
+            - generic [ref=e103]: $30/month
+            - generic [ref=e104]: ~R570 ZAR
+          - list [ref=e105]:
+            - listitem [ref=e106]:
+              - generic [ref=e107]: ✓
+              - generic [ref=e108]: Top category placement
+            - listitem [ref=e109]:
+              - generic [ref=e110]: ✓
+              - generic [ref=e111]: Featured badge on all listings
+            - listitem [ref=e112]:
+              - generic [ref=e113]: ✓
+              - generic [ref=e114]: Homepage featured section
+            - listitem [ref=e115]:
+              - generic [ref=e116]: ✓
+              - generic [ref=e117]: Increased visibility across platform
+        - generic [ref=e118]:
+          - heading "Sponsored Tool Launch" [level=3] [ref=e119]
+          - generic [ref=e120]:
+            - generic [ref=e121]: $120
+            - generic [ref=e122]: ~R2,200 ZAR (one-time)
+          - list [ref=e123]:
+            - listitem [ref=e124]:
+              - generic [ref=e125]: ✓
+              - generic [ref=e126]: 7-day homepage spotlight
+            - listitem [ref=e127]:
+              - generic [ref=e128]: ✓
+              - generic [ref=e129]: "\"New Tool Launch\" badge"
+            - listitem [ref=e130]:
+              - generic [ref=e131]: ✓
+              - generic [ref=e132]: Maximum visibility for launch week
+        - generic [ref=e133]:
+          - heading "Newsletter Sponsorship" [level=3] [ref=e134]
+          - generic [ref=e135]:
+            - generic [ref=e136]: $50
+            - generic [ref=e137]: ~R950 ZAR
+          - list [ref=e138]:
+            - listitem [ref=e139]:
+              - generic [ref=e140]: ✓
+              - generic [ref=e141]: Featured mention in newsletter
+            - listitem [ref=e142]:
+              - generic [ref=e143]: ✓
+              - generic [ref=e144]: Reach engaged subscribers
+            - listitem [ref=e145]:
+              - generic [ref=e146]: ✓
+              - generic [ref=e147]: Direct traffic from newsletter
+        - generic [ref=e148]:
+          - heading "Custom Promotion Package" [level=3] [ref=e149]
+          - generic [ref=e150]:
+            - generic [ref=e151]: $200
+            - generic [ref=e152]: ~R3,700 ZAR
+          - list [ref=e153]:
+            - listitem [ref=e154]:
+              - generic [ref=e155]: ✓
+              - generic [ref=e156]: 1-month featured listing
+            - listitem [ref=e157]:
+              - generic [ref=e158]: ✓
+              - generic [ref=e159]: 7–14 day homepage promotion
+            - listitem [ref=e160]:
+              - generic [ref=e161]: ✓
+              - generic [ref=e162]: Newsletter mention included
+            - listitem [ref=e163]:
+              - generic [ref=e164]: ✓
+              - generic [ref=e165]: Maximum visibility bundle
+      - paragraph [ref=e167]: "⏱️ Limited Spots Available: Featured spots are limited and processed on a first-paid, first-served basis."
+    - generic [ref=e168]:
+      - heading "How to Proceed" [level=2] [ref=e169]
+      - generic [ref=e170]:
+        - generic [ref=e171]:
+          - generic [ref=e173]: "1"
+          - heading "Select Package" [level=3] [ref=e174]
+          - paragraph [ref=e175]: Choose your preferred listing or promotion package above.
+        - generic [ref=e176]:
+          - generic [ref=e178]: "2"
+          - heading "Complete Payment" [level=3] [ref=e179]
+          - paragraph [ref=e180]: Use the secure payment link below to complete your transaction.
+        - generic [ref=e181]:
+          - generic [ref=e183]: "3"
+          - heading "Enter ZAR Amount" [level=3] [ref=e184]
+          - paragraph [ref=e185]: Enter the Rand (ZAR) amount shown next to your selected package.
+        - generic [ref=e186]:
+          - generic [ref=e188]: "4"
+          - heading "Use Tool Name" [level=3] [ref=e189]
+          - paragraph [ref=e190]: Use your AI tool name as the payment reference.
+      - link "Upgrade Your Listing Now" [ref=e192] [cursor=pointer]:
+        - /url: https://pay.yoco.com/aisubmissions
+      - generic [ref=e193]:
+        - paragraph [ref=e194]: 🔒 Secure Payment Processing
+        - paragraph [ref=e195]: Payments are processed securely via Yoco in South African Rand (ZAR). Please ensure you enter the correct Rand amount corresponding to your selected package.
+    - generic [ref=e196]:
+      - heading "What Happens Next" [level=2] [ref=e197]
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - generic [ref=e201]: "1"
+          - generic [ref=e202]:
+            - heading "Your Payment is Confirmed" [level=3] [ref=e203]
+            - paragraph [ref=e204]: You'll receive an instant confirmation of your payment via email.
+        - generic [ref=e205]:
+          - generic [ref=e207]: "2"
+          - generic [ref=e208]:
+            - heading "You Receive an Onboarding Form" [level=3] [ref=e209]
+            - paragraph [ref=e210]: We'll send you a brief onboarding form to collect the details about your AI tool.
+        - generic [ref=e211]:
+          - generic [ref=e213]: "3"
+          - generic [ref=e214]:
+            - heading "Your AI Tool is Prepared for Listing" [level=3] [ref=e215]
+            - paragraph [ref=e216]: Our team prepares your tool profile with all the information for optimal presentation.
+        - generic [ref=e217]:
+          - generic [ref=e219]: "4"
+          - generic [ref=e220]:
+            - heading "Your Listing Goes Live" [level=3] [ref=e221]
+            - paragraph [ref=e222]: Your listing appears on AI Workbench based on your selected package. Start getting discovered!
+    - generic [ref=e224]:
+      - paragraph [ref=e225]: 🌐 Trusted by AI Founders & Builders
+      - paragraph [ref=e226]: AI Workbench operates under the Meridian Global brand, focused on AI tool discovery, visibility, and promotion. We're committed to helping AI innovators reach their audience.
+    - generic [ref=e227]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e228]
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - heading "What is the difference between the packages?" [level=3] [ref=e231]
+          - paragraph [ref=e232]: Each package offers different levels of visibility. Category Featured Listing places you in your category, Featured Tool Listing gives top placement across the platform, Sponsored Tool Launch provides a 7-day homepage spotlight, Newsletter Sponsorship reaches engaged subscribers, and Custom Promotion Package combines multiple benefits.
+        - generic [ref=e233]:
+          - heading "Can I change my package after payment?" [level=3] [ref=e234]
+          - paragraph [ref=e235]: Yes, contact our support team after payment if you'd like to upgrade or modify your package. We'll work with you to ensure you get the right promotion strategy.
+        - generic [ref=e236]:
+          - heading "How long does my listing stay active?" [level=3] [ref=e237]
+          - paragraph [ref=e238]: Standard packages are monthly subscriptions. One-time packages (like Sponsored Tool Launch) run for the specified duration. You can renew or modify your listing at any time.
+        - generic [ref=e239]:
+          - heading "What payment methods do you accept?" [level=3] [ref=e240]
+          - paragraph [ref=e241]: We accept all payment methods supported by Yoco, including credit cards, debit cards, and bank transfers. All transactions are processed in South African Rand (ZAR).
+        - generic [ref=e242]:
+          - heading "Is there a refund policy?" [level=3] [ref=e243]
+          - paragraph [ref=e244]: We stand behind our services. Contact us within 7 days of payment if you have any concerns, and we'll work with you to find a solution or process a refund if needed.
+        - generic [ref=e245]:
+          - heading "How do I get support?" [level=3] [ref=e246]
+          - paragraph [ref=e247]: Email our support team at support@aiworkbench.tech with any questions about your listing or promotion package. We're here to help!
+    - generic [ref=e248]:
+      - heading "Ready to Get Featured?" [level=2] [ref=e249]
+      - paragraph [ref=e250]: Don't let your AI tool get lost in the crowd. Upgrade your listing today and start getting discovered.
+      - link "Get Featured" [ref=e251] [cursor=pointer]:
+        - /url: https://pay.yoco.com/aisubmissions
+  - contentinfo [ref=e252]:
+    - generic [ref=e253]:
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - generic [ref=e256]:
+            - generic [ref=e257]: AI
+            - generic [ref=e258]: AI Workbench
+          - paragraph [ref=e259]: Discover, compare, and use the best AI tools and generators in one place.
+        - generic [ref=e260]:
+          - heading "Navigation" [level=4] [ref=e261]
+          - list [ref=e262]:
+            - listitem [ref=e263]:
+              - link "Home" [ref=e264] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e265]:
+              - link "AI Tools" [ref=e266] [cursor=pointer]:
+                - /url: /ai-tools
+            - listitem [ref=e267]:
+              - link "Generators" [ref=e268] [cursor=pointer]:
+                - /url: /ai-generators
+            - listitem [ref=e269]:
+              - link "Categories" [ref=e270] [cursor=pointer]:
+                - /url: /categories
+            - listitem [ref=e271]:
+              - link "New AI Tools" [ref=e272] [cursor=pointer]:
+                - /url: /new-ai-tools
+        - generic [ref=e273]:
+          - heading "Categories" [level=4] [ref=e274]
+          - list [ref=e275]:
+            - listitem [ref=e276]:
+              - link "AI Writing Tools" [ref=e277] [cursor=pointer]:
+                - /url: /categories#writing
+            - listitem [ref=e278]:
+              - link "AI Image Generators" [ref=e279] [cursor=pointer]:
+                - /url: /categories#image
+            - listitem [ref=e280]:
+              - link "AI Video Tools" [ref=e281] [cursor=pointer]:
+                - /url: /categories#video
+            - listitem [ref=e282]:
+              - link "AI Coding Tools" [ref=e283] [cursor=pointer]:
+                - /url: /categories#coding
+        - generic [ref=e284]:
+          - heading "Popular AI Guides" [level=4] [ref=e285]
+          - list [ref=e286]:
+            - listitem [ref=e287]:
+              - link "Best AI Tools" [ref=e288] [cursor=pointer]:
+                - /url: /best-ai-tools
+            - listitem [ref=e289]:
+              - link "Free AI Tools" [ref=e290] [cursor=pointer]:
+                - /url: /best-free-ai-tools
+            - listitem [ref=e291]:
+              - link "AI for Startups" [ref=e292] [cursor=pointer]:
+                - /url: /best-ai-tools-startups
+            - listitem [ref=e293]:
+              - link "AI for Marketing" [ref=e294] [cursor=pointer]:
+                - /url: /best-ai-tools-marketing
+            - listitem [ref=e295]:
+              - link "AI Use Cases" [ref=e296] [cursor=pointer]:
+                - /url: /use-cases
+        - generic [ref=e297]:
+          - heading "Top Generators" [level=4] [ref=e298]
+          - list [ref=e299]:
+            - listitem [ref=e300]:
+              - link "Blog Title Generator" [ref=e301] [cursor=pointer]:
+                - /url: /ai-blog-title-generator
+            - listitem [ref=e302]:
+              - link "Startup Name Generator" [ref=e303] [cursor=pointer]:
+                - /url: /ai-startup-name-generator
+            - listitem [ref=e304]:
+              - link "ChatGPT Prompt Generator" [ref=e305] [cursor=pointer]:
+                - /url: /ai-chatgpt-prompt-generator
+            - listitem [ref=e306]:
+              - link "YouTube Title Generator" [ref=e307] [cursor=pointer]:
+                - /url: /ai-youtube-title-generator
+            - listitem [ref=e308]:
+              - link "Business Name Generator" [ref=e309] [cursor=pointer]:
+                - /url: /ai-business-name-generator
+      - generic [ref=e311]:
+        - paragraph [ref=e312]: AI Workbench is operated under
+        - paragraph [ref=e313]: Meridian Global
+        - paragraph [ref=e314]: Focused on AI tool discovery, visibility, and promotion.
+      - generic [ref=e316]:
+        - paragraph [ref=e317]: © 2026 AI Workbench. All rights reserved.
+        - generic [ref=e318]:
+          - link "Disclaimer" [ref=e319] [cursor=pointer]:
+            - /url: /disclaimer
+          - link "Privacy Policy" [ref=e320] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=e321] [cursor=pointer]:
+            - /url: /terms-of-service
+          - link "Contact" [ref=e322] [cursor=pointer]:
+            - /url: /contact
+    - link "Built by B12 💜" [ref=e324] [cursor=pointer]:
+      - /url: https://www.b12.io/ai-web-design/?utm_source=client&utm_medium=footer&utm_campaign=ai-web-design
+      - text: Built by
+      - img "B12" [ref=e325]
+      - text: 💜
+  - generic [ref=e331]:
+    - button "Close popup" [ref=e332]:
+      - img [ref=e333]
+    - generic [ref=e335]:
+      - generic [ref=e337]: 🚀
+      - heading "Free Listing Period Has Ended" [level=2] [ref=e338]
+      - paragraph [ref=e339]: Thank you to everyone who joined AI Workbench during our early growth phase. Our free listing period has now officially ended. All future AI tool submissions will follow our paid listing process, helping us keep the platform online, improve visibility for creators, and continue growing the AI Workbench community.
+      - generic [ref=e341]:
+        - link "Submit Your AI" [ref=e342] [cursor=pointer]:
+          - /url: /submit
+        - button "Close" [ref=e343]
+      - paragraph [ref=e344]: Learn more about our listing options on the submit page.
+  - link [ref=e348] [cursor=pointer]:
+    - /url: https://skinnycrawlinglax.com/ucvw5xbm3x?ohozd=34&refer=https%3A%2F%2Fwww.aiworkbench.tech%2Fsubmit%2F&kw=%5B%22promote%22%2C%22your%22%2C%22ai%22%2C%22tool%22%2C%22-%22%2C%22workbench%22%5D&key=f8098bbf16b162d33c6c66b767cdc08a&scrWidth=1680&scrHeight=1050&tz=3&ship=1&v=2026.5.0&sub3=invoke_layer&res=14.31&dev=r&ifid=019e4fa1-4139-7805-b8bd-f010f6f5debf&ibid=019e4fa1-4068-7c18-8905-e8f3fc03fc07
+  - iframe [ref=e351]:
+    - generic [ref=f61e6]:
+      - text: protected by
+      - strong [ref=f61e7]: reCAPTCHA

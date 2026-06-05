@@ -1,0 +1,221 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: NavTools.ai
+        - navigation:
+          - link:
+            - /url: /
+            - img
+            - text: Home
+          - link:
+            - /url: /category
+            - img
+            - text: Category
+          - generic:
+            - link:
+              - /url: /best-ai-tools
+              - img
+              - text: Rankings
+              - img
+          - link:
+            - /url: /submit
+            - img
+            - text: Submit
+        - generic:
+          - button:
+            - img
+          - generic:
+            - link:
+              - /url: /login
+              - button: Login
+    - main:
+      - generic:
+        - heading [level=1]: Get Your AI Tool Discovered
+        - paragraph: Submit your product to reach more users, improve discoverability, and accelerate your launch across the AI ecosystem.
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - text: Submission Type
+              - radiogroup:
+                - generic:
+                  - radio [checked]:
+                    - generic:
+                      - img
+                  - radio [checked]
+                  - generic:
+                    - generic:
+                      - img
+                      - generic: Basic
+                    - list:
+                      - listitem:
+                        - img
+                        - text: "Review: 30-90 Days"
+                      - listitem:
+                        - img
+                        - text: Standard directory listing
+                      - listitem:
+                        - img
+                        - text: "Support: Community"
+                    - generic: $0
+                - generic:
+                  - radio
+                  - radio
+                  - generic:
+                    - generic:
+                      - img
+                      - generic: Fast Track
+                    - list:
+                      - listitem:
+                        - img
+                        - text: "Review: 48 Hours"
+                      - listitem:
+                        - img
+                        - text: Homepage featured placement (7 days)
+                      - listitem:
+                        - img
+                        - text: "Support: Priority Email"
+                    - generic:
+                      - generic: $29.9
+                      - generic: One-time
+                - generic:
+                  - radio
+                  - radio
+                  - generic:
+                    - generic:
+                      - img
+                      - generic: Growth Pro
+                    - list:
+                      - listitem:
+                        - img
+                        - text: "Review: 24 Hours"
+                      - listitem:
+                        - img
+                        - text: Homepage featured placement (15 days)
+                      - listitem:
+                        - img
+                        - text: All tool pages featured placement (15 days)
+                      - listitem:
+                        - img
+                        - text: "Support: Dedicated Manager"
+                    - generic:
+                      - generic: $149
+                      - generic: One-time
+              - generic:
+                - heading [level=4]:
+                  - img
+                  - text: Sponsored Visibility Included
+                - paragraph: Paid submissions include priority review and clearly labeled placements designed to drive qualified referral traffic.
+                - generic:
+                  - generic: Includes click tracking and sponsored featured slots
+            - generic:
+              - generic:
+                - text: Tool Name *
+                - textbox:
+                  - /placeholder: Your AI Tool Name
+              - generic:
+                - text: Website URL *
+                - textbox:
+                  - /placeholder: https://your-tool-website.com
+              - generic:
+                - text: Contact Email *
+                - textbox:
+                  - /placeholder: your@email.com
+              - generic:
+                - button: Submit AI Tool
+              - paragraph:
+                - text: By submitting, you agree to our
+                - link:
+                  - /url: /terms
+                  - text: Terms of Service
+                - text: and
+                - link:
+                  - /url: /privacy
+                  - text: Privacy Policy
+                - text: .
+      - generic:
+        - heading [level=2]: How It Works
+        - generic:
+          - generic:
+            - generic: "1"
+            - heading [level=3]: Submit Your Tool
+            - paragraph: Fill out the form with your AI tool details and contact information.
+          - generic:
+            - generic: "2"
+            - heading [level=3]: Review Process
+            - paragraph: Our team will review your submission to ensure it meets our quality standards.
+          - generic:
+            - generic: "3"
+            - heading [level=3]: Get Listed
+            - paragraph: Once approved, your tool will be listed in our directory and promoted to our audience.
+      - generic:
+        - heading [level=2]: Frequently Asked Questions
+        - generic:
+          - generic:
+            - heading [level=3]: How long does the review process take?
+            - paragraph: "Review time depends on your plan: Basic (Free) submissions are reviewed within 30–90 days, Fast Track submissions are reviewed within 48 hours, and Growth Pro submissions are reviewed within 24 hours; all submissions are manually reviewed to ensure quality, with priority given to higher-tier plans."
+          - generic:
+            - heading [level=3]: Is there a fee to list my AI tool?
+            - paragraph: Listing your AI tool is free with our Basic submission. Fast Track and Growth Pro add priority review and clearly labeled featured placements for additional visibility.
+          - generic:
+            - heading [level=3]: What types of AI tools do you accept?
+            - paragraph: "We accept all types of AI-powered tools and services that provide genuine value to users. This includes but is not limited to: chatbots, image generators, writing assistants, and productivity tools."
+          - generic:
+            - heading [level=3]: Any questions?
+            - paragraph:
+              - text: "If you have any questions, please contact us by email:"
+              - link:
+                - /url: mailto:support@navtools.ai
+                - text: support@navtools.ai
+    - contentinfo:
+      - generic:
+        - generic:
+          - link:
+            - /url: /
+            - img
+            - generic: NavTools.ai
+        - paragraph: NavTools AI, The Best AI Websites & AI Tools Directory
+        - generic:
+          - link:
+            - /url: /privacy
+            - text: Privacy Policy
+          - link:
+            - /url: /terms
+            - text: Terms of Use
+          - link:
+            - /url: /submit
+            - text: Submit Tool
+          - link:
+            - /url: /best-ai-tools
+            - text: Fastest Growing AI Tools
+          - link:
+            - /url: /best-ai-tools/visit-growth
+            - text: AI Tools Visit Growth
+          - link:
+            - /url: /best-ai-tools/most-visited
+            - text: Most Visited AI Tools
+          - link:
+            - /url: /category
+            - text: Browse Categories
+          - link:
+            - /url: mailto:support@navtools.ai
+            - text: Contact Us
+        - paragraph: Copyright ©2026 NavTools AI. All Rights Reserved.
+  - region "Notifications alt+T"
+  - alert
+  - generic:
+    - button:
+      - img
+  - dialog "Submission Successful" [ref=e234]:
+    - heading "Submission Successful" [level=2] [ref=e236]:
+      - img [ref=e237]
+      - text: Submission Successful
+    - paragraph [ref=e241]: Thank you for submitting your AI tool. Our team will review it shortly.
+    - button "Close" [active] [ref=e243] [cursor=pointer]
+    - button "Close" [ref=e244] [cursor=pointer]:
+      - img [ref=e245]
+      - generic [ref=e248]: Close

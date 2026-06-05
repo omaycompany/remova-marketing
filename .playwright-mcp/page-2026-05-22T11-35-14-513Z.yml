@@ -1,0 +1,570 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - text: ✦ This site is completely free — no account needed. Companies & providers
+    - link "subscribe to be listed" [ref=e3] [cursor=pointer]:
+      - /url: subscribe.html
+    - text: .
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "✦ Ailists.ai" [ref=e6] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e7]: ✦
+        - generic [ref=e8]: Ailists.ai
+      - navigation [ref=e9]:
+        - generic [ref=e10]:
+          - link "🗂️ AI Directory" [ref=e11] [cursor=pointer]:
+            - /url: index.html
+          - link "🗂️ 242 Categories" [ref=e12] [cursor=pointer]:
+            - /url: categories.html
+          - link "🏢 Companies" [ref=e13] [cursor=pointer]:
+            - /url: companies.html
+          - link "📰 News" [ref=e14] [cursor=pointer]:
+            - /url: ai-news.html
+          - link "📅 Events" [ref=e15] [cursor=pointer]:
+            - /url: ai-events.html
+          - link "💼 Jobs" [ref=e16] [cursor=pointer]:
+            - /url: ai-jobs.html
+          - link "💸 Fund" [ref=e17] [cursor=pointer]:
+            - /url: ai-fund.html
+          - link "🧠 AI Advisors" [ref=e18] [cursor=pointer]:
+            - /url: advisors-directory.html
+          - link "🏢 Data Centers" [ref=e19] [cursor=pointer]:
+            - /url: data-centers.html
+          - link "🧩 CPUs" [ref=e20] [cursor=pointer]:
+            - /url: cpu.html
+          - link "🤝 Sponsor" [ref=e21] [cursor=pointer]:
+            - /url: sponsor.html
+          - link "💳 Pricing" [ref=e22] [cursor=pointer]:
+            - /url: pricing.html
+      - generic [ref=e23]:
+        - link "+ Add startup" [ref=e24] [cursor=pointer]:
+          - /url: add-startup.html
+        - link "Subscribe" [ref=e25] [cursor=pointer]:
+          - /url: subscribe.html
+  - generic [ref=e26]:
+    - generic [ref=e27]: The AI Ecosystem Platform
+    - heading "Discover Every AI Tool, Startup & Insight" [level=1] [ref=e29]:
+      - text: Discover Every
+      - text: AI Tool, Startup & Insight
+    - paragraph [ref=e30]: The world's most comprehensive AI directory — listing companies, news, events, jobs, advisors, and data centers, all in one beautifully organized ecosystem.
+    - generic [ref=e31]:
+      - textbox "Search AI tools, companies, categories…" [ref=e32]
+      - button "Search →" [ref=e33] [cursor=pointer]
+    - generic [ref=e34]:
+      - link "Explore AI Companies →" [ref=e35] [cursor=pointer]:
+        - /url: companies.html
+      - link "+ List your startup" [ref=e36] [cursor=pointer]:
+        - /url: add-startup.html
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]: 5,000+
+        - generic [ref=e40]: AI tools listed
+      - generic [ref=e41]:
+        - generic [ref=e42]: 1,200+
+        - generic [ref=e43]: AI companies
+      - generic [ref=e44]:
+        - generic [ref=e45]: 80K+
+        - generic [ref=e46]: Monthly visitors
+      - generic [ref=e47]:
+        - generic [ref=e48]: 200+
+        - generic [ref=e49]: Categories
+  - separator [ref=e50]
+  - generic [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]: ✦ Browse
+      - heading "Explore the AI Ecosystem" [level=2] [ref=e55]
+      - paragraph [ref=e56]: Every corner of artificial intelligence, neatly organized for you.
+    - generic [ref=e57]:
+      - link "🏢 AI Companies 1,200+ companies →" [ref=e58] [cursor=pointer]:
+        - /url: companies.html
+        - generic [ref=e59]: 🏢
+        - generic [ref=e60]: AI Companies
+        - generic [ref=e61]: 1,200+ companies
+        - generic [ref=e62]: →
+      - link "📰 AI News Updated daily →" [ref=e63] [cursor=pointer]:
+        - /url: ai-news.html
+        - generic [ref=e64]: 📰
+        - generic [ref=e65]: AI News
+        - generic [ref=e66]: Updated daily
+        - generic [ref=e67]: →
+      - link "📅 AI Events Conferences & meetups →" [ref=e68] [cursor=pointer]:
+        - /url: ai-events.html
+        - generic [ref=e69]: 📅
+        - generic [ref=e70]: AI Events
+        - generic [ref=e71]: Conferences & meetups
+        - generic [ref=e72]: →
+      - link "💼 AI Jobs 3,400+ open roles →" [ref=e73] [cursor=pointer]:
+        - /url: ai-jobs.html
+        - generic [ref=e74]: 💼
+        - generic [ref=e75]: AI Jobs
+        - generic [ref=e76]: 3,400+ open roles
+        - generic [ref=e77]: →
+      - link "💸 AI Fund Investors & grants →" [ref=e78] [cursor=pointer]:
+        - /url: ai-fund.html
+        - generic [ref=e79]: 💸
+        - generic [ref=e80]: AI Fund
+        - generic [ref=e81]: Investors & grants
+        - generic [ref=e82]: →
+      - link "NEW 🧠 AI Advisors Expert network →" [ref=e83] [cursor=pointer]:
+        - /url: advisors-directory.html
+        - generic [ref=e84]: NEW
+        - generic [ref=e85]: 🧠
+        - generic [ref=e86]: AI Advisors
+        - generic [ref=e87]: Expert network
+        - generic [ref=e88]: →
+      - link "🏗️ Data Centers Global infrastructure →" [ref=e89] [cursor=pointer]:
+        - /url: data-centers.html
+        - generic [ref=e90]: 🏗️
+        - generic [ref=e91]: Data Centers
+        - generic [ref=e92]: Global infrastructure
+        - generic [ref=e93]: →
+      - link "🧩 CPU Manufacturers Chips & hardware →" [ref=e94] [cursor=pointer]:
+        - /url: cpu.html
+        - generic [ref=e95]: 🧩
+        - generic [ref=e96]: CPU Manufacturers
+        - generic [ref=e97]: Chips & hardware
+        - generic [ref=e98]: →
+      - link "🤝 Sponsors Featured partners →" [ref=e99] [cursor=pointer]:
+        - /url: sponsor.html
+        - generic [ref=e100]: 🤝
+        - generic [ref=e101]: Sponsors
+        - generic [ref=e102]: Featured partners
+        - generic [ref=e103]: →
+      - link "❤️ Donate Support the platform →" [ref=e104] [cursor=pointer]:
+        - /url: donate.html
+        - generic [ref=e105]: ❤️
+        - generic [ref=e106]: Donate
+        - generic [ref=e107]: Support the platform
+        - generic [ref=e108]: →
+    - link "✦ Browse all 242 AI Categories →" [ref=e110] [cursor=pointer]:
+      - /url: categories.html
+  - separator [ref=e111]
+  - generic [ref=e114]:
+    - generic [ref=e115]:
+      - img "AI Advisors" [ref=e116]
+      - generic [ref=e117]:
+        - generic [ref=e118]: 🎉 Limited Time Offer
+        - heading "Get Listed as an AI Advisor 3 Months FREE" [level=2] [ref=e119]:
+          - text: Get Listed as an AI Advisor
+          - text: 3 Months FREE
+        - paragraph [ref=e120]: Join our expert network and get discovered by 80,000+ founders, investors & enterprises. First 3 months on us — no credit card required.
+    - generic [ref=e121]:
+      - link "View AI Advisors →" [ref=e122] [cursor=pointer]:
+        - /url: advisors-directory.html
+      - link "+ Get Listed Free →" [ref=e123] [cursor=pointer]:
+        - /url: advisers.html
+  - separator [ref=e124]
+  - generic [ref=e126]:
+    - generic [ref=e127]:
+      - generic [ref=e128]: ✦ Featured
+      - heading "Top AI Tools & Companies" [level=2] [ref=e129]
+      - paragraph [ref=e130]: Hand-picked by our editorial team. Updated weekly.
+    - generic [ref=e131]:
+      - link "Featured 🤖 OpenAI LLM Creators of GPT-4o and ChatGPT. The most widely deployed AI platform in the world, powering millions of applications. ⭐ 4.9 🌐 API Visit →" [ref=e132] [cursor=pointer]:
+        - /url: https://openai.com
+        - generic [ref=e133]: Featured
+        - generic [ref=e134]:
+          - generic [ref=e135]: 🤖
+          - generic [ref=e136]:
+            - generic [ref=e137]: OpenAI
+            - generic [ref=e138]: LLM
+        - paragraph [ref=e139]: Creators of GPT-4o and ChatGPT. The most widely deployed AI platform in the world, powering millions of applications.
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - generic [ref=e142]: ⭐ 4.9
+            - generic [ref=e143]: 🌐 API
+          - generic [ref=e144]: Visit →
+      - link "🔵 Google DeepMind Research Pioneering AI safety and capability research. Home of Gemini, AlphaCode, and groundbreaking scientific AI breakthroughs. ⭐ 4.8 🌐 API Visit →" [ref=e145] [cursor=pointer]:
+        - /url: https://deepmind.google
+        - generic [ref=e146]:
+          - generic [ref=e147]: 🔵
+          - generic [ref=e148]:
+            - generic [ref=e149]: Google DeepMind
+            - generic [ref=e150]: Research
+        - paragraph [ref=e151]: Pioneering AI safety and capability research. Home of Gemini, AlphaCode, and groundbreaking scientific AI breakthroughs.
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]: ⭐ 4.8
+            - generic [ref=e155]: 🌐 API
+          - generic [ref=e156]: Visit →
+      - link "Featured 🟣 Anthropic Safety AI AI safety company and creator of Claude — a leading AI assistant built with constitutional AI for reliable, harmless, honest outputs. ⭐ 4.9 🌐 API Visit →" [ref=e157] [cursor=pointer]:
+        - /url: https://www.anthropic.com
+        - generic [ref=e158]: Featured
+        - generic [ref=e159]:
+          - generic [ref=e160]: 🟣
+          - generic [ref=e161]:
+            - generic [ref=e162]: Anthropic
+            - generic [ref=e163]: Safety AI
+        - paragraph [ref=e164]: AI safety company and creator of Claude — a leading AI assistant built with constitutional AI for reliable, harmless, honest outputs.
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - generic [ref=e167]: ⭐ 4.9
+            - generic [ref=e168]: 🌐 API
+          - generic [ref=e169]: Visit →
+      - link "🟠 Mistral AI Open Source European AI leader building efficient open-weight models. Mistral 7B and Mixtral set new benchmarks for performance at scale. ⭐ 4.7 🔓 Open Visit →" [ref=e170] [cursor=pointer]:
+        - /url: https://mistral.ai
+        - generic [ref=e171]:
+          - generic [ref=e172]: 🟠
+          - generic [ref=e173]:
+            - generic [ref=e174]: Mistral AI
+            - generic [ref=e175]: Open Source
+        - paragraph [ref=e176]: European AI leader building efficient open-weight models. Mistral 7B and Mixtral set new benchmarks for performance at scale.
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - generic [ref=e179]: ⭐ 4.7
+            - generic [ref=e180]: 🔓 Open
+          - generic [ref=e181]: Visit →
+      - link "🟢 Hugging Face Platform The GitHub of AI. Home to 500,000+ models, datasets, and Spaces. The essential platform for the open-source AI community. ⭐ 4.9 🔓 Open Visit →" [ref=e182] [cursor=pointer]:
+        - /url: https://huggingface.co
+        - generic [ref=e183]:
+          - generic [ref=e184]: 🟢
+          - generic [ref=e185]:
+            - generic [ref=e186]: Hugging Face
+            - generic [ref=e187]: Platform
+        - paragraph [ref=e188]: The GitHub of AI. Home to 500,000+ models, datasets, and Spaces. The essential platform for the open-source AI community.
+        - generic [ref=e189]:
+          - generic [ref=e190]:
+            - generic [ref=e191]: ⭐ 4.9
+            - generic [ref=e192]: 🔓 Open
+          - generic [ref=e193]: Visit →
+      - link "Featured ⚡ Groq Inference Ultra-fast AI inference with Language Processing Units (LPUs). Run open-source LLMs at 300+ tokens per second in production. ⭐ 4.8 🌐 API Visit →" [ref=e194] [cursor=pointer]:
+        - /url: https://groq.com
+        - generic [ref=e195]: Featured
+        - generic [ref=e196]:
+          - generic [ref=e197]: ⚡
+          - generic [ref=e198]:
+            - generic [ref=e199]: Groq
+            - generic [ref=e200]: Inference
+        - paragraph [ref=e201]: Ultra-fast AI inference with Language Processing Units (LPUs). Run open-source LLMs at 300+ tokens per second in production.
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - generic [ref=e204]: ⭐ 4.8
+            - generic [ref=e205]: 🌐 API
+          - generic [ref=e206]: Visit →
+  - generic [ref=e209]:
+    - link "🤖 ChatGPT" [ref=e210] [cursor=pointer]:
+      - /url: https://chat.openai.com
+    - link "🟣 Claude" [ref=e211] [cursor=pointer]:
+      - /url: https://claude.ai
+    - link "🔵 Gemini" [ref=e212] [cursor=pointer]:
+      - /url: https://gemini.google.com
+    - link "⚡ Groq" [ref=e213] [cursor=pointer]:
+      - /url: https://groq.com
+    - link "🟠 Mistral" [ref=e214] [cursor=pointer]:
+      - /url: https://mistral.ai
+    - link "🟢 LLaMA" [ref=e215] [cursor=pointer]:
+      - /url: https://llama.meta.com
+    - link "🎨 Midjourney" [ref=e216] [cursor=pointer]:
+      - /url: https://www.midjourney.com
+    - link "🖼️ DALL·E" [ref=e217] [cursor=pointer]:
+      - /url: https://openai.com/dall-e-3
+    - link "🎙️ Whisper" [ref=e218] [cursor=pointer]:
+      - /url: https://openai.com/research/whisper
+    - link "📊 Cohere" [ref=e219] [cursor=pointer]:
+      - /url: https://cohere.com
+    - link "🔮 Perplexity" [ref=e220] [cursor=pointer]:
+      - /url: https://www.perplexity.ai
+    - link "🧠 Runway" [ref=e221] [cursor=pointer]:
+      - /url: https://runwayml.com
+    - link "🤖 ChatGPT" [ref=e222] [cursor=pointer]:
+      - /url: https://chat.openai.com
+    - link "🟣 Claude" [ref=e223] [cursor=pointer]:
+      - /url: https://claude.ai
+    - link "🔵 Gemini" [ref=e224] [cursor=pointer]:
+      - /url: https://gemini.google.com
+    - link "⚡ Groq" [ref=e225] [cursor=pointer]:
+      - /url: https://groq.com
+    - link "🟠 Mistral" [ref=e226] [cursor=pointer]:
+      - /url: https://mistral.ai
+    - link "🟢 LLaMA" [ref=e227] [cursor=pointer]:
+      - /url: https://llama.meta.com
+    - link "🎨 Midjourney" [ref=e228] [cursor=pointer]:
+      - /url: https://www.midjourney.com
+    - link "🖼️ DALL·E" [ref=e229] [cursor=pointer]:
+      - /url: https://openai.com/dall-e-3
+    - link "🎙️ Whisper" [ref=e230] [cursor=pointer]:
+      - /url: https://openai.com/research/whisper
+    - link "📊 Cohere" [ref=e231] [cursor=pointer]:
+      - /url: https://cohere.com
+    - link "🔮 Perplexity" [ref=e232] [cursor=pointer]:
+      - /url: https://www.perplexity.ai
+    - link "🧠 Runway" [ref=e233] [cursor=pointer]:
+      - /url: https://runwayml.com
+  - separator [ref=e234]
+  - generic [ref=e237]:
+    - generic [ref=e238]:
+      - generic [ref=e239]:
+        - generic [ref=e240]:
+          - generic [ref=e244]: webhook · live event stream
+          - generic [ref=e245]: ● CONNECTED
+        - generic [ref=e246]:
+          - text: "{"
+          - text: "\"event\": \"company.listed\","
+          - text: "\"timestamp\": \"2026-04-01T09:42:11Z\","
+          - text: "\"company\": {"
+          - text: "\"id\": \"cmp_9xZm3bKr\","
+          - text: "\"name\": \"NeuralEdge AI\","
+          - text: "\"category\": \"LLM Infrastructure\","
+          - text: "\"verified\": true,"
+          - text: "\"rank_score\": 0.94"
+          - text: "},"
+          - text: "\"trigger\": \"auto_index\""
+          - text: "}▌"
+      - generic [ref=e247]:
+        - generic [ref=e248]:
+          - generic [ref=e249]: 💬
+          - generic [ref=e250]:
+            - generic [ref=e251]: Slack alert
+            - generic [ref=e252]: "Posts to #ai-new-listings"
+          - generic [ref=e253]: ● Live
+        - generic [ref=e254]:
+          - generic [ref=e255]: 📋
+          - generic [ref=e256]:
+            - generic [ref=e257]: Notion database
+            - generic [ref=e258]: Syncs company record
+          - generic [ref=e259]: ● Live
+        - generic [ref=e260]:
+          - generic [ref=e261]: 📧
+          - generic [ref=e262]:
+            - generic [ref=e263]: Newsletter digest
+            - generic [ref=e264]: Weekly roundup email
+          - generic [ref=e265]: ⏳ Ready
+    - generic [ref=e266]:
+      - generic [ref=e267]: ✦ Webhook Integration
+      - heading "Get notified when anything changes." [level=2] [ref=e268]:
+        - text: Get notified when
+        - text: anything changes.
+      - paragraph [ref=e269]: Subscribe to real-time webhook events for new listings, company updates, AI news, job postings, and events. Build automations on top of our live data stream.
+      - list [ref=e270]:
+        - listitem [ref=e271]:
+          - generic [ref=e272]: ✓
+          - generic [ref=e273]: Instant HTTP POST payloads on every new AI listing or update
+        - listitem [ref=e274]:
+          - generic [ref=e275]: ✓
+          - generic [ref=e276]: Signed webhook signatures — verify authenticity on your end
+        - listitem [ref=e277]:
+          - generic [ref=e278]: ✓
+          - generic [ref=e279]: "Filter by category: companies, news, jobs, events, or funding"
+        - listitem [ref=e280]:
+          - generic [ref=e281]: ✓
+          - generic [ref=e282]: Auto-retries with exponential backoff for missed deliveries
+        - listitem [ref=e283]:
+          - generic [ref=e284]: ✓
+          - generic [ref=e285]: Full event log with request & response history in your dashboard
+        - listitem [ref=e286]:
+          - generic [ref=e287]: ✓
+          - generic [ref=e288]: Pre-built templates for Slack, Zapier, Make, and n8n
+      - link "Set up webhooks →" [ref=e289] [cursor=pointer]:
+        - /url: subscribe.html
+  - separator [ref=e290]
+  - generic [ref=e292]:
+    - generic [ref=e293]:
+      - generic [ref=e294]: ✦ Latest
+      - heading "AI News Today" [level=2] [ref=e295]
+      - paragraph [ref=e296]: Breaking developments from across the AI industry, curated daily.
+    - generic [ref=e297]:
+      - link "🤖 LLM Research New Reasoning Models Push Boundaries of Autonomous Problem-Solving April 1, 2026 · 4 min read" [ref=e298] [cursor=pointer]:
+        - /url: ai-news.html
+        - generic [ref=e299]: 🤖
+        - generic [ref=e300]:
+          - generic [ref=e301]: LLM Research
+          - generic [ref=e302]: New Reasoning Models Push Boundaries of Autonomous Problem-Solving
+          - generic [ref=e303]: April 1, 2026 · 4 min read
+      - link "💡 Funding AI Infrastructure Startups Raise Record $4.2B in Q1 2026 March 31, 2026 · 6 min read" [ref=e304] [cursor=pointer]:
+        - /url: ai-news.html
+        - generic [ref=e305]: 💡
+        - generic [ref=e306]:
+          - generic [ref=e307]: Funding
+          - generic [ref=e308]: AI Infrastructure Startups Raise Record $4.2B in Q1 2026
+          - generic [ref=e309]: March 31, 2026 · 6 min read
+      - link "⚡ Hardware Next-Gen AI Chips Deliver 10x Inference Speed at Half the Cost March 30, 2026 · 5 min read" [ref=e310] [cursor=pointer]:
+        - /url: ai-news.html
+        - generic [ref=e311]: ⚡
+        - generic [ref=e312]:
+          - generic [ref=e313]: Hardware
+          - generic [ref=e314]: Next-Gen AI Chips Deliver 10x Inference Speed at Half the Cost
+          - generic [ref=e315]: March 30, 2026 · 5 min read
+      - 'link "🌐 Policy EU AI Act Enforcement Begins: What It Means for AI Startups March 29, 2026 · 7 min read" [ref=e316] [cursor=pointer]':
+        - /url: ai-news.html
+        - generic [ref=e317]: 🌐
+        - generic [ref=e318]:
+          - generic [ref=e319]: Policy
+          - generic [ref=e320]: "EU AI Act Enforcement Begins: What It Means for AI Startups"
+          - generic [ref=e321]: March 29, 2026 · 7 min read
+    - link "View all AI news →" [ref=e323] [cursor=pointer]:
+      - /url: ai-news.html
+  - separator [ref=e324]
+  - generic [ref=e326]:
+    - generic [ref=e327]:
+      - generic [ref=e328]: ✦ Pricing
+      - heading "List your company. Reach 80,000+ visitors." [level=2] [ref=e329]:
+        - text: List your company.
+        - text: Reach 80,000+ visitors.
+      - paragraph [ref=e330]: Simple, transparent plans for startups and enterprises alike.
+    - generic [ref=e331]:
+      - generic [ref=e332]:
+        - generic [ref=e333]: Starter
+        - generic [ref=e334]:
+          - generic [ref=e335]: $
+          - generic [ref=e336]: "19.95"
+          - generic [ref=e337]: /mo
+        - paragraph [ref=e338]: or $199/year · save $40
+        - list [ref=e339]:
+          - listitem [ref=e340]:
+            - generic [ref=e341]: ✓
+            - text: 1 category listing
+          - listitem [ref=e342]:
+            - generic [ref=e343]: ✓
+            - text: Company profile + logo
+          - listitem [ref=e344]:
+            - generic [ref=e345]: ✓
+            - text: Basic analytics
+          - listitem [ref=e346]:
+            - generic [ref=e347]: ✓
+            - text: Email support
+        - link "Get started →" [ref=e348] [cursor=pointer]:
+          - /url: pricing.html?plan=starter_monthly
+      - generic [ref=e349]:
+        - generic [ref=e350]: Pro
+        - generic [ref=e351]:
+          - generic [ref=e352]: $
+          - generic [ref=e353]: "29.95"
+          - generic [ref=e354]: /mo
+        - paragraph [ref=e355]: or $299/year · save $60
+        - list [ref=e356]:
+          - listitem [ref=e357]:
+            - generic [ref=e358]: ✓
+            - text: 3 category listings
+          - listitem [ref=e359]:
+            - generic [ref=e360]: ✓
+            - text: Highlighted placement
+          - listitem [ref=e361]:
+            - generic [ref=e362]: ✓
+            - text: Webhook events
+          - listitem [ref=e363]:
+            - generic [ref=e364]: ✓
+            - text: Newsletter inclusion
+        - link "Start Pro →" [ref=e365] [cursor=pointer]:
+          - /url: pricing.html?plan=pro_monthly
+      - generic [ref=e366]:
+        - text: ★ MOST POPULAR
+        - generic [ref=e367]: Premium ★
+        - generic [ref=e368]:
+          - generic [ref=e369]: $
+          - generic [ref=e370]: "39.95"
+          - generic [ref=e371]: /mo
+        - paragraph [ref=e372]: or $399/year · save $80
+        - list [ref=e373]:
+          - listitem [ref=e374]:
+            - generic [ref=e375]: ✓
+            - text: All matching categories
+          - listitem [ref=e376]:
+            - generic [ref=e377]: ✓
+            - text: Top placement + homepage
+          - listitem [ref=e378]:
+            - generic [ref=e379]: ✓
+            - text: Full webhook API
+          - listitem [ref=e380]:
+            - generic [ref=e381]: ✓
+            - text: Weekly newsletter + account manager
+        - link "Go Premium →" [ref=e382] [cursor=pointer]:
+          - /url: pricing.html?plan=featured_monthly
+      - generic [ref=e383]:
+        - generic [ref=e384]: Sponsor
+        - generic [ref=e385]:
+          - generic [ref=e386]: $
+          - generic [ref=e387]: "99"
+          - generic [ref=e388]: /mo
+        - paragraph [ref=e389]: or $999/year · save $189
+        - list [ref=e390]:
+          - listitem [ref=e391]:
+            - generic [ref=e392]: ✓
+            - text: Everything in Premium
+          - listitem [ref=e393]:
+            - generic [ref=e394]: ✓
+            - text: Homepage hero banner
+          - listitem [ref=e395]:
+            - generic [ref=e396]: ✓
+            - text: Site-wide sponsor badge
+          - listitem [ref=e397]:
+            - generic [ref=e398]: ✓
+            - text: Co-branded newsletter + social
+        - link "Become a Sponsor →" [ref=e399] [cursor=pointer]:
+          - /url: pricing.html?plan=sponsor_monthly
+  - separator [ref=e400]
+  - generic [ref=e402]:
+    - generic [ref=e403]: ✦ Stay ahead
+    - heading "Never miss an AI breakthrough." [level=2] [ref=e404]:
+      - text: Never miss an
+      - text: AI breakthrough.
+    - paragraph [ref=e405]: Join 80,000+ founders, investors, and researchers who get weekly AI intelligence delivered to their inbox.
+    - generic [ref=e406]:
+      - textbox "your@email.com" [ref=e407]
+      - button "Subscribe →" [ref=e408] [cursor=pointer]
+    - paragraph [ref=e409]: Free forever. No spam. Unsubscribe anytime.
+  - contentinfo [ref=e410]:
+    - generic [ref=e411]:
+      - generic [ref=e412]:
+        - link "✦ Ailists.ai" [ref=e413] [cursor=pointer]:
+          - /url: index.html
+          - generic [ref=e414]: ✦
+          - generic [ref=e415]: Ailists.ai
+        - paragraph [ref=e416]: The world's most comprehensive AI ecosystem directory. Connecting founders, investors, and researchers since 2024.
+        - generic [ref=e417]:
+          - link "𝕏" [ref=e418] [cursor=pointer]:
+            - /url: "#"
+          - link "in" [ref=e419] [cursor=pointer]:
+            - /url: "#"
+          - link "gh" [ref=e420] [cursor=pointer]:
+            - /url: "#"
+          - link "▶" [ref=e421] [cursor=pointer]:
+            - /url: "#"
+      - generic [ref=e422]:
+        - heading "Directory" [level=4] [ref=e423]
+        - link "AI Companies" [ref=e424] [cursor=pointer]:
+          - /url: companies.html
+        - link "AI News" [ref=e425] [cursor=pointer]:
+          - /url: ai-news.html
+        - link "AI Events" [ref=e426] [cursor=pointer]:
+          - /url: ai-events.html
+        - link "AI Jobs" [ref=e427] [cursor=pointer]:
+          - /url: ai-jobs.html
+        - link "AI Fund" [ref=e428] [cursor=pointer]:
+          - /url: ai-fund.html
+      - generic [ref=e429]:
+        - heading "Resources" [level=4] [ref=e430]
+        - link "AI Advisors" [ref=e431] [cursor=pointer]:
+          - /url: advisors-directory.html
+        - link "Data Centers" [ref=e432] [cursor=pointer]:
+          - /url: data-centers.html
+        - link "CPU Manufacturers" [ref=e433] [cursor=pointer]:
+          - /url: cpu.html
+        - link "AI Fund" [ref=e434] [cursor=pointer]:
+          - /url: ai-ai-fund.html
+      - generic [ref=e435]:
+        - heading "Platform" [level=4] [ref=e436]
+        - link "Add your startup" [ref=e437] [cursor=pointer]:
+          - /url: add-startup.html
+        - link "Sponsor" [ref=e438] [cursor=pointer]:
+          - /url: sponsor.html
+        - link "Subscribe" [ref=e439] [cursor=pointer]:
+          - /url: subscribe.html
+        - link "Pricing" [ref=e440] [cursor=pointer]:
+          - /url: pricing.html
+        - link "Donate" [ref=e441] [cursor=pointer]:
+          - /url: donate.html
+      - generic [ref=e442]:
+        - heading "Company" [level=4] [ref=e443]
+        - link "About" [ref=e444] [cursor=pointer]:
+          - /url: about.html
+        - link "Contact" [ref=e445] [cursor=pointer]:
+          - /url: contact.html
+        - link "Disclaimer" [ref=e446] [cursor=pointer]:
+          - /url: disclaimer.html
+    - generic [ref=e447]:
+      - generic [ref=e448]: © 2026 Ailists.ai · Built for the AI community
+      - generic [ref=e449]:
+        - link "Privacy" [ref=e450] [cursor=pointer]:
+          - /url: disclaimer.html
+        - link "Terms" [ref=e451] [cursor=pointer]:
+          - /url: disclaimer.html

@@ -1,0 +1,779 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e750]:
+        - link "toolsland.ai Logo" [ref=e755] [cursor=pointer]:
+          - /url: /
+          - img "toolsland.ai Logo" [ref=e759]
+        - generic [ref=e763]:
+          - textbox "Search for tools, Ai tools for programmer, and more..." [ref=e764]
+          - img [ref=e766]
+          - button "Search" [disabled] [ref=e768]:
+            - img [ref=e769]
+        - generic [ref=e772]:
+          - link "List My AI Tool" [ref=e777] [cursor=pointer]:
+            - /url: /submit-ai-tool-free
+            - button "List My AI Tool" [ref=e778]:
+              - img [ref=e779]
+              - text: List My AI Tool
+          - button "Login" [ref=e782] [cursor=pointer]
+      - generic [ref=e4]:
+        - heading "Submit Your AI Tool for Free" [level=1] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: Showcase your AI tool on
+          - strong [ref=e7]: Toolsland.ai
+          - text: ", the dedicated AI directory where developers, businesses, and enthusiasts come to discover the latest innovations. Listing is"
+          - strong [ref=e8]: completely free
+          - text: ", and our"
+          - strong [ref=e9]: AI-powered recommendation engine
+          - text: helps match your tool with the right users based on their interests — boosting visibility, traffic, and growth.
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - generic [ref=e15] [cursor=pointer]:
+              - heading "Signup?" [level=3] [ref=e16]
+              - paragraph [ref=e17]: Signing up will allow you to update your AI tool later. Also It will make the process faster and easier.
+            - generic [ref=e18]:
+              - generic [ref=e19]:
+                - generic [ref=e21]:
+                  - generic [ref=e22]: Tool Name*
+                  - textbox "AI Tool Name" [ref=e24]: Remova
+                - generic [ref=e26]:
+                  - generic [ref=e27]: Website URL*
+                  - textbox "https://your-tool.com" [ref=e29]: https://www.remova.org/
+              - generic [ref=e31]:
+                - heading "Select Product Type" [level=2] [ref=e32]
+                - generic [ref=e33]:
+                  - generic [ref=e34] [cursor=pointer]:
+                    - checkbox "Agent" [ref=e35]
+                    - generic [ref=e36]: Agent
+                  - generic [ref=e37] [cursor=pointer]:
+                    - checkbox "Application" [checked] [ref=e38]
+                    - generic [ref=e39]: Application
+                  - generic [ref=e40] [cursor=pointer]:
+                    - checkbox "Dataset" [ref=e41]
+                    - generic [ref=e42]: Dataset
+                  - generic [ref=e43] [cursor=pointer]:
+                    - checkbox "Framework" [ref=e44]
+                    - generic [ref=e45]: Framework
+                  - generic [ref=e46] [cursor=pointer]:
+                    - checkbox "Hardware" [ref=e47]
+                    - generic [ref=e48]: Hardware
+                  - generic [ref=e49] [cursor=pointer]:
+                    - checkbox "Model" [ref=e50]
+                    - generic [ref=e51]: Model
+                  - generic [ref=e52] [cursor=pointer]:
+                    - checkbox "Other" [ref=e53]
+                    - generic [ref=e54]: Other
+                  - generic [ref=e55] [cursor=pointer]:
+                    - checkbox "Service" [checked] [ref=e56]
+                    - generic [ref=e57]: Service
+                  - generic [ref=e58] [cursor=pointer]:
+                    - checkbox "Template" [ref=e59]
+                    - generic [ref=e60]: Template
+                  - generic [ref=e61] [cursor=pointer]:
+                    - checkbox "Toolkit" [ref=e62]
+                    - generic [ref=e63]: Toolkit
+              - generic [ref=e65]:
+                - heading "Select AI Type" [level=2] [ref=e66]
+                - generic [ref=e67]:
+                  - generic [ref=e68] [cursor=pointer]:
+                    - checkbox "Analytics Ai" [checked] [ref=e69]
+                    - generic [ref=e70]: Analytics Ai
+                  - generic [ref=e71] [cursor=pointer]:
+                    - checkbox "Automation Ai" [ref=e72]
+                    - generic [ref=e73]: Automation Ai
+                  - generic [ref=e74] [cursor=pointer]:
+                    - checkbox "Code Ai" [ref=e75]
+                    - generic [ref=e76]: Code Ai
+                  - generic [ref=e77] [cursor=pointer]:
+                    - checkbox "Computer Vision" [ref=e78]
+                    - generic [ref=e79]: Computer Vision
+                  - generic [ref=e80] [cursor=pointer]:
+                    - checkbox "Conversational Ai" [ref=e81]
+                    - generic [ref=e82]: Conversational Ai
+                  - generic [ref=e83] [cursor=pointer]:
+                    - checkbox "Generative Ai" [checked] [ref=e84]
+                    - generic [ref=e85]: Generative Ai
+                  - generic [ref=e86] [cursor=pointer]:
+                    - checkbox "Marketing Ai" [ref=e87]
+                    - generic [ref=e88]: Marketing Ai
+                  - generic [ref=e89] [cursor=pointer]:
+                    - checkbox "Other" [ref=e90]
+                    - generic [ref=e91]: Other
+                  - generic [ref=e92] [cursor=pointer]:
+                    - checkbox "Recommendation Ai" [ref=e93]
+                    - generic [ref=e94]: Recommendation Ai
+                  - generic [ref=e95] [cursor=pointer]:
+                    - checkbox "Search Retrieval Ai" [ref=e96]
+                    - generic [ref=e97]: Search Retrieval Ai
+                  - generic [ref=e98] [cursor=pointer]:
+                    - checkbox "Security Ai" [checked] [ref=e99]
+                    - generic [ref=e100]: Security Ai
+                  - generic [ref=e101] [cursor=pointer]:
+                    - checkbox "Speech Ai" [ref=e102]
+                    - generic [ref=e103]: Speech Ai
+              - generic [ref=e105]:
+                - generic [ref=e106]: Short Description*
+                - textbox "Enter a short description of your AI tool (max 30 words)" [ref=e108]: Enterprise AI governance workspace for secure ChatGPT, Claude, Gemini use with policy and data controls.
+              - generic [ref=e110]:
+                - generic [ref=e111]: Demo Video URL(Youtube)
+                - textbox "https://www.youtube.com/watch?v=dQw4w9WgXcQ" [ref=e113]
+              - generic [ref=e114]:
+                - generic [ref=e116]:
+                  - heading "Select Platforms" [level=2] [ref=e117]
+                  - generic [ref=e118]:
+                    - generic [ref=e119] [cursor=pointer]:
+                      - checkbox "Api" [checked] [ref=e120]
+                      - generic [ref=e121]: Api
+                    - generic [ref=e122] [cursor=pointer]:
+                      - checkbox "Desktop" [ref=e123]
+                      - generic [ref=e124]: Desktop
+                    - generic [ref=e125] [cursor=pointer]:
+                      - checkbox "Extension" [ref=e126]
+                      - generic [ref=e127]: Extension
+                    - generic [ref=e128] [cursor=pointer]:
+                      - checkbox "Mobile" [ref=e129]
+                      - generic [ref=e130]: Mobile
+                    - generic [ref=e131] [cursor=pointer]:
+                      - checkbox "Other" [ref=e132]
+                      - generic [ref=e133]: Other
+                    - generic [ref=e134] [cursor=pointer]:
+                      - checkbox "Plugin" [ref=e135]
+                      - generic [ref=e136]: Plugin
+                    - generic [ref=e137] [cursor=pointer]:
+                      - checkbox "Sdk" [ref=e138]
+                      - generic [ref=e139]: Sdk
+                    - generic [ref=e140] [cursor=pointer]:
+                      - checkbox "Web" [checked] [ref=e141]
+                      - generic [ref=e142]: Web
+                    - generic [ref=e143] [cursor=pointer]:
+                      - checkbox "Webhook" [ref=e144]
+                      - generic [ref=e145]: Webhook
+                - generic [ref=e147]:
+                  - heading "Select Modalities" [level=2] [ref=e148]
+                  - generic [ref=e149]:
+                    - generic [ref=e150] [cursor=pointer]:
+                      - checkbox "Audio" [ref=e151]
+                      - generic [ref=e152]: Audio
+                    - generic [ref=e153] [cursor=pointer]:
+                      - checkbox "Geospatial" [ref=e154]
+                      - generic [ref=e155]: Geospatial
+                    - generic [ref=e156] [cursor=pointer]:
+                      - checkbox "Graph" [ref=e157]
+                      - generic [ref=e158]: Graph
+                    - generic [ref=e159] [cursor=pointer]:
+                      - checkbox "Image" [ref=e160]
+                      - generic [ref=e161]: Image
+                    - generic [ref=e162] [cursor=pointer]:
+                      - checkbox "Multimodal" [ref=e163]
+                      - generic [ref=e164]: Multimodal
+                    - generic [ref=e165] [cursor=pointer]:
+                      - checkbox "Sensor Data" [ref=e166]
+                      - generic [ref=e167]: Sensor Data
+                    - generic [ref=e168] [cursor=pointer]:
+                      - checkbox "Tabular" [checked] [ref=e169]
+                      - generic [ref=e170]: Tabular
+                    - generic [ref=e171] [cursor=pointer]:
+                      - checkbox "Text" [checked] [ref=e172]
+                      - generic [ref=e173]: Text
+                    - generic [ref=e174] [cursor=pointer]:
+                      - checkbox "Three D" [ref=e175]
+                      - generic [ref=e176]: Three D
+                    - generic [ref=e177] [cursor=pointer]:
+                      - checkbox "Time Series" [ref=e178]
+                      - generic [ref=e179]: Time Series
+                    - generic [ref=e180] [cursor=pointer]:
+                      - checkbox "Video" [ref=e181]
+                      - generic [ref=e182]: Video
+              - generic [ref=e183]:
+                - generic [ref=e185]:
+                  - heading "Select Pricing Model" [level=2] [ref=e186]
+                  - generic [ref=e187]:
+                    - generic [ref=e188] [cursor=pointer]:
+                      - checkbox "Custom" [ref=e189]
+                      - generic [ref=e190]: Custom
+                    - generic [ref=e191] [cursor=pointer]:
+                      - checkbox "Free" [ref=e192]
+                      - generic [ref=e193]: Free
+                    - generic [ref=e194] [cursor=pointer]:
+                      - checkbox "Freemium" [ref=e195]
+                      - generic [ref=e196]: Freemium
+                    - generic [ref=e197] [cursor=pointer]:
+                      - checkbox "Paid" [checked] [ref=e198]
+                      - generic [ref=e199]: Paid
+                    - generic [ref=e200] [cursor=pointer]:
+                      - checkbox "Trial" [ref=e201]
+                      - generic [ref=e202]: Trial
+                - generic [ref=e204]:
+                  - heading "Select Delivery Methods" [level=2] [ref=e205]
+                  - generic [ref=e206]:
+                    - generic [ref=e207] [cursor=pointer]:
+                      - checkbox "Api" [ref=e208]
+                      - generic [ref=e209]: Api
+                    - generic [ref=e210] [cursor=pointer]:
+                      - checkbox "Edge Device" [ref=e211]
+                      - generic [ref=e212]: Edge Device
+                    - generic [ref=e213] [cursor=pointer]:
+                      - checkbox "Marketplace Plugin" [ref=e214]
+                      - generic [ref=e215]: Marketplace Plugin
+                    - generic [ref=e216] [cursor=pointer]:
+                      - checkbox "Model Weights" [ref=e217]
+                      - generic [ref=e218]: Model Weights
+                    - generic [ref=e219] [cursor=pointer]:
+                      - checkbox "On Prem" [checked] [ref=e220]
+                      - generic [ref=e221]: On Prem
+                    - generic [ref=e222] [cursor=pointer]:
+                      - checkbox "Open Source" [ref=e223]
+                      - generic [ref=e224]: Open Source
+                    - generic [ref=e225] [cursor=pointer]:
+                      - checkbox "Saas" [checked] [ref=e226]
+                      - generic [ref=e227]: Saas
+                    - generic [ref=e228] [cursor=pointer]:
+                      - checkbox "Sdk" [ref=e229]
+                      - generic [ref=e230]: Sdk
+              - generic [ref=e232]:
+                - heading "Select Integration Options" [level=2] [ref=e233]
+                - generic [ref=e234]:
+                  - generic [ref=e235] [cursor=pointer]:
+                    - checkbox "Api Connector" [checked] [ref=e236]
+                    - generic [ref=e237]: Api Connector
+                  - generic [ref=e238] [cursor=pointer]:
+                    - checkbox "Cloud Drive" [ref=e239]
+                    - generic [ref=e240]: Cloud Drive
+                  - generic [ref=e241] [cursor=pointer]:
+                    - checkbox "Crm" [ref=e242]
+                    - generic [ref=e243]: Crm
+                  - generic [ref=e244] [cursor=pointer]:
+                    - checkbox "Database" [ref=e245]
+                    - generic [ref=e246]: Database
+                  - generic [ref=e247] [cursor=pointer]:
+                    - checkbox "Figma" [ref=e248]
+                    - generic [ref=e249]: Figma
+                  - generic [ref=e250] [cursor=pointer]:
+                    - checkbox "Google Workspace" [ref=e251]
+                    - generic [ref=e252]: Google Workspace
+                  - generic [ref=e253] [cursor=pointer]:
+                    - checkbox "Hubspot" [ref=e254]
+                    - generic [ref=e255]: Hubspot
+                  - generic [ref=e256] [cursor=pointer]:
+                    - checkbox "Ide Plugin" [ref=e257]
+                    - generic [ref=e258]: Ide Plugin
+                  - generic [ref=e259] [cursor=pointer]:
+                    - checkbox "Integromat" [ref=e260]
+                    - generic [ref=e261]: Integromat
+                  - generic [ref=e262] [cursor=pointer]:
+                    - checkbox "Microsoft Teams" [checked] [ref=e263]
+                    - generic [ref=e264]: Microsoft Teams
+                  - generic [ref=e265] [cursor=pointer]:
+                    - checkbox "Notion" [ref=e266]
+                    - generic [ref=e267]: Notion
+                  - generic [ref=e268] [cursor=pointer]:
+                    - checkbox "Other" [ref=e269]
+                    - generic [ref=e270]: Other
+                  - generic [ref=e271] [cursor=pointer]:
+                    - checkbox "Salesforce" [ref=e272]
+                    - generic [ref=e273]: Salesforce
+                  - generic [ref=e274] [cursor=pointer]:
+                    - checkbox "Shopify" [ref=e275]
+                    - generic [ref=e276]: Shopify
+                  - generic [ref=e277] [cursor=pointer]:
+                    - checkbox "Slack" [ref=e278]
+                    - generic [ref=e279]: Slack
+                  - generic [ref=e280] [cursor=pointer]:
+                    - checkbox "Wordpress" [ref=e281]
+                    - generic [ref=e282]: Wordpress
+                  - generic [ref=e283] [cursor=pointer]:
+                    - checkbox "Zapier" [ref=e284]
+                    - generic [ref=e285]: Zapier
+              - generic [ref=e287]:
+                - heading "What are the domains of your AI tool?" [level=2] [ref=e288]
+                - generic [ref=e289]:
+                  - generic [ref=e290] [cursor=pointer]:
+                    - checkbox "Agriculture" [ref=e291]
+                    - generic [ref=e292]: Agriculture
+                  - generic [ref=e293] [cursor=pointer]:
+                    - checkbox "Audio Music" [ref=e294]
+                    - generic [ref=e295]: Audio Music
+                  - generic [ref=e296] [cursor=pointer]:
+                    - checkbox "Automation" [ref=e297]
+                    - generic [ref=e298]: Automation
+                  - generic [ref=e299] [cursor=pointer]:
+                    - checkbox "Business" [checked] [ref=e300]
+                    - generic [ref=e301]: Business
+                  - generic [ref=e302] [cursor=pointer]:
+                    - checkbox "Chatbot" [ref=e303]
+                    - generic [ref=e304]: Chatbot
+                  - generic [ref=e305] [cursor=pointer]:
+                    - checkbox "Cloud" [ref=e306]
+                    - generic [ref=e307]: Cloud
+                  - generic [ref=e308] [cursor=pointer]:
+                    - checkbox "Content Creation" [ref=e309]
+                    - generic [ref=e310]: Content Creation
+                  - generic [ref=e311] [cursor=pointer]:
+                    - checkbox "Customer Support" [ref=e312]
+                    - generic [ref=e313]: Customer Support
+                  - generic [ref=e314] [cursor=pointer]:
+                    - checkbox "Data Analytics" [checked] [ref=e315]
+                    - generic [ref=e316]: Data Analytics
+                  - generic [ref=e317] [cursor=pointer]:
+                    - checkbox "Design" [ref=e318]
+                    - generic [ref=e319]: Design
+                  - generic [ref=e320] [cursor=pointer]:
+                    - checkbox "Development" [ref=e321]
+                    - generic [ref=e322]: Development
+                  - generic [ref=e323] [cursor=pointer]:
+                    - checkbox "Ecommerce" [ref=e324]
+                    - generic [ref=e325]: Ecommerce
+                  - generic [ref=e326] [cursor=pointer]:
+                    - checkbox "Education" [ref=e327]
+                    - generic [ref=e328]: Education
+                  - generic [ref=e329] [cursor=pointer]:
+                    - checkbox "Entertainment" [ref=e330]
+                    - generic [ref=e331]: Entertainment
+                  - generic [ref=e332] [cursor=pointer]:
+                    - checkbox "Finance" [ref=e333]
+                    - generic [ref=e334]: Finance
+                  - generic [ref=e335] [cursor=pointer]:
+                    - checkbox "Gaming" [ref=e336]
+                    - generic [ref=e337]: Gaming
+                  - generic [ref=e338] [cursor=pointer]:
+                    - checkbox "Healthcare" [ref=e339]
+                    - generic [ref=e340]: Healthcare
+                  - generic [ref=e341] [cursor=pointer]:
+                    - checkbox "Human Resources" [ref=e342]
+                    - generic [ref=e343]: Human Resources
+                  - generic [ref=e344] [cursor=pointer]:
+                    - checkbox "Image Generation" [ref=e345]
+                    - generic [ref=e346]: Image Generation
+                  - generic [ref=e347] [cursor=pointer]:
+                    - checkbox "Legal" [ref=e348]
+                    - generic [ref=e349]: Legal
+                  - generic [ref=e350] [cursor=pointer]:
+                    - checkbox "Manufacturing" [ref=e351]
+                    - generic [ref=e352]: Manufacturing
+                  - generic [ref=e353] [cursor=pointer]:
+                    - checkbox "Marketing" [ref=e354]
+                    - generic [ref=e355]: Marketing
+                  - generic [ref=e356] [cursor=pointer]:
+                    - checkbox "Operations" [ref=e357]
+                    - generic [ref=e358]: Operations
+                  - generic [ref=e359] [cursor=pointer]:
+                    - checkbox "Other" [ref=e360]
+                    - generic [ref=e361]: Other
+                  - generic [ref=e362] [cursor=pointer]:
+                    - checkbox "Productivity" [ref=e363]
+                    - generic [ref=e364]: Productivity
+                  - generic [ref=e365] [cursor=pointer]:
+                    - checkbox "Research" [ref=e366]
+                    - generic [ref=e367]: Research
+                  - generic [ref=e368] [cursor=pointer]:
+                    - checkbox "Sales" [ref=e369]
+                    - generic [ref=e370]: Sales
+                  - generic [ref=e371] [cursor=pointer]:
+                    - checkbox "Security" [checked] [ref=e372]
+                    - generic [ref=e373]: Security
+                  - generic [ref=e374] [cursor=pointer]:
+                    - checkbox "Social Media" [ref=e375]
+                    - generic [ref=e376]: Social Media
+                  - generic [ref=e377] [cursor=pointer]:
+                    - checkbox "Translation" [ref=e378]
+                    - generic [ref=e379]: Translation
+                  - generic [ref=e380] [cursor=pointer]:
+                    - checkbox "Video Creation" [ref=e381]
+                    - generic [ref=e382]: Video Creation
+                  - generic [ref=e383] [cursor=pointer]:
+                    - checkbox "Virtual Assistant" [ref=e384]
+                    - generic [ref=e385]: Virtual Assistant
+                  - generic [ref=e386] [cursor=pointer]:
+                    - checkbox "Writing" [ref=e387]
+                    - generic [ref=e388]: Writing
+              - generic [ref=e390]:
+                - heading "What are the capabilities of your AI tool?" [level=2] [ref=e391]
+                - generic [ref=e392]:
+                  - generic [ref=e393] [cursor=pointer]:
+                    - checkbox "Analytics Bi" [checked] [ref=e394]
+                    - generic [ref=e395]: Analytics Bi
+                  - generic [ref=e396] [cursor=pointer]:
+                    - checkbox "Anomaly Detection" [ref=e397]
+                    - generic [ref=e398]: Anomaly Detection
+                  - generic [ref=e399] [cursor=pointer]:
+                    - checkbox "Causal Inference" [ref=e400]
+                    - generic [ref=e401]: Causal Inference
+                  - generic [ref=e402] [cursor=pointer]:
+                    - checkbox "Code Ai" [ref=e403]
+                    - generic [ref=e404]: Code Ai
+                  - generic [ref=e405] [cursor=pointer]:
+                    - checkbox "Computer Vision" [ref=e406]
+                    - generic [ref=e407]: Computer Vision
+                  - generic [ref=e408] [cursor=pointer]:
+                    - checkbox "Edge Ai" [ref=e409]
+                    - generic [ref=e410]: Edge Ai
+                  - generic [ref=e411] [cursor=pointer]:
+                    - checkbox "Foundation Model" [ref=e412]
+                    - generic [ref=e413]: Foundation Model
+                  - generic [ref=e414] [cursor=pointer]:
+                    - checkbox "Generative Audio" [ref=e415]
+                    - generic [ref=e416]: Generative Audio
+                  - generic [ref=e417] [cursor=pointer]:
+                    - checkbox "Generative Image" [ref=e418]
+                    - generic [ref=e419]: Generative Image
+                  - generic [ref=e420] [cursor=pointer]:
+                    - checkbox "Generative Text" [checked] [ref=e421]
+                    - generic [ref=e422]: Generative Text
+                  - generic [ref=e423] [cursor=pointer]:
+                    - checkbox "Generative Video" [ref=e424]
+                    - generic [ref=e425]: Generative Video
+                  - generic [ref=e426] [cursor=pointer]:
+                    - checkbox "Knowledge Ai" [ref=e427]
+                    - generic [ref=e428]: Knowledge Ai
+                  - generic [ref=e429] [cursor=pointer]:
+                    - checkbox "Mlops Observability" [ref=e430]
+                    - generic [ref=e431]: Mlops Observability
+                  - generic [ref=e432] [cursor=pointer]:
+                    - checkbox "Multimodal Understanding" [ref=e433]
+                    - generic [ref=e434]: Multimodal Understanding
+                  - generic [ref=e435] [cursor=pointer]:
+                    - checkbox "Nlp Understanding" [ref=e436]
+                    - generic [ref=e437]: Nlp Understanding
+                  - generic [ref=e438] [cursor=pointer]:
+                    - checkbox "Ocr Document Ai" [ref=e439]
+                    - generic [ref=e440]: Ocr Document Ai
+                  - generic [ref=e441] [cursor=pointer]:
+                    - checkbox "Optimization Planning" [ref=e442]
+                    - generic [ref=e443]: Optimization Planning
+                  - generic [ref=e444] [cursor=pointer]:
+                    - checkbox "Other" [ref=e445]
+                    - generic [ref=e446]: Other
+                  - generic [ref=e447] [cursor=pointer]:
+                    - checkbox "Privacy Preserving Ml" [checked] [ref=e448]
+                    - generic [ref=e449]: Privacy Preserving Ml
+                  - generic [ref=e450] [cursor=pointer]:
+                    - checkbox "Recommendation" [ref=e451]
+                    - generic [ref=e452]: Recommendation
+                  - generic [ref=e453] [cursor=pointer]:
+                    - checkbox "Robotics Control" [ref=e454]
+                    - generic [ref=e455]: Robotics Control
+                  - generic [ref=e456] [cursor=pointer]:
+                    - checkbox "Search Retrieval" [ref=e457]
+                    - generic [ref=e458]: Search Retrieval
+                  - generic [ref=e459] [cursor=pointer]:
+                    - checkbox "Security Ml" [checked] [ref=e460]
+                    - generic [ref=e461]: Security Ml
+                  - generic [ref=e462] [cursor=pointer]:
+                    - checkbox "Speaker Tech" [ref=e463]
+                    - generic [ref=e464]: Speaker Tech
+                  - generic [ref=e465] [cursor=pointer]:
+                    - checkbox "Speech Asr" [ref=e466]
+                    - generic [ref=e467]: Speech Asr
+                  - generic [ref=e468] [cursor=pointer]:
+                    - checkbox "Speech Tts" [ref=e469]
+                    - generic [ref=e470]: Speech Tts
+                  - generic [ref=e471] [cursor=pointer]:
+                    - checkbox "Synthetic Data" [ref=e472]
+                    - generic [ref=e473]: Synthetic Data
+                  - generic [ref=e474] [cursor=pointer]:
+                    - checkbox "Time Series Forecasting" [ref=e475]
+                    - generic [ref=e476]: Time Series Forecasting
+              - generic [ref=e478]:
+                - heading "Who are the target users of your AI tool?" [level=2] [ref=e479]
+                - generic [ref=e480]:
+                  - generic [ref=e481] [cursor=pointer]:
+                    - checkbox "Advertising Specialist" [ref=e482]
+                    - generic [ref=e483]: Advertising Specialist
+                  - generic [ref=e484] [cursor=pointer]:
+                    - checkbox "Ai Researcher" [ref=e485]
+                    - generic [ref=e486]: Ai Researcher
+                  - generic [ref=e487] [cursor=pointer]:
+                    - checkbox "Animator" [ref=e488]
+                    - generic [ref=e489]: Animator
+                  - generic [ref=e490] [cursor=pointer]:
+                    - checkbox "Brand Manager" [ref=e491]
+                    - generic [ref=e492]: Brand Manager
+                  - generic [ref=e493] [cursor=pointer]:
+                    - checkbox "Business Analyst" [ref=e494]
+                    - generic [ref=e495]: Business Analyst
+                  - generic [ref=e496] [cursor=pointer]:
+                    - checkbox "Business Owner" [checked] [ref=e497]
+                    - generic [ref=e498]: Business Owner
+                  - generic [ref=e499] [cursor=pointer]:
+                    - checkbox "Cloud Engineer" [ref=e500]
+                    - generic [ref=e501]: Cloud Engineer
+                  - generic [ref=e502] [cursor=pointer]:
+                    - checkbox "Consultant" [ref=e503]
+                    - generic [ref=e504]: Consultant
+                  - generic [ref=e505] [cursor=pointer]:
+                    - checkbox "Content Creator" [ref=e506]
+                    - generic [ref=e507]: Content Creator
+                  - generic [ref=e508] [cursor=pointer]:
+                    - checkbox "Copywriter" [ref=e509]
+                    - generic [ref=e510]: Copywriter
+                  - generic [ref=e511] [cursor=pointer]:
+                    - checkbox "Customer Support Agent" [ref=e512]
+                    - generic [ref=e513]: Customer Support Agent
+                  - generic [ref=e514] [cursor=pointer]:
+                    - checkbox "Cybersecurity Specialist" [checked] [ref=e515]
+                    - generic [ref=e516]: Cybersecurity Specialist
+                  - generic [ref=e517] [cursor=pointer]:
+                    - checkbox "Data Scientist" [ref=e518]
+                    - generic [ref=e519]: Data Scientist
+                  - generic [ref=e520] [cursor=pointer]:
+                    - checkbox "Designer" [ref=e521]
+                    - generic [ref=e522]: Designer
+                  - generic [ref=e523] [cursor=pointer]:
+                    - checkbox "Developer" [ref=e524]
+                    - generic [ref=e525]: Developer
+                  - generic [ref=e526] [cursor=pointer]:
+                    - checkbox "Devops Engineer" [ref=e527]
+                    - generic [ref=e528]: Devops Engineer
+                  - generic [ref=e529] [cursor=pointer]:
+                    - checkbox "Digital Marketer" [ref=e530]
+                    - generic [ref=e531]: Digital Marketer
+                  - generic [ref=e532] [cursor=pointer]:
+                    - checkbox "Educator" [ref=e533]
+                    - generic [ref=e534]: Educator
+                  - generic [ref=e535] [cursor=pointer]:
+                    - checkbox "Entrepreneur" [ref=e536]
+                    - generic [ref=e537]: Entrepreneur
+                  - generic [ref=e538] [cursor=pointer]:
+                    - checkbox "Finance Professional" [ref=e539]
+                    - generic [ref=e540]: Finance Professional
+                  - generic [ref=e541] [cursor=pointer]:
+                    - checkbox "Gamer" [ref=e542]
+                    - generic [ref=e543]: Gamer
+                  - generic [ref=e544] [cursor=pointer]:
+                    - checkbox "Graphic Designer" [ref=e545]
+                    - generic [ref=e546]: Graphic Designer
+                  - generic [ref=e547] [cursor=pointer]:
+                    - checkbox "Healthcare Professional" [ref=e548]
+                    - generic [ref=e549]: Healthcare Professional
+                  - generic [ref=e550] [cursor=pointer]:
+                    - checkbox "Hobbyist" [ref=e551]
+                    - generic [ref=e552]: Hobbyist
+                  - generic [ref=e553] [cursor=pointer]:
+                    - checkbox "Hr Professional" [ref=e554]
+                    - generic [ref=e555]: Hr Professional
+                  - generic [ref=e556] [cursor=pointer]:
+                    - checkbox "It Professional" [checked] [ref=e557]
+                    - generic [ref=e558]: It Professional
+                  - generic [ref=e559] [cursor=pointer]:
+                    - checkbox "Legal Professional" [ref=e560]
+                    - generic [ref=e561]: Legal Professional
+                  - generic [ref=e562] [cursor=pointer]:
+                    - checkbox "Machine Learning Engineer" [ref=e563]
+                    - generic [ref=e564]: Machine Learning Engineer
+                  - generic [ref=e565] [cursor=pointer]:
+                    - checkbox "Marketer" [ref=e566]
+                    - generic [ref=e567]: Marketer
+                  - generic [ref=e568] [cursor=pointer]:
+                    - checkbox "Music Producer" [ref=e569]
+                    - generic [ref=e570]: Music Producer
+                  - generic [ref=e571] [cursor=pointer]:
+                    - checkbox "Operations Manager" [checked] [ref=e572]
+                    - generic [ref=e573]: Operations Manager
+                  - generic [ref=e574] [cursor=pointer]:
+                    - checkbox "Other" [ref=e575]
+                    - generic [ref=e576]: Other
+                  - generic [ref=e577] [cursor=pointer]:
+                    - checkbox "Product Manager" [ref=e578]
+                    - generic [ref=e579]: Product Manager
+                  - generic [ref=e580] [cursor=pointer]:
+                    - checkbox "Project Manager" [ref=e581]
+                    - generic [ref=e582]: Project Manager
+                  - generic [ref=e583] [cursor=pointer]:
+                    - checkbox "Qa Engineer" [ref=e584]
+                    - generic [ref=e585]: Qa Engineer
+                  - generic [ref=e586] [cursor=pointer]:
+                    - checkbox "Researcher" [ref=e587]
+                    - generic [ref=e588]: Researcher
+                  - generic [ref=e589] [cursor=pointer]:
+                    - checkbox "Sales Professional" [ref=e590]
+                    - generic [ref=e591]: Sales Professional
+                  - generic [ref=e592] [cursor=pointer]:
+                    - checkbox "Seo Specialist" [ref=e593]
+                    - generic [ref=e594]: Seo Specialist
+                  - generic [ref=e595] [cursor=pointer]:
+                    - checkbox "Social Media Manager" [ref=e596]
+                    - generic [ref=e597]: Social Media Manager
+                  - generic [ref=e598] [cursor=pointer]:
+                    - checkbox "Software Engineer" [ref=e599]
+                    - generic [ref=e600]: Software Engineer
+                  - generic [ref=e601] [cursor=pointer]:
+                    - checkbox "Strategy Planner" [ref=e602]
+                    - generic [ref=e603]: Strategy Planner
+                  - generic [ref=e604] [cursor=pointer]:
+                    - checkbox "Student" [ref=e605]
+                    - generic [ref=e606]: Student
+                  - generic [ref=e607] [cursor=pointer]:
+                    - checkbox "Teacher" [ref=e608]
+                    - generic [ref=e609]: Teacher
+                  - generic [ref=e610] [cursor=pointer]:
+                    - checkbox "Trainer" [ref=e611]
+                    - generic [ref=e612]: Trainer
+                  - generic [ref=e613] [cursor=pointer]:
+                    - checkbox "Ux Ui Designer" [ref=e614]
+                    - generic [ref=e615]: Ux Ui Designer
+                  - generic [ref=e616] [cursor=pointer]:
+                    - checkbox "Video Editor" [ref=e617]
+                    - generic [ref=e618]: Video Editor
+                  - generic [ref=e619] [cursor=pointer]:
+                    - checkbox "Writer" [ref=e620]
+                    - generic [ref=e621]: Writer
+              - generic [ref=e623]:
+                - paragraph [ref=e624]: Best Use Cases
+                - generic [ref=e625]:
+                  - textbox "Type something..." [ref=e626]
+                  - button "Add" [ref=e627] [cursor=pointer]
+                - generic [ref=e784]:
+                  - generic [ref=e785]:
+                    - generic [ref=e786]: Governed employee use of ChatGPT, Claude, and Gemini
+                    - button "×" [ref=e787] [cursor=pointer]
+                  - generic [ref=e788]:
+                    - generic [ref=e789]: AI data leak prevention before model calls
+                    - button "×" [ref=e790] [cursor=pointer]
+              - generic [ref=e629]:
+                - paragraph [ref=e630]: Features
+                - generic [ref=e631]:
+                  - textbox "Type something..." [ref=e632]
+                  - button "Add" [ref=e633] [cursor=pointer]
+                - generic [ref=e791]:
+                  - generic [ref=e792]:
+                    - generic [ref=e793]: Sensitive-data masking
+                    - button "×" [ref=e794] [cursor=pointer]
+                  - generic [ref=e795]:
+                    - generic [ref=e796]: Policy guardrails and audit trails
+                    - button "×" [ref=e797] [cursor=pointer]
+              - generic [ref=e635]:
+                - paragraph [ref=e636]: USPs
+                - generic [ref=e637]:
+                  - textbox "Type something..." [ref=e638]
+                  - button "Add" [ref=e639] [cursor=pointer]
+                - generic [ref=e798]:
+                  - generic [ref=e799]:
+                    - generic [ref=e800]: Model-agnostic enterprise AI governance
+                    - button "×" [ref=e801] [cursor=pointer]
+                  - generic [ref=e802]:
+                    - generic [ref=e803]: Department-level AI budget controls
+                    - button "×" [ref=e804] [cursor=pointer]
+              - generic [ref=e640]:
+                - paragraph [ref=e641]: Logo/Thumbnail
+                - generic [ref=e644] [cursor=pointer]:
+                  - paragraph [ref=e645]: Drag & Drop your picture here
+                  - paragraph [ref=e646]: or
+                  - generic [ref=e647]: Click anywhere to upload
+              - generic [ref=e649]:
+                - generic [ref=e650]: Owner Email*
+                - textbox "owner@example.com" [ref=e652]: contact@remova.org
+          - generic [ref=e653]:
+            - button "Cancel" [ref=e654] [cursor=pointer]:
+              - generic [ref=e655]: Cancel
+            - button "List my AI Tool" [active] [ref=e656] [cursor=pointer]:
+              - generic [ref=e657]: List my AI Tool
+        - generic [ref=e658]:
+          - heading "What Happens Next?" [level=2] [ref=e659]
+          - paragraph [ref=e660]:
+            - text: After you submit your AI tool, our team will review it within
+            - strong [ref=e661]: 2–3 business days
+            - text: . Once approved, you’ll receive an email with a direct link to your tool’s page. You can then share it widely and start receiving visits, reviews, and recommendations from our platform.
+        - generic [ref=e662]:
+          - heading "Frequently Asked Questions (FAQ)" [level=2] [ref=e663]
+          - generic [ref=e664]:
+            - heading "1. What is the purpose of this form?" [level=3] [ref=e665]
+            - paragraph [ref=e666]:
+              - text: This form allows you to
+              - strong [ref=e667]: list your AI tool for free
+              - text: on Toolsland.ai, making it easier for people to discover, try, and review your product.
+          - generic [ref=e668]:
+            - heading "2. Do I need to sign up to submit my AI tool?" [level=3] [ref=e669]
+            - paragraph [ref=e670]:
+              - text: No, you can submit your tool without creating an account. However, signing up lets you
+              - strong [ref=e671]: edit, update, and manage
+              - text: your listing anytime.
+          - generic [ref=e672]:
+            - heading "3. What are the benefits of submitting my AI tool here?" [level=3] [ref=e673]
+            - paragraph [ref=e674]:
+              - text: By listing on Toolsland.ai, your tool gets exposure to a global audience of AI users, developers, and businesses. You’ll gain
+              - strong [ref=e675]: traffic, reviews, feedback, and recommendations
+              - text: from our AI-driven discovery system.
+          - generic [ref=e676]:
+            - heading "4. How does the AI recommendation system work?" [level=3] [ref=e677]
+            - paragraph [ref=e678]:
+              - text: Toolsland.ai uses an
+              - strong [ref=e679]: advanced AI recommendation engine
+              - text: that suggests your tool to users based on their interests, previous activity, and categories they browse. This ensures your tool reaches the most relevant audience.
+          - generic [ref=e680]:
+            - heading "5. How long does it take to review my submission?" [level=3] [ref=e681]
+            - paragraph [ref=e682]:
+              - text: Reviews typically take
+              - strong [ref=e683]: 2–3 business days
+              - text: . We’ll notify you via email once your tool goes live.
+          - generic [ref=e684]:
+            - heading "6. Can I edit my tool after it’s published?" [level=3] [ref=e685]
+            - paragraph [ref=e686]: Yes, if you signed up before submitting. Without an account, editing later won’t be possible — we recommend registering to keep full control of your listing.
+          - generic [ref=e687]:
+            - heading "7. Who can submit a tool?" [level=3] [ref=e688]
+            - paragraph [ref=e689]:
+              - text: Anyone — whether you’re an
+              - strong [ref=e690]: independent developer, startup founder, or established company
+              - text: . If you’ve built an AI-powered tool, product, or service, you’re welcome to list it.
+          - generic [ref=e691]:
+            - heading "8. Does it cost anything to submit?" [level=3] [ref=e692]
+            - paragraph [ref=e693]:
+              - text: No, submitting your AI tool on Toolsland.ai is
+              - strong [ref=e694]: 100% free
+              - text: . There are no hidden fees.
+          - generic [ref=e695]:
+            - heading "9. Can users leave reviews on my tool?" [level=3] [ref=e696]
+            - paragraph [ref=e697]:
+              - text: Yes! Users can leave
+              - strong [ref=e698]: reviews, ratings, and suggestions
+              - text: on your tool’s page — giving you valuable insights for improvement and social proof for future users. Though you will be able to make it available/unavailable for reviews from admin panel.
+          - generic [ref=e699]:
+            - heading "10. How do users discover my tool?" [level=3] [ref=e700]
+            - paragraph [ref=e701]:
+              - text: Tools are displayed in categories, search results, and through
+              - strong [ref=e702]: personalized AI recommendations
+              - text: . This ensures your tool gets visibility from multiple channels on our platform.
+      - contentinfo [ref=e703]:
+        - generic [ref=e705]:
+          - generic [ref=e706]:
+            - link "Privacy Policy" [ref=e708] [cursor=pointer]:
+              - /url: /privacy-policy
+              - paragraph [ref=e709]: Privacy Policy
+            - link "Terms of Service" [ref=e711] [cursor=pointer]:
+              - /url: /terms-and-conditions
+              - paragraph [ref=e712]: Terms of Service
+            - link "Contact Us" [ref=e714] [cursor=pointer]:
+              - /url: /contact-us
+              - paragraph [ref=e715]: Contact Us
+            - link "Categories" [ref=e717] [cursor=pointer]:
+              - /url: /tools-categories
+              - paragraph [ref=e718]: Categories
+            - link "Tools" [ref=e720] [cursor=pointer]:
+              - /url: /aitools
+              - paragraph [ref=e721]: Tools
+          - generic [ref=e722]:
+            - link "toolsland.ai Logo" [ref=e726] [cursor=pointer]:
+              - /url: /
+              - img "toolsland.ai Logo" [ref=e730]
+            - generic [ref=e731]:
+              - paragraph [ref=e732]: Toolsland AI is a platform for discovering and listing the best AI tools for business, marketing, coding, design, and more.
+              - generic [ref=e733]:
+                - link "Facebook" [ref=e734] [cursor=pointer]:
+                  - /url: https://www.facebook.com/
+                  - img [ref=e735]
+                - link "X" [ref=e737] [cursor=pointer]:
+                  - /url: https://www.x.com/
+                  - img [ref=e738]
+                - link "YouTube" [ref=e740] [cursor=pointer]:
+                  - /url: https://www.youtube.com/
+                  - img [ref=e741]
+                - link "LinkedIn" [ref=e743] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/toolsland-ai
+                  - img [ref=e744]
+        - paragraph [ref=e747]: © 2025 toolsland AI . All Rights Reserved
+    - alert [ref=e808]:
+      - generic [ref=e809]:
+        - img [ref=e810]
+        - text: Something went wrong.
+      - button "❌" [ref=e813] [cursor=pointer]
+  - alert [ref=e783]

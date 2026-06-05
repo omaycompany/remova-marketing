@@ -1,0 +1,194 @@
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "ToolCrush" [ref=e5] [cursor=pointer]:
+        - /url: https://toolcrush.io/
+      - textbox "Search AI tools..." [ref=e7]
+      - generic [ref=e8]:
+        - link "AI Tools" [ref=e9] [cursor=pointer]:
+          - /url: https://toolcrush.io/
+        - link "Resources ▼" [ref=e11] [cursor=pointer]:
+          - /url: "#"
+          - text: Resources
+          - generic [ref=e12]: ▼
+        - link "Submit a Tool" [ref=e13] [cursor=pointer]:
+          - /url: https://toolcrush.io/submit
+        - button "Newsletter" [ref=e14] [cursor=pointer]:
+          - img [ref=e15]
+          - text: Newsletter
+  - main [ref=e18]:
+    - navigation [ref=e20]:
+      - link "Home" [ref=e21] [cursor=pointer]:
+        - /url: https://toolcrush.io/
+      - generic [ref=e22]: /
+      - generic [ref=e23]: Submit a Tool
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]: Free Submission (Limited Time)
+        - heading "Submit Your AI Tool" [level=1] [ref=e27]
+        - paragraph [ref=e28]: Get your tool in front of thousands of AI enthusiasts. Fill out the details below for a professional review and listing.
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - generic [ref=e33]: Tool Name *
+            - textbox "Tool Name *" [ref=e34]:
+              - /placeholder: e.g. Jasper
+              - text: Remova
+          - generic [ref=e35]:
+            - generic [ref=e36]: Website URL *
+            - textbox "Website URL *" [ref=e37]:
+              - /placeholder: https://example.com
+              - text: https://www.remova.org/
+        - generic [ref=e38]:
+          - generic [ref=e39]: Short Tagline *
+          - textbox "Short Tagline *" [ref=e40]:
+            - /placeholder: e.g. The fastest AI writing assistant for marketing teams
+            - text: Enterprise AI governance workspace for secure ChatGPT, Claude, and Gemini use with data controls.
+          - generic [ref=e41]: Appears in technical search results and preview cards.
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Category *
+            - combobox "Category *" [ref=e45]:
+              - option "Writing"
+              - option "SEO"
+              - option "Marketing"
+              - option "Image and Design"
+              - option "Video Creation"
+              - option "Video Editing"
+              - option "Audio and Voice"
+              - option "Productivity" [selected]
+              - option "Meeting and Notes"
+              - option "Coding Tools"
+              - option "App Builders"
+              - option "Newsletter and Email"
+              - option "AI Chatbots"
+          - generic [ref=e46]:
+            - generic [ref=e47]: Pricing Model *
+            - combobox "Pricing Model *" [ref=e48]:
+              - option "Completely Free"
+              - option "Freemium (Free tier + Paid)"
+              - option "Paid Only" [selected]
+        - generic [ref=e49]:
+          - generic [ref=e50]: Full Description *
+          - textbox "Full Description *" [ref=e51]:
+            - /placeholder: Describe the key features, use cases, and what makes your tool unique...
+            - text: Remova is an enterprise AI governance workspace for companies using ChatGPT, Claude, Gemini, and other AI models. It helps teams prevent AI data leaks with policy controls, sensitive data masking, role-based access, audit visibility, and department-level budget controls.
+        - generic [ref=e52]:
+          - generic [ref=e53]: "Key Features (one per line, format: Feature Title: Description)"
+          - 'textbox "Key Features (one per line, format: Feature Title: Description)" [ref=e54]':
+            - /placeholder: "e.g. Brand Voice: Replicate your company's tone of voice effortlessly"
+            - text: "AI Data Leak Prevention: Detect and reduce sensitive data exposure in AI workflows Sensitive Data Masking: Protect confidential content before it reaches AI tools Role-Based Access: Control AI usage by team, role, and policy Audit Visibility: Track AI activity for governance and compliance reviews Budget Controls: Manage department-level AI spending and usage"
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: Logo URL (Square preferred)
+            - textbox "Logo URL (Square preferred)" [ref=e58]:
+              - /placeholder: https://example.com/logo.png
+              - text: https://www.remova.org/images/remova%20logo%20%284%29.png
+          - generic [ref=e59]:
+            - generic [ref=e60]: Your Contact Email *
+            - textbox "Your Contact Email *" [active] [ref=e61]:
+              - /placeholder: you@company.com
+              - text: contact@remova.org
+        - generic [ref=e62] [cursor=pointer]:
+          - checkbox "Are you willing to provide free access so we can verify features/capabilities?" [ref=e63]
+          - generic [ref=e64]: Are you willing to provide free access so we can verify features/capabilities?
+        - paragraph [ref=e66]:
+          - strong [ref=e67]: "Note:"
+          - text: We currently offer
+          - strong [ref=e68]: Free Submissions
+          - text: as we build our authority. Your tool will be reviewed by our team within 1-3 business days. We reserve the right to reject tools that do not meet our quality standards.
+        - button "Submit Tool for Review ↗" [ref=e69] [cursor=pointer]
+  - button "↑" [ref=e148] [cursor=pointer]
+  - generic [ref=e71]:
+    - heading "5 AI tools. Every week. Free." [level=2] [ref=e72]:
+      - text: 5 AI tools.
+      - text: Every week. Free.
+    - paragraph [ref=e73]: Join our newsletter and get the best new AI tools, exclusive deals, and honest reviews delivered to your inbox.
+    - generic [ref=e75]:
+      - textbox "your@email.com" [ref=e76]
+      - button "Subscribe" [ref=e77] [cursor=pointer]
+    - generic [ref=e78]: No spam. Unsubscribe anytime.
+  - contentinfo [ref=e79]:
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - link "ToolCrush" [ref=e83] [cursor=pointer]:
+          - /url: /
+          - img "ToolCrush" [ref=e84]
+        - paragraph [ref=e85]: The world's most transparent AI tool directory. We test, score, and evaluate every tool so you don't have to.
+        - link "𝕏" [ref=e87] [cursor=pointer]:
+          - /url: https://x.com/ToolCrushio
+      - generic [ref=e88]:
+        - heading "Browse" [level=4] [ref=e89]
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - link "All AI Tools" [ref=e92] [cursor=pointer]:
+              - /url: https://toolcrush.io/
+          - listitem [ref=e93]:
+            - link "Free Tools" [ref=e94] [cursor=pointer]:
+              - /url: https://toolcrush.io/free-tools
+          - listitem [ref=e95]:
+            - link "Writing AI" [ref=e96] [cursor=pointer]:
+              - /url: https://toolcrush.io/?category=writing
+          - listitem [ref=e97]:
+            - link "SEO AI" [ref=e98] [cursor=pointer]:
+              - /url: https://toolcrush.io/?category=seo
+          - listitem [ref=e99]:
+            - link "Productivity AI" [ref=e100] [cursor=pointer]:
+              - /url: https://toolcrush.io/?category=productivity
+          - listitem [ref=e101]:
+            - link "Compare Tools" [ref=e102] [cursor=pointer]:
+              - /url: https://toolcrush.io/comparisons
+      - generic [ref=e103]:
+        - heading "Resources" [level=4] [ref=e104]
+        - list [ref=e105]:
+          - listitem [ref=e106]:
+            - link "AI Blog" [ref=e107] [cursor=pointer]:
+              - /url: https://toolcrush.io/blog
+          - listitem [ref=e108]:
+            - link "Tutorials" [ref=e109] [cursor=pointer]:
+              - /url: https://toolcrush.io/tutorials
+          - listitem [ref=e110]:
+            - link "AI Glossary" [ref=e111] [cursor=pointer]:
+              - /url: https://toolcrush.io/glossary
+          - listitem [ref=e112]:
+            - link "How We Review" [ref=e113] [cursor=pointer]:
+              - /url: https://toolcrush.io/how-we-review
+          - listitem [ref=e114]:
+            - link "Sitemap" [ref=e115] [cursor=pointer]:
+              - /url: https://toolcrush.io/sitemap
+      - generic [ref=e116]:
+        - heading "Company" [level=4] [ref=e117]
+        - list [ref=e118]:
+          - listitem [ref=e119]:
+            - link "About Us" [ref=e120] [cursor=pointer]:
+              - /url: https://toolcrush.io/about
+          - listitem [ref=e121]:
+            - link "Submit a Tool" [ref=e122] [cursor=pointer]:
+              - /url: https://toolcrush.io/submit
+          - listitem [ref=e123]:
+            - link "Privacy Policy" [ref=e124] [cursor=pointer]:
+              - /url: https://toolcrush.io/privacy
+          - listitem [ref=e125]:
+            - link "Terms of Use" [ref=e126] [cursor=pointer]:
+              - /url: https://toolcrush.io/terms
+    - generic [ref=e127]:
+      - generic [ref=e128]:
+        - generic [ref=e129]: © 2026 ToolCrush. All rights reserved.
+        - generic [ref=e130]: ToolCrush is a participant in affiliate advertising programs. We may earn a commission when you purchase through our links, at no extra cost to you. We only recommend tools we've actually evaluated.
+      - button "Dark Mode" [ref=e131] [cursor=pointer]:
+        - generic [ref=e132]: Dark Mode
+        - img [ref=e134]
+  - generic [ref=e136]:
+    - generic [ref=e137]: Compare
+    - button "Compare Now" [ref=e138] [cursor=pointer]
+  - generic [ref=e140]:
+    - generic [ref=e141]:
+      - heading "Cookies & Privacy" [level=4] [ref=e142]
+      - paragraph [ref=e143]:
+        - text: We use cookies to understand how you use ToolCrush and to improve your experience. By clicking "Accept All", you consent to our use of cookies for analytics and personalized content according to our
+        - link "Privacy Policy" [ref=e144] [cursor=pointer]:
+          - /url: /privacy
+        - text: .
+    - generic [ref=e145]:
+      - button "Decline" [ref=e146] [cursor=pointer]
+      - button "Accept All" [ref=e147] [cursor=pointer]

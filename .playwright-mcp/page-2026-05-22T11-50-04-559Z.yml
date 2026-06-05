@@ -1,0 +1,111 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Curalo" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - generic [ref=e8]: Curalo
+      - navigation [ref=e9]:
+        - button "Tools ▾" [ref=e11] [cursor=pointer]:
+          - text: Tools
+          - generic [ref=e12]: ▾
+        - link "Stacks" [ref=e13] [cursor=pointer]:
+          - /url: /stacks/
+        - link "Guides" [ref=e14] [cursor=pointer]:
+          - /url: /guides/
+        - link "Compare" [ref=e15] [cursor=pointer]:
+          - /url: /compare/
+      - generic [ref=e16]:
+        - button "Switch to dark mode" [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+        - button "Open tool search" [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+        - link "Build My Stack" [ref=e24] [cursor=pointer]:
+          - /url: /quiz/
+  - main [ref=e25]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - paragraph [ref=e29]: Vendor submission
+        - heading "Submit your tool" [level=1] [ref=e30]
+        - paragraph [ref=e31]: We review submissions with the same rubric used across the directory.
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - textbox "Tool name" [ref=e34]: Remova
+          - textbox "Tool URL" [ref=e35]: https://www.remova.org/
+          - textbox "Contact email" [ref=e36]: contact@remova.org
+          - generic [ref=e37]:
+            - button "Software tool" [ref=e38] [cursor=pointer]
+            - button "Managed service" [ref=e39] [cursor=pointer]
+          - textbox "Positioning / what it solves" [ref=e40]: Enterprise AI governance workspace for secure ChatGPT, Claude, and Gemini use with sensitive-data controls, policy guardrails, audit visibility, and budget controls.
+          - textbox "Best-fit customer" [ref=e41]: CIO, CISO, IT, compliance, finance, procurement, and AI Center of Excellence teams rolling out approved AI models across departments.
+          - button "Submit tool" [ref=e42] [cursor=pointer]
+        - paragraph [ref=e98]: Submission failed. Try again.
+  - contentinfo [ref=e43]:
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - link "Curalo" [ref=e46] [cursor=pointer]:
+          - /url: /
+          - img [ref=e47]
+          - generic [ref=e48]: Curalo
+        - paragraph [ref=e49]: Built for independent consultants.
+        - paragraph [ref=e50]: Tools and stacks scored on fit, speed, and cost — so you pick right the first time.
+      - navigation [ref=e51]:
+        - generic [ref=e52]:
+          - heading "Browse" [level=4] [ref=e53]
+          - link "Stacks" [ref=e54] [cursor=pointer]:
+            - /url: /stacks/
+          - link "Guides" [ref=e55] [cursor=pointer]:
+            - /url: /guides/
+          - link "Compare Tools" [ref=e56] [cursor=pointer]:
+            - /url: /compare/
+          - link "Build Your Stack" [ref=e57] [cursor=pointer]:
+            - /url: /stack-builder/
+          - link "Find My Tool" [ref=e58] [cursor=pointer]:
+            - /url: /advisor/
+          - link "My Stack" [ref=e59] [cursor=pointer]:
+            - /url: /my-stack/
+          - link "Stack Check" [ref=e60] [cursor=pointer]:
+            - /url: /stack-analyzer/
+          - link "Lead Gen & Outbound" [ref=e61] [cursor=pointer]:
+            - /url: /category/lead-gen/
+          - link "Proposal & SOW" [ref=e62] [cursor=pointer]:
+            - /url: /category/proposal/
+          - link "Delivery & Reporting" [ref=e63] [cursor=pointer]:
+            - /url: /category/delivery/
+          - link "Research & Content" [ref=e64] [cursor=pointer]:
+            - /url: /category/research/
+          - link "Ops & Finance" [ref=e65] [cursor=pointer]:
+            - /url: /category/ops/
+        - generic [ref=e66]:
+          - heading "Top picks for consultants" [level=4] [ref=e67]
+          - link "Best Lead Gen & Outbound Tools" [ref=e68] [cursor=pointer]:
+            - /url: /best/lead-gen/
+          - link "Best Proposal & SOW Tools" [ref=e69] [cursor=pointer]:
+            - /url: /best/proposal/
+          - link "Best Delivery & Reporting Tools" [ref=e70] [cursor=pointer]:
+            - /url: /best/delivery/
+          - link "Best Research & Content Tools" [ref=e71] [cursor=pointer]:
+            - /url: /best/research/
+          - link "Best Ops & Finance Tools" [ref=e72] [cursor=pointer]:
+            - /url: /best/ops/
+        - generic [ref=e73]:
+          - heading "Company" [level=4] [ref=e74]
+          - link "About" [ref=e75] [cursor=pointer]:
+            - /url: /about/
+          - link "Submit a tool" [ref=e76] [cursor=pointer]:
+            - /url: /submit-tool/
+          - link "Promote your tool" [ref=e77] [cursor=pointer]:
+            - /url: /promote-your-tool/
+          - link "hello@curalo.io" [ref=e78] [cursor=pointer]:
+            - /url: mailto:hello@curalo.io
+          - link "vendors@curalo.io" [ref=e79] [cursor=pointer]:
+            - /url: mailto:vendors@curalo.io
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - paragraph [ref=e82]: Obsessively researched. Opinionated by design.
+          - paragraph [ref=e83]: © 2026 Curalo. All rights reserved.
+          - paragraph [ref=e84]: Affiliate-supported. Opinionated anyway.
+        - button "Cookie settings" [ref=e85] [cursor=pointer]
+        - button "Change language" [ref=e87] [cursor=pointer]:
+          - img [ref=e88]
+          - text: EN

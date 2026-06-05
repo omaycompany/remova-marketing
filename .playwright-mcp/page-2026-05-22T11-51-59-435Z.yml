@@ -1,0 +1,135 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e6]:
+        - link "AI You Imagine Logo AI You Imagine" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "AI You Imagine Logo" [ref=e8]
+          - generic [ref=e9]: AI You Imagine
+        - navigation [ref=e10]:
+          - link "Home" [ref=e11] [cursor=pointer]:
+            - /url: /
+          - link "Categories" [ref=e12] [cursor=pointer]:
+            - /url: /categories
+          - link "Favorites" [ref=e13] [cursor=pointer]:
+            - /url: /favorites
+          - link "Prompts" [ref=e14] [cursor=pointer]:
+            - /url: /prompts
+          - link "Services" [ref=e15] [cursor=pointer]:
+            - /url: /services
+        - generic [ref=e16]:
+          - link "Sign In" [ref=e17] [cursor=pointer]:
+            - /url: /auth
+            - button "Sign In" [ref=e18]
+          - link "Submit AI Tool FREE→" [ref=e19] [cursor=pointer]:
+            - /url: /submit
+            - button "Submit AI Tool FREE→" [ref=e20]:
+              - generic [ref=e21]: Submit AI Tool FREE→
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - img [ref=e25]
+        - text: 100% Free Submission
+      - heading "Submit Your AI Tool For Free" [level=1] [ref=e27]
+      - paragraph [ref=e28]: Get your AI tool listed in our directory and reach thousands of potential users. No hidden fees, or charges - just pure exposure for your innovation.
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - img [ref=e31]
+          - generic [ref=e33]:
+            - heading "Instant Visibility" [level=3] [ref=e34]
+            - paragraph [ref=e35]: Get featured within 24-48 hours
+        - generic [ref=e36]:
+          - img [ref=e37]
+          - generic [ref=e41]:
+            - heading "Targeted Audience" [level=3] [ref=e42]
+            - paragraph [ref=e43]: Reach AI enthusiasts & professionals
+        - generic [ref=e44]:
+          - img [ref=e45]
+          - generic [ref=e47]:
+            - heading "Free Listing" [level=3] [ref=e48]
+            - paragraph [ref=e49]: No Hidden charges or fees
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - heading "Choose Your Listing Plan" [level=2] [ref=e53]
+        - paragraph [ref=e54]: Select the perfect plan to showcase your AI tool
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - img [ref=e59]
+          - heading "Free Plan" [level=3] [ref=e61]
+          - generic [ref=e62]: ₹0
+        - generic [ref=e63]:
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - img [ref=e66]
+              - text: Listed in Full AI Directory
+            - listitem [ref=e68]:
+              - img [ref=e69]
+              - text: Basic description (up to 100 characters)
+            - listitem [ref=e71]:
+              - img [ref=e72]
+              - text: 1 external link (optional)
+            - listitem [ref=e74]:
+              - img [ref=e75]
+              - text: Indexed on Google (SEO submission)
+            - listitem [ref=e77]:
+              - img [ref=e78]
+              - text: Get listed in Featured Tools section on home page
+          - button "Selected" [ref=e80] [cursor=pointer]
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - heading "Submit Your AI Tool" [level=3] [ref=e85]
+        - paragraph [ref=e86]: Fill out the form below to get your AI tool listed on our platform
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - text: Company Name *
+            - textbox "Company Name *" [ref=e91]:
+              - /placeholder: Enter company name
+              - text: Remova
+          - generic [ref=e92]:
+            - text: Tool Name *
+            - textbox "Tool Name *" [ref=e93]:
+              - /placeholder: Enter AI tool name
+              - text: Remova
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - text: Contact Email *
+            - textbox "Contact Email *" [ref=e96]:
+              - /placeholder: contact@company.com
+              - text: contact@remova.org
+          - generic [ref=e97]:
+            - text: Phone Number (Optional)
+            - textbox "Phone Number (Optional)" [ref=e98]:
+              - /placeholder: Enter phone number
+        - generic [ref=e99]:
+          - text: Website URL *
+          - textbox "Website URL *" [ref=e100]:
+            - /placeholder: https://yourtool.com
+            - text: https://www.remova.org/
+        - generic [ref=e101]:
+          - text: Category *
+          - combobox "Category *" [active] [ref=e102] [cursor=pointer]:
+            - generic: Business
+            - img [ref=e103]
+          - combobox [ref=e105]
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - text: Tool Description *
+            - generic [ref=e108]: (82/100 characters)
+          - textbox "Tool Description *(82/100 characters)" [ref=e124]:
+            - /placeholder: Describe what your AI tool does, its key features, and how it helps users...
+            - text: AI governance workspace for secure ChatGPT, Claude, Gemini use with data controls.
+        - generic [ref=e110]:
+          - text: Affiliate Link (Optional)
+          - textbox "Affiliate Link (Optional)" [ref=e111]:
+            - /placeholder: https://affiliate.link.com
+        - generic [ref=e112]:
+          - text: Brand Logo (Max 100KB)
+          - generic [ref=e113]:
+            - img [ref=e114]
+            - generic [ref=e117] [cursor=pointer]: Click to upload logo (PNG, JPG, SVG)
+        - generic [ref=e118]:
+          - generic [ref=e119]: External Links (Optional - 1 allowed)
+          - textbox "External link 1 (optional)" [ref=e121]: https://www.remova.org/features/sensitive-data-protection
+        - button "Submit AI Tool for Free" [ref=e123] [cursor=pointer]

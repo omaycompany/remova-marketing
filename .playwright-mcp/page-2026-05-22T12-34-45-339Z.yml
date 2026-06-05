@@ -1,0 +1,290 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "AI OpenAIToolsHub" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: AI
+        - generic [ref=e9]: OpenAIToolsHub
+      - navigation [ref=e10]:
+        - link "Research" [ref=e11] [cursor=pointer]:
+          - /url: /ai-product-research
+          - img [ref=e12]
+          - generic [ref=e14]: Research
+        - link "Tools" [ref=e15] [cursor=pointer]:
+          - /url: /tools
+          - img [ref=e16]
+          - generic [ref=e18]: Tools
+        - link "Blog" [ref=e19] [cursor=pointer]:
+          - /url: /en/blog
+          - img [ref=e20]
+          - generic [ref=e22]: Blog
+        - link "Pricing" [ref=e23] [cursor=pointer]:
+          - /url: /ai-product-research/pricing
+          - img [ref=e24]
+          - generic [ref=e27]: Pricing
+      - button "Sign in" [ref=e29] [cursor=pointer]
+  - main [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: Free
+        - generic [ref=e35]: •
+        - generic [ref=e36]: Reviewed within 48 hours
+      - paragraph [ref=e37]:
+        - text: Get a dofollow backlink from a DR30 AI tools directory
+        - link "Machine Learning & Artificial Intelligence" [ref=e38] [cursor=pointer]:
+          - img [ref=e40]
+          - text: Machine Learning & Artificial Intelligence
+      - paragraph [ref=e42]: Ahrefs DR30 • 1.3K+ backlinks • indexed on Google • no signup required
+    - generic [ref=e43]:
+      - heading "Submit Your AI Tool" [level=1] [ref=e44]
+      - paragraph [ref=e45]:
+        - text: List your AI tool on OpenAIToolsHub for free. Approved submissions receive a
+        - strong [ref=e46]: dofollow backlink
+        - text: on a dedicated page.
+    - insertion [ref=e48]:
+      - iframe [ref=e50]:
+        - generic [active] [ref=f84e1]:
+          - generic [ref=f84e5]:
+            - generic [ref=f84e6]:
+              - link [ref=f84e7] [cursor=pointer]:
+                - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CVBgTX00QarK5K9uaoPMPxLP5iA_KwfmGhQHS4NWY_xTa2R4QASDW7u-rAWCZhoCAgCGgAYbdlKECyAEJqAMByAPLBKoE5gFP0LQOnK4sED2noNySYVU-yT5Rnza6U4f5BD4JAVhmNcEsec4fsKuzhZBmmzviv2vpaG0DrxAq-C6PUlHBzpweE0FW0sx3JJkg-B3Zg6zF5hC4wfxxdmbOVh6m1JFtKCllvpQ9WeH_bBrvQn7o6eqcGLWNyjUnXkgy9RUf8vMQ1ZcfRTIAB0g7ep1z0ifdP1HzkL2HtrhWaGfLRqAQQz7nyiTTBkdpoyDvnvJUZ97DI8msoLryhGXAZmF0mrs1556lh2XKplily-5f9cfx-1iqe0oCreJOUNTYKkVi-MH2darcVw7ocsAEk-36ycYFiAXKiN39VqAGLoAHt7a_lxuoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB5TksQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDEIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WMrrg4X0zJQDsQm-GswRhndOhoAKAZgLAcgLAYAMAaIMDyoKCgiO37ECleKxApABAaoNAlRSyA0B6g0TCJ3rhoX0zJQDFVsNaAgdxFke8fANAogOCbgT5APYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRICpmYYLiIBANAYAegYAcIZAggB&ae=1&gclid=EAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE&num=1&cid=CAQS9QEABaugfb-Pb928RSKpnmBZlDI2I3BQWdCPwDnnHGH4XGQc4Zs8wuUdZxbVfKYm5VZmFYs355eEQuMz_OjnTKSa_PsacRpAo28U59qDheGXWoSHiVIsD1dZUkuH-h3DTmVQd_wcwbFg-GNyM0606mPmVANp-WW-4FTinQRdayyKTLIlZDpWVmJhnckdRavHWCQ3vaPE1ZiV4gLvIbvnYKbuwsJhfGXgUIyhZqM1Pduh-vbY98svXRbrZN67ZBsFBscLwyspG0knjEN2fIEvnHR_fvL3JyarrmCTCKYvQc3VEhJ2h_rDiJ7cIRK0fQg4y1k1EZDvIhgB&sig=AOD64_1m_JPI2t3o8ATwZwkl62n7K6RyPg&client=ca-pub-4397944303679541&rf=1&nb=9&adurl=https://use.ai%3Fmodel%3Dgpt-5%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAI_WW_EN-T1_Chat_ALL_DIS_GEN_Generic%26utm_campaign_id%3D23349118026%26utm_adgroup%3DAI_WW_EN-T1_Display-Keywords%26utm_adgroup_id%3D190744278675%26utm_term%3Dchatgpt%2520online%26utm_match_type%3D%26utm_content%3D803396470684%26utm_content_id%3D803396470684%26utm_funnel%3D%26partner%3DWM%26id%3DZ29vZ2xlfGNwY3x7X2NhbXBhaWdufXx7a2V5d29yZH18e2NyZWF0aXZlfXx8e2FkZ3JvdXBpZH18e19hZGdyb3VwfXx7Y3JlYXRpdmV9%26url%3Dhttps://use.ai%253Fmodel%253Dgpt-5%26gad_source%3D5%26gad_campaignid%3D23349118026%26gclid%3DEAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE
+                - img [ref=f84e8]
+              - link "Cheaper Access to AI" [ref=f84e11] [cursor=pointer]:
+                - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CVBgTX00QarK5K9uaoPMPxLP5iA_KwfmGhQHS4NWY_xTa2R4QASDW7u-rAWCZhoCAgCGgAYbdlKECyAEJqAMByAPLBKoE5gFP0LQOnK4sED2noNySYVU-yT5Rnza6U4f5BD4JAVhmNcEsec4fsKuzhZBmmzviv2vpaG0DrxAq-C6PUlHBzpweE0FW0sx3JJkg-B3Zg6zF5hC4wfxxdmbOVh6m1JFtKCllvpQ9WeH_bBrvQn7o6eqcGLWNyjUnXkgy9RUf8vMQ1ZcfRTIAB0g7ep1z0ifdP1HzkL2HtrhWaGfLRqAQQz7nyiTTBkdpoyDvnvJUZ97DI8msoLryhGXAZmF0mrs1556lh2XKplily-5f9cfx-1iqe0oCreJOUNTYKkVi-MH2darcVw7ocsAEk-36ycYFiAXKiN39VqAGLoAHt7a_lxuoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB5TksQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDEIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WMrrg4X0zJQDsQm-GswRhndOhoAKAZgLAcgLAYAMAaIMDyoKCgiO37ECleKxApABAaoNAlRSyA0B6g0TCJ3rhoX0zJQDFVsNaAgdxFke8fANAogOCbgT5APYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRICpmYYLiIBANAYAegYAcIZAggB&ae=1&gclid=EAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE&num=1&cid=CAQS9QEABaugfb-Pb928RSKpnmBZlDI2I3BQWdCPwDnnHGH4XGQc4Zs8wuUdZxbVfKYm5VZmFYs355eEQuMz_OjnTKSa_PsacRpAo28U59qDheGXWoSHiVIsD1dZUkuH-h3DTmVQd_wcwbFg-GNyM0606mPmVANp-WW-4FTinQRdayyKTLIlZDpWVmJhnckdRavHWCQ3vaPE1ZiV4gLvIbvnYKbuwsJhfGXgUIyhZqM1Pduh-vbY98svXRbrZN67ZBsFBscLwyspG0knjEN2fIEvnHR_fvL3JyarrmCTCKYvQc3VEhJ2h_rDiJ7cIRK0fQg4y1k1EZDvIhgB&sig=AOD64_1m_JPI2t3o8ATwZwkl62n7K6RyPg&client=ca-pub-4397944303679541&rf=1&nb=0&adurl=https://use.ai%3Fmodel%3Dgpt-5%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAI_WW_EN-T1_Chat_ALL_DIS_GEN_Generic%26utm_campaign_id%3D23349118026%26utm_adgroup%3DAI_WW_EN-T1_Display-Keywords%26utm_adgroup_id%3D190744278675%26utm_term%3Dchatgpt%2520online%26utm_match_type%3D%26utm_content%3D803396470684%26utm_content_id%3D803396470684%26utm_funnel%3D%26partner%3DWM%26id%3DZ29vZ2xlfGNwY3x7X2NhbXBhaWdufXx7a2V5d29yZH18e2NyZWF0aXZlfXx8e2FkZ3JvdXBpZH18e19hZGdyb3VwfXx7Y3JlYXRpdmV9%26url%3Dhttps://use.ai%253Fmodel%253Dgpt-5%26gad_source%3D5%26gad_campaignid%3D23349118026%26gclid%3DEAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE
+            - generic [ref=f84e12]:
+              - link [ref=f84e13] [cursor=pointer]:
+                - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CVBgTX00QarK5K9uaoPMPxLP5iA_KwfmGhQHS4NWY_xTa2R4QASDW7u-rAWCZhoCAgCGgAYbdlKECyAEJqAMByAPLBKoE5gFP0LQOnK4sED2noNySYVU-yT5Rnza6U4f5BD4JAVhmNcEsec4fsKuzhZBmmzviv2vpaG0DrxAq-C6PUlHBzpweE0FW0sx3JJkg-B3Zg6zF5hC4wfxxdmbOVh6m1JFtKCllvpQ9WeH_bBrvQn7o6eqcGLWNyjUnXkgy9RUf8vMQ1ZcfRTIAB0g7ep1z0ifdP1HzkL2HtrhWaGfLRqAQQz7nyiTTBkdpoyDvnvJUZ97DI8msoLryhGXAZmF0mrs1556lh2XKplily-5f9cfx-1iqe0oCreJOUNTYKkVi-MH2darcVw7ocsAEk-36ycYFiAXKiN39VqAGLoAHt7a_lxuoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB5TksQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDEIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WMrrg4X0zJQDsQm-GswRhndOhoAKAZgLAcgLAYAMAaIMDyoKCgiO37ECleKxApABAaoNAlRSyA0B6g0TCJ3rhoX0zJQDFVsNaAgdxFke8fANAogOCbgT5APYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRICpmYYLiIBANAYAegYAcIZAggB&ae=1&gclid=EAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE&num=1&cid=CAQS9QEABaugfb-Pb928RSKpnmBZlDI2I3BQWdCPwDnnHGH4XGQc4Zs8wuUdZxbVfKYm5VZmFYs355eEQuMz_OjnTKSa_PsacRpAo28U59qDheGXWoSHiVIsD1dZUkuH-h3DTmVQd_wcwbFg-GNyM0606mPmVANp-WW-4FTinQRdayyKTLIlZDpWVmJhnckdRavHWCQ3vaPE1ZiV4gLvIbvnYKbuwsJhfGXgUIyhZqM1Pduh-vbY98svXRbrZN67ZBsFBscLwyspG0knjEN2fIEvnHR_fvL3JyarrmCTCKYvQc3VEhJ2h_rDiJ7cIRK0fQg4y1k1EZDvIhgB&sig=AOD64_1m_JPI2t3o8ATwZwkl62n7K6RyPg&client=ca-pub-4397944303679541&rf=1&nb=19&adurl=https://use.ai%3Fmodel%3Dgpt-5%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAI_WW_EN-T1_Chat_ALL_DIS_GEN_Generic%26utm_campaign_id%3D23349118026%26utm_adgroup%3DAI_WW_EN-T1_Display-Keywords%26utm_adgroup_id%3D190744278675%26utm_term%3Dchatgpt%2520online%26utm_match_type%3D%26utm_content%3D803396470684%26utm_content_id%3D803396470684%26utm_funnel%3D%26partner%3DWM%26id%3DZ29vZ2xlfGNwY3x7X2NhbXBhaWdufXx7a2V5d29yZH18e2NyZWF0aXZlfXx8e2FkZ3JvdXBpZH18e19hZGdyb3VwfXx7Y3JlYXRpdmV9%26url%3Dhttps://use.ai%253Fmodel%253Dgpt-5%26gad_source%3D5%26gad_campaignid%3D23349118026%26gclid%3DEAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE
+                - img [ref=f84e14]
+              - link "Use AI" [ref=f84e16] [cursor=pointer]:
+                - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CVBgTX00QarK5K9uaoPMPxLP5iA_KwfmGhQHS4NWY_xTa2R4QASDW7u-rAWCZhoCAgCGgAYbdlKECyAEJqAMByAPLBKoE5gFP0LQOnK4sED2noNySYVU-yT5Rnza6U4f5BD4JAVhmNcEsec4fsKuzhZBmmzviv2vpaG0DrxAq-C6PUlHBzpweE0FW0sx3JJkg-B3Zg6zF5hC4wfxxdmbOVh6m1JFtKCllvpQ9WeH_bBrvQn7o6eqcGLWNyjUnXkgy9RUf8vMQ1ZcfRTIAB0g7ep1z0ifdP1HzkL2HtrhWaGfLRqAQQz7nyiTTBkdpoyDvnvJUZ97DI8msoLryhGXAZmF0mrs1556lh2XKplily-5f9cfx-1iqe0oCreJOUNTYKkVi-MH2darcVw7ocsAEk-36ycYFiAXKiN39VqAGLoAHt7a_lxuoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB5TksQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDEIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WMrrg4X0zJQDsQm-GswRhndOhoAKAZgLAcgLAYAMAaIMDyoKCgiO37ECleKxApABAaoNAlRSyA0B6g0TCJ3rhoX0zJQDFVsNaAgdxFke8fANAogOCbgT5APYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRICpmYYLiIBANAYAegYAcIZAggB&ae=1&gclid=EAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE&num=1&cid=CAQS9QEABaugfb-Pb928RSKpnmBZlDI2I3BQWdCPwDnnHGH4XGQc4Zs8wuUdZxbVfKYm5VZmFYs355eEQuMz_OjnTKSa_PsacRpAo28U59qDheGXWoSHiVIsD1dZUkuH-h3DTmVQd_wcwbFg-GNyM0606mPmVANp-WW-4FTinQRdayyKTLIlZDpWVmJhnckdRavHWCQ3vaPE1ZiV4gLvIbvnYKbuwsJhfGXgUIyhZqM1Pduh-vbY98svXRbrZN67ZBsFBscLwyspG0knjEN2fIEvnHR_fvL3JyarrmCTCKYvQc3VEhJ2h_rDiJ7cIRK0fQg4y1k1EZDvIhgB&sig=AOD64_1m_JPI2t3o8ATwZwkl62n7K6RyPg&client=ca-pub-4397944303679541&rf=1&nb=1&adurl=https://use.ai%3Fmodel%3Dgpt-5%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAI_WW_EN-T1_Chat_ALL_DIS_GEN_Generic%26utm_campaign_id%3D23349118026%26utm_adgroup%3DAI_WW_EN-T1_Display-Keywords%26utm_adgroup_id%3D190744278675%26utm_term%3Dchatgpt%2520online%26utm_match_type%3D%26utm_content%3D803396470684%26utm_content_id%3D803396470684%26utm_funnel%3D%26partner%3DWM%26id%3DZ29vZ2xlfGNwY3x7X2NhbXBhaWdufXx7a2V5d29yZH18e2NyZWF0aXZlfXx8e2FkZ3JvdXBpZH18e19hZGdyb3VwfXx7Y3JlYXRpdmV9%26url%3Dhttps://use.ai%253Fmodel%253Dgpt-5%26gad_source%3D5%26gad_campaignid%3D23349118026%26gclid%3DEAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE
+              - link "Open" [ref=f84e17] [cursor=pointer]:
+                - /url: https://adclick.g.doubleclick.net/aclk?sa=l&ai=CVBgTX00QarK5K9uaoPMPxLP5iA_KwfmGhQHS4NWY_xTa2R4QASDW7u-rAWCZhoCAgCGgAYbdlKECyAEJqAMByAPLBKoE5gFP0LQOnK4sED2noNySYVU-yT5Rnza6U4f5BD4JAVhmNcEsec4fsKuzhZBmmzviv2vpaG0DrxAq-C6PUlHBzpweE0FW0sx3JJkg-B3Zg6zF5hC4wfxxdmbOVh6m1JFtKCllvpQ9WeH_bBrvQn7o6eqcGLWNyjUnXkgy9RUf8vMQ1ZcfRTIAB0g7ep1z0ifdP1HzkL2HtrhWaGfLRqAQQz7nyiTTBkdpoyDvnvJUZ97DI8msoLryhGXAZmF0mrs1556lh2XKplily-5f9cfx-1iqe0oCreJOUNTYKkVi-MH2darcVw7ocsAEk-36ycYFiAXKiN39VqAGLoAHt7a_lxuoB6fMsQKoB-LYsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB5TksQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDEIgGEQARifAzIIioKAgICAgAg6D4BAgMCAgICAqIACqIOAEEi9_cE6WMrrg4X0zJQDsQm-GswRhndOhoAKAZgLAcgLAYAMAaIMDyoKCgiO37ECleKxApABAaoNAlRSyA0B6g0TCJ3rhoX0zJQDFVsNaAgdxFke8fANAogOCbgT5APYEwyIFAHQFQGYFgHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYCRICpmYYLiIBANAYAegYAcIZAggB&ae=1&gclid=EAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE&num=1&cid=CAQS9QEABaugfb-Pb928RSKpnmBZlDI2I3BQWdCPwDnnHGH4XGQc4Zs8wuUdZxbVfKYm5VZmFYs355eEQuMz_OjnTKSa_PsacRpAo28U59qDheGXWoSHiVIsD1dZUkuH-h3DTmVQd_wcwbFg-GNyM0606mPmVANp-WW-4FTinQRdayyKTLIlZDpWVmJhnckdRavHWCQ3vaPE1ZiV4gLvIbvnYKbuwsJhfGXgUIyhZqM1Pduh-vbY98svXRbrZN67ZBsFBscLwyspG0knjEN2fIEvnHR_fvL3JyarrmCTCKYvQc3VEhJ2h_rDiJ7cIRK0fQg4y1k1EZDvIhgB&sig=AOD64_1m_JPI2t3o8ATwZwkl62n7K6RyPg&client=ca-pub-4397944303679541&rf=1&nb=8&adurl=https://use.ai%3Fmodel%3Dgpt-5%26utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3DAI_WW_EN-T1_Chat_ALL_DIS_GEN_Generic%26utm_campaign_id%3D23349118026%26utm_adgroup%3DAI_WW_EN-T1_Display-Keywords%26utm_adgroup_id%3D190744278675%26utm_term%3Dchatgpt%2520online%26utm_match_type%3D%26utm_content%3D803396470684%26utm_content_id%3D803396470684%26utm_funnel%3D%26partner%3DWM%26id%3DZ29vZ2xlfGNwY3x7X2NhbXBhaWdufXx7a2V5d29yZH18e2NyZWF0aXZlfXx8e2FkZ3JvdXBpZH18e19hZGdyb3VwfXx7Y3JlYXRpdmV9%26url%3Dhttps://use.ai%253Fmodel%253Dgpt-5%26gad_source%3D5%26gad_campaignid%3D23349118026%26gclid%3DEAIaIQobChMI8uSGhfTMlAMVWw1oCB3EWR7xEAEYASAAEgKJoPD_BwE
+                - generic [ref=f84e19]: Open
+          - img [ref=f84e23] [cursor=pointer]
+          - button [ref=f84e25] [cursor=pointer]:
+            - img [ref=f84e26]
+          - iframe
+    - generic [ref=e51]:
+      - heading "How it works" [level=2] [ref=e52]
+      - list [ref=e53]:
+        - listitem [ref=e54]: Fill out the form below (takes ~2 minutes)
+        - listitem [ref=e55]: Our team reviews your submission (usually within 48 hours)
+        - listitem [ref=e56]: If approved, your tool gets a dedicated page with a dofollow link
+    - generic [ref=e58]:
+      - generic:
+        - text: Website
+        - textbox
+      - generic [ref=e59]:
+        - generic [ref=e60]: Tool Name *
+        - textbox "Tool Name *" [ref=e61]:
+          - /placeholder: e.g. My AI Writing Assistant
+      - generic [ref=e62]:
+        - generic [ref=e63]: Website URL *
+        - textbox "Website URL *" [ref=e64]:
+          - /placeholder: https://your-tool.com
+      - generic [ref=e65]:
+        - generic [ref=e66]: Logo URL (optional)
+        - textbox "Logo URL (optional)" [ref=e67]:
+          - /placeholder: https://your-tool.com/logo.png
+        - paragraph [ref=e68]: If not provided, we will use your site's favicon.
+      - generic [ref=e69]:
+        - generic [ref=e70]: Description *
+        - textbox "Description *" [ref=e71]:
+          - /placeholder: Describe what your AI tool does, its key features, and who it's for (min 20 characters)
+      - generic [ref=e72]:
+        - generic [ref=e73]: Category *
+        - combobox "Category *" [ref=e74]:
+          - option "Select a category" [selected]
+          - option "Chatbot"
+          - option "Writing"
+          - option "Image"
+          - option "Video"
+          - option "Audio"
+          - option "Coding"
+          - option "Productivity"
+          - option "Marketing"
+          - option "Research"
+          - option "Other"
+      - generic [ref=e75]:
+        - generic [ref=e76]: Contact Email *
+        - textbox "Contact Email *" [ref=e77]:
+          - /placeholder: you@company.com
+        - paragraph [ref=e78]: We will notify you when your submission is reviewed. Not displayed publicly.
+      - button "Submit Tool for Review" [ref=e79] [cursor=pointer]
+      - paragraph [ref=e80]:
+        - text: By submitting, you agree to our review process. Approved tools receive a dofollow backlink. This site is protected by reCAPTCHA and the Google
+        - link "Privacy Policy" [ref=e81] [cursor=pointer]:
+          - /url: https://policies.google.com/privacy
+        - text: and
+        - link "Terms of Service" [ref=e82] [cursor=pointer]:
+          - /url: https://policies.google.com/terms
+        - text: apply.
+  - insertion [ref=e84]:
+    - generic [ref=e87]:
+      - heading "These are topics related to the article that might interest you" [level=2] [ref=e89]: Discover more
+      - link "Search Engine Optimization & Marketing" [ref=e90] [cursor=pointer]:
+        - generic "Search Engine Optimization & Marketing" [ref=e91]
+        - img [ref=e93]
+      - link "AI Tools, Chatbots & Virtual Assistants" [ref=e95] [cursor=pointer]:
+        - generic "AI Tools, Chatbots & Virtual Assistants" [ref=e96]
+        - img [ref=e98]
+      - link "Text & Instant Messaging" [ref=e100] [cursor=pointer]:
+        - generic "Text & Instant Messaging" [ref=e101]
+        - img [ref=e103]
+  - contentinfo [ref=e105]:
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - link "AI OpenAIToolsHub" [ref=e110] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e112]: AI
+            - generic [ref=e113]: OpenAIToolsHub
+          - paragraph [ref=e114]: SaaS playbooks for indie hackers. $9/mo. Cancel anytime.
+        - generic [ref=e115]:
+          - heading "Inside Indie Hacker SaaS" [level=4] [ref=e116]
+          - list [ref=e117]:
+            - listitem [ref=e118]:
+              - link "Browse Research" [ref=e119] [cursor=pointer]:
+                - /url: /ai-product-research
+            - listitem [ref=e120]:
+              - link "Pricing" [ref=e121] [cursor=pointer]:
+                - /url: /ai-product-research/pricing
+            - listitem [ref=e122]:
+              - link "How We Research" [ref=e123] [cursor=pointer]:
+                - /url: /ai-product-research/how-we-research
+            - listitem [ref=e124]:
+              - link "Read PostSyncer free" [ref=e125] [cursor=pointer]:
+                - /url: /ai-product-research/postsyncer
+        - generic [ref=e126]:
+          - heading "Free Tools" [level=4] [ref=e127]
+          - list [ref=e128]:
+            - listitem [ref=e129]:
+              - link "Dev Tools (33+)" [ref=e130] [cursor=pointer]:
+                - /url: /tools
+            - listitem [ref=e131]:
+              - link "SEO Tools (6)" [ref=e132] [cursor=pointer]:
+                - /url: /seo-tools
+            - listitem [ref=e133]:
+              - link "SkillsMap" [ref=e134] [cursor=pointer]:
+                - /url: /en/skillsmap
+            - listitem [ref=e135]:
+              - link "Backlinks Directory" [ref=e136] [cursor=pointer]:
+                - /url: /en/backlinks
+            - listitem [ref=e137]:
+              - link "Submit Your Tool" [ref=e138] [cursor=pointer]:
+                - /url: /directory
+        - generic [ref=e139]:
+          - heading "Blog & Learn" [level=4] [ref=e140]
+          - list [ref=e141]:
+            - listitem [ref=e142]:
+              - link "Latest Blog" [ref=e143] [cursor=pointer]:
+                - /url: /en/blog
+            - listitem [ref=e144]:
+              - link "Use Cases" [ref=e145] [cursor=pointer]:
+                - /url: /en/use-cases
+            - listitem [ref=e146]:
+              - link "Learn" [ref=e147] [cursor=pointer]:
+                - /url: /en/learn
+            - listitem [ref=e148]:
+              - link "SEO Brain" [ref=e149] [cursor=pointer]:
+                - /url: /en/seo-brain
+        - navigation "Company" [ref=e150]:
+          - heading "About" [level=4] [ref=e151]
+          - list [ref=e152]:
+            - listitem [ref=e153]:
+              - link "About Us" [ref=e154] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e155]:
+              - link "Contact" [ref=e156] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e157]:
+              - link "Privacy Policy" [ref=e158] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e159]:
+              - link "Terms of Service" [ref=e160] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e161]:
+              - link "Support Us" [ref=e162] [cursor=pointer]:
+                - /url: /en/donation
+      - generic [ref=e163]:
+        - paragraph [ref=e164]: © 2026 OpenAIToolsHub. All rights reserved.
+        - group [ref=e165]:
+          - generic "Featured on 24+ AI directories" [ref=e166] [cursor=pointer]:
+            - generic [ref=e167]: Featured on 24+ AI directories
+            - generic [ref=e168]: ▸
+        - paragraph [ref=e169]:
+          - text: Some links are affiliate links. We may earn a commission at no cost to you.
+          - link "Disclosure" [ref=e170] [cursor=pointer]:
+            - /url: /about#affiliate-disclosure
+      - generic [ref=e171]:
+        - generic [ref=e172]: Featured on
+        - link "AI工具网" [ref=e173] [cursor=pointer]:
+          - /url: https://www.ai138.com
+        - generic [ref=e174]: ·
+        - link "Twelve Tools" [ref=e175] [cursor=pointer]:
+          - /url: https://twelve.tools
+        - generic [ref=e176]: ·
+        - link "Wired Business" [ref=e177] [cursor=pointer]:
+          - /url: https://wired.business
+        - generic [ref=e178]: ·
+        - link "Fazier" [ref=e179] [cursor=pointer]:
+          - /url: https://fazier.com
+        - generic [ref=e180]: ·
+        - link "Dang.ai" [ref=e181] [cursor=pointer]:
+          - /url: https://dang.ai
+        - generic [ref=e182]: ·
+        - link "SoftwareWorld" [ref=e183] [cursor=pointer]:
+          - /url: https://www.softwareworld.co
+        - generic [ref=e184]: ·
+        - link "AI Tool Trek" [ref=e185] [cursor=pointer]:
+          - /url: https://aitooltrek.com
+        - generic [ref=e186]: ·
+        - link "IndieHunt" [ref=e187] [cursor=pointer]:
+          - /url: https://indiehunt.io/project/openaitoolshub-ai-tool-reviews-amp-comparisons
+        - generic [ref=e188]: ·
+        - link "Uno Directory" [ref=e189] [cursor=pointer]:
+          - /url: https://uno.directory
+        - generic [ref=e190]: ·
+        - link "SideProjectors" [ref=e191] [cursor=pointer]:
+          - /url: https://www.sideprojectors.com/project/74509
+        - generic [ref=e192]: ·
+        - link "AI Toolz Dir" [ref=e193] [cursor=pointer]:
+          - /url: https://www.aitoolzdir.com
+        - generic [ref=e194]: ·
+        - link "WTAI" [ref=e195] [cursor=pointer]:
+          - /url: https://wtai.cc
+        - generic [ref=e196]: ·
+        - link "ToolDirs" [ref=e197] [cursor=pointer]:
+          - /url: https://tooldirs.com
+  - alert [ref=e198]
+  - insertion [ref=e199]:
+    - iframe [ref=e202]:
+      - generic [active] [ref=f93e1]:
+        - generic [ref=f93e6]:
+          - generic [ref=f93e7]:
+            - generic "qwencloud.com" [ref=f93e9]:
+              - link "Explore the Future of AI - Keynotes, Forums, Exhibition" [ref=f93e10] [cursor=pointer]:
+                - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CGqeuX00Qava-KpOdoPMPnJOTyQLr2ZWfhwH634yRgxb_3az52A8QASDW7u-rAWCZhoCAgCGgAYublJlDyAEBqAMByAPDBKoE_AFP0O_9KV7jqDnPepFawHRO6zWZltduG36WYQ6DQFdWAos6M_Zm-MRQgVs8aFSZ-2evmhpIq7R4a3_nXINcK4LSWuQiN3m5c4kS57-0jKLSCXBexZM-Mh7tSvLFCYClYzqKxvok26LsLeZUnnuwHO_17Bnpgvx3M4Mvj671MWfi_Yw2B6R_vNrb6cD0-DbP1VRm1N_ty6mOJlAYb9SzTT66385odiQGythPnrw-lkmaLfGFkTbamak7mhTo-x-wQcQDzS7XszZO2pmCmcM9PLnv5o2ANTgaE_pEA-0xgfcF1J9u5MpsYrrvwSGLBCLJELqccBhBD-bvF5OoTo_ABIKCj53KBYgF_azY7VigBmaAB4vT5PgdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggxCIBhEAEYnwMyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOliw5oKF9MyUA7EJtAGYwAVddAKACgGYCwHICwGqDQJUUsgNAeoNEwje8IWF9MyUAxWTDmgIHZzJJCnwDQKIDgnYEwLQFQHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYEAoFk7K43AQSAodUGGYiAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMItuqFhfTMlAMVkw5oCB2cySQpEAEYASAAEgLxavD_BwE&num=1&cid=CAQS9AEABaugffBO7X2PLKvTWrC8Xh4qW6CYxME4LIZxEFXviKPjv5UDjk3C8cCa2XUhrufApjjwpkp9YvR0FM6TdL3lyhiKqthR4-9-EJEQ8IA5PDcsNM5p2Fk-cY9Kc9N9G12nmxLtoCoPZ0Tz8rIYfka1Ra1rxwM4Wj_A3i9HAQhdKT5sMnaMfifFLLHJ2ZbDOHT7I_nGWpbk4_YfBiHsG01o1IQFZD52Ix7pZfbmbSPAQiqfSOJ2xRfbKa8AEpdcJtA5sddcYa7DvQT3SdZQS8pCvOfA_pqAptYQkEb1NmZS5j-T_bF9sl04TMdgAFa0M7Xc10noGAE&sig=AOD64_1De1sAPwIqNBCog16dj6Gsx4V9RA&client=ca-pub-4397944303679541&rf=1&nb=0&adurl=https://www.qwencloud.com/events/qwen-conference-2026%3Fgad_source%3D5%26gad_campaignid%3D23852357245%26gclid%3DEAIaIQobChMItuqFhfTMlAMVkw5oCB2cySQpEAEYASAAEgLxavD_BwE
+                - text: Explore the Future of AI - Keynotes, Forums,
+                - text: Exhibition
+            - link "Register now to experience foundation models, agents, AI coding, and full-stack AI. qwencloud.com" [ref=f93e12] [cursor=pointer]:
+              - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CGqeuX00Qava-KpOdoPMPnJOTyQLr2ZWfhwH634yRgxb_3az52A8QASDW7u-rAWCZhoCAgCGgAYublJlDyAEBqAMByAPDBKoE_AFP0O_9KV7jqDnPepFawHRO6zWZltduG36WYQ6DQFdWAos6M_Zm-MRQgVs8aFSZ-2evmhpIq7R4a3_nXINcK4LSWuQiN3m5c4kS57-0jKLSCXBexZM-Mh7tSvLFCYClYzqKxvok26LsLeZUnnuwHO_17Bnpgvx3M4Mvj671MWfi_Yw2B6R_vNrb6cD0-DbP1VRm1N_ty6mOJlAYb9SzTT66385odiQGythPnrw-lkmaLfGFkTbamak7mhTo-x-wQcQDzS7XszZO2pmCmcM9PLnv5o2ANTgaE_pEA-0xgfcF1J9u5MpsYrrvwSGLBCLJELqccBhBD-bvF5OoTo_ABIKCj53KBYgF_azY7VigBmaAB4vT5PgdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggxCIBhEAEYnwMyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOliw5oKF9MyUA7EJtAGYwAVddAKACgGYCwHICwGqDQJUUsgNAeoNEwje8IWF9MyUAxWTDmgIHZzJJCnwDQKIDgnYEwLQFQHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYEAoFk7K43AQSAodUGGYiAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMItuqFhfTMlAMVkw5oCB2cySQpEAEYASAAEgLxavD_BwE&num=1&cid=CAQS9AEABaugffBO7X2PLKvTWrC8Xh4qW6CYxME4LIZxEFXviKPjv5UDjk3C8cCa2XUhrufApjjwpkp9YvR0FM6TdL3lyhiKqthR4-9-EJEQ8IA5PDcsNM5p2Fk-cY9Kc9N9G12nmxLtoCoPZ0Tz8rIYfka1Ra1rxwM4Wj_A3i9HAQhdKT5sMnaMfifFLLHJ2ZbDOHT7I_nGWpbk4_YfBiHsG01o1IQFZD52Ix7pZfbmbSPAQiqfSOJ2xRfbKa8AEpdcJtA5sddcYa7DvQT3SdZQS8pCvOfA_pqAptYQkEb1NmZS5j-T_bF9sl04TMdgAFa0M7Xc10noGAE&sig=AOD64_1De1sAPwIqNBCog16dj6Gsx4V9RA&client=ca-pub-4397944303679541&rf=1&nb=7&adurl=https://www.qwencloud.com/events/qwen-conference-2026%3Fgad_source%3D5%26gad_campaignid%3D23852357245%26gclid%3DEAIaIQobChMItuqFhfTMlAMVkw5oCB2cySQpEAEYASAAEgLxavD_BwE
+          - link "OPEN" [ref=f93e15] [cursor=pointer]:
+            - /url: https://googleads.g.doubleclick.net/aclk?sa=l&ai=CGqeuX00Qava-KpOdoPMPnJOTyQLr2ZWfhwH634yRgxb_3az52A8QASDW7u-rAWCZhoCAgCGgAYublJlDyAEBqAMByAPDBKoE_AFP0O_9KV7jqDnPepFawHRO6zWZltduG36WYQ6DQFdWAos6M_Zm-MRQgVs8aFSZ-2evmhpIq7R4a3_nXINcK4LSWuQiN3m5c4kS57-0jKLSCXBexZM-Mh7tSvLFCYClYzqKxvok26LsLeZUnnuwHO_17Bnpgvx3M4Mvj671MWfi_Yw2B6R_vNrb6cD0-DbP1VRm1N_ty6mOJlAYb9SzTT66385odiQGythPnrw-lkmaLfGFkTbamak7mhTo-x-wQcQDzS7XszZO2pmCmcM9PLnv5o2ANTgaE_pEA-0xgfcF1J9u5MpsYrrvwSGLBCLJELqccBhBD-bvF5OoTo_ABIKCj53KBYgF_azY7VigBmaAB4vT5PgdqAenzLECqAemvhuoB8zOsQKoB_PRG6gHltgbqAeqm7ECqAeOzhuoB5PYG6gH8OAbqAfulrECqAf-nrECqAevvrECqAfVyRuoB9m2sQKoB5oGqAf_nrECqAffn7ECqAf4wrECqAf7wrEC2AcB0ggxCIBhEAEYnwMyCIqCgICAgIAIOg-AQIDAgICAgKiAAqiDgBBIvf3BOliw5oKF9MyUA7EJtAGYwAVddAKACgGYCwHICwGqDQJUUsgNAeoNEwje8IWF9MyUAxWTDmgIHZzJJCnwDQKIDgnYEwLQFQHKFgIKAPgWAYAXAbIXBBgBUAa6FwI4AbIYEAoFk7K43AQSAodUGGYiAQDQGAHoGAHCGQIIAQ&ae=1&gclid=EAIaIQobChMItuqFhfTMlAMVkw5oCB2cySQpEAEYASAAEgLxavD_BwE&num=1&cid=CAQS9AEABaugffBO7X2PLKvTWrC8Xh4qW6CYxME4LIZxEFXviKPjv5UDjk3C8cCa2XUhrufApjjwpkp9YvR0FM6TdL3lyhiKqthR4-9-EJEQ8IA5PDcsNM5p2Fk-cY9Kc9N9G12nmxLtoCoPZ0Tz8rIYfka1Ra1rxwM4Wj_A3i9HAQhdKT5sMnaMfifFLLHJ2ZbDOHT7I_nGWpbk4_YfBiHsG01o1IQFZD52Ix7pZfbmbSPAQiqfSOJ2xRfbKa8AEpdcJtA5sddcYa7DvQT3SdZQS8pCvOfA_pqAptYQkEb1NmZS5j-T_bF9sl04TMdgAFa0M7Xc10noGAE&sig=AOD64_1De1sAPwIqNBCog16dj6Gsx4V9RA&client=ca-pub-4397944303679541&rf=1&nb=8&adurl=https://www.qwencloud.com/events/qwen-conference-2026%3Fgad_source%3D5%26gad_campaignid%3D23852357245%26gclid%3DEAIaIQobChMItuqFhfTMlAMVkw5oCB2cySQpEAEYASAAEgLxavD_BwE
+            - generic [ref=f93e19]:
+              - generic [ref=f93e20]: OPEN
+              - img [ref=f93e21]
+        - img [ref=f93e26] [cursor=pointer]
+        - button [ref=f93e28] [cursor=pointer]:
+          - img [ref=f93e29]
+        - iframe
+  - generic [ref=e204]:
+    - paragraph [ref=e205]:
+      - text: We use privacy-friendly analytics to improve the site. No ads or cross-site tracking.
+      - link "Privacy" [ref=e206] [cursor=pointer]:
+        - /url: /privacy
+    - generic [ref=e207]:
+      - button "No thanks" [ref=e208] [cursor=pointer]
+      - button "Allow" [ref=e209] [cursor=pointer]

@@ -1,0 +1,10 @@
+[    2361ms] [LOG] %c OpenAIToolsHub  background: #4ade80; color: #0d0d0d; font-weight: 900; font-size: 13px; padding: 3px 8px; border-radius: 4px; @ https://www.openaitoolshub.org/_next/static/chunks/app/layout-70c26814c93fb38c.js:0
+[    2363ms] [LOG] %cHello, developer 👋 background: transparent; color: #737373; font-size: 12px; font-family: monospace; line-height: 1.6; color: #d4d4d4; font-size: 13px; @ https://www.openaitoolshub.org/_next/static/chunks/app/layout-70c26814c93fb38c.js:0
+[    2363ms] [LOG] %cWe review AI tools honestly — no sponsored results, no fluff. background: transparent; color: #737373; font-size: 12px; font-family: monospace; line-height: 1.6; @ https://www.openaitoolshub.org/_next/static/chunks/app/layout-70c26814c93fb38c.js:0
+[    2364ms] [LOG] %c→ https://openaitoolshub.org background: transparent; color: #4ade80; font-size: 12px; font-family: monospace; @ https://www.openaitoolshub.org/_next/static/chunks/app/layout-70c26814c93fb38c.js:0
+[    5070ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5070ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5464ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5070ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5464ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    8185ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0

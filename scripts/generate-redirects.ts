@@ -59,7 +59,11 @@ const entries: RedirectEntry[] = [];
 for (const { slug } of legacyBlogStaticParams) add(entries, `/blog/${slug}`, getLegacyBlogRedirect(slug));
 for (const { slug } of legacyResourceStaticParams) add(entries, `/resources/${slug}`, getLegacyResourceRedirect(slug));
 for (const { slug } of legacyFeatureStaticParams) add(entries, `/features/${slug}`, getLegacyFeatureRedirect(slug));
-for (const { slug } of legacyModelStaticParams) add(entries, `/models/${slug}`, getLegacyModelRedirect(slug));
+for (const { slug } of legacyModelStaticParams) {
+    if (!currentModelLandingSlugs.has(slug) && !getModelLandingRedirect(slug)) {
+        add(entries, `/models/${slug}`, getLegacyModelRedirect(slug));
+    }
+}
 for (const { slug } of legacyAlternativeStaticParams) add(entries, `/alternative/${slug}`, getLegacyAlternativeRedirect(slug));
 for (const { slug } of legacyCompareStaticParams) add(entries, `/compare/${slug}`, getLegacyCompareRedirect(slug));
 for (const { slug } of legacyUseCaseStaticParams) add(entries, `/use-cases/${slug}`, getLegacyUseCaseRedirect(slug));
@@ -72,7 +76,7 @@ for (const { slug } of legacyServiceStaticParams) add(entries, `/services/${slug
 for (const { legacy } of legacyTopLevelStaticParams) add(entries, `/${legacy}`, getLegacyTopLevelRedirect(legacy));
 for (const { slug } of modelLandingRedirectStaticParams) add(entries, `/models/${slug}`, getModelLandingRedirect(slug));
 for (const slug of modelVideoSlugs) {
-    if (!currentModelLandingSlugs.has(slug)) add(entries, `/models/${slug}`, "/models");
+    if (!currentModelLandingSlugs.has(slug) && !getModelLandingRedirect(slug)) add(entries, `/models/${slug}`, "/models");
 }
 
 add(entries, "/affiliate", "/");

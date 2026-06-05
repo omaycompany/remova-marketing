@@ -1,0 +1,243 @@
+- generic:
+  - link:
+    - /url: "#main"
+    - text: Skip to content
+  - generic:
+    - generic:
+      - link:
+        - /url: /
+        - generic: AI Directory
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - img
+              - combobox
+        - link:
+          - /url: /help
+          - text: Help
+        - radiogroup:
+          - radio [checked]:
+            - img
+          - radio:
+            - img
+          - radio:
+            - img
+  - main:
+    - main:
+      - generic:
+        - generic:
+          - navigation:
+            - list:
+              - listitem:
+                - link [disabled]: Choose
+              - listitem:
+                - img
+              - listitem:
+                - link [disabled]: Submit
+          - button: Change type
+        - heading [level=1]: Submit a tool
+        - paragraph: Share your AI tool with the community. Submissions are moderated out-of-band.
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - text: Name*
+                - generic: required
+              - generic: "6"
+            - textbox: Remova
+            - paragraph: Public name shown on your listing.
+          - generic:
+            - generic:
+              - generic:
+                - text: Website URL*
+                - generic: required
+            - textbox:
+              - /placeholder: https://example.com
+              - text: https://www.remova.org/
+            - paragraph: Landing page users will visit. Include https://
+          - generic:
+            - generic:
+              - generic: Repository URL(optional)
+            - textbox:
+              - /placeholder: https://github.com/org/repo
+            - paragraph: Public code repository (e.g., GitHub).
+          - generic:
+            - generic:
+              - generic:
+                - text: Short description*
+                - generic: required
+              - generic:
+                - generic: 97 / 240
+            - textbox: Enterprise AI governance workspace for secure ChatGPT, Claude, and Gemini use with data controls.
+            - paragraph: One sentence summary (around 80–120 characters).
+          - generic:
+            - generic:
+              - generic: Long description(optional)
+              - generic: "300"
+            - textbox: Remova is an enterprise AI governance and control layer for companies rolling out AI across teams. It helps organizations govern ChatGPT, Claude, Gemini, and other approved models with policy controls, sensitive-data masking, role-based access, audit visibility, and department-level budget controls.
+            - paragraph: A few sentences about your tool. You can include key features or use cases.
+          - generic:
+            - generic:
+              - generic:
+                - text: Pricing*
+                - generic: required
+              - generic:
+                - link:
+                  - /url: /help/pricing-tiers
+                  - text: Learn about pricing tiers
+            - combobox [expanded]:
+              - generic: Free
+              - img
+            - combobox
+            - paragraph: Choose how your tool is priced. This helps users filter.
+          - generic:
+            - generic:
+              - generic: Categories(optional)
+              - generic:
+                - generic: 3 tags
+            - textbox: AI Governance, AI Safety Tooling, Privacy & PII Redaction
+            - paragraph: "Comma separated. Examples: Developer Tools, Productivity."
+          - generic:
+            - generic:
+              - generic: Tags(optional)
+              - generic:
+                - generic: 10 tags
+            - textbox: enterprise AI governance, AI data leak prevention, secure AI workspace, ChatGPT governance, Claude governance, Gemini governance, sensitive data masking, policy controls, audit trails, AI budget controls
+            - paragraph: Comma separated keywords to improve discovery.
+          - generic:
+            - generic:
+              - generic: Logo URL(optional)
+            - textbox:
+              - /placeholder: https://example.com/logo.png
+            - paragraph: Square logo URL (SVG or PNG). 64–512px recommended.
+          - generic:
+            - generic:
+              - generic: Screenshots(optional)
+              - generic:
+                - generic: 0 screenshots
+            - textbox
+            - paragraph: Comma separated image URLs. First image appears first.
+          - generic:
+            - heading [level=3]: Notifications
+            - generic:
+              - generic:
+                - generic: Email for status updates(optional)
+              - textbox:
+                - /placeholder: you@example.com
+                - text: contact@remova.org
+              - paragraph: We’ll email you when your submission is approved or requires changes.
+          - generic:
+            - generic:
+              - checkbox
+              - generic:
+                - text: I agree to the
+                - link:
+                  - /url: /legal/terms
+                  - text: Terms of Service
+                - text: and
+                - link:
+                  - /url: /legal/guidelines
+                  - text: Submission Guidelines
+                - text: . I confirm this is a real, live tool and all information is accurate.
+            - generic:
+              - button [disabled]: Accept the terms to submit
+              - paragraph:
+                - img
+                - generic: Draft saved 9s ago.
+                - button: Clear draft
+  - contentinfo:
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link:
+              - /url: /
+              - text: AI Tools
+          - paragraph: By Syrup, a trading name of New Horizon Code.
+        - navigation:
+          - heading [level=3]: Explore
+          - list:
+            - listitem:
+              - link:
+                - /url: /
+                - text: Home
+            - listitem:
+              - link:
+                - /url: /tools
+                - text: All tools
+            - listitem:
+              - link:
+                - /url: /submit
+                - text: Submit a tool
+            - listitem:
+              - link:
+                - /url: /about
+                - text: About
+            - listitem:
+              - link:
+                - /url: /pricing
+                - text: Pricing
+        - navigation:
+          - heading [level=3]: Help
+          - list:
+            - listitem:
+              - link:
+                - /url: /help
+                - text: Help center
+            - listitem:
+              - link:
+                - /url: /help/ticket/submit
+                - text: Submit a ticket
+            - listitem:
+              - link:
+                - /url: /changelog
+                - text: Changelog
+        - navigation:
+          - heading [level=3]: Legal
+          - list:
+            - listitem:
+              - link:
+                - /url: /legal/terms
+                - text: Terms
+            - listitem:
+              - link:
+                - /url: /legal/privacy
+                - text: Privacy
+            - listitem:
+              - link:
+                - /url: /legal/guidelines
+                - text: Guidelines
+      - generic:
+        - generic:
+          - paragraph: © 2026 New Horizon Code
+          - list:
+            - listitem:
+              - link:
+                - /url: /sitemap.xml
+                - text: Sitemap
+            - listitem:
+              - link:
+                - /url: /robots.txt
+                - text: Robots
+            - listitem:
+              - link:
+                - /url: /llms.txt
+                - text: LLMs
+            - listitem:
+              - link:
+                - /url: /admin/login
+                - text: Admin
+  - button: Chat
+  - alert
+  - listbox [ref=e187]:
+    - option "Free" [active] [selected] [ref=e188]:
+      - generic [ref=e190]:
+        - img
+      - generic [ref=e191]: Free
+    - option "Freemium" [ref=e192]:
+      - generic [ref=e194]: Freemium
+    - option "Paid" [ref=e195]:
+      - generic [ref=e197]: Paid
+    - option "Open-source" [ref=e198]:
+      - generic [ref=e200]: Open-source

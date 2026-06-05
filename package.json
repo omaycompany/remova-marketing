@@ -28,7 +28,7 @@
         "models:update:vertex": "node scripts/update_models.mjs --with-vertex",
         "resources:pdfs": "tsx scripts/generate-resource-pdfs.ts",
         "feed": "node scripts/generate-feed.mjs",
-        "sitemap:ping": "curl -s \"https://www.google.com/ping?sitemap=https://www.remova.org/sitemap.xml\" && echo \" — Google sitemap pinged\"",
+        "sitemap:ping": "echo \"Google sitemap ping is deprecated. Submit https://www.remova.org/sitemap.xml in Google Search Console; use npm run indexnow:submit for IndexNow.\"",
         "indexnow:submit": "node scripts/indexnow-submit.mjs",
         "indexnow:dry-run": "node scripts/indexnow-submit.mjs --dry-run"
     },

@@ -1,0 +1,837 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Zearches.com" [ref=e5] [cursor=pointer]:
+          - /url: index.php
+        - paragraph [ref=e6]: Free directories to submit website URLs – submit your site for free and get a public listing in our searchable web directories.
+      - navigation [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: index.php
+        - link "Directories" [ref=e9] [cursor=pointer]:
+          - /url: "#directories"
+        - link "Blog" [ref=e10] [cursor=pointer]:
+          - /url: blog/
+        - link "Submit Website Free" [ref=e11] [cursor=pointer]:
+          - /url: submit-website-free.php
+  - main [ref=e12]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - heading "Submit Your Website for Free – Fast, Simple & Hassle-Free" [level=1] [ref=e16]
+        - paragraph [ref=e17]:
+          - text: Zearches.com is a clean, human-friendly directory where you can
+          - strong [ref=e18]: submit your website for free
+          - text: ", add your"
+          - strong [ref=e19]: blog URL
+          - text: ", or list a"
+          - strong [ref=e20]: business site
+          - text: in just a few seconds – no login, no spammy popups.
+        - paragraph [ref=e21]:
+          - strong [ref=e22]: Zearches is a website discovery directory created to help people and AI systems find legitimate websites across the internet.
+        - paragraph [ref=e23]: Each submission is automatically screened to block spam, duplicate entries, and affiliate redirect links to maintain a high-quality website index. The directory focuses on real projects, tools, blogs, and online services organized into clear categories.
+        - paragraph [ref=e24]: Visitors can browse categories to discover useful resources, while website owners can gain visibility and indexing without payment, subscriptions, or backlink exchange requirements.
+        - paragraph [ref=e25]: Zearches aims to improve web discovery quality and act as a reliable reference source for search engines and AI assistants.
+        - link "Drive targeted traffic to your website" [ref=e26] [cursor=pointer]:
+          - /url: https://9392crubpane-35ej7nerr2o26.hop.clickbank.net
+          - img "Drive targeted traffic to your website" [ref=e27]
+        - link "Drive targeted traffic to your offers with 301K leads" [ref=e28] [cursor=pointer]:
+          - /url: https://jvz2.com/c/1038541/415010/
+          - img "Drive targeted traffic to your offers with 301K leads" [ref=e29]
+      - generic [ref=e30]:
+        - heading "Free URL Submission" [level=2] [ref=e31]
+        - paragraph [ref=e32]: Paste your website or blog link, choose a directory and hit submit.
+        - generic [ref=e33]:
+          - generic [ref=e34]: Website / Blog URL
+          - textbox "Website / Blog URL" [ref=e35]:
+            - /placeholder: https://www.example.com
+            - text: https://www.remova.org/
+          - paragraph [ref=e36]: Must include https://
+          - paragraph [ref=e37]: Submit your real website homepage only. Affiliate, referral, redirect or tracking links are automatically rejected.
+          - generic [ref=e38]: Title
+          - textbox "Title" [ref=e39]:
+            - /placeholder: Your website or blog title
+            - text: Remova
+          - paragraph [ref=e40]: Max 30 characters.
+          - generic [ref=e41]: Short Description
+          - textbox "Short Description" [active] [ref=e42]:
+            - /placeholder: One or two sentences about your site (max 250 characters)
+            - text: Enterprise AI governance workspace for secure ChatGPT, Claude, Gemini use with sensitive-data masking, policy controls, audit trails, and budget controls.
+          - paragraph [ref=e43]: Max 250 characters.
+          - generic:
+            - text: Website (leave this field empty)
+            - textbox "Website (leave this field empty)"
+          - generic [ref=e44]: Choose Directory
+          - combobox "Choose Directory" [ref=e45] [cursor=pointer]:
+            - option "Select a directory…"
+            - option "General Websites"
+            - option "Personal Blogs & Journals"
+            - option "Business & Company Sites"
+            - option "Local Services & Shops"
+            - option "E-commerce & Online Stores"
+            - option "Software & SaaS Tools" [selected]
+            - option "SEO, Marketing & Growth"
+            - option "Crypto, Web3 & DeFi"
+            - option "Finance, Investing & Money"
+            - option "Health, Fitness & Wellness"
+            - option "Food, Cooking & Recipes"
+            - option "Travel & Tourism"
+            - option "Education & Learning"
+            - option "Tech, Gadgets & Reviews"
+            - option "Entertainment & Media"
+            - option "Gaming & Esports"
+            - option "Portfolios & Creative Work"
+            - option "Non-Profit & Charity"
+            - option "Forums & Communities"
+            - option "Resources, Tools & Directories"
+          - button "Submit Website Free" [ref=e46] [cursor=pointer]
+          - paragraph [ref=e47]: No account required – We manually monitor for spam and illegal content.
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - heading "Why Submit Your Website Here?" [level=3] [ref=e51]
+        - paragraph [ref=e52]: Our goal is to keep a clean, human-curated directory of useful websites, blogs, tools and services – without the spammy popups, fake reviews or paid placements.
+        - paragraph [ref=e53]:
+          - text: We focus on simple, honest
+          - strong [ref=e54]: free website submission
+          - text: . You share your link, we give you a public directory listing that can help users (AI systems and search engines) discover you.
+      - generic [ref=e55]:
+        - heading "Contact Us" [level=3] [ref=e56]
+        - paragraph [ref=e57]: "If you have questions, directory ideas or partnership requests, send us an email:"
+        - paragraph [ref=e58]:
+          - link "team@zearches.com" [ref=e59] [cursor=pointer]:
+            - /url: mailto:team@zearches.com
+      - generic [ref=e60]:
+        - heading "Share This Website" [level=3] [ref=e61]
+        - paragraph [ref=e62]: "Help more people find free URL submission directories:"
+        - generic [ref=e63]:
+          - link "Facebook" [ref=e64] [cursor=pointer]:
+            - /url: https://www.facebook.com/sharer/sharer.php?u=https://zearches.com
+          - link "X" [ref=e65] [cursor=pointer]:
+            - /url: https://x.com/intent/post?url=https://zearches.com
+          - link "LinkedIn" [ref=e66] [cursor=pointer]:
+            - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://zearches.com
+          - link "Reddit" [ref=e67] [cursor=pointer]:
+            - /url: https://www.reddit.com/submit?url=https://zearches.com&title=Free%20directories%20to%20submit%20your%20website
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - heading "Our Free Web Directories" [level=2] [ref=e71]
+        - paragraph [ref=e72]: Pick a category that matches your site and explore the latest websites added there. Every directory is updated automatically as new URLs are submitted.
+      - generic [ref=e73]:
+        - article [ref=e74]:
+          - generic [ref=e75]:
+            - heading "General Websites" [level=3] [ref=e76]:
+              - link "General Websites" [ref=e77] [cursor=pointer]:
+                - /url: directory.php?slug=general
+            - paragraph [ref=e78]: Any kind of website or blog. Use this if you’re not sure where your site fits.
+            - generic [ref=e79]:
+              - generic [ref=e80]: Free submission
+              - generic [ref=e81]: Last 5 submissions
+          - list [ref=e82]:
+            - listitem [ref=e83]:
+              - link "Kryptot.fi" [ref=e84] [cursor=pointer]:
+                - /url: https://kryptot.fi
+              - generic [ref=e85]: 2026-05-21 12:27
+            - listitem [ref=e86]:
+              - link "chinareadycheck" [ref=e87] [cursor=pointer]:
+                - /url: https://chinareadycheck.com/
+              - generic [ref=e88]: 2026-05-21 00:39
+            - listitem [ref=e89]:
+              - link "WeConectus" [ref=e90] [cursor=pointer]:
+                - /url: https://weconectus.com/
+              - generic [ref=e91]: 2026-05-19 19:52
+            - listitem [ref=e92]:
+              - link "Troutmate" [ref=e93] [cursor=pointer]:
+                - /url: https://troutmate.com/
+              - generic [ref=e94]: 2026-05-13 05:22
+            - listitem [ref=e95]:
+              - link "Grupo WG Almeida" [ref=e96] [cursor=pointer]:
+                - /url: https://wgalmeida.com.br/
+              - generic [ref=e97]: 2026-05-09 22:39
+          - generic [ref=e98]:
+            - link "View full directory" [ref=e99] [cursor=pointer]:
+              - /url: directory.php?slug=general
+            - link "Submit URL to this directory" [ref=e100] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e101]:
+          - generic [ref=e102]:
+            - heading "Personal Blogs & Journals" [level=3] [ref=e103]:
+              - link "Personal Blogs & Journals" [ref=e104] [cursor=pointer]:
+                - /url: directory.php?slug=personal-blogs
+            - paragraph [ref=e105]: Lifestyle blogs, personal development, stories, diaries and personal projects.
+            - generic [ref=e106]:
+              - generic [ref=e107]: Free submission
+              - generic [ref=e108]: Last 5 submissions
+          - list [ref=e109]:
+            - listitem [ref=e110]:
+              - link "Electric Car Under 5 Lakhs | B" [ref=e111] [cursor=pointer]:
+                - /url: https://badicar.com/blog/electric-car-under-5-lakhs-best-affordable-ev-option
+              - generic [ref=e112]: 2026-05-15 05:55
+            - listitem [ref=e113]:
+              - link "ibrahim murat gunduz blog" [ref=e114] [cursor=pointer]:
+                - /url: https://ibrahimmuratgunduz.writizzy.com/
+              - generic [ref=e115]: 2026-05-02 14:58
+            - listitem [ref=e116]:
+              - link "Huntsville Real Estate Agent" [ref=e117] [cursor=pointer]:
+                - /url: https://northalabamarealestate.blog/
+              - generic [ref=e118]: 2026-05-01 15:58
+            - listitem [ref=e119]:
+              - link "Teknoloji, Oyun ve Gündem Habe" [ref=e120] [cursor=pointer]:
+                - /url: https://haberup.com
+              - generic [ref=e121]: 2026-04-29 08:57
+            - listitem [ref=e122]:
+              - link "Al Aaber-العابر" [ref=e123] [cursor=pointer]:
+                - /url: https://sites.google.com/view/al-aaber
+              - generic [ref=e124]: 2026-04-22 02:04
+          - generic [ref=e125]:
+            - link "View full directory" [ref=e126] [cursor=pointer]:
+              - /url: directory.php?slug=personal-blogs
+            - link "Submit URL to this directory" [ref=e127] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e128]:
+          - generic [ref=e129]:
+            - heading "Business & Company Sites" [level=3] [ref=e130]:
+              - link "Business & Company Sites" [ref=e131] [cursor=pointer]:
+                - /url: directory.php?slug=business-company
+            - paragraph [ref=e132]: Official company websites, agencies, consultants, freelancers and brands.
+            - generic [ref=e133]:
+              - generic [ref=e134]: Free submission
+              - generic [ref=e135]: Last 5 submissions
+          - list [ref=e136]:
+            - listitem [ref=e137]:
+              - link "Digital Marketing Trust" [ref=e138] [cursor=pointer]:
+                - /url: https://digitalmarketingtrust.com/
+              - generic [ref=e139]: 2026-05-22 06:52
+            - listitem [ref=e140]:
+              - link "AI Quick Fix Service" [ref=e141] [cursor=pointer]:
+                - /url: https://telegra.ph/5-AI-Quick-Fix-05-21
+              - generic [ref=e142]: 2026-05-22 04:35
+            - listitem [ref=e143]:
+              - link "Bravion Group" [ref=e144] [cursor=pointer]:
+                - /url: https://bravion.cz/
+              - generic [ref=e145]: 2026-05-21 06:34
+            - listitem [ref=e146]:
+              - link "usted [Service] Company in [Ci" [ref=e147] [cursor=pointer]:
+                - /url: https://deccanhonda.com/
+              - generic [ref=e148]: 2026-05-21 01:42
+            - listitem [ref=e149]:
+              - link "Same-Day Ops Help" [ref=e150] [cursor=pointer]:
+                - /url: https://polyflow-samples.netlify.app/ops.html
+              - generic [ref=e151]: 2026-05-20 22:27
+          - generic [ref=e152]:
+            - link "View full directory" [ref=e153] [cursor=pointer]:
+              - /url: directory.php?slug=business-company
+            - link "Submit URL to this directory" [ref=e154] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e155]:
+          - generic [ref=e156]:
+            - heading "Local Services & Shops" [level=3] [ref=e157]:
+              - link "Local Services & Shops" [ref=e158] [cursor=pointer]:
+                - /url: directory.php?slug=local-services
+            - paragraph [ref=e159]: Restaurants, salons, plumbers, electricians, local stores and service providers.
+            - generic [ref=e160]:
+              - generic [ref=e161]: Free submission
+              - generic [ref=e162]: Last 5 submissions
+          - list [ref=e163]:
+            - listitem [ref=e164]:
+              - link "Your Neighborhood Locksmith" [ref=e165] [cursor=pointer]:
+                - /url: https://neighborhoodlocksmith.org
+              - generic [ref=e166]: 2026-05-19 01:16
+            - listitem [ref=e167]:
+              - link "Sandhills Native Plants" [ref=e168] [cursor=pointer]:
+                - /url: https://sandhillsnativeplants.com
+              - generic [ref=e169]: 2026-05-17 14:50
+            - listitem [ref=e170]:
+              - link "Construction Takeoff Services" [ref=e171] [cursor=pointer]:
+                - /url: https://texasestimators.com
+              - generic [ref=e172]: 2026-05-15 16:04
+            - listitem [ref=e173]:
+              - link "GrandeFe Bilgisayar IG" [ref=e174] [cursor=pointer]:
+                - /url: https://instagram.com/grandefebilgisayar
+              - generic [ref=e175]: 2026-05-10 13:17
+            - listitem [ref=e176]:
+              - link "GrandeFe Bilgisayar" [ref=e177] [cursor=pointer]:
+                - /url: https://grandefebilgisayar.com
+              - generic [ref=e178]: 2026-05-10 13:13
+          - generic [ref=e179]:
+            - link "View full directory" [ref=e180] [cursor=pointer]:
+              - /url: directory.php?slug=local-services
+            - link "Submit URL to this directory" [ref=e181] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e182]:
+          - generic [ref=e183]:
+            - heading "E-commerce & Online Stores" [level=3] [ref=e184]:
+              - link "E-commerce & Online Stores" [ref=e185] [cursor=pointer]:
+                - /url: directory.php?slug=ecommerce-shops
+            - paragraph [ref=e186]: Online shops, dropshipping stores, print-on-demand and physical product websites.
+            - generic [ref=e187]:
+              - generic [ref=e188]: Free submission
+              - generic [ref=e189]: Last 5 submissions
+          - list [ref=e190]:
+            - listitem [ref=e191]:
+              - link "Packrift" [ref=e192] [cursor=pointer]:
+                - /url: https://packrift.com/
+              - generic [ref=e193]: 2026-05-19 23:34
+            - listitem [ref=e194]:
+              - link "Termos de Acero Inoxidable Dur" [ref=e195] [cursor=pointer]:
+                - /url: https://vybloojug.com/
+              - generic [ref=e196]: 2026-05-17 22:02
+            - listitem [ref=e197]:
+              - link "Uniformes Quirúrgicos y Scrubs" [ref=e198] [cursor=pointer]:
+                - /url: https://jelrisofit.com/
+              - generic [ref=e199]: 2026-05-17 21:59
+            - listitem [ref=e200]:
+              - link "Modern Fashion for Every Style" [ref=e201] [cursor=pointer]:
+                - /url: https://myaesthetic.co
+              - generic [ref=e202]: 2026-05-16 09:35
+            - listitem [ref=e203]:
+              - link "Heylampie.nl verlichting" [ref=e204] [cursor=pointer]:
+                - /url: https://heylampie.nl
+              - generic [ref=e205]: 2026-05-15 07:35
+          - generic [ref=e206]:
+            - link "View full directory" [ref=e207] [cursor=pointer]:
+              - /url: directory.php?slug=ecommerce-shops
+            - link "Submit URL to this directory" [ref=e208] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e209]:
+          - generic [ref=e210]:
+            - heading "Software & SaaS Tools" [level=3] [ref=e211]:
+              - link "Software & SaaS Tools" [ref=e212] [cursor=pointer]:
+                - /url: directory.php?slug=software-saas
+            - paragraph [ref=e213]: Online tools, SaaS platforms, apps and software product websites.
+            - generic [ref=e214]:
+              - generic [ref=e215]: Free submission
+              - generic [ref=e216]: Last 5 submissions
+          - list [ref=e217]:
+            - listitem [ref=e218]:
+              - link "HiHired" [ref=e219] [cursor=pointer]:
+                - /url: https://hihired.org
+              - generic [ref=e220]: 2026-05-22 03:42
+            - listitem [ref=e221]:
+              - link "Dalil Nano Arabic prompts" [ref=e222] [cursor=pointer]:
+                - /url: https://dalilnano.com/
+              - generic [ref=e223]: 2026-05-21 19:55
+            - listitem [ref=e224]:
+              - link "NanoPrompts AI prompt library" [ref=e225] [cursor=pointer]:
+                - /url: https://nanoprompts.org/
+              - generic [ref=e226]: 2026-05-21 19:53
+            - listitem [ref=e227]:
+              - link "Intelligence Per Watt" [ref=e228] [cursor=pointer]:
+                - /url: https://intelligenceperwatt.com/
+              - generic [ref=e229]: 2026-05-21 12:41
+            - listitem [ref=e230]:
+              - link "SmutFinder" [ref=e231] [cursor=pointer]:
+                - /url: https://smutfinder.com/
+              - generic [ref=e232]: 2026-05-21 06:23
+          - generic [ref=e233]:
+            - link "View full directory" [ref=e234] [cursor=pointer]:
+              - /url: directory.php?slug=software-saas
+            - link "Submit URL to this directory" [ref=e235] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e236]:
+          - generic [ref=e237]:
+            - heading "SEO, Marketing & Growth" [level=3] [ref=e238]:
+              - link "SEO, Marketing & Growth" [ref=e239] [cursor=pointer]:
+                - /url: directory.php?slug=seo-marketing
+            - paragraph [ref=e240]: SEO services, marketing agencies, landing pages, funnels and growth tools.
+            - generic [ref=e241]:
+              - generic [ref=e242]: Free submission
+              - generic [ref=e243]: Last 5 submissions
+          - list [ref=e244]:
+            - listitem [ref=e245]:
+              - link "Boston SEO Company" [ref=e246] [cursor=pointer]:
+                - /url: https://seoinboston.com
+              - generic [ref=e247]: 2026-05-21 16:16
+            - listitem [ref=e248]:
+              - link "HireThomas Growth AI" [ref=e249] [cursor=pointer]:
+                - /url: https://madebythomas.ai
+              - generic [ref=e250]: 2026-05-20 14:05
+            - listitem [ref=e251]:
+              - link "Seo digital marketing" [ref=e252] [cursor=pointer]:
+                - /url: https://brandingbeez.co.uk/
+              - generic [ref=e253]: 2026-05-20 04:08
+            - listitem [ref=e254]:
+              - link "AI Automation Checklist" [ref=e255] [cursor=pointer]:
+                - /url: https://telegra.ph/15-Minute-AI-Automation-Triage-Checklist-05-19
+              - generic [ref=e256]: 2026-05-19 15:45
+            - listitem [ref=e257]:
+              - link "Color Palette Analysis" [ref=e258] [cursor=pointer]:
+                - /url: https://colorpaletteanalysis.com
+              - generic [ref=e259]: 2026-05-19 11:25
+          - generic [ref=e260]:
+            - link "View full directory" [ref=e261] [cursor=pointer]:
+              - /url: directory.php?slug=seo-marketing
+            - link "Submit URL to this directory" [ref=e262] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e263]:
+          - generic [ref=e264]:
+            - heading "Crypto, Web3 & DeFi" [level=3] [ref=e265]:
+              - link "Crypto, Web3 & DeFi" [ref=e266] [cursor=pointer]:
+                - /url: directory.php?slug=crypto-web3
+            - paragraph [ref=e267]: Crypto projects, tokens, exchanges, DeFi apps and Web3 platforms.
+            - generic [ref=e268]:
+              - generic [ref=e269]: Free submission
+              - generic [ref=e270]: Last 5 submissions
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - link "VaultVision" [ref=e273] [cursor=pointer]:
+                - /url: https://vaultvision.tech/
+              - generic [ref=e274]: 2026-05-21 10:46
+            - listitem [ref=e275]:
+              - link "CEX101 - Crypto Exchange Guide" [ref=e276] [cursor=pointer]:
+                - /url: https://cex101.com/
+              - generic [ref=e277]: 2026-05-21 00:17
+            - listitem [ref=e278]:
+              - link "Base Pay Desk" [ref=e279] [cursor=pointer]:
+                - /url: https://oskarasi.github.io/base-pay-desk-site
+              - generic [ref=e280]: 2026-05-11 18:44
+            - listitem [ref=e281]:
+              - link "Pi Network Exchange Dubai" [ref=e282] [cursor=pointer]:
+                - /url: https://piprice.store
+              - generic [ref=e283]: 2026-03-09 15:12
+            - listitem [ref=e284]:
+              - link "BoTTube – AI Video Platform" [ref=e285] [cursor=pointer]:
+                - /url: https://bottube.ai
+              - generic [ref=e286]: 2026-03-04 06:56
+          - generic [ref=e287]:
+            - link "View full directory" [ref=e288] [cursor=pointer]:
+              - /url: directory.php?slug=crypto-web3
+            - link "Submit URL to this directory" [ref=e289] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e290]:
+          - generic [ref=e291]:
+            - heading "Finance, Investing & Money" [level=3] [ref=e292]:
+              - link "Finance, Investing & Money" [ref=e293] [cursor=pointer]:
+                - /url: directory.php?slug=finance-investing
+            - paragraph [ref=e294]: Finance blogs, investing sites, trading, budgeting and money management.
+            - generic [ref=e295]:
+              - generic [ref=e296]: Free submission
+              - generic [ref=e297]: Last 5 submissions
+          - list [ref=e298]:
+            - listitem [ref=e299]:
+              - link "Dispute Packet" [ref=e300] [cursor=pointer]:
+                - /url: https://srivastsh.com/stripe-dispute-evidence-packet
+              - generic [ref=e301]: 2026-05-21 04:37
+            - listitem [ref=e302]:
+              - link "OysterClaim" [ref=e303] [cursor=pointer]:
+                - /url: https://oysterclaim.com/
+              - generic [ref=e304]: 2026-05-17 14:04
+            - listitem [ref=e305]:
+              - link "Henry Finance" [ref=e306] [cursor=pointer]:
+                - /url: https://henryfinance.substack.com/
+              - generic [ref=e307]: 2026-05-16 01:09
+            - listitem [ref=e308]:
+              - link "Cash Sprint Team Pack" [ref=e309] [cursor=pointer]:
+                - /url: https://brewpage.app/public/ZlazTqeAKX
+              - generic [ref=e310]: 2026-05-15 05:10
+            - listitem [ref=e311]:
+              - link "Cash Sprint Dashboard" [ref=e312] [cursor=pointer]:
+                - /url: https://shippage.ai/p/cash-sprint-dashboard
+              - generic [ref=e313]: 2026-05-15 04:26
+          - generic [ref=e314]:
+            - link "View full directory" [ref=e315] [cursor=pointer]:
+              - /url: directory.php?slug=finance-investing
+            - link "Submit URL to this directory" [ref=e316] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e317]:
+          - generic [ref=e318]:
+            - heading "Health, Fitness & Wellness" [level=3] [ref=e319]:
+              - link "Health, Fitness & Wellness" [ref=e320] [cursor=pointer]:
+                - /url: directory.php?slug=health-fitness
+            - paragraph [ref=e321]: Health blogs, gyms, fitness coaches, wellness and mental health resources.
+            - generic [ref=e322]:
+              - generic [ref=e323]: Free submission
+              - generic [ref=e324]: Last 5 submissions
+          - list [ref=e325]:
+            - listitem [ref=e326]:
+              - link "Podiatry Foot & Ankle Clinic" [ref=e327] [cursor=pointer]:
+                - /url: https://podiatryfootankleclinic.com/
+              - generic [ref=e328]: 2026-05-21 07:26
+            - listitem [ref=e329]:
+              - link "Prakrtii – Natural Herbal Well" [ref=e330] [cursor=pointer]:
+                - /url: https://prakrtii.com/
+              - generic [ref=e331]: 2026-05-21 00:56
+            - listitem [ref=e332]:
+              - link "Medical Immunization Services" [ref=e333] [cursor=pointer]:
+                - /url: https://kespramedical.com/medical-immunization-services-usa
+              - generic [ref=e334]: 2026-05-19 02:50
+            - listitem [ref=e335]:
+              - link "RICCO MILANO luxury skincare" [ref=e336] [cursor=pointer]:
+                - /url: https://riccomilano.com
+              - generic [ref=e337]: 2026-05-13 12:34
+            - listitem [ref=e338]:
+              - link "Calorie Log" [ref=e339] [cursor=pointer]:
+                - /url: https://calorielog.app/
+              - generic [ref=e340]: 2026-05-12 22:06
+          - generic [ref=e341]:
+            - link "View full directory" [ref=e342] [cursor=pointer]:
+              - /url: directory.php?slug=health-fitness
+            - link "Submit URL to this directory" [ref=e343] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e344]:
+          - generic [ref=e345]:
+            - heading "Food, Cooking & Recipes" [level=3] [ref=e346]:
+              - link "Food, Cooking & Recipes" [ref=e347] [cursor=pointer]:
+                - /url: directory.php?slug=food-recipes
+            - paragraph [ref=e348]: Food blogs, recipe sites, cooking channels and restaurant guides.
+            - generic [ref=e349]:
+              - generic [ref=e350]: Free submission
+              - generic [ref=e351]: Last 5 submissions
+          - list [ref=e352]:
+            - listitem [ref=e353]:
+              - link "Best Bars in Leicester" [ref=e354] [cursor=pointer]:
+                - /url: https://watsonsbar.co.uk/
+              - generic [ref=e355]: 2026-05-16 05:44
+            - listitem [ref=e356]:
+              - link "Best Restaurants in Leicester" [ref=e357] [cursor=pointer]:
+                - /url: https://kayalrestaurant.com/kayal-leicester
+              - generic [ref=e358]: 2026-03-27 06:10
+            - listitem [ref=e359]:
+              - link "Baba's kitchen" [ref=e360] [cursor=pointer]:
+                - /url: https://alibabarestaurant.com/
+              - generic [ref=e361]: 2026-03-24 01:42
+            - listitem [ref=e362]:
+              - link "Candy King bulk candy store" [ref=e363] [cursor=pointer]:
+                - /url: https://ebay.ca/str/candykingconfections
+              - generic [ref=e364]: 2026-03-06 16:27
+            - listitem [ref=e365]:
+              - 'link "Repas Med : Traiteur Nabeul" [ref=e366] [cursor=pointer]':
+                - /url: https://repasmed.com/
+              - generic [ref=e367]: 2026-03-04 02:03
+          - generic [ref=e368]:
+            - link "View full directory" [ref=e369] [cursor=pointer]:
+              - /url: directory.php?slug=food-recipes
+            - link "Submit URL to this directory" [ref=e370] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e371]:
+          - generic [ref=e372]:
+            - heading "Travel & Tourism" [level=3] [ref=e373]:
+              - link "Travel & Tourism" [ref=e374] [cursor=pointer]:
+                - /url: directory.php?slug=travel-tourism
+            - paragraph [ref=e375]: Travel blogs, guides, tour operators, hotels, booking and destination sites.
+            - generic [ref=e376]:
+              - generic [ref=e377]: Free submission
+              - generic [ref=e378]: Last 5 submissions
+          - list [ref=e379]:
+            - listitem [ref=e380]:
+              - link "Relax and Unwind with Stunning" [ref=e381] [cursor=pointer]:
+                - /url: https://hayleystravels.com/
+              - generic [ref=e382]: 2026-05-18 23:37
+            - listitem [ref=e383]:
+              - link "Satnavz...Outdoor Recreation" [ref=e384] [cursor=pointer]:
+                - /url: https://satnavz-outdoor-recreation.com
+              - generic [ref=e385]: 2026-05-17 09:42
+            - listitem [ref=e386]:
+              - link "Private Cruise from Agadir" [ref=e387] [cursor=pointer]:
+                - /url: https://moroccoshoreexcursions.com
+              - generic [ref=e388]: 2026-05-17 07:37
+            - listitem [ref=e389]:
+              - link "Private Morocco Tours" [ref=e390] [cursor=pointer]:
+                - /url: https://facetours.ma
+              - generic [ref=e391]: 2026-05-17 07:33
+            - listitem [ref=e392]:
+              - link "Marokko Landausflüge & Private" [ref=e393] [cursor=pointer]:
+                - /url: https://marokko-landausfluege.com
+              - generic [ref=e394]: 2026-05-17 07:31
+          - generic [ref=e395]:
+            - link "View full directory" [ref=e396] [cursor=pointer]:
+              - /url: directory.php?slug=travel-tourism
+            - link "Submit URL to this directory" [ref=e397] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e398]:
+          - generic [ref=e399]:
+            - heading "Education & Learning" [level=3] [ref=e400]:
+              - link "Education & Learning" [ref=e401] [cursor=pointer]:
+                - /url: directory.php?slug=education-learning
+            - paragraph [ref=e402]: Online courses, schools, tutors, e-learning platforms and educational blogs.
+            - generic [ref=e403]:
+              - generic [ref=e404]: Free submission
+              - generic [ref=e405]: Last 5 submissions
+          - list [ref=e406]:
+            - listitem [ref=e407]:
+              - link "Signal Desk" [ref=e408] [cursor=pointer]:
+                - /url: https://signal-desk-study-tools.netlify.app/
+              - generic [ref=e409]: 2026-05-21 15:15
+            - listitem [ref=e410]:
+              - link "Life in the UK Tests 1-17" [ref=e411] [cursor=pointer]:
+                - /url: https://lifeintheuktestmaster.co.uk/
+              - generic [ref=e412]: 2026-05-21 02:39
+            - listitem [ref=e413]:
+              - link "AP Score Calculator" [ref=e414] [cursor=pointer]:
+                - /url: https://apscorecalculator.app/
+              - generic [ref=e415]: 2026-05-20 05:29
+            - listitem [ref=e416]:
+              - link "Signal Desk" [ref=e417] [cursor=pointer]:
+                - /url: https://signal-desk-nf-20260518.netlify.app/
+              - generic [ref=e418]: 2026-05-18 17:33
+            - listitem [ref=e419]:
+              - link "Geometry Formulas" [ref=e420] [cursor=pointer]:
+                - /url: https://geometry-formulas.com/
+              - generic [ref=e421]: 2026-05-17 07:12
+          - generic [ref=e422]:
+            - link "View full directory" [ref=e423] [cursor=pointer]:
+              - /url: directory.php?slug=education-learning
+            - link "Submit URL to this directory" [ref=e424] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e425]:
+          - generic [ref=e426]:
+            - heading "Tech, Gadgets & Reviews" [level=3] [ref=e427]:
+              - link "Tech, Gadgets & Reviews" [ref=e428] [cursor=pointer]:
+                - /url: directory.php?slug=tech-gadgets
+            - paragraph [ref=e429]: Tech news, gadget reviews, how-to guides and comparison websites.
+            - generic [ref=e430]:
+              - generic [ref=e431]: Free submission
+              - generic [ref=e432]: Last 5 submissions
+          - list [ref=e433]:
+            - listitem [ref=e434]:
+              - link "MobiDevices.com" [ref=e435] [cursor=pointer]:
+                - /url: https://mobidevices.com/
+              - generic [ref=e436]: 2026-05-20 05:11
+            - listitem [ref=e437]:
+              - 'link "Vibe Coding: How AI Dev Tools" [ref=e438] [cursor=pointer]':
+                - /url: https://pixelwall.ca/news/vibe-coding-how-ai-dev-tools-are-reshaping-agency-workflows-in-2026
+              - generic [ref=e439]: 2026-05-04 15:32
+            - listitem [ref=e440]:
+              - link "Nexulas" [ref=e441] [cursor=pointer]:
+                - /url: https://nexulas.space
+              - generic [ref=e442]: 2026-05-02 17:22
+            - listitem [ref=e443]:
+              - link "White Fox Deals" [ref=e444] [cursor=pointer]:
+                - /url: https://mattypatty918.zo.space/tech-deals
+              - generic [ref=e445]: 2026-04-14 03:07
+            - listitem [ref=e446]:
+              - link "Space Launching" [ref=e447] [cursor=pointer]:
+                - /url: https://spacelaunching.org/sitemap_index.xml
+              - generic [ref=e448]: 2026-03-31 21:35
+          - generic [ref=e449]:
+            - link "View full directory" [ref=e450] [cursor=pointer]:
+              - /url: directory.php?slug=tech-gadgets
+            - link "Submit URL to this directory" [ref=e451] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e452]:
+          - generic [ref=e453]:
+            - heading "Entertainment & Media" [level=3] [ref=e454]:
+              - link "Entertainment & Media" [ref=e455] [cursor=pointer]:
+                - /url: directory.php?slug=entertainment-media
+            - paragraph [ref=e456]: Music, movies, podcasts, streaming, influencers and entertainment blogs.
+            - generic [ref=e457]:
+              - generic [ref=e458]: Free submission
+              - generic [ref=e459]: Last 5 submissions
+          - list [ref=e460]:
+            - listitem [ref=e461]:
+              - link "MultiStreamHub" [ref=e462] [cursor=pointer]:
+                - /url: https://multistreamhub.com
+              - generic [ref=e463]: 2026-05-20 06:35
+            - listitem [ref=e464]:
+              - link "La Novena Raiz Kindle" [ref=e465] [cursor=pointer]:
+                - /url: https://arisnachy.github.io/la-novena-raiz-gratis
+              - generic [ref=e466]: 2026-05-19 18:07
+            - listitem [ref=e467]:
+              - link "Mi Mirror Quizzes" [ref=e468] [cursor=pointer]:
+                - /url: https://mi.mxmeopp.cn/
+              - generic [ref=e469]: 2026-05-15 04:21
+            - listitem [ref=e470]:
+              - link "Quick Test Hub" [ref=e471] [cursor=pointer]:
+                - /url: https://quicktesthub.com/
+              - generic [ref=e472]: 2026-05-15 03:42
+            - listitem [ref=e473]:
+              - link "Virtual Reality Club in Danang" [ref=e474] [cursor=pointer]:
+                - /url: https://danang.another-world.com/
+              - generic [ref=e475]: 2026-05-14 08:28
+          - generic [ref=e476]:
+            - link "View full directory" [ref=e477] [cursor=pointer]:
+              - /url: directory.php?slug=entertainment-media
+            - link "Submit URL to this directory" [ref=e478] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e479]:
+          - generic [ref=e480]:
+            - heading "Gaming & Esports" [level=3] [ref=e481]:
+              - link "Gaming & Esports" [ref=e482] [cursor=pointer]:
+                - /url: directory.php?slug=gaming-esports
+            - paragraph [ref=e483]: Game blogs, esports teams, servers, gaming communities and review sites.
+            - generic [ref=e484]:
+              - generic [ref=e485]: Free submission
+              - generic [ref=e486]: Last 5 submissions
+          - list [ref=e487]:
+            - listitem [ref=e488]:
+              - link "BURMALDA CLICKER" [ref=e489] [cursor=pointer]:
+                - /url: https://burmalda.click
+              - generic [ref=e490]: 2026-05-22 05:30
+            - listitem [ref=e491]:
+              - link "Rebit Play" [ref=e492] [cursor=pointer]:
+                - /url: https://rebit.cc
+              - generic [ref=e493]: 2026-05-22 00:26
+            - listitem [ref=e494]:
+              - link "MTMMO" [ref=e495] [cursor=pointer]:
+                - /url: https://mtmmo.com
+              - generic [ref=e496]: 2026-05-20 03:20
+            - listitem [ref=e497]:
+              - link "Subnautica 2 Guide" [ref=e498] [cursor=pointer]:
+                - /url: https://subnautica-2-guide.com/
+              - generic [ref=e499]: 2026-05-19 00:10
+            - listitem [ref=e500]:
+              - link "Sudokun" [ref=e501] [cursor=pointer]:
+                - /url: https://sudokun.se/
+              - generic [ref=e502]: 2026-05-18 14:34
+          - generic [ref=e503]:
+            - link "View full directory" [ref=e504] [cursor=pointer]:
+              - /url: directory.php?slug=gaming-esports
+            - link "Submit URL to this directory" [ref=e505] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e506]:
+          - generic [ref=e507]:
+            - heading "Portfolios & Creative Work" [level=3] [ref=e508]:
+              - link "Portfolios & Creative Work" [ref=e509] [cursor=pointer]:
+                - /url: directory.php?slug=portfolio-creative
+            - paragraph [ref=e510]: Designers, photographers, writers, artists and creative portfolios.
+            - generic [ref=e511]:
+              - generic [ref=e512]: Free submission
+              - generic [ref=e513]: Last 5 submissions
+          - list [ref=e514]:
+            - listitem [ref=e515]:
+              - link "Canvas Print" [ref=e516] [cursor=pointer]:
+                - /url: https://canvasprint.co.in/
+              - generic [ref=e517]: 2026-05-14 04:46
+            - listitem [ref=e518]:
+              - link "DoodleCat" [ref=e519] [cursor=pointer]:
+                - /url: https://doodlecat.app/
+              - generic [ref=e520]: 2026-05-10 22:33
+            - listitem [ref=e521]:
+              - link "Signature Font" [ref=e522] [cursor=pointer]:
+                - /url: https://signaturefont.net/
+              - generic [ref=e523]: 2026-05-10 22:03
+            - listitem [ref=e524]:
+              - link "TRAFFIC" [ref=e525] [cursor=pointer]:
+                - /url: https://trafficcollective.com
+              - generic [ref=e526]: 2026-04-30 21:08
+            - listitem [ref=e527]:
+              - link "Michael Walsh → 30 Years of We" [ref=e528] [cursor=pointer]:
+                - /url: https://yowalsh.dev
+              - generic [ref=e529]: 2026-04-23 17:51
+          - generic [ref=e530]:
+            - link "View full directory" [ref=e531] [cursor=pointer]:
+              - /url: directory.php?slug=portfolio-creative
+            - link "Submit URL to this directory" [ref=e532] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e533]:
+          - generic [ref=e534]:
+            - heading "Non-Profit & Charity" [level=3] [ref=e535]:
+              - link "Non-Profit & Charity" [ref=e536] [cursor=pointer]:
+                - /url: directory.php?slug=nonprofit-charity
+            - paragraph [ref=e537]: Charities, NGOs, fundraising campaigns and social impact projects.
+            - generic [ref=e538]:
+              - generic [ref=e539]: Free submission
+              - generic [ref=e540]: Last 5 submissions
+          - list [ref=e541]:
+            - listitem [ref=e542]:
+              - link "HBSMWA" [ref=e543] [cursor=pointer]:
+                - /url: https://hbsmwa.com/
+              - generic [ref=e544]: 2026-05-17 02:32
+            - listitem [ref=e545]:
+              - link "Everyday Advocates" [ref=e546] [cursor=pointer]:
+                - /url: https://everydayadvocates.org
+              - generic [ref=e547]: 2026-05-16 20:59
+            - listitem [ref=e548]:
+              - link "Qamar charity foundation" [ref=e549] [cursor=pointer]:
+                - /url: https://qamarcharity.org/
+              - generic [ref=e550]: 2026-05-09 05:03
+            - listitem [ref=e551]:
+              - link "Donate To Help My Dad" [ref=e552] [cursor=pointer]:
+                - /url: https://www.gofundme.com/f/jtbag-medical-help-for-my-father?qid=6015c552ab06083b632ea0bcc79b5d72
+              - generic [ref=e553]: 2025-11-20 07:31
+            - listitem [ref=e554]:
+              - link "Ramakrishna Math Yelagiri" [ref=e555] [cursor=pointer]:
+                - /url: https://yelagiri.rkmm.org
+              - generic [ref=e556]: 2025-11-20 07:26
+          - generic [ref=e557]:
+            - link "View full directory" [ref=e558] [cursor=pointer]:
+              - /url: directory.php?slug=nonprofit-charity
+            - link "Submit URL to this directory" [ref=e559] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e560]:
+          - generic [ref=e561]:
+            - heading "Forums & Communities" [level=3] [ref=e562]:
+              - link "Forums & Communities" [ref=e563] [cursor=pointer]:
+                - /url: directory.php?slug=forums-communities
+            - paragraph [ref=e564]: Online communities, discussion boards, membership sites and social hubs.
+            - generic [ref=e565]:
+              - generic [ref=e566]: Free submission
+              - generic [ref=e567]: Last 3 submissions
+          - list [ref=e568]:
+            - listitem [ref=e569]:
+              - link "Mukti Mantra" [ref=e570] [cursor=pointer]:
+                - /url: https://muktimantra.com/
+              - generic [ref=e571]: 2026-03-11 01:13
+            - listitem [ref=e572]:
+              - link "Show Ready AV Event Labor" [ref=e573] [cursor=pointer]:
+                - /url: https://showreadyavs.com/
+              - generic [ref=e574]: 2026-02-25 16:40
+            - listitem [ref=e575]:
+              - link "Open Source Society Malta" [ref=e576] [cursor=pointer]:
+                - /url: https://ossmalta.eu
+              - generic [ref=e577]: 2026-02-14 02:37
+          - generic [ref=e578]:
+            - link "View full directory" [ref=e579] [cursor=pointer]:
+              - /url: directory.php?slug=forums-communities
+            - link "Submit URL to this directory" [ref=e580] [cursor=pointer]:
+              - /url: "#top"
+        - article [ref=e581]:
+          - generic [ref=e582]:
+            - heading "Resources, Tools & Directories" [level=3] [ref=e583]:
+              - link "Resources, Tools & Directories" [ref=e584] [cursor=pointer]:
+                - /url: directory.php?slug=resources-directories
+            - paragraph [ref=e585]: Resource lists, tool collections, link hubs and directory style websites.
+            - generic [ref=e586]:
+              - generic [ref=e587]: Free submission
+              - generic [ref=e588]: Last 5 submissions
+          - list [ref=e589]:
+            - listitem [ref=e590]:
+              - link "Dog Groomers Canada" [ref=e591] [cursor=pointer]:
+                - /url: https://doggroomerscanada.ca/
+              - generic [ref=e592]: 2026-05-21 10:47
+            - listitem [ref=e593]:
+              - link "FATransfer" [ref=e594] [cursor=pointer]:
+                - /url: https://fat.fm/
+              - generic [ref=e595]: 2026-05-21 02:45
+            - listitem [ref=e596]:
+              - link "Recruiting Scorecard Kit" [ref=e597] [cursor=pointer]:
+                - /url: https://telegra.ph/Recruiting-Outreach--Interview-Scorecard-Templates-for-Startup-Teams-05-20
+              - generic [ref=e598]: 2026-05-20 14:04
+            - listitem [ref=e599]:
+              - link "PrintCostCalc" [ref=e600] [cursor=pointer]:
+                - /url: https://3dprintcostcalc.top/
+              - generic [ref=e601]: 2026-05-20 12:44
+            - listitem [ref=e602]:
+              - link "Bounty Radar Lite" [ref=e603] [cursor=pointer]:
+                - /url: https://rentry.co/bounty-radar-lite-github-bounty-finder-5-dollar
+              - generic [ref=e604]: 2026-05-20 00:53
+          - generic [ref=e605]:
+            - link "View full directory" [ref=e606] [cursor=pointer]:
+              - /url: directory.php?slug=resources-directories
+            - link "Submit URL to this directory" [ref=e607] [cursor=pointer]:
+              - /url: "#top"
+  - contentinfo [ref=e608]:
+    - generic [ref=e609]:
+      - paragraph [ref=e610]: © 2026 Zearches.com – a clean, human-friendly directory where you can submit your website or blog for free.
+      - paragraph [ref=e611]:
+        - link "Privacy Policy" [ref=e612] [cursor=pointer]:
+          - /url: privacy-policy.php
+        - text: ·
+        - link "RSS feed of latest submissions" [ref=e613] [cursor=pointer]:
+          - /url: rss.php
+        - text: ·
+        - link "XML sitemap" [ref=e614] [cursor=pointer]:
+          - /url: sitemap.php
+        - text: · Please only submit legal, family-friendly content. We reserve the right to remove spam or abusive listings.
+      - generic "Partner badges" [ref=e615]:
+        - link "Featured on Open-Launch" [ref=e617] [cursor=pointer]:
+          - /url: https://open-launch.com/projects/zearches
+          - img "Featured on Open-Launch" [ref=e618]
+        - link "Verified Domain Rating - Zearches" [ref=e620] [cursor=pointer]:
+          - /url: https://verifieddr.com/website/zearches-com
+          - img "Verified Domain Rating - Zearches" [ref=e621]
+        - link "Zearches.com - Featured on Startup Fame" [ref=e624] [cursor=pointer]:
+          - /url: https://startupfa.me/s/zearchescom?utm_source=zearches.com
+          - img "Zearches.com - Featured on Startup Fame" [ref=e625]
+        - generic [ref=e626]:
+          - link "Featured on DeepLaunch":
+            - /url: https://deeplaunch.io
+            - img "Featured on DeepLaunch"

@@ -1,0 +1,380 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e4]:
+    - navigation "Main navigation" [ref=e5]:
+      - link "Coda One Coda One" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Coda One" [ref=e7]
+        - generic [ref=e8]: Coda One
+      - generic [ref=e9]:
+        - button "AI Writing" [ref=e11] [cursor=pointer]:
+          - text: AI Writing
+          - img [ref=e12]
+        - link "Pricing" [ref=e14] [cursor=pointer]:
+          - /url: /pricing
+        - button "Free Tools" [ref=e16] [cursor=pointer]:
+          - text: Free Tools
+          - img [ref=e17]
+      - generic [ref=e19]:
+        - button "Switch language" [ref=e21]:
+          - img [ref=e22]
+          - generic [ref=e25]: EN
+          - img [ref=e26]
+        - generic [ref=e28]:
+          - link "Log in" [ref=e29] [cursor=pointer]:
+            - /url: /login
+          - link "Try Free" [ref=e30] [cursor=pointer]:
+            - /url: /ai-humanizer
+  - main [ref=e31]:
+    - generic [ref=e33]:
+      - heading "Get Your AI Tool Listed on Coda One" [level=1] [ref=e34]
+      - paragraph [ref=e35]: Join 289+ AI tools on our platform. Reach AI professionals, developers, and creators searching for the right tools.
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: Free
+          - generic [ref=e41]: Basic Listing
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - generic [ref=e44]: ✓
+            - text: Published within 7 business days
+          - listitem [ref=e45]:
+            - generic [ref=e46]: ✓
+            - text: Tool detail page with description & features
+          - listitem [ref=e47]:
+            - generic [ref=e48]: ✓
+            - text: Category & tag listing
+          - listitem [ref=e49]:
+            - generic [ref=e50]: ✓
+            - text: Indexed on Google
+          - listitem [ref=e51]:
+            - generic [ref=e52]: ✓
+            - text: Basic analytics
+        - link "Submit your tool" [ref=e53] [cursor=pointer]:
+          - /url: "#submit-form"
+      - generic [ref=e54]:
+        - generic [ref=e55]: Popular
+        - generic [ref=e56]:
+          - generic [ref=e57]: $49 one-time
+          - generic [ref=e58]: Featured Listing
+        - list [ref=e59]:
+          - listitem [ref=e60]:
+            - generic [ref=e61]: ✓
+            - text: Published within 2 business days
+          - listitem [ref=e62]:
+            - generic [ref=e63]: ✓
+            - text: Featured badge & category page top placement
+          - listitem [ref=e64]:
+            - generic [ref=e65]: ✓
+            - text: Detailed tool page with rich content
+          - listitem [ref=e66]:
+            - generic [ref=e67]: ✓
+            - text: Dofollow backlink to your site
+          - listitem [ref=e68]:
+            - generic [ref=e69]: ✓
+            - text: Newsletter feature
+          - listitem [ref=e70]:
+            - generic [ref=e71]: ✓
+            - text: Priority support
+        - link "Submit & Pay $49" [ref=e72] [cursor=pointer]:
+          - /url: "#submit-form"
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: Custom
+          - generic [ref=e76]: Sponsored
+        - list [ref=e77]:
+          - listitem [ref=e78]:
+            - generic [ref=e79]: ✓
+            - text: Dedicated account manager
+          - listitem [ref=e80]:
+            - generic [ref=e81]: ✓
+            - text: Homepage featured placement
+          - listitem [ref=e82]:
+            - generic [ref=e83]: ✓
+            - text: Sponsorship bundles (Newsletter + Compare page)
+          - listitem [ref=e84]:
+            - generic [ref=e85]: ✓
+            - text: Custom editorial content & review
+          - listitem [ref=e86]:
+            - generic [ref=e87]: ✓
+            - text: Creator & influencer campaigns
+        - link "Contact Us" [ref=e88] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e89]:
+      - heading "Disclosure" [level=2] [ref=e90]
+      - paragraph [ref=e91]: All submissions are reviewed by our editorial team. We prioritize tools that provide complete, accurate information. Submissions with missing details may take longer to review.
+    - generic [ref=e92]:
+      - heading "Submit Your Tool — Free Listing" [level=2] [ref=e93]
+      - paragraph [ref=e94]: Provide detailed information so we can create a rich tool page. The more detail you give, the better your listing will look.
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - generic [ref=e97]:
+            - generic [ref=e98]: Tool Name *
+            - textbox "Tool Name *" [ref=e99]:
+              - /placeholder: e.g. SuperAI
+              - text: Remova
+          - generic [ref=e100]:
+            - generic [ref=e101]: Website URL *
+            - textbox "Website URL *" [ref=e102]:
+              - /placeholder: https://example.com
+              - text: https://www.remova.org/
+        - generic [ref=e103]:
+          - generic [ref=e104]:
+            - generic [ref=e105]: Category *
+            - combobox "Category *" [ref=e106]:
+              - option "Select a category"
+              - option "Coding & Dev"
+              - option "Agents & Automation"
+              - option "Chatbots & LLMs" [selected]
+              - option "Image & Design"
+              - option "Writing & Editing"
+              - option "Video & Animation"
+              - option "Voice & Audio"
+              - option "Productivity"
+              - option "Education & Research"
+              - option "Marketing & Sales"
+          - generic [ref=e107]:
+            - generic [ref=e108]: Pricing Type *
+            - combobox "Pricing Type *" [ref=e109]:
+              - option "Select pricing type"
+              - option "Free"
+              - option "Freemium"
+              - option "Paid" [selected]
+              - option "Open Source"
+        - generic [ref=e110]:
+          - generic [ref=e111]: Tagline *
+          - generic [ref=e112]:
+            - textbox "Tagline *" [ref=e113]:
+              - /placeholder: One sentence that describes what your tool does
+              - text: Enterprise AI governance workspace for secure ChatGPT, Claude, and Gemini use with data controls.
+            - generic [ref=e114]: 97/160
+        - generic [ref=e115]:
+          - generic [ref=e116]: Description *
+          - textbox "Description *" [ref=e117]:
+            - /placeholder: Detailed description of your tool (2+ sentences)
+            - text: Remova is an enterprise AI governance workspace for companies using ChatGPT, Claude, Gemini, and other AI models. It helps teams prevent AI data leaks with policy controls, sensitive data masking, role-based access, audit visibility, and department-level budget controls.
+        - generic [ref=e118]:
+          - generic [ref=e119]: Key Features *
+          - textbox "Key Features *" [ref=e120]:
+            - /placeholder: List your main features, one per line (minimum 3)
+            - text: AI data leak prevention Sensitive data masking Role-based access controls Audit trails and governance visibility Department-level AI budget controls Secure ChatGPT, Claude, and Gemini workspace
+        - generic [ref=e121]:
+          - generic [ref=e122]:
+            - generic [ref=e123]: Pricing Details
+            - textbox "Pricing Details" [ref=e124]:
+              - /placeholder: e.g. Free / $20 Pro / $50 Business
+              - text: "Paid enterprise plan: $50 per seat/month, minimum 10 seats."
+          - generic [ref=e125]:
+            - generic [ref=e126]: Logo URL
+            - textbox "Logo URL" [ref=e127]:
+              - /placeholder: https://yoursite.com/logo.png
+              - text: https://www.remova.org/images/remova%20logo%20%284%29.png
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: Contact Email *
+            - textbox "Contact Email *" [active] [ref=e131]:
+              - /placeholder: you@company.com
+              - text: contact@remova.org
+          - generic [ref=e132]:
+            - generic [ref=e133]: Affiliate URL
+            - textbox "Affiliate URL" [ref=e134]:
+              - /placeholder: Your affiliate/referral link (optional)
+        - textbox [ref=e136]
+        - generic [ref=e137]:
+          - button "Submit for Review" [ref=e140] [cursor=pointer]
+          - paragraph [ref=e141]: Free listings are reviewed within 5-7 business days.
+    - generic [ref=e142]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e143]
+      - generic [ref=e144]:
+        - group [ref=e145]:
+          - generic "How long does review take?" [ref=e146] [cursor=pointer]:
+            - text: How long does review take?
+            - img [ref=e147]
+        - group [ref=e149]:
+          - generic "What makes a good submission?" [ref=e150] [cursor=pointer]:
+            - text: What makes a good submission?
+            - img [ref=e151]
+        - group [ref=e153]:
+          - generic "Can I update my listing later?" [ref=e154] [cursor=pointer]:
+            - text: Can I update my listing later?
+            - img [ref=e155]
+        - group [ref=e157]:
+          - generic "What is a Featured listing?" [ref=e158] [cursor=pointer]:
+            - text: What is a Featured listing?
+            - img [ref=e159]
+        - group [ref=e161]:
+          - generic "How do I get a Sponsored listing?" [ref=e162] [cursor=pointer]:
+            - text: How do I get a Sponsored listing?
+            - img [ref=e163]
+  - contentinfo [ref=e166]:
+    - generic [ref=e168]:
+      - generic [ref=e169]:
+        - generic [ref=e170]:
+          - link "Coda One Coda One" [ref=e172] [cursor=pointer]:
+            - /url: /
+            - img "Coda One" [ref=e173]
+            - generic [ref=e174]: Coda One
+          - paragraph [ref=e175]: Free AI writing and browser-based PDF, image, and developer tools. Humanize, detect, rewrite, and more — no signup required.
+          - generic [ref=e177]:
+            - textbox "Your email address" [ref=e178]
+            - button "A new tool lands every week" [ref=e179] [cursor=pointer]
+        - navigation "Product" [ref=e180]:
+          - heading "Product" [level=2] [ref=e181]
+          - list [ref=e182]:
+            - listitem [ref=e183]:
+              - link "AI Humanizer" [ref=e184] [cursor=pointer]:
+                - /url: /ai-humanizer
+            - listitem [ref=e185]:
+              - link "AI Detector" [ref=e186] [cursor=pointer]:
+                - /url: /ai-detector
+            - listitem [ref=e187]:
+              - link "AI Rewriter" [ref=e188] [cursor=pointer]:
+                - /url: /ai-rewriter
+            - listitem [ref=e189]:
+              - link "Grammar Checker" [ref=e190] [cursor=pointer]:
+                - /url: /grammar-checker
+            - listitem [ref=e191]:
+              - link "AI Summarizer" [ref=e192] [cursor=pointer]:
+                - /url: /ai-summarizer
+            - listitem [ref=e193]:
+              - link "All Writing Tools →" [ref=e194] [cursor=pointer]:
+                - /url: /ai-tools
+            - listitem [ref=e195]:
+              - link "Pricing" [ref=e196] [cursor=pointer]:
+                - /url: /pricing
+        - navigation "Extension" [ref=e197]:
+          - heading "Extension" [level=2] [ref=e198]
+          - list [ref=e199]:
+            - listitem [ref=e200]:
+              - link "Chrome Extension" [ref=e201] [cursor=pointer]:
+                - /url: /chrome-extension
+        - navigation "Free Tools" [ref=e202]:
+          - heading "Free Tools" [level=2] [ref=e203]
+          - generic [ref=e204]:
+            - generic [ref=e205]:
+              - heading "PDF" [level=3] [ref=e206]
+              - list [ref=e207]:
+                - listitem [ref=e208]:
+                  - link "Merge PDF" [ref=e209] [cursor=pointer]:
+                    - /url: /merge-pdf
+                - listitem [ref=e210]:
+                  - link "Compress PDF" [ref=e211] [cursor=pointer]:
+                    - /url: /compress-pdf
+                - listitem [ref=e212]:
+                  - link "Split PDF" [ref=e213] [cursor=pointer]:
+                    - /url: /split-pdf
+                - listitem [ref=e214]:
+                  - link "PDF to Word" [ref=e215] [cursor=pointer]:
+                    - /url: /pdf-to-word
+                - listitem [ref=e216]:
+                  - link "Word to PDF" [ref=e217] [cursor=pointer]:
+                    - /url: /word-to-pdf
+                - listitem [ref=e218]:
+                  - link "JPG to PDF" [ref=e219] [cursor=pointer]:
+                    - /url: /jpg-to-pdf
+            - generic [ref=e220]:
+              - heading "Image" [level=3] [ref=e221]
+              - list [ref=e222]:
+                - listitem [ref=e223]:
+                  - link "Remove Background" [ref=e224] [cursor=pointer]:
+                    - /url: /remove-background
+                - listitem [ref=e225]:
+                  - link "Compress Image" [ref=e226] [cursor=pointer]:
+                    - /url: /compress-image
+                - listitem [ref=e227]:
+                  - link "Resize Image" [ref=e228] [cursor=pointer]:
+                    - /url: /resize-image
+                - listitem [ref=e229]:
+                  - link "Convert Image" [ref=e230] [cursor=pointer]:
+                    - /url: /image-converter
+                - listitem [ref=e231]:
+                  - link "OCR" [ref=e232] [cursor=pointer]:
+                    - /url: /image-to-text
+                - listitem [ref=e233]:
+                  - link "Crop Image" [ref=e234] [cursor=pointer]:
+                    - /url: /crop-image
+            - generic [ref=e235]:
+              - heading "Dev" [level=3] [ref=e236]
+              - list [ref=e237]:
+                - listitem [ref=e238]:
+                  - link "JSON Formatter" [ref=e239] [cursor=pointer]:
+                    - /url: /json-formatter
+                - listitem [ref=e240]:
+                  - link "CSV to JSON" [ref=e241] [cursor=pointer]:
+                    - /url: /csv-to-json-converter
+                - listitem [ref=e242]:
+                  - link "Base64" [ref=e243] [cursor=pointer]:
+                    - /url: /base64-encode-decode
+                - listitem [ref=e244]:
+                  - link "JWT Decoder" [ref=e245] [cursor=pointer]:
+                    - /url: /jwt-decoder
+                - listitem [ref=e246]:
+                  - link "Markdown Preview" [ref=e247] [cursor=pointer]:
+                    - /url: /markdown-editor
+                - listitem [ref=e248]:
+                  - link "Regex Tester" [ref=e249] [cursor=pointer]:
+                    - /url: /regex-tester
+            - generic [ref=e250]:
+              - heading "Video" [level=3] [ref=e251]
+              - list [ref=e252]:
+                - listitem [ref=e253]:
+                  - link "Video Compress" [ref=e254] [cursor=pointer]:
+                    - /url: /compress-video
+                - listitem [ref=e255]:
+                  - link "Video Trimmer" [ref=e256] [cursor=pointer]:
+                    - /url: /trim-video
+                - listitem [ref=e257]:
+                  - link "Video to GIF" [ref=e258] [cursor=pointer]:
+                    - /url: /video-to-gif
+                - listitem [ref=e259]:
+                  - link "Screen Recorder" [ref=e260] [cursor=pointer]:
+                    - /url: /screen-recorder
+            - generic [ref=e261]:
+              - heading "Study" [level=3] [ref=e262]
+              - list [ref=e263]:
+                - listitem [ref=e264]:
+                  - link "Math Solver" [ref=e265] [cursor=pointer]:
+                    - /url: /math-solver
+        - navigation "Resources" [ref=e266]:
+          - heading "Resources" [level=2] [ref=e267]
+          - list [ref=e268]:
+            - listitem [ref=e269]:
+              - link "Blog" [ref=e270] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e271]:
+              - link "AI Scenarios" [ref=e272] [cursor=pointer]:
+                - /url: /scenarios
+            - listitem [ref=e273]:
+              - link "Prompt Library" [ref=e274] [cursor=pointer]:
+                - /url: /prompts
+            - listitem [ref=e275]:
+              - link "MCP Servers" [ref=e276] [cursor=pointer]:
+                - /url: /mcp
+        - navigation "Company" [ref=e277]:
+          - heading "Company" [level=2] [ref=e278]
+          - list [ref=e279]:
+            - listitem [ref=e280]:
+              - link "About" [ref=e281] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e282]:
+              - link "Contact" [ref=e283] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e284]:
+              - link "Partner program" [ref=e285] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=e286]:
+              - link "Privacy" [ref=e287] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e288]:
+              - link "Terms" [ref=e289] [cursor=pointer]:
+                - /url: /terms
+      - generic [ref=e290]:
+        - generic [ref=e291]: © 2026 Coda One. All rights reserved.
+        - navigation "Legal" [ref=e292]:
+          - link "Cookies" [ref=e293] [cursor=pointer]:
+            - /url: /cookie-policy
+          - link "Refunds" [ref=e294] [cursor=pointer]:
+            - /url: /refund-policy
+          - link "Sitemap" [ref=e295] [cursor=pointer]:
+            - /url: /sitemap-index.xml

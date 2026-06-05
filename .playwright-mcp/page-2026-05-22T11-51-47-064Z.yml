@@ -1,0 +1,274 @@
+- generic:
+  - generic:
+    - list
+    - generic:
+      - banner:
+        - generic:
+          - generic:
+            - link:
+              - /url: /
+              - img
+              - generic: AI You Imagine
+            - navigation:
+              - link:
+                - /url: /
+                - text: Home
+              - link:
+                - /url: /categories
+                - text: Categories
+              - link:
+                - /url: /favorites
+                - text: Favorites
+              - link:
+                - /url: /prompts
+                - text: Prompts
+              - link:
+                - /url: /services
+                - text: Services
+            - generic:
+              - link:
+                - /url: /auth
+                - button: Sign In
+              - link:
+                - /url: /submit
+                - button:
+                  - generic: Submit AI Tool FREE→
+      - generic:
+        - generic:
+          - generic:
+            - img
+            - text: 100% Free Submission
+          - heading [level=1]: Submit Your AI Tool For Free
+          - paragraph: Get your AI tool listed in our directory and reach thousands of potential users. No hidden fees, or charges - just pure exposure for your innovation.
+          - generic:
+            - generic:
+              - img
+              - generic:
+                - heading [level=3]: Instant Visibility
+                - paragraph: Get featured within 24-48 hours
+            - generic:
+              - img
+              - generic:
+                - heading [level=3]: Targeted Audience
+                - paragraph: Reach AI enthusiasts & professionals
+            - generic:
+              - img
+              - generic:
+                - heading [level=3]: Free Listing
+                - paragraph: No Hidden charges or fees
+      - generic:
+        - generic:
+          - generic:
+            - heading [level=2]: Choose Your Listing Plan
+            - paragraph: Select the perfect plan to showcase your AI tool
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - heading [level=3]: Free Plan
+                - generic: ₹0
+              - generic:
+                - list:
+                  - listitem:
+                    - img
+                    - text: Listed in Full AI Directory
+                  - listitem:
+                    - img
+                    - text: Basic description (up to 100 characters)
+                  - listitem:
+                    - img
+                    - text: 1 external link (optional)
+                  - listitem:
+                    - img
+                    - text: Indexed on Google (SEO submission)
+                  - listitem:
+                    - img
+                    - text: Get listed in Featured Tools section on home page
+                - button: Selected
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - heading [level=3]: Submit Your AI Tool
+              - paragraph: Fill out the form below to get your AI tool listed on our platform
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - text: Company Name *
+                    - textbox:
+                      - /placeholder: Enter company name
+                      - text: Remova
+                  - generic:
+                    - text: Tool Name *
+                    - textbox:
+                      - /placeholder: Enter AI tool name
+                      - text: Remova
+                - generic:
+                  - generic:
+                    - text: Contact Email *
+                    - textbox:
+                      - /placeholder: contact@company.com
+                      - text: contact@remova.org
+                  - generic:
+                    - text: Phone Number (Optional)
+                    - textbox:
+                      - /placeholder: Enter phone number
+                - generic:
+                  - text: Website URL *
+                  - textbox:
+                    - /placeholder: https://yourtool.com
+                    - text: https://www.remova.org/
+                - generic:
+                  - text: Category *
+                  - combobox [expanded]:
+                    - generic: Select a category
+                    - img
+                  - combobox
+                - generic:
+                  - generic:
+                    - text: Tool Description *
+                    - generic: (82/100 characters)
+                  - textbox:
+                    - /placeholder: Describe what your AI tool does, its key features, and how it helps users...
+                    - text: AI governance workspace for secure ChatGPT, Claude, Gemini use with data controls.
+                - generic:
+                  - text: Affiliate Link (Optional)
+                  - textbox:
+                    - /placeholder: https://affiliate.link.com
+                - generic:
+                  - text: Brand Logo (Max 100KB)
+                  - generic:
+                    - img
+                    - generic: Click to upload logo (PNG, JPG, SVG)
+                - generic:
+                  - generic: External Links (Optional - 1 allowed)
+                  - generic:
+                    - textbox:
+                      - /placeholder: External link 1 (optional)
+                      - text: https://www.remova.org/features/sensitive-data-protection
+                - generic:
+                  - button: Submit AI Tool for Free
+  - listbox [ref=e125]:
+    - option "E-mail" [active] [ref=e126]:
+      - generic [ref=e128]: E-mail
+    - option "Education / Studies" [ref=e129]:
+      - generic [ref=e131]: Education / Studies
+    - option "ChatGPT Extensions" [ref=e132]:
+      - generic [ref=e134]: ChatGPT Extensions
+    - option "Files & Spreadsheets" [ref=e135]:
+      - generic [ref=e137]: Files & Spreadsheets
+    - option "Memory" [ref=e138]:
+      - generic [ref=e140]: Memory
+    - option "Search Engine" [ref=e141]:
+      - generic [ref=e143]: Search Engine
+    - option "Presentation" [ref=e144]:
+      - generic [ref=e146]: Presentation
+    - option "Productivity" [ref=e147]:
+      - generic [ref=e149]: Productivity
+    - option "Translation & Localization" [ref=e150]:
+      - generic [ref=e152]: Translation & Localization
+    - option "Legal Assistants" [ref=e153]:
+      - generic [ref=e155]: Legal Assistants
+    - option "Life Assistants" [ref=e156]:
+      - generic [ref=e158]: Life Assistants
+    - option "AI Chat & Assistant" [ref=e159]:
+      - generic [ref=e161]: AI Chat & Assistant
+    - option "ChatBots" [ref=e162]:
+      - generic [ref=e164]: ChatBots
+    - option "Video Editing" [ref=e165]:
+      - generic [ref=e167]: Video Editing
+    - option "image-to-video" [ref=e168]:
+      - generic [ref=e170]: image-to-video
+    - option "Text-to-video" [ref=e171]:
+      - generic [ref=e173]: Text-to-video
+    - option "Story and Content Writing" [ref=e174]:
+      - generic [ref=e176]: Story and Content Writing
+    - option "Humanizing AI Text" [ref=e177]:
+      - generic [ref=e179]: Humanizing AI Text
+    - option "Plagiarism Detector" [ref=e180]:
+      - generic [ref=e182]: Plagiarism Detector
+    - option "Prompts Writer" [ref=e183]:
+      - generic [ref=e185]: Prompts Writer
+    - option "Writing & Web SEO" [ref=e186]:
+      - generic [ref=e188]: Writing & Web SEO
+    - option "Text Summarizer" [ref=e189]:
+      - generic [ref=e191]: Text Summarizer
+    - option "Text Generators" [ref=e192]:
+      - generic [ref=e194]: Text Generators
+    - option "Art" [ref=e195]:
+      - generic [ref=e197]: Art
+    - option "Avatars" [ref=e198]:
+      - generic [ref=e200]: Avatars
+    - option "Logo Maker" [ref=e201]:
+      - generic [ref=e203]: Logo Maker
+    - option "Image Editor" [ref=e204]:
+      - generic [ref=e206]: Image Editor
+    - option "Image Generators" [ref=e207]:
+      - generic [ref=e209]: Image Generators
+    - option "3D Model" [ref=e210]:
+      - generic [ref=e212]: 3D Model
+    - option "AI Agents" [ref=e213]:
+      - generic [ref=e215]: AI Agents
+    - option "Workflow Automation" [ref=e216]:
+      - generic [ref=e218]: Workflow Automation
+    - option "Audio Editing" [ref=e219]:
+      - generic [ref=e221]: Audio Editing
+    - option "Text To Speech" [ref=e222]:
+      - generic [ref=e224]: Text To Speech
+    - option "Music" [ref=e225]:
+      - generic [ref=e227]: Music
+    - option "Transcribe" [ref=e228]:
+      - generic [ref=e230]: Transcribe
+    - option "Voice & Audio" [ref=e231]:
+      - generic [ref=e233]: Voice & Audio
+    - option "Business" [ref=e234]:
+      - generic [ref=e236]: Business
+    - option "E-commerce" [ref=e237]:
+      - generic [ref=e239]: E-commerce
+    - option "Finance" [ref=e240]:
+      - generic [ref=e242]: Finance
+    - option "Marketing" [ref=e243]:
+      - generic [ref=e245]: Marketing
+    - option "Social Media" [ref=e246]:
+      - generic [ref=e248]: Social Media
+    - option "Human Resources" [ref=e249]:
+      - generic [ref=e251]: Human Resources
+    - option "SEO" [ref=e252]:
+      - generic [ref=e254]: SEO
+    - option "Customer Support" [ref=e255]:
+      - generic [ref=e257]: Customer Support
+    - option "Lead Generation and Sales Conversion" [ref=e258]:
+      - generic [ref=e260]: Lead Generation and Sales Conversion
+    - option "Sales & Marketing" [ref=e261]:
+      - generic [ref=e263]: Sales & Marketing
+    - option "Analytics" [ref=e264]:
+      - generic [ref=e266]: Analytics
+    - option "Coding Assistant" [ref=e267]:
+      - generic [ref=e269]: Coding Assistant
+    - option "LLM Models" [ref=e270]:
+      - generic [ref=e272]: LLM Models
+    - option "No Code/Low Code" [ref=e273]:
+      - generic [ref=e275]: No Code/Low Code
+    - option "Developer Tools" [ref=e276]:
+      - generic [ref=e278]: Developer Tools
+    - option "Github Projects" [ref=e279]:
+      - generic [ref=e281]: Github Projects
+    - option "Websites & App Builders" [ref=e282]:
+      - generic [ref=e284]: Websites & App Builders
+    - option "Face Swap & DeepFake" [ref=e285]:
+      - generic [ref=e287]: Face Swap & DeepFake
+    - option "Fashion" [ref=e288]:
+      - generic [ref=e290]: Fashion
+    - option "Amazing" [ref=e291]:
+      - generic [ref=e293]: Amazing
+    - option "Games" [ref=e294]:
+      - generic [ref=e296]: Games
+    - option "AI Characters" [ref=e297]:
+      - generic [ref=e299]: AI Characters
+    - option "Dating" [ref=e300]:
+      - generic [ref=e302]: Dating
+    - option "Travel" [ref=e303]:
+      - generic [ref=e305]: Travel
+    - img [ref=e307]

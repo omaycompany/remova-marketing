@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">California AI governance article visual</title>
+  <desc id="desc">AI-assisted editorial visual for SaaS Privacy governance controls.</desc>
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.85"/>
+  <path d="M0 512 C210 472 290 586 490 535 C690 484 805 405 1200 462 L1200 630 L0 630 Z" fill="#0f766e" opacity="0.08"/>
+  <rect x="74" y="72" width="1052" height="486" rx="26" fill="#ffffff" stroke="#d8e0ed" stroke-width="2" filter="url(#soft)"/>
+  <circle cx="944" cy="188" r="78" fill="#0f766e" opacity="0.12"/>
+  <circle cx="1010" cy="270" r="116" fill="#f59e0b" opacity="0.11"/>
+  <rect x="112" y="118" width="254" height="46" rx="23" fill="#0f766e" opacity="0.1"/>
+  <text x="134" y="148" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900" fill="#0f766e" >California / SaaS Privacy</text>
+  <text x="112" y="244" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="950" fill="#0f172a" >Localized AI</text>
+  <text x="112" y="308" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="950" fill="#0f172a" >Governance Guide</text>
+  <text x="116" y="370" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#475569" >Controls that connect data, users, models, workflows, and audit evidence.</text>
+  <rect x="112" y="428" width="210" height="82" rx="18" fill="#f8fafc" stroke="#dbe3ef"/>
+  <text x="140" y="462" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900" fill="#64748b" >Policy</text>
+  <text x="140" y="492" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="950" fill="#0f766e" >Allow / block</text>
+  <rect x="346" y="428" width="210" height="82" rx="18" fill="#f8fafc" stroke="#dbe3ef"/>
+  <text x="374" y="462" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900" fill="#64748b" >Data</text>
+  <text x="374" y="492" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="950" fill="#f59e0b" >Redact</text>
+  <rect x="580" y="428" width="210" height="82" rx="18" fill="#f8fafc" stroke="#dbe3ef"/>
+  <text x="608" y="462" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900" fill="#64748b" >Evidence</text>
+  <text x="608" y="492" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="950" fill="#0f172a" >Audit trail</text>
+  <g transform="translate(860 350)">
+    <rect x="0" y="0" width="184" height="122" rx="22" fill="#111827"/>
+    <path d="M42 78 L78 42 L116 78 L146 48" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="42" cy="78" r="8" fill="#f59e0b"/>
+    <circle cx="78" cy="42" r="8" fill="#f59e0b"/>
+    <circle cx="116" cy="78" r="8" fill="#f59e0b"/>
+    <circle cx="146" cy="48" r="8" fill="#f59e0b"/>
+  </g>
+</svg>

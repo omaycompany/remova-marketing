@@ -1,0 +1,186 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "NavTools AI Logo NavTools.ai" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "NavTools AI Logo" [ref=e6]
+          - generic [ref=e7]: NavTools.ai
+        - navigation [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: /
+            - img [ref=e10]
+            - text: Home
+          - link "Category" [ref=e13] [cursor=pointer]:
+            - /url: /category
+            - img [ref=e14]
+            - text: Category
+          - link "Rankings" [ref=e20] [cursor=pointer]:
+            - /url: /best-ai-tools
+            - img [ref=e21]
+            - text: Rankings
+            - img [ref=e27]
+          - link "Submit" [ref=e29] [cursor=pointer]:
+            - /url: /submit
+            - img [ref=e30]
+            - text: Submit
+        - button "Open search" [ref=e34] [cursor=pointer]:
+          - img [ref=e35]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - heading "Get Your AI Tool Discovered" [level=1] [ref=e41]
+        - paragraph [ref=e42]: Submit your product to reach more users, improve discoverability, and accelerate your launch across the AI ecosystem.
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - text: Submission Type
+          - radiogroup [ref=e47]:
+            - generic [ref=e48]:
+              - 'radio "Basic Review: 30-90 Days Standard directory listing Support: Community $0" [ref=e49] [cursor=pointer]'
+              - radio
+              - generic [ref=e50] [cursor=pointer]:
+                - generic [ref=e51]:
+                  - img [ref=e52]
+                  - generic [ref=e55]: Basic
+                - list [ref=e56]:
+                  - listitem [ref=e57]:
+                    - img [ref=e58]
+                    - text: "Review: 30-90 Days"
+                  - listitem [ref=e60]:
+                    - img [ref=e61]
+                    - text: Standard directory listing
+                  - listitem [ref=e63]:
+                    - img [ref=e64]
+                    - text: "Support: Community"
+                - generic [ref=e66]: $0
+            - generic [ref=e67]:
+              - 'radio "Fast Track Review: 48 Hours Homepage featured placement (7 days) Support: Priority Email $29.9 One-time" [checked] [ref=e68] [cursor=pointer]':
+                - img [ref=e70]
+              - radio [checked]
+              - generic [ref=e72] [cursor=pointer]:
+                - generic [ref=e73]:
+                  - img [ref=e74]
+                  - generic [ref=e76]: Fast Track
+                - list [ref=e77]:
+                  - listitem [ref=e78]:
+                    - img [ref=e79]
+                    - text: "Review: 48 Hours"
+                  - listitem [ref=e81]:
+                    - img [ref=e82]
+                    - text: Homepage featured placement (7 days)
+                  - listitem [ref=e84]:
+                    - img [ref=e85]
+                    - text: "Support: Priority Email"
+                - generic [ref=e87]:
+                  - generic [ref=e88]: $29.9
+                  - generic [ref=e89]: One-time
+            - generic [ref=e90]:
+              - 'radio "Growth Pro Review: 24 Hours Homepage featured placement (15 days) All tool pages featured placement (15 days) Support: Dedicated Manager $149 One-time" [ref=e91] [cursor=pointer]'
+              - radio
+              - generic [ref=e92] [cursor=pointer]:
+                - generic [ref=e93]:
+                  - img [ref=e94]
+                  - generic [ref=e96]: Growth Pro
+                - list [ref=e97]:
+                  - listitem [ref=e98]:
+                    - img [ref=e99]
+                    - text: "Review: 24 Hours"
+                  - listitem [ref=e101]:
+                    - img [ref=e102]
+                    - text: Homepage featured placement (15 days)
+                  - listitem [ref=e104]:
+                    - img [ref=e105]
+                    - text: All tool pages featured placement (15 days)
+                  - listitem [ref=e107]:
+                    - img [ref=e108]
+                    - text: "Support: Dedicated Manager"
+                - generic [ref=e110]:
+                  - generic [ref=e111]: $149
+                  - generic [ref=e112]: One-time
+          - generic [ref=e113]:
+            - heading "Sponsored Visibility Included" [level=4] [ref=e114]:
+              - img [ref=e115]
+              - text: Sponsored Visibility Included
+            - paragraph [ref=e117]: Paid submissions include priority review and clearly labeled placements designed to drive qualified referral traffic.
+            - generic [ref=e119]: Includes click tracking and sponsored featured slots
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - text: Tool Name *
+            - textbox "Tool Name *" [ref=e122]:
+              - /placeholder: Your AI Tool Name
+          - generic [ref=e123]:
+            - text: Website URL *
+            - textbox "Website URL *" [ref=e124]:
+              - /placeholder: https://your-tool-website.com
+          - generic [ref=e125]:
+            - text: Contact Email *
+            - textbox "Contact Email *" [ref=e126]:
+              - /placeholder: your@email.com
+          - generic [ref=e127]:
+            - button "Submit AI Tool" [disabled]
+          - paragraph [ref=e128]:
+            - text: By submitting, you agree to our
+            - link "Terms of Service" [ref=e129] [cursor=pointer]:
+              - /url: /terms
+            - text: and
+            - link "Privacy Policy" [ref=e130] [cursor=pointer]:
+              - /url: /privacy
+            - text: .
+      - generic [ref=e131]:
+        - heading "How It Works" [level=2] [ref=e132]
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - generic [ref=e135]: "1"
+            - heading "Submit Your Tool" [level=3] [ref=e136]
+            - paragraph [ref=e137]: Fill out the form with your AI tool details and contact information.
+          - generic [ref=e138]:
+            - generic [ref=e139]: "2"
+            - heading "Review Process" [level=3] [ref=e140]
+            - paragraph [ref=e141]: Our team will review your submission to ensure it meets our quality standards.
+          - generic [ref=e142]:
+            - generic [ref=e143]: "3"
+            - heading "Get Listed" [level=3] [ref=e144]
+            - paragraph [ref=e145]: Once approved, your tool will be listed in our directory and promoted to our audience.
+      - generic [ref=e146]:
+        - heading "Frequently Asked Questions" [level=2] [ref=e147]
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - heading "How long does the review process take?" [level=3] [ref=e150]
+            - paragraph [ref=e151]: "Review time depends on your plan: Basic (Free) submissions are reviewed within 30–90 days, Fast Track submissions are reviewed within 48 hours, and Growth Pro submissions are reviewed within 24 hours; all submissions are manually reviewed to ensure quality, with priority given to higher-tier plans."
+          - generic [ref=e152]:
+            - heading "Is there a fee to list my AI tool?" [level=3] [ref=e153]
+            - paragraph [ref=e154]: Listing your AI tool is free with our Basic submission. Fast Track and Growth Pro add priority review and clearly labeled featured placements for additional visibility.
+          - generic [ref=e155]:
+            - heading "What types of AI tools do you accept?" [level=3] [ref=e156]
+            - paragraph [ref=e157]: "We accept all types of AI-powered tools and services that provide genuine value to users. This includes but is not limited to: chatbots, image generators, writing assistants, and productivity tools."
+          - generic [ref=e158]:
+            - heading "Any questions?" [level=3] [ref=e159]
+            - paragraph [ref=e160]:
+              - text: "If you have any questions, please contact us by email:"
+              - link "support@navtools.ai" [ref=e161] [cursor=pointer]:
+                - /url: mailto:support@navtools.ai
+    - contentinfo [ref=e162]:
+      - generic [ref=e163]:
+        - link "NavTools AI Logo NavTools.ai" [ref=e165] [cursor=pointer]:
+          - /url: /
+          - img "NavTools AI Logo" [ref=e166]
+          - generic [ref=e167]: NavTools.ai
+        - paragraph [ref=e168]: NavTools AI, The Best AI Websites & AI Tools Directory
+        - generic [ref=e169]:
+          - link "Privacy Policy" [ref=e170] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Use" [ref=e171] [cursor=pointer]:
+            - /url: /terms
+          - link "Submit Tool" [ref=e172] [cursor=pointer]:
+            - /url: /submit
+          - link "Fastest Growing AI Tools" [ref=e173] [cursor=pointer]:
+            - /url: /best-ai-tools
+          - link "AI Tools Visit Growth" [ref=e174] [cursor=pointer]:
+            - /url: /best-ai-tools/visit-growth
+          - link "Most Visited AI Tools" [ref=e175] [cursor=pointer]:
+            - /url: /best-ai-tools/most-visited
+          - link "Browse Categories" [ref=e176] [cursor=pointer]:
+            - /url: /category
+          - link "Contact Us" [ref=e177] [cursor=pointer]:
+            - /url: mailto:support@navtools.ai
+        - paragraph [ref=e178]: Copyright ©2026 NavTools AI. All Rights Reserved.
+  - region "Notifications alt+T"

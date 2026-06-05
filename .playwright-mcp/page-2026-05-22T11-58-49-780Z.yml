@@ -1,0 +1,243 @@
+- generic:
+  - generic:
+    - banner:
+      - generic:
+        - link:
+          - /url: /
+          - img
+          - generic: NavTools.ai
+        - navigation:
+          - link:
+            - /url: /
+            - img
+            - text: Home
+          - link:
+            - /url: /category
+            - img
+            - text: Category
+          - generic:
+            - link:
+              - /url: /best-ai-tools
+              - img
+              - text: Rankings
+              - img
+          - link:
+            - /url: /submit
+            - img
+            - text: Submit
+        - generic:
+          - button:
+            - img
+          - generic:
+            - link:
+              - /url: /login
+              - button: Login
+    - main:
+      - generic:
+        - heading [level=1]: Get Your AI Tool Discovered
+        - paragraph: Submit your product to reach more users, improve discoverability, and accelerate your launch across the AI ecosystem.
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - text: Submission Type
+              - radiogroup:
+                - generic:
+                  - radio [checked]:
+                    - generic:
+                      - img
+                  - radio [checked]
+                  - generic:
+                    - generic:
+                      - img
+                      - generic: Basic
+                    - list:
+                      - listitem:
+                        - img
+                        - text: "Review: 30-90 Days"
+                      - listitem:
+                        - img
+                        - text: Standard directory listing
+                      - listitem:
+                        - img
+                        - text: "Support: Community"
+                    - generic: $0
+                - generic:
+                  - radio
+                  - radio
+                  - generic:
+                    - generic:
+                      - img
+                      - generic: Fast Track
+                    - list:
+                      - listitem:
+                        - img
+                        - text: "Review: 48 Hours"
+                      - listitem:
+                        - img
+                        - text: Homepage featured placement (7 days)
+                      - listitem:
+                        - img
+                        - text: "Support: Priority Email"
+                    - generic:
+                      - generic: $29.9
+                      - generic: One-time
+                - generic:
+                  - radio
+                  - radio
+                  - generic:
+                    - generic:
+                      - img
+                      - generic: Growth Pro
+                    - list:
+                      - listitem:
+                        - img
+                        - text: "Review: 24 Hours"
+                      - listitem:
+                        - img
+                        - text: Homepage featured placement (15 days)
+                      - listitem:
+                        - img
+                        - text: All tool pages featured placement (15 days)
+                      - listitem:
+                        - img
+                        - text: "Support: Dedicated Manager"
+                    - generic:
+                      - generic: $149
+                      - generic: One-time
+              - generic: Basic submissions include manual review and a standard listing after approval. Upgrade to Fast Track for faster review and featured visibility.
+            - generic:
+              - generic:
+                - text: Tool Name *
+                - textbox:
+                  - /placeholder: Your AI Tool Name
+                  - text: Remova
+              - generic:
+                - text: Website URL *
+                - textbox:
+                  - /placeholder: https://your-tool-website.com
+                  - text: https://www.remova.org/
+              - generic:
+                - text: Contact Email *
+                - textbox:
+                  - /placeholder: your@email.com
+                  - text: contact@remova.org
+              - generic:
+                - button: Submit AI Tool
+              - paragraph:
+                - text: By submitting, you agree to our
+                - link:
+                  - /url: /terms
+                  - text: Terms of Service
+                - text: and
+                - link:
+                  - /url: /privacy
+                  - text: Privacy Policy
+                - text: .
+      - generic:
+        - heading [level=2]: How It Works
+        - generic:
+          - generic:
+            - generic: "1"
+            - heading [level=3]: Submit Your Tool
+            - paragraph: Fill out the form with your AI tool details and contact information.
+          - generic:
+            - generic: "2"
+            - heading [level=3]: Review Process
+            - paragraph: Our team will review your submission to ensure it meets our quality standards.
+          - generic:
+            - generic: "3"
+            - heading [level=3]: Get Listed
+            - paragraph: Once approved, your tool will be listed in our directory and promoted to our audience.
+      - generic:
+        - heading [level=2]: Frequently Asked Questions
+        - generic:
+          - generic:
+            - heading [level=3]: How long does the review process take?
+            - paragraph: "Review time depends on your plan: Basic (Free) submissions are reviewed within 30–90 days, Fast Track submissions are reviewed within 48 hours, and Growth Pro submissions are reviewed within 24 hours; all submissions are manually reviewed to ensure quality, with priority given to higher-tier plans."
+          - generic:
+            - heading [level=3]: Is there a fee to list my AI tool?
+            - paragraph: Listing your AI tool is free with our Basic submission. Fast Track and Growth Pro add priority review and clearly labeled featured placements for additional visibility.
+          - generic:
+            - heading [level=3]: What types of AI tools do you accept?
+            - paragraph: "We accept all types of AI-powered tools and services that provide genuine value to users. This includes but is not limited to: chatbots, image generators, writing assistants, and productivity tools."
+          - generic:
+            - heading [level=3]: Any questions?
+            - paragraph:
+              - text: "If you have any questions, please contact us by email:"
+              - link:
+                - /url: mailto:support@navtools.ai
+                - text: support@navtools.ai
+    - contentinfo:
+      - generic:
+        - generic:
+          - link:
+            - /url: /
+            - img
+            - generic: NavTools.ai
+        - paragraph: NavTools AI, The Best AI Websites & AI Tools Directory
+        - generic:
+          - link:
+            - /url: /privacy
+            - text: Privacy Policy
+          - link:
+            - /url: /terms
+            - text: Terms of Use
+          - link:
+            - /url: /submit
+            - text: Submit Tool
+          - link:
+            - /url: /best-ai-tools
+            - text: Fastest Growing AI Tools
+          - link:
+            - /url: /best-ai-tools/visit-growth
+            - text: AI Tools Visit Growth
+          - link:
+            - /url: /best-ai-tools/most-visited
+            - text: Most Visited AI Tools
+          - link:
+            - /url: /category
+            - text: Browse Categories
+          - link:
+            - /url: mailto:support@navtools.ai
+            - text: Contact Us
+        - paragraph: Copyright ©2026 NavTools AI. All Rights Reserved.
+  - region "Notifications alt+T"
+  - alert
+  - generic:
+    - button:
+      - img
+  - dialog "Boost Your Tool's Visibility" [ref=e195]:
+    - generic [ref=e196]:
+      - heading "Boost Your Tool's Visibility" [level=2] [ref=e197]
+      - paragraph [ref=e198]: Don't wait months to get listed. Upgrade to Fast Track for priority review and better exposure.
+    - generic [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - img [ref=e202]
+          - text: Standard
+        - list [ref=e205]:
+          - listitem [ref=e206]:
+            - img [ref=e207]
+            - text: "Review: 30-90 Days"
+          - listitem [ref=e210]:
+            - img [ref=e211]
+            - text: Standard listing
+      - generic [ref=e213]:
+        - generic [ref=e214]: Recommended
+        - generic [ref=e215]:
+          - img [ref=e216]
+          - text: Fast Track
+        - list [ref=e218]:
+          - listitem [ref=e219]:
+            - img [ref=e220]
+            - text: "Review: 48 Hours"
+          - listitem [ref=e222]:
+            - img [ref=e223]
+            - text: Featured placement
+    - generic [ref=e225]:
+      - button "Upgrade to Fast Track ($29.9)" [active] [ref=e226] [cursor=pointer]
+      - button "No thanks, I'll wait 30-90 days" [ref=e227] [cursor=pointer]
+    - button "Close" [ref=e228] [cursor=pointer]:
+      - img [ref=e229]
+      - generic [ref=e232]: Close

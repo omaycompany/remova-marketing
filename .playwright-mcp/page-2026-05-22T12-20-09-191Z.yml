@@ -1,0 +1,222 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "AI OpenAIToolsHub" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: AI
+        - generic [ref=e9]: OpenAIToolsHub
+      - navigation [ref=e10]:
+        - link "Research" [ref=e11] [cursor=pointer]:
+          - /url: /ai-product-research
+          - img [ref=e12]
+          - generic [ref=e14]: Research
+        - link "Tools" [ref=e15] [cursor=pointer]:
+          - /url: /tools
+          - img [ref=e16]
+          - generic [ref=e18]: Tools
+        - link "Blog" [ref=e19] [cursor=pointer]:
+          - /url: /en/blog
+          - img [ref=e20]
+          - generic [ref=e22]: Blog
+        - link "Pricing" [ref=e23] [cursor=pointer]:
+          - /url: /ai-product-research/pricing
+          - img [ref=e24]
+          - generic [ref=e27]: Pricing
+      - button "Sign in" [ref=e29] [cursor=pointer]
+  - main [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]: Free
+        - generic [ref=e35]: •
+        - generic [ref=e36]: Reviewed within 48 hours
+      - paragraph [ref=e37]: Get a dofollow backlink from a DR30 AI tools directory
+      - paragraph [ref=e38]: Ahrefs DR30 • 1.3K+ backlinks • indexed on Google • no signup required
+    - generic [ref=e39]:
+      - heading "Submit Your AI Tool" [level=1] [ref=e40]
+      - paragraph [ref=e41]:
+        - text: List your AI tool on OpenAIToolsHub for free. Approved submissions receive a
+        - strong [ref=e42]: dofollow backlink
+        - text: on a dedicated page.
+    - generic [ref=e43]:
+      - heading "How it works" [level=2] [ref=e44]
+      - list [ref=e45]:
+        - listitem [ref=e46]: Fill out the form below (takes ~2 minutes)
+        - listitem [ref=e47]: Our team reviews your submission (usually within 48 hours)
+        - listitem [ref=e48]: If approved, your tool gets a dedicated page with a dofollow link
+    - generic [ref=e50]:
+      - generic:
+        - text: Website
+        - textbox
+      - generic [ref=e51]:
+        - generic [ref=e52]: Tool Name *
+        - textbox "Tool Name *" [ref=e53]:
+          - /placeholder: e.g. My AI Writing Assistant
+      - generic [ref=e54]:
+        - generic [ref=e55]: Website URL *
+        - textbox "Website URL *" [ref=e56]:
+          - /placeholder: https://your-tool.com
+      - generic [ref=e57]:
+        - generic [ref=e58]: Logo URL (optional)
+        - textbox "Logo URL (optional)" [ref=e59]:
+          - /placeholder: https://your-tool.com/logo.png
+        - paragraph [ref=e60]: If not provided, we will use your site's favicon.
+      - generic [ref=e61]:
+        - generic [ref=e62]: Description *
+        - textbox "Description *" [ref=e63]:
+          - /placeholder: Describe what your AI tool does, its key features, and who it's for (min 20 characters)
+      - generic [ref=e64]:
+        - generic [ref=e65]: Category *
+        - combobox "Category *" [ref=e66]:
+          - option "Select a category" [selected]
+          - option "Chatbot"
+          - option "Writing"
+          - option "Image"
+          - option "Video"
+          - option "Audio"
+          - option "Coding"
+          - option "Productivity"
+          - option "Marketing"
+          - option "Research"
+          - option "Other"
+      - generic [ref=e67]:
+        - generic [ref=e68]: Contact Email *
+        - textbox "Contact Email *" [ref=e69]:
+          - /placeholder: you@company.com
+        - paragraph [ref=e70]: We will notify you when your submission is reviewed. Not displayed publicly.
+      - button "Submit Tool for Review" [ref=e71] [cursor=pointer]
+      - paragraph [ref=e72]:
+        - text: By submitting, you agree to our review process. Approved tools receive a dofollow backlink. This site is protected by reCAPTCHA and the Google
+        - link "Privacy Policy" [ref=e73] [cursor=pointer]:
+          - /url: https://policies.google.com/privacy
+        - text: and
+        - link "Terms of Service" [ref=e74] [cursor=pointer]:
+          - /url: https://policies.google.com/terms
+        - text: apply.
+  - contentinfo [ref=e75]:
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - link "AI OpenAIToolsHub" [ref=e80] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e82]: AI
+            - generic [ref=e83]: OpenAIToolsHub
+          - paragraph [ref=e84]: SaaS playbooks for indie hackers. $9/mo. Cancel anytime.
+        - generic [ref=e85]:
+          - heading "Inside Indie Hacker SaaS" [level=4] [ref=e86]
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - link "Browse Research" [ref=e89] [cursor=pointer]:
+                - /url: /ai-product-research
+            - listitem [ref=e90]:
+              - link "Pricing" [ref=e91] [cursor=pointer]:
+                - /url: /ai-product-research/pricing
+            - listitem [ref=e92]:
+              - link "How We Research" [ref=e93] [cursor=pointer]:
+                - /url: /ai-product-research/how-we-research
+            - listitem [ref=e94]:
+              - link "Read PostSyncer free" [ref=e95] [cursor=pointer]:
+                - /url: /ai-product-research/postsyncer
+        - generic [ref=e96]:
+          - heading "Free Tools" [level=4] [ref=e97]
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "Dev Tools (33+)" [ref=e100] [cursor=pointer]:
+                - /url: /tools
+            - listitem [ref=e101]:
+              - link "SEO Tools (6)" [ref=e102] [cursor=pointer]:
+                - /url: /seo-tools
+            - listitem [ref=e103]:
+              - link "SkillsMap" [ref=e104] [cursor=pointer]:
+                - /url: /en/skillsmap
+            - listitem [ref=e105]:
+              - link "Backlinks Directory" [ref=e106] [cursor=pointer]:
+                - /url: /en/backlinks
+            - listitem [ref=e107]:
+              - link "Submit Your Tool" [ref=e108] [cursor=pointer]:
+                - /url: /directory
+        - generic [ref=e109]:
+          - heading "Blog & Learn" [level=4] [ref=e110]
+          - list [ref=e111]:
+            - listitem [ref=e112]:
+              - link "Latest Blog" [ref=e113] [cursor=pointer]:
+                - /url: /en/blog
+            - listitem [ref=e114]:
+              - link "Use Cases" [ref=e115] [cursor=pointer]:
+                - /url: /en/use-cases
+            - listitem [ref=e116]:
+              - link "Learn" [ref=e117] [cursor=pointer]:
+                - /url: /en/learn
+            - listitem [ref=e118]:
+              - link "SEO Brain" [ref=e119] [cursor=pointer]:
+                - /url: /en/seo-brain
+        - navigation "Company" [ref=e120]:
+          - heading "About" [level=4] [ref=e121]
+          - list [ref=e122]:
+            - listitem [ref=e123]:
+              - link "About Us" [ref=e124] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e125]:
+              - link "Contact" [ref=e126] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e127]:
+              - link "Privacy Policy" [ref=e128] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e129]:
+              - link "Terms of Service" [ref=e130] [cursor=pointer]:
+                - /url: /terms
+            - listitem [ref=e131]:
+              - link "Support Us" [ref=e132] [cursor=pointer]:
+                - /url: /en/donation
+      - generic [ref=e133]:
+        - paragraph [ref=e134]: © 2026 OpenAIToolsHub. All rights reserved.
+        - group [ref=e135]:
+          - generic "Featured on 24+ AI directories" [ref=e136] [cursor=pointer]:
+            - generic [ref=e137]: Featured on 24+ AI directories
+            - generic [ref=e138]: ▸
+        - paragraph [ref=e139]:
+          - text: Some links are affiliate links. We may earn a commission at no cost to you.
+          - link "Disclosure" [ref=e140] [cursor=pointer]:
+            - /url: /about#affiliate-disclosure
+      - generic [ref=e141]:
+        - generic [ref=e142]: Featured on
+        - link "AI工具网" [ref=e143] [cursor=pointer]:
+          - /url: https://www.ai138.com
+        - generic [ref=e144]: ·
+        - link "Twelve Tools" [ref=e145] [cursor=pointer]:
+          - /url: https://twelve.tools
+        - generic [ref=e146]: ·
+        - link "Wired Business" [ref=e147] [cursor=pointer]:
+          - /url: https://wired.business
+        - generic [ref=e148]: ·
+        - link "Fazier" [ref=e149] [cursor=pointer]:
+          - /url: https://fazier.com
+        - generic [ref=e150]: ·
+        - link "Dang.ai" [ref=e151] [cursor=pointer]:
+          - /url: https://dang.ai
+        - generic [ref=e152]: ·
+        - link "SoftwareWorld" [ref=e153] [cursor=pointer]:
+          - /url: https://www.softwareworld.co
+        - generic [ref=e154]: ·
+        - link "AI Tool Trek" [ref=e155] [cursor=pointer]:
+          - /url: https://aitooltrek.com
+        - generic [ref=e156]: ·
+        - link "IndieHunt" [ref=e157] [cursor=pointer]:
+          - /url: https://indiehunt.io/project/openaitoolshub-ai-tool-reviews-amp-comparisons
+        - generic [ref=e158]: ·
+        - link "Uno Directory" [ref=e159] [cursor=pointer]:
+          - /url: https://uno.directory
+        - generic [ref=e160]: ·
+        - link "SideProjectors" [ref=e161] [cursor=pointer]:
+          - /url: https://www.sideprojectors.com/project/74509
+        - generic [ref=e162]: ·
+        - link "AI Toolz Dir" [ref=e163] [cursor=pointer]:
+          - /url: https://www.aitoolzdir.com
+        - generic [ref=e164]: ·
+        - link "WTAI" [ref=e165] [cursor=pointer]:
+          - /url: https://wtai.cc
+        - generic [ref=e166]: ·
+        - link "ToolDirs" [ref=e167] [cursor=pointer]:
+          - /url: https://tooldirs.com
+  - alert [ref=e168]

@@ -1,0 +1,107 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "🌐 Ailists.ai" [ref=e4] [cursor=pointer]:
+        - /url: index.html
+        - generic [ref=e5]: 🌐
+        - generic [ref=e6]: Ailists.ai
+      - navigation [ref=e7]:
+        - generic [ref=e8]:
+          - link "🗂️ Categories" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+          - link "🏢 AI Companies" [ref=e10] [cursor=pointer]:
+            - /url: companies.html
+          - link "📰 AI News" [ref=e11] [cursor=pointer]:
+            - /url: ai-news.html
+          - link "📅 AI Events" [ref=e12] [cursor=pointer]:
+            - /url: ai-events.html
+          - link "💼 AI Jobs" [ref=e13] [cursor=pointer]:
+            - /url: ai-jobs.html
+          - link "💸 AI Fund" [ref=e14] [cursor=pointer]:
+            - /url: ai-fund.html
+          - link "🤝 Sponsor" [ref=e15] [cursor=pointer]:
+            - /url: sponsor.html
+          - link "❤️ Donate" [ref=e16] [cursor=pointer]:
+            - /url: donate.html
+          - link "🧾 Subscribe" [ref=e17] [cursor=pointer]:
+            - /url: subscribe.html
+          - link "💳 Pricing" [ref=e18] [cursor=pointer]:
+            - /url: pricing.html
+          - link "➕ Add your startup" [ref=e19] [cursor=pointer]:
+            - /url: add-startup.html
+          - link "AI AI Advisors" [ref=e20] [cursor=pointer]:
+            - /url: advisers.html
+            - img "AI" [ref=e21]
+            - text: AI Advisors
+          - link "🏢 Data Centers" [ref=e22] [cursor=pointer]:
+            - /url: data-centers.html
+          - link "🧩 CPU Manufacturers" [ref=e23] [cursor=pointer]:
+            - /url: cpu.html
+          - link "ℹ️ About" [ref=e24] [cursor=pointer]:
+            - /url: about.html
+          - link "📬 Contact" [ref=e25] [cursor=pointer]:
+            - /url: contact.html
+          - link "⚠️ Disclaimer" [ref=e26] [cursor=pointer]:
+            - /url: disclaimer.html
+  - main [ref=e27]:
+    - generic [ref=e28]:
+      - heading "Add your startup" [level=1] [ref=e29]
+      - paragraph [ref=e30]: Submit your company details. If you want a paid placement, subscribe first (optional) then submit this form.
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: Company name
+          - textbox "Company name" [ref=e35]
+        - generic [ref=e36]:
+          - generic [ref=e37]: Website URL
+          - textbox "Website URL" [ref=e38]:
+            - /placeholder: https://...
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: Contact email
+          - textbox "Contact email" [ref=e42]
+          - generic [ref=e43]: AI Category / Sector *
+          - combobox [ref=e44]:
+            - option "Loading categories…" [selected]
+          - generic [ref=e45]: Choose the closest match from our 242 categories.
+        - generic [ref=e46]:
+          - generic [ref=e47]: Primary category
+          - textbox "Primary category" [ref=e48]:
+            - /placeholder: e.g., AI Agents, Robotics, LLMs
+      - generic [ref=e49]:
+        - generic [ref=e50]: Short description
+        - textbox "Short description" [ref=e51]:
+          - /placeholder: What do you do?
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: Select Category / Sector *
+          - combobox [ref=e55]:
+            - option "Choose a category…" [selected]
+          - text: plan">Choose a Plan *
+          - combobox [ref=e56]:
+            - option "Select…" [disabled] [selected]
+            - option "Starter — $19.95/month"
+            - option "Starter — $149/year"
+            - option "Pro — $39.95/month"
+            - option "Pro — $299/year"
+            - option "Featured — $59.99/month"
+            - option "Featured — $499/year"
+        - generic [ref=e57]:
+          - generic [ref=e58]: Notes (optional)
+          - textbox "Notes (optional)" [ref=e59]:
+            - /placeholder: Anything else?
+      - generic [ref=e60]:
+        - button "Submit" [ref=e61]
+        - link "View pricing" [ref=e62] [cursor=pointer]:
+          - /url: pricing.html
+      - paragraph [ref=e63]: After you submit, you’ll be redirected to secure Stripe Checkout.
+  - contentinfo [ref=e64]:
+    - generic [ref=e65]:
+      - strong [ref=e67]: Global Web Directory (GWD)
+      - generic [ref=e68]:
+        - text: "Contact:"
+        - link "support@allailisted.com" [ref=e69] [cursor=pointer]:
+          - /url: mailto:support@allailisted.com
+      - generic [ref=e70]:
+        - text: ©
+        - text: All rights reserved.

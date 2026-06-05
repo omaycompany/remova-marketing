@@ -3964,6 +3964,21 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0"
 
 const combinedBlogPosts = [...rawBlogPosts, ...euAiActTimelineBlogPosts, ...aiToolsBlogPosts, ...aiCodeGeneratorBlogPosts, ...aiSecurityRisksBlogPosts, ...aiChatbotArchiveBlogPosts, ...aiChatbotBuilderBlogPosts, ...aiWritingAssistantBlogPosts, ...agenticWorkflowsBlogPosts, ...chatgptAlternativesBlogPosts, ...companyAiBlogPosts, ...codingAiBlogPosts, ...customerServiceAiBlogPosts, ...salesEmailBlogPosts, ...keywordBlogPosts];
 
-export const allBlogPosts = combinedBlogPosts
-    .filter((post) => post.date <= today)
+function dedupeBlogPostsBySlug(posts: BlogPost[]) {
+    const postsBySlug = new Map<string, BlogPost>();
+
+    for (const post of posts) {
+        const existing = postsBySlug.get(post.slug);
+        const postModified = post.lastModified ?? post.date;
+        const existingModified = existing ? (existing.lastModified ?? existing.date) : "";
+
+        if (!existing || postModified > existingModified) {
+            postsBySlug.set(post.slug, post);
+        }
+    }
+
+    return Array.from(postsBySlug.values());
+}
+
+export const allBlogPosts = dedupeBlogPostsBySlug(combinedBlogPosts.filter((post) => post.date <= today))
     .sort((a, b) => b.date.localeCompare(a.date));

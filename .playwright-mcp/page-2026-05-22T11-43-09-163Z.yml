@@ -1,0 +1,74 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "LaunchBoosts Logo LaunchBoosts" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "LaunchBoosts Logo" [ref=e8]
+        - generic [ref=e9]: LaunchBoosts
+      - navigation [ref=e10]:
+        - link "Tools" [ref=e11] [cursor=pointer]:
+          - /url: /tools
+        - link "Submit" [ref=e12] [cursor=pointer]:
+          - /url: /submit
+        - link "Queue" [ref=e13] [cursor=pointer]:
+          - /url: /queue
+        - link "Leaderboard" [ref=e14] [cursor=pointer]:
+          - /url: /leaderboard
+        - link "Premium" [ref=e15] [cursor=pointer]:
+          - /url: /premium-tools
+        - link "Sponsor" [ref=e16] [cursor=pointer]:
+          - /url: /sponsor
+        - link "How It Works" [ref=e17] [cursor=pointer]:
+          - /url: /how-it-works
+        - link "Blog" [ref=e18] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e19]:
+        - link "Sign In" [ref=e20] [cursor=pointer]:
+          - /url: /auth/signin
+        - link "add_circle Submit Tool" [ref=e21] [cursor=pointer]:
+          - /url: /auth/signin
+          - generic [ref=e22]: add_circle
+          - text: Submit Tool
+  - contentinfo [ref=e23]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - link "LaunchBoosts Logo LaunchBoosts" [ref=e26] [cursor=pointer]:
+          - /url: /
+          - img "LaunchBoosts Logo" [ref=e28]
+          - generic [ref=e29]: LaunchBoosts
+        - generic [ref=e30]: "|"
+        - generic [ref=e31]: © 2026. All rights reserved.
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - link "Privacy Policy" [ref=e34] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "Terms of Service" [ref=e35] [cursor=pointer]:
+            - /url: /terms-of-service
+          - link "Refund Policy" [ref=e36] [cursor=pointer]:
+            - /url: /refund-policy
+          - link "Blog" [ref=e37] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=e39]:
+          - generic [ref=e40]: "Contact Us:"
+          - link "support@launchboosts.com" [ref=e41] [cursor=pointer]:
+            - /url: mailto:support@launchboosts.com
+    - generic [ref=e42]:
+      - link "Featured on Findly.tools" [ref=e43] [cursor=pointer]:
+        - /url: https://findly.tools/launchboosts?utm_source=launchboosts
+        - img "Featured on Findly.tools" [ref=e44]
+      - link "Featured on Toolfio" [ref=e45] [cursor=pointer]:
+        - /url: https://toolfio.com/directories/launchboosts
+        - img "Featured on Toolfio" [ref=e46]
+      - link "Featured on Twelve Tools" [ref=e47] [cursor=pointer]:
+        - /url: https://twelve.tools
+        - img "Featured on Twelve Tools" [ref=e48]
+      - link "Featured on Wired Business" [ref=e49] [cursor=pointer]:
+        - /url: https://wired.business
+        - img "Featured on Wired Business" [ref=e50]
+  - alert [ref=e51]
+  - generic [ref=e53]:
+    - paragraph [ref=e55]:
+      - text: We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By continuing to use this site, you agree to our use of cookies.
+      - link "Learn more" [ref=e56] [cursor=pointer]:
+        - /url: /privacy-policy
+    - button "Got it" [ref=e58] [cursor=pointer]

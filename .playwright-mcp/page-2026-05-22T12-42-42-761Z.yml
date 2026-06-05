@@ -1,0 +1,189 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation "Main navigation" [ref=e3]:
+      - generic [ref=e4]:
+        - link "Home" [ref=e5] [cursor=pointer]:
+          - /url: /en
+          - img "LargeMI Logo - Your AI Tools Directory" [ref=e7]
+          - generic [ref=e8]:
+            - generic [ref=e9]: LargeMI
+            - generic [ref=e10]: AI Tools Directory
+        - navigation [ref=e237]:
+          - generic [ref=e238]:
+            - button "Explore ▾" [ref=e239] [cursor=pointer]:
+              - text: Explore
+              - generic [ref=e240]: ▾
+            - generic:
+              - generic: Explore AI Tools
+              - generic: 🔥 Top Categories
+              - generic:
+                - link "AI Chatbots":
+                  - /url: /en/category/chatbots-tools
+                - link "AI Image Generators":
+                  - /url: /en/category/image-tools
+                - link "AI Video Tools":
+                  - /url: /en/category/video-tools
+                - link "AI Coding Tools":
+                  - /url: /en/category/code-tools
+                - link "AI Writing Tools":
+                  - /url: /en/category/writing-tools
+                - link "AI Productivity":
+                  - /url: /en/category/productivity-tools
+              - link "View all categories →":
+                - /url: /en/categories
+          - generic [ref=e241]:
+            - button "Use Cases ▾" [ref=e242] [cursor=pointer]:
+              - text: Use Cases
+              - generic [ref=e243]: ▾
+            - generic:
+              - generic:
+                - link "✍️ Writing & Content":
+                  - /url: /en/use-cases/writing-content
+                - link "🎨 Image Generation":
+                  - /url: /en/use-cases/image-generation
+                - link "🎬 Video Creation":
+                  - /url: /en/use-cases/video-creation
+                - link "🧑‍💻 Coding & Development":
+                  - /url: /en/use-cases/coding-development
+                - link "🌍 Translation & Localization":
+                  - /url: /en/use-cases/translation-localization
+                - link "📊 Productivity & Meetings":
+                  - /url: /en/use-cases/productivity-meetings
+                - link "⚖️ Legal & Contracts":
+                  - /url: /en/use-cases/legal-contracts
+          - link "Tool Pricing" [ref=e244] [cursor=pointer]:
+            - /url: /en/tool-pricing
+          - link "Blog" [ref=e245] [cursor=pointer]:
+            - /url: /en/blog
+        - generic [ref=e11]:
+          - link "Submit a Tool" [ref=e246] [cursor=pointer]:
+            - /url: /en/submit-tool
+          - button "Search" [ref=e14] [cursor=pointer]:
+            - img [ref=e15]
+          - generic [ref=e18]:
+            - button "Select language" [ref=e19] [cursor=pointer]:
+              - img [ref=e20]
+              - img [ref=e24]
+            - button "Toggle theme" [ref=e26] [cursor=pointer]:
+              - img [ref=e27]
+              - img
+              - generic [ref=e33]: Toggle theme
+    - main [ref=e34]:
+      - main [ref=e36]:
+        - generic [ref=e37]:
+          - navigation "breadcrumb" [ref=e39]:
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Home" [ref=e42] [cursor=pointer]:
+                  - /url: /en
+              - listitem [ref=e43]: ›
+              - listitem [ref=e44]:
+                - link "Submit Tool" [disabled] [ref=e45]
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - heading "success Submitted" [level=3] [ref=e287]:
+                - img "success" [ref=e288]: 🎉
+                - text: Submitted
+              - paragraph [ref=e289]: "Current status: Pending"
+              - paragraph [ref=e290]: We’ll finish manual review in 24–72 hours and notify you via email.
+            - generic [ref=e291]:
+              - generic [ref=e292]:
+                - generic [ref=e293]:
+                  - img [ref=e294]
+                  - generic [ref=e300]: Your tool is in the review queue. We’ll email you once it’s approved.
+                - generic [ref=e301]:
+                  - textbox "Share link" [ref=e302]: https://www.largemi.com/en/submit-tool
+                  - button "Share link" [ref=e303] [cursor=pointer]:
+                    - img [ref=e304]
+                    - text: Share link
+              - generic [ref=e307]:
+                - paragraph [ref=e308]: Browse AI directory
+                - generic [ref=e309]:
+                  - link "X / Twitter" [ref=e310] [cursor=pointer]:
+                    - /url: https://twitter.com/intent/tweet?text=Submit%20Your%20AI%20Tool&url=https%3A%2F%2Fwww.largemi.com%2Fen%2Fsubmit-tool
+                    - img [ref=e311]
+                    - text: X / Twitter
+                  - link "LinkedIn" [ref=e317] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.largemi.com%2Fen%2Fsubmit-tool
+                    - img [ref=e318]
+                    - text: LinkedIn
+                - link "Browse AI directory" [ref=e322] [cursor=pointer]:
+                  - /url: /en/category/chatbots-tools
+            - generic [ref=e323]:
+              - button "Submit another tool" [ref=e324] [cursor=pointer]
+              - link "Browse AI directory" [ref=e325] [cursor=pointer]:
+                - /url: /en
+    - button "Back to top" [ref=e190] [cursor=pointer]:
+      - img [ref=e191]
+    - contentinfo [ref=e193]:
+      - generic [ref=e194]:
+        - generic [ref=e195]:
+          - generic [ref=e196]: LargeMI
+          - paragraph [ref=e197]: Discover and compare AI tools
+          - paragraph [ref=e198]: Curated by humans · Updated regularly · 1,200+ tools
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - heading "Explore AI Tools" [level=4] [ref=e201]
+            - link "AI Chatbots" [ref=e202] [cursor=pointer]:
+              - /url: /en/category/chatbots-tools
+            - link "AI Search" [ref=e203] [cursor=pointer]:
+              - /url: /en/category/search-tools
+            - link "AI Image" [ref=e204] [cursor=pointer]:
+              - /url: /en/category/image-tools
+            - link "AI Video" [ref=e205] [cursor=pointer]:
+              - /url: /en/category/video-tools
+            - link "AI Code" [ref=e206] [cursor=pointer]:
+              - /url: /en/category/code-tools
+            - link "AI Writing" [ref=e207] [cursor=pointer]:
+              - /url: /en/category/writing-tools
+            - link "View all →" [ref=e208] [cursor=pointer]:
+              - /url: /en/categories
+          - generic [ref=e209]:
+            - heading "By Use Case" [level=4] [ref=e210]
+            - link "Content Writing" [ref=e211] [cursor=pointer]:
+              - /url: /en/use-cases/writing-content
+            - link "Image Generation" [ref=e212] [cursor=pointer]:
+              - /url: /en/use-cases/image-generation
+            - link "Video Creation" [ref=e213] [cursor=pointer]:
+              - /url: /en/use-cases/video-creation
+            - link "Coding & Development" [ref=e214] [cursor=pointer]:
+              - /url: /en/use-cases/coding-development
+            - link "Translation & Localization" [ref=e215] [cursor=pointer]:
+              - /url: /en/use-cases/translation-localization
+            - link "Productivity" [ref=e216] [cursor=pointer]:
+              - /url: /en/use-cases/productivity-meetings
+          - generic [ref=e217]:
+            - heading "Platform" [level=4] [ref=e218]
+            - link "Submit Tool" [ref=e219] [cursor=pointer]:
+              - /url: /en/submit-tool
+            - link "Tool Pricing" [ref=e220] [cursor=pointer]:
+              - /url: /en/tool-pricing
+            - link "Blog" [ref=e221] [cursor=pointer]:
+              - /url: /en/blog
+            - link "Weekly Picks" [ref=e222] [cursor=pointer]:
+              - /url: /en/weekly-picks
+            - link "Feedback" [ref=e223] [cursor=pointer]:
+              - /url: /en/feedback
+            - link "About" [ref=e224] [cursor=pointer]:
+              - /url: /en/about
+        - generic [ref=e225]:
+          - generic [ref=e226]: © 2026 LargeMI · All rights reserved
+          - generic [ref=e227]:
+            - generic [ref=e228]:
+              - link "Privacy Policy" [ref=e229] [cursor=pointer]:
+                - /url: /en/privacy
+              - generic [ref=e230]: ·
+            - generic [ref=e231]:
+              - link "Terms of Use" [ref=e232] [cursor=pointer]:
+                - /url: /en/terms
+              - generic [ref=e233]: ·
+            - link "Contact" [ref=e235] [cursor=pointer]:
+              - /url: /en/contact
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e264]
+  - generic [ref=e265]:
+    - generic [ref=e266] [cursor=pointer]:
+      - img [ref=e268]
+      - link "Go to shopping options for Graphics & Animation Software" [ref=e277]: Graphics & Animation Software
+    - button "Close shopping anchor" [ref=e271]

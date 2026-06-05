@@ -1,0 +1,99 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e4]:
+    - link "AI Tools by New Horizon Code home" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e7]: AI Directory
+    - generic [ref=e8]:
+      - generic [ref=e11]:
+        - img [ref=e12]
+        - combobox "Search tools" [ref=e15]
+      - link "Help" [ref=e16] [cursor=pointer]:
+        - /url: /help
+      - radiogroup [ref=e168]:
+        - radio "Switch to system theme" [checked] [ref=e169]:
+          - img [ref=e170]
+        - radio "Switch to light theme" [ref=e173]:
+          - img [ref=e174]
+        - radio "Switch to dark theme" [ref=e180]:
+          - img [ref=e181]
+  - main [ref=e18]:
+    - generic [ref=e209]:
+      - generic [ref=e210]:
+        - img [ref=e212]
+        - heading "Reviewing your submission" [level=1] [ref=e214]
+      - paragraph [ref=e215]:
+        - text: Our automated review engine is checking your tool against safety, content, and quality signals. This typically takes
+        - strong [ref=e216]: 30 seconds to 2 minutes
+        - text: . You can safely close this page — we'll email you the result if you provided an address.
+      - generic [ref=e217]:
+        - img [ref=e218]
+        - generic [ref=e221]: 0s elapsed
+  - contentinfo [ref=e116]:
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - link "AI Tools by New Horizon Code home" [ref=e122] [cursor=pointer]:
+            - /url: /
+            - text: AI Tools
+          - paragraph [ref=e123]: By Syrup, a trading name of New Horizon Code.
+        - navigation "Explore" [ref=e124]:
+          - heading "Explore" [level=3] [ref=e125]
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "Home" [ref=e128] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e129]:
+              - link "All tools" [ref=e130] [cursor=pointer]:
+                - /url: /tools
+            - listitem [ref=e131]:
+              - link "Submit a tool" [ref=e132] [cursor=pointer]:
+                - /url: /submit
+            - listitem [ref=e133]:
+              - link "About" [ref=e134] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e135]:
+              - link "Pricing" [ref=e136] [cursor=pointer]:
+                - /url: /pricing
+        - navigation "Help" [ref=e137]:
+          - heading "Help" [level=3] [ref=e138]
+          - list [ref=e139]:
+            - listitem [ref=e140]:
+              - link "Help center" [ref=e141] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=e142]:
+              - link "Submit a ticket" [ref=e143] [cursor=pointer]:
+                - /url: /help/ticket/submit
+            - listitem [ref=e144]:
+              - link "Changelog" [ref=e145] [cursor=pointer]:
+                - /url: /changelog
+        - navigation "Legal" [ref=e146]:
+          - heading "Legal" [level=3] [ref=e147]
+          - list [ref=e148]:
+            - listitem [ref=e149]:
+              - link "Terms" [ref=e150] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e151]:
+              - link "Privacy" [ref=e152] [cursor=pointer]:
+                - /url: /legal/privacy
+            - listitem [ref=e153]:
+              - link "Guidelines" [ref=e154] [cursor=pointer]:
+                - /url: /legal/guidelines
+      - generic [ref=e156]:
+        - paragraph [ref=e157]: © 2026 New Horizon Code
+        - list [ref=e158]:
+          - listitem [ref=e159]:
+            - link "Sitemap" [ref=e160] [cursor=pointer]:
+              - /url: /sitemap.xml
+          - listitem [ref=e161]:
+            - link "Robots" [ref=e162] [cursor=pointer]:
+              - /url: /robots.txt
+          - listitem [ref=e163]:
+            - link "LLMs" [ref=e164] [cursor=pointer]:
+              - /url: /llms.txt
+          - listitem [ref=e165]:
+            - link "Admin" [ref=e166] [cursor=pointer]:
+              - /url: /admin/login
+  - button "Open chat" [ref=e167]: Chat
+  - alert [ref=e186]: Submission Status

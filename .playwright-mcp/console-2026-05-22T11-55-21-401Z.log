@@ -1,0 +1,4 @@
+[    2489ms] [LOG] [EveryAI Auth] Clerk ready (PRODUCTION). @ https://every-ai.com/auth-helper.js:131
+[    3000ms] [ERROR] Analytics failure Error: [Request ID: 230735e17aebd5b7] Server Error
+    at se.mutationInner (https://esm.sh/convex@1.39.1/es2022/browser.mjs:2:53749)
+    at async se.processMutationQueue (https://esm.sh/convex@1.39.1/es2022/browser.mjs:2:54038) @ https://every-ai.com/app.js:40

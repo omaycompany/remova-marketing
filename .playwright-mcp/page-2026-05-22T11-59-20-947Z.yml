@@ -1,0 +1,106 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "tuvavo" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e9]: tuvavo
+      - navigation [ref=e11]:
+        - link "Home" [ref=e12] [cursor=pointer]:
+          - /url: /
+        - link "Tools" [ref=e13] [cursor=pointer]:
+          - /url: /tools
+        - button "Best" [ref=e15]:
+          - text: Best
+          - img [ref=e16]
+        - button "Blog" [ref=e19]:
+          - text: Blog
+          - img [ref=e20]
+        - button "Compare" [ref=e23]:
+          - text: Compare
+          - img [ref=e24]
+        - button "Deals" [ref=e27]:
+          - text: Deals
+          - img [ref=e28]
+        - link "Contact" [ref=e30] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e31]:
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - img [ref=e37]
+        - text: "404"
+      - heading "Sorry, no content here" [level=1] [ref=e39]
+      - paragraph [ref=e40]: The page you’re looking for may have been moved or deleted. You can go back home or explore our latest Best guides and Blog posts.
+      - generic [ref=e41]:
+        - link "Go Home" [ref=e42] [cursor=pointer]:
+          - /url: /
+          - img [ref=e43]
+          - text: Go Home
+        - link "Explore Best" [ref=e46] [cursor=pointer]:
+          - /url: /best
+          - img [ref=e47]
+          - text: Explore Best
+        - link "Read Blog" [ref=e49] [cursor=pointer]:
+          - /url: /blog
+          - img [ref=e50]
+          - text: Read Blog
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - heading "About Us" [level=3] [ref=e56]
+          - paragraph [ref=e57]: Providing honest reviews and comparisons of the best AI tools and software to help you make informed decisions.
+          - generic [ref=e58]:
+            - link "Twitter" [ref=e59] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e60]: Twitter
+              - img [ref=e61]
+            - link "LinkedIn" [ref=e63] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e64]: LinkedIn
+              - img [ref=e65]
+        - generic [ref=e67]:
+          - heading "Quick Links" [level=3] [ref=e68]
+          - list [ref=e69]:
+            - listitem [ref=e70]:
+              - link "About Us" [ref=e71] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e72]:
+              - link "Blog" [ref=e73] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e74]:
+              - link "Contact Us" [ref=e75] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e76]:
+              - link "Submit a Tool" [ref=e77] [cursor=pointer]:
+                - /url: /submit-tool
+        - generic [ref=e78]:
+          - heading "Popular Pages" [level=3] [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]:
+              - link "AI Tools Directory" [ref=e82] [cursor=pointer]:
+                - /url: /tools
+            - listitem [ref=e83]:
+              - link "Best AI Tools" [ref=e84] [cursor=pointer]:
+                - /url: /best
+            - listitem [ref=e85]:
+              - link "Compare Tools" [ref=e86] [cursor=pointer]:
+                - /url: /compare
+            - listitem [ref=e87]:
+              - link "Latest Deals" [ref=e88] [cursor=pointer]:
+                - /url: /deals
+        - generic [ref=e89]:
+          - heading "Newsletter" [level=3] [ref=e90]
+          - paragraph [ref=e91]: Subscribe for the latest reviews and comparisons
+          - generic [ref=e92]:
+            - textbox "Your email" [ref=e93]
+            - button "Subscribe" [ref=e94]
+      - generic [ref=e95]:
+        - paragraph [ref=e96]: © 2025 Tuvavo. All rights reserved.
+        - generic [ref=e97]:
+          - link "Privacy Policy" [ref=e98] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms of Service" [ref=e99] [cursor=pointer]:
+            - /url: /terms
+          - link "Contact" [ref=e100] [cursor=pointer]:
+            - /url: /contact
+  - alert [ref=e101]

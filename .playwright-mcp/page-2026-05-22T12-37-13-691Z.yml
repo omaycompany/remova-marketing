@@ -1,0 +1,178 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "AISO Tools" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: AISO
+        - generic [ref=e7]: Tools
+      - generic [ref=e8]:
+        - link "Categories" [ref=e9] [cursor=pointer]:
+          - /url: /category
+        - link "New" [ref=e10] [cursor=pointer]:
+          - /url: /new
+        - link "Blog" [ref=e11] [cursor=pointer]:
+          - /url: /blog
+        - link "Compare" [ref=e12] [cursor=pointer]:
+          - /url: /compare
+        - link "Advertise" [ref=e13] [cursor=pointer]:
+          - /url: /advertise
+        - link "Submit Tool" [ref=e14] [cursor=pointer]:
+          - /url: /submit
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "Submit Your AI Tool" [level=1] [ref=e17]
+      - paragraph [ref=e18]:
+        - text: Get your AI tool in front of thousands of developers, marketers, and creators. Basic listings are
+        - strong [ref=e19]: free forever
+        - text: . Want 10x more visibility?
+        - link "Upgrade to Featured →" [ref=e20] [cursor=pointer]:
+          - /url: /advertise
+      - generic [ref=e124]: Server misconfigured. Try again later.
+      - generic [ref=e21]:
+        - text: Website
+        - textbox [ref=e22]
+        - generic [ref=e23]:
+          - generic [ref=e24]: Tool Name *
+          - textbox "e.g., ChatGPT, Midjourney, Cursor" [ref=e25]: Remova
+        - generic [ref=e26]:
+          - generic [ref=e27]: Website URL *
+          - textbox "https://yourtool.com" [ref=e28]: https://www.remova.org/
+        - generic [ref=e29]:
+          - generic [ref=e30]: Category *
+          - combobox [ref=e31]:
+            - option "Select a category"
+            - option "✍️ Writing & Content"
+            - option "🎨 Image Generation"
+            - option "🎬 Video & Animation"
+            - option "🎵 Audio & Music"
+            - option "💬 Chatbots & Assistants"
+            - option "💻 Coding & Development"
+            - option "📈 Marketing & SEO"
+            - option "⚡ Productivity"
+            - option "🎯 Design & UI/UX"
+            - option "📊 Data & Analytics"
+            - option "📚 Education & Research"
+            - option "💼 Business & Finance"
+            - option "🏥 Healthcare & Wellness"
+            - option "🔍 Search & Knowledge"
+            - option "🤖 AI Agent Infrastructure"
+            - option "🛡️ AI Security & Testing" [selected]
+            - option "🧊 3D & Spatial"
+            - option "🔎 SEO Tools"
+            - option "🏡 Real Estate"
+            - option "🗃️ Data Extraction"
+            - option "🧠 ADHD & Focus Tools"
+        - generic [ref=e32]:
+          - generic [ref=e33]: Short Description *
+          - textbox "One sentence about what your tool does (max 120 chars)" [ref=e34]: Enterprise AI governance workspace for secure ChatGPT, Claude, and Gemini use with data controls.
+        - generic [ref=e35]:
+          - generic [ref=e36]: Full Description *
+          - textbox "Describe your tool in 2-3 sentences. What problem does it solve? Who is it for?" [ref=e37]: Remova is an enterprise AI governance workspace for companies using ChatGPT, Claude, Gemini, and other AI models. It helps teams prevent AI data leaks with policy controls, sensitive data masking, role-based access, audit visibility, and department-level budget controls.
+        - generic [ref=e38]:
+          - generic [ref=e39]: Pricing Model *
+          - combobox [ref=e40]:
+            - option "Select pricing model"
+            - option "Free"
+            - option "Freemium (free tier + paid plans)"
+            - option "Paid only" [selected]
+            - option "Open Source"
+        - generic [ref=e41]:
+          - generic [ref=e42]: Pricing Details
+          - textbox "e.g., Free tier available. Pro $20/mo, Team $25/user/mo" [ref=e43]: "Paid enterprise plan: $50 per seat/month, minimum 10 seats."
+        - generic [ref=e44]:
+          - generic [ref=e45]: Key Features (comma-separated) *
+          - textbox "e.g., AI code generation, Multi-file editing, Codebase chat" [ref=e46]: enterprise AI governance, AI data leak prevention, sensitive data masking, role-based access controls, audit trails, AI policy controls, secure ChatGPT workspace, secure Claude workspace, secure Gemini workspace, budget controls
+        - generic [ref=e47]:
+          - generic [ref=e48]: Contact Email *
+          - textbox "you@company.com" [ref=e49]: contact@remova.org
+        - button "Submit Tool (Free)" [ref=e50]
+        - paragraph [ref=e51]:
+          - text: Submissions are reviewed within 24 hours. Want instant listing + featured placement?
+          - link "See pricing →" [ref=e52] [cursor=pointer]:
+            - /url: /advertise
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: 🚀
+          - heading "Want 10x More Visibility?" [level=2] [ref=e56]
+          - paragraph [ref=e57]:
+            - text: Free listings are great, but featured tools get
+            - strong [ref=e58]: priority placement
+            - text: ","
+            - strong [ref=e59]: Featured badges
+            - text: ", and"
+            - strong [ref=e60]: dofollow backlinks
+            - text: .
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: Basic
+            - generic [ref=e64]: $49
+            - generic [ref=e65]: one-time
+            - generic [ref=e66]: Featured badge + priority placement
+          - generic [ref=e67]:
+            - generic [ref=e68]: Pro
+            - generic [ref=e69]: $149
+            - generic [ref=e70]: one-time
+            - generic [ref=e71]: Top of category + comparison pages
+          - generic [ref=e72]:
+            - generic [ref=e73]: Premium
+            - generic [ref=e74]: $299
+            - generic [ref=e75]: one-time
+            - generic [ref=e76]: Homepage + review article + social
+        - link "Upgrade to Featured →" [ref=e78] [cursor=pointer]:
+          - /url: /advertise#pricing
+  - contentinfo [ref=e79]:
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - heading "AISO Tools" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Discover the best AI tools for every task. Updated daily.
+        - generic [ref=e85]:
+          - heading "Browse" [level=3] [ref=e86]
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - link "All Categories" [ref=e89] [cursor=pointer]:
+                - /url: /category
+            - listitem [ref=e90]:
+              - link "AI Writing" [ref=e91] [cursor=pointer]:
+                - /url: /category/writing
+            - listitem [ref=e92]:
+              - link "AI Coding" [ref=e93] [cursor=pointer]:
+                - /url: /category/coding
+            - listitem [ref=e94]:
+              - link "AI Image" [ref=e95] [cursor=pointer]:
+                - /url: /category/image-generation
+        - generic [ref=e96]:
+          - heading "Company" [level=3] [ref=e97]
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "About" [ref=e100] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e101]:
+              - link "Advertise" [ref=e102] [cursor=pointer]:
+                - /url: /advertise
+            - listitem [ref=e103]:
+              - link "Submit Tool" [ref=e104] [cursor=pointer]:
+                - /url: /submit
+            - listitem [ref=e105]:
+              - link "Blog" [ref=e106] [cursor=pointer]:
+                - /url: /blog
+        - generic [ref=e107]:
+          - heading "Our Projects" [level=3] [ref=e108]
+          - list [ref=e109]:
+            - listitem [ref=e110]:
+              - link "AI Status Check" [ref=e111] [cursor=pointer]:
+                - /url: https://aistatuscheck.com
+            - listitem [ref=e112]:
+              - link "API Status Check" [ref=e113] [cursor=pointer]:
+                - /url: https://apistatuscheck.com
+            - listitem [ref=e114]:
+              - link "UsersRated" [ref=e115] [cursor=pointer]:
+                - /url: https://www.usersrated.com
+        - generic [ref=e116]:
+          - heading "Newsletter" [level=3] [ref=e117]
+          - paragraph [ref=e118]: Get the best new AI tools in your inbox weekly.
+          - generic [ref=e119]:
+            - textbox "you@email.com" [ref=e120]
+            - button "Join" [ref=e121]
+      - generic [ref=e122]: © 2026 AISO Tools. All rights reserved.
+  - alert [ref=e123]

@@ -1,0 +1,207 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "TW ToolWise" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: TW
+        - generic [ref=e8]: ToolWise
+      - navigation [ref=e9]:
+        - button "Tool Reviews" [ref=e11] [cursor=pointer]:
+          - text: Tool Reviews
+          - img [ref=e12]
+        - button "Categories" [ref=e15] [cursor=pointer]:
+          - text: Categories
+          - img [ref=e16]
+        - button "Industries" [ref=e19] [cursor=pointer]:
+          - text: Industries
+          - img [ref=e20]
+        - link "Articles" [ref=e22] [cursor=pointer]:
+          - /url: /articles
+        - link "AI News" [ref=e23] [cursor=pointer]:
+          - /url: /news
+          - text: AI News
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - searchbox "Search tools..." [ref=e27]
+          - img [ref=e28]
+        - link "List Your Tool" [ref=e30] [cursor=pointer]:
+          - /url: /submit-tool
+  - main [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]: ✅
+      - heading "Tool submitted!" [level=1] [ref=e200]
+      - paragraph [ref=e201]: We'll review your submission and publish it within 48 hours. You'll get an AI-researched profile right away.
+  - contentinfo [ref=e71]:
+    - generic [ref=e73]:
+      - generic [ref=e74]:
+        - link "TW ToolWise" [ref=e75] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e77]: TW
+          - generic [ref=e78]: ToolWise
+        - paragraph [ref=e79]: Independent AI tool reviews for small business owners. No hype. Just honest recommendations.
+      - generic [ref=e80]:
+        - heading "Reviews" [level=3] [ref=e81]
+        - list [ref=e82]:
+          - listitem [ref=e83]:
+            - link "All Tools" [ref=e84] [cursor=pointer]:
+              - /url: /tools
+          - listitem [ref=e85]:
+            - link "Writing & Content" [ref=e86] [cursor=pointer]:
+              - /url: /categories/writing-content-ai
+          - listitem [ref=e87]:
+            - link "Customer Service" [ref=e88] [cursor=pointer]:
+              - /url: /categories/customer-service-ai
+          - listitem [ref=e89]:
+            - link "Sales & CRM" [ref=e90] [cursor=pointer]:
+              - /url: /categories/sales-crm-ai
+          - listitem [ref=e91]:
+            - link "Marketing" [ref=e92] [cursor=pointer]:
+              - /url: /categories/marketing-automation-ai
+          - listitem [ref=e93]:
+            - link "Social Media" [ref=e94] [cursor=pointer]:
+              - /url: /categories/social-media-ai
+          - listitem [ref=e95]:
+            - link "Accounting" [ref=e96] [cursor=pointer]:
+              - /url: /categories/accounting-bookkeeping-ai
+          - listitem [ref=e97]:
+            - link "Design" [ref=e98] [cursor=pointer]:
+              - /url: /categories/design-creative-ai
+          - listitem [ref=e99]:
+            - link "HR & Hiring" [ref=e100] [cursor=pointer]:
+              - /url: /categories/hr-hiring-ai
+          - listitem [ref=e101]:
+            - link "Scheduling" [ref=e102] [cursor=pointer]:
+              - /url: /categories/scheduling-admin-ai
+          - listitem [ref=e103]:
+            - link "SEO" [ref=e104] [cursor=pointer]:
+              - /url: /categories/seo-ai
+          - listitem [ref=e105]:
+            - link "Video" [ref=e106] [cursor=pointer]:
+              - /url: /categories/video-ai
+          - listitem [ref=e107]:
+            - link "Automation" [ref=e108] [cursor=pointer]:
+              - /url: /categories/workflow-automation-ai
+          - listitem [ref=e109]:
+            - link "E-commerce" [ref=e110] [cursor=pointer]:
+              - /url: /categories/ecommerce-ai
+          - listitem [ref=e111]:
+            - link "Analytics" [ref=e112] [cursor=pointer]:
+              - /url: /categories/analytics-ai
+          - listitem [ref=e113]:
+            - link "AI Agents" [ref=e114] [cursor=pointer]:
+              - /url: /categories/ai-agents
+          - listitem [ref=e115]:
+            - link "Productivity" [ref=e116] [cursor=pointer]:
+              - /url: /categories/productivity-ai
+      - generic [ref=e117]:
+        - heading "Company" [level=3] [ref=e118]
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - link "About ToolWise" [ref=e121] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e122]:
+            - link "Newsletter" [ref=e123] [cursor=pointer]:
+              - /url: /newsletter
+          - listitem [ref=e124]:
+            - link "Advertise" [ref=e125] [cursor=pointer]:
+              - /url: /advertise
+          - listitem [ref=e126]:
+            - link "Submit a Tool" [ref=e127] [cursor=pointer]:
+              - /url: /submit-tool
+      - generic [ref=e128]:
+        - heading "Industries" [level=3] [ref=e129]
+        - list [ref=e130]:
+          - listitem [ref=e131]:
+            - link "All Industries" [ref=e132] [cursor=pointer]:
+              - /url: /best-for
+          - listitem [ref=e133]:
+            - link "Healthcare" [ref=e134] [cursor=pointer]:
+              - /url: /best-for/healthcare
+          - listitem [ref=e135]:
+            - link "Legal" [ref=e136] [cursor=pointer]:
+              - /url: /best-for/legal
+          - listitem [ref=e137]:
+            - link "Hospitality" [ref=e138] [cursor=pointer]:
+              - /url: /best-for/restaurant
+          - listitem [ref=e139]:
+            - link "E-commerce" [ref=e140] [cursor=pointer]:
+              - /url: /best-for/ecommerce
+          - listitem [ref=e141]:
+            - link "Real Estate" [ref=e142] [cursor=pointer]:
+              - /url: /best-for/real-estate
+          - listitem [ref=e143]:
+            - link "Freelance" [ref=e144] [cursor=pointer]:
+              - /url: /best-for/freelance
+          - listitem [ref=e145]:
+            - link "Fitness & Wellness" [ref=e146] [cursor=pointer]:
+              - /url: /best-for/fitness
+          - listitem [ref=e147]:
+            - link "Photography & Video" [ref=e148] [cursor=pointer]:
+              - /url: /best-for/photography
+          - listitem [ref=e149]:
+            - link "Beauty & Salon" [ref=e150] [cursor=pointer]:
+              - /url: /best-for/beauty
+          - listitem [ref=e151]:
+            - link "Coaching & Consulting" [ref=e152] [cursor=pointer]:
+              - /url: /best-for/coaching
+          - listitem [ref=e153]:
+            - link "Construction & Trades" [ref=e154] [cursor=pointer]:
+              - /url: /best-for/construction
+          - listitem [ref=e155]:
+            - link "Education & Tutoring" [ref=e156] [cursor=pointer]:
+              - /url: /best-for/education
+          - listitem [ref=e157]:
+            - link "Events & Weddings" [ref=e158] [cursor=pointer]:
+              - /url: /best-for/events
+          - listitem [ref=e159]:
+            - link "Non-profit & Charity" [ref=e160] [cursor=pointer]:
+              - /url: /best-for/nonprofit
+          - listitem [ref=e161]:
+            - link "Travel & Tourism" [ref=e162] [cursor=pointer]:
+              - /url: /best-for/travel
+          - listitem [ref=e163]:
+            - link "Pet Services" [ref=e164] [cursor=pointer]:
+              - /url: /best-for/petservices
+          - listitem [ref=e165]:
+            - link "Architecture & Design" [ref=e166] [cursor=pointer]:
+              - /url: /best-for/architecture
+          - listitem [ref=e167]:
+            - link "Recruitment & Staffing" [ref=e168] [cursor=pointer]:
+              - /url: /best-for/recruitment
+          - listitem [ref=e169]:
+            - link "Cleaning & Facilities" [ref=e170] [cursor=pointer]:
+              - /url: /best-for/cleaning
+          - listitem [ref=e171]:
+            - link "Financial Services" [ref=e172] [cursor=pointer]:
+              - /url: /best-for/financial
+          - listitem [ref=e173]:
+            - link "Marketing Agency" [ref=e174] [cursor=pointer]:
+              - /url: /best-for/agency
+      - generic [ref=e175]:
+        - heading "Resources" [level=3] [ref=e176]
+        - list [ref=e177]:
+          - listitem [ref=e178]:
+            - link "AI News" [ref=e179] [cursor=pointer]:
+              - /url: /news
+          - listitem [ref=e180]:
+            - link "Buyer's Guides" [ref=e181] [cursor=pointer]:
+              - /url: /articles?type=guide
+          - listitem [ref=e182]:
+            - link "Comparisons" [ref=e183] [cursor=pointer]:
+              - /url: /articles?type=comparison
+          - listitem [ref=e184]:
+            - link "All Articles" [ref=e185] [cursor=pointer]:
+              - /url: /articles
+          - listitem [ref=e186]:
+            - link "Categories" [ref=e187] [cursor=pointer]:
+              - /url: /categories
+    - generic [ref=e190]:
+      - paragraph [ref=e191]: © 2026 ToolWise.ai. All rights reserved.
+      - generic [ref=e192]:
+        - link "Privacy" [ref=e193] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e194] [cursor=pointer]:
+          - /url: /terms
+        - link "Editorial Policy" [ref=e195] [cursor=pointer]:
+          - /url: /editorial-policy
+  - alert [ref=e196]

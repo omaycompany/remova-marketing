@@ -1,0 +1,1279 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "A Ayrees" [ref=e4] [cursor=pointer]:
+        - /url: https://ayrees.com
+        - generic [ref=e5]: A
+        - generic [ref=e6]:
+          - text: Ayr
+          - emphasis [ref=e7]: ees
+      - navigation [ref=e8]:
+        - link "Search" [ref=e9] [cursor=pointer]:
+          - /url: "#search"
+        - link "Pricing" [ref=e10] [cursor=pointer]:
+          - /url: "#pricing"
+        - link "Browse" [ref=e11] [cursor=pointer]:
+          - /url: "#categories"
+        - link "About" [ref=e12] [cursor=pointer]:
+          - /url: "#about"
+        - link "Contact" [ref=e13] [cursor=pointer]:
+          - /url: "#contact"
+        - link "🤝 Referrals" [ref=e14] [cursor=pointer]:
+          - /url: referral.html
+        - link "🏢 Broker Hub" [ref=e15] [cursor=pointer]:
+          - /url: broker-referral.html
+        - link "🏠 FSBO" [ref=e16] [cursor=pointer]:
+          - /url: fsbo.html
+        - link "🔨 Fixer-Upper" [ref=e17] [cursor=pointer]:
+          - /url: fixer-upper.html
+        - link "Sponsor" [ref=e18] [cursor=pointer]:
+          - /url: sponsor.html
+        - link "◆ Donate" [ref=e19] [cursor=pointer]:
+          - /url: donate.html
+        - link "Join Directory →" [ref=e20] [cursor=pointer]:
+          - /url: register.html
+  - generic [ref=e22]:
+    - generic [ref=e23]: ◆ Sponsors
+    - generic [ref=e25]:
+      - link "🏠 Home Depot GOLD" [ref=e26] [cursor=pointer]:
+        - /url: https://homedepot.com
+        - generic [ref=e27]: 🏠
+        - generic [ref=e28]: Home Depot
+        - generic [ref=e29]: GOLD
+      - link "🔧 Lowe's GOLD" [ref=e30] [cursor=pointer]:
+        - /url: https://lowes.com
+        - generic [ref=e31]: 🔧
+        - generic [ref=e32]: Lowe's
+        - generic [ref=e33]: GOLD
+      - link "🏡 Zillow GOLD" [ref=e34] [cursor=pointer]:
+        - /url: https://zillow.com
+        - generic [ref=e35]: 🏡
+        - generic [ref=e36]: Zillow
+        - generic [ref=e37]: GOLD
+      - link "🔑 Realtor.com GOLD" [ref=e38] [cursor=pointer]:
+        - /url: https://realtor.com
+        - generic [ref=e39]: 🔑
+        - generic [ref=e40]: Realtor.com
+        - generic [ref=e41]: GOLD
+      - link "🦊 Redfin SILVER" [ref=e42] [cursor=pointer]:
+        - /url: https://redfin.com
+        - generic [ref=e43]: 🦊
+        - generic [ref=e44]: Redfin
+        - generic [ref=e45]: SILVER
+      - link "📋 First American GOLD" [ref=e46] [cursor=pointer]:
+        - /url: https://firstam.com
+        - generic [ref=e47]: 📋
+        - generic [ref=e48]: First American
+        - generic [ref=e49]: GOLD
+      - link "🔑 Fidelity National SILVER" [ref=e50] [cursor=pointer]:
+        - /url: https://fnf.com
+        - generic [ref=e51]: 🔑
+        - generic [ref=e52]: Fidelity National
+        - generic [ref=e53]: SILVER
+      - link "🏡 American Home Shield GOLD" [ref=e54] [cursor=pointer]:
+        - /url: https://ahs.com
+        - generic [ref=e55]: 🏡
+        - generic [ref=e56]: American Home Shield
+        - generic [ref=e57]: GOLD
+      - link "💰 Quicken Loans GOLD" [ref=e58] [cursor=pointer]:
+        - /url: https://quickenloans.com
+        - generic [ref=e59]: 💰
+        - generic [ref=e60]: Quicken Loans
+        - generic [ref=e61]: GOLD
+      - link "🚛 U-Haul SILVER" [ref=e62] [cursor=pointer]:
+        - /url: https://uhaul.com
+        - generic [ref=e63]: 🚛
+        - generic [ref=e64]: U-Haul
+        - generic [ref=e65]: SILVER
+      - link "📦 PODS Moving SILVER" [ref=e66] [cursor=pointer]:
+        - /url: https://pods.com
+        - generic [ref=e67]: 📦
+        - generic [ref=e68]: PODS Moving
+        - generic [ref=e69]: SILVER
+      - link "🌾 Farmers Insurance SILVER" [ref=e70] [cursor=pointer]:
+        - /url: https://farmers.com
+        - generic [ref=e71]: 🌾
+        - generic [ref=e72]: Farmers Insurance
+        - generic [ref=e73]: SILVER
+      - link "⚖️ Old Republic Title SILVER" [ref=e74] [cursor=pointer]:
+        - /url: https://oldrepublictitle.com
+        - generic [ref=e75]: ⚖️
+        - generic [ref=e76]: Old Republic Title
+        - generic [ref=e77]: SILVER
+      - link "🧹 ServiceMaster SILVER" [ref=e78] [cursor=pointer]:
+        - /url: https://servicemaster.com
+        - generic [ref=e79]: 🧹
+        - generic [ref=e80]: ServiceMaster
+        - generic [ref=e81]: SILVER
+      - link "🔨 Porch.com SILVER" [ref=e82] [cursor=pointer]:
+        - /url: https://porch.com
+        - generic [ref=e83]: 🔨
+        - generic [ref=e84]: Porch.com
+        - generic [ref=e85]: SILVER
+      - link "🏠 Home Depot GOLD" [ref=e86] [cursor=pointer]:
+        - /url: https://homedepot.com
+        - generic [ref=e87]: 🏠
+        - generic [ref=e88]: Home Depot
+        - generic [ref=e89]: GOLD
+      - link "🔧 Lowe's GOLD" [ref=e90] [cursor=pointer]:
+        - /url: https://lowes.com
+        - generic [ref=e91]: 🔧
+        - generic [ref=e92]: Lowe's
+        - generic [ref=e93]: GOLD
+      - link "🏡 Zillow GOLD" [ref=e94] [cursor=pointer]:
+        - /url: https://zillow.com
+        - generic [ref=e95]: 🏡
+        - generic [ref=e96]: Zillow
+        - generic [ref=e97]: GOLD
+      - link "🔑 Realtor.com GOLD" [ref=e98] [cursor=pointer]:
+        - /url: https://realtor.com
+        - generic [ref=e99]: 🔑
+        - generic [ref=e100]: Realtor.com
+        - generic [ref=e101]: GOLD
+      - link "🦊 Redfin SILVER" [ref=e102] [cursor=pointer]:
+        - /url: https://redfin.com
+        - generic [ref=e103]: 🦊
+        - generic [ref=e104]: Redfin
+        - generic [ref=e105]: SILVER
+      - link "📋 First American GOLD" [ref=e106] [cursor=pointer]:
+        - /url: https://firstam.com
+        - generic [ref=e107]: 📋
+        - generic [ref=e108]: First American
+        - generic [ref=e109]: GOLD
+      - link "🔑 Fidelity National SILVER" [ref=e110] [cursor=pointer]:
+        - /url: https://fnf.com
+        - generic [ref=e111]: 🔑
+        - generic [ref=e112]: Fidelity National
+        - generic [ref=e113]: SILVER
+      - link "🏡 American Home Shield GOLD" [ref=e114] [cursor=pointer]:
+        - /url: https://ahs.com
+        - generic [ref=e115]: 🏡
+        - generic [ref=e116]: American Home Shield
+        - generic [ref=e117]: GOLD
+      - link "💰 Quicken Loans GOLD" [ref=e118] [cursor=pointer]:
+        - /url: https://quickenloans.com
+        - generic [ref=e119]: 💰
+        - generic [ref=e120]: Quicken Loans
+        - generic [ref=e121]: GOLD
+      - link "🚛 U-Haul SILVER" [ref=e122] [cursor=pointer]:
+        - /url: https://uhaul.com
+        - generic [ref=e123]: 🚛
+        - generic [ref=e124]: U-Haul
+        - generic [ref=e125]: SILVER
+      - link "📦 PODS Moving SILVER" [ref=e126] [cursor=pointer]:
+        - /url: https://pods.com
+        - generic [ref=e127]: 📦
+        - generic [ref=e128]: PODS Moving
+        - generic [ref=e129]: SILVER
+      - link "🌾 Farmers Insurance SILVER" [ref=e130] [cursor=pointer]:
+        - /url: https://farmers.com
+        - generic [ref=e131]: 🌾
+        - generic [ref=e132]: Farmers Insurance
+        - generic [ref=e133]: SILVER
+      - link "⚖️ Old Republic Title SILVER" [ref=e134] [cursor=pointer]:
+        - /url: https://oldrepublictitle.com
+        - generic [ref=e135]: ⚖️
+        - generic [ref=e136]: Old Republic Title
+        - generic [ref=e137]: SILVER
+      - link "🧹 ServiceMaster SILVER" [ref=e138] [cursor=pointer]:
+        - /url: https://servicemaster.com
+        - generic [ref=e139]: 🧹
+        - generic [ref=e140]: ServiceMaster
+        - generic [ref=e141]: SILVER
+      - link "🔨 Porch.com SILVER" [ref=e142] [cursor=pointer]:
+        - /url: https://porch.com
+        - generic [ref=e143]: 🔨
+        - generic [ref=e144]: Porch.com
+        - generic [ref=e145]: SILVER
+  - generic [ref=e146]:
+    - paragraph [ref=e147]:
+      - strong [ref=e148]: "Special Annual Introductory Offer:"
+      - text: "50% OFF first year for annual subscriptions — 1 County / 3 Cities:"
+      - strong [ref=e149]: $49
+      - text: "• 3 Counties / 12 Cities:"
+      - strong [ref=e150]: $99
+      - text: "• 5 Counties / 25 Cities:"
+      - strong [ref=e151]: $149
+      - text: . Sponsor excluded.
+    - link "Claim Offer →" [ref=e152] [cursor=pointer]:
+      - /url: "#pricing"
+  - generic [ref=e154]:
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - generic [ref=e157]: Free for the Public to Browse
+        - generic [ref=e158]: ◆ All 50 States
+        - generic [ref=e159]: Built for Local Businesses
+      - heading "The Complete Directory of Local Real Estate Professionals & Service Providers" [level=1] [ref=e160]:
+        - text: The Complete Directory of
+        - emphasis [ref=e161]: Local Real Estate Professionals
+        - text: "& Service Providers"
+      - paragraph [ref=e162]: Find trusted local businesses by category, city, county, and state across the United States. Ayrees is nationwide, with especially strong California coverage to help local professionals get found faster.
+      - generic [ref=e163]:
+        - text: Nationwide Coverage
+        - generic [ref=e164]: •
+        - text: Strong California Network
+        - strong [ref=e165]: 58 Counties
+        - generic [ref=e166]: •
+        - strong [ref=e167]: 350+ Cities
+      - generic [ref=e168]:
+        - generic [ref=e169]:
+          - generic [ref=e170]: "50"
+          - generic [ref=e171]: States Covered
+        - generic [ref=e172]:
+          - generic [ref=e173]: 70+
+          - generic [ref=e174]: Service Categories
+        - generic [ref=e175]:
+          - generic [ref=e176]: "58"
+          - generic [ref=e177]: CA Counties
+        - generic [ref=e178]:
+          - generic [ref=e179]: 350+
+          - generic [ref=e180]: CA Cities
+      - generic [ref=e181]:
+        - link "Browse Categories" [ref=e182] [cursor=pointer]:
+          - /url: "#categories"
+          - text: Browse Categories
+          - img [ref=e183]
+        - link "Join Your Category" [ref=e185] [cursor=pointer]:
+          - /url: register.html
+    - generic [ref=e186]:
+      - generic [ref=e187]: Search Local Professionals
+      - generic [ref=e188]: Search on the Landing Page
+      - generic [ref=e189]: Choose a state, county, city, and category. California loads first, but every state remains available.
+      - generic [ref=e190]:
+        - generic [ref=e191]:
+          - text: State *
+          - combobox [ref=e192]:
+            - option "Select State"
+            - option "Alabama"
+            - option "Alaska"
+            - option "Arizona"
+            - option "Arkansas"
+            - option "California" [selected]
+            - option "Colorado"
+            - option "Connecticut"
+            - option "Delaware"
+            - option "Florida"
+            - option "Georgia"
+            - option "Hawaii"
+            - option "Idaho"
+            - option "Illinois"
+            - option "Indiana"
+            - option "Iowa"
+            - option "Kansas"
+            - option "Kentucky"
+            - option "Louisiana"
+            - option "Maine"
+            - option "Maryland"
+            - option "Massachusetts"
+            - option "Michigan"
+            - option "Minnesota"
+            - option "Mississippi"
+            - option "Missouri"
+            - option "Montana"
+            - option "Nebraska"
+            - option "Nevada"
+            - option "New Hampshire"
+            - option "New Jersey"
+            - option "New Mexico"
+            - option "New York"
+            - option "North Carolina"
+            - option "North Dakota"
+            - option "Ohio"
+            - option "Oklahoma"
+            - option "Oregon"
+            - option "Pennsylvania"
+            - option "Rhode Island"
+            - option "South Carolina"
+            - option "South Dakota"
+            - option "Tennessee"
+            - option "Texas"
+            - option "Utah"
+            - option "Vermont"
+            - option "Virginia"
+            - option "Washington"
+            - option "West Virginia"
+            - option "Wisconsin"
+            - option "Wyoming"
+          - generic [ref=e193]: California is preloaded for faster testing and local discovery.
+        - generic [ref=e194]:
+          - text: County
+          - combobox [ref=e195]:
+            - option "Select County" [selected]
+            - option "Alameda"
+            - option "Alpine"
+            - option "Amador"
+            - option "Butte"
+            - option "Calaveras"
+            - option "Colusa"
+            - option "Contra Costa"
+            - option "Del Norte"
+            - option "El Dorado"
+            - option "Fresno"
+            - option "Glenn"
+            - option "Humboldt"
+            - option "Imperial"
+            - option "Inyo"
+            - option "Kern"
+            - option "Kings"
+            - option "Lake"
+            - option "Lassen"
+            - option "Los Angeles"
+            - option "Madera"
+            - option "Marin"
+            - option "Mariposa"
+            - option "Mendocino"
+            - option "Merced"
+            - option "Modoc"
+            - option "Mono"
+            - option "Monterey"
+            - option "Napa"
+            - option "Nevada"
+            - option "Orange"
+            - option "Placer"
+            - option "Plumas"
+            - option "Riverside"
+            - option "Sacramento"
+            - option "San Benito"
+            - option "San Bernardino"
+            - option "San Diego"
+            - option "San Francisco"
+            - option "San Joaquin"
+            - option "San Luis Obispo"
+            - option "San Mateo"
+            - option "Santa Barbara"
+            - option "Santa Clara"
+            - option "Santa Cruz"
+            - option "Shasta"
+            - option "Sierra"
+            - option "Siskiyou"
+            - option "Solano"
+            - option "Sonoma"
+            - option "Stanislaus"
+            - option "Sutter"
+            - option "Tehama"
+            - option "Trinity"
+            - option "Tulare"
+            - option "Tuolumne"
+            - option "Ventura"
+            - option "Yolo"
+            - option "Yuba"
+        - generic [ref=e196]:
+          - text: City
+          - combobox [ref=e197]:
+            - option "Select City" [selected]
+        - generic [ref=e198]:
+          - text: Category
+          - combobox [ref=e199]:
+            - option "All Categories" [selected]
+            - option "Real Estate Agent"
+            - option "Broker"
+            - option "Appraiser"
+            - option "Home Inspector"
+            - option "Real Estate Lawyer"
+            - option "Title & Escrow"
+            - option "Mortgage Lender"
+            - option "Architect"
+            - option "Structural Engineer"
+            - option "General Contractor"
+            - option "Kitchen/Bath Remodeling"
+            - option "Painter"
+            - option "Plumber"
+            - option "Electrician"
+            - option "HVAC"
+            - option "Roofing"
+            - option "Flooring"
+            - option "Drywall"
+            - option "Masonry"
+            - option "Carpenter"
+            - option "ADU Builder"
+            - option "Well Driller"
+            - option "Septic Installer"
+            - option "Garage Door Services"
+            - option "Photographer"
+            - option "Videographer"
+            - option "Drone Services"
+            - option "Virtual Tour"
+            - option "3D Rendering"
+            - option "Home Staging"
+            - option "Copywriter"
+            - option "Investment Advisor"
+            - option "1031 Exchange"
+            - option "Tax Consultant"
+            - option "Insurance Agent"
+            - option "Financial Planner"
+            - option "Smart Home"
+            - option "Home Automation"
+            - option "Security Systems"
+            - option "Audio/Video"
+            - option "Smart Lighting"
+            - option "Smart Thermostat"
+            - option "Solar Installation"
+            - option "EV Charging"
+            - option "Landscaping"
+            - option "Hardscaping"
+            - option "Lawn Care"
+            - option "Irrigation"
+            - option "Pool Builder"
+            - option "Outdoor Lighting"
+            - option "Deck Builder"
+            - option "Fencing"
+            - option "Gutter Services"
+            - option "Windows/Doors"
+            - option "Tree Service"
+            - option "Property Management"
+            - option "Cleaning Service"
+            - option "Pest Control"
+            - option "Home Warranty"
+            - option "Environmental Testing"
+            - option "Moving Company"
+            - option "Storage"
+            - option "Junk Removal"
+            - option "Chimney Service"
+      - button "🔍 Search Directory" [ref=e200]
+      - generic [ref=e201]:
+        - text: Businesses can also browse the rectangular category frames below and click
+        - strong [ref=e202]: Join This Category
+        - text: .
+  - generic [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]: Why Ayrees
+      - heading "A Nationwide Directory Built for Local Business Discovery" [level=2] [ref=e206]:
+        - text: A Nationwide Directory
+        - text: Built for Local Business Discovery
+      - paragraph [ref=e207]: Ayrees covers all 50 states while making California especially strong today. The platform is built for local real estate professionals and service providers who want to be found by county, city, and category.
+    - generic [ref=e208]:
+      - generic [ref=e209]:
+        - generic [ref=e210]: ◆
+        - generic [ref=e211]: Local-First Search
+        - generic [ref=e212]: Search by state, county, city, and service category right from the landing page.
+      - generic [ref=e213]:
+        - generic [ref=e214]: ◆
+        - generic [ref=e215]: Built for Businesses
+        - generic [ref=e216]: Each profession has a clear category, a clean frame, and a direct way to join.
+      - generic [ref=e217]:
+        - generic [ref=e218]: ◆
+        - generic [ref=e219]: California Depth
+        - generic [ref=e220]: Strong California coverage with all 58 counties and 350+ cities already loaded.
+      - generic [ref=e221]:
+        - generic [ref=e222]: ◆
+        - generic [ref=e223]: Nationwide Scope
+        - generic [ref=e224]: Ayrees is still built for all 50 states, so the platform can keep expanding.
+      - generic [ref=e225]:
+        - generic [ref=e226]: ✓
+        - generic [ref=e227]: Join the Right Category
+        - generic [ref=e228]: Browse a category, open it, and join the exact category that matches your business.
+  - generic [ref=e229]:
+    - generic [ref=e230]:
+      - generic [ref=e231]: Browse
+      - heading "Browse by Service Category" [level=2] [ref=e232]
+      - paragraph [ref=e233]: 70+ professional categories spanning all real estate service areas.
+    - generic [ref=e234]:
+      - generic [ref=e235]:
+        - generic [ref=e236]: ◆ Real Estate
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e239]: ◆
+            - generic [ref=e240]: Real Estate Agent
+            - generic [ref=e241]:
+              - link "Search" [ref=e242] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e243] [cursor=pointer]:
+                - /url: register.html?category=Real%20Estate%20Agent
+          - generic [ref=e244]:
+            - generic [ref=e245]: ◆
+            - generic [ref=e246]: Broker
+            - generic [ref=e247]:
+              - link "Search" [ref=e248] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e249] [cursor=pointer]:
+                - /url: register.html?category=Broker
+          - generic [ref=e250]:
+            - generic [ref=e251]: ◆
+            - generic [ref=e252]: Appraiser
+            - generic [ref=e253]:
+              - link "Search" [ref=e254] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e255] [cursor=pointer]:
+                - /url: register.html?category=Appraiser
+          - generic [ref=e256]:
+            - generic [ref=e257]: ◆
+            - generic [ref=e258]: Home Inspector
+            - generic [ref=e259]:
+              - link "Search" [ref=e260] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e261] [cursor=pointer]:
+                - /url: register.html?category=Home%20Inspector
+          - generic [ref=e262]:
+            - generic [ref=e263]: ◆
+            - generic [ref=e264]: Real Estate Lawyer
+            - generic [ref=e265]:
+              - link "Search" [ref=e266] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e267] [cursor=pointer]:
+                - /url: register.html?category=Real%20Estate%20Lawyer
+          - generic [ref=e268]:
+            - generic [ref=e269]: ◆
+            - generic [ref=e270]: Title & Escrow
+            - generic [ref=e271]:
+              - link "Search" [ref=e272] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e273] [cursor=pointer]:
+                - /url: register.html?category=Title%20%26%20Escrow
+          - generic [ref=e274]:
+            - generic [ref=e275]: ◆
+            - generic [ref=e276]: Mortgage Lender
+            - generic [ref=e277]:
+              - link "Search" [ref=e278] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e279] [cursor=pointer]:
+                - /url: register.html?category=Mortgage%20Lender
+          - generic [ref=e280]:
+            - generic [ref=e281]: ◆
+            - generic [ref=e282]: Architect
+            - generic [ref=e283]:
+              - link "Search" [ref=e284] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e285] [cursor=pointer]:
+                - /url: register.html?category=Architect
+          - generic [ref=e286]:
+            - generic [ref=e287]: ◆
+            - generic [ref=e288]: Structural Engineer
+            - generic [ref=e289]:
+              - link "Search" [ref=e290] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e291] [cursor=pointer]:
+                - /url: register.html?category=Structural%20Engineer
+      - generic [ref=e292]:
+        - generic [ref=e293]: ◆ Construction
+        - generic [ref=e294]:
+          - generic [ref=e295]:
+            - generic [ref=e296]: ◆
+            - generic [ref=e297]: General Contractor
+            - generic [ref=e298]:
+              - link "Search" [ref=e299] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e300] [cursor=pointer]:
+                - /url: register.html?category=General%20Contractor
+          - generic [ref=e301]:
+            - generic [ref=e302]: ◆
+            - generic [ref=e303]: Kitchen/Bath Remodeling
+            - generic [ref=e304]:
+              - link "Search" [ref=e305] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e306] [cursor=pointer]:
+                - /url: register.html?category=Kitchen%2FBath%20Remodeling
+          - generic [ref=e307]:
+            - generic [ref=e308]: ◆
+            - generic [ref=e309]: Painter
+            - generic [ref=e310]:
+              - link "Search" [ref=e311] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e312] [cursor=pointer]:
+                - /url: register.html?category=Painter
+          - generic [ref=e313]:
+            - generic [ref=e314]: ◆
+            - generic [ref=e315]: Plumber
+            - generic [ref=e316]:
+              - link "Search" [ref=e317] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e318] [cursor=pointer]:
+                - /url: register.html?category=Plumber
+          - generic [ref=e319]:
+            - generic [ref=e320]: ◆
+            - generic [ref=e321]: Electrician
+            - generic [ref=e322]:
+              - link "Search" [ref=e323] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e324] [cursor=pointer]:
+                - /url: register.html?category=Electrician
+          - generic [ref=e325]:
+            - generic [ref=e326]: ◆
+            - generic [ref=e327]: HVAC
+            - generic [ref=e328]:
+              - link "Search" [ref=e329] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e330] [cursor=pointer]:
+                - /url: register.html?category=HVAC
+          - generic [ref=e331]:
+            - generic [ref=e332]: ◆
+            - generic [ref=e333]: Roofing
+            - generic [ref=e334]:
+              - link "Search" [ref=e335] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e336] [cursor=pointer]:
+                - /url: register.html?category=Roofing
+          - generic [ref=e337]:
+            - generic [ref=e338]: ◆
+            - generic [ref=e339]: Flooring
+            - generic [ref=e340]:
+              - link "Search" [ref=e341] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e342] [cursor=pointer]:
+                - /url: register.html?category=Flooring
+          - generic [ref=e343]:
+            - generic [ref=e344]: ◆
+            - generic [ref=e345]: Drywall
+            - generic [ref=e346]:
+              - link "Search" [ref=e347] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e348] [cursor=pointer]:
+                - /url: register.html?category=Drywall
+          - generic [ref=e349]:
+            - generic [ref=e350]: ◆
+            - generic [ref=e351]: Masonry
+            - generic [ref=e352]:
+              - link "Search" [ref=e353] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e354] [cursor=pointer]:
+                - /url: register.html?category=Masonry
+          - generic [ref=e355]:
+            - generic [ref=e356]: ◆
+            - generic [ref=e357]: Carpenter
+            - generic [ref=e358]:
+              - link "Search" [ref=e359] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e360] [cursor=pointer]:
+                - /url: register.html?category=Carpenter
+          - generic [ref=e361]:
+            - generic [ref=e362]: ◆
+            - generic [ref=e363]: ADU Builder
+            - generic [ref=e364]:
+              - link "Search" [ref=e365] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e366] [cursor=pointer]:
+                - /url: register.html?category=ADU%20Builder
+          - generic [ref=e367]:
+            - generic [ref=e368]: ◆
+            - generic [ref=e369]: Well Driller
+            - generic [ref=e370]:
+              - link "Search" [ref=e371] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e372] [cursor=pointer]:
+                - /url: register.html?category=Well%20Driller
+          - generic [ref=e373]:
+            - generic [ref=e374]: ◆
+            - generic [ref=e375]: Septic Installer
+            - generic [ref=e376]:
+              - link "Search" [ref=e377] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e378] [cursor=pointer]:
+                - /url: register.html?category=Septic%20Installer
+          - generic [ref=e379]:
+            - generic [ref=e380]: ◆
+            - generic [ref=e381]: Garage Door Services
+            - generic [ref=e382]:
+              - link "Search" [ref=e383] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e384] [cursor=pointer]:
+                - /url: register.html?category=Garage%20Door%20Services
+      - generic [ref=e385]:
+        - generic [ref=e386]: ◆ Marketing
+        - generic [ref=e387]:
+          - generic [ref=e388]:
+            - generic [ref=e389]: ◆
+            - generic [ref=e390]: Photographer
+            - generic [ref=e391]:
+              - link "Search" [ref=e392] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e393] [cursor=pointer]:
+                - /url: register.html?category=Photographer
+          - generic [ref=e394]:
+            - generic [ref=e395]: ◆
+            - generic [ref=e396]: Videographer
+            - generic [ref=e397]:
+              - link "Search" [ref=e398] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e399] [cursor=pointer]:
+                - /url: register.html?category=Videographer
+          - generic [ref=e400]:
+            - generic [ref=e401]: ◆
+            - generic [ref=e402]: Drone Services
+            - generic [ref=e403]:
+              - link "Search" [ref=e404] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e405] [cursor=pointer]:
+                - /url: register.html?category=Drone%20Services
+          - generic [ref=e406]:
+            - generic [ref=e407]: ◆
+            - generic [ref=e408]: Virtual Tour
+            - generic [ref=e409]:
+              - link "Search" [ref=e410] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e411] [cursor=pointer]:
+                - /url: register.html?category=Virtual%20Tour
+          - generic [ref=e412]:
+            - generic [ref=e413]: ◆
+            - generic [ref=e414]: 3D Rendering
+            - generic [ref=e415]:
+              - link "Search" [ref=e416] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e417] [cursor=pointer]:
+                - /url: register.html?category=3D%20Rendering
+          - generic [ref=e418]:
+            - generic [ref=e419]: ◆
+            - generic [ref=e420]: Home Staging
+            - generic [ref=e421]:
+              - link "Search" [ref=e422] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e423] [cursor=pointer]:
+                - /url: register.html?category=Home%20Staging
+          - generic [ref=e424]:
+            - generic [ref=e425]: ◆
+            - generic [ref=e426]: Copywriter
+            - generic [ref=e427]:
+              - link "Search" [ref=e428] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e429] [cursor=pointer]:
+                - /url: register.html?category=Copywriter
+      - generic [ref=e430]:
+        - generic [ref=e431]: ◆ Financial
+        - generic [ref=e432]:
+          - generic [ref=e433]:
+            - generic [ref=e434]: ◆
+            - generic [ref=e435]: Investment Advisor
+            - generic [ref=e436]:
+              - link "Search" [ref=e437] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e438] [cursor=pointer]:
+                - /url: register.html?category=Investment%20Advisor
+          - generic [ref=e439]:
+            - generic [ref=e440]: ◆
+            - generic [ref=e441]: 1031 Exchange
+            - generic [ref=e442]:
+              - link "Search" [ref=e443] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e444] [cursor=pointer]:
+                - /url: register.html?category=1031%20Exchange
+          - generic [ref=e445]:
+            - generic [ref=e446]: ◆
+            - generic [ref=e447]: Tax Consultant
+            - generic [ref=e448]:
+              - link "Search" [ref=e449] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e450] [cursor=pointer]:
+                - /url: register.html?category=Tax%20Consultant
+          - generic [ref=e451]:
+            - generic [ref=e452]: ◆
+            - generic [ref=e453]: Insurance Agent
+            - generic [ref=e454]:
+              - link "Search" [ref=e455] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e456] [cursor=pointer]:
+                - /url: register.html?category=Insurance%20Agent
+          - generic [ref=e457]:
+            - generic [ref=e458]: ◆
+            - generic [ref=e459]: Financial Planner
+            - generic [ref=e460]:
+              - link "Search" [ref=e461] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e462] [cursor=pointer]:
+                - /url: register.html?category=Financial%20Planner
+      - generic [ref=e463]:
+        - generic [ref=e464]: ◆ Technology
+        - generic [ref=e465]:
+          - generic [ref=e466]:
+            - generic [ref=e467]: ◆
+            - generic [ref=e468]: Smart Home
+            - generic [ref=e469]:
+              - link "Search" [ref=e470] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e471] [cursor=pointer]:
+                - /url: register.html?category=Smart%20Home
+          - generic [ref=e472]:
+            - generic [ref=e473]: ◆
+            - generic [ref=e474]: Home Automation
+            - generic [ref=e475]:
+              - link "Search" [ref=e476] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e477] [cursor=pointer]:
+                - /url: register.html?category=Home%20Automation
+          - generic [ref=e478]:
+            - generic [ref=e479]: ◆
+            - generic [ref=e480]: Security Systems
+            - generic [ref=e481]:
+              - link "Search" [ref=e482] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e483] [cursor=pointer]:
+                - /url: register.html?category=Security%20Systems
+          - generic [ref=e484]:
+            - generic [ref=e485]: ◆
+            - generic [ref=e486]: Audio/Video
+            - generic [ref=e487]:
+              - link "Search" [ref=e488] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e489] [cursor=pointer]:
+                - /url: register.html?category=Audio%2FVideo
+          - generic [ref=e490]:
+            - generic [ref=e491]: ◆
+            - generic [ref=e492]: Smart Lighting
+            - generic [ref=e493]:
+              - link "Search" [ref=e494] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e495] [cursor=pointer]:
+                - /url: register.html?category=Smart%20Lighting
+          - generic [ref=e496]:
+            - generic [ref=e497]: ◆
+            - generic [ref=e498]: Smart Thermostat
+            - generic [ref=e499]:
+              - link "Search" [ref=e500] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e501] [cursor=pointer]:
+                - /url: register.html?category=Smart%20Thermostat
+          - generic [ref=e502]:
+            - generic [ref=e503]: ◆
+            - generic [ref=e504]: Solar Installation
+            - generic [ref=e505]:
+              - link "Search" [ref=e506] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e507] [cursor=pointer]:
+                - /url: register.html?category=Solar%20Installation
+          - generic [ref=e508]:
+            - generic [ref=e509]: ◆
+            - generic [ref=e510]: EV Charging
+            - generic [ref=e511]:
+              - link "Search" [ref=e512] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e513] [cursor=pointer]:
+                - /url: register.html?category=EV%20Charging
+      - generic [ref=e514]:
+        - generic [ref=e515]: ◆ Exterior
+        - generic [ref=e516]:
+          - generic [ref=e517]:
+            - generic [ref=e518]: ◆
+            - generic [ref=e519]: Landscaping
+            - generic [ref=e520]:
+              - link "Search" [ref=e521] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e522] [cursor=pointer]:
+                - /url: register.html?category=Landscaping
+          - generic [ref=e523]:
+            - generic [ref=e524]: ◆
+            - generic [ref=e525]: Hardscaping
+            - generic [ref=e526]:
+              - link "Search" [ref=e527] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e528] [cursor=pointer]:
+                - /url: register.html?category=Hardscaping
+          - generic [ref=e529]:
+            - generic [ref=e530]: ◆
+            - generic [ref=e531]: Lawn Care
+            - generic [ref=e532]:
+              - link "Search" [ref=e533] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e534] [cursor=pointer]:
+                - /url: register.html?category=Lawn%20Care
+          - generic [ref=e535]:
+            - generic [ref=e536]: ◆
+            - generic [ref=e537]: Irrigation
+            - generic [ref=e538]:
+              - link "Search" [ref=e539] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e540] [cursor=pointer]:
+                - /url: register.html?category=Irrigation
+          - generic [ref=e541]:
+            - generic [ref=e542]: ◆
+            - generic [ref=e543]: Pool Builder
+            - generic [ref=e544]:
+              - link "Search" [ref=e545] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e546] [cursor=pointer]:
+                - /url: register.html?category=Pool%20Builder
+          - generic [ref=e547]:
+            - generic [ref=e548]: ◆
+            - generic [ref=e549]: Outdoor Lighting
+            - generic [ref=e550]:
+              - link "Search" [ref=e551] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e552] [cursor=pointer]:
+                - /url: register.html?category=Outdoor%20Lighting
+          - generic [ref=e553]:
+            - generic [ref=e554]: ◆
+            - generic [ref=e555]: Deck Builder
+            - generic [ref=e556]:
+              - link "Search" [ref=e557] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e558] [cursor=pointer]:
+                - /url: register.html?category=Deck%20Builder
+          - generic [ref=e559]:
+            - generic [ref=e560]: ◆
+            - generic [ref=e561]: Fencing
+            - generic [ref=e562]:
+              - link "Search" [ref=e563] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e564] [cursor=pointer]:
+                - /url: register.html?category=Fencing
+          - generic [ref=e565]:
+            - generic [ref=e566]: ◆
+            - generic [ref=e567]: Gutter Services
+            - generic [ref=e568]:
+              - link "Search" [ref=e569] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e570] [cursor=pointer]:
+                - /url: register.html?category=Gutter%20Services
+          - generic [ref=e571]:
+            - generic [ref=e572]: ◆
+            - generic [ref=e573]: Windows/Doors
+            - generic [ref=e574]:
+              - link "Search" [ref=e575] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e576] [cursor=pointer]:
+                - /url: register.html?category=Windows%2FDoors
+          - generic [ref=e577]:
+            - generic [ref=e578]: ◆
+            - generic [ref=e579]: Tree Service
+            - generic [ref=e580]:
+              - link "Search" [ref=e581] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e582] [cursor=pointer]:
+                - /url: register.html?category=Tree%20Service
+      - generic [ref=e583]:
+        - generic [ref=e584]: ◆ Services
+        - generic [ref=e585]:
+          - generic [ref=e586]:
+            - generic [ref=e587]: ◆
+            - generic [ref=e588]: Property Management
+            - generic [ref=e589]:
+              - link "Search" [ref=e590] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e591] [cursor=pointer]:
+                - /url: register.html?category=Property%20Management
+          - generic [ref=e592]:
+            - generic [ref=e593]: ◆
+            - generic [ref=e594]: Cleaning Service
+            - generic [ref=e595]:
+              - link "Search" [ref=e596] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e597] [cursor=pointer]:
+                - /url: register.html?category=Cleaning%20Service
+          - generic [ref=e598]:
+            - generic [ref=e599]: ◆
+            - generic [ref=e600]: Pest Control
+            - generic [ref=e601]:
+              - link "Search" [ref=e602] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e603] [cursor=pointer]:
+                - /url: register.html?category=Pest%20Control
+          - generic [ref=e604]:
+            - generic [ref=e605]: ◆
+            - generic [ref=e606]: Home Warranty
+            - generic [ref=e607]:
+              - link "Search" [ref=e608] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e609] [cursor=pointer]:
+                - /url: register.html?category=Home%20Warranty
+          - generic [ref=e610]:
+            - generic [ref=e611]: ◆
+            - generic [ref=e612]: Environmental Testing
+            - generic [ref=e613]:
+              - link "Search" [ref=e614] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e615] [cursor=pointer]:
+                - /url: register.html?category=Environmental%20Testing
+          - generic [ref=e616]:
+            - generic [ref=e617]: ◆
+            - generic [ref=e618]: Moving Company
+            - generic [ref=e619]:
+              - link "Search" [ref=e620] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e621] [cursor=pointer]:
+                - /url: register.html?category=Moving%20Company
+          - generic [ref=e622]:
+            - generic [ref=e623]: ◆
+            - generic [ref=e624]: Storage
+            - generic [ref=e625]:
+              - link "Search" [ref=e626] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e627] [cursor=pointer]:
+                - /url: register.html?category=Storage
+          - generic [ref=e628]:
+            - generic [ref=e629]: ◆
+            - generic [ref=e630]: Junk Removal
+            - generic [ref=e631]:
+              - link "Search" [ref=e632] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e633] [cursor=pointer]:
+                - /url: register.html?category=Junk%20Removal
+          - generic [ref=e634]:
+            - generic [ref=e635]: ◆
+            - generic [ref=e636]: Chimney Service
+            - generic [ref=e637]:
+              - link "Search" [ref=e638] [cursor=pointer]:
+                - /url: "#search"
+              - link "Join Directory" [ref=e639] [cursor=pointer]:
+                - /url: register.html?category=Chimney%20Service
+  - generic [ref=e640]:
+    - generic [ref=e641]:
+      - generic [ref=e642]: Pricing
+      - heading "Choose Your Listing Plan" [level=2] [ref=e643]
+      - paragraph [ref=e644]: "Get listed and discovered by thousands of clients. Annual introductory pricing for the first year: $49 / $99 / $149. Sponsor excluded."
+    - generic [ref=e645]:
+      - generic [ref=e646]:
+        - generic [ref=e647]: Starter
+        - generic [ref=e648]: Basic
+        - generic [ref=e649]: $9.95/mo
+        - generic [ref=e650]:
+          - strong [ref=e651]: $49 first year
+          - text: with annual subscription
+        - generic [ref=e652]: ◆ 1 County / 3 Cities
+        - list [ref=e653]:
+          - listitem [ref=e654]: ✓ Directory Listing
+          - listitem [ref=e655]: ✓ Contact Information
+          - listitem [ref=e656]: ✓ Basic Profile Page
+          - listitem [ref=e657]: ✓ Email Support
+          - listitem [ref=e658]: ✓ FREE Website Setup
+        - link "Get Started →" [ref=e659] [cursor=pointer]:
+          - /url: register.html?plan=basic
+      - generic [ref=e660]:
+        - generic [ref=e661]: Popular
+        - generic [ref=e662]: Most Popular
+        - generic [ref=e663]: Standard
+        - generic [ref=e664]: $19.95/mo
+        - generic [ref=e665]:
+          - strong [ref=e666]: $99 first year
+          - text: with annual subscription
+        - generic [ref=e667]: ◆ 3 Counties / 12 Cities
+        - list [ref=e668]:
+          - listitem [ref=e669]: ✓ All Basic features
+          - listitem [ref=e670]: ✓ Featured Listing
+          - listitem [ref=e671]: ✓ Photos & Logo Upload
+          - listitem [ref=e672]: ✓ Enhanced Profile
+          - listitem [ref=e673]: ✓ FREE Website Setup
+          - listitem [ref=e674]: ✓ Priority Support
+        - link "Get Started →" [ref=e675] [cursor=pointer]:
+          - /url: register.html?plan=standard
+      - generic [ref=e676]:
+        - generic [ref=e677]: Professional
+        - generic [ref=e678]: Premium
+        - generic [ref=e679]: $29.95/mo
+        - generic [ref=e680]:
+          - strong [ref=e681]: $149 first year
+          - text: with annual subscription
+        - generic [ref=e682]: ◆ 5 Counties / 25 Cities
+        - list [ref=e683]:
+          - listitem [ref=e684]: ✓ All Standard features
+          - listitem [ref=e685]: ✓ ◆ TOP Placement
+          - listitem [ref=e686]: ✓ Priority Support 24/7
+          - listitem [ref=e687]: ✓ Analytics Dashboard
+          - listitem [ref=e688]: ✓ FREE Website Setup
+          - listitem [ref=e689]: ✓ Social Media Links
+        - link "Get Started →" [ref=e690] [cursor=pointer]:
+          - /url: register.html?plan=premium
+      - generic [ref=e691]:
+        - generic [ref=e692]: Enterprise
+        - generic [ref=e693]: Sponsor
+        - generic [ref=e694]: $99/mo
+        - generic [ref=e695]: or $999/year — save 16%
+        - generic [ref=e696]: ◆ ALL Counties • ALL Cities
+        - list [ref=e697]:
+          - listitem [ref=e698]: ✓ ◆ Name at Top of Every Page
+          - listitem [ref=e699]: ✓ Unlimited Nationwide Coverage
+          - listitem [ref=e700]: ✓ Maximum Visibility
+          - listitem [ref=e701]: ✓ Premium Sponsor Badge
+          - listitem [ref=e702]: ✓ FREE Website Setup
+          - listitem [ref=e703]: ✓ Dedicated Account Manager
+        - link "Become a Sponsor →" [ref=e704] [cursor=pointer]:
+          - /url: sponsor.html
+  - generic [ref=e705]:
+    - generic [ref=e706]:
+      - generic [ref=e707]: Professional Websites
+      - heading "Get Your Professional Website" [level=2] [ref=e708]
+      - paragraph [ref=e709]: We build your site so you can focus on what you do best.
+    - generic [ref=e710]:
+      - generic [ref=e711]:
+        - generic [ref=e712]: FREE
+        - generic [ref=e713]: Starter Website
+        - generic [ref=e714]: Perfect for getting started
+        - generic [ref=e715]: FREE
+        - generic [ref=e716]:
+          - text: + $99 Domain & Hosting (Year 1)
+          - text: Then $39/year renewal
+        - list [ref=e717]:
+          - listitem [ref=e718]: ✓ Professional 1-page website
+          - listitem [ref=e719]: ✓ Up to 5 photos
+          - listitem [ref=e720]: ✓ Contact form included
+          - listitem [ref=e721]: ✓ Mobile responsive
+          - listitem [ref=e722]: ✓ Domain + 1 year hosting
+          - listitem [ref=e723]: ✓ Ayrees directory listing
+          - listitem [ref=e724]: ✓ Ready in 3–5 business days
+        - link "Choose Starter →" [ref=e725] [cursor=pointer]:
+          - /url: register.html?website=free
+        - link "◆ Upload My Photos" [ref=e726] [cursor=pointer]:
+          - /url: upload-photos.html?plan=free
+      - generic [ref=e727]:
+        - generic [ref=e728]: Professional
+        - generic [ref=e729]: Pro Website
+        - generic [ref=e730]: For serious professionals
+        - generic [ref=e731]: $399
+        - generic [ref=e732]:
+          - text: One-Time Setup Fee
+          - text: Includes Domain & 1 Year Hosting
+          - text: Then $39/year renewal
+        - list [ref=e733]:
+          - listitem [ref=e734]: ✓ Custom professional design
+          - listitem [ref=e735]: ✓ Up to 15 photos
+          - listitem [ref=e736]: ✓ Advanced contact form
+          - listitem [ref=e737]: ✓ Gallery / portfolio section
+          - listitem [ref=e738]: ✓ Service pages included
+          - listitem [ref=e739]: ✓ Testimonials section
+          - listitem [ref=e740]: ✓ Mobile responsive
+          - listitem [ref=e741]: ✓ Ayrees directory listing
+          - listitem [ref=e742]: ✓ Ready in 7–10 business days
+        - link "Choose Professional →" [ref=e743] [cursor=pointer]:
+          - /url: register.html?website=pro
+        - link "◆ Upload My Photos" [ref=e744] [cursor=pointer]:
+          - /url: upload-photos.html?plan=pro
+  - generic [ref=e745]:
+    - generic [ref=e746]:
+      - generic [ref=e747]: Support Ayrees
+      - heading "Help Keep Access Free for Everyone" [level=2] [ref=e748]
+      - paragraph [ref=e749]: Your donation helps us maintain the directory and keep Ayrees 100% free for the public.
+    - generic [ref=e750]:
+      - generic [ref=e751] [cursor=pointer]:
+        - generic [ref=e752]: $10
+        - generic [ref=e753]: Coffee Supporter
+      - generic [ref=e754] [cursor=pointer]:
+        - generic [ref=e755]: $25
+        - generic [ref=e756]: ◆ Bronze Supporter
+      - generic [ref=e757] [cursor=pointer]:
+        - generic [ref=e758]: $50
+        - generic [ref=e759]: ◆ Silver Supporter
+    - generic [ref=e760]:
+      - spinbutton [ref=e761]
+      - button "Donate" [ref=e762] [cursor=pointer]
+    - paragraph [ref=e763]: ◆ All donations support hosting, development, and keeping the directory free.
+  - generic [ref=e765]:
+    - generic [ref=e766]:
+      - generic [ref=e767]: More Tools
+      - heading "Everything You Need in One Place" [level=2] [ref=e768]
+      - paragraph [ref=e769]: Free tools for homeowners, investors, and real estate professionals.
+    - generic [ref=e770]:
+      - link "🏢 Broker Referral Hub Post outgoing clients, accept incoming referrals, and sign binding broker-to-broker agreements. Get paid on every referral. Post or Accept a Referral →" [ref=e771] [cursor=pointer]:
+        - /url: broker-referral.html
+        - generic [ref=e772]:
+          - generic [ref=e773]: 🏢
+          - heading "Broker Referral Hub" [level=3] [ref=e774]
+          - paragraph [ref=e775]: Post outgoing clients, accept incoming referrals, and sign binding broker-to-broker agreements. Get paid on every referral.
+          - text: Post or Accept a Referral →
+      - link "🤝 Pro Referral Network Connect with trusted local professionals. Post needs or offer your services to other pros in your area. Browse Referrals →" [ref=e776] [cursor=pointer]:
+        - /url: referral.html
+        - generic [ref=e777]:
+          - generic [ref=e778]: 🤝
+          - heading "Pro Referral Network" [level=3] [ref=e779]
+          - paragraph [ref=e780]: Connect with trusted local professionals. Post needs or offer your services to other pros in your area.
+          - text: Browse Referrals →
+      - link "🏠 For Sale By Owner Hub Sell your home without an agent. List your property free and connect directly with buyers and local pros. Browse FSBO Listings →" [ref=e781] [cursor=pointer]:
+        - /url: fsbo.html
+        - generic [ref=e782]:
+          - generic [ref=e783]: 🏠
+          - heading "For Sale By Owner Hub" [level=3] [ref=e784]
+          - paragraph [ref=e785]: Sell your home without an agent. List your property free and connect directly with buyers and local pros.
+          - text: Browse FSBO Listings →
+      - link "🔨 Fixer-Upper & Investment Find off-market deals, distressed properties, and flip opportunities posted by owners and investors. Browse Investment Properties →" [ref=e786] [cursor=pointer]:
+        - /url: fixer-upper.html
+        - generic [ref=e787]:
+          - generic [ref=e788]: 🔨
+          - heading "Fixer-Upper & Investment" [level=3] [ref=e789]
+          - paragraph [ref=e790]: Find off-market deals, distressed properties, and flip opportunities posted by owners and investors.
+          - text: Browse Investment Properties →
+  - generic [ref=e791]:
+    - generic [ref=e792]:
+      - generic [ref=e793]: Contact
+      - heading "We're Here to Help" [level=2] [ref=e794]
+      - paragraph [ref=e795]: Questions about joining or need assistance? We typically respond within 24 hours.
+    - generic [ref=e797]:
+      - textbox "Your Name" [ref=e798]
+      - textbox "Your Email" [ref=e799]
+      - textbox "Your Message" [ref=e800]
+      - button "Send Message →" [ref=e801] [cursor=pointer]
+      - generic [ref=e802]: ◆ support@ayrees.com • ◆ 3790 El Camino Real, Palo Alto, CA 94306
+  - generic [ref=e803]:
+    - generic [ref=e804]:
+      - generic [ref=e805]: Legal
+      - heading "Important Disclaimer" [level=2] [ref=e806]
+    - generic [ref=e807]:
+      - heading "◆ Please Read Carefully Before Using Ayrees" [level=3] [ref=e808]
+      - paragraph [ref=e809]: BY ACCESSING THIS WEBSITE, YOU AGREE TO ALL TERMS AND CONDITIONS STATED HEREIN.
+      - heading "1. Directory Service Only" [level=4] [ref=e810]
+      - paragraph [ref=e811]: Ayrees is solely an online directory platform connecting users with real estate professionals. We are NOT a real estate brokerage, contractor, or professional services firm.
+      - heading "2. No Endorsement" [level=4] [ref=e812]
+      - paragraph [ref=e813]: Ayrees does NOT endorse, recommend, guarantee, or vouch for any professional or business listed in this directory.
+      - heading "3. User Responsibility" [level=4] [ref=e814]
+      - paragraph [ref=e815]: YOU ARE SOLELY RESPONSIBLE for verifying and vetting any professional before hiring them. Always check licenses, references, and credentials independently.
+      - heading "4. No Liability" [level=4] [ref=e816]
+      - paragraph [ref=e817]: Ayrees assumes NO LIABILITY for the quality, safety, or any aspect of services provided by listed professionals.
+      - paragraph [ref=e818]: BY CONTINUING TO USE THIS WEBSITE, YOU AGREE TO ALL TERMS.
+  - generic [ref=e819]:
+    - generic [ref=e820]:
+      - generic [ref=e821]: About Us
+      - heading "About Ayrees" [level=2] [ref=e822]
+    - generic [ref=e823]:
+      - paragraph [ref=e824]: Ayrees is the most comprehensive directory of real estate professionals and service providers in the United States — covering all 50 states, thousands of counties, and hundreds of cities.
+      - paragraph [ref=e825]:
+        - strong [ref=e826]: "Our Mission:"
+        - text: To make finding qualified real estate professionals simple, fast, and reliable for everyone — completely free for the public to use.
+      - paragraph [ref=e827]: Whether you're buying, selling, building, or maintaining a property, Ayrees connects you with the right professionals in your neighborhood.
+  - generic [ref=e828]:
+    - generic [ref=e829]:
+      - generic [ref=e830]: Network
+      - heading "Global Web Directory (GWD)" [level=2] [ref=e831]
+      - paragraph [ref=e832]: Connecting people with professional services worldwide.
+    - generic [ref=e833]:
+      - generic [ref=e834]:
+        - generic [ref=e835]: ◆
+        - generic [ref=e836]: ayrees.com
+        - generic [ref=e837]: Real Estate Directory
+        - generic [ref=e838]: Live
+      - generic [ref=e839]:
+        - generic [ref=e840]: ◆
+        - generic [ref=e841]: roboticsdir.com
+        - generic [ref=e842]: Robotics Directory
+        - generic [ref=e843]: Live
+      - generic [ref=e844]:
+        - generic [ref=e845]: ◆
+        - generic [ref=e846]: ailists.ai
+        - generic [ref=e847]: AI Companies
+        - generic [ref=e848]: Live
+      - generic [ref=e849]:
+        - generic [ref=e850]: ◆
+        - generic [ref=e851]: ailists.io
+        - generic [ref=e852]: AI Tools
+        - generic [ref=e853]: Coming Soon
+      - generic [ref=e854]:
+        - generic [ref=e855]: ◆
+        - generic [ref=e856]: ailists.app
+        - generic [ref=e857]: AI Applications
+        - generic [ref=e858]: Coming Soon
+    - paragraph [ref=e859]: ◆ support@ayrees.com • ◆ 3790 El Camino Real, Palo Alto, CA 94306
+  - contentinfo [ref=e860]:
+    - generic [ref=e861]:
+      - text: Ayr
+      - emphasis [ref=e862]: ees
+    - generic [ref=e863]: The Complete Real Estate Professional Directory
+    - generic [ref=e864]:
+      - link "Search" [ref=e865] [cursor=pointer]:
+        - /url: "#search"
+      - link "Pricing" [ref=e866] [cursor=pointer]:
+        - /url: "#pricing"
+      - link "Sponsor" [ref=e867] [cursor=pointer]:
+        - /url: sponsor.html
+      - link "Donate" [ref=e868] [cursor=pointer]:
+        - /url: donate.html
+      - link "Disclaimer" [ref=e869] [cursor=pointer]:
+        - /url: "#disclaimer"
+      - link "About" [ref=e870] [cursor=pointer]:
+        - /url: "#about"
+      - link "Contact" [ref=e871] [cursor=pointer]:
+        - /url: "#contact"
+    - separator [ref=e872]
+    - generic [ref=e873]: © 2025–2026 Ayrees. All rights reserved. • support@ayrees.com • 3790 El Camino Real, Palo Alto, CA 94306
+  - generic [ref=e874]:
+    - button "✕" [ref=e875] [cursor=pointer]
+    - generic [ref=e876]: ◆ Featured Sponsor
+    - generic [ref=e877]:
+      - generic [ref=e878]: 🏠
+      - generic [ref=e879]:
+        - generic [ref=e880]: Home Depot
+        - generic [ref=e881]: Gold Sponsor
+    - generic [ref=e882]: Your one-stop shop for home improvement. Special discounts available for Ayrees directory members.
+    - link "Visit Website →" [ref=e883] [cursor=pointer]:
+      - /url: "#"
