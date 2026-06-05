@@ -409,7 +409,9 @@ function buildSections(profile: LocalizedPostProfile): BlogPost["sections"] {
     const internalLinks = linkedList(profile.internalLinks);
     const workflows = sentenceList(profile.firstWorkflows);
     const metrics = sentenceList(profile.metrics);
-    const keywords = profile.searchCluster.map((keyword) => `"${keyword}"`).join(", ");
+    const buyerIntent = profile.searchIntent
+        .replace(/^Searchers are usually/, "Buyers are usually")
+        .replace(/^Searchers usually/, "Buyers usually");
 
     return [
         {
@@ -419,10 +421,10 @@ function buildSections(profile: LocalizedPostProfile): BlogPost["sections"] {
 The operating model should start with the highest-demand workflows and make the approved path easier than the workaround. In this market, the first workflows are usually ${workflows}. Each workflow needs a named owner, allowed data classes, allowed models, retention rules, review requirements, and escalation paths. Those rules should map to runtime decisions: allow, warn, redact, block, reroute, require approval, or create an exception record. Remova is relevant because it gives teams one governed AI workspace for ${internalLinks}, instead of forcing every department to interpret AI policy on its own.`
         },
         {
-            heading: "Search Intent Behind This Local Guide",
-            content: `This article is built around a localized buyer-intent cluster rather than a generic AI governance phrase. The search-data target is: ${keywords}. Those queries are not interchangeable. Some searchers want regulatory orientation, some want a procurement checklist, some want a CISO control model, and some want a practical answer for employee AI usage. The shared intent is operational: the buyer already knows employees want AI, and now the organization needs a way to keep adoption useful, visible, and defensible.
+            heading: "Buyer Questions This Guide Answers",
+            content: `Teams evaluating AI governance in ${profile.market} are usually past the awareness stage. The question is no longer whether employees will use generative AI. They already will. The buyer question is whether the company can approve useful AI workflows with enough visibility, data protection, model control, review discipline, budget ownership, and audit evidence to satisfy security, privacy, compliance, finance, and business owners at the same time.
 
-The useful editorial move is to answer the local buyer question before explaining the framework. ${profile.searchIntent} A high-impact post should therefore avoid vague claims such as "AI is transforming business" and instead name the decisions the buyer must make: data classes, approved models, identity groups, workflow owners, evidence sources, and escalation rules. Exact search-volume ranges should come from Search Console, Keyword Planner, or a paid SEO platform tied to the domain. This article does not invent volume numbers. It uses search intent to structure the topic and uses official sources to keep factual claims grounded.`
+That turns the buying process into a practical control review. Which workflows should be approved first? Which data classes are prohibited, redacted, or routed differently? Which models and vendors are acceptable for sensitive work? Which roles can use each workflow? Which outputs require human review? Which evidence will prove that the controls operated later? ${buyerIntent} A strong buying process should test whether the platform enforces these decisions in the workflow, not only whether it describes governance well in a sales deck.`
         },
         {
             heading: `${profile.location} Market Context`,
@@ -432,7 +434,7 @@ For ${profile.industry}, local relevance comes from the combination of industry 
         },
         {
             heading: "Facts and Source Baseline",
-            content: `A factful ${profile.location} AI governance program should start from authoritative sources and then translate them into operating controls. Useful reference points for this article include ${authorityLinks}. These sources do not say that buying one AI tool automatically creates compliance. They point in the opposite direction: organizations need governance, risk assessment, accountability, security controls, privacy review, supplier awareness, and evidence that controls actually operate.
+            content: `A factful ${profile.location} AI governance program should start from authoritative sources and then translate them into operating controls. Useful reference points for buyer due diligence include ${authorityLinks}. These sources do not say that buying one AI tool automatically creates compliance. They point in the opposite direction: organizations need governance, risk assessment, accountability, security controls, privacy review, supplier awareness, and evidence that controls actually operate.
 
 The practical interpretation is conservative. Do not claim that any platform guarantees compliance with a law, standard, or regulator. Instead, document the controls that support the program: inventory, scope, ownership, data handling, model access, redaction, role access, vendor review, output review, incident response, monitoring, and audit evidence. For ${profile.market}, the defensible position is that AI governance helps the company make better-controlled decisions and preserve evidence for review. Legal teams still need to confirm applicability, especially when AI output affects customers, employees, regulated decisions, clinical or financial workflows, or cross-border data movement.`
         },
@@ -476,7 +478,7 @@ For ${profile.reader}, the practical Remova workflow is straightforward. Define 
             heading: "Checklist for the First Governance Review",
             content: `Use this checklist before expanding AI usage in ${profile.market}. Confirm that the top workflows are inventoried and owned. Confirm that approved model routes are documented. Confirm that sensitive data is detected before model calls. Confirm that role-based access maps to real identity groups. Confirm that prompts, files, retrieval context, and outputs have policy handling. Confirm that exceptions have owners and expiry dates. Confirm that high-impact outputs require human review. Confirm that spend is tied to a department or workflow owner. Confirm that audit evidence can be exported or reviewed by authorized teams.
 
-The final question is whether the sanctioned path is better than the workaround. If the approved workflow is slow, confusing, or missing the model employees need, people will move around it. If the approved path is useful, fast, and clear, governance becomes part of the work instead of a separate compliance burden. That is the standard for localized, factful, production-ready AI governance content: make the buyer's local decision easier and make the operating model concrete enough to implement.`
+The final question is whether the sanctioned path is better than the workaround. If the approved workflow is slow, confusing, or missing the model employees need, people will move around it. If the approved path is useful, fast, and clear, governance becomes part of the work instead of a separate compliance burden. The buyer-facing standard is practical: make the local decision easier, make the operating model concrete, and make the evidence useful after rollout.`
         },
     ];
 }
@@ -486,8 +488,8 @@ function imagesFor(profile: LocalizedPostProfile): BlogPost["images"] {
     return [
         {
             src: `${base}-hero.svg`,
-            alt: `AI-assisted visual for ${profile.location} AI governance controls`,
-            caption: `AI-assisted editorial visual for ${profile.market}, with factual labels rendered in deterministic SVG.`,
+            alt: `Control visual for ${profile.location} AI governance workflows`,
+            caption: `Localized control visual for ${profile.market}: policy, data protection, model access, and audit evidence.`,
             afterSection: 0,
             hero: true,
         },
@@ -525,7 +527,7 @@ export const localizedAiGovernanceBlogPosts: BlogPost[] = profiles.map((profile)
     articleType: "BlogPosting",
     author: "Remova Editorial",
     readTime: "12 min",
-    excerpt: `A localized AI governance guide for ${profile.industry}, focused on search intent, official sources, runtime controls, and Remova evidence workflows.`,
+    excerpt: `A buyer-facing AI governance guide for ${profile.industry}, focused on official sources, runtime controls, and Remova evidence workflows.`,
     sections: buildSections(profile),
     images: imagesFor(profile),
     inlineCtas: inlineCtasFor(profile),
