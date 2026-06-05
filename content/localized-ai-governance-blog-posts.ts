@@ -15,7 +15,7 @@ type LocalizedPostProfile = {
     industry: string;
     reader: string;
     searchCluster: string[];
-    searchIntent: string;
+    buyerIntent: string;
     buyerQuestion: string;
     localContext: string;
     localRisk: string;
@@ -84,7 +84,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "banks, lenders, insurers, asset managers, fintech companies, and regulated financial-services vendors",
         reader: "CISOs, CIOs, compliance leaders, risk owners, and AI program teams in New York financial services",
         searchCluster: ["AI governance New York financial services", "NYDFS AI governance", "AI policy for banks", "AI data leakage finance", "ISO 42001 financial services"],
-        searchIntent: "Searchers are usually trying to connect broad AI governance language to concrete financial-services controls: who can use AI, what customer or trading data can enter prompts, how evidence is retained, and how the control model fits cybersecurity review.",
+        buyerIntent: "Buyers are usually trying to connect broad AI governance language to concrete financial-services controls: who can use AI, what customer or trading data can enter prompts, how evidence is retained, and how the control model fits cybersecurity review.",
         buyerQuestion: "How can a New York financial-services team allow useful generative AI without creating data leakage, model access, and audit evidence gaps?",
         localContext: "New York financial institutions already operate under demanding cybersecurity, vendor, privacy, and record-retention expectations. AI adds a new interaction surface because employees can paste customer files, account notes, trading commentary, claim details, and risk memos into chat, copilots, coding tools, and internal agents before security teams see the request.",
         localRisk: "A relationship manager pastes a client portfolio summary into a personal chatbot, an analyst uploads a spreadsheet with customer identifiers to summarize exposure, or a developer sends proprietary fraud-model code to an unmanaged coding assistant. The incident is not only a prompt problem. It is a failure to prove which user acted, what data class was present, which model route was used, and what policy decision occurred.",
@@ -117,7 +117,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "B2B SaaS companies, platform teams, data processors, product-led software companies, and privacy-sensitive AI builders",
         reader: "privacy leaders, security teams, legal counsel, product operations, and AI platform owners at California SaaS companies",
         searchCluster: ["California AI governance SaaS", "CCPA AI governance", "CPRA automated decision making AI", "AI privacy controls SaaS", "prompt redaction customer data"],
-        searchIntent: "Searchers usually want a practical way to keep customer data out of unmanaged model calls, evaluate AI vendors, document privacy decisions, and turn privacy language into product and workflow controls.",
+        buyerIntent: "Buyers usually want a practical way to keep customer data out of unmanaged model calls, evaluate AI vendors, document privacy decisions, and turn privacy language into product and workflow controls.",
         buyerQuestion: "How can a California SaaS company give teams AI tools while protecting customer data and keeping privacy evidence close to the workflow?",
         localContext: "California SaaS teams sit between fast product adoption and serious privacy expectations. Product, support, sales, engineering, and customer-success teams all want AI for summaries, writing, coding, analytics, and workflow automation. Those teams often handle personal information, customer configuration data, telemetry, support transcripts, and implementation notes.",
         localRisk: "A customer-success manager asks a general-purpose model to summarize a support history, an engineer copies a customer-specific stack trace into a coding assistant, or a product manager uploads usage exports to identify churn. The company may have vendor terms and internal policies, but the event still creates risk if prompt content, model route, retention, and review evidence are invisible.",
@@ -150,7 +150,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "energy companies, utilities, industrial operators, field-service teams, engineering firms, and critical-infrastructure vendors",
         reader: "security leaders, operations executives, engineering managers, compliance teams, and AI program owners in energy and industrial environments",
         searchCluster: ["AI governance Texas energy", "AI policy energy companies", "AI governance industrial operations", "critical infrastructure AI security", "LLM data leakage energy"],
-        searchIntent: "Searchers are usually looking for a way to separate useful AI analysis from operational risk: what data can be summarized, which tools can touch operational context, and what evidence exists if a workflow produces a bad recommendation.",
+        buyerIntent: "Buyers are usually looking for a way to separate useful AI analysis from operational risk: what data can be summarized, which tools can touch operational context, and what evidence exists if a workflow produces a bad recommendation.",
         buyerQuestion: "How can Texas energy and industrial teams use AI for analysis, field operations, and engineering without losing control of sensitive operational data?",
         localContext: "Texas energy and industrial teams often run distributed operations where engineering, safety, procurement, field service, and back-office staff need quick analysis. AI can help summarize maintenance records, draft procedures, review contracts, analyze incident notes, and support engineering work. The same workflows can expose operational details that should not leave approved systems.",
         localRisk: "A field engineer uploads maintenance logs containing facility names and operational context to an unmanaged tool, an analyst uses a public model to summarize incident notes, or a procurement team asks an AI assistant to evaluate vendor terms involving critical equipment. The risk is not only confidentiality. It is also uncontrolled recommendations, weak evidence, and unclear accountability when AI output influences operational decisions.",
@@ -183,7 +183,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "health systems, biotech companies, medtech teams, clinical research organizations, pharma operations, and healthcare software vendors",
         reader: "healthcare privacy leaders, research operations, security teams, legal counsel, and AI governance owners in Boston healthcare and life sciences",
         searchCluster: ["AI governance healthcare Boston", "HIPAA AI governance", "AI governance life sciences", "AI privacy clinical data", "AI policy biotech"],
-        searchIntent: "Searchers are usually trying to understand how AI can assist clinical, research, support, legal, and operations work without exposing protected health information or sensitive research context.",
+        buyerIntent: "Buyers are usually trying to understand how AI can assist clinical, research, support, legal, and operations work without exposing protected health information or sensitive research context.",
         buyerQuestion: "How can a healthcare or life-sciences team use AI for productivity while controlling protected data, research context, and review evidence?",
         localContext: "Boston healthcare and life-sciences teams work in a dense ecosystem of hospitals, biotech firms, universities, research partners, and regulated vendors. AI demand appears in summarization, literature review, protocol drafting, customer support, clinical operations, quality systems, and software engineering. The productivity upside is real, but so is the need for disciplined data boundaries.",
         localRisk: "A researcher uploads unpublished study notes into a general model, a support representative summarizes patient-related account history in an unmanaged chatbot, or an engineer sends a customer-specific clinical integration log to a coding assistant. Even when the goal is benign, the organization needs to know whether protected or research-sensitive data was present and what control acted before the model call.",
@@ -216,7 +216,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "cloud platforms, developer-tool companies, SaaS infrastructure teams, AI application teams, and software engineering organizations",
         reader: "engineering leaders, platform teams, AppSec, DevSecOps, developer-experience owners, and AI platform teams",
         searchCluster: ["AI governance developer teams", "coding assistant security", "MCP security enterprise", "AI code leakage controls", "AI governance Seattle cloud"],
-        searchIntent: "Searchers usually need practical rules for coding assistants, AI agents, MCP servers, internal APIs, repository context, secrets, and source-code review. The buyer is technical and wants controls that do not break developer velocity.",
+        buyerIntent: "Buyers usually need practical rules for coding assistants, AI agents, MCP servers, internal APIs, repository context, secrets, and source-code review. The buyer is technical and wants controls that do not break developer velocity.",
         buyerQuestion: "How can a cloud or developer team approve AI coding and agent workflows without leaking source code, secrets, architecture, or customer context?",
         localContext: "Seattle cloud and developer teams are often early adopters of coding assistants, internal AI agents, retrieval tools, and API-connected workflows. The risk profile is different from a generic employee chatbot. Developer AI can touch repositories, build logs, tickets, architecture documents, secrets-adjacent context, package manifests, and production-support traces.",
         localRisk: "A developer asks a public coding assistant to debug customer-specific logs, an internal agent receives broad repository access through an MCP server, or an AI code-review workflow calls tools with more permissions than the task requires. The organization needs controls outside the model because the model should not be trusted to decide whether it may read, export, or act on sensitive engineering context.",
@@ -249,7 +249,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "banks, insurers, asset managers, fintech firms, payments companies, and financial-market infrastructure vendors",
         reader: "UK financial-services risk, compliance, technology, security, and AI governance leaders",
         searchCluster: ["AI governance UK financial services", "London AI governance finance", "FCA AI governance", "UK ICO AI data protection", "AI policy financial services UK"],
-        searchIntent: "Searchers usually want a practical operating model for AI usage that speaks to UK data protection, financial-services risk, vendor oversight, and audit expectations without turning every employee AI request into a committee ticket.",
+        buyerIntent: "Buyers usually want a practical operating model for AI usage that speaks to UK data protection, financial-services risk, vendor oversight, and audit expectations without turning every employee AI request into a committee ticket.",
         buyerQuestion: "How can a London financial-services team govern generative AI across employees, vendors, models, and customer data?",
         localContext: "London financial-services teams operate in a market where regulatory expectations, customer trust, information security, operational resilience, and vendor oversight all matter. Generative AI changes the control surface because employees can use multiple assistants, copilots, APIs, browser extensions, and agents in daily work.",
         localRisk: "A private banker summarizes client records in an unmanaged model, a risk analyst uses AI to draft a committee paper with confidential exposure data, or an operations team connects a workflow agent to systems that hold customer or transaction context. The issue is not that AI is categorically unsafe. The issue is that risk owners need to prove that controls operated before data left the workflow.",
@@ -282,7 +282,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "manufacturers, industrial suppliers, automotive teams, machinery companies, logistics operators, and engineering-heavy enterprises",
         reader: "German manufacturing CIOs, CISOs, legal teams, works councils, procurement, engineering leaders, and AI governance owners",
         searchCluster: ["AI governance Germany manufacturing", "EU AI Act manufacturing AI", "GDPR AI governance Germany", "AI policy manufacturers", "ISO 42001 manufacturing"],
-        searchIntent: "Searchers are usually connecting EU AI Act readiness, GDPR-aware data handling, supplier controls, engineering workflows, and workforce governance into an implementation plan that employees can follow.",
+        buyerIntent: "Buyers are usually connecting EU AI Act readiness, GDPR-aware data handling, supplier controls, engineering workflows, and workforce governance into an implementation plan that employees can follow.",
         buyerQuestion: "How can German manufacturers roll out AI across engineering, operations, procurement, and support while keeping EU-style evidence and data controls intact?",
         localContext: "German manufacturers often combine valuable engineering data, supplier records, product quality evidence, customer commitments, and workforce processes. AI can help with technical-document summaries, quality analysis, supplier review, sales support, code assistance, and operations knowledge search. Those workflows need controls because they can expose intellectual property or influence regulated decisions.",
         localRisk: "An engineer uploads proprietary drawings to a public model, a procurement team analyzes supplier risk with confidential terms, or an operations team relies on an AI summary of quality records without documenting source evidence. For EU-facing companies, the control question is not simply whether AI is useful. It is whether the company knows the system, purpose, data, owner, risk tier, and evidence trail.",
@@ -314,7 +314,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "large French enterprises, regulated businesses, SaaS vendors, financial teams, public-sector suppliers, and privacy-sensitive operations",
         reader: "French privacy, security, legal, IT, compliance, and AI program leaders",
         searchCluster: ["AI governance France", "CNIL AI GDPR", "AI privacy France enterprise", "EU AI Act French companies", "AI policy employees France"],
-        searchIntent: "Searchers usually need a practical bridge between privacy guidance, EU AI Act readiness, employee usage, and the operational controls that govern prompts, files, model routes, and evidence.",
+        buyerIntent: "Buyers usually need a practical bridge between privacy guidance, EU AI Act readiness, employee usage, and the operational controls that govern prompts, files, model routes, and evidence.",
         buyerQuestion: "How can a French enterprise make employee AI usage visible and privacy-safe without slowing useful work to a stop?",
         localContext: "French enterprises often treat privacy, worker expectations, procurement, and security review as core parts of technology rollout. Generative AI is difficult because employees can use it through sanctioned suites, personal tools, browser extensions, APIs, coding assistants, and vendor copilots. The organization needs one control layer that works across those paths.",
         localRisk: "A sales team summarizes customer data in an unmanaged AI tool, an HR team drafts employee communications with sensitive context, or an internal agent retrieves documents that the user should not see. The privacy problem is not only model training. It is the full path: what data was sent, why it was sent, who approved it, how long evidence is retained, and whether the output was used for a decision.",
@@ -347,7 +347,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "Dutch SaaS companies, marketplaces, fintech platforms, developer platforms, and data-intensive B2B software teams",
         reader: "privacy leaders, security teams, platform engineering, procurement, legal, and AI governance owners in Dutch SaaS and platform companies",
         searchCluster: ["AI governance Netherlands SaaS", "GDPR AI governance Netherlands", "AI data residency SaaS", "AI vendor review Netherlands", "prompt data leakage SaaS"],
-        searchIntent: "Searchers usually need a control model for data residency decisions, AI vendor routing, customer-data prompts, platform engineering, and EU evidence requirements.",
+        buyerIntent: "Buyers usually need a control model for data residency decisions, AI vendor routing, customer-data prompts, platform engineering, and EU evidence requirements.",
         buyerQuestion: "How can a Dutch SaaS or platform company give teams AI access while controlling customer data, model routes, and vendor evidence?",
         localContext: "Dutch SaaS and platform teams often handle cross-border customers, integrations, usage telemetry, support histories, and engineering data. AI usage spreads quickly because product, support, success, sales, and engineering all see immediate productivity gains. The challenge is keeping the model path governed when teams use many AI vendors and routes.",
         localRisk: "A support team summarizes customer tickets in a model route that has not been reviewed, a product analyst uploads usage exports into a general model, or a platform engineer sends customer-specific logs to a coding assistant. Each event can cross privacy, vendor, and customer-contract boundaries if the organization cannot prove how the request was handled.",
@@ -379,7 +379,7 @@ const profiles: LocalizedPostProfile[] = [
         industry: "Swiss banks, insurers, wealth managers, pharmaceutical companies, medtech teams, research organizations, and regulated technology vendors",
         reader: "Swiss compliance, privacy, security, legal, research, technology, and AI governance leaders",
         searchCluster: ["AI governance Switzerland finance", "AI governance Swiss pharma", "Swiss data protection AI", "AI policy pharma", "AI audit evidence Switzerland"],
-        searchIntent: "Searchers usually want to understand how to prove AI control in high-trust environments where confidentiality, data protection, vendor assurance, and regulated workflow evidence matter.",
+        buyerIntent: "Buyers usually want to understand how to prove AI control in high-trust environments where confidentiality, data protection, vendor assurance, and regulated workflow evidence matter.",
         buyerQuestion: "How can Swiss finance and pharma teams use AI while preserving trust, confidentiality, privacy, and audit-ready evidence?",
         localContext: "Swiss finance and pharma organizations often combine strict confidentiality, customer or patient trust, cross-border collaboration, and regulated operating models. AI can help with research, support, analysis, document review, engineering, and internal knowledge work. The control problem is making those workflows useful without making data movement opaque.",
         localRisk: "A private-client team uses AI to summarize wealth-management notes, a pharma operations team asks a model to analyze research or quality records, or an engineer uses a coding assistant with sensitive integration logs. The event needs a record of user, purpose, data class, model route, review rule, and policy result so privacy, compliance, and security teams can reconstruct it.",
@@ -409,10 +409,6 @@ function buildSections(profile: LocalizedPostProfile): BlogPost["sections"] {
     const internalLinks = linkedList(profile.internalLinks);
     const workflows = sentenceList(profile.firstWorkflows);
     const metrics = sentenceList(profile.metrics);
-    const buyerIntent = profile.searchIntent
-        .replace(/^Searchers are usually/, "Buyers are usually")
-        .replace(/^Searchers usually/, "Buyers usually");
-
     return [
         {
             heading: `Direct Answer for ${profile.location} Teams`,
@@ -424,7 +420,7 @@ The operating model should start with the highest-demand workflows and make the 
             heading: "Buyer Questions This Guide Answers",
             content: `Teams evaluating AI governance in ${profile.market} are usually past the awareness stage. The question is no longer whether employees will use generative AI. They already will. The buyer question is whether the company can approve useful AI workflows with enough visibility, data protection, model control, review discipline, budget ownership, and audit evidence to satisfy security, privacy, compliance, finance, and business owners at the same time.
 
-That turns the buying process into a practical control review. Which workflows should be approved first? Which data classes are prohibited, redacted, or routed differently? Which models and vendors are acceptable for sensitive work? Which roles can use each workflow? Which outputs require human review? Which evidence will prove that the controls operated later? ${buyerIntent} A strong buying process should test whether the platform enforces these decisions in the workflow, not only whether it describes governance well in a sales deck.`
+That turns the buying process into a practical control review. Which workflows should be approved first? Which data classes are prohibited, redacted, or routed differently? Which models and vendors are acceptable for sensitive work? Which roles can use each workflow? Which outputs require human review? Which evidence will prove that the controls operated later? ${profile.buyerIntent} A strong buying process should test whether the platform enforces these decisions in the workflow, not only whether it describes governance well in a sales deck.`
         },
         {
             heading: `${profile.location} Market Context`,
