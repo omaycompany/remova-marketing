@@ -1,14 +1,17 @@
 import { Metadata } from "next";
-import { BrainCircuit, ArrowRight } from "lucide-react";
+import { BrainCircuit, ArrowRight, CalendarDays, Layers, Sparkles } from "lucide-react";
 import Link from "next/link";
 import FAQ from "@/components/ui/FAQ";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
-import { models, modelsLastUpdated } from "@/content/models";
+import { models, modelsLastUpdated, type ModelEntry } from "@/content/models";
 import { modelLandings } from "@/content/model-landings";
 import ModelsListView from "@/components/models/ModelsListView";
 import LeadMagnetSection from "@/components/marketing/LeadMagnetSection";
 import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
+import modelCatalogReport from "@/docs/model-catalog-report.json";
+import { displayBestFor } from "@/lib/model-best-for";
+import { formatModelInputPriceDetail } from "@/lib/model-pricing";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -45,6 +48,49 @@ const modelItems = [...modelLandings]
         url: absoluteUrl(`/models/${landing.slug}`),
     }));
 
+const fmtNumber = new Intl.NumberFormat("en-US");
+
+const modelById = new Map(models.map((model) => [model.id, model]));
+
+function isModelEntry(model: ModelEntry | undefined): model is ModelEntry {
+    return Boolean(model);
+}
+
+function formatSnapshotDate(value: string) {
+    const [year, month, day] = value.split("-").map((part) => Number(part));
+    if (!year || !month || !day) return value;
+
+    return new Intl.DateTimeFormat("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
+function formatContext(model: ModelEntry) {
+    if (model.contextLength <= 0) return "Usage-specific";
+    return `${fmtNumber.format(model.contextLength)} context`;
+}
+
+function modelCategoryLabel(model: ModelEntry) {
+    if (!model.modelType) return "Model";
+    return model.modelType
+        .split(/[-_]/g)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(" ");
+}
+
+const newlyAddedModels = (modelCatalogReport.added as string[])
+    .map((modelId) => modelById.get(modelId))
+    .filter(isModelEntry)
+    .sort((a, b) => {
+        const dateComparison = b.releasedAt.localeCompare(a.releasedAt);
+        if (dateComparison !== 0) return dateComparison;
+        return a.name.localeCompare(b.name);
+    })
+    .slice(0, 8);
+
 const relatedHubs = [
     { href: "/features", label: "Features" },
     { href: "/use-cases", label: "Use Cases" },
@@ -78,8 +124,108 @@ export default function ModelsPage() {
                 </div>
             </section>
 
+            {newlyAddedModels.length > 0 && (
+                <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
+                    <div className="container mx-auto max-w-6xl">
+                        <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                            <div>
+                                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] px-4 py-2 text-xs font-black uppercase tracking-wide text-slate-700 dark:text-slate-300">
+                                    <Sparkles className="h-4 w-4" /> Newly Added
+                                </div>
+                                <h2 className="mb-3 text-3xl font-black tracking-tighter text-slate-900 dark:text-white sm:text-5xl leading-[0.92]">
+                                    Latest Models Added to the Catalog
+                                </h2>
+                                <p className="max-w-2xl text-base font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                    {modelCatalogReport.addedCount} models were added in the {formatSnapshotDate(modelsLastUpdated)} snapshot.
+                                    Start here when evaluating new options for research, coding, media, and automation workflows.
+                                </p>
+                            </div>
+                            <Link
+                                href="#full-catalog"
+                                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border-2 border-slate-900 dark:border-white px-5 py-3 text-sm font-black text-slate-900 dark:text-white transition-colors hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
+                            >
+                                Browse full catalog <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                            </Link>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                            {newlyAddedModels.map((model) => {
+                                const landingSlug = landingByModelId[model.id];
+                                const bestFor = displayBestFor(model).slice(0, 2);
+
+                                return (
+                                    <article
+                                        key={model.id}
+                                        className="flex min-h-[24rem] flex-col rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#131314] p-5"
+                                    >
+                                        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                                            <span className="rounded-full border border-slate-200 dark:border-white/10 px-3 py-1 text-[11px] font-black uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                                                {model.provider}
+                                            </span>
+                                            <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-500 dark:text-slate-400">
+                                                <CalendarDays className="h-3.5 w-3.5" /> {model.releasedAt}
+                                            </span>
+                                        </div>
+
+                                        <div className="mb-2 text-xs font-black uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                                            {modelCategoryLabel(model)}
+                                        </div>
+                                        <h3 className="mb-3 text-xl font-black leading-tight text-slate-900 dark:text-white">
+                                            {model.name}
+                                        </h3>
+                                        <p className="mb-5 line-clamp-4 text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">
+                                            {model.summary}
+                                        </p>
+
+                                        <div className="mt-auto space-y-4">
+                                            <div className="grid gap-2 text-xs font-bold text-slate-600 dark:text-slate-300">
+                                                <div className="rounded-xl border border-slate-200 dark:border-white/10 px-3 py-2">
+                                                    {formatContext(model)}
+                                                </div>
+                                                <div className="rounded-xl border border-slate-200 dark:border-white/10 px-3 py-2">
+                                                    {formatModelInputPriceDetail(model)}
+                                                </div>
+                                            </div>
+
+                                            {bestFor.length > 0 && (
+                                                <ul className="flex flex-wrap gap-2">
+                                                    {bestFor.map((item) => (
+                                                        <li
+                                                            key={item}
+                                                            className="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-white/10 px-2.5 py-1 text-xs font-bold text-slate-700 dark:text-slate-200"
+                                                        >
+                                                            <Layers className="h-3 w-3 text-slate-400" />
+                                                            <span>{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+
+                                            {landingSlug ? (
+                                                <Link
+                                                    href={`/models/${landingSlug}`}
+                                                    className="inline-flex w-full min-h-11 items-center justify-center gap-2 rounded-full bg-slate-900 px-4 py-2.5 text-sm font-black text-white transition-colors hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+                                                >
+                                                    View model details <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                                </Link>
+                                            ) : (
+                                                <div className="rounded-xl bg-slate-100 dark:bg-white/10 px-3 py-2 font-mono text-[11px] font-bold text-slate-600 dark:text-slate-300">
+                                                    {model.id}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </article>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </section>
+            )}
+
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#131314] border-t border-slate-100 dark:border-white/5">
-                <ModelsListView models={models} landingByModelId={landingByModelId} />
+                <div id="full-catalog" className="scroll-mt-24">
+                    <ModelsListView models={models} landingByModelId={landingByModelId} />
+                </div>
             </section>
 
             <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-white/5 border-t border-slate-100 dark:border-white/5">
