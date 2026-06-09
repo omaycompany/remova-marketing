@@ -1,10 +1,426 @@
 // Auto-generated snapshot from model catalog sources.
-// Generated at 2026-06-05T15:09:45.996Z
-// Source counts: source1=429, source2=1261
+// Generated at 2026-06-09T18:22:01.951Z
+// Source counts: source1=428, source2=1320
 
-export const generatedModelsLastUpdated = "2026-06-05";
+export const generatedModelsLastUpdated = "2026-06-09";
 
 export const generatedModels = [
+    {
+        "id": "anthropic/claude-fable-5",
+        "name": "Anthropic: Claude Fable 5",
+        "provider": "Anthropic",
+        "releasedAt": "2026-06-09",
+        "contextLength": 1000000,
+        "inputPer1M": 10,
+        "outputPer1M": 50,
+        "summary": "Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and...",
+        "description": "Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "verbosity"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/luma/agent/ray/v3.2/image-to-video",
+        "name": "Luma Ray 3.2 Image to Video",
+        "provider": "Luma",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Ray 3.2 animates a source image into cinematic motion guided by a text prompt, preserving the starting frame's look while controlling resolution, duration, and seamless looping.",
+        "description": "Luma Ray 3.2 animates a source image into cinematic motion guided by a text prompt, preserving the starting frame's look while controlling resolution, duration, and seamless looping.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/luma/agent/ray/v3.2/text-to-video",
+        "name": "Luma Ray 3.2 Text to Video",
+        "provider": "Luma",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Ray 3.2 generates cinematic video from a text prompt, with control over resolution, duration, and seamless looping, plus reference images to lock in subject and style.",
+        "description": "Luma Ray 3.2 generates cinematic video from a text prompt, with control over resolution, duration, and seamless looping, plus reference images to lock in subject and style.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/luma/agent/uni-1/v1/edit",
+        "name": "Luma Uni-1 Edit",
+        "provider": "Luma",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Uni-1 Edit reworks a source image from a text instruction, preserving the original composition while applying style changes and following optional reference images to steer the result.",
+        "description": "Luma Uni-1 Edit reworks a source image from a text instruction, preserving the original composition while applying style changes and following optional reference images to steer the result.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/luma/agent/uni-1/v1/max/edit",
+        "name": "Luma Uni-1 Edit Max",
+        "provider": "Luma",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Uni-1 Max Edit applies text-guided edits to a source image at maximum fidelity, holding the original structure while honoring reference images for precise, high-detail revisions.",
+        "description": "Luma Uni-1 Max Edit applies text-guided edits to a source image at maximum fidelity, holding the original structure while honoring reference images for precise, high-detail revisions.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/luma/agent/uni-1/v1/text-to-image",
+        "name": "Luma Uni-1 Text to Image",
+        "provider": "Luma",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Uni-1 turns a text prompt into a single high-fidelity image, with control over aspect ratio and visual style, plus optional web-sourced and reference-image guidance for sharper grounding.",
+        "description": "Luma Uni-1 turns a text prompt into a single high-fidelity image, with control over aspect ratio and visual style, plus optional web-sourced and reference-image guidance for sharper grounding.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/luma/agent/uni-1/v1/max",
+        "name": "Luma Uni-1 Text to Image Max",
+        "provider": "Luma",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Uni-1 Max generates a single image at the model's highest fidelity, delivering richer detail and stronger prompt adherence than the base tier for hero-quality stills.",
+        "description": "Luma Uni-1 Max generates a single image at the model's highest fidelity, delivering richer detail and stronger prompt adherence than the base tier for hero-quality stills.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/bernini-r/edit-image",
+        "name": "Bernini-R Edit Image",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Edit any image with a natural-language instruction using Bernini-R, changing the weather, materials, objects, or style while preserving the original composition.",
+        "description": "Edit any image with a natural-language instruction using Bernini-R, changing the weather, materials, objects, or style while preserving the original composition.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/bernini-r/edit-video",
+        "name": "Bernini-R Edit Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Edit any video with a natural-language instruction using Bernini-R, changing objects, weather, background, or camera angle while keeping the rest of the scene intact.",
+        "description": "Edit any video with a natural-language instruction using Bernini-R, changing objects, weather, background, or camera angle while keeping the rest of the scene intact.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/bernini-r/reference-edit-video",
+        "name": "Bernini-R Reference Edit Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Edit a video guided by reference images with Bernini-R, bringing an object, material, background, style, or weather from a reference image into your video.",
+        "description": "Edit a video guided by reference images with Bernini-R, bringing an object, material, background, style, or weather from a reference image into your video.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/bernini-r/reference-to-video",
+        "name": "Bernini-R Reference to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Turn up to five reference images into one continuous, consistent video with Bernini-R, with smooth, stable camera motion and no scene cuts.",
+        "description": "Turn up to five reference images into one continuous, consistent video with Bernini-R, with smooth, stable camera motion and no scene cuts.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/bernini-r/text-to-video",
+        "name": "Bernini-R Text to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video from a text prompt with Bernini-R, ByteDance's unified video generation and editing model.",
+        "description": "Generate high-quality video from a text prompt with Bernini-R, ByteDance's unified video generation and editing model.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/lora",
+        "name": "Ideogram V4.0q Text to Image (LoRA)",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q using LoRA — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs.",
+        "description": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q using LoRA — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "nex-agi/nex-n2-pro:free",
+        "name": "Nex AGI: Nex-N2-Pro (free)",
+        "provider": "Nex Agi",
+        "releasedAt": "2026-06-08",
+        "contextLength": 262144,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
+        "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/bytedance/seed-speech/tts/v2",
+        "name": "Bytedance Seed Speech Text to Speech",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Seed Speech developed by ByteDance, is a family of large-scale text-to-speech models capable of synthesizing speech that is virtually indistinguishable from human speech.",
+        "description": "Seed Speech developed by ByteDance, is a family of large-scale text-to-speech models capable of synthesizing speech that is virtually indistinguishable from human speech.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-speech",
+        "pricingDescription": "Usage-based pricing"
+    },
     {
         "id": "nvidia/nemotron-3-ultra-550b-a55b",
         "name": "NVIDIA: Nemotron 3 Ultra",
@@ -116,6 +532,115 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "sourceful/riverflow-v2.5-fast",
+        "name": "Sourceful: Riverflow V2.5 Fast",
+        "provider": "Sourceful",
+        "releasedAt": "2026-06-04",
+        "contextLength": 32768,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Riverflow V2.5 Fast is the speed-optimized variant of Sourceful's Riverflow 2.5 lineup, best for production deployments and latency-critical workflows. The Riverflow 2.5 series is a unified text-to-image and image-to-im…",
+        "description": "Riverflow V2.5 Fast is the speed-optimized variant of Sourceful's Riverflow 2.5 lineup, best for production deployments and latency-critical workflows. The Riverflow 2.5 series is a unified text-to-image and image-to-im…",
+        "bestFor": [
+            "Image workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "reasoning"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "sourceful/riverflow-v2.5-pro",
+        "name": "Sourceful: Riverflow V2.5 Pro",
+        "provider": "Sourceful",
+        "releasedAt": "2026-06-04",
+        "contextLength": 32768,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Riverflow V2.5 Pro is the most powerful variant of Sourceful's Riverflow 2.5 lineup, best for top-tier control and quality-sensitive outputs. The Riverflow 2.5 series is a unified text-to-image and image-to-image...",
+        "description": "Riverflow V2.5 Pro is the most powerful variant of Sourceful's Riverflow 2.5 lineup, best for top-tier control and quality-sensitive outputs. The Riverflow 2.5 series is a unified text-to-image and image-to-image...",
+        "bestFor": [
+            "Image workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "reasoning"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "fal/krea/v2/medium/turbo/text-to-image",
+        "name": "Krea 2 Medium Text to Image Turbo",
+        "provider": "Krea",
+        "releasedAt": "2026-06-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-fidelity images extremely fast from text with Krea 2 Medium Turbo, supporting aspect ratio, creativity, seed controls, and optional style references.",
+        "description": "Generate high-fidelity images extremely fast from text with Krea 2 Medium Turbo, supporting aspect ratio, creativity, seed controls, and optional style references.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/microsoft/mai-image-2.5/edit",
+        "name": "Mai Image 2.5",
+        "provider": "Microsoft",
+        "releasedAt": "2026-06-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MAI-Image-2.5 is Microsoft's photorealistic image generation and editing model that turns text prompts or uploaded images into high-quality, design-ready visuals with fine-grained, pixel-level control.",
+        "description": "MAI-Image-2.5 is Microsoft's photorealistic image generation and editing model that turns text prompts or uploaded images into high-quality, design-ready visuals with fine-grained, pixel-level control.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "qwen/qwen3.7-plus",
         "name": "Qwen: Qwen3.7 Plus",
         "provider": "Qwen",
@@ -155,6 +680,164 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/scene-finder",
+        "name": "Scene Finder",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Search any video with a text prompt - Scene Finder locates the matching moments and returns their time segments and extracted frames.",
+        "description": "Search any video with a text prompt - Scene Finder locates the matching moments and returns their time segments and extracted frames.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "vision",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/sonilo/v1.1/text-to-music",
+        "name": "Sonilo V1.1 Text to Music",
+        "provider": "Sonilo",
+        "releasedAt": "2026-06-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generates production-ready music from a single text prompt, with full control over style, mood, instrumentation, and exact duration.",
+        "description": "Generates production-ready music from a single text prompt, with full control over style, mood, instrumentation, and exact duration.",
+        "bestFor": [
+            "Music generation",
+            "Audio production",
+            "Campaign soundtracks"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/tripo3d/triposplat",
+        "name": "Triposplat",
+        "provider": "Tripo3d",
+        "releasedAt": "2026-06-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "TripoSplat is an open-source model from TripoAI / VAST AI Research that converts a single 2D image into high-quality 3D Gaussians using a novel learned density-control approach",
+        "description": "TripoSplat is an open-source model from TripoAI / VAST AI Research that converts a single 2D image into high-quality 3D Gaussians using a novel learned density-control approach",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->3d",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "3d"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/sonilo/v1.1/video-to-music",
+        "name": "V1.1",
+        "provider": "Sonilo",
+        "releasedAt": "2026-06-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Analyzes your video's pacing, mood, and timing to generate a frame-synced, commercial-ready soundtrack in seconds",
+        "description": "Analyzes your video's pacing, mood, and timing to generate a frame-synced, commercial-ready soundtrack in seconds",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4",
+        "name": "Ideogram V4.0q Text to Image",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-02",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs.",
+        "description": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/microsoft/mai-image-2.5",
+        "name": "Mai Image 2.5 Text to Image",
+        "provider": "Microsoft",
+        "releasedAt": "2026-06-02",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MAI-Image-2.5 is Microsoft's photorealistic image generation and editing model that turns text prompts or uploaded images into high-quality, design-ready visuals with fine-grained, pixel-level control.",
+        "description": "MAI-Image-2.5 is Microsoft's photorealistic image generation and editing model that turns text prompts or uploaded images into high-quality, design-ready visuals with fine-grained, pixel-level control.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "microsoft/mai-image-2.5",
@@ -245,6 +928,324 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/nvidia/cosmos-3-super/text-to-image",
+        "name": "Cosmos 3 Super",
+        "provider": "Nvidia",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Cosmos3 is a collection of Omnimodal world models capable of generating dynamic, high-quality video, image, audio, and action commands from combinations of text, image, video, and action trajectory inputs.",
+        "description": "Cosmos3 is a collection of Omnimodal world models capable of generating dynamic, high-quality video, image, audio, and action commands from combinations of text, image, video, and action trajectory inputs.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/nvidia/cosmos-3-super/image-to-video",
+        "name": "Cosmos 3 Super Image to Video",
+        "provider": "Nvidia",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Cosmos3 is a collection of Omnimodal world models capable of generating dynamic, high-quality video, image, audio, and action commands from combinations of text, image, video, and action trajectory inputs.",
+        "description": "Cosmos3 is a collection of Omnimodal world models capable of generating dynamic, high-quality video, image, audio, and action commands from combinations of text, image, video, and action trajectory inputs.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/image-to-video",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from images using LTX-2.3",
+        "description": "Generate high-quality video with audio from images using LTX-2.3",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/audio-to-video",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from audio, text and images using LTX-2",
+        "description": "Generate high-quality video with audio from audio, text and images using LTX-2",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/image-to-video/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from images using LTX-2.3 and custom LoRA",
+        "description": "Generate high-quality video with audio from images using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/text-to-video",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from text using LTX-2.3",
+        "description": "Generate high-quality video with audio from text using LTX-2.3",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/reference-video-to-video",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from reference video, text and images using LTX-2.3",
+        "description": "Generate high-quality video with audio from reference video, text and images using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/audio-to-video/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from audio, text and images using LTX-2.3 and custom LoRA",
+        "description": "Generate high-quality video with audio from audio, text and images using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/hdr",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate HDR from reference video using LTX-2.3",
+        "description": "Generate HDR from reference video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/hdr/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate HDR from reference video using LTX-2.3 with lora",
+        "description": "Generate HDR from reference video using LTX-2.3 with lora",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/text-to-video/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from text using LTX-2.3 and custom LoRA",
+        "description": "Generate high-quality video with audio from text using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/reference-video-to-video/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from reference video, text and images using LTX-2.3 and custom LoRA",
+        "description": "Generate high-quality video with audio from reference video, text and images using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/xai/grok-imagine-video/v1.5/image-to-video",
@@ -618,6 +1619,654 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/audio-to-audio",
+        "name": "Stable Audio 3",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX audio-to-audio is a 459 million parameter latent diffusion model that transforms input audio into new sound-effect variations guided by text prompts.",
+        "description": "Stable Audio 3 Small SFX audio-to-audio is a 459 million parameter latent diffusion model that transforms input audio into new sound-effect variations guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/audio-inpainting",
+        "name": "Stable Audio 3 Small Music Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music audio inpainting is a 459 million parameter latent diffusion model that fills in or reworks selected segments of a music track guided by text prompts.",
+        "description": "Stable Audio 3 Small Music audio inpainting is a 459 million parameter latent diffusion model that fills in or reworks selected segments of a music track guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/audio-outpainting",
+        "name": "Stable Audio 3 Small Music Audio Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music audio outpainting is a 459 million parameter latent diffusion model that extends music compositions beyond their original endpoint via causal continuation.",
+        "description": "Stable Audio 3 Small Music audio outpainting is a 459 million parameter latent diffusion model that extends music compositions beyond their original endpoint via causal continuation.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/base/audio-inpainting",
+        "name": "Stable Audio 3 Small Music Base Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music Base audio inpainting is the foundational 459 million parameter checkpoint for editing or filling selected music segments guided by text prompts.",
+        "description": "Stable Audio 3 Small Music Base audio inpainting is the foundational 459 million parameter checkpoint for editing or filling selected music segments guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/base/audio-outpainting",
+        "name": "Stable Audio 3 Small Music Base Audio Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music Base audio outpainting is the foundational 459 million parameter checkpoint that extends music tracks via causal continuation guided by text prompts.",
+        "description": "Stable Audio 3 Small Music Base audio outpainting is the foundational 459 million parameter checkpoint that extends music tracks via causal continuation guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/base/audio-to-audio",
+        "name": "Stable Audio 3 Small Music Base Audio to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music Base audio-to-audio is the foundational 459 million parameter checkpoint that transforms input music into new variations up to 2 minutes guided by text prompts.",
+        "description": "Stable Audio 3 Small Music Base audio-to-audio is the foundational 459 million parameter checkpoint that transforms input music into new variations up to 2 minutes guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/audio-inpainting",
+        "name": "Stable Audio 3 Small SFX Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX audio inpainting is a 459 million parameter latent diffusion model that fills in or reworks selected segments of a sound-effect track guided by text prompts.",
+        "description": "Stable Audio 3 Small SFX audio inpainting is a 459 million parameter latent diffusion model that fills in or reworks selected segments of a sound-effect track guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/audio-outpainting",
+        "name": "Stable Audio 3 Small SFX Audio Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX audio outpainting is a 459 million parameter latent diffusion model that extends sound-effect tracks beyond their original endpoint via causal continuation.",
+        "description": "Stable Audio 3 Small SFX audio outpainting is a 459 million parameter latent diffusion model that extends sound-effect tracks beyond their original endpoint via causal continuation.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/base/audio-inpainting",
+        "name": "Stable Audio 3 Small SFX Base Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX Base audio inpainting is the foundational 459 million parameter checkpoint for editing or filling selected sound-effect segments guided by text prompts.",
+        "description": "Stable Audio 3 Small SFX Base audio inpainting is the foundational 459 million parameter checkpoint for editing or filling selected sound-effect segments guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/base/audio-outpainting",
+        "name": "Stable Audio 3 Small SFX Base Audio Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX Base audio outpainting is the foundational 459 million parameter checkpoint that extends sound-effect tracks via causal continuation guided by text prompts.",
+        "description": "Stable Audio 3 Small SFX Base audio outpainting is the foundational 459 million parameter checkpoint that extends sound-effect tracks via causal continuation guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/base/audio-to-audio",
+        "name": "Stable Audio 3 Small SFX Base Audio to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX Base audio-to-audio is the foundational 459 million parameter checkpoint that transforms input audio into new sound-effect variations guided by text prompts.",
+        "description": "Stable Audio 3 Small SFX Base audio-to-audio is the foundational 459 million parameter checkpoint that transforms input audio into new sound-effect variations guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/base/text-to-audio",
+        "name": "Stable Audio 3 Small SFX Base Text to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX Base is the foundational 459 million parameter checkpoint generating sound effects from text prompts, intended as the unmodified base for fine-tuning.",
+        "description": "Stable Audio 3 Small SFX Base is the foundational 459 million parameter checkpoint generating sound effects from text prompts, intended as the unmodified base for fine-tuning.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/sfx/text-to-audio",
+        "name": "Stable Audio 3 Small SFX Text to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small SFX is a 459 million parameter latent diffusion model that generates high-quality sound effects from text prompts, designed for on-device deployment on mobile phones and consumer laptops.",
+        "description": "Stable Audio 3 Small SFX is a 459 million parameter latent diffusion model that generates high-quality sound effects from text prompts, designed for on-device deployment on mobile phones and consumer laptops.",
+        "bestFor": [
+            "Sound effects",
+            "Audio design",
+            "Media production"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/text-to-audio",
+        "name": "Stable Audio 3",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium is a 1.4 billion parameter latent diffusion model that generates high-quality stereo music up to 6 minutes from text prompts, trained on fully licensed data for safe commercial use.",
+        "description": "Stable Audio 3 Medium is a 1.4 billion parameter latent diffusion model that generates high-quality stereo music up to 6 minutes from text prompts, trained on fully licensed data for safe commercial use.",
+        "bestFor": [
+            "Music generation",
+            "Audio production",
+            "Campaign soundtracks"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/base/text-to-audio",
+        "name": "Stable Audio 3",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music Base is the foundational 459 million parameter checkpoint generating full music compositions up to 2 minutes from text prompts, intended as the unmodified base for fine-tuning.",
+        "description": "Stable Audio 3 Small Music Base is the foundational 459 million parameter checkpoint generating full music compositions up to 2 minutes from text prompts, intended as the unmodified base for fine-tuning.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/audio-to-audio",
+        "name": "Stable Audio 3",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music audio-to-audio is a 459 million parameter latent diffusion model that transforms input music into new variations up to 2 minutes guided by text prompts.",
+        "description": "Stable Audio 3 Small Music audio-to-audio is a 459 million parameter latent diffusion model that transforms input music into new variations up to 2 minutes guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/audio-inpainting",
+        "name": "Stable Audio 3 Medium Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium audio inpainting is a 1.4 billion parameter latent diffusion model that fills in or reworks selected segments of a stereo track guided by text prompts, supporting single- and multi-segment editing.",
+        "description": "Stable Audio 3 Medium audio inpainting is a 1.4 billion parameter latent diffusion model that fills in or reworks selected segments of a stereo track guided by text prompts, supporting single- and multi-segment editing.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/audio-outpainting",
+        "name": "Stable Audio 3 Medium Audio Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium audio outpainting is a 1.4 billion parameter latent diffusion model that extends existing stereo audio beyond its original endpoint via causal continuation guided by text prompts.",
+        "description": "Stable Audio 3 Medium audio outpainting is a 1.4 billion parameter latent diffusion model that extends existing stereo audio beyond its original endpoint via causal continuation guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/audio-to-audio",
+        "name": "Stable Audio 3 Medium Audio to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium audio-to-audio is a 1.4 billion parameter latent diffusion model that transforms an input audio clip into new stereo variations up to 6 minutes guided by a text prompt.",
+        "description": "Stable Audio 3 Medium audio-to-audio is a 1.4 billion parameter latent diffusion model that transforms an input audio clip into new stereo variations up to 6 minutes guided by a text prompt.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/base/audio-inpainting",
+        "name": "Stable Audio 3 Medium Base Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium Base audio inpainting is the foundational 1.4 billion parameter checkpoint for editing or filling selected stereo audio segments guided by text prompts.",
+        "description": "Stable Audio 3 Medium Base audio inpainting is the foundational 1.4 billion parameter checkpoint for editing or filling selected stereo audio segments guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/base/audio-outpainting",
+        "name": "Stable Audio 3 Medium Base Audio Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium Base audio outpainting is the foundational 1.4 billion parameter checkpoint that extends existing stereo audio with causal continuation guided by text prompts.",
+        "description": "Stable Audio 3 Medium Base audio outpainting is the foundational 1.4 billion parameter checkpoint that extends existing stereo audio with causal continuation guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/base/audio-to-audio",
+        "name": "Stable Audio 3 Medium Base Audio to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium Base audio-to-audio is the foundational 1.4 billion parameter checkpoint that transforms input audio into new stereo variations up to 6 minutes guided by text prompts.",
+        "description": "Stable Audio 3 Medium Base audio-to-audio is the foundational 1.4 billion parameter checkpoint that transforms input audio into new stereo variations up to 6 minutes guided by text prompts.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/medium/base/text-to-audio",
+        "name": "Stable Audio 3 Medium Base Text to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Medium Base is the foundational 1.4 billion parameter text-to-audio checkpoint generating stereo music up to 6 minutes, intended as the unmodified base for custom fine-tuning workflows.",
+        "description": "Stable Audio 3 Medium Base is the foundational 1.4 billion parameter text-to-audio checkpoint generating stereo music up to 6 minutes, intended as the unmodified base for custom fine-tuning workflows.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/text-to-audio",
+        "name": "Stable Audio 3 Small Music Text to Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music is a 459 million parameter latent diffusion model that generates full stereo music compositions up to 2 minutes from text prompts, lightweight enough for on-device deployment.",
+        "description": "Stable Audio 3 Small Music is a 459 million parameter latent diffusion model that generates full stereo music compositions up to 2 minutes from text prompts, lightweight enough for on-device deployment.",
+        "bestFor": [
+            "Music generation",
+            "Audio production",
+            "Campaign soundtracks"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/fal-ai/flux-pro/v1/erase",
@@ -2893,8 +4542,8 @@ export const generatedModels = [
         "provider": "~moonshotai",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.684,
-        "outputPer1M": 3.42,
+        "inputPer1M": 0.6799999999999999,
+        "outputPer1M": 3.41,
         "summary": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "bestFor": [
@@ -3241,8 +4890,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.29,
-        "outputPer1M": 3.1999999999999997,
+        "inputPer1M": 0.28900000000000003,
+        "outputPer1M": 2.4,
         "summary": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "bestFor": [
@@ -4549,8 +6198,8 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-04-20",
         "contextLength": 262144,
-        "inputPer1M": 0.684,
-        "outputPer1M": 3.42,
+        "inputPer1M": 0.6799999999999999,
+        "outputPer1M": 3.41,
         "summary": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "bestFor": [
@@ -6110,7 +7759,7 @@ export const generatedModels = [
         "releasedAt": "2026-04-02",
         "contextLength": 262144,
         "inputPer1M": 0.12,
-        "outputPer1M": 0.37,
+        "outputPer1M": 0.36,
         "summary": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "bestFor": [
@@ -6435,15 +8084,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan/v2.7/pro/edit",
+        "id": "fal/fal-ai/wan/v2.7/edit",
         "name": "Wan",
         "provider": "Remova Media",
         "releasedAt": "2026-04-01",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Edit and transform images using text instructions with the WAN 2.7 Pro model for precise, professional-grade image modifications.",
-        "description": "Edit and transform images using text instructions with the WAN 2.7 Pro model for precise, professional-grade image modifications.",
+        "summary": "Transform and edit existing images with text-guided instructions using the WAN 2.7 model for creative image manipulation.",
+        "description": "Transform and edit existing images with text-guided instructions using the WAN 2.7 model for creative image manipulation.",
         "bestFor": [
             "Image workflows"
         ],
@@ -6461,15 +8110,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan/v2.7/edit",
+        "id": "fal/fal-ai/wan/v2.7/pro/edit",
         "name": "Wan",
         "provider": "Remova Media",
         "releasedAt": "2026-04-01",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Transform and edit existing images with text-guided instructions using the WAN 2.7 model for creative image manipulation.",
-        "description": "Transform and edit existing images with text-guided instructions using the WAN 2.7 model for creative image manipulation.",
+        "summary": "Edit and transform images using text instructions with the WAN 2.7 Pro model for precise, professional-grade image modifications.",
+        "description": "Edit and transform images using text instructions with the WAN 2.7 Pro model for precise, professional-grade image modifications.",
         "bestFor": [
             "Image workflows"
         ],
@@ -7621,8 +9270,8 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2026-03-18",
         "contextLength": 204800,
-        "inputPer1M": 0.27899999999999997,
-        "outputPer1M": 1.2,
+        "inputPer1M": 0.27,
+        "outputPer1M": 1.08,
         "summary": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "bestFor": [
@@ -8224,31 +9873,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/text-to-video/lora",
-        "name": "LTX-2.3 22B",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from text using LTX-2.3 and custom LoRA",
-        "description": "Generate video with audio from text using LTX-2.3 and custom LoRA",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2.3-22b/image-to-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
@@ -8276,30 +9900,28 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/video-to-video",
+        "id": "fal/fal-ai/ltx-2.3-22b/text-to-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
         "releasedAt": "2026-03-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate video with audio from videos using LTX-2.3",
-        "description": "Generate video with audio from videos using LTX-2.3",
+        "summary": "Generate video with audio from text using LTX-2.3 and custom LoRA",
+        "description": "Generate video with audio from text using LTX-2.3 and custom LoRA",
         "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
+            "Video generation"
         ],
-        "modality": "text->media",
+        "modality": "text->video",
         "inputModalities": [
             "text"
         ],
         "outputModalities": [
-            "media"
+            "video"
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "video-to-video",
+        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -8330,6 +9952,33 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/ltx-2.3-22b/video-to-video",
+        "name": "LTX-2.3 22B",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from videos using LTX-2.3",
+        "description": "Generate video with audio from videos using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/ltx-2.3-22b/video-to-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
@@ -8357,15 +10006,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/extend-video/lora",
+        "id": "fal/fal-ai/ltx-2.3-22b/extend-video",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
         "releasedAt": "2026-03-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Extend video with audio using LTX-2.3 and custom LoRA",
-        "description": "Extend video with audio using LTX-2.3 and custom LoRA",
+        "summary": "Extend video with audio using LTX-2.3",
+        "description": "Extend video with audio using LTX-2.3",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -8384,15 +10033,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/extend-video",
+        "id": "fal/fal-ai/ltx-2.3-22b/extend-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
         "releasedAt": "2026-03-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Extend video with audio using LTX-2.3",
-        "description": "Extend video with audio using LTX-2.3",
+        "summary": "Extend video with audio using LTX-2.3 and custom LoRA",
+        "description": "Extend video with audio using LTX-2.3 and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -8492,6 +10141,31 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/ltx-2.3-22b/distilled/text-to-video",
+        "name": "LTX-2.3 22B Distilled",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from text using LTX-2.3 Distilled",
+        "description": "Generate video with audio from text using LTX-2.3 Distilled",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/ltx-2.3-22b/distilled/audio-to-video/lora",
         "name": "LTX-2.3 22B Distilled",
         "provider": "Remova Media",
@@ -8543,31 +10217,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2.3-22b/distilled/text-to-video",
-        "name": "LTX-2.3 22B Distilled",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from text using LTX-2.3 Distilled",
-        "description": "Generate video with audio from text using LTX-2.3 Distilled",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -8991,7 +10640,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-03-10",
         "contextLength": 262144,
-        "inputPer1M": 0.04,
+        "inputPer1M": 0.09999999999999999,
         "outputPer1M": 0.15,
         "summary": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language de…",
         "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language de…",
@@ -9624,7 +11273,7 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/qwen-image-2/pro/edit",
+        "id": "fal/fal-ai/qwen-image-2/edit",
         "name": "Qwen Image 2",
         "provider": "Remova Media",
         "releasedAt": "2026-03-03",
@@ -9650,7 +11299,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-2/edit",
+        "id": "fal/fal-ai/qwen-image-2/pro/edit",
         "name": "Qwen Image 2",
         "provider": "Remova Media",
         "releasedAt": "2026-03-03",
@@ -10684,7 +12333,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-22-trainer/i2v-a14b",
+        "id": "fal/fal-ai/wan-22-trainer/t2v-a14b",
         "name": "Wan-2.2 LoRA Trainer",
         "provider": "Remova Media",
         "releasedAt": "2026-02-23",
@@ -10711,7 +12360,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-22-trainer/t2v-a14b",
+        "id": "fal/fal-ai/wan-22-trainer/i2v-a14b",
         "name": "Wan-2.2 LoRA Trainer",
         "provider": "Remova Media",
         "releasedAt": "2026-02-23",
@@ -11123,7 +12772,7 @@ export const generatedModels = [
         "releasedAt": "2026-02-12",
         "contextLength": 204800,
         "inputPer1M": 0.15,
-        "outputPer1M": 1.15,
+        "outputPer1M": 0.8999999999999999,
         "summary": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
         "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
         "bestFor": [
@@ -12154,31 +13803,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-image/v3/text-to-image",
-        "name": "Kling Image",
-        "provider": "Remova Media",
-        "releasedAt": "2026-02-03",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Kling V3: Latest Kling Image model",
-        "description": "Kling V3: Latest Kling Image model",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/kling-image/v3/image-to-image",
         "name": "Kling Image",
         "provider": "Remova Media",
@@ -12202,6 +13826,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/kling-image/v3/text-to-image",
+        "name": "Kling Image",
+        "provider": "Remova Media",
+        "releasedAt": "2026-02-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Kling V3: Latest Kling Image model",
+        "description": "Kling V3: Latest Kling Image model",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -15066,33 +16715,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2-19b/distilled/extend-video",
-        "name": "LTX-2 19B Distilled",
-        "provider": "Remova Media",
-        "releasedAt": "2026-01-05",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Extend videos with audio using LTX-2 Distilled",
-        "description": "Extend videos with audio using LTX-2 Distilled",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2-19b/distilled/image-to-video/lora",
         "name": "LTX-2 19B Distilled",
         "provider": "Remova Media",
@@ -15117,6 +16739,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2-19b/distilled/extend-video",
+        "name": "LTX-2 19B Distilled",
+        "provider": "Remova Media",
+        "releasedAt": "2026-01-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Extend videos with audio using LTX-2 Distilled",
+        "description": "Extend videos with audio using LTX-2 Distilled",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -15410,33 +17059,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/sam-audio/span-separate",
-        "name": "Sam Audio",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-30",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Audio separation with SAM Audio. Isolate any sound using natural language—professional-grade audio editing made simple for creators, researchers, and accessibility applications.",
-        "description": "Audio separation with SAM Audio. Isolate any sound using natural language—professional-grade audio editing made simple for creators, researchers, and accessibility applications.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "audio-to-audio",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/sam-audio/visual-separate",
         "name": "Sam Audio",
         "provider": "Remova Media",
@@ -15461,6 +17083,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/sam-audio/span-separate",
+        "name": "Sam Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Audio separation with SAM Audio. Isolate any sound using natural language—professional-grade audio editing made simple for creators, researchers, and accessibility applications.",
+        "description": "Audio separation with SAM Audio. Isolate any sound using natural language—professional-grade audio editing made simple for creators, researchers, and accessibility applications.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -17052,32 +18701,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/lighting-restoration",
-        "name": "Qwen Image Edit 2509 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Removes harsh shadows and light spots from images, replacing them with soft, even, natural-looking illumination.",
-        "description": "Removes harsh shadows and light spots from images, replacing them with soft, even, natural-looking illumination.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/remove-element",
         "name": "Qwen Image Edit 2509 Lora Gallery",
         "provider": "Remova Media",
@@ -17104,15 +18727,93 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/face-to-full-portrait",
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/lighting-restoration",
         "name": "Qwen Image Edit 2509 Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-12-15",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate full portrait from a cropped face photo",
-        "description": "Generate full portrait from a cropped face photo",
+        "summary": "Removes harsh shadows and light spots from images, replacing them with soft, even, natural-looking illumination.",
+        "description": "Removes harsh shadows and light spots from images, replacing them with soft, even, natural-looking illumination.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/next-scene",
+        "name": "Qwen Image Edit 2509 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
+        "description": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/group-photo",
+        "name": "Qwen Image Edit 2509 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Create group photos",
+        "description": "Create group photos",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+        "name": "Qwen Image Edit 2509 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Apply designs/graphics onto people's shirts",
+        "description": "Apply designs/graphics onto people's shirts",
         "bestFor": [
             "Image workflows"
         ],
@@ -17182,41 +18883,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/group-photo",
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/face-to-full-portrait",
         "name": "Qwen Image Edit 2509 Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-12-15",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Create group photos",
-        "description": "Create group photos",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/next-scene",
-        "name": "Qwen Image Edit 2509 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
-        "description": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
+        "summary": "Generate full portrait from a cropped face photo",
+        "description": "Generate full portrait from a cropped face photo",
         "bestFor": [
             "Image workflows"
         ],
@@ -17243,32 +18918,6 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Remove existing lighting and apply soft, even illumination",
         "description": "Remove existing lighting and apply soft, even illumination",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
-        "name": "Qwen Image Edit 2509 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Apply designs/graphics onto people's shirts",
-        "description": "Apply designs/graphics onto people's shirts",
         "bestFor": [
             "Image workflows"
         ],
@@ -17666,7 +19315,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/one-to-all-animation/1.3b",
+        "id": "fal/fal-ai/one-to-all-animation/14b",
         "name": "One To All Animation",
         "provider": "Remova Media",
         "releasedAt": "2025-12-11",
@@ -17693,7 +19342,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/one-to-all-animation/14b",
+        "id": "fal/fal-ai/one-to-all-animation/1.3b",
         "name": "One To All Animation",
         "provider": "Remova Media",
         "releasedAt": "2025-12-11",
@@ -17922,40 +19571,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "nex-agi/deepseek-v3.1-nex-n1",
-        "name": "Nex AGI: DeepSeek V3.1 Nex N1",
-        "provider": "Nex Agi",
-        "releasedAt": "2025-12-08",
-        "contextLength": 131072,
-        "inputPer1M": 0.135,
-        "outputPer1M": 0.5,
-        "summary": "DeepSeek V3.1 Nex-N1 is the flagship release of the Nex-N1 series — a post-trained model designed to highlight agent autonomy, tool use, and real-world productivity. Nex-N1 demonstrates competitive performance across...",
-        "description": "DeepSeek V3.1 Nex-N1 is the flagship release of the Nex-N1 series — a post-trained model designed to highlight agent autonomy, tool use, and real-world productivity. Nex-N1 demonstrates competitive performance across...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "response_format",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "relace/relace-search",
@@ -19639,15 +21254,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-2-lora-gallery/virtual-tryon",
+        "id": "fal/fal-ai/flux-2-lora-gallery/multiple-angles",
         "name": "Flux 2 Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-25",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Virtual clothing try-on (2 images: person + garment)",
-        "description": "Virtual clothing try-on (2 images: person + garment)",
+        "summary": "Generates same object from different angles (azimuth/elevation)",
+        "description": "Generates same object from different angles (azimuth/elevation)",
         "bestFor": [
             "Image workflows"
         ],
@@ -19665,15 +21280,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-2-lora-gallery/multiple-angles",
+        "id": "fal/fal-ai/flux-2-lora-gallery/virtual-tryon",
         "name": "Flux 2 Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-25",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generates same object from different angles (azimuth/elevation)",
-        "description": "Generates same object from different angles (azimuth/elevation)",
+        "summary": "Virtual clothing try-on (2 images: person + garment)",
+        "description": "Virtual clothing try-on (2 images: person + garment)",
         "bestFor": [
             "Image workflows"
         ],
@@ -19769,31 +21384,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-2-lora-gallery/ballpoint-pen-sketch",
-        "name": "Flux 2 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-25",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Ballpoint pen sketch drawing style",
-        "description": "Ballpoint pen sketch drawing style",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/flux-2-lora-gallery/digital-comic-art",
         "name": "Flux 2 Lora Gallery",
         "provider": "Remova Media",
@@ -19828,6 +21418,31 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Applies sepia vintage effect to images",
         "description": "Applies sepia vintage effect to images",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/flux-2-lora-gallery/ballpoint-pen-sketch",
+        "name": "Flux 2 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Ballpoint pen sketch drawing style",
+        "description": "Ballpoint pen sketch drawing style",
         "bestFor": [
             "Image workflows"
         ],
@@ -21423,15 +23038,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/group-photo",
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/integrate-product",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Create group photos",
-        "description": "Create group photos",
+        "summary": "Blend products into backgrounds with automatic perspective and lighting correction",
+        "description": "Blend products into backgrounds with automatic perspective and lighting correction",
         "bestFor": [
             "Image workflows"
         ],
@@ -21449,15 +23064,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/integrate-product",
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/group-photo",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Blend products into backgrounds with automatic perspective and lighting correction",
-        "description": "Blend products into backgrounds with automatic perspective and lighting correction",
+        "summary": "Create group photos",
+        "description": "Create group photos",
         "bestFor": [
             "Image workflows"
         ],
@@ -21501,15 +23116,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/face-to-full-portrait",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Remove existing lighting and apply soft, even illumination",
-        "description": "Remove existing lighting and apply soft, even illumination",
+        "summary": "Generate full portrait from a cropped face photo",
+        "description": "Generate full portrait from a cropped face photo",
         "bestFor": [
             "Image workflows"
         ],
@@ -21553,15 +23168,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Apply designs/graphics onto people's shirts",
-        "description": "Apply designs/graphics onto people's shirts",
+        "summary": "Remove existing lighting and apply soft, even illumination",
+        "description": "Remove existing lighting and apply soft, even illumination",
         "bestFor": [
             "Image workflows"
         ],
@@ -21579,15 +23194,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/face-to-full-portrait",
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-11-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate full portrait from a cropped face photo",
-        "description": "Generate full portrait from a cropped face photo",
+        "summary": "Apply designs/graphics onto people's shirts",
+        "description": "Apply designs/graphics onto people's shirts",
         "bestFor": [
             "Image workflows"
         ],
@@ -21808,6 +23423,31 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/emu-3.5-image/text-to-image",
+        "name": "Emu 3.5 Image",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate images from text using Emu 3.5 Image",
+        "description": "Generate images from text using Emu 3.5 Image",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/emu-3.5-image/edit-image",
         "name": "Emu 3.5 Image",
         "provider": "Remova Media",
@@ -21831,31 +23471,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/emu-3.5-image/text-to-image",
-        "name": "Emu 3.5 Image",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-01",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate images from text using Emu 3.5 Image",
-        "description": "Generate images from text using Emu 3.5 Image",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -22039,31 +23654,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/longcat-video/text-to-video/480p",
-        "name": "LongCat Video",
-        "provider": "Remova Media",
-        "releasedAt": "2025-10-30",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate long videos from text using LongCat Video",
-        "description": "Generate long videos from text using LongCat Video",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/longcat-video/image-to-video/480p",
         "name": "LongCat Video",
         "provider": "Remova Media",
@@ -22088,6 +23678,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/longcat-video/text-to-video/480p",
+        "name": "LongCat Video",
+        "provider": "Remova Media",
+        "releasedAt": "2025-10-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate long videos from text using LongCat Video",
+        "description": "Generate long videos from text using LongCat Video",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -23749,15 +25364,15 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/kandinsky5/text-to-video",
+        "id": "fal/fal-ai/kandinsky5/text-to-video/distill",
         "name": "Kandinsky5",
         "provider": "Remova Media",
         "releasedAt": "2025-10-13",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Kandinsky 5.0 is a diffusion model for fast, high-quality text-to-video generation.",
-        "description": "Kandinsky 5.0 is a diffusion model for fast, high-quality text-to-video generation.",
+        "summary": "Kandinsky 5.0 Distilled is a lightweight diffusion model for fast, high-quality text-to-video generation.",
+        "description": "Kandinsky 5.0 Distilled is a lightweight diffusion model for fast, high-quality text-to-video generation.",
         "bestFor": [
             "Video generation"
         ],
@@ -23774,15 +25389,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kandinsky5/text-to-video/distill",
+        "id": "fal/fal-ai/kandinsky5/text-to-video",
         "name": "Kandinsky5",
         "provider": "Remova Media",
         "releasedAt": "2025-10-13",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Kandinsky 5.0 Distilled is a lightweight diffusion model for fast, high-quality text-to-video generation.",
-        "description": "Kandinsky 5.0 Distilled is a lightweight diffusion model for fast, high-quality text-to-video generation.",
+        "summary": "Kandinsky 5.0 is a diffusion model for fast, high-quality text-to-video generation.",
+        "description": "Kandinsky 5.0 is a diffusion model for fast, high-quality text-to-video generation.",
         "bestFor": [
             "Video generation"
         ],
@@ -23830,7 +25445,7 @@ export const generatedModels = [
         "provider": "Nvidia",
         "releasedAt": "2025-10-10",
         "contextLength": 131072,
-        "inputPer1M": 0.09999999999999999,
+        "inputPer1M": 0.39999999999999997,
         "outputPer1M": 0.39999999999999997,
         "summary": "Llama-3.3-Nemotron-Super-49B-v1.5 is a 49B-parameter, English-centric reasoning/chat model derived from Meta’s Llama-3.3-70B-Instruct with a 128K context. It’s post-trained for agentic workflows (RAG, tool calling) via…",
         "description": "Llama-3.3-Nemotron-Super-49B-v1.5 is a 49B-parameter, English-centric reasoning/chat model derived from Meta’s Llama-3.3-70B-Instruct with a 128K context. It’s post-trained for agentic workflows (RAG, tool calling) via…",
@@ -26355,6 +27970,33 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "fal/fal-ai/wan-22-vace-fun-a14b/inpainting",
+        "name": "Wan 2.2 VACE Fun A14B",
+        "provider": "Remova Media",
+        "releasedAt": "2025-09-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
+        "description": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/wan-22-vace-fun-a14b/reframe",
         "name": "Wan 2.2 VACE Fun A14B",
         "provider": "Remova Media",
@@ -26410,33 +28052,6 @@ export const generatedModels = [
     },
     {
         "id": "fal/fal-ai/wan-22-vace-fun-a14b/depth",
-        "name": "Wan 2.2 VACE Fun A14B",
-        "provider": "Remova Media",
-        "releasedAt": "2025-09-17",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
-        "description": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/wan-22-vace-fun-a14b/inpainting",
         "name": "Wan 2.2 VACE Fun A14B",
         "provider": "Remova Media",
         "releasedAt": "2025-09-17",
@@ -28066,32 +29681,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/bria/reimagine/3.2",
-        "name": "Reimagine",
-        "provider": "Bria",
-        "releasedAt": "2025-08-20",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Reimagine uses a structure reference for generating new images while preserving the structure of an input image, guided by text prompts. Perfect for transforming sketches, illustrations, or photos into new illustrations…",
-        "description": "Reimagine uses a structure reference for generating new images while preserving the structure of an input image, guided by text prompts. Perfect for transforming sketches, illustrations, or photos into new illustrations…",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/nano-banana/edit",
         "name": "Nano Banana",
         "provider": "Remova Media",
@@ -28222,33 +29811,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/moonvalley/marey/motion-transfer",
-        "name": "Marey Realism V1.5",
-        "provider": "Moonvalley",
-        "releasedAt": "2025-08-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Pull motion from a reference video and apply it to new subjects or scenes.",
-        "description": "Pull motion from a reference video and apply it to new subjects or scenes.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/moonvalley/marey/i2v",
         "name": "Marey Realism V1.5",
         "provider": "Moonvalley",
@@ -28273,6 +29835,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/moonvalley/marey/motion-transfer",
+        "name": "Marey Realism V1.5",
+        "provider": "Moonvalley",
+        "releasedAt": "2025-08-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Pull motion from a reference video and apply it to new subjects or scenes.",
+        "description": "Pull motion from a reference video and apply it to new subjects or scenes.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -28415,47 +30004,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "baidu/ernie-4.5-vl-28b-a3b",
-        "name": "Baidu: ERNIE 4.5 VL 28B A3B",
-        "provider": "Baidu",
-        "releasedAt": "2025-08-12",
-        "contextLength": 131072,
-        "inputPer1M": 0.14,
-        "outputPer1M": 0.56,
-        "summary": "A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure wit…",
-        "description": "A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure wit…",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -29194,31 +30742,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/wan/v2.2-a14b/text-to-image",
-        "name": "Wan",
-        "provider": "Remova Media",
-        "releasedAt": "2025-08-05",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Wan 2.2's 14B model generates high-resolution, photorealistic images with powerful prompt understanding and fine-grained visual detail",
-        "description": "Wan 2.2's 14B model generates high-resolution, photorealistic images with powerful prompt understanding and fine-grained visual detail",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/wan/v2.2-5b/text-to-video/fast-wan",
         "name": "Wan",
         "provider": "Remova Media",
@@ -29241,6 +30764,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/wan/v2.2-a14b/text-to-image",
+        "name": "Wan",
+        "provider": "Remova Media",
+        "releasedAt": "2025-08-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Wan 2.2's 14B model generates high-resolution, photorealistic images with powerful prompt understanding and fine-grained visual detail",
+        "description": "Wan 2.2's 14B model generates high-resolution, photorealistic images with powerful prompt understanding and fine-grained visual detail",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -29852,32 +31400,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/hunyuan_world",
-        "name": "Hunyuan World",
-        "provider": "Remova Media",
-        "releasedAt": "2025-07-28",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
-        "description": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/hunyuan_world/image-to-world",
         "name": "Hunyuan World",
         "provider": "Remova Media",
@@ -29902,6 +31424,32 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/hunyuan_world",
+        "name": "Hunyuan World",
+        "provider": "Remova Media",
+        "releasedAt": "2025-07-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
+        "description": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -30544,7 +32092,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-07-21",
         "contextLength": 262144,
-        "inputPer1M": 0.071,
+        "inputPer1M": 0.09,
         "outputPer1M": 0.09999999999999999,
         "summary": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose…",
         "description": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose…",
@@ -32663,31 +34211,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/imagen4/preview/fast",
-        "name": "Imagen 4",
-        "provider": "Remova Media",
-        "releasedAt": "2025-06-12",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Google’s highest quality image generation model",
-        "description": "Google’s highest quality image generation model",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/recraft/vectorize",
         "name": "Recraft",
         "provider": "Remova Media",
@@ -34442,56 +35965,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/imagen4/preview",
-        "name": "Imagen 4",
-        "provider": "Remova Media",
-        "releasedAt": "2025-05-20",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Google’s highest quality image generation model",
-        "description": "Google’s highest quality image generation model",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/imagen4/preview/ultra",
-        "name": "Imagen 4 Ultra",
-        "provider": "Remova Media",
-        "releasedAt": "2025-05-20",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Google’s highest quality image generation model",
-        "description": "Google’s highest quality image generation model",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/kling-video/v1.6/standard/elements",
         "name": "Kling 1.6 Elements",
         "provider": "Remova Media",
@@ -34625,15 +36098,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-video-13b-distilled/multiconditioning",
+        "id": "fal/fal-ai/ltx-video-13b-distilled/extend",
         "name": "LTX Video-0.9.7 13B Distilled",
         "provider": "Remova Media",
         "releasedAt": "2025-05-17",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
-        "description": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "summary": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "description": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -34652,15 +36125,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-video-13b-distilled/extend",
+        "id": "fal/fal-ai/ltx-video-13b-distilled/multiconditioning",
         "name": "LTX Video-0.9.7 13B Distilled",
         "provider": "Remova Media",
         "releasedAt": "2025-05-17",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
-        "description": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "summary": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "description": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -35513,77 +36986,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "arcee-ai/maestro-reasoning",
-        "name": "Arcee AI: Maestro Reasoning",
-        "provider": "Arcee Ai",
-        "releasedAt": "2025-05-05",
-        "contextLength": 131072,
-        "inputPer1M": 0.8999999999999999,
-        "outputPer1M": 3.3000000000000003,
-        "summary": "Maestro Reasoning is Arcee's flagship analysis model: a 32 B‑parameter derivative of Qwen 2.5‑32 B tuned with DPO and chain‑of‑thought RL for step‑by‑step logic. Compared to the earlier 7 B...",
-        "description": "Maestro Reasoning is Arcee's flagship analysis model: a 32 B‑parameter derivative of Qwen 2.5‑32 B tuned with DPO and chain‑of‑thought RL for step‑by‑step logic. Compared to the earlier 7 B...",
-        "bestFor": [
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "arcee-ai/spotlight",
-        "name": "Arcee AI: Spotlight",
-        "provider": "Arcee Ai",
-        "releasedAt": "2025-05-05",
-        "contextLength": 131072,
-        "inputPer1M": 0.18,
-        "outputPer1M": 0.18,
-        "summary": "Spotlight is a 7‑billion‑parameter vision‑language model derived from Qwen 2.5‑VL and fine‑tuned by Arcee AI for tight image‑text grounding tasks. It offers a 32 k‑token context window, enabling rich multimodal...",
-        "description": "Spotlight is a 7‑billion‑parameter vision‑language model derived from Qwen 2.5‑VL and fine‑tuned by Arcee AI for tight image‑text grounding tasks. It offers a 32 k‑token context window, enabling rich multimodal...",
-        "bestFor": [
-            "Multimodal analysis"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "arcee-ai/virtuoso-large",
         "name": "Arcee AI: Virtuoso Large",
         "provider": "Arcee Ai",
@@ -35953,8 +37355,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
         "contextLength": 131072,
-        "inputPer1M": 0.09,
-        "outputPer1M": 0.44999999999999996,
+        "inputPer1M": 0.12,
+        "outputPer1M": 0.5,
         "summary": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
         "description": "Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique...",
         "bestFor": [
@@ -36106,7 +37508,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/moondream2",
+        "id": "fal/fal-ai/moondream2/visual-query",
         "name": "Moondream2",
         "provider": "Remova Media",
         "releasedAt": "2025-04-26",
@@ -36133,7 +37535,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/moondream2/visual-query",
+        "id": "fal/fal-ai/moondream2",
         "name": "Moondream2",
         "provider": "Remova Media",
         "releasedAt": "2025-04-26",
@@ -37216,7 +38618,7 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2025-04-05",
         "contextLength": 10000000,
-        "inputPer1M": 0.08,
+        "inputPer1M": 0.09999999999999999,
         "outputPer1M": 0.3,
         "summary": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
         "description": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
@@ -37967,6 +39369,33 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/hunyuan3d/v2/mini",
+        "name": "Hunyuan3D",
+        "provider": "Remova Media",
+        "releasedAt": "2025-03-20",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate 3D models from your images using Hunyuan 3D. A native 3D generative model enabling versatile and high-quality 3D asset creation.",
+        "description": "Generate 3D models from your images using Hunyuan 3D. A native 3D generative model enabling versatile and high-quality 3D asset creation.",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->3d",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "3d"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/hunyuan3d/v2/turbo",
         "name": "Hunyuan3D",
         "provider": "Remova Media",
@@ -37995,33 +39424,6 @@ export const generatedModels = [
     },
     {
         "id": "fal/fal-ai/hunyuan3d/v2/multi-view/turbo",
-        "name": "Hunyuan3D",
-        "provider": "Remova Media",
-        "releasedAt": "2025-03-20",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate 3D models from your images using Hunyuan 3D. A native 3D generative model enabling versatile and high-quality 3D asset creation.",
-        "description": "Generate 3D models from your images using Hunyuan 3D. A native 3D generative model enabling versatile and high-quality 3D asset creation.",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text+image->3d",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "3d"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-3d",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/hunyuan3d/v2/mini",
         "name": "Hunyuan3D",
         "provider": "Remova Media",
         "releasedAt": "2025-03-20",
@@ -38500,8 +39902,8 @@ export const generatedModels = [
         "provider": "Google",
         "releasedAt": "2025-03-13",
         "contextLength": 131072,
-        "inputPer1M": 0.04,
-        "outputPer1M": 0.13,
+        "inputPer1M": 0.049999999999999996,
+        "outputPer1M": 0.15,
         "summary": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
         "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
         "bestFor": [
@@ -38543,8 +39945,8 @@ export const generatedModels = [
         "provider": "Google",
         "releasedAt": "2025-03-13",
         "contextLength": 131072,
-        "inputPer1M": 0.04,
-        "outputPer1M": 0.08,
+        "inputPer1M": 0.049999999999999996,
+        "outputPer1M": 0.09999999999999999,
         "summary": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
         "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
         "bestFor": [
@@ -40754,31 +42156,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-control-lora-depth",
-        "name": "FLUX.1 [dev] Control LoRA Depth",
-        "provider": "Remova Media",
-        "releasedAt": "2025-02-11",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
-        "description": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/flux-control-lora-depth/image-to-image",
         "name": "FLUX.1 [dev] Control LoRA Depth",
         "provider": "Remova Media",
@@ -40802,6 +42179,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/flux-control-lora-depth",
+        "name": "FLUX.1 [dev] Control LoRA Depth",
+        "provider": "Remova Media",
+        "releasedAt": "2025-02-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
+        "description": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -40855,56 +42257,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/imagen3",
-        "name": "Imagen3",
-        "provider": "Remova Media",
-        "releasedAt": "2025-02-10",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Imagen3 is a high-quality text-to-image model that generates realistic images from text prompts.",
-        "description": "Imagen3 is a high-quality text-to-image model that generates realistic images from text prompts.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/imagen3/fast",
-        "name": "Imagen3 Fast",
-        "provider": "Remova Media",
-        "releasedAt": "2025-02-10",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Imagen3 Fast is a high-quality text-to-image model that generates realistic images from text prompts.",
-        "description": "Imagen3 Fast is a high-quality text-to-image model that generates realistic images from text prompts.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -44503,8 +45855,8 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2024-09-25",
         "contextLength": 131072,
-        "inputPer1M": 0.245,
-        "outputPer1M": 0.245,
+        "inputPer1M": 0.345,
+        "outputPer1M": 0.345,
         "summary": "Llama 3.2 11B Vision is a multimodal model with 11 billion parameters, designed to handle tasks combining visual and textual data. It excels in tasks such as image captioning and...",
         "description": "Llama 3.2 11B Vision is a multimodal model with 11 billion parameters, designed to handle tasks combining visual and textual data. It excels in tasks such as image captioning and...",
         "bestFor": [
@@ -44838,32 +46190,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/image-preprocessors/mlsd",
-        "name": "Image Preprocessors",
-        "provider": "Remova Media",
-        "releasedAt": "2024-09-16",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "M-LSD line segment detection preprocessor.",
-        "description": "M-LSD line segment detection preprocessor.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/image-preprocessors/midas",
         "name": "Image Preprocessors",
         "provider": "Remova Media",
@@ -44890,6 +46216,32 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/image-preprocessors/mlsd",
+        "name": "Image Preprocessors",
+        "provider": "Remova Media",
+        "releasedAt": "2024-09-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "M-LSD line segment detection preprocessor.",
+        "description": "M-LSD line segment detection preprocessor.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/image-preprocessors/scribble",
         "name": "Image Preprocessors",
         "provider": "Remova Media",
@@ -44899,6 +46251,58 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Scribble preprocessor.",
         "description": "Scribble preprocessor.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/image-preprocessors/hed",
+        "name": "Image Preprocessors",
+        "provider": "Remova Media",
+        "releasedAt": "2024-09-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Holistically-Nested Edge Detection (HED) preprocessor.",
+        "description": "Holistically-Nested Edge Detection (HED) preprocessor.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/image-preprocessors/sam",
+        "name": "Image Preprocessors",
+        "provider": "Remova Media",
+        "releasedAt": "2024-09-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Segment Anything Model (SAM) preprocessor.",
+        "description": "Segment Anything Model (SAM) preprocessor.",
         "bestFor": [
             "Image workflows"
         ],
@@ -44951,58 +46355,6 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "TEED (Temporal Edge Enhancement Detection) preprocessor.",
         "description": "TEED (Temporal Edge Enhancement Detection) preprocessor.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/image-preprocessors/sam",
-        "name": "Image Preprocessors",
-        "provider": "Remova Media",
-        "releasedAt": "2024-09-16",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Segment Anything Model (SAM) preprocessor.",
-        "description": "Segment Anything Model (SAM) preprocessor.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/image-preprocessors/hed",
-        "name": "Image Preprocessors",
-        "provider": "Remova Media",
-        "releasedAt": "2024-09-16",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Holistically-Nested Edge Detection (HED) preprocessor.",
-        "description": "Holistically-Nested Edge Detection (HED) preprocessor.",
         "bestFor": [
             "Image workflows"
         ],
@@ -45216,8 +46568,8 @@ export const generatedModels = [
         "provider": "Nousresearch",
         "releasedAt": "2024-08-18",
         "contextLength": 131072,
-        "inputPer1M": 0.3,
-        "outputPer1M": 0.3,
+        "inputPer1M": 0.7,
+        "outputPer1M": 0.7,
         "summary": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvement…",
         "description": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvement…",
         "bestFor": [
@@ -45372,15 +46724,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-general/inpainting",
+        "id": "fal/fal-ai/flux-general/image-to-image",
         "name": "FLUX.1 [dev] with Controlnets and Loras",
         "provider": "Remova Media",
         "releasedAt": "2024-08-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
-        "description": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
+        "summary": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
+        "description": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
         "bestFor": [
             "Image workflows"
         ],
@@ -45398,15 +46750,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-general/image-to-image",
+        "id": "fal/fal-ai/flux-general/inpainting",
         "name": "FLUX.1 [dev] with Controlnets and Loras",
         "provider": "Remova Media",
         "releasedAt": "2024-08-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
-        "description": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
+        "summary": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
+        "description": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
         "bestFor": [
             "Image workflows"
         ],
@@ -45686,31 +47038,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/sdxl-controlnet-union",
-        "name": "SDXL ControlNet Union",
-        "provider": "Remova Media",
-        "releasedAt": "2024-07-31",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "An efficent SDXL multi-controlnet text-to-image model.",
-        "description": "An efficent SDXL multi-controlnet text-to-image model.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/sdxl-controlnet-union/image-to-image",
         "name": "SDXL ControlNet Union",
         "provider": "Remova Media",
@@ -45734,6 +47061,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/sdxl-controlnet-union",
+        "name": "SDXL ControlNet Union",
+        "provider": "Remova Media",
+        "releasedAt": "2024-07-31",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "An efficent SDXL multi-controlnet text-to-image model.",
+        "description": "An efficent SDXL multi-controlnet text-to-image model.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -46297,7 +47649,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/florence-2-large/open-vocabulary-detection",
+        "id": "fal/fal-ai/florence-2-large/ocr-with-region",
         "name": "Florence-2 Large",
         "provider": "Remova Media",
         "releasedAt": "2024-06-22",
@@ -46349,7 +47701,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/florence-2-large/ocr-with-region",
+        "id": "fal/fal-ai/florence-2-large/open-vocabulary-detection",
         "name": "Florence-2 Large",
         "provider": "Remova Media",
         "releasedAt": "2024-06-22",
@@ -46994,8 +48346,8 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2024-04-18",
         "contextLength": 8192,
-        "inputPer1M": 0.04,
-        "outputPer1M": 0.04,
+        "inputPer1M": 0.14,
+        "outputPer1M": 0.14,
         "summary": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
         "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
         "bestFor": [
@@ -47016,8 +48368,6 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "repetition_penalty",
-            "response_format",
-            "seed",
             "stop",
             "temperature",
             "top_k",
@@ -47868,31 +49218,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/fast-lcm-diffusion",
-        "name": "Latent Consistency Models (v1.5/XL)",
-        "provider": "Remova Media",
-        "releasedAt": "2024-02-19",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Run SDXL at the speed of light",
-        "description": "Run SDXL at the speed of light",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/fast-lcm-diffusion/image-to-image",
         "name": "Latent Consistency Models (v1.5/XL)",
         "provider": "Remova Media",
@@ -47916,6 +49241,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/fast-lcm-diffusion",
+        "name": "Latent Consistency Models (v1.5/XL)",
+        "provider": "Remova Media",
+        "releasedAt": "2024-02-19",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Run SDXL at the speed of light",
+        "description": "Run SDXL at the speed of light",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -48570,47 +49920,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "openai/gpt-4-1106-preview",
-        "name": "OpenAI: GPT-4 Turbo (older v1106)",
-        "provider": "OpenAI",
-        "releasedAt": "2023-11-06",
-        "contextLength": 128000,
-        "inputPer1M": 10,
-        "outputPer1M": 30,
-        "summary": "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling. Training data: up to April 2023.",
-        "description": "The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling. Training data: up to April 2023.",
-        "bestFor": [
-            "Model training",
-            "Dataset workflows",
-            "Style adaptation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "logprobs",
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/fal-ai/inpaint",
