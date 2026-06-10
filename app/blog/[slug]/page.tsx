@@ -141,6 +141,12 @@ function InlineArticleCta({ cta }: { cta: BlogInlineCta }) {
 }
 
 const TAKEAWAYS_BY_SLUG: Record<string, string[]> = {
+    "why-remova-does-not-include-claude-fable-5": [
+        "Remova does not include Claude Fable 5 because the covered-model policy requires temporary prompt and output retention for safety review.",
+        "This is a data-retention and review decision, not a claim that commercial customer data is used for model training.",
+        "Sensitive customer, employee, legal, security, financial, and source-code workflows should stay on approved model routes.",
+        "Any use of Claude Fable 5 should be handled as a narrow exception for non-sensitive work after the customer accepts the data terms.",
+    ],
     "preset-workflows-standardize-ai-usage": [
         "Replace repeated blank-chat work with approved presets that define required inputs, allowed data, model route, output format, owner, and review rule.",
         "Assign one owner per preset, review adoption and rework monthly, and retire workflows that no longer match policy or team practice.",
