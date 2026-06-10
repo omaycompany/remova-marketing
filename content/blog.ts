@@ -74,6 +74,86 @@ const p = (
 
 const rawBlogPosts: BlogPost[] = [
     {
+        slug: "why-remova-does-not-include-claude-fable-5",
+        title: "Why Remova Does Not Include Claude Fable 5",
+        metaDescription: "Remova does not include Claude Fable 5 because its covered-model retention and review requirements do not meet our customer data protection standard.",
+        category: "Privacy",
+        date: "2026-06-10",
+        lastModified: "2026-06-10",
+        articleType: "BlogPosting",
+        author: "Remova Trust Team",
+        readTime: "6 min",
+        excerpt: "Some models are powerful but incompatible with how Remova protects customer data. Here is why Claude Fable 5 is not part of our approved model catalog.",
+        sections: [
+            {
+                heading: "Capability Is Not the Only Approval Standard",
+                content: `Claude Fable 5 is a high-capability model. That is not the reason Remova excludes it. We exclude it because the data handling requirements attached to this model class do not meet the standard we apply to customer prompts, files, code, contracts, regulated records, and AI outputs.
+
+Remova does not approve a model only because it is powerful, new, or popular. A model also has to fit the data boundary our customers expect. If a model requires retention and review terms that are outside that boundary, we do not make it available in the default catalog.`
+            },
+            {
+                heading: "The Requirement We Do Not Accept",
+                content: `Anthropic's public privacy guidance for <a href="https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models" target="_blank" rel="noopener noreferrer">Mythos-class model retention</a> says prompts and outputs for covered models are kept for 30 days for trust and safety review. The same guidance says Claude Fable 5 shares the same underlying model as Claude Mythos 5, with additional safeguards.
+
+That retention and review requirement is the problem for Remova. Many of our customers use AI with confidential business plans, customer records, employee information, source code, procurement files, legal drafts, security reports, and other sensitive content. We do not route that data to a model when using the model requires a provider-side retention and review policy we have not approved.`
+            },
+            {
+                heading: "This Is Not a Training Claim",
+                content: `The issue is not that we are accusing Claude Fable 5 of using commercial customer data for model training. Anthropic separately states in its <a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" target="_blank" rel="noopener noreferrer">commercial model training guidance</a> that commercial inputs and outputs are not used to train models by default, unless a customer provides feedback, reports bugs, or otherwise opts in.
+
+Our concern is narrower and more operational: the covered-model policy requires temporary prompt and output retention for safety analysis, plus limited review in certain circumstances. For Remova, that is enough to keep the model out of approved customer workflows unless an organization explicitly accepts those terms for a tightly controlled use case.`
+            },
+            {
+                heading: "Why This Matters for Companies",
+                content: `AI model selection is now a data governance decision. A single prompt can include a customer export, a pending contract, a privileged legal note, a confidential roadmap, a production incident summary, or unreleased source code. Even short retention windows can become relevant for privacy, security, procurement, regulatory, and audit review.
+
+For some organizations, a provider's safety-retention policy may be acceptable. For others, it is not. Remova is built for the latter standard: customer data should not leave the approved boundary unless the business has reviewed the terms, accepted the risk, and created an auditable exception. That is why a capable model can still be blocked.`
+            },
+            {
+                heading: "How Remova Handles New Model Approval",
+                content: `When a new frontier model appears, Remova evaluates more than benchmark results. We look at retention, review access, training defaults, subprocessors, data residency, deletion behavior, logging, support escalation, contractual commitments, and whether the route can honor a customer's policy.
+
+If the answer is no, the model is not added to the approved catalog. Customers can still use <a href="/features/model-governance">model access controls</a>, <a href="/features/policy-guardrails">policy guardrails</a>, <a href="/features/sensitive-data-protection">sensitive data protection</a>, and <a href="/features/audit-trails">audit trails</a> to test and govern alternatives that match their data policy. The goal is not to slow AI adoption. The goal is to make sure adoption does not quietly rewrite the company's data-sharing rules.`
+            },
+            {
+                heading: "What Teams Should Do Instead",
+                content: `Use models whose data terms match the sensitivity of the work. Keep public or low-risk exploration separate from workflows that include customer, employee, financial, legal, regulated, security, or source-code data. Route sensitive work through approved models and enforce redaction before content leaves the organization.
+
+If a team believes Claude Fable 5 is necessary for a specific non-sensitive workload, treat that as an exception request, not a default rollout. The request should name the workflow, allowed data classes, retention acceptance, reviewers, logging requirements, and expiration date. Until those details are approved, Remova's position is simple: we do not include Claude Fable 5 because we do not accept the required data retention and review policy for ordinary customer workflows.`
+            }
+        ],
+        inlineCtas: [
+            {
+                afterSection: 4,
+                eyebrow: "Model governance",
+                title: "Approve models by data terms, not hype",
+                description: "Use Remova to restrict model access, enforce data policies, and keep sensitive prompts out of unapproved routes.",
+                primaryLabel: "Review model controls",
+                primaryHref: "/features/model-governance",
+                secondaryLabel: "See sensitive data protection",
+                secondaryHref: "/features/sensitive-data-protection"
+            }
+        ],
+        faqs: [
+            {
+                question: "Does this mean Claude Fable 5 is unsafe?",
+                answer: "No. It means the retention and review requirements for this covered model do not match Remova's default customer data protection standard. A model can be technically impressive and still fail an enterprise data governance review."
+            },
+            {
+                question: "Is Remova saying Claude Fable 5 trains on customer data?",
+                answer: "No. Anthropic states that commercial inputs and outputs are not used for model training by default. Remova's concern is the required prompt and output retention and review policy for covered Mythos-class models."
+            },
+            {
+                question: "Can a company approve Claude Fable 5 for a narrow use case?",
+                answer: "A company can choose to accept those terms for a specific non-sensitive workflow if its security, privacy, legal, and procurement owners approve the exception. Remova does not treat that as a default route for ordinary customer data."
+            },
+            {
+                question: "What should employees use for sensitive work?",
+                answer: "Employees should use approved models and workflows where retention, review, redaction, access, and audit requirements match the company's policy. Sensitive data should be routed through Remova controls before it reaches any external model."
+            }
+        ]
+    },
+    {
         slug: "defending-data-exfiltration-llm-chat",
         title: "Defending Against Data Exfiltration in LLM Chat Interfaces",
         metaDescription: "The biggest security hole in your enterprise is the AI chat window. Learn how to prevent source code, PII, and financial data from leaving your network.",
