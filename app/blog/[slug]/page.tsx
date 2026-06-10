@@ -309,12 +309,7 @@ const OPERATIONAL_CHECKLIST_BY_CATEGORY: Record<string, string[]> = {
 };
 
 function takeawaysForPost(post: BlogPost) {
-    return TAKEAWAYS_BY_SLUG[post.slug] ?? TAKEAWAYS_BY_CATEGORY[post.category] ?? [
-        "Name the workflow owner, data owner, access owner, evidence owner, and exception reviewer before rollout.",
-        "Classify the data, model route, user group, output use, review rule, and retention need for each AI workflow.",
-        "Turn policy into runtime decisions such as allow, warn, redact, block, reroute, or require review.",
-        "Track adoption, exceptions, data events, cost, output quality, and audit evidence on a recurring cadence.",
-    ];
+    return TAKEAWAYS_BY_SLUG[post.slug] ?? TAKEAWAYS_BY_CATEGORY[post.category] ?? [];
 }
 
 function operationalChecklistForPost(post: BlogPost) {
@@ -824,20 +819,21 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                         </figure>
                     )}
 
-                    {/* TL;DR Section */}
-                    <div className="mt-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
-                        <h2 className="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                            <Zap className="h-5 w-5" /> TL;DR
-                        </h2>
-                        <ul className="space-y-3">
-                            {articleTakeaways.map((takeaway, i) => (
-                                <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
-                                    <span className="text-emerald-500 italic shrink-0">—</span>
-                                    <span>{takeaway}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    {articleTakeaways.length > 0 ? (
+                        <div className="mt-12 p-8 rounded-3xl border-4 border-slate-900 dark:border-white bg-slate-50 dark:bg-white/5">
+                            <h2 className="text-xl font-black uppercase tracking-tighter text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                                <Zap className="h-5 w-5" /> TL;DR
+                            </h2>
+                            <ul className="space-y-3">
+                                {articleTakeaways.map((takeaway, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-slate-600 dark:text-slate-300 font-bold">
+                                        <span className="text-emerald-500 italic shrink-0">—</span>
+                                        <span>{takeaway}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : null}
                 </div>
             </section>
 
