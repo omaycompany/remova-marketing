@@ -11,6 +11,8 @@ import { modelLandings } from '@/content/model-landings'
 import { SITE_LAST_UPDATED_DATE, SITE_URL, dateFromIsoDate, isRecentDate } from '@/lib/seo'
 import { resourceGuides } from '@/content/resources'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const m = (p: string, pr: number, lastModified = SITE_LAST_UPDATED_DATE) => ({
         url: `${SITE_URL}${p}`,
