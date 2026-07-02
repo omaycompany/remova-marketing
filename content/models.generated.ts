@@ -1,10 +1,510 @@
 // Auto-generated snapshot from model catalog sources.
-// Generated at 2026-06-09T18:22:01.951Z
-// Source counts: source1=428, source2=1320
+// Generated at 2026-07-02T14:05:01.186Z
+// Source counts: source1=428, source2=1312
 
-export const generatedModelsLastUpdated = "2026-06-09";
+export const generatedModelsLastUpdated = "2026-07-02";
 
 export const generatedModels = [
+    {
+        "id": "anthropic/claude-sonnet-5",
+        "name": "Anthropic: Claude Sonnet 5",
+        "provider": "Anthropic",
+        "releasedAt": "2026-06-30",
+        "contextLength": 1000000,
+        "inputPer1M": 2,
+        "outputPer1M": 10,
+        "summary": "Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high,…",
+        "description": "Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high,…",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "verbosity"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "google/gemini-3.1-flash-lite-image",
+        "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 65536,
+        "inputPer1M": 0.25,
+        "outputPer1M": 1.5,
+        "summary": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image gene…",
+        "description": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image gene…",
+        "bestFor": [
+            "Image workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text+image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image",
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "alibaba/happyhorse-1.0",
+        "name": "Alibaba: HappyHorse 1.0",
+        "provider": "Alibaba",
+        "releasedAt": "2026-06-24",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "HappyHorse 1.0 is a video generation model from Alibaba. It generates short videos from a text prompt, a single starting image, or a set of reference images, with output up...",
+        "description": "HappyHorse 1.0 is a video generation model from Alibaba. It generates short videos from a text prompt, a single starting image, or a set of reference images, with output up...",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "alibaba/happyhorse-1.1",
+        "name": "Alibaba: HappyHorse 1.1",
+        "provider": "Alibaba",
+        "releasedAt": "2026-06-24",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "HappyHorse 1.1 is a video generation model from Alibaba. It generates short videos from a text prompt, a single starting image, or a set of reference images, with output up...",
+        "description": "HappyHorse 1.1 is a video generation model from Alibaba. It generates short videos from a text prompt, a single starting image, or a set of reference images, with output up...",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "openai/gpt-image-1",
+        "name": "OpenAI: GPT Image 1",
+        "provider": "OpenAI",
+        "releasedAt": "2026-06-24",
+        "contextLength": 400000,
+        "inputPer1M": 10,
+        "outputPer1M": 10,
+        "summary": "OpenAI's GPT Image 1 generates and edits images via the dedicated Images API. Features accurate text rendering, transparent backgrounds, and up to 16 reference images for edits.",
+        "description": "OpenAI's GPT Image 1 generates and edits images via the dedicated Images API. Features accurate text rendering, transparent backgrounds, and up to 16 reference images for edits.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "openai/gpt-image-1-mini",
+        "name": "OpenAI: GPT Image 1 Mini",
+        "provider": "OpenAI",
+        "releasedAt": "2026-06-24",
+        "contextLength": 400000,
+        "inputPer1M": 2.5,
+        "outputPer1M": 2.5,
+        "summary": "A cost-efficient variant of GPT Image 1 for high-quality image generation at reduced latency and cost via OpenAI's dedicated Images API.",
+        "description": "A cost-efficient variant of GPT Image 1 for high-quality image generation at reduced latency and cost via OpenAI's dedicated Images API.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "openai/gpt-image-2",
+        "name": "OpenAI: GPT Image 2",
+        "provider": "OpenAI",
+        "releasedAt": "2026-06-24",
+        "contextLength": 400000,
+        "inputPer1M": 8,
+        "outputPer1M": 8,
+        "summary": "OpenAI's latest image generation model. Supports high-fidelity image generation and editing via the dedicated Images API.",
+        "description": "OpenAI's latest image generation model. Supports high-fidelity image generation and editing via the dedicated Images API.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "sakana/fugu-ultra",
+        "name": "Sakana: Fugu Ultra",
+        "provider": "Sakana",
+        "releasedAt": "2026-06-24",
+        "contextLength": 1000000,
+        "inputPer1M": 5,
+        "outputPer1M": 30,
+        "summary": "Fugu Ultra is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is a learned multi-agent orchestration system: a language model trained to route...",
+        "description": "Fugu Ultra is the higher-performance model in Sakana AI's Fugu family. Rather than a single monolithic model, Fugu is a learned multi-agent orchestration system: a language model trained to route...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "reasoning",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "web_search_options"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "google/gemini-3.1-flash-image",
+        "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image)",
+        "provider": "Google",
+        "releasedAt": "2026-06-18",
+        "contextLength": 131072,
+        "inputPer1M": 0.5,
+        "outputPer1M": 3,
+        "summary": "Gemini 3.1 Flash Image, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines advanced...",
+        "description": "Gemini 3.1 Flash Image, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines advanced...",
+        "bestFor": [
+            "Image workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text+image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image",
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "google/gemini-3-pro-image",
+        "name": "Google: Nano Banana Pro (Gemini 3 Pro Image)",
+        "provider": "Google",
+        "releasedAt": "2026-06-18",
+        "contextLength": 65536,
+        "inputPer1M": 2,
+        "outputPer1M": 12,
+        "summary": "Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world grounding, and...",
+        "description": "Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world grounding, and...",
+        "bestFor": [
+            "Image workflows",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text+image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image",
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "cohere/north-mini-code:free",
+        "name": "Cohere: North Mini Code (free)",
+        "provider": "Cohere",
+        "releasedAt": "2026-06-17",
+        "contextLength": 256000,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...",
+        "description": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "seed",
+            "stop",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "z-ai/glm-5.2",
+        "name": "Z.ai: GLM 5.2",
+        "provider": "Z.ai",
+        "releasedAt": "2026-06-16",
+        "contextLength": 1048576,
+        "inputPer1M": 0.9299999999999999,
+        "outputPer1M": 3,
+        "summary": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
+        "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "min_p",
+            "parallel_tool_calls",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "moonshotai/kimi-k2.7-code",
+        "name": "MoonshotAI: Kimi K2.7 Code",
+        "provider": "Moonshotai",
+        "releasedAt": "2026-06-12",
+        "contextLength": 262144,
+        "inputPer1M": 0.74,
+        "outputPer1M": 3.5,
+        "summary": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
+        "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "min_p",
+            "parallel_tool_calls",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
     {
         "id": "anthropic/claude-fable-5",
         "name": "Anthropic: Claude Fable 5",
@@ -31,6 +531,46 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "verbosity"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "~anthropic/claude-fable-latest",
+        "name": "Anthropic: Claude Fable Latest",
+        "provider": "~anthropic",
+        "releasedAt": "2026-06-09",
+        "contextLength": 1000000,
+        "inputPer1M": 10,
+        "outputPer1M": 50,
+        "summary": "This model always redirects to the latest model in the Claude Fable family.",
+        "description": "This model always redirects to the latest model in the Claude Fable family.",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
             "response_format",
@@ -198,6 +738,37 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "nvidia/llama-nemotron-rerank-vl-1b-v2:free",
+        "name": "NVIDIA: Llama Nemotron Rerank VL 1B V2 (free)",
+        "provider": "Nvidia",
+        "releasedAt": "2026-06-09",
+        "contextLength": 10240,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Llama Nemotron Rerank VL 1B V2 is a 1.7B multimodal reranking model from NVIDIA. It evaluates the relevance of document images and text against user queries, designed for vision RAG...",
+        "description": "Llama Nemotron Rerank VL 1B V2 is a 1.7B multimodal reranking model from NVIDIA. It evaluates the relevance of document images and text against user queries, designed for vision RAG...",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->rerank",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "rerank"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
         "id": "fal/fal-ai/bernini-r/edit-image",
         "name": "Bernini-R Edit Image",
         "provider": "Remova Media",
@@ -355,18 +926,17 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "nex-agi/nex-n2-pro:free",
-        "name": "Nex AGI: Nex-N2-Pro (free)",
+        "id": "nex-agi/nex-n2-pro",
+        "name": "Nex AGI: Nex-N2-Pro",
         "provider": "Nex Agi",
         "releasedAt": "2026-06-08",
         "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
+        "inputPer1M": 0.25,
+        "outputPer1M": 1,
         "summary": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
         "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
         "bestFor": [
             "Multimodal analysis",
-            "Agent workflows",
             "Advanced reasoning"
         ],
         "modality": "text+image->text",
@@ -383,12 +953,9 @@ export const generatedModels = [
             "logprobs",
             "max_tokens",
             "reasoning",
-            "response_format",
-            "structured_outputs",
             "temperature",
-            "tool_choice",
-            "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -428,7 +995,7 @@ export const generatedModels = [
         "releasedAt": "2026-06-04",
         "contextLength": 1000000,
         "inputPer1M": 0.5,
-        "outputPer1M": 2.5,
+        "outputPer1M": 2.2,
         "summary": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
         "description": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
         "bestFor": [
@@ -646,8 +1213,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-06-03",
         "contextLength": 1000000,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 1.5999999999999999,
+        "inputPer1M": 0.32,
+        "outputPer1M": 1.28,
         "summary": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...",
         "description": "Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...",
         "bestFor": [
@@ -1299,13 +1866,24 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
+            "logit_bias",
+            "logprobs",
             "max_tokens",
+            "min_p",
+            "presence_penalty",
             "reasoning",
+            "repetition_penalty",
             "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -1392,14 +1970,21 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logit_bias",
             "logprobs",
             "max_tokens",
+            "min_p",
+            "presence_penalty",
             "reasoning",
+            "repetition_penalty",
             "response_format",
+            "seed",
             "stop",
             "structured_outputs",
             "temperature",
+            "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -3970,6 +4555,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
@@ -3981,6 +4567,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -4043,10 +4630,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -4224,6 +4812,39 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "poolside/laguna-m.1",
+        "name": "Poolside: Laguna M.1",
+        "provider": "Poolside",
+        "releasedAt": "2026-04-28",
+        "contextLength": 262144,
+        "inputPer1M": 0.19999999999999998,
+        "outputPer1M": 0.39999999999999997,
+        "summary": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
+        "description": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "temperature",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
         "id": "poolside/laguna-m.1:free",
         "name": "Poolside: Laguna M.1 (free)",
         "provider": "Poolside",
@@ -4231,8 +4852,41 @@ export const generatedModels = [
         "contextLength": 262144,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 128K...",
-        "description": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 128K...",
+        "summary": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
+        "description": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "temperature",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "poolside/laguna-xs.2",
+        "name": "Poolside: Laguna XS.2",
+        "provider": "Poolside",
+        "releasedAt": "2026-04-28",
+        "contextLength": 262144,
+        "inputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.19999999999999998,
+        "summary": "Laguna XS.2 is the second-generation model in the XS size class from Poolside, their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
+        "description": "Laguna XS.2 is the second-generation model in the XS size class from Poolside, their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
         "bestFor": [
             "Agent workflows",
             "Advanced reasoning",
@@ -4361,8 +5015,8 @@ export const generatedModels = [
         "provider": "~anthropic",
         "releasedAt": "2026-04-27",
         "contextLength": 1000000,
-        "inputPer1M": 3,
-        "outputPer1M": 15,
+        "inputPer1M": 2,
+        "outputPer1M": 10,
         "summary": "This model always redirects to the latest model in the Anthropic Claude Sonnet family.",
         "description": "This model always redirects to the latest model in the Anthropic Claude Sonnet family.",
         "bestFor": [
@@ -4387,11 +5041,8 @@ export const generatedModels = [
             "response_format",
             "stop",
             "structured_outputs",
-            "temperature",
             "tool_choice",
             "tools",
-            "top_k",
-            "top_p",
             "verbosity"
         ],
         "source": "llm_catalog",
@@ -4542,7 +5193,7 @@ export const generatedModels = [
         "provider": "~moonshotai",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.6799999999999999,
+        "inputPer1M": 0.66,
         "outputPer1M": 3.41,
         "summary": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
@@ -4569,7 +5220,6 @@ export const generatedModels = [
             "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
-            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -4870,6 +5520,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -4879,6 +5530,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -4890,7 +5542,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.28900000000000003,
+        "inputPer1M": 0.28500000000000003,
         "outputPer1M": 2.4,
         "summary": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
@@ -5006,6 +5658,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -5015,6 +5668,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -5066,8 +5720,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2026-04-24",
         "contextLength": 1048576,
-        "inputPer1M": 0.0983,
-        "outputPer1M": 0.1966,
+        "inputPer1M": 0.08900000000000001,
+        "outputPer1M": 0.18,
         "summary": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
         "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
         "bestFor": [
@@ -5474,6 +6128,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
@@ -5485,6 +6140,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -5885,7 +6541,7 @@ export const generatedModels = [
         "provider": "Xiaomi",
         "releasedAt": "2026-04-22",
         "contextLength": 1048576,
-        "inputPer1M": 0.14,
+        "inputPer1M": 0.105,
         "outputPer1M": 0.28,
         "summary": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding.…",
         "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding.…",
@@ -5907,14 +6563,22 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logit_bias",
+            "logprobs",
             "max_tokens",
+            "min_p",
             "presence_penalty",
             "reasoning",
+            "repetition_penalty",
             "response_format",
+            "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -5946,6 +6610,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -5959,6 +6624,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -6024,6 +6690,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
@@ -6035,6 +6702,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -6198,7 +6866,7 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-04-20",
         "contextLength": 262144,
-        "inputPer1M": 0.6799999999999999,
+        "inputPer1M": 0.66,
         "outputPer1M": 3.41,
         "summary": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
@@ -6225,7 +6893,6 @@ export const generatedModels = [
             "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
-            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -6237,38 +6904,6 @@ export const generatedModels = [
             "top_k",
             "top_logprobs",
             "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "moonshotai/kimi-k2.6:free",
-        "name": "MoonshotAI: Kimi K2.6 (free)",
-        "provider": "Moonshotai",
-        "releasedAt": "2026-04-20",
-        "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
-        "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "reasoning",
-            "tool_choice",
-            "tools"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -7205,46 +7840,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "anthropic/claude-opus-4.6-fast",
-        "name": "Anthropic: Claude Opus 4.6 (Fast)",
-        "provider": "Anthropic",
-        "releasedAt": "2026-04-07",
-        "contextLength": 1000000,
-        "inputPer1M": 30,
-        "outputPer1M": 150,
-        "summary": "Fast-mode variant of Opus 4.6 - identical capabilities with higher output speed at premium 6x pricing. Learn more in Anthropic's docs:",
-        "description": "Fast-mode variant of Opus 4.6 - identical capabilities with higher output speed at premium 6x pricing. Learn more in Anthropic's docs:",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "text",
-            "image",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p",
-            "verbosity"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/ideogram/v3/layerize-text",
         "name": "Ideogram",
         "provider": "Remova Media",
@@ -7463,8 +8058,8 @@ export const generatedModels = [
         "provider": "Z.ai",
         "releasedAt": "2026-04-07",
         "contextLength": 202752,
-        "inputPer1M": 0.98,
-        "outputPer1M": 3.08,
+        "inputPer1M": 0.975,
+        "outputPer1M": 4.300000000000001,
         "summary": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and c…",
         "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and c…",
         "bestFor": [
@@ -7486,10 +8081,8 @@ export const generatedModels = [
             "logprobs",
             "max_tokens",
             "min_p",
-            "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
-            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -7739,14 +8332,20 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
+            "presence_penalty",
             "reasoning",
+            "repetition_penalty",
             "response_format",
             "seed",
+            "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -7759,7 +8358,7 @@ export const generatedModels = [
         "releasedAt": "2026-04-02",
         "contextLength": 262144,
         "inputPer1M": 0.12,
-        "outputPer1M": 0.36,
+        "outputPer1M": 0.35,
         "summary": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "bestFor": [
@@ -7827,6 +8426,7 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_tokens",
+            "min_p",
             "reasoning",
             "response_format",
             "seed",
@@ -7834,6 +8434,8 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_a",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -7865,6 +8467,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -7874,6 +8477,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -7885,8 +8489,8 @@ export const generatedModels = [
         "provider": "Arcee Ai",
         "releasedAt": "2026-04-01",
         "contextLength": 262144,
-        "inputPer1M": 0.22,
-        "outputPer1M": 0.85,
+        "inputPer1M": 0.25,
+        "outputPer1M": 0.7999999999999999,
         "summary": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video:",
         "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video:",
         "bestFor": [
@@ -7901,17 +8505,9 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "presence_penalty",
             "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -8217,6 +8813,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -8349,8 +8946,8 @@ export const generatedModels = [
         "provider": "xAI",
         "releasedAt": "2026-03-31",
         "contextLength": 2000000,
-        "inputPer1M": 2,
-        "outputPer1M": 6,
+        "inputPer1M": 1.25,
+        "outputPer1M": 2.5,
         "summary": "Grok 4.20 Multi-Agent is a variant of xAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information...",
         "description": "Grok 4.20 Multi-Agent is a variant of xAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information...",
         "bestFor": [
@@ -8849,6 +9446,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -8861,6 +9459,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -9250,6 +9849,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "seed",
@@ -9259,6 +9859,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -9270,8 +9871,8 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2026-03-18",
         "contextLength": 204800,
-        "inputPer1M": 0.27,
-        "outputPer1M": 1.08,
+        "inputPer1M": 0.18,
+        "outputPer1M": 0.72,
         "summary": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "bestFor": [
@@ -9756,7 +10357,7 @@ export const generatedModels = [
         "name": "Z.ai: GLM 5 Turbo",
         "provider": "Z.ai",
         "releasedAt": "2026-03-15",
-        "contextLength": 202752,
+        "contextLength": 262144,
         "inputPer1M": 1.2,
         "outputPer1M": 4,
         "summary": "GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows...",
@@ -10439,8 +11040,8 @@ export const generatedModels = [
         "provider": "Nvidia",
         "releasedAt": "2026-03-11",
         "contextLength": 1000000,
-        "inputPer1M": 0.09,
-        "outputPer1M": 0.44999999999999996,
+        "inputPer1M": 0.08499999999999999,
+        "outputPer1M": 0.39999999999999997,
         "summary": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
         "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
         "bestFor": [
@@ -10467,6 +11068,7 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -11573,7 +12175,6 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
-            "stop",
             "structured_outputs",
             "temperature",
             "top_p"
@@ -11690,7 +12291,6 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
-            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
@@ -11728,6 +12328,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "stop",
             "temperature",
             "top_k",
@@ -12580,9 +13181,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3.5 397B A17B",
         "provider": "Qwen",
         "releasedAt": "2026-02-16",
-        "contextLength": 262144,
-        "inputPer1M": 0.39,
-        "outputPer1M": 2.34,
+        "contextLength": 256000,
+        "inputPer1M": 0.385,
+        "outputPer1M": 2.4499999999999997,
         "summary": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It…",
         "description": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It…",
         "bestFor": [
@@ -12649,6 +13250,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -12658,6 +13260,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -12771,8 +13374,8 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2026-02-12",
         "contextLength": 204800,
-        "inputPer1M": 0.15,
-        "outputPer1M": 0.8999999999999999,
+        "inputPer1M": 0.12,
+        "outputPer1M": 0.48,
         "summary": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
         "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
         "bestFor": [
@@ -12915,6 +13518,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -12928,6 +13532,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -13010,6 +13615,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -13019,6 +13625,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -13759,8 +14366,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "response_format",
@@ -13771,6 +14378,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -14143,7 +14751,7 @@ export const generatedModels = [
         "provider": "Stepfun",
         "releasedAt": "2026-01-29",
         "contextLength": 262144,
-        "inputPer1M": 0.09,
+        "inputPer1M": 0.09999999999999999,
         "outputPer1M": 0.3,
         "summary": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token....",
         "description": "Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token....",
@@ -14161,15 +14769,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "min_p",
-            "presence_penalty",
             "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
             "temperature",
             "tool_choice",
             "tools",
@@ -14480,8 +15081,8 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-01-27",
         "contextLength": 262144,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 1.9,
+        "inputPer1M": 0.375,
+        "outputPer1M": 2.025,
         "summary": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed…",
         "description": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed…",
         "bestFor": [
@@ -15378,6 +15979,7 @@ export const generatedModels = [
             "repetition_penalty",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
@@ -15396,6 +15998,7 @@ export const generatedModels = [
         "summary": "LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is...",
         "description": "LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is...",
         "bestFor": [
+            "Agent workflows",
             "Advanced reasoning"
         ],
         "modality": "text->text",
@@ -15415,7 +16018,10 @@ export const generatedModels = [
             "repetition_penalty",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
+            "tool_choice",
+            "tools",
             "top_k",
             "top_p"
         ],
@@ -15715,6 +16321,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -15728,6 +16335,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -17385,8 +17993,8 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2025-12-23",
         "contextLength": 204800,
-        "inputPer1M": 0.29,
-        "outputPer1M": 0.95,
+        "inputPer1M": 0.3,
+        "outputPer1M": 1.2,
         "summary": "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in re…",
         "description": "MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in re…",
         "bestFor": [
@@ -17404,16 +18012,13 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
             "response_format",
             "seed",
             "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -19067,6 +19672,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -19075,10 +19681,12 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -19110,43 +19718,6 @@ export const generatedModels = [
             "max_tokens",
             "reasoning",
             "seed",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "xiaomi/mimo-v2-flash",
-        "name": "Xiaomi: MiMo-V2-Flash",
-        "provider": "Xiaomi",
-        "releasedAt": "2025-12-14",
-        "contextLength": 262144,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.3,
-        "summary": "MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash…",
-        "description": "MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "response_format",
-            "stop",
             "temperature",
             "tool_choice",
             "tools",
@@ -19594,6 +20165,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "max_tokens",
+            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -19603,81 +20175,6 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
-    },
-    {
-        "id": "sourceful/riverflow-v2-fast-preview",
-        "name": "Sourceful: Riverflow V2 Fast Preview",
-        "provider": "Sourceful",
-        "releasedAt": "2025-12-08",
-        "contextLength": 8192,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Riverflow V2 Fast Preview is the fastest variant of Sourceful's Riverflow V2 preview lineup. This preview version exceeds the performance of Riverflow 1 Family and is Sourceful's first unified text-to-image...",
-        "description": "Riverflow V2 Fast Preview is the fastest variant of Sourceful's Riverflow V2 preview lineup. This preview version exceeds the performance of Riverflow 1 Family and is Sourceful's first unified text-to-image...",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text+image->image",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "llm_catalog",
-        "modelType": "image"
-    },
-    {
-        "id": "sourceful/riverflow-v2-max-preview",
-        "name": "Sourceful: Riverflow V2 Max Preview",
-        "provider": "Sourceful",
-        "releasedAt": "2025-12-08",
-        "contextLength": 8192,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Riverflow V2 Max Preview is the most powerful variant of Sourceful's Riverflow V2 preview lineup. This preview version exceeds the performance of Riverflow 1 Family and is Sourceful's first unified...",
-        "description": "Riverflow V2 Max Preview is the most powerful variant of Sourceful's Riverflow V2 preview lineup. This preview version exceeds the performance of Riverflow 1 Family and is Sourceful's first unified...",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text+image->image",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "llm_catalog",
-        "modelType": "image"
-    },
-    {
-        "id": "sourceful/riverflow-v2-standard-preview",
-        "name": "Sourceful: Riverflow V2 Standard Preview",
-        "provider": "Sourceful",
-        "releasedAt": "2025-12-08",
-        "contextLength": 8192,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Riverflow V2 Standard Preview is the standard variant of Sourceful's Riverflow V2 preview lineup. This preview version exceeds the performance of Riverflow 1 Family and is Sourceful's first unified text-to-image...",
-        "description": "Riverflow V2 Standard Preview is the standard variant of Sourceful's Riverflow V2 preview lineup. This preview version exceeds the performance of Riverflow 1 Family and is Sourceful's first unified text-to-image...",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text+image->image",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "llm_catalog",
-        "modelType": "image"
     },
     {
         "id": "z-ai/glm-4.6v",
@@ -19713,47 +20210,6 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "essentialai/rnj-1-instruct",
-        "name": "EssentialAI: Rnj 1 Instruct",
-        "provider": "Essentialai",
-        "releasedAt": "2025-12-07",
-        "contextLength": 32768,
-        "inputPer1M": 0.15,
-        "outputPer1M": 0.15,
-        "summary": "Rnj-1 is an 8B-parameter, dense, open-weight model family developed by Essential AI and trained from scratch with a focus on programming, math, and scientific reasoning. The model demonstrates strong performance...",
-        "description": "Rnj-1 is an 8B-parameter, dense, open-weight model family developed by Essential AI and trained from scratch with a focus on programming, math, and scientific reasoning. The model demonstrates strong performance...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -20512,6 +20968,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
@@ -20521,6 +20978,8 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -20551,6 +21010,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -20564,6 +21024,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -20924,46 +21385,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "prime-intellect/intellect-3",
-        "name": "Prime Intellect: INTELLECT-3",
-        "provider": "Prime Intellect",
-        "releasedAt": "2025-11-27",
-        "contextLength": 131072,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 1.1,
-        "summary": "INTELLECT-3 is a 106B-parameter Mixture-of-Experts model (12B active) post-trained from GLM-4.5-Air-Base using supervised fine-tuning (SFT) followed by large-scale reinforcement learning (RL). It offers state-of-the-art…",
-        "description": "INTELLECT-3 is a 106B-parameter Mixture-of-Experts model (12B active) post-trained from GLM-4.5-Air-Base using supervised fine-tuning (SFT) followed by large-scale reinforcement learning (RL). It offers state-of-the-art…",
-        "bestFor": [
-            "Model training",
-            "Dataset workflows",
-            "Style adaptation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/fal-ai/ltx-2/image-to-video/fast",
@@ -23322,9 +23743,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
@@ -23336,6 +23756,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -24196,6 +24617,7 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
@@ -24720,7 +25142,7 @@ export const generatedModels = [
         "releasedAt": "2025-10-23",
         "contextLength": 204800,
         "inputPer1M": 0.255,
-        "outputPer1M": 1,
+        "outputPer1M": 1.02,
         "summary": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence acros…",
         "description": "MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence acros…",
         "bestFor": [
@@ -24738,9 +25160,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
@@ -24752,6 +25173,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -24781,13 +25203,16 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -24920,14 +25345,17 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -25011,42 +25439,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "3d-to-3d",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "microsoft/phi-4-mini-instruct",
-        "name": "Microsoft: Phi 4 Mini Instruct",
-        "provider": "Microsoft",
-        "releasedAt": "2025-10-17",
-        "contextLength": 131072,
-        "inputPer1M": 0.08,
-        "outputPer1M": 0.35,
-        "summary": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
-        "description": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. The model belongs to the Phi-4...",
-        "bestFor": [
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "openai/gpt-5-image-mini",
@@ -25287,8 +25679,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-10-14",
         "contextLength": 256000,
-        "inputPer1M": 0.08,
-        "outputPer1M": 0.5,
+        "inputPer1M": 0.117,
+        "outputPer1M": 0.45499999999999996,
         "summary": "Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interl…",
         "description": "Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interl…",
         "bestFor": [
@@ -25307,8 +25699,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "response_format",
@@ -25319,6 +25711,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -25349,6 +25742,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -25358,6 +25752,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -26176,6 +26571,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -26188,6 +26584,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -26219,18 +26616,18 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
-            "repetition_penalty",
             "response_format",
             "seed",
-            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -26579,6 +26976,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -26592,6 +26990,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -26646,13 +27045,17 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -26944,6 +27347,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
@@ -26952,6 +27356,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -26979,13 +27384,16 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -27016,6 +27424,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -27028,6 +27437,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -27059,6 +27469,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -27066,10 +27477,12 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -27957,6 +28370,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
@@ -27964,6 +28378,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -28312,6 +28727,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -28324,6 +28740,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -28392,9 +28809,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
@@ -28406,6 +28822,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -28694,6 +29111,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
@@ -28702,6 +29120,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -28739,48 +29158,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "nvidia/nemotron-nano-9b-v2",
-        "name": "NVIDIA: Nemotron Nano 9B V2",
-        "provider": "Nvidia",
-        "releasedAt": "2025-09-05",
-        "contextLength": 131072,
-        "inputPer1M": 0.04,
-        "outputPer1M": 0.16,
-        "summary": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
-        "description": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks. It responds to user queries and...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -28871,9 +29248,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
-            "logit_bias",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "response_format",
@@ -29080,8 +29455,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-08-28",
         "contextLength": 131072,
-        "inputPer1M": 0.08,
-        "outputPer1M": 0.39999999999999997,
+        "inputPer1M": 0.13,
+        "outputPer1M": 1.56,
         "summary": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where interna…",
         "description": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where interna…",
         "bestFor": [
@@ -29096,22 +29471,15 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
-            "repetition_penalty",
             "response_format",
             "seed",
-            "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -29608,6 +29976,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -29621,6 +29990,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -30589,8 +30959,8 @@ export const generatedModels = [
         "provider": "OpenAI",
         "releasedAt": "2025-08-05",
         "contextLength": 131072,
-        "inputPer1M": 0.039,
-        "outputPer1M": 0.18,
+        "inputPer1M": 0.03,
+        "outputPer1M": 0.15,
         "summary": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
         "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
         "bestFor": [
@@ -30621,6 +30991,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_a",
             "top_k",
             "top_logprobs",
             "top_p"
@@ -30652,12 +31023,16 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_tokens",
+            "min_p",
             "reasoning",
             "seed",
             "stop",
             "temperature",
             "tool_choice",
-            "tools"
+            "tools",
+            "top_a",
+            "top_k",
+            "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -30729,14 +31104,23 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
+            "min_p",
+            "presence_penalty",
             "reasoning",
+            "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
-            "tools"
+            "tools",
+            "top_a",
+            "top_k",
+            "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -31084,6 +31468,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
@@ -31095,6 +31480,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -31382,8 +31768,8 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "response_format",
@@ -31394,6 +31780,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -31590,8 +31977,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-07-25",
         "contextLength": 262144,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.09999999999999999,
+        "inputPer1M": 0.14950000000000002,
+        "outputPer1M": 1.495,
         "summary": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively suppo…",
         "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively suppo…",
         "bestFor": [
@@ -31609,6 +31996,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -31617,11 +32005,11 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -31649,15 +32037,10 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
-            "presence_penalty",
             "reasoning",
-            "repetition_penalty",
             "response_format",
-            "seed",
-            "stop",
             "temperature",
             "tool_choice",
             "tools",
@@ -31673,7 +32056,7 @@ export const generatedModels = [
         "provider": "Z.ai",
         "releasedAt": "2025-07-25",
         "contextLength": 131072,
-        "inputPer1M": 0.125,
+        "inputPer1M": 0.13,
         "outputPer1M": 0.85,
         "summary": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact pa…",
         "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact pa…",
@@ -31695,46 +32078,12 @@ export const generatedModels = [
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
-            "response_format",
             "seed",
             "stop",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "z-ai/glm-4.5-air:free",
-        "name": "Z.ai: GLM 4.5 Air (free)",
-        "provider": "Z.ai",
-        "releasedAt": "2025-07-25",
-        "contextLength": 131072,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact pa…",
-        "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact pa…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "tool_choice",
-            "tools",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -31765,37 +32114,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "z-ai/glm-4-32b",
-        "name": "Z.ai: GLM 4 32B",
-        "provider": "Z.ai",
-        "releasedAt": "2025-07-24",
-        "contextLength": 128000,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.09999999999999999,
-        "summary": "GLM 4 32B is a cost-effective foundation language model. It can efficiently perform complex tasks and has significantly enhanced capabilities in tool use, online search, and code-related intelligent tasks. It...",
-        "description": "GLM 4 32B is a cost-effective foundation language model. It can efficiently perform complex tasks and has significantly enhanced capabilities in tool use, online search, and code-related intelligent tasks. It...",
-        "bestFor": [
-            "Agent workflows",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/fal-ai/ltxv-13b-098-distilled/extend",
@@ -31849,6 +32167,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -31861,6 +32180,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -31926,13 +32246,16 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -32109,6 +32432,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -32121,6 +32445,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -32345,6 +32670,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -32630,9 +32956,13 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
+            "response_format",
             "stop",
-            "temperature"
+            "structured_outputs",
+            "temperature",
+            "top_logprobs"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -33569,6 +33899,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -33581,6 +33912,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -35572,6 +35904,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -35585,6 +35918,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -35956,7 +36290,9 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
@@ -37419,6 +37755,7 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -37432,6 +37769,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -37443,8 +37781,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
         "contextLength": 131072,
-        "inputPer1M": 0.049999999999999996,
-        "outputPer1M": 0.39999999999999997,
+        "inputPer1M": 0.117,
+        "outputPer1M": 0.45499999999999996,
         "summary": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math,...",
         "description": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math,...",
         "bestFor": [
@@ -37459,22 +37797,15 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
-            "repetition_penalty",
             "response_format",
             "seed",
-            "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -38595,6 +38926,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -38607,6 +38939,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -39253,8 +39586,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2025-03-24",
         "contextLength": 163840,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.77,
+        "inputPer1M": 0.24,
+        "outputPer1M": 0.8999999999999999,
         "summary": "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the DeepSeek V3 model and performs really well...",
         "description": "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the DeepSeek V3 model and performs really well...",
         "bestFor": [
@@ -39560,6 +39893,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -39568,6 +39902,7 @@ export const generatedModels = [
             "stop",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -40032,6 +40367,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -40044,6 +40380,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -40135,13 +40472,16 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -40358,13 +40698,17 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -41979,43 +42323,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "meta-llama/llama-guard-3-8b",
-        "name": "Llama Guard 3 8B",
-        "provider": "Meta",
-        "releasedAt": "2025-02-12",
-        "contextLength": 131072,
-        "inputPer1M": 0.48400000000000004,
-        "outputPer1M": 0.03,
-        "summary": "Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification)...",
-        "description": "Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification)...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "openai/o3-mini-high",
         "name": "OpenAI: o3 Mini High",
         "provider": "OpenAI",
@@ -42398,13 +42705,16 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -42416,8 +42726,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-02-01",
         "contextLength": 131072,
-        "inputPer1M": 0.25,
-        "outputPer1M": 0.75,
+        "inputPer1M": 0.7999999999999999,
+        "outputPer1M": 1,
         "summary": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
         "description": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
         "bestFor": [
@@ -42434,6 +42744,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "repetition_penalty",
@@ -42443,6 +42754,7 @@ export const generatedModels = [
             "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -42596,45 +42908,6 @@ export const generatedModels = [
             "structured_outputs",
             "temperature",
             "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "deepseek/deepseek-r1-distill-qwen-32b",
-        "name": "DeepSeek: R1 Distill Qwen 32B",
-        "provider": "DeepSeek",
-        "releasedAt": "2025-01-29",
-        "contextLength": 128000,
-        "inputPer1M": 0.29,
-        "outputPer1M": 0.29,
-        "summary": "DeepSeek R1 Distill Qwen 32B is a distilled large language model based on Qwen 2.5 32B, using outputs from DeepSeek R1. It outperforms OpenAI's o1-mini across various benchmarks, achieving new...",
-        "description": "DeepSeek R1 Distill Qwen 32B is a distilled large language model based on Qwen 2.5 32B, using outputs from DeepSeek R1. It outperforms OpenAI's o1-mini across various benchmarks, achieving new...",
-        "bestFor": [
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "logprobs",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -42834,8 +43107,8 @@ export const generatedModels = [
         "name": "DeepSeek: R1 Distill Llama 70B",
         "provider": "DeepSeek",
         "releasedAt": "2025-01-23",
-        "contextLength": 131072,
-        "inputPer1M": 0.7,
+        "contextLength": 128000,
+        "inputPer1M": 0.7999999999999999,
         "outputPer1M": 0.7999999999999999,
         "summary": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on Llama-3.3-70B-Instruct, using outputs from DeepSeek R1. The model combines advanced distillation techniques to achieve high performance across...",
         "description": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on Llama-3.3-70B-Instruct, using outputs from DeepSeek R1. The model combines advanced distillation techniques to achieve high performance across...",
@@ -42852,13 +43125,10 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
             "repetition_penalty",
-            "response_format",
             "seed",
             "stop",
             "temperature",
@@ -43368,7 +43638,7 @@ export const generatedModels = [
         "provider": "Microsoft",
         "releasedAt": "2025-01-10",
         "contextLength": 16384,
-        "inputPer1M": 0.065,
+        "inputPer1M": 0.07,
         "outputPer1M": 0.14,
         "summary": "Microsoft Research Phi-4 is designed to perform well in complex reasoning tasks and can operate efficiently in situations with limited memory or where quick responses are needed. At 14 billion...",
         "description": "Microsoft Research Phi-4 is designed to perform well in complex reasoning tasks and can operate efficiently in situations with limited memory or where quick responses are needed. At 14 billion...",
@@ -43385,7 +43655,6 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -43396,7 +43665,6 @@ export const generatedModels = [
             "structured_outputs",
             "temperature",
             "top_k",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -43485,6 +43753,7 @@ export const generatedModels = [
             "repetition_penalty",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
@@ -44423,6 +44692,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -44435,6 +44705,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -45296,41 +45567,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "anthropic/claude-3.5-haiku",
-        "name": "Anthropic: Claude 3.5 Haiku",
-        "provider": "Anthropic",
-        "releasedAt": "2024-11-04",
-        "contextLength": 200000,
-        "inputPer1M": 0.7999999999999999,
-        "outputPer1M": 4,
-        "summary": "Claude 3.5 Haiku features offers enhanced capabilities in speed, coding accuracy, and tool use. Engineered to excel in real-time applications, it delivers quick response times that are essential for dynamic...",
-        "description": "Claude 3.5 Haiku features offers enhanced capabilities in speed, coding accuracy, and tool use. Engineered to excel in real-time applications, it delivers quick response times that are essential for dynamic...",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Code generation"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/minimax/video-01/image-to-video",
         "name": "MiniMax (Hailuo AI) Video 01",
         "provider": "Remova Media",
@@ -45516,6 +45752,7 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_a",
             "top_k",
@@ -45617,6 +45854,7 @@ export const generatedModels = [
         "summary": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
         "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
         "bestFor": [
+            "Agent workflows",
             "Code generation"
         ],
         "modality": "text->text",
@@ -45629,14 +45867,20 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
+            "tool_choice",
+            "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -45813,12 +46057,13 @@ export const generatedModels = [
         "provider": "Thedrummer",
         "releasedAt": "2024-09-30",
         "contextLength": 32768,
-        "inputPer1M": 0.16999999999999998,
-        "outputPer1M": 0.43,
+        "inputPer1M": 0.25,
+        "outputPer1M": 0.5,
         "summary": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
         "description": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
         "bestFor": [
-            "Agent workflows"
+            "General chat",
+            "Enterprise assistants"
         ],
         "modality": "text->text",
         "inputModalities": [
@@ -45830,20 +46075,14 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
             "repetition_penalty",
-            "response_format",
             "seed",
             "stop",
-            "structured_outputs",
             "temperature",
-            "tool_choice",
-            "tools",
             "top_k",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -45947,6 +46186,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -45955,6 +46195,7 @@ export const generatedModels = [
             "stop",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -47162,6 +47403,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -47174,6 +47416,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -47202,6 +47445,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -47214,6 +47458,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -47242,6 +47487,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -47254,6 +47500,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -48305,42 +48552,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "meta-llama/llama-3-70b-instruct",
-        "name": "Meta: Llama 3 70B Instruct",
-        "provider": "Meta",
-        "releasedAt": "2024-04-18",
-        "contextLength": 8192,
-        "inputPer1M": 0.51,
-        "outputPer1M": 0.74,
-        "summary": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
-        "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "meta-llama/llama-3-8b-instruct",
         "name": "Meta: Llama 3 8B Instruct",
         "provider": "Meta",
@@ -48368,7 +48579,9 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "repetition_penalty",
+            "response_format",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
@@ -50139,6 +50352,7 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_a",
             "top_k",
