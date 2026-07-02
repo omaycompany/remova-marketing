@@ -10,6 +10,7 @@ import { SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 import { modelVideoWatchPath } from "@/lib/video-seo";
 
 export const dynamic = "force-static";
+type ModelVideoRouteProps = { params: Promise<{ slug: string }> };
 
 function findLanding(slug: string) {
     return modelLandings.find((entry) => entry.slug === slug);
@@ -19,9 +20,10 @@ export async function generateStaticParams() {
     return modelVideos.map((video) => ({ slug: video.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const video = getModelVideo(params.slug);
-    const landing = findLanding(params.slug);
+export async function generateMetadata({ params }: ModelVideoRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const video = getModelVideo(slug);
+    const landing = findLanding(slug);
     if (!video || !landing) return {};
 
     const canonicalPath = `/models/${landing.slug}`;
@@ -86,9 +88,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function ModelVideoWatchPage({ params }: { params: { slug: string } }) {
-    const video = getModelVideo(params.slug);
-    const landing = findLanding(params.slug);
+export default async function ModelVideoWatchPage({ params }: ModelVideoRouteProps) {
+    const { slug } = await params;
+    const video = getModelVideo(slug);
+    const landing = findLanding(slug);
     if (!video || !landing) notFound();
 
     const pagePath = modelVideoWatchPath(video.slug);

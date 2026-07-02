@@ -15,6 +15,7 @@ function trimForTitle(value: string, maxLength: number) {
 }
 
 const retiredModelVideoSlugSet = new Set<string>(modelVideoSlugs);
+type ModelRouteProps = { params: Promise<{ slug: string }> };
 
 function getRetiredModelVideoRedirect(slug: string) {
     return retiredModelVideoSlugSet.has(slug) ? "/models" : undefined;
@@ -29,11 +30,12 @@ export async function generateStaticParams() {
     ])).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const landing = modelLandings.find((entry) => entry.slug === params.slug);
-    const modelLandingRedirect = getModelLandingRedirect(params.slug);
-    const legacyRedirect = getLegacyModelRedirect(params.slug);
-    const retiredVideoRedirect = getRetiredModelVideoRedirect(params.slug);
+export async function generateMetadata({ params }: ModelRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const landing = modelLandings.find((entry) => entry.slug === slug);
+    const modelLandingRedirect = getModelLandingRedirect(slug);
+    const legacyRedirect = getLegacyModelRedirect(slug);
+    const retiredVideoRedirect = getRetiredModelVideoRedirect(slug);
     if (!landing && modelLandingRedirect) return legacyRedirectMetadata(modelLandingRedirect);
     if (!landing && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!landing && retiredVideoRedirect) return legacyRedirectMetadata(retiredVideoRedirect);
@@ -95,11 +97,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function ModelLandingPage({ params }: { params: { slug: string } }) {
-    const landing = modelLandings.find((entry) => entry.slug === params.slug);
-    const modelLandingRedirect = getModelLandingRedirect(params.slug);
-    const legacyRedirect = getLegacyModelRedirect(params.slug);
-    const retiredVideoRedirect = getRetiredModelVideoRedirect(params.slug);
+export default async function ModelLandingPage({ params }: ModelRouteProps) {
+    const { slug } = await params;
+    const landing = modelLandings.find((entry) => entry.slug === slug);
+    const modelLandingRedirect = getModelLandingRedirect(slug);
+    const legacyRedirect = getLegacyModelRedirect(slug);
+    const retiredVideoRedirect = getRetiredModelVideoRedirect(slug);
     if (!landing && modelLandingRedirect) return <LegacyRedirect to={modelLandingRedirect} />;
     if (!landing && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!landing && retiredVideoRedirect) return <LegacyRedirect to={retiredVideoRedirect} />;
