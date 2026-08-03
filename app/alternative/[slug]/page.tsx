@@ -9,6 +9,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyAlternativeRedirect, legacyAlternativeStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
+type AlternativeRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return [
         ...alternatives.map((a) => ({ slug: a.slug })),
@@ -16,9 +18,10 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const alt = alternatives.find((a) => a.slug === params.slug);
-    const legacyRedirect = getLegacyAlternativeRedirect(params.slug);
+export async function generateMetadata({ params }: AlternativeRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const alt = alternatives.find((a) => a.slug === slug);
+    const legacyRedirect = getLegacyAlternativeRedirect(slug);
     if (!alt && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!alt) return {};
     const title = stripTitleSuffix(alt.metaTitle);
@@ -46,9 +49,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function AlternativePage({ params }: { params: { slug: string } }) {
-    const alt = alternatives.find((a) => a.slug === params.slug);
-    const legacyRedirect = getLegacyAlternativeRedirect(params.slug);
+export default async function AlternativePage({ params }: AlternativeRouteProps) {
+    const { slug } = await params;
+    const alt = alternatives.find((a) => a.slug === slug);
+    const legacyRedirect = getLegacyAlternativeRedirect(slug);
     if (!alt && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!alt) return <div>Not found</div>;
 

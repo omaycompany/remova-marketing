@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import LazyModelVideo from "@/components/video/LazyModelVideo";
+import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { modelLandingSeoTitle, modelLandings } from "@/content/model-landings";
-import { getModelVideo, modelVideos } from "@/content/model-videos";
+import { modelVideoSlugs } from "@/content/model-video-manifest.generated";
+import { getModelVideo } from "@/content/model-videos";
 import { models } from "@/content/models";
 import { SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 import { modelVideoWatchPath } from "@/lib/video-seo";
@@ -17,14 +18,20 @@ function findLanding(slug: string) {
 }
 
 export async function generateStaticParams() {
-    return modelVideos.map((video) => ({ slug: video.slug }));
+    return modelVideoSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: ModelVideoRouteProps): Promise<Metadata> {
     const { slug } = await params;
     const video = getModelVideo(slug);
     const landing = findLanding(slug);
-    if (!video || !landing) return {};
+    if (!video || !landing) {
+        return {
+            title: { absolute: "Model video moved | Remova" },
+            robots: { index: false, follow: true },
+            alternates: { canonical: "/models" },
+        };
+    }
 
     const canonicalPath = `/models/${landing.slug}`;
     const model = models.find((entry) => entry.id === landing.modelId);
@@ -92,7 +99,7 @@ export default async function ModelVideoWatchPage({ params }: ModelVideoRoutePro
     const { slug } = await params;
     const video = getModelVideo(slug);
     const landing = findLanding(slug);
-    if (!video || !landing) notFound();
+    if (!video || !landing) return <LegacyRedirect to="/models" />;
 
     const pagePath = modelVideoWatchPath(video.slug);
     const jsonLd = {

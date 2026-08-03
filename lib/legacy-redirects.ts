@@ -1,4 +1,6 @@
 const legacyBlogSlugs = [
+    "ai-for-government",
+    "ai-for-retail",
     "why-ai-governance-matters-2026",
     "shadow-ai-enterprise-risk",
     "ai-cost-management-guide",
@@ -225,6 +227,67 @@ export const legacyResourceSlugs = [
 ] as const;
 
 export const legacyModelSlugs = [
+    "aion-20",
+    "anthropic-claude-35-haiku",
+    "claude-37-sonnet-thinking",
+    "codellama-7b-instruct-solidity",
+    "deepseek-deepseek-v4-flash-free",
+    "deepseek-r1-distill-qwen-32b",
+    "devstral-medium",
+    "devstral-small-11",
+    "ernie-45-21b-a3b",
+    "ernie-45-300b-a47b",
+    "ernie-45-vl-28b-a3b",
+    "essentialai-rnj-1-instruct",
+    "gemma-3-27b-free",
+    "gemma-3-4b-free",
+    "gemma-3n-2b-free",
+    "gemma-3n-4b-free",
+    "glm-4-32b",
+    "glm-51",
+    "goliath-120b",
+    "google-gemma-3-27b-free",
+    "gpt-4-older-v0314",
+    "gpt-4-turbo-older-v1106",
+    "gpt-4o-audio",
+    "gpt-4o-extended",
+    "grok-3",
+    "grok-3-beta",
+    "grok-3-mini",
+    "grok-3-mini-beta",
+    "llama-3-70b-instruct",
+    "llama-3-euryale-70b-v21",
+    "llama-31-405b-base",
+    "llama-guard-3-8b",
+    "llemma-7b",
+    "maestro-reasoning",
+    "mercury",
+    "mercury-coder",
+    "mistral-7b-instruct-v01",
+    "mistral-large-2411",
+    "mistral-small-31-24b-free",
+    "mixtral-8x7b-instruct",
+    "moonshotai-kimi-k26-free",
+    "nex-agi-nex-n2-pro-free",
+    "nvidia-nemotron-nano-9b-v2",
+    "olmo-2-32b-instruct",
+    "openai-gpt-4-turbo-older-v1106",
+    "openai-gpt-4o-audio",
+    "pixtral-large-2411",
+    "poolside-laguna-xs21",
+    "prime-intellect-intellect-3",
+    "qwen-max",
+    "qwen-qwen-turbo",
+    "qwen-vl-max",
+    "qwq-32b",
+    "r1-distill-qwen-32b",
+    "sourceful-riverflow-v2-fast-preview",
+    "sourceful-riverflow-v2-max-preview",
+    "sourceful-riverflow-v2-standard-preview",
+    "spotlight",
+    "xiaomi-mimo-v2-flash",
+    "zai-glm-4-32b",
+    "zai-glm-45-air-free",
     "ernie-45-21b-a3b-thinking",
     "r1-0528",
     "mistral-medium-3",
@@ -270,6 +333,7 @@ export const legacyGlossarySlugs = [
 ] as const;
 
 export const legacyFeatureSlugs = [
+    "department-management",
     "role-based-access",
     "credit-system",
 ] as const;
@@ -284,10 +348,12 @@ export const legacyBlogCategorySlugs = [
 
 export const legacyCustomerSlugs = [
     "insurance-carrier",
+    "telecom-operator",
 ] as const;
 
 export const legacyIntegrationSlugs = [
     "aws",
+    "azure-ad",
 ] as const;
 
 export const legacyTrustSlugs = [
@@ -305,6 +371,7 @@ export const legacyServiceSlugs = [
 ] as const;
 
 export const legacyTopLevelSlugs = [
+    "jobs",
     "forgot-password",
     "login",
     "gdpr-compliance-checker",
@@ -348,6 +415,8 @@ const legacyServiceSlugSet = new Set<string>(legacyServiceSlugs);
 const legacyTopLevelSlugSet = new Set<string>(legacyTopLevelSlugs);
 
 const legacyBlogRedirectTargets: Record<string, string> = {
+    "ai-for-government": "/use-cases/public-sector",
+    "ai-for-retail": "/blog",
     "ai-cost-management-guide": "/blog/ai-cost-management-finops-guide",
     "eu-ai-act-compliance-guide": "/blog/eu-ai-act-enterprise-readiness-checklist",
     "ai-center-of-excellence": "/use-cases/ai-center-of-excellence",
@@ -399,6 +468,7 @@ const legacyGlossaryRedirectTargets: Record<string, string> = {
 };
 
 const legacyFeatureRedirectTargets: Record<string, string> = {
+    "department-management": "/features/department-budgets",
     "role-based-access": "/features/role-access-control",
     "credit-system": "/features/department-budgets",
 };
@@ -418,6 +488,7 @@ const legacyServiceRedirectTargets: Record<string, string> = {
 };
 
 const legacyTopLevelRedirectTargets: Record<string, string> = {
+    "jobs": "/about",
     "forgot-password": "https://app.remova.org/forgot-password",
     "login": "https://app.remova.org/login",
     "gdpr-compliance-checker": "/blog/gdpr-ai-compliance",
@@ -507,12 +578,12 @@ export function getLegacyBlogCategoryRedirect(slug: string): string | undefined 
 
 export function getLegacyCustomerRedirect(slug: string): string | undefined {
     if (!legacyCustomerSlugSet.has(slug)) return undefined;
-    return "/use-cases/insurance";
+    return slug === "telecom-operator" ? "/use-cases/technology" : "/use-cases/insurance";
 }
 
 export function getLegacyIntegrationRedirect(slug: string): string | undefined {
     if (!legacyIntegrationSlugSet.has(slug)) return undefined;
-    return "/alternative/aws-bedrock";
+    return slug === "azure-ad" ? "/features/role-access-control" : "/alternative/aws-bedrock";
 }
 
 export function getLegacyTrustRedirect(slug: string): string | undefined {

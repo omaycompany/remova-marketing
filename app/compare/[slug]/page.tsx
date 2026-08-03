@@ -9,6 +9,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyCompareRedirect, legacyCompareStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
+type CompareRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return [
         ...comparisons.map((c) => ({ slug: c.slug })),
@@ -16,9 +18,10 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const comp = comparisons.find((c) => c.slug === params.slug);
-    const legacyRedirect = getLegacyCompareRedirect(params.slug);
+export async function generateMetadata({ params }: CompareRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const comp = comparisons.find((c) => c.slug === slug);
+    const legacyRedirect = getLegacyCompareRedirect(slug);
     if (!comp && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!comp) return {};
     const title = stripTitleSuffix(comp.metaTitle);
@@ -45,9 +48,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function ComparePage({ params }: { params: { slug: string } }) {
-    const comp = comparisons.find((c) => c.slug === params.slug);
-    const legacyRedirect = getLegacyCompareRedirect(params.slug);
+export default async function ComparePage({ params }: CompareRouteProps) {
+    const { slug } = await params;
+    const comp = comparisons.find((c) => c.slug === slug);
+    const legacyRedirect = getLegacyCompareRedirect(slug);
     if (!comp && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!comp) return <div>Not found</div>;
 

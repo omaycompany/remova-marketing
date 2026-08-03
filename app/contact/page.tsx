@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Building2, Headphones, Mail, MessageSquare, ShieldCheck } from "lucide-react";
-import ExternalAppLink from "@/components/ui/ExternalAppLink";
 import SafeEmailLink from "@/components/ui/SafeEmailLink";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, absoluteUrl, buildKeywords } from "@/lib/seo";
 
@@ -39,28 +38,28 @@ const contactOptions = [
         title: "Sales and rollout",
         description: "Talk through pricing, model access, team rollout, and the right first workflows for Remova.",
         Icon: Building2,
-        action: "Start workspace",
-        href: "https://app.remova.org/register",
+        action: "Email sales",
+        subject: "Remova sales and rollout",
+        body: "Hi Remova,\n\nI want to talk about Remova for my team.\n\nCompany:\nRole:\nTeam size:\nCurrent AI tools:\nTimeline:\nWhat should we follow up on:\n",
         mailbox: "sales" as const,
-        external: true,
     },
     {
         title: "Security review",
         description: "Ask for security, privacy, procurement, data handling, and deployment review materials.",
         Icon: ShieldCheck,
         action: "Contact security",
-        href: "email:security",
+        subject: "Security review",
+        body: "Hi Remova,\n\nI want help with security review.\n\nCompany:\nRole:\nReview deadline:\nQuestions or documents needed:\nFollow-up contact:\n",
         mailbox: "security" as const,
-        external: false,
     },
     {
         title: "Customer support",
         description: "Get help with your Remova workspace, model routes, billing, or account questions.",
         Icon: Headphones,
         action: "Contact support",
-        href: "email:support",
+        subject: "Customer support",
+        body: "Hi Remova,\n\nI want help with customer support.\n\nCompany:\nWorkspace email:\nQuestion:\nPreferred follow-up:\n",
         mailbox: "support" as const,
-        external: false,
     },
 ];
 
@@ -104,32 +103,22 @@ export default function ContactPage() {
 
             <section className="px-4 py-20 sm:px-6 lg:px-8">
                 <div className="container mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
-                    {contactOptions.map(({ title, description, Icon, action, href, mailbox, external }) => (
+                    {contactOptions.map(({ title, description, Icon, action, subject, body, mailbox }) => (
                         <article key={title} className="rounded-3xl border border-slate-200 p-6 dark:border-white/10">
                             <Icon className="mb-5 h-8 w-8 text-emerald-500" />
                             <h2 className="text-2xl font-black uppercase tracking-tight">{title}</h2>
                             <p className="mt-4 min-h-24 font-medium leading-relaxed text-slate-600 dark:text-slate-300">
                                 {description}
                             </p>
-                            {external ? (
-                                <ExternalAppLink
-                                    href={href}
-                                    className="mt-6 inline-flex items-center text-sm font-black uppercase tracking-wide text-slate-950 hover:text-emerald-600 dark:text-white dark:hover:text-emerald-300"
-                                >
-                                    {action}
-                                    <ArrowRight className="ml-2 h-4 w-4" />
-                                </ExternalAppLink>
-                            ) : (
-                                <SafeEmailLink
-                                    mailbox={mailbox}
-                                    subject={title}
-                                    body={`Hi Remova,\n\nI want help with ${title.toLowerCase()}.\n\nCompany:\nRole:\nQuestion:\n`}
-                                    className="mt-6 inline-flex items-center text-sm font-black uppercase tracking-wide text-slate-950 hover:text-emerald-600 dark:text-white dark:hover:text-emerald-300"
-                                >
-                                    {action}
-                                    <ArrowRight className="ml-2 h-4 w-4" />
-                                </SafeEmailLink>
-                            )}
+                            <SafeEmailLink
+                                mailbox={mailbox}
+                                subject={subject}
+                                body={body}
+                                className="mt-6 inline-flex items-center text-sm font-black uppercase tracking-wide text-slate-950 hover:text-emerald-600 dark:text-white dark:hover:text-emerald-300"
+                            >
+                                {action}
+                                <ArrowRight className="ml-2 h-4 w-4" />
+                            </SafeEmailLink>
                         </article>
                     ))}
                 </div>

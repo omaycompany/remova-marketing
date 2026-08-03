@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check, Coins, CreditCard, KeyRound, Layers3, Receipt, ShieldCheck, Wallet } from "lucide-react";
 import ExternalAppLink from "@/components/ui/ExternalAppLink";
+import SalesInquiryForm from "@/components/marketing/SalesInquiryForm";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -233,27 +234,26 @@ export default function PricingPage() {
             </section>
 
             <section className="border-t-2 border-slate-950 px-4 py-20 dark:border-white sm:px-6 lg:px-8">
-                <div className="container mx-auto flex max-w-6xl flex-col gap-6 rounded-3xl bg-slate-950 p-8 text-white sm:p-12 lg:flex-row lg:items-center lg:justify-between">
-                    <div>
+                <div className="container mx-auto grid max-w-6xl gap-8 rounded-3xl bg-slate-950 p-8 text-white sm:p-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+                    <div className="space-y-6">
                         <p className="mb-3 text-sm font-black uppercase tracking-[0.18em] text-emerald-300">Pricing question</p>
                         <h2 className="text-3xl font-black uppercase tracking-tight sm:text-5xl">
                             Need a deployment estimate?
                         </h2>
-                    </div>
-                    <div className="flex flex-col gap-3 sm:flex-row">
                         <ExternalAppLink
                             href="https://app.remova.org/register"
                             className="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 text-sm font-black uppercase tracking-wide text-slate-950 transition hover:bg-emerald-100"
                         >
                             Start in Remova
                         </ExternalAppLink>
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-4 text-sm font-black uppercase tracking-wide text-white transition hover:border-white"
-                        >
-                            Contact Remova
-                        </Link>
                     </div>
+                    <SalesInquiryForm
+                        inquiryType="Deployment estimate"
+                        source="pricing-deployment-estimate"
+                        buttonLabel="Request estimate"
+                        messagePlaceholder="Team size, current AI tools, deployment scope, timeline, and requirements"
+                        tone="dark"
+                    />
                 </div>
             </section>
         </main>

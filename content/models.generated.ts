@@ -1,10 +1,2827 @@
 // Auto-generated snapshot from model catalog sources.
-// Generated at 2026-07-02T14:05:01.186Z
-// Source counts: source1=428, source2=1312
+// Generated at 2026-08-01T13:56:03.458Z
+// Source counts: source1=454, source2=1404
 
-export const generatedModelsLastUpdated = "2026-07-02";
+export const generatedModelsLastUpdated = "2026-08-01";
 
 export const generatedModels = [
+    {
+        "id": "deepseek/deepseek-v4-flash-0731",
+        "name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "provider": "DeepSeek",
+        "releasedAt": "2026-07-31",
+        "contextLength": 1048576,
+        "inputPer1M": 0.14,
+        "outputPer1M": 0.28,
+        "summary": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows.",
+        "description": "DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows.",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "min_p",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/minimax/h3/image-to-video",
+        "name": "MiniMax H3 Image to Video",
+        "provider": "Minimax",
+        "releasedAt": "2026-07-31",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MiniMax H3 is a frontier video model. This endpoint animates a supplied image into 2K video, using it as the opening frame or pairs a first and last frame to control a transition between two images with the aspect ratio…",
+        "description": "MiniMax H3 is a frontier video model. This endpoint animates a supplied image into 2K video, using it as the opening frame or pairs a first and last frame to control a transition between two images with the aspect ratio…",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/minimax/h3/reference-to-video",
+        "name": "MiniMax H3 Reference to Video",
+        "provider": "Minimax",
+        "releasedAt": "2026-07-31",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MiniMax H3 is a frontier video model. This endpoint generates 2K video from multimodal references up to 9 images for subject and style, 3 video clips for motion, and 3 audio clips each cited in the prompt by order, keep…",
+        "description": "MiniMax H3 is a frontier video model. This endpoint generates 2K video from multimodal references up to 9 images for subject and style, 3 video clips for motion, and 3 audio clips each cited in the prompt by order, keep…",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video",
+            "Audio-aware video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/minimax/h3/text-to-video",
+        "name": "MiniMax H3 Text to Video",
+        "provider": "Minimax",
+        "releasedAt": "2026-07-31",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MiniMax H3 is a frontier video model. This endpoint generates video from a text prompt alone, rendering at 2K in durations from 5 to 15 seconds across seven aspect ratios.",
+        "description": "MiniMax H3 is a frontier video model. This endpoint generates video from a text prompt alone, rendering at 2K in durations from 5 to 15 seconds across seven aspect ratios.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "thinkingmachines/inkling-small",
+        "name": "Thinking Machines: Inkling Small",
+        "provider": "Thinkingmachines",
+        "releasedAt": "2026-07-30",
+        "contextLength": 524288,
+        "inputPer1M": 0.5,
+        "outputPer1M": 1.2,
+        "summary": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
+        "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+audio->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "min_p",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fish-audio/s1",
+        "name": "Fish Audio: S1",
+        "provider": "Fish Audio",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 15,
+        "outputPer1M": 0,
+        "summary": "S1 is a multilingual text-to-speech model from Fish Audio. It is suited for voice applications that need broad emotional expression, using parenthetical controls to guide speaking style across its supported...",
+        "description": "S1 is a multilingual text-to-speech model from Fish Audio. It is suited for voice applications that need broad emotional expression, using parenthetical controls to guide speaking style across its supported...",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fish-audio/s2-pro",
+        "name": "Fish Audio: S2 Pro",
+        "provider": "Fish Audio",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 15,
+        "outputPer1M": 0,
+        "summary": "S2 Pro is a multilingual text-to-speech model from Fish Audio. It is suited for expressive narration and multi-speaker dialogue, with natural-language controls for speaking style and emotion.",
+        "description": "S2 Pro is a multilingual text-to-speech model from Fish Audio. It is suited for expressive narration and multi-speaker dialogue, with natural-language controls for speaking style and emotion.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fish-audio/s2.1-pro",
+        "name": "Fish Audio: S2.1 Pro",
+        "provider": "Fish Audio",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 15,
+        "outputPer1M": 0,
+        "summary": "S2.1 Pro is a production-oriented text-to-speech model from Fish Audio. It is suited for multilingual voice applications, expressive narration, and dialogue synthesis, with open-ended natural-language controls for speak…",
+        "description": "S2.1 Pro is a production-oriented text-to-speech model from Fish Audio. It is suited for multilingual voice applications, expressive narration, and dialogue synthesis, with open-ended natural-language controls for speak…",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fish-audio/s2.1-pro-free:free",
+        "name": "Fish Audio: S2.1 Pro Free (free)",
+        "provider": "Fish Audio",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "S2.1 Pro Free is the no-cost variant of Fish Audio S2.1 Pro, intended for testing, prototyping, and low-volume applications. It provides the same synthesis capabilities without production latency or availability...",
+        "description": "S2.1 Pro Free is the no-cost variant of Fish Audio S2.1 Pro, intended for testing, prototyping, and low-volume applications. It provides the same synthesis capabilities without production latency or availability...",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fish-audio/transcribe-1",
+        "name": "Fish Audio: Transcribe 1",
+        "provider": "Fish Audio",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 100,
+        "outputPer1M": 0,
+        "summary": "Transcribe 1 is a speech-to-text model from Fish Audio. It is suited for audio transcription with automatic language detection and can return timestamped word-level segments when alignment details are requested.",
+        "description": "Transcribe 1 is a speech-to-text model from Fish Audio. It is suited for audio transcription with automatic language detection and can return timestamped word-level segments when alignment details are requested.",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/xai/grok-imagine-video/v1.5/reference-to-video",
+        "name": "Grok Imagine Video 1.5 Reference to Video",
+        "provider": "xAI",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate videos from images and audio references using xAI's Grok Imagine 1.5 Video model.",
+        "description": "Generate videos from images and audio references using xAI's Grok Imagine 1.5 Video model.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/xai/grok-imagine-video/v1.5/text-to-video",
+        "name": "Grok Imagine Video 1.5 Text to Video",
+        "provider": "xAI",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate videos from prompts with audio using xAI's Grok Imagine 1.5 Video model.",
+        "description": "Generate videos from prompts with audio using xAI's Grok Imagine 1.5 Video model.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ideogram/object-removal",
+        "name": "Ideogram Object Removal",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Prompt-free object removal from an image and mask, erasing objects with their shadows and reflections and reconstructing the scene cleanly.",
+        "description": "Prompt-free object removal from an image and mask, erasing objects with their shadows and reflections and reconstructing the scene cleanly.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "minimax/hailuo-3",
+        "name": "MiniMax: H3",
+        "provider": "Minimax",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MiniMax H3 is a lightweight, open-weights video generation model from MiniMax. It is designed for precise multimodal editing and controlled content generation, including instruction-guided edits, text and brand renderin…",
+        "description": "MiniMax H3 is a lightweight, open-weights video generation model from MiniMax. It is designed for precise multimodal editing and controlled content generation, including instruction-guided edits, text and brand renderin…",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video",
+            "Audio-aware video"
+        ],
+        "modality": "text+image+audio+video->video",
+        "inputModalities": [
+            "text",
+            "image",
+            "video",
+            "audio"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "runway/aleph-2",
+        "name": "Runway: Aleph 2.0",
+        "provider": "Runway",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Runway Aleph 2.0 is an in-context video editing model from Runway. It applies text instructions and keyframe-guided edits across existing footage while preserving details that are not meant to change....",
+        "description": "Runway Aleph 2.0 is an in-context video editing model from Runway. It applies text instructions and keyframe-guided edits across existing footage while preserving details that are not meant to change....",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "text+image+video->video",
+        "inputModalities": [
+            "text",
+            "image",
+            "video"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "runway/gen-4.5",
+        "name": "Runway: Gen-4.5",
+        "provider": "Runway",
+        "releasedAt": "2026-07-29",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Runway Gen-4.5 is a video generation model from Runway for text-to-video and image-to-video workflows. It is designed for cinematic scene creation with strong motion quality, visual fidelity, and prompt adherence....",
+        "description": "Runway Gen-4.5 is a video generation model from Runway for text-to-video and image-to-video workflows. It is designed for cinematic scene creation with strong motion quality, visual fidelity, and prompt adherence....",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "fal/fal-ai/feynobg",
+        "name": "Feynobg Background Remover",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "FeyNobg is a state of the art AI model for background removal from feyninc",
+        "description": "FeyNobg is a state of the art AI model for background removal from feyninc",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/microsoft/mai-image-2.5-pro/edit",
+        "name": "MAI Image 2.5 Pro (Edit)",
+        "provider": "Microsoft",
+        "releasedAt": "2026-07-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Apply precise, controllable edits to a reference image while preserving composition, typography, identity, and fine visual detail.",
+        "description": "Apply precise, controllable edits to a reference image while preserving composition, typography, identity, and fine visual detail.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/microsoft/mai-image-2.5-pro",
+        "name": "MAI Image 2.5 Pro (Text to Image)",
+        "provider": "Microsoft",
+        "releasedAt": "2026-07-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-fidelity, design-ready images with precise typography, strong prompt alignment, and rich visual detail using Microsoft's flagship MAI Image 2.5 Pro.",
+        "description": "Generate high-fidelity, design-ready images with precise typography, strong prompt alignment, and rich visual detail using Microsoft's flagship MAI Image 2.5 Pro.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/pixelcut/product-photo",
+        "name": "Pixelcut Product Photo",
+        "provider": "Pixelcut",
+        "releasedAt": "2026-07-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Pixelcut's Background Remover produces fast, high-quality cutouts built for e-commerce product imagery",
+        "description": "Pixelcut's Background Remover produces fast, high-quality cutouts built for e-commerce product imagery",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "qwen/qwen3.7-flash",
+        "name": "Qwen: Qwen3.7 Flash",
+        "provider": "Qwen",
+        "releasedAt": "2026-07-27",
+        "contextLength": 1000000,
+        "inputPer1M": 0.03,
+        "outputPer1M": 0.13,
+        "summary": "Qwen3.7 Flash is a vision-language reasoning model from Alibaba. It is suited for multimodal agents, visual coding, search, and computer interaction, with strengths in object recognition, spatial understanding, and real…",
+        "description": "Qwen3.7 Flash is a vision-language reasoning model from Alibaba. It is suited for multimodal agents, visual coding, search, and computer interaction, with strengths in object recognition, spatial understanding, and real…",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "response_format",
+            "seed",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "voyageai/rerank-2.5",
+        "name": "VoyageAI by MongoDB: rerank-2.5",
+        "provider": "Voyageai",
+        "releasedAt": "2026-07-27",
+        "contextLength": 32000,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "rerank-2.5 is a cutting-edge reranker optimized for quality, delivering a 7.94% improvement in retrieval accuracy over Cohere Rerank v3.5 across 93 datasets. It also outperformed Cohere Rerank v3.5 by 12.70%...",
+        "description": "rerank-2.5 is a cutting-edge reranker optimized for quality, delivering a 7.94% improvement in retrieval accuracy over Cohere Rerank v3.5 across 93 datasets. It also outperformed Cohere Rerank v3.5 by 12.70%...",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text->rerank",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "rerank"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "voyageai/rerank-2.5-lite",
+        "name": "VoyageAI by MongoDB: rerank-2.5-lite",
+        "provider": "Voyageai",
+        "releasedAt": "2026-07-27",
+        "contextLength": 32000,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "rerank-2.5-lite is a reranker optimized for both latency and quality, delivering a 7.16% improvement in retrieval accuracy over Cohere Rerank v3.5 across 93 datasets. It also outperformed Cohere Rerank v3.5...",
+        "description": "rerank-2.5-lite is a reranker optimized for both latency and quality, delivering a 7.16% improvement in retrieval accuracy over Cohere Rerank v3.5 across 93 datasets. It also outperformed Cohere Rerank v3.5...",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text->rerank",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "rerank"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "voyageai/voyage-4",
+        "name": "VoyageAI by MongoDB: voyage-4",
+        "provider": "Voyageai",
+        "releasedAt": "2026-07-27",
+        "contextLength": 32000,
+        "inputPer1M": 0.06,
+        "outputPer1M": 0,
+        "summary": "voyage-4 is a general-purpose (including multilingual) embedding model optimized for retrieval/search and AI applications. voyage-4 supports embeddings in 2048, 1024, 512, and 256 dimensions, with multiple quantization…",
+        "description": "voyage-4 is a general-purpose (including multilingual) embedding model optimized for retrieval/search and AI applications. voyage-4 supports embeddings in 2048, 1024, 512, and 256 dimensions, with multiple quantization…",
+        "bestFor": [
+            "Embeddings"
+        ],
+        "modality": "text->embeddings",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "embeddings"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "voyageai/voyage-4-large",
+        "name": "VoyageAI by MongoDB: voyage-4-large",
+        "provider": "Voyageai",
+        "releasedAt": "2026-07-27",
+        "contextLength": 32000,
+        "inputPer1M": 0.12,
+        "outputPer1M": 0,
+        "summary": "voyage-4-large is a state-of-the-art general-purpose and multilingual embedding optimized for retrieval quality. Enabled by Matryoshka learning and quantization-aware training, voyage-4-large supports embeddings in 2048…",
+        "description": "voyage-4-large is a state-of-the-art general-purpose and multilingual embedding optimized for retrieval quality. Enabled by Matryoshka learning and quantization-aware training, voyage-4-large supports embeddings in 2048…",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text->embeddings",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "embeddings"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "voyageai/voyage-4-lite",
+        "name": "VoyageAI by MongoDB: voyage-4-lite",
+        "provider": "Voyageai",
+        "releasedAt": "2026-07-27",
+        "contextLength": 32000,
+        "inputPer1M": 0.02,
+        "outputPer1M": 0,
+        "summary": "voyage-4-lite is a lightweight, general-purpose embedding model optimized for low latency and cost. Enabled by Matryoshka learning and quantization-aware training, voyage-4-lite supports embeddings in 2048, 1024, 512, a…",
+        "description": "voyage-4-lite is a lightweight, general-purpose embedding model optimized for low latency and cost. Enabled by Matryoshka learning and quantization-aware training, voyage-4-lite supports embeddings in 2048, 1024, 512, a…",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text->embeddings",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "embeddings"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "voyageai/voyage-multimodal-3.5",
+        "name": "VoyageAI by MongoDB: voyage-multimodal-3.5",
+        "provider": "Voyageai",
+        "releasedAt": "2026-07-27",
+        "contextLength": 32000,
+        "inputPer1M": 0.12,
+        "outputPer1M": 0,
+        "summary": "voyage-multimodal-3.5 is a state-of-the-art multimodal embedding model capable of vectorizing not only text, images, and video individually, but also content that interleaves all three modalities. It delivers excellent…",
+        "description": "voyage-multimodal-3.5 is a state-of-the-art multimodal embedding model capable of vectorizing not only text, images, and video individually, but also content that interleaves all three modalities. It delivers excellent…",
+        "bestFor": [
+            "Embeddings"
+        ],
+        "modality": "text+image->embeddings",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "embeddings"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "anthropic/claude-opus-5",
+        "name": "Claude Opus 5",
+        "provider": "Anthropic",
+        "releasedAt": "2026-07-24",
+        "contextLength": 1000000,
+        "inputPer1M": 5,
+        "outputPer1M": 25,
+        "summary": "Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual analysis...",
+        "description": "Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual analysis...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "verbosity"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "anthropic/claude-opus-5-fast",
+        "name": "Claude Opus 5 (Fast)",
+        "provider": "Anthropic",
+        "releasedAt": "2026-07-24",
+        "contextLength": 1000000,
+        "inputPer1M": 10,
+        "outputPer1M": 50,
+        "summary": "Fast-mode variant of Opus 5 - identical capabilities with higher output speed at 2x pricing relative to regular Opus 5. Learn more in Anthropic's docs:",
+        "description": "Fast-mode variant of Opus 5 - identical capabilities with higher output speed at 2x pricing relative to regular Opus 5. Learn more in Anthropic's docs:",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "verbosity"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/clean-plate",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-24",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Remove character from your video using Ltx 2.3",
+        "description": "Remove character from your video using Ltx 2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "inclusionai/ling-3.0-flash:free",
+        "name": "Ling-3.0-flash (free)",
+        "provider": "Inclusionai",
+        "releasedAt": "2026-07-23",
+        "contextLength": 262144,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as ke…",
+        "description": "*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as ke…",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "microsoft/mai-image-2.5-pro",
+        "name": "Microsoft: MAI-Image-2.5 Pro",
+        "provider": "Microsoft",
+        "releasedAt": "2026-07-23",
+        "contextLength": 4096,
+        "inputPer1M": 5,
+        "outputPer1M": 0,
+        "summary": "Microsoft's MAI-Image-2.5 is a high-quality image generation model available via Azure AI Foundry. It produces photorealistic and artistic images from text prompts with support for various aspect ratios.",
+        "description": "Microsoft's MAI-Image-2.5 is a high-quality image generation model available via Azure AI Foundry. It produces photorealistic and artistic images from text prompts with support for various aspect ratios.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [
+            "max_completion_tokens",
+            "max_tokens",
+            "temperature"
+        ],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "microsoft/mai-voice-2-flash",
+        "name": "Microsoft: MAI-Voice-2-Flash",
+        "provider": "Microsoft",
+        "releasedAt": "2026-07-23",
+        "contextLength": 0,
+        "inputPer1M": 15,
+        "outputPer1M": 0,
+        "summary": "MAI-Voice-2-Flash is a low-latency text-to-speech model from Microsoft for voice agents, assistants, call centers, accessibility, narration, and other interactive applications. It generates expressive 24 kHz mono speech…",
+        "description": "MAI-Voice-2-Flash is a low-latency text-to-speech model from Microsoft for voice agents, assistants, call centers, accessibility, narration, and other interactive applications. It generates expressive 24 kHz mono speech…",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [
+            "max_completion_tokens",
+            "max_tokens",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "qwen/qwen-audio-3.0-tts-flash",
+        "name": "Qwen: Qwen-Audio-3.0-TTS Flash",
+        "provider": "Qwen",
+        "releasedAt": "2026-07-23",
+        "contextLength": 0,
+        "inputPer1M": 15,
+        "outputPer1M": 0,
+        "summary": "Qwen-Audio-3.0-TTS Flash is Alibaba's fast, cost-efficient text-to-speech model, generating spoken audio from text via the DashScope Speech Synthesizer API.",
+        "description": "Qwen-Audio-3.0-TTS Flash is Alibaba's fast, cost-efficient text-to-speech model, generating spoken audio from text via the DashScope Speech Synthesizer API.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "qwen/qwen-audio-3.0-tts-plus",
+        "name": "Qwen: Qwen-Audio-3.0-TTS Plus",
+        "provider": "Qwen",
+        "releasedAt": "2026-07-23",
+        "contextLength": 0,
+        "inputPer1M": 20,
+        "outputPer1M": 0,
+        "summary": "Qwen-Audio-3.0-TTS Plus is Alibaba's higher-quality text-to-speech model, generating spoken audio from text via the DashScope Speech Synthesizer API.",
+        "description": "Qwen-Audio-3.0-TTS Plus is Alibaba's higher-quality text-to-speech model, generating spoken audio from text via the DashScope Speech Synthesizer API.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "x-ai/grok-stt-1.0",
+        "name": "xAI: Grok STT 1.0",
+        "provider": "xAI",
+        "releasedAt": "2026-07-23",
+        "contextLength": 0,
+        "inputPer1M": 100000,
+        "outputPer1M": 0,
+        "summary": "Grok STT is xAI's speech-to-text model, available via the REST /v1/stt endpoint. It supports transcription with word-level timestamps, optional speaker diarization, and multichannel audio.",
+        "description": "Grok STT is xAI's speech-to-text model, available via the REST /v1/stt endpoint. It supports transcription with word-level timestamps, optional speaker diarization, and multichannel audio.",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/alibaba/happy-oyster",
+        "name": "Happy Oyster",
+        "provider": "Alibaba",
+        "releasedAt": "2026-07-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Realtime interactive world model — generate a world from a prompt, then explore it or direct its story as live video.",
+        "description": "Realtime interactive world model — generate a world from a prompt, then explore it or direct its story as live video.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/alibaba/qwen-audio-3-tts",
+        "name": "Qwen Audio 3.0 TTS (Flash)",
+        "provider": "Alibaba",
+        "releasedAt": "2026-07-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate natural multilingual speech from text with fast voice and language control using Qwen Audio 3.0 TTS Flash.",
+        "description": "Generate natural multilingual speech from text with fast voice and language control using Qwen Audio 3.0 TTS Flash.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-speech",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "google/gemini-3.5-flash-lite",
+        "name": "Google: Gemini 3.5 Flash Lite",
+        "provider": "Google",
+        "releasedAt": "2026-07-21",
+        "contextLength": 1048576,
+        "inputPer1M": 0.3,
+        "outputPer1M": 2.5,
+        "summary": "Gemini 3.5 Flash Lite is a high-efficiency model from Google with upgraded agentic capabilities. It is suited for subagents that execute focused tasks within complex, multi-agent workflows.",
+        "description": "Gemini 3.5 Flash Lite is a high-efficiency model from Google with upgraded agentic capabilities. It is suited for subagents that execute focused tasks within complex, multi-agent workflows.",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "google/gemini-3.6-flash",
+        "name": "Google: Gemini 3.6 Flash",
+        "provider": "Google",
+        "releasedAt": "2026-07-21",
+        "contextLength": 1048576,
+        "inputPer1M": 1.5,
+        "outputPer1M": 7.5,
+        "summary": "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and...",
+        "description": "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "poolside/laguna-s-2.1",
+        "name": "Poolside: Laguna S 2.1",
+        "provider": "Poolside",
+        "releasedAt": "2026-07-21",
+        "contextLength": 1048576,
+        "inputPer1M": 0.09,
+        "outputPer1M": 0.18,
+        "summary": "Laguna S 2.1 is the latest coding agent model from Poolside. Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
+        "description": "Laguna S 2.1 is the latest coding agent model from Poolside. Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "temperature",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "poolside/laguna-s-2.1:free",
+        "name": "Poolside: Laguna S 2.1 (free)",
+        "provider": "Poolside",
+        "releasedAt": "2026-07-21",
+        "contextLength": 262144,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Laguna S 2.1 is the latest coding agent model from Poolside. Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
+        "description": "Laguna S 2.1 is the latest coding agent model from Poolside. Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "temperature",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/sonilo/v1.1/video-to-video-music",
+        "name": "V1.1 Video to Video Music",
+        "provider": "Sonilo",
+        "releasedAt": "2026-07-21",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generates perfectly synced music for any video. Return a licensed music soundtrack ready for commercial use (optional preservation of the original speech in video)",
+        "description": "Generates perfectly synced music for any video. Return a licensed music soundtrack ready for commercial use (optional preservation of the original speech in video)",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "krea/krea-2-large",
+        "name": "Krea: Krea 2 Large",
+        "provider": "Krea",
+        "releasedAt": "2026-07-20",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Krea 2 Large is Krea's high-capability image generation model, more than twice the size of Krea 2 Medium. Its lighter post-training gives images a rawer, more textured, and flexible character,...",
+        "description": "Krea 2 Large is Krea's high-capability image generation model, more than twice the size of Krea 2 Medium. Its lighter post-training gives images a rawer, more textured, and flexible character,...",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "krea/krea-2-medium",
+        "name": "Krea: Krea 2 Medium",
+        "provider": "Krea",
+        "releasedAt": "2026-07-20",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Krea 2 Medium is Krea's balanced, cost-efficient image generation model and a practical starting point for a broad range of use cases. Its extensive post-training supports stable, consistent generations, with...",
+        "description": "Krea 2 Medium is Krea's balanced, cost-efficient image generation model and a practical starting point for a broad range of use cases. Its extensive post-training supports stable, consistent generations, with...",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "krea/krea-2-medium-turbo",
+        "name": "Krea: Krea 2 Medium Turbo",
+        "provider": "Krea",
+        "releasedAt": "2026-07-20",
+        "contextLength": 65536,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Krea 2 Medium Turbo is a distilled, speed-focused variant of Krea 2 Medium from Krea. It is designed for rapid iteration and graphic design exploration where fast generation is the...",
+        "description": "Krea 2 Medium Turbo is a distilled, speed-focused variant of Krea 2 Medium from Krea. It is designed for rapid iteration and graphic design exploration where fast generation is the...",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text+image->image",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "image"
+    },
+    {
+        "id": "meituan/longcat-2.0",
+        "name": "Meituan: LongCat 2.0",
+        "provider": "Meituan",
+        "releasedAt": "2026-07-20",
+        "contextLength": 1048756,
+        "inputPer1M": 0.3,
+        "outputPer1M": 1.2,
+        "summary": "LongCat 2.0 is a sparse mixture-of-experts language model from Meituan, with 48B active parameters out of 1.6T total. It is suited for coding, repository-level changes, long-horizon problem solving, and agentic...",
+        "description": "LongCat 2.0 is a sparse mixture-of-experts language model from Meituan, with 48B active parameters out of 1.6T total. It is suited for coding, repository-level changes, long-horizon problem solving, and agentic...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "max_tokens",
+            "min_p",
+            "presence_penalty",
+            "reasoning",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/sonilo/v1.1/text-to-sound-effects",
+        "name": "V1.1 Text to Sound Effects",
+        "provider": "Sonilo",
+        "releasedAt": "2026-07-20",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generates high-quality, commercial-use-safe sound effects from a text prompt, with full control over type, texture, intensity, and exact duration.",
+        "description": "Generates high-quality, commercial-use-safe sound effects from a text prompt, with full control over type, texture, intensity, and exact duration.",
+        "bestFor": [
+            "Sound effects",
+            "Audio design",
+            "Media production"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/sonilo/v1.1/video-to-sound-effects",
+        "name": "V1.1 Video to Sound Effects",
+        "provider": "Sonilo",
+        "releasedAt": "2026-07-20",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Analyzes a video and generates synchronized, royalty-free sound effects timed to visible actions. Returns the generated sound-effects audio track for commercial use.",
+        "description": "Analyzes a video and generates synchronized, royalty-free sound effects timed to visible actions. Returns the generated sound-effects audio track for commercial use.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/sonilo/v1.1/video-to-video-sound-effects",
+        "name": "V1.1 Video to Video Sound Effects",
+        "provider": "Sonilo",
+        "releasedAt": "2026-07-20",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Adds synchronized, royalty-free, commercial-use-safe sound effects to a video. Returns the finished video with the generated audio mixed in.",
+        "description": "Adds synchronized, royalty-free, commercial-use-safe sound effects to a video. Returns the finished video with the generated audio mixed in.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "x-ai/grok-imagine-video-1.5",
+        "name": "xAI: Grok Imagine Video 1.5",
+        "provider": "xAI",
+        "releasedAt": "2026-07-20",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Grok Imagine Video 1.5 is a video generation model from xAI. It creates videos from text prompts, with an optional starting image to guide the scene. It can direct subject...",
+        "description": "Grok Imagine Video 1.5 is a video generation model from xAI. It creates videos from text prompts, with an optional starting image to guide the scene. It can direct subject...",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "text+image->video",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "video"
+    },
+    {
+        "id": "thinkingmachines/inkling",
+        "name": "Thinking Machines: Inkling",
+        "provider": "Thinkingmachines",
+        "releasedAt": "2026-07-17",
+        "contextLength": 1048576,
+        "inputPer1M": 1,
+        "outputPer1M": 4.05,
+        "summary": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,…",
+        "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,…",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+audio->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "max_tokens",
+            "min_p",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "deepgram/aura-2",
+        "name": "Deepgram: Aura-2",
+        "provider": "Deepgram",
+        "releasedAt": "2026-07-16",
+        "contextLength": 0,
+        "inputPer1M": 30,
+        "outputPer1M": 0,
+        "summary": "Aura-2 is a multilingual text-to-speech model from Deepgram. It supports Deepgram’s canonical Aura-2 voice catalog for speech synthesis across multiple languages.",
+        "description": "Aura-2 is a multilingual text-to-speech model from Deepgram. It supports Deepgram’s canonical Aura-2 voice catalog for speech synthesis across multiple languages.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3/reframe",
+        "name": "Ltx 2.3",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "LTX-2.3 Reframe converts your videos to any aspect ratio without destructive cropping. It intelligently recenters the original footage and generatively fills the newly exposed areas with content that seamlessly matches…",
+        "description": "LTX-2.3 Reframe converts your videos to any aspect ratio without destructive cropping. It intelligently recenters the original footage and generatively fills the newly exposed areas with content that seamlessly matches…",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "meta/muse-spark-1.1",
+        "name": "Meta: Muse Spark 1.1",
+        "provider": "Meta",
+        "releasedAt": "2026-07-16",
+        "contextLength": 1048576,
+        "inputPer1M": 1.25,
+        "outputPer1M": 4.25,
+        "summary": "Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, audio, and PDF documents and returns text, with a 1M-token context...",
+        "description": "Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, audio, and PDF documents and returns text, with a 1M-token context...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file+audio+video->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "video",
+            "file",
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "minimax/speech-2.8-hd",
+        "name": "MiniMax: Speech 2.8 HD",
+        "provider": "Minimax",
+        "releasedAt": "2026-07-16",
+        "contextLength": 0,
+        "inputPer1M": 100,
+        "outputPer1M": 0,
+        "summary": "MiniMax Speech 2.8 HD is a text-to-speech model from MiniMax. It is suited for applications that generate spoken audio from text and accepts arbitrary MiniMax voice IDs.",
+        "description": "MiniMax Speech 2.8 HD is a text-to-speech model from MiniMax. It is suited for applications that generate spoken audio from text and accepts arbitrary MiniMax voice IDs.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "minimax/speech-2.8-turbo",
+        "name": "MiniMax: Speech 2.8 Turbo",
+        "provider": "Minimax",
+        "releasedAt": "2026-07-16",
+        "contextLength": 0,
+        "inputPer1M": 60,
+        "outputPer1M": 0,
+        "summary": "MiniMax Speech 2.8 Turbo is a text-to-speech model from MiniMax. It is suited for applications that generate spoken audio from text and accepts arbitrary MiniMax voice IDs.",
+        "description": "MiniMax Speech 2.8 Turbo is a text-to-speech model from MiniMax. It is suited for applications that generate spoken audio from text and accepts arbitrary MiniMax voice IDs.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->speech",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "speech"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "moonshotai/kimi-k3",
+        "name": "MoonshotAI: Kimi K3",
+        "provider": "Moonshotai",
+        "releasedAt": "2026-07-16",
+        "contextLength": 1048576,
+        "inputPer1M": 3,
+        "outputPer1M": 15,
+        "summary": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
+        "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "logprobs",
+            "max_tokens",
+            "min_p",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "nvidia/nemotron-3-embed-1b:free",
+        "name": "NVIDIA: Nemotron 3 Embed 1B (free)",
+        "provider": "Nvidia",
+        "releasedAt": "2026-07-16",
+        "contextLength": 32768,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "NVIDIA Nemotron 3 Embed 1B is an open text embedding model from NVIDIA, optimized for high-throughput, low-latency retrieval. It is suited for enterprise search, RAG, code retrieval, and agentic retrieval...",
+        "description": "NVIDIA Nemotron 3 Embed 1B is an open text embedding model from NVIDIA, optimized for high-throughput, low-latency retrieval. It is suited for enterprise search, RAG, code retrieval, and agentic retrieval...",
+        "bestFor": [
+            "Code retrieval",
+            "Repository search",
+            "Coding assistant retrieval"
+        ],
+        "modality": "text->embeddings",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "embeddings"
+        ],
+        "supportedParameters": [
+            "max_tokens",
+            "seed",
+            "temperature",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "deepgram/nova-3",
+        "name": "Deepgram: Nova-3",
+        "provider": "Deepgram",
+        "releasedAt": "2026-07-15",
+        "contextLength": 0,
+        "inputPer1M": 4300,
+        "outputPer1M": 0,
+        "summary": "Deepgram Nova-3 general-purpose speech-to-text model with monolingual and multilingual transcription support.",
+        "description": "Deepgram Nova-3 general-purpose speech-to-text model with monolingual and multilingual transcription support.",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "audio->transcription",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "transcription"
+        ],
+        "supportedParameters": [],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/decart/lucy-2-5/realtime",
+        "name": "Lucy 2.5",
+        "provider": "Decart",
+        "releasedAt": "2026-07-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Real-time, prompt-driven video editing over WebRTC. Restyle, swap backgrounds, and add or replace objects live on a webcam or streamed feed at interactive latency.",
+        "description": "Real-time, prompt-driven video editing over WebRTC. Restyle, swap backgrounds, and add or replace objects live on a webcam or streamed feed at interactive latency.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bria/product-dimensions",
+        "name": "Bria Product Dimensions",
+        "provider": "Bria",
+        "releasedAt": "2026-07-13",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Bria Product Dimensions turns one product photo and its measurements into a marketplace-ready dimension image with callout lines, labels, and weight or capacity readouts",
+        "description": "Bria Product Dimensions turns one product photo and its measurements into a marketplace-ready dimension image with callout lines, labels, and weight or capacity readouts",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/reve/2.1/text-to-image",
+        "name": "Reve 2.1",
+        "provider": "Reve",
+        "releasedAt": "2026-07-13",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality images from text prompts with strong prompt adherence, layout intelligence, and accurate text rendering using Reve 2.1.",
+        "description": "Generate high-quality images from text prompts with strong prompt adherence, layout intelligence, and accurate text rendering using Reve 2.1.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/reve/2.1/edit",
+        "name": "Reve 2.1",
+        "provider": "Reve",
+        "releasedAt": "2026-07-13",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Edit images from text prompts with strong prompt adherence, layout intelligence, and accurate text rendering using Reve 2.1",
+        "description": "Edit images from text prompts with strong prompt adherence, layout intelligence, and accurate text rendering using Reve 2.1",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/reve/2.1/remix",
+        "name": "Reve 2.1",
+        "provider": "Reve",
+        "releasedAt": "2026-07-13",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Remix images from text prompts with strong prompt adherence, layout intelligence, and accurate text rendering using Reve 2.1",
+        "description": "Remix images from text prompts with strong prompt adherence, layout intelligence, and accurate text rendering using Reve 2.1",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/veed/lipsync/v2",
+        "name": "VEED Lipsync",
+        "provider": "Veed",
+        "releasedAt": "2026-07-13",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate production-quality lipsync from any audio using VEED's most advanced model yet.",
+        "description": "Generate production-quality lipsync from any audio using VEED's most advanced model yet.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/krea-2/turbo/style",
+        "name": "Krea 2 Text to Image Turbo Style",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-10",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-fidelity images from text with Krea 2 using a style reference image. Apply a reference image to guide the visual style into new generations, with aspect ratio, creativity, and seed controls.",
+        "description": "Generate high-fidelity images from text with Krea 2 using a style reference image. Apply a reference image to guide the visual style into new generations, with aspect ratio, creativity, and seed controls.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "kwaipilot/kat-coder-air-v2.5",
+        "name": "Kwaipilot: KAT-Coder-Air V2.5",
+        "provider": "Kwaipilot",
+        "releasedAt": "2026-07-10",
+        "contextLength": 256000,
+        "inputPer1M": 0.15,
+        "outputPer1M": 0.6,
+        "summary": "KAT-Coder-Air V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
+        "description": "KAT-Coder-Air V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
+        "bestFor": [
+            "Agent workflows",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "kwaipilot/kat-coder-pro-v2.5",
+        "name": "Kwaipilot: KAT-Coder-Pro V2.5",
+        "provider": "Kwaipilot",
+        "releasedAt": "2026-07-10",
+        "contextLength": 256000,
+        "inputPer1M": 0.74,
+        "outputPer1M": 2.96,
+        "summary": "KAT-Coder-Pro V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
+        "description": "KAT-Coder-Pro V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...",
+        "bestFor": [
+            "Agent workflows",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-5.6-luna",
+        "name": "OpenAI: GPT-5.6 Luna",
+        "provider": "OpenAI",
+        "releasedAt": "2026-07-09",
+        "contextLength": 1050000,
+        "inputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.6000000000000001,
+        "summary": "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providing capable reasoning…",
+        "description": "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providing capable reasoning…",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "file",
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-5.6-luna-pro",
+        "name": "OpenAI: GPT-5.6 Luna Pro",
+        "provider": "OpenAI",
+        "releasedAt": "2026-07-09",
+        "contextLength": 1050000,
+        "inputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.6000000000000001,
+        "summary": "GPT-5.6 Luna Pro is the same underlying model as GPT-5.6 Luna, served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. Learn more in OpenAI's docs:",
+        "description": "GPT-5.6 Luna Pro is the same underlying model as GPT-5.6 Luna, served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. Learn more in OpenAI's docs:",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "file",
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-5.6-sol",
+        "name": "OpenAI: GPT-5.6 Sol",
+        "provider": "OpenAI",
+        "releasedAt": "2026-07-09",
+        "contextLength": 1050000,
+        "inputPer1M": 5,
+        "outputPer1M": 30,
+        "summary": "GPT-5.6 Sol is the flagship model in OpenAI's GPT-5.6 series. It is suited for complex reasoning, coding, and agentic workflows, and is particularly strong at command-line and multi-step coding tasks...",
+        "description": "GPT-5.6 Sol is the flagship model in OpenAI's GPT-5.6 series. It is suited for complex reasoning, coding, and agentic workflows, and is particularly strong at command-line and multi-step coding tasks...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "file",
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-5.6-sol-pro",
+        "name": "OpenAI: GPT-5.6 Sol Pro",
+        "provider": "OpenAI",
+        "releasedAt": "2026-07-09",
+        "contextLength": 1050000,
+        "inputPer1M": 5,
+        "outputPer1M": 30,
+        "summary": "GPT-5.6 Sol Pro is the same underlying model as GPT-5.6 Sol, served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. Learn more in OpenAI's docs:",
+        "description": "GPT-5.6 Sol Pro is the same underlying model as GPT-5.6 Sol, served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. Learn more in OpenAI's docs:",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "file",
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-5.6-terra",
+        "name": "OpenAI: GPT-5.6 Terra",
+        "provider": "OpenAI",
+        "releasedAt": "2026-07-09",
+        "contextLength": 1050000,
+        "inputPer1M": 1.0000000000000002,
+        "outputPer1M": 6,
+        "summary": "GPT-5.6 Terra is a balanced model in OpenAI's GPT-5.6 series, positioned between the flagship Sol tier and the cost-efficient Luna tier. It is suited for everyday coding, reasoning, and agentic...",
+        "description": "GPT-5.6 Terra is a balanced model in OpenAI's GPT-5.6 series, positioned between the flagship Sol tier and the cost-efficient Luna tier. It is suited for everyday coding, reasoning, and agentic...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "file",
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "openai/gpt-5.6-terra-pro",
+        "name": "OpenAI: GPT-5.6 Terra Pro",
+        "provider": "OpenAI",
+        "releasedAt": "2026-07-09",
+        "contextLength": 1050000,
+        "inputPer1M": 1.0000000000000002,
+        "outputPer1M": 6,
+        "summary": "GPT-5.6 Terra Pro is the same underlying model as GPT-5.6 Terra, served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. Learn more in OpenAI's docs:",
+        "description": "GPT-5.6 Terra Pro is the same underlying model as GPT-5.6 Terra, served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. Learn more in OpenAI's docs:",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "file",
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_completion_tokens",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/bytedance/seedream/v5/lite/edit",
+        "name": "Seedream",
+        "provider": "ByteDance",
+        "releasedAt": "2026-07-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Image editing endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent image editing with multiple inputs.",
+        "description": "Image editing endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent image editing with multiple inputs.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bytedance/seedream/v5/lite/text-to-image",
+        "name": "Seedream",
+        "provider": "ByteDance",
+        "releasedAt": "2026-07-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Text to Image endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent text-to-image generation.",
+        "description": "Text to Image endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent text-to-image generation.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "x-ai/grok-4.5",
+        "name": "xAI: Grok 4.5",
+        "provider": "xAI",
+        "releasedAt": "2026-07-08",
+        "contextLength": 500000,
+        "inputPer1M": 2,
+        "outputPer1M": 6,
+        "summary": "Grok 4.5 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+        "description": "Grok 4.5 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "~x-ai/grok-latest",
+        "name": "xAI: Grok Latest",
+        "provider": "~x Ai",
+        "releasedAt": "2026-07-08",
+        "contextLength": 500000,
+        "inputPer1M": 2,
+        "outputPer1M": 6,
+        "summary": "This model always redirects to the latest Grok model from xAI.",
+        "description": "This model always redirects to the latest Grok model from xAI.",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image+file->text",
+        "inputModalities": [
+            "text",
+            "image",
+            "file"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "aion-labs/aion-3.0",
+        "name": "AionLabs: Aion-3.0",
+        "provider": "Aion Labs",
+        "releasedAt": "2026-07-07",
+        "contextLength": 131072,
+        "inputPer1M": 3,
+        "outputPer1M": 6,
+        "summary": "Aion-3.0 is a multi-model roleplaying and storytelling system from AionLabs, built on the GLM family of models. It uses a collaborative generation process in which multiple specialized models each contribute...",
+        "description": "Aion-3.0 is a multi-model roleplaying and storytelling system from AionLabs, built on the GLM family of models. It uses a collaborative generation process in which multiple specialized models each contribute...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "aion-labs/aion-3.0-mini",
+        "name": "AionLabs: Aion-3.0-Mini",
+        "provider": "Aion Labs",
+        "releasedAt": "2026-07-07",
+        "contextLength": 131072,
+        "inputPer1M": 0.7,
+        "outputPer1M": 1.4,
+        "summary": "Aion-3.0 Mini is a multi-model roleplaying and storytelling system from AionLabs, built on the DeepSeek family of models. It uses a collaborative generation process in which multiple specialized models each...",
+        "description": "Aion-3.0 Mini is a multi-model roleplaying and storytelling system from AionLabs, built on the DeepSeek family of models. It uses a collaborative generation process in which multiple specialized models each...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/extend-video",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-07",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Extend high-quality video with audio from input video using LTX-2.3",
+        "description": "Extend high-quality video with audio from input video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/extend-video/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-07-07",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Extend high-quality video with audio from input video using LTX-2.3 with Lora",
+        "description": "Extend high-quality video with audio from input video using LTX-2.3 with Lora",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bytedance/seedream/v5/pro/edit",
+        "name": "Seedream 5.0 Pro Image Editing",
+        "provider": "ByteDance",
+        "releasedAt": "2026-07-07",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Seedream 5.0 Pro is grounded, region-precise image editing model that changes one element while keeping the rest of the frame intact with layer separation, sketch completion, and up to 10 reference images.",
+        "description": "Seedream 5.0 Pro is grounded, region-precise image editing model that changes one element while keeping the rest of the frame intact with layer separation, sketch completion, and up to 10 reference images.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bytedance/seedream/v5/pro/text-to-image",
+        "name": "Seedream 5.0 Pro Text to Image",
+        "provider": "ByteDance",
+        "releasedAt": "2026-07-07",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "ByteDance's Seedream 5.0 Pro is flagship text-to-image model, with deep-thinking prompt understanding, native text in 14 languages, and precise control over dense layouts and structured designs.",
+        "description": "ByteDance's Seedream 5.0 Pro is flagship text-to-image model, with deep-thinking prompt understanding, native text in 14 languages, and precise control over dense layouts and structured designs.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "tencent/hy3",
+        "name": "Tencent: Hy3",
+        "provider": "Tencent",
+        "releasedAt": "2026-07-06",
+        "contextLength": 262144,
+        "inputPer1M": 0.13199999999999998,
+        "outputPer1M": 0.5279999999999999,
+        "summary": "Hy3 is a 295B-parameter Mixture-of-Experts model from Tencent (21B active, 192 experts with top-8 routing) built for reasoning, agentic workflows, and real-world production use. It supports a configurable reasoning effo…",
+        "description": "Hy3 is a 295B-parameter Mixture-of-Experts model from Tencent (21B active, 192 experts with top-8 routing) built for reasoning, agentic workflows, and real-world production use. It supports a configurable reasoning effo…",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "frequency_penalty",
+            "include_reasoning",
+            "logit_bias",
+            "max_completion_tokens",
+            "max_tokens",
+            "min_p",
+            "presence_penalty",
+            "reasoning",
+            "reasoning_effort",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "fal/ideogram/v4/instant",
+        "name": "V4.0q [instant]",
+        "provider": "Ideogram",
+        "releasedAt": "2026-07-06",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs FRACTION OF…",
+        "description": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs FRACTION OF…",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/fast",
+        "name": "V4.0q [fast]",
+        "provider": "Ideogram",
+        "releasedAt": "2026-07-03",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs IN A SECOND.",
+        "description": "Generate high-quality images, posters, and logos with Ideogram's latest V4.0q — producing crisp visuals with accurate text rendering, fine detail, and full creative control for polished, ready-to-use designs IN A SECOND.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "poolside/laguna-xs-2.1",
+        "name": "Poolside: Laguna XS 2.1",
+        "provider": "Poolside",
+        "releasedAt": "2026-07-02",
+        "contextLength": 262144,
+        "inputPer1M": 0.06,
+        "outputPer1M": 0.12,
+        "summary": "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from Poolside and a step forward from their Laguna XS.2 model (released in April 2026). It combines...",
+        "description": "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from Poolside and a step forward from their Laguna XS.2 model (released in April 2026). It combines...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "temperature",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
+    {
+        "id": "poolside/laguna-xs-2.1:free",
+        "name": "Poolside: Laguna XS 2.1 (free)",
+        "provider": "Poolside",
+        "releasedAt": "2026-07-02",
+        "contextLength": 262144,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from Poolside and a step forward from their Laguna XS.2 model (released in April 2026). It combines...",
+        "description": "Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from Poolside and a step forward from their Laguna XS.2 model (released in April 2026). It combines...",
+        "bestFor": [
+            "Agent workflows",
+            "Advanced reasoning",
+            "Code generation"
+        ],
+        "modality": "text->text",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "temperature",
+            "tool_choice",
+            "tools"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
+    },
     {
         "id": "anthropic/claude-sonnet-5",
         "name": "Anthropic: Claude Sonnet 5",
@@ -34,6 +2851,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -43,6 +2861,112 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/google/gemini-omni-flash/image-to-video",
+        "name": "Gemini Omni Flash",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Animates a still image into video with audio. Extends a single frame into coherent motion, grounded in Gemini's physical understanding of how scenes and subjects behave.",
+        "description": "Animates a still image into video with audio. Extends a single frame into coherent motion, grounded in Gemini's physical understanding of how scenes and subjects behave.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/google/gemini-omni-flash/reference-to-video",
+        "name": "Gemini Omni Flash",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generates video with audio from combined multimodal references. Accepts text, images, audio, and video together as input to guide subject, motion, style, and sound in the output.",
+        "description": "Generates video with audio from combined multimodal references. Accepts text, images, audio, and video together as input to guide subject, motion, style, and sound in the output.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/google/gemini-omni-flash/edit",
+        "name": "Gemini Omni Flash",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Edits generated video across multiple conversational turns while preserving scene coherence. Applies iterative changes through natural-language instructions without regenerating the full sequence from scratch.",
+        "description": "Edits generated video across multiple conversational turns while preserving scene coherence. Applies iterative changes through natural-language instructions without regenerating the full sequence from scratch.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/google/gemini-omni-flash",
+        "name": "Gemini Omni Flash",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Creates video with synchronized audio from text input. Grounded in Gemini's real-world knowledge, with improved physics understanding for more coherent motion and interaction.",
+        "description": "Creates video with synchronized audio from text input. Grounded in Gemini's real-world knowledge, with improved physics understanding for more coherent motion and interaction.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "google/gemini-3.1-flash-lite-image",
@@ -71,6 +2995,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "temperature",
@@ -78,6 +3003,295 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "image"
+    },
+    {
+        "id": "fal/google/nano-banana-2-lite",
+        "name": "Nano Banana 2 Lite",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Nano banana lite is the efficiency-focused model in the image generation family. Sub-2 second latency with cost-effective generation and editing, fast multi-turn local edits, and 14 supported aspect ratios.",
+        "description": "Nano banana lite is the efficiency-focused model in the image generation family. Sub-2 second latency with cost-effective generation and editing, fast multi-turn local edits, and 14 supported aspect ratios.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/google/nano-banana-lite",
+        "name": "Nano Banana Lite",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Nano banana lite is the efficiency-focused model in the image generation family. Sub-2 second latency with cost-effective generation and editing, fast multi-turn local edits, and 14 supported aspect ratios.",
+        "description": "Nano banana lite is the efficiency-focused model in the image generation family. Sub-2 second latency with cost-effective generation and editing, fast multi-turn local edits, and 14 supported aspect ratios.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/google/nano-banana-lite/edit",
+        "name": "Nano Banana Lite Edit",
+        "provider": "Google",
+        "releasedAt": "2026-06-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Nano banana lite is the efficiency-focused model in the image generation family. Sub-2 second latency with cost-effective generation and editing, fast multi-turn local edits, and 14 supported aspect ratios.",
+        "description": "Nano banana lite is the efficiency-focused model in the image generation family. Sub-2 second latency with cost-effective generation and editing, fast multi-turn local edits, and 14 supported aspect ratios.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bria/extract-object",
+        "name": "Extract Object",
+        "provider": "Bria",
+        "releasedAt": "2026-06-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Bria Extract Object uses text prompts to isolate a selected object from an image and return it as an RGBA PNG with a transparent background. Ideal for product, ecommerce, advertising, and creative editing workflows. Bri…",
+        "description": "Bria Extract Object uses text prompts to isolate a selected object from an image and return it as an RGBA PNG with a transparent background. Ideal for product, ecommerce, advertising, and creative editing workflows. Bri…",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/render-to-real",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-26",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Transform your 3D video render into realistic using first frame with Ltx 2.3",
+        "description": "Transform your 3D video render into realistic using first frame with Ltx 2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/water-simulation",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Water Simulation transformation for high-quality video using LTX-2.3",
+        "description": "Water Simulation transformation for high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/decompression",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Decompression / Denoise high-quality video using LTX-2.3",
+        "description": "Decompression / Denoise high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/cross-eyed",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Cross-eyes for high-quality video using LTX-2.3",
+        "description": "Cross-eyes for high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/day-to-night",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Day to Night for high-quality video using LTX-2.3",
+        "description": "Day to Night for high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/instant-shave",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Instant shave high-quality video using LTX-2.3",
+        "description": "Instant shave high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bytedance/seed-audio-1.0",
+        "name": "Seed Audio 1.0",
+        "provider": "ByteDance",
+        "releasedAt": "2026-06-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Seed Audio 1.0 is a new audio model from Bytedance that can generate high-quality, natural sounding audio using text, reference audios or an image.",
+        "description": "Seed Audio 1.0 is a new audio model from Bytedance that can generate high-quality, natural sounding audio using text, reference audios or an image.",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "alibaba/happyhorse-1.0",
@@ -144,6 +3358,100 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "video"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/deblur",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-24",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Deblur high-quality video using LTX-2.3",
+        "description": "Deblur high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/colorization",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-24",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Colorize high-quality video using LTX-2.3",
+        "description": "Colorize high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "nex-agi/nex-n2-mini",
+        "name": "Nex AGI: Nex-N2-Mini",
+        "provider": "Nex Agi",
+        "releasedAt": "2026-06-24",
+        "contextLength": 262144,
+        "inputPer1M": 0.024999999999999998,
+        "outputPer1M": 0.09999999999999999,
+        "summary": "Nex-N2-Mini is an open-source agentic mixture-of-experts model from Nex AGI, the smaller sibling in the Nex-N2 series. It accepts text and image input and is built for coding, tool use,...",
+        "description": "Nex-N2-Mini is an open-source agentic mixture-of-experts model from Nex AGI, the smaller sibling in the Nex-N2 series. It accepts text and image input and is built for coding, tool use,...",
+        "bestFor": [
+            "Multimodal analysis",
+            "Agent workflows",
+            "Advanced reasoning"
+        ],
+        "modality": "text+image->text",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [
+            "include_reasoning",
+            "logprobs",
+            "max_tokens",
+            "reasoning",
+            "response_format",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_k",
+            "top_logprobs",
+            "top_p"
+        ],
+        "source": "llm_catalog",
+        "modelType": "language"
     },
     {
         "id": "openai/gpt-image-1",
@@ -285,6 +3593,7 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "reasoning",
+            "reasoning_effort",
             "structured_outputs",
             "tool_choice",
             "tools",
@@ -292,6 +3601,404 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/bytedance/seedance-2.0/mini/reference-to-video",
+        "name": "Seedance 2.0 Mini",
+        "provider": "ByteDance",
+        "releasedAt": "2026-06-23",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Seedance 2.0 Mini is a faster version of Seedance 2.0 that brings great performance and high generation speed at a lower cost.",
+        "description": "Seedance 2.0 Mini is a faster version of Seedance 2.0 that brings great performance and high generation speed at a lower cost.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bytedance/seedance-2.0/mini/image-to-video",
+        "name": "Seedance 2.0 Mini Image to Video",
+        "provider": "ByteDance",
+        "releasedAt": "2026-06-23",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Seedance 2.0 Mini is a faster version of Seedance 2.0 that brings great performance and high generation speed at a lower cost.",
+        "description": "Seedance 2.0 Mini is a faster version of Seedance 2.0 that brings great performance and high generation speed at a lower cost.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bytedance/seedance-2.0/mini/text-to-video",
+        "name": "Seedance 2.0 Mini Text to Video",
+        "provider": "ByteDance",
+        "releasedAt": "2026-06-23",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Seedance 2.0 Mini is a faster version of Seedance 2.0 that brings great performance and high generation speed at a lower cost.",
+        "description": "Seedance 2.0 Mini is a faster version of Seedance 2.0 that brings great performance and high generation speed at a lower cost.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/trellis-2-lora",
+        "name": "TRELLIS.2 LoRA Inference",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-23",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Run inference on LoRA adapters for TRELLIS.2 model",
+        "description": "Run inference on LoRA adapters for TRELLIS.2 model",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->3d",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "3d"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/trellis-2-lora-trainer",
+        "name": "TRELLIS.2 Trainer",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-23",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train LoRA adapters for TRELLIS.2 model",
+        "description": "Train LoRA adapters for TRELLIS.2 model",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/sync-lipsync/v3/image-to-video",
+        "name": "sync-3 Avatar Image to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "sync-3 image to video turns a single still into a talking character, and works with any illustration or animated frame paired with a voice track",
+        "description": "sync-3 image to video turns a single still into a talking character, and works with any illustration or animated frame paired with a voice track",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/telestyle-v2",
+        "name": "Telestyle V2 Style Transfer",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Restyle any image with TeleStyle v2 — provide an original image and a styling reference, and the model re-renders the original in the reference's visual style while preserving its content and composition.",
+        "description": "Restyle any image with TeleStyle v2 — provide an original image and a styling reference, and the model re-renders the original in the reference's visual style while preserving its content and composition.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/alibaba/happy-horse/v1.1/image-to-video",
+        "name": "Happy Horse 1.1 Image to Video",
+        "provider": "Alibaba",
+        "releasedAt": "2026-06-21",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Happy Horse 1.1 is Alibaba's #1-ranked video model. This image-to-video endpoint animates a still image into 1080p video with synchronized native audio and multilingual lip-sync",
+        "description": "Happy Horse 1.1 is Alibaba's #1-ranked video model. This image-to-video endpoint animates a still image into 1080p video with synchronized native audio and multilingual lip-sync",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video",
+            "Audio-aware video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/alibaba/happy-horse/v1.1/reference-to-video",
+        "name": "Happy Horse 1.1 Reference to Video",
+        "provider": "Alibaba",
+        "releasedAt": "2026-06-21",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Happy Horse 1.1 is Alibaba's #1-ranked video model. This reference-to-video endpoint turns up to 9 reference images into 1080p video with synchronized native audio and multilingual lip-sync for consistent characters.",
+        "description": "Happy Horse 1.1 is Alibaba's #1-ranked video model. This reference-to-video endpoint turns up to 9 reference images into 1080p video with synchronized native audio and multilingual lip-sync for consistent characters.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video",
+            "Audio-aware video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/alibaba/happy-horse/v1.1/text-to-video",
+        "name": "Happy Horse 1.1 Text to Video",
+        "provider": "Alibaba",
+        "releasedAt": "2026-06-21",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Happy Horse 1.1 is Alibaba's #1-ranked video model. This text-to-video endpoint generates 1080p video with synchronized native audio and multilingual lip-sync from a text prompt alone.",
+        "description": "Happy Horse 1.1 is Alibaba's #1-ranked video model. This text-to-video endpoint generates 1080p video with synchronized native audio and multilingual lip-sync from a text prompt alone.",
+        "bestFor": [
+            "Video generation",
+            "Audio-aware video"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/krea-2/turbo/lora",
+        "name": "Krea 2 Text to Image Turbo LoRA",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-19",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-fidelity images from text with Krea 2 using a custom-trained LoRA. Apply your LoRA weights to carry a learned subject, character, or style into new generations, with aspect ratio, creativity, and seed cont…",
+        "description": "Generate high-fidelity images from text with Krea 2 using a custom-trained LoRA. Apply your LoRA weights to carry a learned subject, character, or style into new generations, with aspect ratio, creativity, and seed cont…",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/krea-2-trainer",
+        "name": "Krea 2 Trainer",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-19",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a custom LoRA on your own images to teach Krea 2 a new subject, character, or style. Provide a set of training images (and an optional trigger word), and the trainer outputs LoRA weights you can use for inference…",
+        "description": "Train a custom LoRA on your own images to teach Krea 2 a new subject, character, or style. Provide a set of training images (and an optional trigger word), and the trainer outputs LoRA weights you can use for inference…",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/async/tts-pro/v1.0",
+        "name": "Async Text to Speech Pro V1.0",
+        "provider": "Async",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate professional-quality voiceovers in seconds with Async TTS Pro model text-based control over pauses, emphasis, and timing. Voice ids can be found at",
+        "description": "Generate professional-quality voiceovers in seconds with Async TTS Pro model text-based control over pauses, emphasis, and timing. Voice ids can be found at",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-speech",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/boogu-image",
+        "name": "Boogu Image",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Text To Image Model using Boogu-Image",
+        "description": "Text To Image Model using Boogu-Image",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/boogu-image/edit",
+        "name": "Boogu Image",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Image To Image Model using Boogu-Image",
+        "description": "Image To Image Model using Boogu-Image",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "google/gemini-3.1-flash-image",
@@ -320,6 +4027,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -334,7 +4042,7 @@ export const generatedModels = [
         "name": "Google: Nano Banana Pro (Gemini 3 Pro Image)",
         "provider": "Google",
         "releasedAt": "2026-06-18",
-        "contextLength": 65536,
+        "contextLength": 131072,
         "inputPer1M": 2,
         "outputPer1M": 12,
         "summary": "Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world grounding, and...",
@@ -368,6 +4076,139 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "image"
+    },
+    {
+        "id": "fal/fal-ai/krea-2/turbo",
+        "name": "Krea 2 Turbo",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-fidelity images from text in seconds with Krea 2 Turbo, the speed-optimized open-source version of Krea 2, preserving its aesthetic range for rapid ideation.",
+        "description": "Generate high-fidelity images from text in seconds with Krea 2 Turbo, the speed-optimized open-source version of Krea 2, preserving its aesthetic range for rapid ideation.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/ingredient",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from reference, character sheet, storyboard using LTX-2.3",
+        "description": "Generate high-quality video with audio from reference, character sheet, storyboard using LTX-2.3",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/inpaint",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Inpaint high-quality video using LTX-2.3",
+        "description": "Inpaint high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/inpaint/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Inpaint high-quality video using LTX-2.3 with lora",
+        "description": "Inpaint high-quality video using LTX-2.3 with lora",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/scail-2",
+        "name": "Scail 2",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-18",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "SCAIL-2 is an end-to-end character animation model that drives a reference character from a source video without relying on intermediate pose representations like skeleton maps.",
+        "description": "SCAIL-2 is an end-to-end character animation model that drives a reference character from a source video without relying on intermediate pose representations like skeleton maps.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "cohere/north-mini-code:free",
@@ -409,13 +4250,869 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "fal/fal-ai/ltx-2.3-quality/outpaint",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Outpaint high-quality video using LTX-2.3",
+        "description": "Outpaint high-quality video using LTX-2.3",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/text-to-audio",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Text to Audio high-quality using LTX-2.3",
+        "description": "Text to Audio high-quality using LTX-2.3",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/text-to-audio/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Text to Audio high-quality using LTX-2.3 with Lora",
+        "description": "Text to Audio high-quality using LTX-2.3 with Lora",
+        "bestFor": [
+            "Audio workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/outpaint/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Outpaint high-quality video using LTX-2.3 with Lora",
+        "description": "Outpaint high-quality video using LTX-2.3 with Lora",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/audio-inpaint",
+        "name": "LTX 2.3 Trainer (V2) - Audio Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that regenerates masked time spans of an audio clip while keeping the rest unchanged.",
+        "description": "Train a LoRA that regenerates masked time spans of an audio clip while keeping the rest unchanged.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/a2a",
+        "name": "LTX 2.3 Trainer (V2) - Audio-to-Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that transforms one audio clip into another, learning a reference→target mapping from paired audio examples.",
+        "description": "Train a LoRA that transforms one audio clip into another, learning a reference→target mapping from paired audio examples.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/ic-lora/a2a",
+        "name": "LTX 2.3 Trainer (V2) - Audio-to-Audio IC-LoRA",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train an IC-LoRA that transforms one audio clip into another, conditioned at inference on a reference audio clip.",
+        "description": "Train an IC-LoRA that transforms one audio clip into another, conditioned at inference on a reference audio clip.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/a2v",
+        "name": "LTX 2.3 Trainer (V2) - Audio-to-Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that generates video from a start image plus a conditioning audio track, producing motion that matches the sound.",
+        "description": "Train a LoRA that generates video from a start image plus a conditioning audio track, producing motion that matches the sound.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/ic-lora/av2av",
+        "name": "LTX 2.3 Trainer (V2) - Audio+Video Reference IC-LoRA",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train an IC-LoRA for a joint audio+video transformation, conditioned on a reference clip's video and audio to produce a matching target.",
+        "description": "Train an IC-LoRA for a joint audio+video transformation, conditioned on a reference clip's video and audio to produce a matching target.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/av2av",
+        "name": "LTX 2.3 Trainer (V2) - Audio+Video Reference Transformation",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA for a joint audio+video transformation, conditioned on a reference clip (its video and audio) to produce a matching target clip.",
+        "description": "Train a LoRA for a joint audio+video transformation, conditioned on a reference clip (its video and audio) to produce a matching target clip.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/audio-extend-suffix",
+        "name": "LTX 2.3 Trainer (V2) - Backward Audio Extension",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that generates the lead-in to an audio clip, extending audio backward in time from its ending.",
+        "description": "Train a LoRA that generates the lead-in to an audio clip, extending audio backward in time from its ending.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/extend-suffix",
+        "name": "LTX 2.3 Trainer (V2) - Backward Video Extension",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that generates the lead-in to a video, extending a clip backward in time from its ending.",
+        "description": "Train a LoRA that generates the lead-in to a video, extending a clip backward in time from its ending.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/audio-extend-prefix",
+        "name": "LTX 2.3 Trainer (V2) - Forward Audio Extension",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that continues an audio clip forward in time, generating the audio that follows a short clean prefix.",
+        "description": "Train a LoRA that continues an audio clip forward in time, generating the audio that follows a short clean prefix.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/extend-prefix",
+        "name": "LTX 2.3 Trainer (V2) - Forward Video Extension",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that continues a video forward in time — supply an opening clip at inference and the model generates what comes next.",
+        "description": "Train a LoRA that continues a video forward in time — supply an opening clip at inference and the model generates what comes next.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/i2v",
+        "name": "LTX 2.3 Trainer (V2) - Image-to-Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Fine-tune LTX 2.3 to animate a starting image — supply a still plus a prompt at inference and the model generates a video that begins from that frame.",
+        "description": "Fine-tune LTX 2.3 to animate a starting image — supply a still plus a prompt at inference and the model generates a video that begins from that frame.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/interpolate",
+        "name": "LTX 2.3 Trainer (V2) - Keyframe Interpolation",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that generates the video between keyframes — supply first/last (and optional middle) frames at inference and the model fills the in-between motion.",
+        "description": "Train a LoRA that generates the video between keyframes — supply first/last (and optional middle) frames at inference and the model fills the in-between motion.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/ic-lora/av2av-masked",
+        "name": "LTX 2.3 Trainer (V2) - Masked Audio+Video IC-LoRA",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train an IC-LoRA that regenerates a masked video region (guided by kept pixels and a video reference) while jointly generating audio from an audio reference.",
+        "description": "Train an IC-LoRA that regenerates a masked video region (guided by kept pixels and a video reference) while jointly generating audio from an audio reference.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/av2av-masked",
+        "name": "LTX 2.3 Trainer (V2) - Masked Audio+Video Transformation",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that regenerates a masked video region (guided by kept pixels and a video reference) while jointly generating audio from an audio reference.",
+        "description": "Train a LoRA that regenerates a masked video region (guided by kept pixels and a video reference) while jointly generating audio from an audio reference.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/v2v-masked",
+        "name": "LTX 2.3 Trainer (V2) - Masked Video-to-Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that regenerates only the masked region of a video, guided by both the kept pixels and a separate reference/control video.",
+        "description": "Train a LoRA that regenerates only the masked region of a video, guided by both the kept pixels and a separate reference/control video.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/ic-lora/v2v-masked",
+        "name": "LTX 2.3 Trainer (V2) - Masked Video-to-Video IC-LoRA",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train an IC-LoRA that regenerates only the masked region of a video, guided by the kept pixels and a separate reference/control video.",
+        "description": "Train an IC-LoRA that regenerates only the masked region of a video, guided by the kept pixels and a separate reference/control video.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/outpaint",
+        "name": "LTX 2.3 Trainer (V2) - Spatial Outpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that expands the video frame outward, keeping an inner rectangle fixed and generating the surrounding region.",
+        "description": "Train a LoRA that expands the video frame outward, keeping an inner rectangle fixed and generating the surrounding region.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/t2a",
+        "name": "LTX 2.3 Trainer (V2) - Text-to-Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that generates audio from a text prompt — the audio counterpart of text-to-video — learning a sound or style from your clips.",
+        "description": "Train a LoRA that generates audio from a text prompt — the audio counterpart of text-to-video — learning a sound or style from your clips.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/t2v",
+        "name": "LTX 2.3 Trainer (V2) - Text-to-Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Fine-tune LTX 2.3 on your own clips to teach it a new subject, character, object, or visual style, then generate full videos from a text prompt.",
+        "description": "Fine-tune LTX 2.3 on your own clips to teach it a new subject, character, object, or visual style, then generate full videos from a text prompt.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/inpaint",
+        "name": "LTX 2.3 Trainer (V2) - Video Inpainting",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that regenerates a masked region of a video while keeping the rest unchanged, blending the new content with its surroundings.",
+        "description": "Train a LoRA that regenerates a masked region of a video while keeping the rest unchanged, blending the new content with its surroundings.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/v2a",
+        "name": "LTX 2.3 Trainer (V2) - Video-to-Audio",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that generates audio (foley / sound design) for a silent video, learning a soundtrack that matches the on-screen action.",
+        "description": "Train a LoRA that generates audio (foley / sound design) for a silent video, learning a soundtrack that matches the on-screen action.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/v2v",
+        "name": "LTX 2.3 Trainer (V2) - Video-to-Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train a LoRA that learns a video-to-video transformation from paired before/after clips, steered at inference by a reference (control) video.",
+        "description": "Train a LoRA that learns a video-to-video transformation from paired before/after clips, steered at inference by a reference (control) video.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx23-trainer-v2/ic-lora/v2v",
+        "name": "LTX 2.3 Trainer (V2) - Video-to-Video IC-LoRA",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train an IC-LoRA that learns a video-to-video transformation from paired before/after clips, conditioned at inference on a reference (control) video.",
+        "description": "Train an IC-LoRA that learns a video-to-video transformation from paired before/after clips, conditioned at inference on a reference (control) video.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/sensenova-u1-infographic",
+        "name": "Sensenova U1 Infographic",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate Infographic Image with Sensenova U1",
+        "description": "Generate Infographic Image with Sensenova U1",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/kling-video/v3/turbo/standard/image-to-video",
+        "name": "Kling Video V3 Standard Turbo Image to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Kling 3.0 Turbo Standard animates a first and last frame reference image into 720P video with native audio, delivering quick, affordable image-driven motion for fast turnaround",
+        "description": "Kling 3.0 Turbo Standard animates a first and last frame reference image into 720P video with native audio, delivering quick, affordable image-driven motion for fast turnaround",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video",
+            "Audio-aware video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/kling-video/v3/turbo/standard/text-to-video",
+        "name": "Kling Video V3 Standard Turbo Text to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Kling 3.0 Turbo Standard is a fast, cost-efficient video generation model that turns text prompts directly into 720P video with native audio, optimized for rapid iteration and high-volume production",
+        "description": "Kling 3.0 Turbo Standard is a fast, cost-efficient video generation model that turns text prompts directly into 720P video with native audio, optimized for rapid iteration and high-volume production",
+        "bestFor": [
+            "Video generation",
+            "Audio-aware video"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/kling-video/v3/turbo/pro/image-to-video",
+        "name": "Kling Video V3 Turbo Pro Image to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high quality 1080p videos from images using Kling's Turbo 3.0 model, with improved lipsync and multishot generation capabilities.",
+        "description": "Generate high quality 1080p videos from images using Kling's Turbo 3.0 model, with improved lipsync and multishot generation capabilities.",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/kling-video/v3/turbo/pro/text-to-video",
+        "name": "Kling Video V3 Turbo Pro Text to Video",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high quality 1080p videos using Kling's Turbo 3.0 model, with improved lipsync and multishot generation capabilities.",
+        "description": "Generate high quality 1080p videos using Kling's Turbo 3.0 model, with improved lipsync and multishot generation capabilities.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "z-ai/glm-5.2",
         "name": "Z.ai: GLM 5.2",
         "provider": "Z.ai",
         "releasedAt": "2026-06-16",
         "contextLength": 1048576,
-        "inputPer1M": 0.9299999999999999,
-        "outputPer1M": 3,
+        "inputPer1M": 0.76006,
+        "outputPer1M": 2.38876,
         "summary": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
         "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
         "bestFor": [
@@ -457,12 +5154,66 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "fal/fal-ai/zonos2",
+        "name": "Zonos2 Text to Speech",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Zonos2 is a text-to-speech model that clones a voice from a short sample and speaks naturally across many languages.",
+        "description": "Zonos2 is a text-to-speech model that clones a voice from a short sample and speaks naturally across many languages.",
+        "bestFor": [
+            "Speech generation",
+            "Voiceover production",
+            "Narration workflows"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-speech",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/meshy/rigging/multi-animation",
+        "name": "Meshy Rigging Multi Animation",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-12",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Meshy auto-rigs a humanoid 3D model fitting a skeleton and binding the mesh, then applies several motion presets from its animation library",
+        "description": "Meshy auto-rigs a humanoid 3D model fitting a skeleton and binding the mesh, then applies several motion presets from its animation library",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->3d",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "3d"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "3d-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "moonshotai/kimi-k2.7-code",
         "name": "MoonshotAI: Kimi K2.7 Code",
         "provider": "Moonshotai",
         "releasedAt": "2026-06-12",
         "contextLength": 262144,
-        "inputPer1M": 0.74,
+        "inputPer1M": 0.73,
         "outputPer1M": 3.5,
         "summary": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
         "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
@@ -489,7 +5240,6 @@ export const generatedModels = [
             "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
-            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -504,6 +5254,218 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/luma/agent/ray/v3.2/reframe",
+        "name": "Luma Ray 3.2 Reframe",
+        "provider": "Luma",
+        "releasedAt": "2026-06-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Ray 3.2 reframes an existing video into a new aspect ratio guided by a text prompt, preserving the original footage frame-for-frame while controlling resolution and outpainting the surrounding canvas.",
+        "description": "Luma Ray 3.2 reframes an existing video into a new aspect ratio guided by a text prompt, preserving the original footage frame-for-frame while controlling resolution and outpainting the surrounding canvas.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/luma/agent/ray/v3.2/video-to-video",
+        "name": "Luma Ray 3.2 Video to Video",
+        "provider": "Luma",
+        "releasedAt": "2026-06-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Luma Ray 3.2 re-renders an existing video into new cinematic motion guided by a text prompt, preserving the source's look and movement while controlling resolution, duration, and HDR.",
+        "description": "Luma Ray 3.2 re-renders an existing video into new cinematic motion guided by a text prompt, preserving the source's look and movement while controlling resolution, duration, and HDR.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/pixelcut/video-background-removal",
+        "name": "Pixelcut Video Background Removal",
+        "provider": "Pixelcut",
+        "releasedAt": "2026-06-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Pixelcut's Video Background Remover is an AI segmentation model that erases backgrounds frame by frame, with seamless temporal consistency.",
+        "description": "Pixelcut's Video Background Remover is an AI segmentation model that erases backgrounds frame by frame, with seamless temporal consistency.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3-trainer",
+        "name": "Stable Audio 3 Trainer",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 LoRA Trainer fine-tunes Stable Audio 3 base models on paired audio-caption datasets, producing compact LoRA weights that adapt generation toward a custom music style, sound palette, or domain.",
+        "description": "Stable Audio 3 LoRA Trainer fine-tunes Stable Audio 3 base models on paired audio-caption datasets, producing compact LoRA weights that adapt generation toward a custom music style, sound palette, or domain.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/image-to-image",
+        "name": "Ideogram V4.0q Image to Image",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-10",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Ideogram V4.0q Image-to-Image transforms an input image with a text prompt, restyling and reworking the composition while preserving its core structure for prompt-faithful, high-fidelity edits.",
+        "description": "Ideogram V4.0q Image-to-Image transforms an input image with a text prompt, restyling and reworking the composition while preserving its core structure for prompt-faithful, high-fidelity edits.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/image-to-image/lora",
+        "name": "Ideogram V4.0q Image to Image LoRA",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-10",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Ideogram V4.0q Image-to-Image LoRA applies a custom-trained LoRA on top of an input image, steering edits toward a specific style, subject, or brand identity while keeping the source composition intact.",
+        "description": "Ideogram V4.0q Image-to-Image LoRA applies a custom-trained LoRA on top of an input image, steering edits toward a specific style, subject, or brand identity while keeping the source composition intact.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/tiling",
+        "name": "Ideogram V4.0q Tiling",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-10",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Ideogram V4.0q Tiling generates seamless, edge-matching textures and patterns that repeat infinitely in any direction, ideal for backgrounds, surfaces, and wallpapers.",
+        "description": "Ideogram V4.0q Tiling generates seamless, edge-matching textures and patterns that repeat infinitely in any direction, ideal for backgrounds, surfaces, and wallpapers.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/tiling/lora",
+        "name": "Ideogram V4.0q Tiling LoRA",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-10",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Ideogram V4.0q Tiling LoRA produces seamless repeatable patterns guided by a custom-trained LoRA, locking a specific aesthetic or motif into tileable textures for cohesive, large-scale surface design.",
+        "description": "Ideogram V4.0q Tiling LoRA produces seamless repeatable patterns guided by a custom-trained LoRA, locking a specific aesthetic or motif into tileable textures for cohesive, large-scale surface design.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "anthropic/claude-fable-5",
@@ -534,6 +5496,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -573,6 +5536,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -582,6 +5546,60 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/bria/video/background-removal/realtime",
+        "name": "Bria's VRMBG 3.0 Realtime",
+        "provider": "Bria",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Remove video backgrounds in real time with Bria’s VRMBG 3.0 model. Built for live streaming, real-time video apps, content creation, and low-latency workflows that need fast, accurate background removal.",
+        "description": "Remove video backgrounds in real time with Bria’s VRMBG 3.0 model. Built for live streaming, real-time video apps, content creation, and low-latency workflows that need fast, accurate background removal.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/ideogram/v4/trainer",
+        "name": "Ideogram V4.0q LoRA Trainer",
+        "provider": "Ideogram",
+        "releasedAt": "2026-06-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Train custom LoRAs for personalization, styles or other use cases on top of Ideogram V4.",
+        "description": "Train custom LoRAs for personalization, styles or other use cases on top of Ideogram V4.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "dataset->model",
+        "inputModalities": [
+            "dataset"
+        ],
+        "outputModalities": [
+            "model"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "training",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/luma/agent/ray/v3.2/image-to-video",
@@ -901,6 +5919,59 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/bria/video/background-removal/v3",
+        "name": "Bria's VRMBG 3.0",
+        "provider": "Bria",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Remove backgrounds from any video with Bria's VRMBG 3.0. Fast, accurate background removal across talking heads, podcasts, product videos, commercials, and cinematic footage.",
+        "description": "Remove backgrounds from any video with Bria's VRMBG 3.0. Fast, accurate background removal across talking heads, podcasts, product videos, commercials, and cinematic footage.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/bria/genfill/v2",
+        "name": "Genfill",
+        "provider": "Bria",
+        "releasedAt": "2026-06-08",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "The GenFill Route enables the generation of objects by prompt in a specific region of an image. You can define the area for object generation by using a mask that outlines the region where the object will be created. Ou…",
+        "description": "The GenFill Route enables the generation of objects by prompt in a specific region of an image. You can define the area for object generation by using a mask that outlines the region where the object will be created. Ou…",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/ideogram/v4/lora",
         "name": "Ideogram V4.0q Text to Image (LoRA)",
         "provider": "Ideogram",
@@ -937,6 +6008,7 @@ export const generatedModels = [
         "description": "Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...",
         "bestFor": [
             "Multimodal analysis",
+            "Agent workflows",
             "Advanced reasoning"
         ],
         "modality": "text+image->text",
@@ -954,6 +6026,8 @@ export const generatedModels = [
             "max_tokens",
             "reasoning",
             "temperature",
+            "tool_choice",
+            "tools",
             "top_k",
             "top_logprobs",
             "top_p"
@@ -989,11 +6063,65 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/hyper3d/rodin/v2.5/fast",
+        "name": "Hyper3D - Rodin V2.5 - Image to 3D - Fast",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Rodin V2.5 by Hyper3D generates realistic and production ready 3D models from text or images. Do fast prototyping using the fast model.",
+        "description": "Rodin V2.5 by Hyper3D generates realistic and production ready 3D models from text or images. Do fast prototyping using the fast model.",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->3d",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "3d"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/hyper3d/rodin/v2.5/text-to-3d/fast",
+        "name": "Hyper3D - Rodin V2.5 - Text to 3D - Fast",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Rodin V2.5 by Hyper3D generates realistic and production ready 3D models from text or images. Do fast prototyping using the fast model.",
+        "description": "Rodin V2.5 by Hyper3D generates realistic and production ready 3D models from text or images. Do fast prototyping using the fast model.",
+        "bestFor": [
+            "General chat",
+            "Enterprise assistants"
+        ],
+        "modality": "text+image->3d",
+        "inputModalities": [
+            "text",
+            "image"
+        ],
+        "outputModalities": [
+            "3d"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-3d",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "nvidia/nemotron-3-ultra-550b-a55b",
         "name": "NVIDIA: Nemotron 3 Ultra",
         "provider": "Nvidia",
         "releasedAt": "2026-06-04",
-        "contextLength": 1000000,
+        "contextLength": 512288,
         "inputPer1M": 0.5,
         "outputPer1M": 2.2,
         "summary": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
@@ -1017,6 +6145,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -1056,6 +6185,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "seed",
             "temperature",
             "tool_choice",
@@ -1122,7 +6252,8 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
-            "reasoning"
+            "reasoning",
+            "reasoning_effort"
         ],
         "source": "llm_catalog",
         "modelType": "image"
@@ -1151,7 +6282,8 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
-            "reasoning"
+            "reasoning",
+            "reasoning_effort"
         ],
         "source": "llm_catalog",
         "modelType": "image"
@@ -1231,6 +6363,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -1238,10 +6371,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -1283,8 +6418,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generates production-ready music from a single text prompt, with full control over style, mood, instrumentation, and exact duration.",
-        "description": "Generates production-ready music from a single text prompt, with full control over style, mood, instrumentation, and exact duration.",
+        "summary": "Generates licensed, commercial-use-safe music from a single text prompt, with full control over style, mood, instrumentation, and exact duration.",
+        "description": "Generates licensed, commercial-use-safe music from a single text prompt, with full control over style, mood, instrumentation, and exact duration.",
         "bestFor": [
             "Music generation",
             "Audio production",
@@ -1337,8 +6472,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Analyzes your video's pacing, mood, and timing to generate a frame-synced, commercial-ready soundtrack in seconds",
-        "description": "Analyzes your video's pacing, mood, and timing to generate a frame-synced, commercial-ready soundtrack in seconds",
+        "summary": "Analyzes your video’s pacing, mood, and timing to generate a frame-synced, licensed, commercial-use-safe soundtrack in seconds.",
+        "description": "Analyzes your video’s pacing, mood, and timing to generate a frame-synced, licensed, commercial-use-safe soundtrack in seconds.",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -1358,7 +6493,7 @@ export const generatedModels = [
     },
     {
         "id": "fal/ideogram/v4",
-        "name": "Ideogram V4.0q Text to Image",
+        "name": "Ideogram V4.0 Text to Image",
         "provider": "Ideogram",
         "releasedAt": "2026-06-02",
         "contextLength": 0,
@@ -1443,8 +6578,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 360000,
         "outputPer1M": 0,
-        "summary": "MAI-Transcribe 1.5 is Microsoft's fast transcription model powered by Azure AI Speech. It supports 100+ BCP-47 locales with automatic language detection, automatic punctuation, and duration-based per-second billing. Use…",
-        "description": "MAI-Transcribe 1.5 is Microsoft's fast transcription model powered by Azure AI Speech. It supports 100+ BCP-47 locales with automatic language detection, automatic punctuation, and duration-based per-second billing. Use…",
+        "summary": "MAI-Transcribe 1.5 is a multilingual speech-to-text model from Microsoft AI. It is suited for captions, call transcription, subtitling, accessibility, and other voice-enabled applications, with reliable transcription ac…",
+        "description": "MAI-Transcribe 1.5 is a multilingual speech-to-text model from Microsoft AI. It is suited for captions, call transcription, subtitling, accessibility, and other voice-enabled applications, with reliable transcription ac…",
         "bestFor": [
             "General chat",
             "Enterprise assistants"
@@ -1473,8 +6608,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 22,
         "outputPer1M": 0,
-        "summary": "MAI-Voice-2 is a high-fidelity, expressive text-to-speech model from Microsoft, powered by Azure AI Speech. It synthesizes natural-sounding speech across 10+ languages with support for expressive SSML styles (cheerful,…",
-        "description": "MAI-Voice-2 is a high-fidelity, expressive text-to-speech model from Microsoft, powered by Azure AI Speech. It synthesizes natural-sounding speech across 10+ languages with support for expressive SSML styles (cheerful,…",
+        "summary": "MAI-Voice-2 is an expressive text-to-speech model from Microsoft. It is suited for conversational assistants, media narration, accessibility, education, and other long-form voice applications. It supports 15 languages a…",
+        "description": "MAI-Voice-2 is an expressive text-to-speech model from Microsoft. It is suited for conversational assistants, media narration, accessibility, education, and other long-form voice applications. It supports 15 languages a…",
         "bestFor": [
             "Speech generation",
             "Voiceover production",
@@ -1583,8 +6718,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate high-quality video with audio from audio, text and images using LTX-2",
-        "description": "Generate high-quality video with audio from audio, text and images using LTX-2",
+        "summary": "Generate high-quality video with audio from audio, text and images using LTX-2.3",
+        "description": "Generate high-quality video with audio from audio, text and images using LTX-2.3",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -1600,33 +6735,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "audio-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2.3-quality/image-to-video/lora",
-        "name": "Ltx 2.3 Quality",
-        "provider": "Remova Media",
-        "releasedAt": "2026-06-01",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate high-quality video with audio from images using LTX-2.3 and custom LoRA",
-        "description": "Generate high-quality video with audio from images using LTX-2.3 and custom LoRA",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -1682,33 +6790,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-quality/audio-to-video/lora",
-        "name": "Ltx 2.3 Quality",
-        "provider": "Remova Media",
-        "releasedAt": "2026-06-01",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate high-quality video with audio from audio, text and images using LTX-2.3 and custom LoRA",
-        "description": "Generate high-quality video with audio from audio, text and images using LTX-2.3 and custom LoRA",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "audio-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2.3-quality/hdr",
         "name": "Ltx 2.3 Quality",
         "provider": "Remova Media",
@@ -1736,15 +6817,42 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-quality/hdr/lora",
+        "id": "fal/fal-ai/ltx-2.3-quality/image-to-video/lora",
         "name": "Ltx 2.3 Quality",
         "provider": "Remova Media",
         "releasedAt": "2026-06-01",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate HDR from reference video using LTX-2.3 with lora",
-        "description": "Generate HDR from reference video using LTX-2.3 with lora",
+        "summary": "Generate high-quality video with audio from images using LTX-2.3 and custom LoRA",
+        "description": "Generate high-quality video with audio from images using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/audio-to-video/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate high-quality video with audio from audio, text and images using LTX-2.3 and custom LoRA",
+        "description": "Generate high-quality video with audio from audio, text and images using LTX-2.3 and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -1759,7 +6867,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "video-to-video",
+        "modelType": "audio-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -1812,6 +6920,58 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-quality/hdr/lora",
+        "name": "Ltx 2.3 Quality",
+        "provider": "Remova Media",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate HDR from reference video using LTX-2.3 with lora",
+        "description": "Generate HDR from reference video using LTX-2.3 with lora",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/nvidia/nemotron-asr-multilingual/asr",
+        "name": "Nemotron Asr Multilingual",
+        "provider": "Nvidia",
+        "releasedAt": "2026-06-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Nemotron-ASR-Streaming is a multi lingual, streaming Automatic Speech Recognition (ASR) engineered to deliver high-quality multi lingual transcription across both low-latency streaming and high-throughput batch workload…",
+        "description": "Nemotron-ASR-Streaming is a multi lingual, streaming Automatic Speech Recognition (ASR) engineered to deliver high-quality multi lingual transcription across both low-latency streaming and high-throughput batch workload…",
+        "bestFor": [
+            "Multimodal analysis"
+        ],
+        "modality": "audio->text",
+        "inputModalities": [
+            "audio"
+        ],
+        "outputModalities": [
+            "text"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "speech-to-text",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -1948,7 +7108,7 @@ export const generatedModels = [
         "name": "StepFun: Step 3.7 Flash",
         "provider": "Stepfun",
         "releasedAt": "2026-05-28",
-        "contextLength": 256000,
+        "contextLength": 262144,
         "inputPer1M": 0.19999999999999998,
         "outputPer1M": 1.15,
         "summary": "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B…",
@@ -1976,6 +7136,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -2017,11 +7178,14 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
+            "temperature",
             "tool_choice",
             "tools",
             "verbosity"
@@ -2057,6 +7221,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -2584,33 +7749,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/stable-audio-3/small/music/base/text-to-audio",
-        "name": "Stable Audio 3",
-        "provider": "Remova Media",
-        "releasedAt": "2026-05-22",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Stable Audio 3 Small Music Base is the foundational 459 million parameter checkpoint generating full music compositions up to 2 minutes from text prompts, intended as the unmodified base for fine-tuning.",
-        "description": "Stable Audio 3 Small Music Base is the foundational 459 million parameter checkpoint generating full music compositions up to 2 minutes from text prompts, intended as the unmodified base for fine-tuning.",
-        "bestFor": [
-            "Model training",
-            "Dataset workflows",
-            "Style adaptation"
-        ],
-        "modality": "text->audio",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "audio"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-audio",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/stable-audio-3/small/music/audio-to-audio",
         "name": "Stable Audio 3",
         "provider": "Remova Media",
@@ -2635,6 +7773,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/stable-audio-3/small/music/base/text-to-audio",
+        "name": "Stable Audio 3",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-22",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Stable Audio 3 Small Music Base is the foundational 459 million parameter checkpoint generating full music compositions up to 2 minutes from text prompts, intended as the unmodified base for fine-tuning.",
+        "description": "Stable Audio 3 Small Music Base is the foundational 459 million parameter checkpoint generating full music compositions up to 2 minutes from text prompts, intended as the unmodified base for fine-tuning.",
+        "bestFor": [
+            "Model training",
+            "Dataset workflows",
+            "Style adaptation"
+        ],
+        "modality": "text->audio",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "audio"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-audio",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -2861,8 +8026,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Latest object erasing model from Black forest labs. Remove undesired objects, texts from images.",
-        "description": "Latest object erasing model from Black forest labs. Remove undesired objects, texts from images.",
+        "summary": "Latest object erasing model from Black Forest Labs. Remove undesired objects, texts from images.",
+        "description": "Latest object erasing model from Black Forest Labs. Remove undesired objects, texts from images.",
         "bestFor": [
             "Image workflows"
         ],
@@ -2966,8 +8131,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-05-21",
         "contextLength": 1000000,
-        "inputPer1M": 1.25,
-        "outputPer1M": 3.75,
+        "inputPer1M": 1.475,
+        "outputPer1M": 4.425,
         "summary": "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivity tasks,...",
         "description": "Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivity tasks,...",
         "bestFor": [
@@ -2983,6 +8148,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -2990,10 +8156,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -3076,10 +8244,11 @@ export const generatedModels = [
             "Agent workflows",
             "Advanced reasoning"
         ],
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "file"
         ],
         "outputModalities": [
             "text"
@@ -3134,6 +8303,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -3940,6 +9110,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -4066,31 +9237,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/hidream-o1-image/dev",
-        "name": "Hidream O1 Image",
-        "provider": "Remova Media",
-        "releasedAt": "2026-05-09",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Unified image generation with HiDream-O1-Image. Create, edit, and personalize high-resolution images up to 2K—single native model handles text-to-image, editing, and custom subjects without external components.",
-        "description": "Unified image generation with HiDream-O1-Image. Create, edit, and personalize high-resolution images up to 2K—single native model handles text-to-image, editing, and custom subjects without external components.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/hidream-o1-image/dev/edit",
         "name": "Hidream O1 Image",
         "provider": "Remova Media",
@@ -4114,6 +9260,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/hidream-o1-image/dev",
+        "name": "Hidream O1 Image",
+        "provider": "Remova Media",
+        "releasedAt": "2026-05-09",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Unified image generation with HiDream-O1-Image. Create, edit, and personalize high-resolution images up to 2K—single native model handles text-to-image, editing, and custom subjects without external components.",
+        "description": "Unified image generation with HiDream-O1-Image. Create, edit, and personalize high-resolution images up to 2K—single native model handles text-to-image, editing, and custom subjects without external components.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -4144,6 +9315,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -4187,6 +9359,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -4409,18 +9582,12 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "logprobs",
             "max_tokens",
-            "presence_penalty",
             "response_format",
             "seed",
-            "stop",
             "structured_outputs",
             "tool_choice",
-            "tools",
-            "top_logprobs"
+            "tools"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -4603,6 +9770,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -4646,6 +9814,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -4812,138 +9981,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "poolside/laguna-m.1",
-        "name": "Poolside: Laguna M.1",
-        "provider": "Poolside",
-        "releasedAt": "2026-04-28",
-        "contextLength": 262144,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.39999999999999997,
-        "summary": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
-        "description": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "poolside/laguna-m.1:free",
-        "name": "Poolside: Laguna M.1 (free)",
-        "provider": "Poolside",
-        "releasedAt": "2026-04-28",
-        "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
-        "description": "Laguna M.1 is the flagship coding agent model from Poolside, optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "poolside/laguna-xs.2",
-        "name": "Poolside: Laguna XS.2",
-        "provider": "Poolside",
-        "releasedAt": "2026-04-28",
-        "contextLength": 262144,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.19999999999999998,
-        "summary": "Laguna XS.2 is the second-generation model in the XS size class from Poolside, their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
-        "description": "Laguna XS.2 is the second-generation model in the XS size class from Poolside, their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "poolside/laguna-xs.2:free",
-        "name": "Poolside: Laguna XS.2 (free)",
-        "provider": "Poolside",
-        "releasedAt": "2026-04-28",
-        "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Laguna XS.2 is the second-generation model in the XS size class from Poolside, their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
-        "description": "Laguna XS.2 is the second-generation model in the XS size class from Poolside, their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/smart-resize",
         "name": "Smart Resize",
         "provider": "Remova Media",
@@ -4995,6 +10032,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
             "response_format",
@@ -5038,6 +10076,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -5055,7 +10094,7 @@ export const generatedModels = [
         "releasedAt": "2026-04-27",
         "contextLength": 1048576,
         "inputPer1M": 1.5,
-        "outputPer1M": 9,
+        "outputPer1M": 7.5,
         "summary": "This model always redirects to the latest model in the Google Gemini Flash family.",
         "description": "This model always redirects to the latest model in the Google Gemini Flash family.",
         "bestFor": [
@@ -5078,6 +10117,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -5120,6 +10160,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -5192,9 +10233,9 @@ export const generatedModels = [
         "name": "MoonshotAI Kimi Latest",
         "provider": "~moonshotai",
         "releasedAt": "2026-04-27",
-        "contextLength": 262144,
-        "inputPer1M": 0.66,
-        "outputPer1M": 3.41,
+        "contextLength": 1048576,
+        "inputPer1M": 2.9000000000000004,
+        "outputPer1M": 14,
         "summary": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "description": "This model always redirects to the latest model in the MoonshotAI Kimi family.",
         "bestFor": [
@@ -5217,9 +10258,9 @@ export const generatedModels = [
             "logprobs",
             "max_tokens",
             "min_p",
-            "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -5371,6 +10412,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -5409,6 +10451,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -5519,6 +10562,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -5526,10 +10570,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -5542,8 +10588,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 0.28500000000000003,
-        "outputPer1M": 2.4,
+        "inputPer1M": 0.3,
+        "outputPer1M": 2,
         "summary": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "description": "Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...",
         "bestFor": [
@@ -5657,6 +10703,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -5664,10 +10711,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -5680,8 +10729,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-04-27",
         "contextLength": 262144,
-        "inputPer1M": 1.04,
-        "outputPer1M": 6.24,
+        "inputPer1M": 1.0270000000000001,
+        "outputPer1M": 6.162,
         "summary": "Qwen3.6-Max-Preview is a proprietary frontier model from Alibaba Cloud built on a sparse mixture-of-experts architecture with approximately 1 trillion total parameters. It is optimized for agentic coding, tool use, and.…",
         "description": "Qwen3.6-Max-Preview is a proprietary frontier model from Alibaba Cloud built on a sparse mixture-of-experts architecture with approximately 1 trillion total parameters. It is optimized for agentic coding, tool use, and.…",
         "bestFor": [
@@ -5697,6 +10746,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -5704,10 +10754,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -5720,8 +10772,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2026-04-24",
         "contextLength": 1048576,
-        "inputPer1M": 0.08900000000000001,
-        "outputPer1M": 0.18,
+        "inputPer1M": 0.14,
+        "outputPer1M": 0.28,
         "summary": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
         "description": "DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...",
         "bestFor": [
@@ -5744,6 +10796,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -5752,6 +10805,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_a",
             "top_k",
             "top_logprobs",
             "top_p"
@@ -5790,6 +10844,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -5810,7 +10865,7 @@ export const generatedModels = [
         "name": "Google: Gemini 3.1 Flash TTS Preview",
         "provider": "Google",
         "releasedAt": "2026-04-24",
-        "contextLength": 8192,
+        "contextLength": 32768,
         "inputPer1M": 1,
         "outputPer1M": 20,
         "summary": "Gemini 3.1 Flash TTS Preview is a text-to-speech model from Google, and a substantial generational step up from Gemini 2.5 Flash TTS. It takes text input and produces audio output...",
@@ -5952,6 +11007,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -5989,6 +11045,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -6022,6 +11079,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -6092,6 +11150,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -6394,7 +11453,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-video/o3/4k/reference-to-video",
+        "id": "fal/fal-ai/kling-video/o3/4k/image-to-video",
         "name": "Kling Video",
         "provider": "Remova Media",
         "releasedAt": "2026-04-22",
@@ -6421,7 +11480,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-video/o3/4k/image-to-video",
+        "id": "fal/fal-ai/kling-video/o3/4k/reference-to-video",
         "name": "Kling Video",
         "provider": "Remova Media",
         "releasedAt": "2026-04-22",
@@ -6519,17 +11578,14 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
-            "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "seed",
-            "stop",
             "temperature",
             "tool_choice",
             "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -6540,8 +11596,8 @@ export const generatedModels = [
         "name": "Xiaomi: MiMo-V2.5",
         "provider": "Xiaomi",
         "releasedAt": "2026-04-22",
-        "contextLength": 1048576,
-        "inputPer1M": 0.105,
+        "contextLength": 1050000,
+        "inputPer1M": 0.14,
         "outputPer1M": 0.28,
         "summary": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding.…",
         "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding.…",
@@ -6589,7 +11645,7 @@ export const generatedModels = [
         "name": "Xiaomi: MiMo-V2.5-Pro",
         "provider": "Xiaomi",
         "releasedAt": "2026-04-22",
-        "contextLength": 1048576,
+        "contextLength": 1050000,
         "inputPer1M": 0.435,
         "outputPer1M": 0.87,
         "summary": "MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, an…",
@@ -6656,11 +11712,14 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
+            "temperature",
             "tool_choice",
             "tools",
             "verbosity"
@@ -6740,6 +11799,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -6866,7 +11926,7 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-04-20",
         "contextLength": 262144,
-        "inputPer1M": 0.66,
+        "inputPer1M": 0.6,
         "outputPer1M": 3.41,
         "summary": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
         "description": "Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rus…",
@@ -7004,8 +12064,10 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -7185,12 +12247,15 @@ export const generatedModels = [
         "description": "Seedance 2.0 is a video generation model from ByteDance. It supports text-to-video, image-to-video with first and last frame control, and multimodal reference-to-video. It is particularly strong at preserving character…",
         "bestFor": [
             "Video generation",
-            "Image-to-video"
+            "Image-to-video",
+            "Audio-aware video"
         ],
-        "modality": "text+image->video",
+        "modality": "text+image+audio+video->video",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "video",
+            "audio"
         ],
         "outputModalities": [
             "video"
@@ -7213,12 +12278,15 @@ export const generatedModels = [
         "description": "Seedance 2.0 Fast is a video generation model from ByteDance. It supports text-to-video, image-to-video with first and last frame control, and multimodal reference-to-video. It prioritizes generation speed and lower cos…",
         "bestFor": [
             "Video generation",
-            "Image-to-video"
+            "Image-to-video",
+            "Audio-aware video"
         ],
-        "modality": "text+image->video",
+        "modality": "text+image+audio+video->video",
         "inputModalities": [
             "text",
-            "image"
+            "image",
+            "video",
+            "audio"
         ],
         "outputModalities": [
             "video"
@@ -8057,9 +13125,9 @@ export const generatedModels = [
         "name": "Z.ai: GLM 5.1",
         "provider": "Z.ai",
         "releasedAt": "2026-04-07",
-        "contextLength": 202752,
-        "inputPer1M": 0.975,
-        "outputPer1M": 4.300000000000001,
+        "contextLength": 204800,
+        "inputPer1M": 0.966,
+        "outputPer1M": 3.036,
         "summary": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and c…",
         "description": "GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and c…",
         "bestFor": [
@@ -8265,8 +13333,8 @@ export const generatedModels = [
         "provider": "Google",
         "releasedAt": "2026-04-03",
         "contextLength": 262144,
-        "inputPer1M": 0.06,
-        "outputPer1M": 0.33,
+        "inputPer1M": 0.07,
+        "outputPer1M": 0.33999999999999997,
         "summary": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...",
         "description": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...",
         "bestFor": [
@@ -8334,6 +13402,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
@@ -8346,6 +13415,7 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -8357,8 +13427,8 @@ export const generatedModels = [
         "provider": "Google",
         "releasedAt": "2026-04-02",
         "contextLength": 262144,
-        "inputPer1M": 0.12,
-        "outputPer1M": 0.35,
+        "inputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.33999999999999997,
         "summary": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
         "bestFor": [
@@ -8392,6 +13462,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_a",
             "top_k",
             "top_logprobs",
             "top_p"
@@ -8426,16 +13497,12 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_tokens",
-            "min_p",
             "reasoning",
             "response_format",
             "seed",
-            "stop",
             "temperature",
             "tool_choice",
             "tools",
-            "top_a",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -8466,6 +13533,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -8473,10 +13541,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -8489,8 +13559,8 @@ export const generatedModels = [
         "provider": "Arcee Ai",
         "releasedAt": "2026-04-01",
         "contextLength": 262144,
-        "inputPer1M": 0.25,
-        "outputPer1M": 0.7999999999999999,
+        "inputPer1M": 0.22,
+        "outputPer1M": 0.85,
         "summary": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video:",
         "description": "Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. Launch video:",
         "bestFor": [
@@ -8505,13 +13575,23 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
+            "logit_bias",
+            "logprobs",
             "max_tokens",
+            "presence_penalty",
             "reasoning",
+            "repetition_penalty",
+            "response_format",
+            "seed",
+            "stop",
+            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -8969,6 +14049,7 @@ export const generatedModels = [
             "logprobs",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -9101,33 +14182,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/sam-3-1/video",
-        "name": "Sam 3 1",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-30",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "SAM 3.1 builds comes with Object Multiplex, a shared-memory approach for joint multi-object tracking that delivers faster speeds with larger number of objects tracked.",
-        "description": "SAM 3.1 builds comes with Object Multiplex, a shared-memory approach for joint multi-object tracking that delivers faster speeds with larger number of objects tracked.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/sam-3-1/image-rle",
         "name": "Sam 3 1",
         "provider": "Remova Media",
@@ -9155,6 +14209,33 @@ export const generatedModels = [
     },
     {
         "id": "fal/fal-ai/sam-3-1/video-rle",
+        "name": "Sam 3 1",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-30",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "SAM 3.1 builds comes with Object Multiplex, a shared-memory approach for joint multi-object tracking that delivers faster speeds with larger number of objects tracked.",
+        "description": "SAM 3.1 builds comes with Object Multiplex, a shared-memory approach for joint multi-object tracking that delivers faster speeds with larger number of objects tracked.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/sam-3-1/video",
         "name": "Sam 3 1",
         "provider": "Remova Media",
         "releasedAt": "2026-03-30",
@@ -9427,7 +14508,7 @@ export const generatedModels = [
         "name": "Kwaipilot: KAT-Coder-Pro V2",
         "provider": "Kwaipilot",
         "releasedAt": "2026-03-27",
-        "contextLength": 256000,
+        "contextLength": 262144,
         "inputPer1M": 0.3,
         "outputPer1M": 1.2,
         "summary": "KAT-Coder-Pro V2 is the latest high-performance model in KwaiKAT’s KAT-Coder series, designed for complex enterprise-grade software engineering and SaaS integration. It builds on the agentic coding strengths of earlier…",
@@ -9871,8 +14952,8 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2026-03-18",
         "contextLength": 204800,
-        "inputPer1M": 0.18,
-        "outputPer1M": 0.72,
+        "inputPer1M": 0.25,
+        "outputPer1M": 1,
         "summary": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic ca…",
         "bestFor": [
@@ -10122,6 +15203,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -10160,6 +15242,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -10275,6 +15358,7 @@ export const generatedModels = [
             "max_tokens",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -10357,7 +15441,7 @@ export const generatedModels = [
         "name": "Z.ai: GLM 5 Turbo",
         "provider": "Z.ai",
         "releasedAt": "2026-03-15",
-        "contextLength": 262144,
+        "contextLength": 202752,
         "inputPer1M": 1.2,
         "outputPer1M": 4,
         "summary": "GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows...",
@@ -10374,17 +15458,10 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
-            "frequency_penalty",
             "include_reasoning",
-            "logit_bias",
             "max_tokens",
-            "min_p",
-            "presence_penalty",
             "reasoning",
-            "repetition_penalty",
             "response_format",
-            "seed",
-            "stop",
             "temperature",
             "tool_choice",
             "tools",
@@ -10474,33 +15551,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/image-to-video/lora",
-        "name": "LTX-2.3 22B",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from images using LTX-2.3 and custom LoRA",
-        "description": "Generate video with audio from images using LTX-2.3 and custom LoRA",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2.3-22b/text-to-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
@@ -10523,33 +15573,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2.3-22b/audio-to-video/lora",
-        "name": "LTX-2.3 22B",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from audio, text and images using LTX-2.3 and custom LoRA",
-        "description": "Generate video with audio from audio, text and images using LTX-2.3 and custom LoRA",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "audio-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -10580,15 +15603,42 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/video-to-video/lora",
+        "id": "fal/fal-ai/ltx-2.3-22b/image-to-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
         "releasedAt": "2026-03-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate video with audio from videos using LTX-2.3 and custom LoRA",
-        "description": "Generate video with audio from videos using LTX-2.3 and custom LoRA",
+        "summary": "Generate video with audio from images using LTX-2.3 and custom LoRA",
+        "description": "Generate video with audio from images using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-22b/extend-video",
+        "name": "LTX-2.3 22B",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Extend video with audio using LTX-2.3",
+        "description": "Extend video with audio using LTX-2.3",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -10607,15 +15657,42 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/extend-video",
+        "id": "fal/fal-ai/ltx-2.3-22b/audio-to-video/lora",
         "name": "LTX-2.3 22B",
         "provider": "Remova Media",
         "releasedAt": "2026-03-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Extend video with audio using LTX-2.3",
-        "description": "Extend video with audio using LTX-2.3",
+        "summary": "Generate video with audio from audio, text and images using LTX-2.3 and custom LoRA",
+        "description": "Generate video with audio from audio, text and images using LTX-2.3 and custom LoRA",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-22b/video-to-video/lora",
+        "name": "LTX-2.3 22B",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from videos using LTX-2.3 and custom LoRA",
+        "description": "Generate video with audio from videos using LTX-2.3 and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -10715,33 +15792,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2.3-22b/distilled/image-to-video/lora",
-        "name": "LTX-2.3 22B Distilled",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from images using LTX-2.3 Distilled and custom LoRA",
-        "description": "Generate video with audio from images using LTX-2.3 Distilled and custom LoRA",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2.3-22b/distilled/text-to-video",
         "name": "LTX-2.3 22B Distilled",
         "provider": "Remova Media",
@@ -10751,6 +15801,31 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Generate video with audio from text using LTX-2.3 Distilled",
         "description": "Generate video with audio from text using LTX-2.3 Distilled",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2.3-22b/distilled/text-to-video/lora",
+        "name": "LTX-2.3 22B Distilled",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from text using LTX-2.3 Distilled and custom LoRA",
+        "description": "Generate video with audio from text using LTX-2.3 Distilled and custom LoRA",
         "bestFor": [
             "Video generation"
         ],
@@ -10794,6 +15869,33 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/ltx-2.3-22b/distilled/image-to-video/lora",
+        "name": "LTX-2.3 22B Distilled",
+        "provider": "Remova Media",
+        "releasedAt": "2026-03-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from images using LTX-2.3 Distilled and custom LoRA",
+        "description": "Generate video with audio from images using LTX-2.3 Distilled and custom LoRA",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/ltx-2.3-22b/distilled/video-to-video",
         "name": "LTX-2.3 22B Distilled",
         "provider": "Remova Media",
@@ -10818,31 +15920,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2.3-22b/distilled/text-to-video/lora",
-        "name": "LTX-2.3 22B Distilled",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from text using LTX-2.3 Distilled and custom LoRA",
-        "description": "Generate video with audio from text using LTX-2.3 Distilled and custom LoRA",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -10954,33 +16031,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/sora-2/characters",
-        "name": "Sora 2",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-12",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate character ids to use with Sora 2 generations",
-        "description": "Generate character ids to use with Sora 2 generations",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/tada/3b/text-to-speech",
         "name": "Tada",
         "provider": "Remova Media",
@@ -11064,6 +16114,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -11084,7 +16135,7 @@ export const generatedModels = [
         "name": "NVIDIA: Nemotron 3 Super (free)",
         "provider": "Nvidia",
         "releasedAt": "2026-03-11",
-        "contextLength": 1000000,
+        "contextLength": 262144,
         "inputPer1M": 0,
         "outputPer1M": 0,
         "summary": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
@@ -11104,6 +16155,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -11116,7 +16168,7 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/omnilottie",
+        "id": "fal/fal-ai/omnilottie/image-to-lottie",
         "name": "Omnilottie",
         "provider": "Remova Media",
         "releasedAt": "2026-03-11",
@@ -11143,7 +16195,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/omnilottie/image-to-lottie",
+        "id": "fal/fal-ai/omnilottie",
         "name": "Omnilottie",
         "provider": "Remova Media",
         "releasedAt": "2026-03-11",
@@ -11225,6 +16277,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -11635,6 +16688,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -11673,6 +16727,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -11707,6 +16762,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -11716,60 +16772,6 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2/audio-to-video",
-        "name": "LTX 2.0 Video Pro",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-04",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video from audio using LTX-2",
-        "description": "Generate video from audio using LTX-2",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "audio-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2/extend-video",
-        "name": "LTX Video 2.0 Pro",
-        "provider": "Remova Media",
-        "releasedAt": "2026-03-04",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Extends videos with audio using LTX-2",
-        "description": "Extends videos with audio using LTX-2",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/pixelcut/background-removal",
@@ -11827,9 +16829,9 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
-            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
@@ -12084,6 +17086,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -12151,7 +17154,7 @@ export const generatedModels = [
         "name": "Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
         "provider": "Google",
         "releasedAt": "2026-02-26",
-        "contextLength": 131072,
+        "contextLength": 65536,
         "inputPer1M": 0.5,
         "outputPer1M": 3,
         "summary": "Gemini 3.1 Flash Image Preview, a.k.a. \"Nano Banana 2,\" is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines...",
@@ -12173,6 +17176,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -12264,7 +17268,7 @@ export const generatedModels = [
         "name": "Google: Gemini 3.1 Pro Preview Custom Tools",
         "provider": "Google",
         "releasedAt": "2026-02-25",
-        "contextLength": 1048756,
+        "contextLength": 1048576,
         "inputPer1M": 2,
         "outputPer1M": 12,
         "summary": "Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party...",
@@ -12289,49 +17293,13 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "liquid/lfm-2-24b-a2b",
-        "name": "LiquidAI: LFM2-24B-A2B",
-        "provider": "Liquid",
-        "releasedAt": "2026-02-25",
-        "contextLength": 128000,
-        "inputPer1M": 0.03,
-        "outputPer1M": 0.12,
-        "summary": "LFM2-24B-A2B is the largest model in the LFM2 family of hybrid architectures designed for efficient on-device deployment. Built as a 24B parameter Mixture-of-Experts model with only 2B active parameters per...",
-        "description": "LFM2-24B-A2B is the largest model in the LFM2 family of hybrid architectures designed for efficient on-device deployment. Built as a 24B parameter Mixture-of-Experts model with only 2B active parameters per...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "stop",
-            "temperature",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -12536,20 +17504,48 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
             "presence_penalty",
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/cosmos-predict-2.5/text-to-video",
+        "name": "Cosmos Predict 2.5 2B",
+        "provider": "Remova Media",
+        "releasedAt": "2026-02-24",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video from text using NVIDIA's 2B Cosmos Post-Trained Model",
+        "description": "Generate video from text using NVIDIA's 2B Cosmos Post-Trained Model",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/fal-ai/cosmos-predict-2.5/image-to-video",
@@ -12576,31 +17572,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/cosmos-predict-2.5/text-to-video",
-        "name": "Cosmos Predict 2.5 2B",
-        "provider": "Remova Media",
-        "releasedAt": "2026-02-24",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video from text using NVIDIA's 2B Cosmos Post-Trained Model",
-        "description": "Generate video from text using NVIDIA's 2B Cosmos Post-Trained Model",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -12684,6 +17655,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -12704,6 +17676,7 @@ export const generatedModels = [
         "summary": "Aion-2.0 is a variant of DeepSeek V3.2 optimized for immersive roleplaying and storytelling. It is particularly strong at introducing tension, crises, and conflict into stories, making narratives feel more engaging....",
         "description": "Aion-2.0 is a variant of DeepSeek V3.2 optimized for immersive roleplaying and storytelling. It is particularly strong at introducing tension, crises, and conflict into stories, making narratives feel more engaging....",
         "bestFor": [
+            "Agent workflows",
             "Advanced reasoning"
         ],
         "modality": "text->text",
@@ -12717,62 +17690,14 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "response_format",
             "temperature",
+            "tool_choice",
+            "tools",
             "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
-    },
-    {
-        "id": "fal/fal-ai/bytedance/seedream/v5/lite/edit",
-        "name": "Bytedance Seedream V5 Lite Edit",
-        "provider": "Remova Media",
-        "releasedAt": "2026-02-23",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Image editing endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent image editing with multiple inputs.",
-        "description": "Image editing endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent image editing with multiple inputs.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/bytedance/seedream/v5/lite/text-to-image",
-        "name": "Bytedance Seedream V5 Lite Text To Image",
-        "provider": "Remova Media",
-        "releasedAt": "2026-02-23",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Text to Image endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent text-to-image generation.",
-        "description": "Text to Image endpoint for the fast Lite version of Seedream 5.0, supporting high quality intelligent text-to-image generation.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/fal-ai/heygen/avatar4/image-to-video",
@@ -13013,6 +17938,33 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/personaplex/realtime",
+        "name": "Personaplex",
+        "provider": "Remova Media",
+        "releasedAt": "2026-02-20",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "PersonaPlex is a real-time, full-duplex speech-to-speech conversational model that enables persona control through text-based role prompts and audio-based voice conditioning.",
+        "description": "PersonaPlex is a real-time, full-duplex speech-to-speech conversational model that enables persona control through text-based role prompts and audio-based voice conditioning.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/firered-image-edit",
         "name": "Firered Image Edit",
         "provider": "Remova Media",
@@ -13068,6 +18020,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -13163,6 +18116,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -13181,9 +18135,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3.5 397B A17B",
         "provider": "Qwen",
         "releasedAt": "2026-02-16",
-        "contextLength": 256000,
-        "inputPer1M": 0.385,
-        "outputPer1M": 2.4499999999999997,
+        "contextLength": 262144,
+        "inputPer1M": 0.39,
+        "outputPer1M": 2.34,
         "summary": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It…",
         "description": "The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It…",
         "bestFor": [
@@ -13249,6 +18203,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -13256,10 +18211,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -13374,8 +18331,8 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2026-02-12",
         "contextLength": 204800,
-        "inputPer1M": 0.12,
-        "outputPer1M": 0.48,
+        "inputPer1M": 0.15,
+        "outputPer1M": 0.8999999999999999,
         "summary": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
         "description": "MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1...",
         "bestFor": [
@@ -13400,7 +18357,6 @@ export const generatedModels = [
             "parallel_tool_calls",
             "presence_penalty",
             "reasoning",
-            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -13415,6 +18371,33 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
+    },
+    {
+        "id": "fal/fal-ai/personaplex",
+        "name": "Personaplex",
+        "provider": "Remova Media",
+        "releasedAt": "2026-02-12",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "PersonaPlex is a real-time, full-duplex speech-to-speech conversational model that enables persona control through text-based role prompts and audio-based voice conditioning.",
+        "description": "PersonaPlex is a real-time, full-duplex speech-to-speech conversational model that enables persona control through text-based role prompts and audio-based voice conditioning.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "audio-to-audio",
+        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/fal-ai/recraft/v4/text-to-image",
@@ -13498,9 +18481,9 @@ export const generatedModels = [
         "name": "Z.ai: GLM 5",
         "provider": "Z.ai",
         "releasedAt": "2026-02-11",
-        "contextLength": 202752,
-        "inputPer1M": 0.6,
-        "outputPer1M": 1.92,
+        "contextLength": 204800,
+        "inputPer1M": 0.95,
+        "outputPer1M": 2.5500000000000003,
         "summary": "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on large-scale programm…",
         "description": "GLM-5 is Z.ai’s flagship open-source foundation model engineered for complex systems design and long-horizon agent workflows. Built for expert developers, it delivers production-grade performance on large-scale programm…",
         "bestFor": [
@@ -13614,6 +18597,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -13621,10 +18605,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -13901,6 +18887,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "stop",
             "structured_outputs",
@@ -14348,7 +19335,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2026-02-04",
         "contextLength": 262144,
-        "inputPer1M": 0.11,
+        "inputPer1M": 0.12,
         "outputPer1M": 0.7999999999999999,
         "summary": "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per...",
         "description": "Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per...",
@@ -14437,15 +19424,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-image/v3/text-to-image",
+        "id": "fal/fal-ai/kling-image/o3/text-to-image",
         "name": "Kling Image",
         "provider": "Remova Media",
         "releasedAt": "2026-02-03",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Kling V3: Latest Kling Image model",
-        "description": "Kling V3: Latest Kling Image model",
+        "summary": "Kling Omni 3: Top-tier text-to-image with flawless consistency.",
+        "description": "Kling Omni 3: Top-tier text-to-image with flawless consistency.",
         "bestFor": [
             "Image workflows"
         ],
@@ -14462,15 +19449,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-image/o3/text-to-image",
+        "id": "fal/fal-ai/kling-image/v3/text-to-image",
         "name": "Kling Image",
         "provider": "Remova Media",
         "releasedAt": "2026-02-03",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Kling Omni 3: Top-tier text-to-image with flawless consistency.",
-        "description": "Kling Omni 3: Top-tier text-to-image with flawless consistency.",
+        "summary": "Kling V3: Latest Kling Image model",
+        "description": "Kling V3: Latest Kling Image model",
         "bestFor": [
             "Image workflows"
         ],
@@ -15081,8 +20068,8 @@ export const generatedModels = [
         "provider": "Moonshotai",
         "releasedAt": "2026-01-27",
         "contextLength": 262144,
-        "inputPer1M": 0.375,
-        "outputPer1M": 2.025,
+        "inputPer1M": 0.5700000000000001,
+        "outputPer1M": 2.8499999999999996,
         "summary": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed…",
         "description": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed…",
         "bestFor": [
@@ -15951,84 +20938,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "liquid/lfm-2.5-1.2b-instruct:free",
-        "name": "LiquidAI: LFM2.5-1.2B-Instruct (free)",
-        "provider": "Liquid",
-        "releasedAt": "2026-01-20",
-        "contextLength": 32768,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "LFM2.5-1.2B-Instruct is a compact, high-performance instruction-tuned model built for fast on-device AI. It delivers strong chat quality in a 1.2B parameter footprint, with efficient edge inference and broad runtime sup…",
-        "description": "LFM2.5-1.2B-Instruct is a compact, high-performance instruction-tuned model built for fast on-device AI. It delivers strong chat quality in a 1.2B parameter footprint, with efficient edge inference and broad runtime sup…",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "liquid/lfm-2.5-1.2b-thinking:free",
-        "name": "LiquidAI: LFM2.5-1.2B-Thinking (free)",
-        "provider": "Liquid",
-        "releasedAt": "2026-01-20",
-        "contextLength": 32768,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is...",
-        "description": "LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/bria/fibo-lite/generate/structured_prompt",
         "name": "Fibo Lite",
         "provider": "Bria",
@@ -16038,33 +20947,6 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Convert plain text into Fibo-Lite's transparent JSON-structured prompts - Bria's unique controllability layer that no closed model offers. Built for agentic and enterprise workflows.",
         "description": "Convert plain text into Fibo-Lite's transparent JSON-structured prompts - Bria's unique controllability layer that no closed model offers. Built for agentic and enterprise workflows.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-json",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/bria/fibo-lite/generate/structured_prompt/lite",
-        "name": "Fibo Lite",
-        "provider": "Bria",
-        "releasedAt": "2026-01-19",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Structured Prompt Generation endpoint for Fibo-Lite, Bria's SOTA Open source model",
-        "description": "Structured Prompt Generation endpoint for Fibo-Lite, Bria's SOTA Open source model",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -16423,6 +21305,31 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/flux-2/klein/4b",
+        "name": "FLUX.2 [klein] 4B",
+        "provider": "Remova Media",
+        "releasedAt": "2026-01-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Text-to-image generation with FLUX.2 [klein] 4B from Black Forest Labs. Enhanced realism, crisper text generation, and native editing capabilities.",
+        "description": "Text-to-image generation with FLUX.2 [klein] 4B from Black Forest Labs. Enhanced realism, crisper text generation, and native editing capabilities.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/flux-2/klein/4b/edit",
         "name": "FLUX.2 [klein] 4B",
         "provider": "Remova Media",
@@ -16446,31 +21353,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/flux-2/klein/4b",
-        "name": "FLUX.2 [klein] 4B",
-        "provider": "Remova Media",
-        "releasedAt": "2026-01-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Text-to-image generation with FLUX.2 [klein] 4B from Black Forest Labs. Enhanced realism, crisper text generation, and native editing capabilities.",
-        "description": "Text-to-image generation with FLUX.2 [klein] 4B from Black Forest Labs. Enhanced realism, crisper text generation, and native editing capabilities.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -16785,7 +21667,7 @@ export const generatedModels = [
     },
     {
         "id": "fal/fal-ai/glm-image",
-        "name": "Glm Image",
+        "name": "GLM Image",
         "provider": "Remova Media",
         "releasedAt": "2026-01-14",
         "contextLength": 0,
@@ -16834,8 +21716,8 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_completion_tokens",
-            "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -17006,33 +21888,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2-19b/distilled/video-to-video",
-        "name": "LTX-2 19B Distilled",
-        "provider": "Remova Media",
-        "releasedAt": "2026-01-07",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from videos using LTX-2 Distilled",
-        "description": "Generate video with audio from videos using LTX-2 Distilled",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2-19b/distilled/video-to-video/lora",
         "name": "LTX-2 19B Distilled",
         "provider": "Remova Media",
@@ -17060,30 +21915,30 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx2-v2v-trainer",
-        "name": "LTX-2 Video to Video Trainer",
+        "id": "fal/fal-ai/ltx-2-19b/distilled/video-to-video",
+        "name": "LTX-2 19B Distilled",
         "provider": "Remova Media",
         "releasedAt": "2026-01-07",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Train LTX-2 for video transformation or video-conditioned generation.",
-        "description": "Train LTX-2 for video transformation or video-conditioned generation.",
+        "summary": "Generate video with audio from videos using LTX-2 Distilled",
+        "description": "Generate video with audio from videos using LTX-2 Distilled",
         "bestFor": [
-            "Model training",
-            "Dataset workflows",
-            "Style adaptation"
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
         ],
-        "modality": "dataset->model",
+        "modality": "text->media",
         "inputModalities": [
-            "dataset"
+            "text"
         ],
         "outputModalities": [
-            "model"
+            "media"
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "training",
+        "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -17192,31 +22047,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2-19b/text-to-video/lora",
-        "name": "LTX-2 19B",
-        "provider": "Remova Media",
-        "releasedAt": "2026-01-05",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from text using LTX-2 and custom LoRA",
-        "description": "Generate video with audio from text using LTX-2 and custom LoRA",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2-19b/image-to-video/lora",
         "name": "LTX-2 19B",
         "provider": "Remova Media",
@@ -17241,6 +22071,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2-19b/text-to-video/lora",
+        "name": "LTX-2 19B",
+        "provider": "Remova Media",
+        "releasedAt": "2026-01-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from text using LTX-2 and custom LoRA",
+        "description": "Generate video with audio from text using LTX-2 and custom LoRA",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -17323,33 +22178,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2-19b/distilled/image-to-video/lora",
-        "name": "LTX-2 19B Distilled",
-        "provider": "Remova Media",
-        "releasedAt": "2026-01-05",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate video with audio from images using LTX-2 Distilled and custom LoRA",
-        "description": "Generate video with audio from images using LTX-2 Distilled and custom LoRA",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ltx-2-19b/distilled/extend-video",
         "name": "LTX-2 19B Distilled",
         "provider": "Remova Media",
@@ -17374,6 +22202,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/ltx-2-19b/distilled/image-to-video/lora",
+        "name": "LTX-2 19B Distilled",
+        "provider": "Remova Media",
+        "releasedAt": "2026-01-05",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate video with audio from images using LTX-2 Distilled and custom LoRA",
+        "description": "Generate video with audio from images using LTX-2 Distilled and custom LoRA",
+        "bestFor": [
+            "Video generation",
+            "Image-to-video"
+        ],
+        "modality": "image+text->video",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -18029,15 +22884,15 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/bria/video/erase/prompt",
+        "id": "fal/bria/video/erase/mask",
         "name": "Video",
         "provider": "Bria",
         "releasedAt": "2025-12-23",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Erase unwanted objects, people, or elements from video with a text prompt. High-fidelity output with strong temporal consistency, trained on licensed data for safe commercial use.",
-        "description": "Erase unwanted objects, people, or elements from video with a text prompt. High-fidelity output with strong temporal consistency, trained on licensed data for safe commercial use.",
+        "summary": "High-fidelity mask-based video object removal with strong temporal consistency. Erase unwanted objects, people, or elements while preserving aesthetic quality. Trained on licensed data for risk-free commercial use.",
+        "description": "High-fidelity mask-based video object removal with strong temporal consistency. Erase unwanted objects, people, or elements while preserving aesthetic quality. Trained on licensed data for risk-free commercial use.",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -18056,15 +22911,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/bria/video/erase/mask",
+        "id": "fal/bria/video/erase/prompt",
         "name": "Video",
         "provider": "Bria",
         "releasedAt": "2025-12-23",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "High-fidelity mask-based video object removal with strong temporal consistency. Erase unwanted objects, people, or elements while preserving aesthetic quality. Trained on licensed data for risk-free commercial use.",
-        "description": "High-fidelity mask-based video object removal with strong temporal consistency. Erase unwanted objects, people, or elements while preserving aesthetic quality. Trained on licensed data for risk-free commercial use.",
+        "summary": "Erase unwanted objects, people, or elements from video with a text prompt. High-fidelity output with strong temporal consistency, trained on licensed data for safe commercial use.",
+        "description": "Erase unwanted objects, people, or elements from video with a text prompt. High-fidelity output with strong temporal consistency, trained on licensed data for safe commercial use.",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -18246,7 +23101,7 @@ export const generatedModels = [
         "name": "Z.ai: GLM 4.7",
         "provider": "Z.ai",
         "releasedAt": "2025-12-22",
-        "contextLength": 202752,
+        "contextLength": 204800,
         "inputPer1M": 0.39999999999999997,
         "outputPer1M": 1.75,
         "summary": "GLM-4.7 is Z.ai’s latest flagship model, featuring upgrades in two key areas: enhanced programming capabilities and more stable multi-step reasoning/execution. It demonstrates significant improvements in executing compl…",
@@ -18610,6 +23465,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "stop",
@@ -19358,6 +24214,32 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/remove-lighting",
+        "name": "Qwen Image Edit 2509 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Remove existing lighting and apply soft, even illumination",
+        "description": "Remove existing lighting and apply soft, even illumination",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/next-scene",
         "name": "Qwen Image Edit 2509 Lora Gallery",
         "provider": "Remova Media",
@@ -19367,58 +24249,6 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
         "description": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/group-photo",
-        "name": "Qwen Image Edit 2509 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create group photos",
-        "description": "Create group photos",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
-        "name": "Qwen Image Edit 2509 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Apply designs/graphics onto people's shirts",
-        "description": "Apply designs/graphics onto people's shirts",
         "bestFor": [
             "Image workflows"
         ],
@@ -19462,32 +24292,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/add-background",
-        "name": "Qwen Image Edit 2509 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-12-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Add a realistic scene behind the object with white background",
-        "description": "Add a realistic scene behind the object with white background",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/face-to-full-portrait",
         "name": "Qwen Image Edit 2509 Lora Gallery",
         "provider": "Remova Media",
@@ -19514,15 +24318,67 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/remove-lighting",
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/add-background",
         "name": "Qwen Image Edit 2509 Lora Gallery",
         "provider": "Remova Media",
         "releasedAt": "2025-12-15",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Remove existing lighting and apply soft, even illumination",
-        "description": "Remove existing lighting and apply soft, even illumination",
+        "summary": "Add a realistic scene behind the object with white background",
+        "description": "Add a realistic scene behind the object with white background",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/shirt-design",
+        "name": "Qwen Image Edit 2509 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Apply designs/graphics onto people's shirts",
+        "description": "Apply designs/graphics onto people's shirts",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-2509-lora-gallery/group-photo",
+        "name": "Qwen Image Edit 2509 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-12-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Create group photos",
+        "description": "Create group photos",
         "bestFor": [
             "Image workflows"
         ],
@@ -19968,6 +24824,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -20041,6 +24898,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -20076,45 +24934,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "mistralai/devstral-2512",
-        "name": "Mistral: Devstral 2 2512",
-        "provider": "Mistral AI",
-        "releasedAt": "2025-12-09",
-        "contextLength": 262144,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 2,
-        "summary": "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window. Devstral 2 supports exploring...",
-        "description": "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window. Devstral 2 supports exploring...",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Code generation"
-        ],
-        "modality": "text+file->text",
-        "inputModalities": [
-            "text",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/fal-ai/stepx-edit2",
@@ -20454,8 +25273,8 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_completion_tokens",
-            "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -20660,10 +25479,8 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
-            "logprobs",
             "max_tokens",
             "presence_penalty",
-            "repetition_penalty",
             "response_format",
             "seed",
             "stop",
@@ -20671,7 +25488,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -20701,10 +25517,8 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
-            "logprobs",
             "max_tokens",
             "presence_penalty",
-            "repetition_penalty",
             "response_format",
             "seed",
             "stop",
@@ -20712,7 +25526,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -20742,10 +25555,8 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
-            "logprobs",
             "max_tokens",
             "presence_penalty",
-            "repetition_penalty",
             "response_format",
             "seed",
             "stop",
@@ -20753,7 +25564,6 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -20946,53 +25756,13 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "arcee-ai/trinity-mini",
-        "name": "Arcee AI: Trinity Mini",
-        "provider": "Arcee Ai",
-        "releasedAt": "2025-12-01",
-        "contextLength": 131072,
-        "inputPer1M": 0.045,
-        "outputPer1M": 0.15,
-        "summary": "Trinity Mini is a 26B-parameter (3B active) sparse mixture-of-experts language model featuring 128 experts with 8 active per token. Engineered for efficient reasoning over long contexts (131k) with robust function...",
-        "description": "Trinity Mini is a 26B-parameter (3B active) sparse mixture-of-experts language model featuring 128 experts with 8 active per token. Engineered for efficient reasoning over long contexts (131k) with robust function...",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "logprobs",
-            "max_completion_tokens",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "deepseek/deepseek-v3.2",
         "name": "DeepSeek: DeepSeek V3.2",
         "provider": "DeepSeek",
         "releasedAt": "2025-12-01",
-        "contextLength": 131072,
-        "inputPer1M": 0.2288,
-        "outputPer1M": 0.3432,
+        "contextLength": 163840,
+        "inputPer1M": 0.26899999999999996,
+        "outputPer1M": 0.39999999999999997,
         "summary": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse at…",
         "description": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse at…",
         "bestFor": [
@@ -21387,137 +26157,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-2/image-to-video/fast",
-        "name": "LTX Video 2.0 Fast",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-26",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create high-fidelity video with audio from images with LTX-2 Fast",
-        "description": "Create high-fidelity video with audio from images with LTX-2 Fast",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2/text-to-video/fast",
-        "name": "LTX Video 2.0 Fast",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-26",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create high-fidelity video with audio from text with LTX-2 Fast",
-        "description": "Create high-fidelity video with audio from text with LTX-2 Fast",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2/image-to-video",
-        "name": "LTX Video 2.0 Pro",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-26",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create high-fidelity video with audio from images with LTX-2 Pro",
-        "description": "Create high-fidelity video with audio from images with LTX-2 Pro",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2/text-to-video",
-        "name": "LTX Video 2.0 Pro",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-26",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create high-fidelity video with audio from text with LTX-2 Pro.",
-        "description": "Create high-fidelity video with audio from text with LTX-2 Pro.",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/ltx-2/retake-video",
-        "name": "LTX Video 2.0 Retake",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-26",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Change sections of a video using LTX-2",
-        "description": "Change sections of a video using LTX-2",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/z-image/turbo",
         "name": "Z Image Turbo",
         "provider": "Remova Media",
@@ -21675,6 +26314,32 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/flux-2-lora-gallery/apartment-staging",
+        "name": "Flux 2 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Virtually furnishes an empty apartment",
+        "description": "Virtually furnishes an empty apartment",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/flux-2-lora-gallery/multiple-angles",
         "name": "Flux 2 Lora Gallery",
         "provider": "Remova Media",
@@ -21710,32 +26375,6 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Virtual clothing try-on (2 images: person + garment)",
         "description": "Virtual clothing try-on (2 images: person + garment)",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/flux-2-lora-gallery/apartment-staging",
-        "name": "Flux 2 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-25",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Virtually furnishes an empty apartment",
-        "description": "Virtually furnishes an empty apartment",
         "bestFor": [
             "Image workflows"
         ],
@@ -21805,56 +26444,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-2-lora-gallery/digital-comic-art",
-        "name": "Flux 2 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-25",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Transforms images into comic book style",
-        "description": "Transforms images into comic book style",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/flux-2-lora-gallery/sepia-vintage",
-        "name": "Flux 2 Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-25",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Applies sepia vintage effect to images",
-        "description": "Applies sepia vintage effect to images",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/flux-2-lora-gallery/ballpoint-pen-sketch",
         "name": "Flux 2 Lora Gallery",
         "provider": "Remova Media",
@@ -21889,6 +26478,56 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Generates satellite/aerial view style images",
         "description": "Generates satellite/aerial view style images",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/flux-2-lora-gallery/digital-comic-art",
+        "name": "Flux 2 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Transforms images into comic book style",
+        "description": "Transforms images into comic book style",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/flux-2-lora-gallery/sepia-vintage",
+        "name": "Flux 2 Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-25",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Applies sepia vintage effect to images",
+        "description": "Applies sepia vintage effect to images",
         "bestFor": [
             "Image workflows"
         ],
@@ -22034,6 +26673,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
             "response_format",
@@ -22647,7 +27287,7 @@ export const generatedModels = [
         "name": "BAAI: bge-base-en-v1.5",
         "provider": "Baai",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The bge-base-en-v1.5 embedding model converts English sentences and paragraphs into 768-dimensional dense vectors, delivering efficient, high-quality semantic embeddings optimized for retrieval, semantic search, and doc…",
@@ -22683,7 +27323,7 @@ export const generatedModels = [
         "name": "BAAI: bge-large-en-v1.5",
         "provider": "Baai",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The bge-large-en-v1.5 embedding model maps English sentences, paragraphs, and documents into a 1024-dimensional dense vector space, delivering high-fidelity semantic embeddings optimized for semantic search, document re…",
@@ -22719,7 +27359,7 @@ export const generatedModels = [
         "name": "BAAI: bge-m3",
         "provider": "Baai",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 8194,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The bge-m3 embedding model encodes sentences, paragraphs, and long documents into a 1024-dimensional dense vector space, delivering high-quality semantic embeddings optimized for multilingual retrieval, semantic search,…",
@@ -22756,7 +27396,7 @@ export const generatedModels = [
         "name": "Intfloat: E5-Base-v2",
         "provider": "Intfloat",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The e5-base-v2 embedding model encodes English sentences and paragraphs into a 768-dimensional dense vector space, producing efficient and high-quality semantic embeddings optimized for tasks such as semantic search, si…",
@@ -22792,7 +27432,7 @@ export const generatedModels = [
         "name": "Intfloat: E5-Large-v2",
         "provider": "Intfloat",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The e5-large-v2 embedding model maps English sentences, paragraphs, and documents into a 1024-dimensional dense vector space, delivering high-accuracy semantic embeddings optimized for retrieval, semantic search, rerank…",
@@ -22828,7 +27468,7 @@ export const generatedModels = [
         "name": "Intfloat: Multilingual-E5-Large",
         "provider": "Intfloat",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The multilingual-e5-large embedding model encodes sentences, paragraphs, and documents across over 90 languages into a 1024-dimensional dense vector space, delivering robust semantic embeddings optimized for multilingua…",
@@ -22891,7 +27531,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: all-MiniLM-L12-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The all-MiniLM-L12-v2 embedding model maps sentences and short paragraphs into a 384-dimensional dense vector space, producing efficient and high-quality semantic embeddings optimized for tasks such as semantic search,…",
@@ -22927,7 +27567,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: multi-qa-mpnet-base-dot-v1",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The multi-qa-mpnet-base-dot-v1 embedding model transforms sentences and short paragraphs into a 768-dimensional dense vector space, generating high-quality semantic embeddings optimized for question-and-answer retrieval…",
@@ -22963,7 +27603,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: paraphrase-MiniLM-L6-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The paraphrase-MiniLM-L6-v2 embedding model converts sentences and short paragraphs into a 384-dimensional dense vector space, producing high-quality semantic embeddings optimized for paraphrase detection, semantic simi…",
@@ -22999,7 +27639,7 @@ export const generatedModels = [
         "name": "Thenlper: GTE-Base",
         "provider": "Thenlper",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The gte-base embedding model encodes English sentences and paragraphs into a 768-dimensional dense vector space, delivering efficient and effective semantic embeddings optimized for textual similarity, semantic search,…",
@@ -23035,7 +27675,7 @@ export const generatedModels = [
         "name": "Thenlper: GTE-Large",
         "provider": "Thenlper",
         "releasedAt": "2025-11-18",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The gte-large embedding model converts English sentences, paragraphs and moderate-length documents into a 1024-dimensional dense vector space, delivering high-quality semantic embeddings optimized for information retrie…",
@@ -23071,7 +27711,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: all-MiniLM-L6-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-17",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The all-MiniLM-L6-v2 embedding model maps sentences and short paragraphs into a 384-dimensional dense vector space, enabling high-quality semantic representations that are ideal for downstream tasks such as information…",
@@ -23107,7 +27747,7 @@ export const generatedModels = [
         "name": "Sentence Transformers: all-mpnet-base-v2",
         "provider": "Sentence Transformers",
         "releasedAt": "2025-11-17",
-        "contextLength": 8192,
+        "contextLength": 512,
         "inputPer1M": 0.005,
         "outputPer1M": 0,
         "summary": "The all-mpnet-base-v2 embedding model encodes sentences and short paragraphs into a 768-dimensional dense vector space, providing high-fidelity semantic embeddings well suited for tasks like information retrieval, clust…",
@@ -23233,42 +27873,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
-            "response_format",
-            "seed",
-            "structured_outputs",
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "openai/gpt-5.1-chat",
-        "name": "OpenAI: GPT-5.1 Chat",
-        "provider": "OpenAI",
-        "releasedAt": "2025-11-13",
-        "contextLength": 128000,
-        "inputPer1M": 1.25,
-        "outputPer1M": 10,
-        "summary": "GPT-5.1 Chat (AKA Instant is the fast, lightweight member of the 5.1 family, optimized for low-latency chat while retaining strong general intelligence. It uses adaptive reasoning to selectively “think” on...",
-        "description": "GPT-5.1 Chat (AKA Instant is the fast, lightweight member of the 5.1 family, optimized for low-latency chat while retaining strong general intelligence. It uses adaptive reasoning to selectively “think” on...",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "file",
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_completion_tokens",
-            "max_tokens",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -23304,8 +27909,8 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_completion_tokens",
-            "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -23341,8 +27946,8 @@ export const generatedModels = [
         "supportedParameters": [
             "include_reasoning",
             "max_completion_tokens",
-            "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -23459,32 +28064,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/integrate-product",
-        "name": "Qwen Image Edit Plus Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-11",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Blend products into backgrounds with automatic perspective and lighting correction",
-        "description": "Blend products into backgrounds with automatic perspective and lighting correction",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/group-photo",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
@@ -23537,58 +28116,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/face-to-full-portrait",
-        "name": "Qwen Image Edit Plus Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-11",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate full portrait from a cropped face photo",
-        "description": "Generate full portrait from a cropped face photo",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/next-scene",
-        "name": "Qwen Image Edit Plus Lora Gallery",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-11",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
-        "description": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/remove-lighting",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
@@ -23615,6 +28142,58 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/integrate-product",
+        "name": "Qwen Image Edit Plus Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Blend products into backgrounds with automatic perspective and lighting correction",
+        "description": "Blend products into backgrounds with automatic perspective and lighting correction",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/face-to-full-portrait",
+        "name": "Qwen Image Edit Plus Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate full portrait from a cropped face photo",
+        "description": "Generate full portrait from a cropped face photo",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/shirt-design",
         "name": "Qwen Image Edit Plus Lora Gallery",
         "provider": "Remova Media",
@@ -23624,6 +28203,32 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Apply designs/graphics onto people's shirts",
         "description": "Apply designs/graphics onto people's shirts",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/qwen-image-edit-plus-lora-gallery/next-scene",
+        "name": "Qwen Image Edit Plus Lora Gallery",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
+        "description": "Create cinematic transitions and scene progressions (camera movements, framing changes)",
         "bestFor": [
             "Image workflows"
         ],
@@ -23844,31 +28449,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/emu-3.5-image/text-to-image",
-        "name": "Emu 3.5 Image",
-        "provider": "Remova Media",
-        "releasedAt": "2025-11-01",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate images from text using Emu 3.5 Image",
-        "description": "Generate images from text using Emu 3.5 Image",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/emu-3.5-image/edit-image",
         "name": "Emu 3.5 Image",
         "provider": "Remova Media",
@@ -23892,6 +28472,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/emu-3.5-image/text-to-image",
+        "name": "Emu 3.5 Image",
+        "provider": "Remova Media",
+        "releasedAt": "2025-11-01",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate images from text using Emu 3.5 Image",
+        "description": "Generate images from text using Emu 3.5 Image",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -24075,22 +28680,20 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/longcat-video/image-to-video/480p",
+        "id": "fal/fal-ai/longcat-video/text-to-video/720p",
         "name": "LongCat Video",
         "provider": "Remova Media",
         "releasedAt": "2025-10-30",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate long videos from images using LongCat Video",
-        "description": "Generate long videos from images using LongCat Video",
+        "summary": "Generate long videos in 720p/30fps from text using LongCat Video",
+        "description": "Generate long videos in 720p/30fps from text using LongCat Video",
         "bestFor": [
-            "Video generation",
-            "Image-to-video"
+            "Video generation"
         ],
-        "modality": "image+text->video",
+        "modality": "text->video",
         "inputModalities": [
-            "image",
             "text"
         ],
         "outputModalities": [
@@ -24098,7 +28701,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "image-to-video",
+        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -24127,20 +28730,22 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/longcat-video/text-to-video/720p",
+        "id": "fal/fal-ai/longcat-video/image-to-video/480p",
         "name": "LongCat Video",
         "provider": "Remova Media",
         "releasedAt": "2025-10-30",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate long videos in 720p/30fps from text using LongCat Video",
-        "description": "Generate long videos in 720p/30fps from text using LongCat Video",
+        "summary": "Generate long videos from images using LongCat Video",
+        "description": "Generate long videos from images using LongCat Video",
         "bestFor": [
-            "Video generation"
+            "Video generation",
+            "Image-to-video"
         ],
-        "modality": "text->video",
+        "modality": "image+text->video",
         "inputModalities": [
+            "image",
             "text"
         ],
         "outputModalities": [
@@ -24148,7 +28753,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "text-to-video",
+        "modelType": "image-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -24729,7 +29334,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 Embedding 8B",
         "provider": "Qwen",
         "releasedAt": "2025-10-28",
-        "contextLength": 32000,
+        "contextLength": 32768,
         "inputPer1M": 0.01,
         "outputPer1M": 0,
         "summary": "The Qwen3 Embedding model series is the latest proprietary model of the Qwen family, specifically designed for text embedding and ranking tasks. This series inherits the exceptional multilingual capabilities, long-text.…",
@@ -25184,7 +29789,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 32B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-10-23",
-        "contextLength": 262144,
+        "contextLength": 131072,
         "inputPer1M": 0.10400000000000001,
         "outputPer1M": 0.41600000000000004,
         "summary": "Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines deep visual percept…",
@@ -25203,15 +29808,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -25509,6 +30117,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
             "response_format",
@@ -25678,7 +30287,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 8B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-10-14",
-        "contextLength": 256000,
+        "contextLength": 262144,
         "inputPer1M": 0.117,
         "outputPer1M": 0.45499999999999996,
         "summary": "Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interl…",
@@ -25722,9 +30331,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 8B Thinking",
         "provider": "Qwen",
         "releasedAt": "2025-10-14",
-        "contextLength": 256000,
-        "inputPer1M": 0.117,
-        "outputPer1M": 1.365,
+        "contextLength": 131072,
+        "inputPer1M": 0.18,
+        "outputPer1M": 2.0999999999999996,
         "summary": "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enh…",
         "description": "Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enh…",
         "bestFor": [
@@ -25741,6 +30350,7 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "logprobs",
             "max_tokens",
@@ -25748,10 +30358,12 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -25833,138 +30445,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
-        "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5",
-        "provider": "Nvidia",
-        "releasedAt": "2025-10-10",
-        "contextLength": 131072,
-        "inputPer1M": 0.39999999999999997,
-        "outputPer1M": 0.39999999999999997,
-        "summary": "Llama-3.3-Nemotron-Super-49B-v1.5 is a 49B-parameter, English-centric reasoning/chat model derived from Meta’s Llama-3.3-70B-Instruct with a 128K context. It’s post-trained for agentic workflows (RAG, tool calling) via…",
-        "description": "Llama-3.3-Nemotron-Super-49B-v1.5 is a 49B-parameter, English-centric reasoning/chat model derived from Meta’s Llama-3.3-70B-Instruct with a 128K context. It’s post-trained for agentic workflows (RAG, tool calling) via…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "reasoning",
-            "repetition_penalty",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "openai/o3-deep-research",
-        "name": "OpenAI: o3 Deep Research",
-        "provider": "OpenAI",
-        "releasedAt": "2025-10-10",
-        "contextLength": 200000,
-        "inputPer1M": 10,
-        "outputPer1M": 40,
-        "summary": "o3-deep-research is OpenAI's advanced model for deep research, designed to tackle complex, multi-step research tasks. Note: This model always uses the 'web_search' tool which adds additional cost.",
-        "description": "o3-deep-research is OpenAI's advanced model for deep research, designed to tackle complex, multi-step research tasks. Note: This model always uses the 'web_search' tool which adds additional cost.",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "image",
-            "text",
-            "file"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "logit_bias",
-            "logprobs",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "openai/o4-mini-deep-research",
-        "name": "OpenAI: o4 Mini Deep Research",
-        "provider": "OpenAI",
-        "releasedAt": "2025-10-10",
-        "contextLength": 200000,
-        "inputPer1M": 2,
-        "outputPer1M": 8,
-        "summary": "o4-mini-deep-research is OpenAI's faster, more affordable deep research model—ideal for tackling complex, multi-step research tasks. Note: This model always uses the 'web_search' tool which adds additional cost.",
-        "description": "o4-mini-deep-research is OpenAI's faster, more affordable deep research model—ideal for tackling complex, multi-step research tasks. Note: This model always uses the 'web_search' tool which adds additional cost.",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "file",
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "include_reasoning",
-            "logit_bias",
-            "logprobs",
-            "max_tokens",
-            "presence_penalty",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/fal-ai/kling-video/video-to-audio",
@@ -26099,33 +30579,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "vision",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/sora-2/video-to-video/remix",
-        "name": "Sora 2",
-        "provider": "Remova Media",
-        "releasedAt": "2025-10-08",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Video-to-video remix endpoint for Sora 2, OpenAI’s advanced model that transforms existing videos based on new text or image prompts allowing rich edits, style changes, and creative reinterpretations while preserving mo…",
-        "description": "Video-to-video remix endpoint for Sora 2, OpenAI’s advanced model that transforms existing videos based on new text or image prompts allowing rich edits, style changes, and creative reinterpretations while preserving mo…",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -26537,6 +30990,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -26595,9 +31049,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 VL 30B A3B Thinking",
         "provider": "Qwen",
         "releasedAt": "2025-10-06",
-        "contextLength": 131072,
-        "inputPer1M": 0.13,
-        "outputPer1M": 1.56,
+        "contextLength": 262144,
+        "inputPer1M": 0.19999999999999998,
+        "outputPer1M": 2.4,
         "summary": "Qwen3-VL-30B-A3B-Thinking is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Thinking variant enhances reasoning in STEM, math, and complex tasks. It excels...",
         "description": "Qwen3-VL-30B-A3B-Thinking is a multimodal model that unifies strong text generation with visual understanding for images and videos. Its Thinking variant enhances reasoning in STEM, math, and complex tasks. It excels...",
         "bestFor": [
@@ -26622,6 +31076,7 @@ export const generatedModels = [
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
@@ -26632,110 +31087,6 @@ export const generatedModels = [
         ],
         "source": "llm_catalog",
         "modelType": "language"
-    },
-    {
-        "id": "fal/fal-ai/sora-2/image-to-video",
-        "name": "Sora 2",
-        "provider": "Remova Media",
-        "releasedAt": "2025-10-06",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Image-to-video endpoint for Sora 2, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "description": "Image-to-video endpoint for Sora 2, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/sora-2/text-to-video",
-        "name": "Sora 2",
-        "provider": "Remova Media",
-        "releasedAt": "2025-10-06",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Text-to-video endpoint for Sora 2, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "description": "Text-to-video endpoint for Sora 2, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/sora-2/image-to-video/pro",
-        "name": "Sora 2",
-        "provider": "Remova Media",
-        "releasedAt": "2025-10-06",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Image-to-video endpoint for Sora 2 Pro, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "description": "Image-to-video endpoint for Sora 2 Pro, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/sora-2/text-to-video/pro",
-        "name": "Sora 2",
-        "provider": "Remova Media",
-        "releasedAt": "2025-10-06",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Text-to-video endpoint for Sora 2 Pro, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "description": "Text-to-video endpoint for Sora 2 Pro, OpenAI's state-of-the-art video model capable of creating richly detailed, dynamic clips with audio from natural language or images.",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/fal-ai/ovi/image-to-video",
@@ -26873,9 +31224,9 @@ export const generatedModels = [
         "name": "Z.ai: GLM 4.6",
         "provider": "Z.ai",
         "releasedAt": "2025-09-30",
-        "contextLength": 202752,
-        "inputPer1M": 0.43,
-        "outputPer1M": 1.74,
+        "contextLength": 204800,
+        "inputPer1M": 0.5,
+        "outputPer1M": 2,
         "summary": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
         "description": "Compared with GLM-4.5, this generation brings several key improvements: Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex...",
         "bestFor": [
@@ -26937,6 +31288,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
             "response_format",
@@ -27117,48 +31469,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "google/gemini-2.5-flash-lite-preview-09-2025",
-        "name": "Google: Gemini 2.5 Flash Lite Preview 09-2025",
-        "provider": "Google",
-        "releasedAt": "2025-09-25",
-        "contextLength": 1048576,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.39999999999999997,
-        "summary": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance...",
-        "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance...",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image+file+audio+video->text",
-        "inputModalities": [
-            "text",
-            "image",
-            "file",
-            "audio",
-            "video"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/wan-25-preview/image-to-image",
         "name": "Wan 2.5 Image to Image",
         "provider": "Remova Media",
@@ -27290,42 +31600,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "openai/gpt-5-codex",
-        "name": "OpenAI: GPT-5 Codex",
-        "provider": "OpenAI",
-        "releasedAt": "2025-09-23",
-        "contextLength": 400000,
-        "inputPer1M": 1.25,
-        "outputPer1M": 10,
-        "summary": "GPT-5-Codex is a specialized version of GPT-5 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering task…",
-        "description": "GPT-5-Codex is a specialized version of GPT-5 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering task…",
-        "bestFor": [
-            "Multimodal analysis",
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "structured_outputs",
-            "tool_choice",
-            "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "qwen/qwen3-coder-plus",
         "name": "Qwen: Qwen3 Coder Plus",
         "provider": "Qwen",
@@ -27347,15 +31621,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -27384,15 +31661,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -27405,8 +31685,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-09-23",
         "contextLength": 262144,
-        "inputPer1M": 0.19999999999999998,
-        "outputPer1M": 0.88,
+        "inputPer1M": 0.21,
+        "outputPer1M": 1.9,
         "summary": "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document…",
         "description": "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document…",
         "bestFor": [
@@ -27449,8 +31729,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-09-23",
         "contextLength": 131072,
-        "inputPer1M": 0.26,
-        "outputPer1M": 2.6,
+        "inputPer1M": 0.39999999999999997,
+        "outputPer1M": 4,
         "summary": "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STEM and math....",
         "description": "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STEM and math....",
         "bestFor": [
@@ -27495,7 +31775,7 @@ export const generatedModels = [
         "releasedAt": "2025-09-22",
         "contextLength": 163840,
         "inputPer1M": 0.27,
-        "outputPer1M": 0.95,
+        "outputPer1M": 1,
         "summary": "DeepSeek-V3.1 Terminus is an update to DeepSeek V3.1 that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing…",
         "description": "DeepSeek-V3.1 Terminus is an update to DeepSeek V3.1 that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing…",
         "bestFor": [
@@ -28370,14 +32650,17 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "stop",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -28385,34 +32668,7 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/wan-22-vace-fun-a14b/inpainting",
-        "name": "Wan 2.2 VACE Fun A14B",
-        "provider": "Remova Media",
-        "releasedAt": "2025-09-17",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
-        "description": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/wan-22-vace-fun-a14b/reframe",
+        "id": "fal/fal-ai/wan-22-vace-fun-a14b/depth",
         "name": "Wan 2.2 VACE Fun A14B",
         "provider": "Remova Media",
         "releasedAt": "2025-09-17",
@@ -28466,7 +32722,34 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-22-vace-fun-a14b/depth",
+        "id": "fal/fal-ai/wan-22-vace-fun-a14b/reframe",
+        "name": "Wan 2.2 VACE Fun A14B",
+        "provider": "Remova Media",
+        "releasedAt": "2025-09-17",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
+        "description": "VACE Fun for Wan 2.2 A14B from Alibaba-PAI",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/wan-22-vace-fun-a14b/inpainting",
         "name": "Wan 2.2 VACE Fun A14B",
         "provider": "Remova Media",
         "releasedAt": "2025-09-17",
@@ -28518,31 +32801,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-1/srpo",
-        "name": "FLUX.1 SRPO [dev]",
-        "provider": "Remova Media",
-        "releasedAt": "2025-09-15",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "FLUX.1 SRPO [dev] is a 12 billion parameter flow transformer that generates high-quality images from text with incredible aesthetics. It is suitable for personal and commercial use.",
-        "description": "FLUX.1 SRPO [dev] is a 12 billion parameter flow transformer that generates high-quality images from text with incredible aesthetics. It is suitable for personal and commercial use.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/flux/srpo/image-to-image",
         "name": "FLUX.1 SRPO [dev]",
         "provider": "Remova Media",
@@ -28566,6 +32824,31 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/flux-1/srpo",
+        "name": "FLUX.1 SRPO [dev]",
+        "provider": "Remova Media",
+        "releasedAt": "2025-09-15",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "FLUX.1 SRPO [dev] is a 12 billion parameter flow transformer that generates high-quality images from text with incredible aesthetics. It is suitable for personal and commercial use.",
+        "description": "FLUX.1 SRPO [dev] is a 12 billion parameter flow transformer that generates high-quality images from text with incredible aesthetics. It is suitable for personal and commercial use.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -28708,7 +32991,7 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-09-11",
         "contextLength": 262144,
-        "inputPer1M": 0.09,
+        "inputPer1M": 0.09999999999999999,
         "outputPer1M": 1.1,
         "summary": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowled…",
         "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowled…",
@@ -28747,51 +33030,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "qwen/qwen3-next-80b-a3b-instruct:free",
-        "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
-        "provider": "Qwen",
-        "releasedAt": "2025-09-11",
-        "contextLength": 262144,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowled…",
-        "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowled…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "response_format",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "qwen/qwen3-next-80b-a3b-thinking",
         "name": "Qwen: Qwen3 Next 80B A3B Thinking",
         "provider": "Qwen",
         "releasedAt": "2025-09-11",
         "contextLength": 262144,
-        "inputPer1M": 0.0975,
-        "outputPer1M": 0.78,
+        "inputPer1M": 0.15,
+        "outputPer1M": 1.2,
         "summary": "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging,…",
         "description": "Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging,…",
         "bestFor": [
@@ -28809,6 +33054,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logit_bias",
             "logprobs",
             "max_tokens",
             "presence_penalty",
@@ -29111,15 +33357,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -29132,8 +33381,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-09-08",
         "contextLength": 1000000,
-        "inputPer1M": 0.26,
-        "outputPer1M": 0.78,
+        "inputPer1M": 0.39999999999999997,
+        "outputPer1M": 1.2,
         "summary": "Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination.",
         "description": "Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination.",
         "bestFor": [
@@ -29148,16 +33397,21 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
+            "logprobs",
             "max_tokens",
             "presence_penalty",
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -29454,9 +33708,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 30B A3B Thinking 2507",
         "provider": "Qwen",
         "releasedAt": "2025-08-28",
-        "contextLength": 131072,
-        "inputPer1M": 0.13,
-        "outputPer1M": 1.56,
+        "contextLength": 81920,
+        "inputPer1M": 0.19999999999999998,
+        "outputPer1M": 2.4,
         "summary": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where interna…",
         "description": "Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where interna…",
         "bestFor": [
@@ -29471,15 +33725,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
             "presence_penalty",
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -29847,85 +34104,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/sonauto/v2/extend",
-        "name": "Sonauto V2",
-        "provider": "Sonauto",
-        "releasedAt": "2025-08-23",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Extend an existing song",
-        "description": "Extend an existing song",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "audio-to-audio",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/sonauto/v2/inpaint",
-        "name": "Sonauto V2",
-        "provider": "Sonauto",
-        "releasedAt": "2025-08-23",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Replace sections of an existing audio with newly generated content",
-        "description": "Replace sections of an existing audio with newly generated content",
-        "bestFor": [
-            "Audio workflows"
-        ],
-        "modality": "text->audio",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "audio"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-audio",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/sonauto/v2/text-to-music",
-        "name": "Sonauto V2",
-        "provider": "Sonauto",
-        "releasedAt": "2025-08-23",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Create full songs in any style",
-        "description": "Create full songs in any style",
-        "bestFor": [
-            "Music generation",
-            "Audio production",
-            "Campaign soundtracks"
-        ],
-        "modality": "text->audio",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "audio"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-audio",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/infinitalk/single-text",
         "name": "Infinitalk",
         "provider": "Remova Media",
@@ -29957,8 +34135,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2025-08-21",
         "contextLength": 163840,
-        "inputPer1M": 0.21,
-        "outputPer1M": 0.7899999999999999,
+        "inputPer1M": 0.25,
+        "outputPer1M": 0.95,
         "summary": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context...",
         "description": "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context...",
         "bestFor": [
@@ -30102,32 +34280,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/nextstep-1",
-        "name": "Nextstep 1",
-        "provider": "Remova Media",
-        "releasedAt": "2025-08-19",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Endpoint for NextStep-1 Autoregressive Image Editing model.",
-        "description": "Endpoint for NextStep-1 Autoregressive Image Editing model.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/qwen-image-edit",
         "name": "Qwen Image Edit",
         "provider": "Remova Media",
@@ -30208,6 +34360,31 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/moonvalley/marey/t2v",
+        "name": "Marey Realism V1.5",
+        "provider": "Moonvalley",
+        "releasedAt": "2025-08-14",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Generate a video from a text prompt with Marey, a generative video model trained exclusively on fully licensed data.",
+        "description": "Generate a video from a text prompt with Marey, a generative video model trained exclusively on fully licensed data.",
+        "bestFor": [
+            "Video generation"
+        ],
+        "modality": "text->video",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "video"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/moonvalley/marey/motion-transfer",
         "name": "Marey Realism V1.5",
         "provider": "Moonvalley",
@@ -30232,31 +34409,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/moonvalley/marey/t2v",
-        "name": "Marey Realism V1.5",
-        "provider": "Moonvalley",
-        "releasedAt": "2025-08-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Generate a video from a text prompt with Marey, a generative video model trained exclusively on fully licensed data.",
-        "description": "Generate a video from a text prompt with Marey, a generative video model trained exclusively on fully licensed data.",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -30668,42 +34820,12 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
             "tool_choice",
             "tools"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "openai/gpt-5-chat",
-        "name": "OpenAI: GPT-5 Chat",
-        "provider": "OpenAI",
-        "releasedAt": "2025-08-07",
-        "contextLength": 128000,
-        "inputPer1M": 1.25,
-        "outputPer1M": 10,
-        "summary": "GPT-5 Chat is designed for advanced, natural, multimodal, and context-aware conversations for enterprise applications.",
-        "description": "GPT-5 Chat is designed for advanced, natural, multimodal, and context-aware conversations for enterprise applications.",
-        "bestFor": [
-            "Multimodal analysis"
-        ],
-        "modality": "text+image+file->text",
-        "inputModalities": [
-            "file",
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "seed",
-            "structured_outputs"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -30737,6 +34859,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -30775,6 +34898,7 @@ export const generatedModels = [
             "max_completion_tokens",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -30834,31 +34958,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/bytedance/dreamina/v3.1/text-to-image",
-        "name": "Bytedance Dreamina V3.1 Text To Image",
-        "provider": "Remova Media",
-        "releasedAt": "2025-08-06",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Dreamina showcases superior picture effects, with significant improvements in picture aesthetics, precise and diverse styles, and rich details.",
-        "description": "Dreamina showcases superior picture effects, with significant improvements in picture aesthetics, precise and diverse styles, and rich details.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -30939,6 +35038,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "include_reasoning",
+            "max_completion_tokens",
             "max_tokens",
             "reasoning",
             "response_format",
@@ -30959,8 +35059,8 @@ export const generatedModels = [
         "provider": "OpenAI",
         "releasedAt": "2025-08-05",
         "contextLength": 131072,
-        "inputPer1M": 0.03,
-        "outputPer1M": 0.15,
+        "inputPer1M": 0.037,
+        "outputPer1M": 0.16999999999999998,
         "summary": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
         "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
         "bestFor": [
@@ -30983,6 +35083,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -31000,51 +35101,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "openai/gpt-oss-120b:free",
-        "name": "OpenAI: gpt-oss-120b (free)",
-        "provider": "OpenAI",
-        "releasedAt": "2025-08-05",
-        "contextLength": 131072,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
-        "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "min_p",
-            "reasoning",
-            "seed",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_a",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "openai/gpt-oss-20b",
         "name": "OpenAI: gpt-oss-20b",
         "provider": "OpenAI",
         "releasedAt": "2025-08-05",
         "contextLength": 131072,
-        "inputPer1M": 0.029,
-        "outputPer1M": 0.14,
+        "inputPer1M": 0.03,
+        "outputPer1M": 0.13,
         "summary": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
         "description": "gpt-oss-20b is an open-weight 21B parameter model released by OpenAI under the Apache 2.0 license. It uses a Mixture-of-Experts (MoE) architecture with 3.6B active parameters per forward pass, optimized for...",
         "bestFor": [
@@ -31067,6 +35130,7 @@ export const generatedModels = [
             "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -31106,10 +35170,11 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "include_reasoning",
+            "logprobs",
             "max_tokens",
-            "min_p",
             "presence_penalty",
             "reasoning",
+            "reasoning_effort",
             "repetition_penalty",
             "response_format",
             "seed",
@@ -31118,8 +35183,8 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
-            "top_a",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -31405,6 +35470,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -31419,40 +35485,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/veo3/image-to-video",
-        "name": "Veo3",
-        "provider": "Remova Media",
-        "releasedAt": "2025-08-01",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Veo 3 is the latest state-of-the art video generation model from Google DeepMind",
-        "description": "Veo 3 is the latest state-of-the art video generation model from Google DeepMind",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "qwen/qwen3-coder-30b-a3b-instruct",
         "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-07-31",
-        "contextLength": 160000,
+        "contextLength": 262144,
         "inputPer1M": 0.07,
-        "outputPer1M": 0.27,
+        "outputPer1M": 0.28,
         "summary": "Qwen3-Coder-30B-A3B-Instruct is a 30.5B parameter Mixture-of-Experts (MoE) model with 128 experts (8 active per forward pass), designed for advanced code generation, repository-scale understanding, and agentic tool use.…",
         "description": "Qwen3-Coder-30B-A3B-Instruct is a 30.5B parameter Mixture-of-Experts (MoE) model with 128 experts (8 active per forward pass), designed for advanced code generation, repository-scale understanding, and agentic tool use.…",
         "bestFor": [
@@ -31750,7 +35789,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 30B A3B Instruct 2507",
         "provider": "Qwen",
         "releasedAt": "2025-07-29",
-        "contextLength": 131072,
+        "contextLength": 262144,
         "inputPer1M": 0.04815,
         "outputPer1M": 0.19305,
         "summary": "Qwen3-30B-A3B-Instruct-2507 is a 30.5B-parameter mixture-of-experts language model from Qwen, with 3.3B active parameters per inference. It operates in non-thinking mode and is designed for high-quality instruction foll…",
@@ -31787,6 +35826,32 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
+        "id": "fal/fal-ai/hunyuan_world",
+        "name": "Hunyuan World",
+        "provider": "Remova Media",
+        "releasedAt": "2025-07-28",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
+        "description": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/hunyuan_world/image-to-world",
         "name": "Hunyuan World",
         "provider": "Remova Media",
@@ -31811,32 +35876,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-3d",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/hunyuan_world",
-        "name": "Hunyuan World",
-        "provider": "Remova Media",
-        "releasedAt": "2025-07-28",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
-        "description": "Hunyuan World 1.0 turns a single image into a panorama or a 3D world. It creates realistic scenes from the image, allowing you to explore and view it from different angles.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -31977,8 +36016,8 @@ export const generatedModels = [
         "provider": "Qwen",
         "releasedAt": "2025-07-25",
         "contextLength": 262144,
-        "inputPer1M": 0.14950000000000002,
-        "outputPer1M": 1.495,
+        "inputPer1M": 0.22999999999999998,
+        "outputPer1M": 2.3,
         "summary": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively suppo…",
         "description": "Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively suppo…",
         "bestFor": [
@@ -32147,9 +36186,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 Coder 480B A35B",
         "provider": "Qwen",
         "releasedAt": "2025-07-23",
-        "contextLength": 1048576,
-        "inputPer1M": 0.22,
-        "outputPer1M": 1.7999999999999998,
+        "contextLength": 262144,
+        "inputPer1M": 0.3,
+        "outputPer1M": 1,
         "summary": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over…",
         "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over…",
         "bestFor": [
@@ -32181,42 +36220,6 @@ export const generatedModels = [
             "tools",
             "top_k",
             "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "qwen/qwen3-coder:free",
-        "name": "Qwen: Qwen3 Coder 480B A35B (free)",
-        "provider": "Qwen",
-        "releasedAt": "2025-07-23",
-        "contextLength": 1048576,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over…",
-        "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over…",
-        "bestFor": [
-            "Agent workflows",
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -32416,7 +36419,7 @@ export const generatedModels = [
         "releasedAt": "2025-07-21",
         "contextLength": 262144,
         "inputPer1M": 0.09,
-        "outputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.55,
         "summary": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose…",
         "description": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose…",
         "bestFor": [
@@ -32585,32 +36588,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/calligrapher",
-        "name": "Calligrapher",
-        "provider": "Remova Media",
-        "releasedAt": "2025-07-12",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Use the text and font retaining capabilities of calligrapher to modify texts on your books, clothes and many more.",
-        "description": "Use the text and font retaining capabilities of calligrapher to modify texts on your books, clothes and many more.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "moonshotai/kimi-k2",
         "name": "MoonshotAI: Kimi K2 0711",
         "provider": "Moonshotai",
@@ -32647,47 +36624,13 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "switchpoint/router",
-        "name": "Switchpoint Router",
-        "provider": "Switchpoint",
-        "releasedAt": "2025-07-11",
-        "contextLength": 131072,
-        "inputPer1M": 0.85,
-        "outputPer1M": 3.4,
-        "summary": "Switchpoint AI's router instantly analyzes your request and directs it to the optimal AI from an ever-evolving library. As the world of LLMs advances, our router gets smarter, ensuring you...",
-        "description": "Switchpoint AI's router instantly analyzes your request and directs it to the optimal AI from an ever-evolving library. As the world of LLMs advances, our router gets smarter, ensuring you...",
-        "bestFor": [
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "response_format",
-            "seed",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-        "name": "Venice: Uncensored (free)",
+        "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition",
+        "name": "Venice: Uncensored",
         "provider": "Cognitivecomputations",
         "releasedAt": "2025-07-09",
-        "contextLength": 32768,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
+        "contextLength": 128000,
+        "inputPer1M": 0.19999999999999998,
+        "outputPer1M": 0.8999999999999999,
         "summary": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-t…",
         "description": "Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-t…",
         "bestFor": [
@@ -32707,65 +36650,12 @@ export const generatedModels = [
             "presence_penalty",
             "response_format",
             "stop",
-            "structured_outputs",
             "temperature",
             "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
-    },
-    {
-        "id": "fal/fal-ai/veo3/fast",
-        "name": "Veo 3 Fast",
-        "provider": "Remova Media",
-        "releasedAt": "2025-07-09",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Faster and more cost effective version of Google's Veo 3!",
-        "description": "Faster and more cost effective version of Google's Veo 3!",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/veo3/fast/image-to-video",
-        "name": "Veo 3 Fast [Image to Video]",
-        "provider": "Remova Media",
-        "releasedAt": "2025-07-09",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Now with a 50% price drop. Generate videos from your image prompts using Veo 3 fast.",
-        "description": "Now with a 50% price drop. Generate videos from your image prompts using Veo 3 fast.",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
     },
     {
         "id": "fal/fal-ai/bria/reimagine",
@@ -33365,7 +37255,7 @@ export const generatedModels = [
         "name": "Baidu: ERNIE 4.5 VL 424B A47B",
         "provider": "Baidu",
         "releasedAt": "2025-06-30",
-        "contextLength": 131072,
+        "contextLength": 123000,
         "inputPer1M": 0.42,
         "outputPer1M": 1.25,
         "summary": "ERNIE-4.5-VL-424B-A47B is a multimodal Mixture-of-Experts (MoE) model from Baidu’s ERNIE 4.5 series, featuring 424B total parameters with 47B active per token. It is trained jointly on text and image data...",
@@ -33879,7 +37769,7 @@ export const generatedModels = [
         "name": "Mistral: Mistral Small 3.2 24B",
         "provider": "Mistral AI",
         "releasedAt": "2025-06-20",
-        "contextLength": 128000,
+        "contextLength": 256000,
         "inputPer1M": 0.075,
         "outputPer1M": 0.19999999999999998,
         "summary": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 signi…",
@@ -34104,7 +37994,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-vace-14b/reframe",
+        "id": "fal/fal-ai/wan-vace-14b/depth",
         "name": "Wan VACE 14B",
         "provider": "Remova Media",
         "releasedAt": "2025-06-18",
@@ -34158,7 +38048,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-vace-14b/depth",
+        "id": "fal/fal-ai/wan-vace-14b/reframe",
         "name": "Wan VACE 14B",
         "provider": "Remova Media",
         "releasedAt": "2025-06-18",
@@ -34209,31 +38099,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/bria/text-to-image/3.2",
-        "name": "Bria 3.2 Text-to-Image",
-        "provider": "Bria",
-        "releasedAt": "2025-06-17",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Bria’s Text-to-Image model, trained exclusively on licensed data for safe and risk-free commercial use. Excels in Text-Rendering and Aesthetics.",
-        "description": "Bria’s Text-to-Image model, trained exclusively on licensed data for safe and risk-free commercial use. Excels in Text-Rendering and Aesthetics.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -34326,7 +38191,7 @@ export const generatedModels = [
         "provider": "Minimax",
         "releasedAt": "2025-06-17",
         "contextLength": 1000000,
-        "inputPer1M": 0.39999999999999997,
+        "inputPer1M": 0.55,
         "outputPer1M": 2.2,
         "summary": "MiniMax-M1 is a large-scale, open-weight reasoning model designed for extended context and high-efficiency inference. It leverages a hybrid Mixture-of-Experts (MoE) architecture paired with a custom \"lightning attention…",
         "description": "MiniMax-M1 is a large-scale, open-weight reasoning model designed for extended context and high-efficiency inference. It leverages a hybrid Mixture-of-Experts (MoE) architecture paired with a custom \"lightning attention…",
@@ -34569,15 +38434,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-trainer/t2v-14b",
+        "id": "fal/fal-ai/wan-trainer/t2v",
         "name": "Wan-2.1 LoRA Trainer",
         "provider": "Remova Media",
         "releasedAt": "2025-06-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Train custom LoRAs for Wan-2.1 T2V 14B",
-        "description": "Train custom LoRAs for Wan-2.1 T2V 14B",
+        "summary": "Train custom LoRAs for Wan-2.1 T2V 1.3B",
+        "description": "Train custom LoRAs for Wan-2.1 T2V 1.3B",
         "bestFor": [
             "Model training",
             "Dataset workflows",
@@ -34623,15 +38488,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan-trainer/t2v",
+        "id": "fal/fal-ai/wan-trainer/t2v-14b",
         "name": "Wan-2.1 LoRA Trainer",
         "provider": "Remova Media",
         "releasedAt": "2025-06-11",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Train custom LoRAs for Wan-2.1 T2V 1.3B",
-        "description": "Train custom LoRAs for Wan-2.1 T2V 1.3B",
+        "summary": "Train custom LoRAs for Wan-2.1 T2V 14B",
+        "description": "Train custom LoRAs for Wan-2.1 T2V 14B",
         "bestFor": [
             "Model training",
             "Dataset workflows",
@@ -34861,58 +38726,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/veo3",
-        "name": "Veo 3",
-        "provider": "Remova Media",
-        "releasedAt": "2025-06-05",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Veo 3 by Google, the most advanced AI video generation model in the world. With sound on!",
-        "description": "Veo 3 by Google, the most advanced AI video generation model in the world. With sound on!",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/wan-vace-1-3b",
-        "name": "Wan Vace 1 3b",
-        "provider": "Remova Media",
-        "releasedAt": "2025-06-04",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Vace a video generation model that uses a source image, mask, and video to create prompted videos with controllable sources.",
-        "description": "Vace a video generation model that uses a source image, mask, and video to create prompted videos with controllable sources.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/image-editing/baby-version",
         "name": "Image Editing",
         "provider": "Remova Media",
@@ -35047,33 +38860,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/resemble-ai/chatterboxhd/speech-to-speech",
-        "name": "Chatterboxhd",
-        "provider": "Resemble Ai",
-        "releasedAt": "2025-06-02",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Transform voices using Resemble AI's Chatterbox. Convert audio to new voices or your own samples, with expressive results and built-in perceptual watermarking.",
-        "description": "Transform voices using Resemble AI's Chatterbox. Convert audio to new voices or your own samples, with expressive results and built-in perceptual watermarking.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "speech-to-speech",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/resemble-ai/chatterboxhd/text-to-speech",
         "name": "Chatterboxhd",
         "provider": "Resemble Ai",
@@ -35098,6 +38884,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "text-to-speech",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/resemble-ai/chatterboxhd/speech-to-speech",
+        "name": "Chatterboxhd",
+        "provider": "Resemble Ai",
+        "releasedAt": "2025-06-02",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "Transform voices using Resemble AI's Chatterbox. Convert audio to new voices or your own samples, with expressive results and built-in perceptual watermarking.",
+        "description": "Transform voices using Resemble AI's Chatterbox. Convert audio to new voices or your own samples, with expressive results and built-in perceptual watermarking.",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "speech-to-speech",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -36063,8 +39876,8 @@ export const generatedModels = [
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate realistic lipsync from any audio using VEED's latest model",
-        "description": "Generate realistic lipsync from any audio using VEED's latest model",
+        "summary": "Generate realistic lipsync from any audio using VEED's model.",
+        "description": "Generate realistic lipsync from any audio using VEED's model.",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -36185,30 +39998,29 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/bagel/understand",
+        "id": "fal/fal-ai/bagel/edit",
         "name": "Bagel",
         "provider": "Remova Media",
         "releasedAt": "2025-05-21",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both text and images.",
-        "description": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both text and images.",
+        "summary": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both images and text.",
+        "description": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both images and text.",
         "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
+            "Image workflows"
         ],
-        "modality": "text->media",
+        "modality": "image+text->image",
         "inputModalities": [
+            "image",
             "text"
         ],
         "outputModalities": [
-            "media"
+            "image"
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "image-to-json",
+        "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -36237,29 +40049,30 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/bagel/edit",
+        "id": "fal/fal-ai/bagel/understand",
         "name": "Bagel",
         "provider": "Remova Media",
         "releasedAt": "2025-05-21",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both images and text.",
-        "description": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both images and text.",
+        "summary": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both text and images.",
+        "description": "Bagel is a 7B parameter multimodal model from Bytedance-Seed that can generate both text and images.",
         "bestFor": [
-            "Image workflows"
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
         ],
-        "modality": "image+text->image",
+        "modality": "text->media",
         "inputModalities": [
-            "image",
             "text"
         ],
         "outputModalities": [
-            "image"
+            "media"
         ],
         "supportedParameters": [],
         "source": "media_catalog",
-        "modelType": "image-to-image",
+        "modelType": "image-to-json",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -36434,15 +40247,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-video-13b-distilled/extend",
+        "id": "fal/fal-ai/ltx-video-13b-distilled/multiconditioning",
         "name": "LTX Video-0.9.7 13B Distilled",
         "provider": "Remova Media",
         "releasedAt": "2025-05-17",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
-        "description": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "summary": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "description": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -36461,15 +40274,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/ltx-video-13b-distilled/multiconditioning",
+        "id": "fal/fal-ai/ltx-video-13b-distilled/extend",
         "name": "LTX Video-0.9.7 13B Distilled",
         "provider": "Remova Media",
         "releasedAt": "2025-05-17",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
-        "description": "Generate videos from prompts, images, and videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "summary": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
+        "description": "Extend videos using LTX Video-0.9.7 13B Distilled and custom LoRA",
         "bestFor": [
             "Video editing",
             "Media composition",
@@ -37286,42 +41099,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "arcee-ai/coder-large",
-        "name": "Arcee AI: Coder Large",
-        "provider": "Arcee Ai",
-        "releasedAt": "2025-05-05",
-        "contextLength": 32768,
-        "inputPer1M": 0.5,
-        "outputPer1M": 0.7999999999999999,
-        "summary": "Coder‑Large is a 32 B‑parameter offspring of Qwen 2.5‑Instruct that has been further trained on permissively‑licensed GitHub, CodeSearchNet and synthetic bug‑fix corpora. It supports a 32k context window, enabling multi…",
-        "description": "Coder‑Large is a 32 B‑parameter offspring of Qwen 2.5‑Instruct that has been further trained on permissively‑licensed GitHub, CodeSearchNet and synthetic bug‑fix corpora. It supports a 32k context window, enabling multi…",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "arcee-ai/virtuoso-large",
         "name": "Arcee AI: Virtuoso Large",
         "provider": "Arcee Ai",
@@ -37571,7 +41348,7 @@ export const generatedModels = [
         "name": "Meta: Llama Guard 4 12B",
         "provider": "Meta",
         "releasedAt": "2025-04-30",
-        "contextLength": 163840,
+        "contextLength": 1048576,
         "inputPer1M": 0.18,
         "outputPer1M": 0.18,
         "summary": "Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM...",
@@ -37609,9 +41386,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen3 14B",
         "provider": "Qwen",
         "releasedAt": "2025-04-28",
-        "contextLength": 131702,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.24,
+        "contextLength": 131072,
+        "inputPer1M": 0.22749999999999998,
+        "outputPer1M": 0.9099999999999999,
         "summary": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
         "description": "Qwen3-14B is a dense 14.8B parameter causal language model from the Qwen3 series, designed for both complex reasoning and efficient dialogue. It supports seamless switching between a \"thinking\" mode for...",
         "bestFor": [
@@ -37671,15 +41448,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
             "presence_penalty",
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -37710,7 +41490,6 @@ export const generatedModels = [
             "frequency_penalty",
             "include_reasoning",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -37719,12 +41498,10 @@ export const generatedModels = [
             "response_format",
             "seed",
             "stop",
-            "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
             "top_k",
-            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -37797,22 +41574,25 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "include_reasoning",
             "max_tokens",
             "presence_penalty",
             "reasoning",
             "response_format",
             "seed",
+            "stop",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/moondream2/object-detection",
+        "id": "fal/fal-ai/moondream2/visual-query",
         "name": "Moondream2",
         "provider": "Remova Media",
         "releasedAt": "2025-04-26",
@@ -37839,7 +41619,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/moondream2/visual-query",
+        "id": "fal/fal-ai/moondream2/object-detection",
         "name": "Moondream2",
         "provider": "Remova Media",
         "releasedAt": "2025-04-26",
@@ -38050,33 +41830,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/magi-distilled/extend-video",
-        "name": "MAGI-1 (Distilled)",
-        "provider": "Remova Media",
-        "releasedAt": "2025-04-23",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "MAGI-1 distilled extends videos faster with an exceptional understanding of physical interactions and prompts",
-        "description": "MAGI-1 distilled extends videos faster with an exceptional understanding of physical interactions and prompts",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/magi-distilled/image-to-video",
         "name": "MAGI-1 (Distilled)",
         "provider": "Remova Media",
@@ -38101,6 +41854,33 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-video",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/magi-distilled/extend-video",
+        "name": "MAGI-1 (Distilled)",
+        "provider": "Remova Media",
+        "releasedAt": "2025-04-23",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MAGI-1 distilled extends videos faster with an exceptional understanding of physical interactions and prompts",
+        "description": "MAGI-1 distilled extends videos faster with an exceptional understanding of physical interactions and prompts",
+        "bestFor": [
+            "Video editing",
+            "Media composition",
+            "Asset enhancement"
+        ],
+        "modality": "text->media",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "media"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "video-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -38522,6 +42302,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -38907,8 +42688,8 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2025-04-05",
         "contextLength": 1048576,
-        "inputPer1M": 0.15,
-        "outputPer1M": 0.6,
+        "inputPer1M": 0.19999999999999998,
+        "outputPer1M": 0.7999999999999999,
         "summary": "Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forward...",
         "description": "Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forward...",
         "bestFor": [
@@ -38950,7 +42731,7 @@ export const generatedModels = [
         "name": "Meta: Llama 4 Scout",
         "provider": "Meta",
         "releasedAt": "2025-04-05",
-        "contextLength": 10000000,
+        "contextLength": 1310720,
         "inputPer1M": 0.09999999999999999,
         "outputPer1M": 0.3,
         "summary": "Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input...",
@@ -39586,8 +43367,8 @@ export const generatedModels = [
         "provider": "DeepSeek",
         "releasedAt": "2025-03-24",
         "contextLength": 163840,
-        "inputPer1M": 0.24,
-        "outputPer1M": 0.8999999999999999,
+        "inputPer1M": 0.27,
+        "outputPer1M": 1.12,
         "summary": "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the DeepSeek V3 model and performs really well...",
         "description": "DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team. It succeeds the DeepSeek V3 model and performs really well...",
         "bestFor": [
@@ -39675,7 +43456,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/hunyuan3d/v2/mini/turbo",
+        "id": "fal/fal-ai/hunyuan3d/v2/turbo",
         "name": "Hunyuan3D",
         "provider": "Remova Media",
         "releasedAt": "2025-03-20",
@@ -39729,7 +43510,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/hunyuan3d/v2/turbo",
+        "id": "fal/fal-ai/hunyuan3d/v2/mini/turbo",
         "name": "Hunyuan3D",
         "provider": "Remova Media",
         "releasedAt": "2025-03-20",
@@ -39935,33 +43716,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/pika/v1.5/pikaffects",
-        "name": "Pika Effects (v1.5)",
-        "provider": "Remova Media",
-        "releasedAt": "2025-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Pika Effects are AI-powered video effects designed to modify objects, characters, and environments in a fun, engaging, and visually compelling manner.",
-        "description": "Pika Effects are AI-powered video effects designed to modify objects, characters, and environments in a fun, engaging, and visually compelling manner.",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/pika/v2.1/image-to-video",
         "name": "Pika Image to Video (v2.1)",
         "provider": "Remova Media",
@@ -40145,33 +43899,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/pika/v2/pikadditions",
-        "name": "Pikadditions (v2)",
-        "provider": "Remova Media",
-        "releasedAt": "2025-03-14",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Pikadditions is a powerful video-to-video AI model that allows you to add anyone or anything to any video with seamless integration.",
-        "description": "Pikadditions is a powerful video-to-video AI model that allows you to add anyone or anything to any video with seamless integration.",
-        "bestFor": [
-            "Video editing",
-            "Media composition",
-            "Asset enhancement"
-        ],
-        "modality": "text->media",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "media"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "video-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "cohere/command-a",
         "name": "Cohere: Command A",
         "provider": "Cohere",
@@ -40346,9 +44073,9 @@ export const generatedModels = [
         "name": "Google: Gemma 3 27B",
         "provider": "Google",
         "releasedAt": "2025-03-12",
-        "contextLength": 131072,
+        "contextLength": 262144,
         "inputPer1M": 0.08,
-        "outputPer1M": 0.16,
+        "outputPer1M": 0.44999999999999996,
         "summary": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
         "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabiliti…",
         "bestFor": [
@@ -40382,68 +44109,6 @@ export const generatedModels = [
             "top_k",
             "top_logprobs",
             "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "openai/gpt-4o-search-preview",
-        "name": "OpenAI: GPT-4o Search Preview",
-        "provider": "OpenAI",
-        "releasedAt": "2025-03-12",
-        "contextLength": 128000,
-        "inputPer1M": 2.5,
-        "outputPer1M": 10,
-        "summary": "GPT-4o Search Previewis a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.",
-        "description": "GPT-4o Search Previewis a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.",
-        "bestFor": [
-            "Web research",
-            "Search-grounded answers",
-            "Source-backed analysis"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "structured_outputs",
-            "web_search_options"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "openai/gpt-4o-mini-search-preview",
-        "name": "OpenAI: GPT-4o-mini Search Preview",
-        "provider": "OpenAI",
-        "releasedAt": "2025-03-12",
-        "contextLength": 128000,
-        "inputPer1M": 0.15,
-        "outputPer1M": 0.6,
-        "summary": "GPT-4o mini Search Preview is a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.",
-        "description": "GPT-4o mini Search Preview is a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.",
-        "bestFor": [
-            "Web research",
-            "Search-grounded answers",
-            "Source-backed analysis"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "response_format",
-            "structured_outputs",
-            "web_search_options"
         ],
         "source": "llm_catalog",
         "modelType": "language"
@@ -40578,33 +44243,6 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Vidu Template to Video lets you create different effects by applying motion templates to your images.",
         "description": "Vidu Template to Video lets you create different effects by applying motion templates to your images.",
-        "bestFor": [
-            "Video generation",
-            "Image-to-video"
-        ],
-        "modality": "image+text->video",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/veo2/image-to-video",
-        "name": "Veo 2 (Image to Video)",
-        "provider": "Remova Media",
-        "releasedAt": "2025-03-11",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Veo 2 creates videos from images with realistic motion and very high quality output.",
-        "description": "Veo 2 creates videos from images with realistic motion and very high quality output.",
         "bestFor": [
             "Video generation",
             "Image-to-video"
@@ -40927,15 +44565,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-video/v1.6/pro/effects",
+        "id": "fal/fal-ai/kling-video/v1.6/standard/effects",
         "name": "Kling 1.6",
         "provider": "Remova Media",
         "releasedAt": "2025-03-06",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate video clips from your prompts using Kling 1.6 (pro)",
-        "description": "Generate video clips from your prompts using Kling 1.6 (pro)",
+        "summary": "Generate video clips from your prompts using Kling 1.6 (std)",
+        "description": "Generate video clips from your prompts using Kling 1.6 (std)",
         "bestFor": [
             "Video generation"
         ],
@@ -40952,15 +44590,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/kling-video/v1.6/standard/effects",
+        "id": "fal/fal-ai/kling-video/v1.6/pro/effects",
         "name": "Kling 1.6",
         "provider": "Remova Media",
         "releasedAt": "2025-03-06",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "Generate video clips from your prompts using Kling 1.6 (std)",
-        "description": "Generate video clips from your prompts using Kling 1.6 (std)",
+        "summary": "Generate video clips from your prompts using Kling 1.6 (pro)",
+        "description": "Generate video clips from your prompts using Kling 1.6 (pro)",
         "bestFor": [
             "Video generation"
         ],
@@ -41597,31 +45235,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/wan/v2.1/1.3b/text-to-video",
-        "name": "Wan-2.1 1.3B Text-to-Video",
-        "provider": "Remova Media",
-        "releasedAt": "2025-02-27",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Wan-2.1 1.3B is a text-to-video model that generates high-quality videos with high visual quality and motion diversity from text promptsat faster speeds.",
-        "description": "Wan-2.1 1.3B is a text-to-video model that generates high-quality videos with high visual quality and motion diversity from text promptsat faster speeds.",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/ddcolor",
         "name": "DDColor",
         "provider": "Remova Media",
@@ -41883,31 +45496,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/veo2",
-        "name": "Veo 2",
-        "provider": "Remova Media",
-        "releasedAt": "2025-02-21",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Veo 2 creates videos with realistic motion and high quality output. Explore different styles and find your own with extensive camera controls.",
-        "description": "Veo 2 creates videos with realistic motion and high quality output. Explore different styles and find your own with extensive camera controls.",
-        "bestFor": [
-            "Video generation"
-        ],
-        "modality": "text->video",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "video"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-video",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -42349,6 +45937,7 @@ export const generatedModels = [
             "include_reasoning",
             "max_tokens",
             "reasoning",
+            "reasoning_effort",
             "response_format",
             "seed",
             "structured_outputs",
@@ -42463,6 +46052,31 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/flux-control-lora-depth",
+        "name": "FLUX.1 [dev] Control LoRA Depth",
+        "provider": "Remova Media",
+        "releasedAt": "2025-02-11",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
+        "description": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/flux-control-lora-depth/image-to-image",
         "name": "FLUX.1 [dev] Control LoRA Depth",
         "provider": "Remova Media",
@@ -42486,31 +46100,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/flux-control-lora-depth",
-        "name": "FLUX.1 [dev] Control LoRA Depth",
-        "provider": "Remova Media",
-        "releasedAt": "2025-02-11",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
-        "description": "FLUX Control LoRA Depth is a high-performance endpoint that uses a control image to transfer structure to the generated image, using a depth map.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -42565,68 +46154,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "aion-labs/aion-1.0",
-        "name": "AionLabs: Aion-1.0",
-        "provider": "Aion Labs",
-        "releasedAt": "2025-02-04",
-        "contextLength": 131072,
-        "inputPer1M": 4,
-        "outputPer1M": 8,
-        "summary": "Aion-1.0 is a multi-model system designed for high performance across various tasks, including reasoning and coding. It is built on DeepSeek-R1, augmented with additional models and techniques such as Tree...",
-        "description": "Aion-1.0 is a multi-model system designed for high performance across various tasks, including reasoning and coding. It is built on DeepSeek-R1, augmented with additional models and techniques such as Tree...",
-        "bestFor": [
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "aion-labs/aion-1.0-mini",
-        "name": "AionLabs: Aion-1.0-Mini",
-        "provider": "Aion Labs",
-        "releasedAt": "2025-02-04",
-        "contextLength": 131072,
-        "inputPer1M": 0.7,
-        "outputPer1M": 1.4,
-        "summary": "Aion-1.0-Mini 32B parameter model is a distilled version of the DeepSeek-R1 model, designed for strong performance in reasoning domains such as mathematics, coding, and logic. It is a modified variant...",
-        "description": "Aion-1.0-Mini 32B parameter model is a distilled version of the DeepSeek-R1 model, designed for strong performance in reasoning domains such as mathematics, coding, and logic. It is a modified variant...",
-        "bestFor": [
-            "Advanced reasoning",
-            "Code generation"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "include_reasoning",
-            "max_tokens",
-            "reasoning",
-            "temperature",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "aion-labs/aion-rp-llama-3.1-8b",
@@ -42705,15 +46232,18 @@ export const generatedModels = [
             "text"
         ],
         "supportedParameters": [
+            "frequency_penalty",
             "logprobs",
             "max_tokens",
             "presence_penalty",
             "response_format",
             "seed",
+            "stop",
             "structured_outputs",
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -42725,7 +46255,7 @@ export const generatedModels = [
         "name": "Qwen: Qwen2.5 VL 72B Instruct",
         "provider": "Qwen",
         "releasedAt": "2025-02-01",
-        "contextLength": 131072,
+        "contextLength": 128000,
         "inputPer1M": 0.7999999999999999,
         "outputPer1M": 1,
         "summary": "Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.",
@@ -43107,7 +46637,7 @@ export const generatedModels = [
         "name": "DeepSeek: R1 Distill Llama 70B",
         "provider": "DeepSeek",
         "releasedAt": "2025-01-23",
-        "contextLength": 128000,
+        "contextLength": 8192,
         "inputPer1M": 0.7999999999999999,
         "outputPer1M": 0.7999999999999999,
         "summary": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on Llama-3.3-70B-Instruct, using outputs from DeepSeek R1. The model combines advanced distillation techniques to achieve high performance across...",
@@ -43724,44 +47254,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "sao10k/l3.1-70b-hanami-x1",
-        "name": "Sao10K: Llama 3.1 70B Hanami x1",
-        "provider": "Sao10k",
-        "releasedAt": "2025-01-08",
-        "contextLength": 16000,
-        "inputPer1M": 3,
-        "outputPer1M": 3,
-        "summary": "This is Sao10K's experiment over Euryale v2.2.",
-        "description": "This is Sao10K's experiment over Euryale v2.2.",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/kling-video/v1.6/standard/image-to-video",
         "name": "Kling 1.6",
         "provider": "Remova Media",
@@ -43899,9 +47391,9 @@ export const generatedModels = [
         "name": "DeepSeek: DeepSeek V3",
         "provider": "DeepSeek",
         "releasedAt": "2024-12-26",
-        "contextLength": 131072,
-        "inputPer1M": 0.20020000000000002,
-        "outputPer1M": 0.8000999999999999,
+        "contextLength": 163840,
+        "inputPer1M": 0.2574,
+        "outputPer1M": 1.0287,
         "summary": "DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported evaluations...",
         "description": "DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported evaluations...",
         "bestFor": [
@@ -44675,8 +48167,8 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2024-12-06",
         "contextLength": 131072,
-        "inputPer1M": 0.09999999999999999,
-        "outputPer1M": 0.32,
+        "inputPer1M": 0.13,
+        "outputPer1M": 0.39999999999999997,
         "summary": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
         "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
         "bestFor": [
@@ -44706,40 +48198,6 @@ export const generatedModels = [
             "tools",
             "top_k",
             "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "meta-llama/llama-3.3-70b-instruct:free",
-        "name": "Meta: Llama 3.3 70B Instruct (free)",
-        "provider": "Meta",
-        "releasedAt": "2024-12-06",
-        "contextLength": 131072,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
-        "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
-        "bestFor": [
-            "Agent workflows"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "stop",
-            "temperature",
-            "tool_choice",
-            "tools",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -45358,6 +48816,7 @@ export const generatedModels = [
             "logit_bias",
             "logprobs",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -45469,7 +48928,7 @@ export const generatedModels = [
         "name": "Qwen2.5 Coder 32B Instruct",
         "provider": "Qwen",
         "releasedAt": "2024-11-11",
-        "contextLength": 128000,
+        "contextLength": 32768,
         "inputPer1M": 0.66,
         "outputPer1M": 1,
         "summary": "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improvements in **code gener…",
@@ -45505,7 +48964,7 @@ export const generatedModels = [
         "name": "TheDrummer: UnslopNemo 12B",
         "provider": "Thedrummer",
         "releasedAt": "2024-11-08",
-        "contextLength": 32768,
+        "contextLength": 1024000,
         "inputPer1M": 0.39999999999999997,
         "outputPer1M": 0.39999999999999997,
         "summary": "UnslopNemo v4.1 is the latest addition from the creator of Rocinante, designed for adventure writing and role-play scenarios.",
@@ -45522,6 +48981,7 @@ export const generatedModels = [
         ],
         "supportedParameters": [
             "frequency_penalty",
+            "logit_bias",
             "logprobs",
             "max_tokens",
             "presence_penalty",
@@ -45533,6 +48993,7 @@ export const generatedModels = [
             "temperature",
             "tool_choice",
             "tools",
+            "top_k",
             "top_logprobs",
             "top_p"
         ],
@@ -45725,7 +49186,7 @@ export const generatedModels = [
         "name": "Magnum v4 72B",
         "provider": "Anthracite Org",
         "releasedAt": "2024-10-22",
-        "contextLength": 32768,
+        "contextLength": 16384,
         "inputPer1M": 3,
         "outputPer1M": 5,
         "summary": "This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet( and Opus( The model is fine-tuned on top of Qwen2.5 72B.",
@@ -45848,9 +49309,9 @@ export const generatedModels = [
         "name": "Qwen: Qwen2.5 7B Instruct",
         "provider": "Qwen",
         "releasedAt": "2024-10-16",
-        "contextLength": 131072,
-        "inputPer1M": 0.04,
-        "outputPer1M": 0.09999999999999999,
+        "contextLength": 32768,
+        "inputPer1M": 0.09999999999999999,
+        "outputPer1M": 0.19999999999999998,
         "summary": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
         "description": "Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
         "bestFor": [
@@ -45867,7 +49328,6 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
-            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -45880,67 +49340,6 @@ export const generatedModels = [
             "tool_choice",
             "tools",
             "top_k",
-            "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "inflection/inflection-3-pi",
-        "name": "Inflection: Inflection 3 Pi",
-        "provider": "Inflection",
-        "releasedAt": "2024-10-11",
-        "contextLength": 8000,
-        "inputPer1M": 2.5,
-        "outputPer1M": 10,
-        "summary": "Inflection 3 Pi powers Inflection's Pi chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
-        "description": "Inflection 3 Pi powers Inflection's Pi chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay. Pi...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "stop",
-            "temperature",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "inflection/inflection-3-productivity",
-        "name": "Inflection: Inflection 3 Productivity",
-        "provider": "Inflection",
-        "releasedAt": "2024-10-11",
-        "contextLength": 8000,
-        "inputPer1M": 2.5,
-        "outputPer1M": 10,
-        "summary": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
-        "description": "Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news. For emotional...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "max_tokens",
-            "stop",
-            "temperature",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -46056,7 +49455,7 @@ export const generatedModels = [
         "name": "TheDrummer: Rocinante 12B",
         "provider": "Thedrummer",
         "releasedAt": "2024-09-30",
-        "contextLength": 32768,
+        "contextLength": 65536,
         "inputPer1M": 0.25,
         "outputPer1M": 0.5,
         "summary": "Rocinante 12B is designed for engaging storytelling and rich prose. Early testers have reported: - Expanded vocabulary with unique and expressive word choices - Enhanced creativity for vivid narratives -...",
@@ -46075,52 +49474,17 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "seed",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "meta-llama/llama-3.2-11b-vision-instruct",
-        "name": "Meta: Llama 3.2 11B Vision Instruct",
-        "provider": "Meta",
-        "releasedAt": "2024-09-25",
-        "contextLength": 131072,
-        "inputPer1M": 0.345,
-        "outputPer1M": 0.345,
-        "summary": "Llama 3.2 11B Vision is a multimodal model with 11 billion parameters, designed to handle tasks combining visual and textual data. It excels in tasks such as image captioning and...",
-        "description": "Llama 3.2 11B Vision is a multimodal model with 11 billion parameters, designed to handle tasks combining visual and textual data. It excels in tasks such as image captioning and...",
-        "bestFor": [
-            "Multimodal analysis"
-        ],
-        "modality": "text+image->text",
-        "inputModalities": [
-            "text",
-            "image"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
             "presence_penalty",
             "repetition_penalty",
             "response_format",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -46131,7 +49495,7 @@ export const generatedModels = [
         "name": "Meta: Llama 3.2 1B Instruct",
         "provider": "Meta",
         "releasedAt": "2024-09-25",
-        "contextLength": 131072,
+        "contextLength": 60000,
         "inputPer1M": 0.027,
         "outputPer1M": 0.201,
         "summary": "Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate...",
@@ -46169,8 +49533,8 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2024-09-25",
         "contextLength": 131072,
-        "inputPer1M": 0.0509,
-        "outputPer1M": 0.335,
+        "inputPer1M": 0.049999999999999996,
+        "outputPer1M": 0.33,
         "summary": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transfor…",
         "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transfor…",
         "bestFor": [
@@ -46193,41 +49557,10 @@ export const generatedModels = [
             "repetition_penalty",
             "seed",
             "stop",
+            "structured_outputs",
             "temperature",
             "top_k",
             "top_logprobs",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
-        "id": "meta-llama/llama-3.2-3b-instruct:free",
-        "name": "Meta: Llama 3.2 3B Instruct (free)",
-        "provider": "Meta",
-        "releasedAt": "2024-09-25",
-        "contextLength": 131072,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transfor…",
-        "description": "Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transfor…",
-        "bestFor": [
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "stop",
-            "temperature",
-            "top_k",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -46238,7 +49571,7 @@ export const generatedModels = [
         "name": "Qwen2.5 72B Instruct",
         "provider": "Qwen",
         "releasedAt": "2024-09-19",
-        "contextLength": 131072,
+        "contextLength": 32768,
         "inputPer1M": 0.36,
         "outputPer1M": 0.39999999999999997,
         "summary": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
@@ -46431,84 +49764,6 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/image-preprocessors/midas",
-        "name": "Image Preprocessors",
-        "provider": "Remova Media",
-        "releasedAt": "2024-09-16",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "MiDaS depth estimation preprocessor.",
-        "description": "MiDaS depth estimation preprocessor.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/image-preprocessors/mlsd",
-        "name": "Image Preprocessors",
-        "provider": "Remova Media",
-        "releasedAt": "2024-09-16",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "M-LSD line segment detection preprocessor.",
-        "description": "M-LSD line segment detection preprocessor.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/image-preprocessors/scribble",
-        "name": "Image Preprocessors",
-        "provider": "Remova Media",
-        "releasedAt": "2024-09-16",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Scribble preprocessor.",
-        "description": "Scribble preprocessor.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/image-preprocessors/hed",
         "name": "Image Preprocessors",
         "provider": "Remova Media",
@@ -46518,6 +49773,32 @@ export const generatedModels = [
         "outputPer1M": 0,
         "summary": "Holistically-Nested Edge Detection (HED) preprocessor.",
         "description": "Holistically-Nested Edge Detection (HED) preprocessor.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/image-preprocessors/midas",
+        "name": "Image Preprocessors",
+        "provider": "Remova Media",
+        "releasedAt": "2024-09-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "MiDaS depth estimation preprocessor.",
+        "description": "MiDaS depth estimation preprocessor.",
         "bestFor": [
             "Image workflows"
         ],
@@ -46561,6 +49842,58 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/image-preprocessors/teed",
+        "name": "Image Preprocessors",
+        "provider": "Remova Media",
+        "releasedAt": "2024-09-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "TEED (Temporal Edge Enhancement Detection) preprocessor.",
+        "description": "TEED (Temporal Edge Enhancement Detection) preprocessor.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
+        "id": "fal/fal-ai/image-preprocessors/mlsd",
+        "name": "Image Preprocessors",
+        "provider": "Remova Media",
+        "releasedAt": "2024-09-16",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "M-LSD line segment detection preprocessor.",
+        "description": "M-LSD line segment detection preprocessor.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "image+text->image",
+        "inputModalities": [
+            "image",
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "image-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/image-preprocessors/pidi",
         "name": "Image Preprocessors",
         "provider": "Remova Media",
@@ -46587,15 +49920,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/image-preprocessors/teed",
+        "id": "fal/fal-ai/image-preprocessors/scribble",
         "name": "Image Preprocessors",
         "provider": "Remova Media",
         "releasedAt": "2024-09-16",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "TEED (Temporal Edge Enhancement Detection) preprocessor.",
-        "description": "TEED (Temporal Edge Enhancement Detection) preprocessor.",
+        "summary": "Scribble preprocessor.",
+        "description": "Scribble preprocessor.",
         "bestFor": [
             "Image workflows"
         ],
@@ -46880,38 +50213,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "nousresearch/hermes-3-llama-3.1-405b:free",
-        "name": "Nous: Hermes 3 405B Instruct (free)",
-        "provider": "Nousresearch",
-        "releasedAt": "2024-08-16",
-        "contextLength": 131072,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvement…",
-        "description": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvement…",
-        "bestFor": [
-            "Advanced reasoning"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "max_tokens",
-            "presence_penalty",
-            "stop",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
-    },
-    {
         "id": "fal/fal-ai/sam2/image",
         "name": "Segment Anything Model 2",
         "provider": "Remova Media",
@@ -46965,15 +50266,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-general/image-to-image",
+        "id": "fal/fal-ai/flux-general/inpainting",
         "name": "FLUX.1 [dev] with Controlnets and Loras",
         "provider": "Remova Media",
         "releasedAt": "2024-08-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
-        "description": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
+        "summary": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
+        "description": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
         "bestFor": [
             "Image workflows"
         ],
@@ -46991,15 +50292,15 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/flux-general/inpainting",
+        "id": "fal/fal-ai/flux-general/image-to-image",
         "name": "FLUX.1 [dev] with Controlnets and Loras",
         "provider": "Remova Media",
         "releasedAt": "2024-08-14",
         "contextLength": 0,
         "inputPer1M": 0,
         "outputPer1M": 0,
-        "summary": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
-        "description": "FLUX General Inpainting is a versatile endpoint that enables precise image editing and completion, supporting multiple AI extensions including LoRA, ControlNet, and IP-Adapter for enhanced control over inpainting result…",
+        "summary": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
+        "description": "FLUX General Image-to-Image is a versatile endpoint that transforms existing images with support for LoRA, ControlNet, and IP-Adapter extensions, enabling precise control over style transfer, modifications, and artistic…",
         "bestFor": [
             "Image workflows"
         ],
@@ -47092,6 +50393,7 @@ export const generatedModels = [
         "supportedParameters": [
             "frequency_penalty",
             "logit_bias",
+            "logprobs",
             "max_tokens",
             "min_p",
             "presence_penalty",
@@ -47102,6 +50404,7 @@ export const generatedModels = [
             "structured_outputs",
             "temperature",
             "top_k",
+            "top_logprobs",
             "top_p"
         ],
         "source": "llm_catalog",
@@ -47161,6 +50464,7 @@ export const generatedModels = [
             "logprobs",
             "max_completion_tokens",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -47279,6 +50583,31 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
+        "id": "fal/fal-ai/sdxl-controlnet-union",
+        "name": "SDXL ControlNet Union",
+        "provider": "Remova Media",
+        "releasedAt": "2024-07-31",
+        "contextLength": 0,
+        "inputPer1M": 0,
+        "outputPer1M": 0,
+        "summary": "An efficent SDXL multi-controlnet text-to-image model.",
+        "description": "An efficent SDXL multi-controlnet text-to-image model.",
+        "bestFor": [
+            "Image workflows"
+        ],
+        "modality": "text->image",
+        "inputModalities": [
+            "text"
+        ],
+        "outputModalities": [
+            "image"
+        ],
+        "supportedParameters": [],
+        "source": "media_catalog",
+        "modelType": "text-to-image",
+        "pricingDescription": "Usage-based pricing"
+    },
+    {
         "id": "fal/fal-ai/sdxl-controlnet-union/image-to-image",
         "name": "SDXL ControlNet Union",
         "provider": "Remova Media",
@@ -47302,31 +50631,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/sdxl-controlnet-union",
-        "name": "SDXL ControlNet Union",
-        "provider": "Remova Media",
-        "releasedAt": "2024-07-31",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "An efficent SDXL multi-controlnet text-to-image model.",
-        "description": "An efficent SDXL multi-controlnet text-to-image model.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -47428,8 +50732,8 @@ export const generatedModels = [
         "provider": "Meta",
         "releasedAt": "2024-07-23",
         "contextLength": 131072,
-        "inputPer1M": 0.02,
-        "outputPer1M": 0.03,
+        "inputPer1M": 0.049999999999999996,
+        "outputPer1M": 0.08,
         "summary": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
         "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient. It has demonstrated strong performance compared to...",
         "bestFor": [
@@ -47470,7 +50774,7 @@ export const generatedModels = [
         "provider": "Mistral AI",
         "releasedAt": "2024-07-19",
         "contextLength": 131072,
-        "inputPer1M": 0.02,
+        "inputPer1M": 0.019000000000000003,
         "outputPer1M": 0.03,
         "summary": "A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA. The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chinese, Japanese,...",
         "description": "A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA. The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chinese, Japanese,...",
@@ -47562,6 +50866,7 @@ export const generatedModels = [
             "logprobs",
             "max_completion_tokens",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -47605,6 +50910,7 @@ export const generatedModels = [
             "logit_bias",
             "logprobs",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -48026,7 +51332,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/florence-2-large/region-to-segmentation",
+        "id": "fal/fal-ai/florence-2-large/region-proposal",
         "name": "Florence-2 Large",
         "provider": "Remova Media",
         "releasedAt": "2024-06-22",
@@ -48052,7 +51358,7 @@ export const generatedModels = [
         "pricingDescription": "Usage-based pricing"
     },
     {
-        "id": "fal/fal-ai/florence-2-large/region-proposal",
+        "id": "fal/fal-ai/florence-2-large/region-to-segmentation",
         "name": "Florence-2 Large",
         "provider": "Remova Media",
         "releasedAt": "2024-06-22",
@@ -48285,6 +51591,7 @@ export const generatedModels = [
             "logprobs",
             "max_completion_tokens",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -48329,6 +51636,7 @@ export const generatedModels = [
             "logprobs",
             "max_completion_tokens",
             "max_tokens",
+            "prediction",
             "presence_penalty",
             "response_format",
             "seed",
@@ -48395,58 +51703,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/hyper-sdxl/image-to-image",
-        "name": "Hyper SDXL",
-        "provider": "Remova Media",
-        "releasedAt": "2024-04-25",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Hyper-charge SDXL's performance and creativity.",
-        "description": "Hyper-charge SDXL's performance and creativity.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/hyper-sdxl/inpainting",
-        "name": "Hyper SDXL",
-        "provider": "Remova Media",
-        "releasedAt": "2024-04-25",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Hyper-charge SDXL's performance and creativity.",
-        "description": "Hyper-charge SDXL's performance and creativity.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "image+text->image",
-        "inputModalities": [
-            "image",
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -48550,44 +51806,6 @@ export const generatedModels = [
         "source": "media_catalog",
         "modelType": "image-to-image",
         "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "meta-llama/llama-3-8b-instruct",
-        "name": "Meta: Llama 3 8B Instruct",
-        "provider": "Meta",
-        "releasedAt": "2024-04-18",
-        "contextLength": 8192,
-        "inputPer1M": 0.14,
-        "outputPer1M": 0.14,
-        "summary": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
-        "description": "Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 8B instruct-tuned version was optimized for high quality dialogue usecases. It has demonstrated strong...",
-        "bestFor": [
-            "General chat",
-            "Enterprise assistants"
-        ],
-        "modality": "text->text",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "text"
-        ],
-        "supportedParameters": [
-            "frequency_penalty",
-            "logit_bias",
-            "max_tokens",
-            "min_p",
-            "presence_penalty",
-            "repetition_penalty",
-            "response_format",
-            "stop",
-            "structured_outputs",
-            "temperature",
-            "top_k",
-            "top_p"
-        ],
-        "source": "llm_catalog",
-        "modelType": "language"
     },
     {
         "id": "fal/fal-ai/lora/inpaint",
@@ -48762,7 +51980,7 @@ export const generatedModels = [
         "name": "WizardLM-2 8x22B",
         "provider": "Microsoft",
         "releasedAt": "2024-04-16",
-        "contextLength": 65536,
+        "contextLength": 65535,
         "inputPer1M": 0.62,
         "outputPer1M": 0.62,
         "summary": "WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state-of-the-art opensou…",
@@ -49299,31 +52517,6 @@ export const generatedModels = [
         "supportedParameters": [],
         "source": "media_catalog",
         "modelType": "text-to-video",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
-        "id": "fal/fal-ai/hyper-sdxl",
-        "name": "Hyper SDXL",
-        "provider": "Remova Media",
-        "releasedAt": "2024-02-21",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Hyper-charge SDXL's performance and creativity.",
-        "description": "Hyper-charge SDXL's performance and creativity.",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
         "pricingDescription": "Usage-based pricing"
     },
     {
@@ -49930,31 +53123,6 @@ export const generatedModels = [
         "modelType": "language"
     },
     {
-        "id": "fal/fal-ai/diffusion-edge",
-        "name": "DiffusionEdge",
-        "provider": "Remova Media",
-        "releasedAt": "2024-01-08",
-        "contextLength": 0,
-        "inputPer1M": 0,
-        "outputPer1M": 0,
-        "summary": "Diffusion based high quality edge detection",
-        "description": "Diffusion based high quality edge detection",
-        "bestFor": [
-            "Image workflows"
-        ],
-        "modality": "text->image",
-        "inputModalities": [
-            "text"
-        ],
-        "outputModalities": [
-            "image"
-        ],
-        "supportedParameters": [],
-        "source": "media_catalog",
-        "modelType": "text-to-image",
-        "pricingDescription": "Usage-based pricing"
-    },
-    {
         "id": "fal/fal-ai/stable-audio",
         "name": "Stable Audio Open",
         "provider": "Remova Media",
@@ -50326,8 +53494,8 @@ export const generatedModels = [
         "provider": "Mancer",
         "releasedAt": "2023-08-02",
         "contextLength": 8000,
-        "inputPer1M": 0.75,
-        "outputPer1M": 1,
+        "inputPer1M": 0.5,
+        "outputPer1M": 0.75,
         "summary": "An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations.",
         "description": "An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations.",
         "bestFor": [
@@ -50409,7 +53577,7 @@ export const generatedModels = [
         "name": "MythoMax 13B",
         "provider": "Gryphe",
         "releasedAt": "2023-07-02",
-        "contextLength": 4096,
+        "contextLength": 8192,
         "inputPer1M": 0.06,
         "outputPer1M": 0.06,
         "summary": "One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge",

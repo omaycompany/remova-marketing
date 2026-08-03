@@ -9,6 +9,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyGlossaryRedirect, legacyGlossaryStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
+type GlossaryRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return [
         ...glossaryTerms.map((g) => ({ slug: g.slug })),
@@ -16,9 +18,10 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const term = glossaryTerms.find((g) => g.slug === params.slug);
-    const legacyRedirect = getLegacyGlossaryRedirect(params.slug);
+export async function generateMetadata({ params }: GlossaryRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const term = glossaryTerms.find((g) => g.slug === slug);
+    const legacyRedirect = getLegacyGlossaryRedirect(slug);
     if (!term && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!term) return {};
     const title = stripTitleSuffix(term.metaTitle);
@@ -44,9 +47,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function GlossaryPage({ params }: { params: { slug: string } }) {
-    const term = glossaryTerms.find((g) => g.slug === params.slug);
-    const legacyRedirect = getLegacyGlossaryRedirect(params.slug);
+export default async function GlossaryPage({ params }: GlossaryRouteProps) {
+    const { slug } = await params;
+    const term = glossaryTerms.find((g) => g.slug === slug);
+    const legacyRedirect = getLegacyGlossaryRedirect(slug);
     if (!term && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!term) return <div>Not found</div>;
 

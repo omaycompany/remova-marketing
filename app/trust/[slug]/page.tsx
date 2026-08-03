@@ -3,14 +3,18 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyTrustRedirect, legacyTrustStaticParams } from "@/lib/legacy-redirects";
 import { legacyRedirectMetadata } from "@/lib/seo";
 
+type TrustRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return legacyTrustStaticParams;
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    return legacyRedirectMetadata(getLegacyTrustRedirect(params.slug) ?? "/privacy");
+export async function generateMetadata({ params }: TrustRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    return legacyRedirectMetadata(getLegacyTrustRedirect(slug) ?? "/privacy");
 }
 
-export default function TrustSlugLegacyPage({ params }: { params: { slug: string } }) {
-    return <LegacyRedirect to={getLegacyTrustRedirect(params.slug) ?? "/privacy"} />;
+export default async function TrustSlugLegacyPage({ params }: TrustRouteProps) {
+    const { slug } = await params;
+    return <LegacyRedirect to={getLegacyTrustRedirect(slug) ?? "/privacy"} />;
 }

@@ -4,6 +4,7 @@ import { ShieldCheck, Lock, Coins, EyeOff, Building2, Layers, Check, Handshake, 
 import FAQ from '@/components/ui/FAQ';
 import ExternalAppLink from '@/components/ui/ExternalAppLink';
 import SafeEmailLink from '@/components/ui/SafeEmailLink';
+import SalesInquiryForm from '@/components/marketing/SalesInquiryForm';
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, SITE_URL, buildKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -40,6 +41,8 @@ export const metadata: Metadata = {
         images: [DEFAULT_OG_IMAGE_URL],
     },
 };
+
+const architectureEmailBody = "Hi Remova,\n\nI want to discuss an on-prem or private AI setup.\n\nCompany:\nRole:\nTeam size:\nData or deployment requirements:\nCurrent AI providers:\nTimeline:\nWhat should we follow up on:\n";
 
 const homepageFaqs = [
     {
@@ -672,12 +675,11 @@ export default function LandingPage() {
                                         </p>
                                     </div>
                                 </div>
-                                <ExternalAppLink
-                                    href="https://app.remova.org/register"
-                                    className="w-full py-5 text-center bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xl font-black uppercase hover:bg-slate-700 dark:hover:bg-slate-200 transition-colors rounded-[2.5rem]"
-                                >
-                                    Contact Sales
-                                </ExternalAppLink>
+                                <SalesInquiryForm
+                                    inquiryType="Sales and rollout"
+                                    source="homepage-enterprise-plan"
+                                    buttonLabel="Talk to sales"
+                                />
                             </div>
 
                             {/* Right Column: Scope */}
@@ -784,6 +786,7 @@ export default function LandingPage() {
                             <SafeEmailLink
                                 mailbox="sales"
                                 subject="On-Prem Architecture Inquiry"
+                                body={architectureEmailBody}
                                 className="w-full py-4 text-center bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-lg font-black uppercase hover:opacity-90 transition-opacity rounded-[2.5rem]"
                             >
                                 Request Architecture Link

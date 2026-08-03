@@ -10,6 +10,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyBlogRedirect, legacyBlogStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata } from "@/lib/seo";
 
+type BlogPostRouteProps = { params: Promise<{ slug: string }> };
+
 const ISO_42001_CLUSTER_SLUGS = new Set([
     "iso-42001-ai-governance-checklist",
     "iso-42001-certification-readiness-steps-enterprise-ai-teams",
@@ -328,9 +330,10 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const post = allBlogPosts.find((p) => p.slug === params.slug);
-    const legacyRedirect = getLegacyBlogRedirect(params.slug);
+export async function generateMetadata({ params }: BlogPostRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = allBlogPosts.find((p) => p.slug === slug);
+    const legacyRedirect = getLegacyBlogRedirect(slug);
     if (!post && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!post) return {};
     const title = post.title;
@@ -421,9 +424,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-    const post = allBlogPosts.find((p) => p.slug === params.slug);
-    const legacyRedirect = getLegacyBlogRedirect(params.slug);
+export default async function BlogPostPage({ params }: BlogPostRouteProps) {
+    const { slug } = await params;
+    const post = allBlogPosts.find((p) => p.slug === slug);
+    const legacyRedirect = getLegacyBlogRedirect(slug);
     if (!post && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!post) return <div>Not found</div>;
     const isDataLossPreventionPost = post.slug === "data-loss-prevention-ai-prompts";

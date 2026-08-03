@@ -9,6 +9,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyFeatureRedirect, legacyFeatureStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
+type FeatureRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return [
         ...features.map((f) => ({ slug: f.slug })),
@@ -16,9 +18,10 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const feature = features.find((f) => f.slug === params.slug);
-    const legacyRedirect = getLegacyFeatureRedirect(params.slug);
+export async function generateMetadata({ params }: FeatureRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const feature = features.find((f) => f.slug === slug);
+    const legacyRedirect = getLegacyFeatureRedirect(slug);
     if (!feature && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!feature) return {};
     const title = stripTitleSuffix(feature.metaTitle);
@@ -57,9 +60,10 @@ function sentenceWithTerminalPunctuation(value: string) {
     return `${trimmed}.`;
 }
 
-export default function FeaturePage({ params }: { params: { slug: string } }) {
-    const feature = features.find((f) => f.slug === params.slug);
-    const legacyRedirect = getLegacyFeatureRedirect(params.slug);
+export default async function FeaturePage({ params }: FeatureRouteProps) {
+    const { slug } = await params;
+    const feature = features.find((f) => f.slug === slug);
+    const legacyRedirect = getLegacyFeatureRedirect(slug);
     if (!feature && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!feature) return <div>Not found</div>;
 

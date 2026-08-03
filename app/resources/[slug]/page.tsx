@@ -6,6 +6,8 @@ import { getResourceGuide, resourceGuides } from "@/content/resources";
 import { getLegacyResourceRedirect, legacyResourceStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata } from "@/lib/seo";
 
+type ResourceRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return [
         ...resourceGuides.map((resource) => ({ slug: resource.slug })),
@@ -13,11 +15,12 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const resource = getResourceGuide(params.slug);
+export async function generateMetadata({ params }: ResourceRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const resource = getResourceGuide(slug);
 
     if (!resource) {
-        return legacyRedirectMetadata(getLegacyResourceRedirect(params.slug) ?? "/resources");
+        return legacyRedirectMetadata(getLegacyResourceRedirect(slug) ?? "/resources");
     }
 
     return {
@@ -49,11 +52,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default function ResourceGuidePage({ params }: { params: { slug: string } }) {
-    const resource = getResourceGuide(params.slug);
+export default async function ResourceGuidePage({ params }: ResourceRouteProps) {
+    const { slug } = await params;
+    const resource = getResourceGuide(slug);
 
     if (!resource) {
-        return <LegacyRedirect to={getLegacyResourceRedirect(params.slug) ?? "/resources"} />;
+        return <LegacyRedirect to={getLegacyResourceRedirect(slug) ?? "/resources"} />;
     }
 
     return (

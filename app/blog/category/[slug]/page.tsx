@@ -7,6 +7,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyBlogCategoryRedirect, legacyBlogCategoryStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata } from "@/lib/seo";
 
+type BlogCategoryRouteProps = { params: Promise<{ slug: string }> };
+
 function categoryFromSlug(slug: string) {
     return Array.from(new Set(allBlogPosts.map((post) => post.category))).find((category) => blogCategorySlug(category) === slug);
 }
@@ -40,8 +42,9 @@ export async function generateStaticParams() {
     return [...currentCategoryParams, ...legacyBlogCategoryStaticParams];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const category = categoryFromSlug(params.slug);
+export async function generateMetadata({ params }: BlogCategoryRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const category = categoryFromSlug(slug);
     if (category) {
         const seo = getBlogCategorySeo(category);
         const canonicalPath = blogCategoryPath(category);
@@ -72,11 +75,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         };
     }
 
-    return legacyRedirectMetadata(getLegacyBlogCategoryRedirect(params.slug) ?? "/blog");
+    return legacyRedirectMetadata(getLegacyBlogCategoryRedirect(slug) ?? "/blog");
 }
 
-export default function BlogCategoryLegacyPage({ params }: { params: { slug: string } }) {
-    const category = categoryFromSlug(params.slug);
+export default async function BlogCategoryLegacyPage({ params }: BlogCategoryRouteProps) {
+    const { slug } = await params;
+    const category = categoryFromSlug(slug);
     if (category) {
         const posts = allBlogPosts.filter((post) => post.category === category);
         const seo = getBlogCategorySeo(category);
@@ -164,5 +168,5 @@ export default function BlogCategoryLegacyPage({ params }: { params: { slug: str
         );
     }
 
-    return <LegacyRedirect to={getLegacyBlogCategoryRedirect(params.slug) ?? "/blog"} />;
+    return <LegacyRedirect to={getLegacyBlogCategoryRedirect(slug) ?? "/blog"} />;
 }

@@ -9,6 +9,8 @@ import LegacyRedirect from "@/components/seo/LegacyRedirect";
 import { getLegacyUseCaseRedirect, legacyUseCaseStaticParams } from "@/lib/legacy-redirects";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords, legacyRedirectMetadata, stripTitleSuffix } from "@/lib/seo";
 
+type UseCaseRouteProps = { params: Promise<{ slug: string }> };
+
 export async function generateStaticParams() {
     return [
         ...useCases.map((u) => ({ slug: u.slug })),
@@ -16,9 +18,10 @@ export async function generateStaticParams() {
     ];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const uc = useCases.find((u) => u.slug === params.slug);
-    const legacyRedirect = getLegacyUseCaseRedirect(params.slug);
+export async function generateMetadata({ params }: UseCaseRouteProps): Promise<Metadata> {
+    const { slug } = await params;
+    const uc = useCases.find((u) => u.slug === slug);
+    const legacyRedirect = getLegacyUseCaseRedirect(slug);
     if (!uc && legacyRedirect) return legacyRedirectMetadata(legacyRedirect);
     if (!uc) return {};
     const title = stripTitleSuffix(uc.metaTitle);
@@ -94,9 +97,10 @@ function firstSentence(value: string) {
     return sentenceWithTerminalPunctuation(sentence);
 }
 
-export default function UseCasePage({ params }: { params: { slug: string } }) {
-    const uc = useCases.find((u) => u.slug === params.slug);
-    const legacyRedirect = getLegacyUseCaseRedirect(params.slug);
+export default async function UseCasePage({ params }: UseCaseRouteProps) {
+    const { slug } = await params;
+    const uc = useCases.find((u) => u.slug === slug);
+    const legacyRedirect = getLegacyUseCaseRedirect(slug);
     if (!uc && legacyRedirect) return <LegacyRedirect to={legacyRedirect} />;
     if (!uc) return <div>Not found</div>;
     const Icon = categoryIcon[uc.category];

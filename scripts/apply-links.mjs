@@ -23,7 +23,7 @@ blog = blog.replace(
 );
 blog = blog.replace(
   'Governance teams must enforce these boundaries through the platform\'s API control layer',
-  'Governance teams must enforce these boundaries using <a href="/features/governed-api-access">governed API access</a>'
+  'Governance teams must enforce these boundaries using <a href="/features/api-access">governed API access</a>'
 );
 
 // Shadow AI
@@ -164,4 +164,3 @@ useCases = useCases.replace(
 
 fs.writeFileSync('content/use-cases.ts', useCases);
 console.log("Updated use-cases.ts");
-
