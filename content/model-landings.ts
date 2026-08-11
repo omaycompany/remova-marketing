@@ -20,6 +20,7 @@ import {
     isUsageBasedPriceModel,
     publicModelPrice,
 } from "@/lib/model-pricing";
+import { displayModelName, humanizeModelModality } from "@/lib/model-public-copy";
 
 export interface ModelLanding {
     slug: string;
@@ -586,7 +587,7 @@ const landingSeeds: ModelLandingSeed[] = [
             "Gemini 3.1 Flash Lite Preview is positioned for large-scale workloads that need speed, multimodal input, and strong unit economics.",
         summaryPoints: [
             "Designed for scale where request volume is the core constraint.",
-            "Large context with broad modality support for mixed enterprise data.",
+            "Large context supports mixed text and visual enterprise data.",
             "Low input cost supports aggressive workflow automation.",
             "Best used with quality thresholds and escalation paths.",
         ],
@@ -896,7 +897,7 @@ const landingSeeds: ModelLandingSeed[] = [
             "Gemini 3.1 Pro Preview is positioned as a frontier reasoning tier for demanding enterprise tasks.",
         summaryPoints: [
             "Strong model depth for complex analytical prompts.",
-            "Large context and broad modality support across workloads.",
+            "Large context supports text and visual inputs across complex workloads.",
             "Suitable for strategic and high-impact business workflows.",
             "Requires governance controls to avoid premium-tier sprawl.",
         ],
@@ -1204,14 +1205,15 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
         throw new Error(`Missing model data for landing seed: ${seed.modelId}`);
     }
 
-    const metaTitle = buildMetaTitle(model.name);
-    const metaDescription = `A practical enterprise guide to ${model.name}, covering fit, strengths, tradeoffs, and rollout considerations.`;
+    const modelName = displayModelName(model);
+    const metaTitle = buildMetaTitle(modelName);
+    const metaDescription = `A practical enterprise guide to ${modelName}, covering fit, strengths, tradeoffs, and rollout considerations.`;
 
     return {
         slug: seed.slug,
         modelId: seed.modelId,
         heroLabel: seed.heroLabel,
-        heroTitle: model.name,
+        heroTitle: modelName,
         heroSubtitle: seed.heroSubtitle,
         metaTitle,
         metaDescription,
@@ -1225,7 +1227,7 @@ function toModelLanding(seed: ModelLandingSeed): ModelLanding {
         specNotes: [
             { label: "Model ID", value: model.id },
             { label: "Context Window", value: contextSpecValue(model) },
-            { label: "Modality", value: seed.modality },
+            { label: "Modality", value: humanizeModelModality(seed.modality) },
             { label: "Input Price", value: inputPriceSpecValue(model) },
             { label: "Output Price", value: outputPriceSpecValue(model) },
             { label: "Provider", value: model.provider },
@@ -1348,7 +1350,7 @@ function pricingBand(model: ModelEntry) {
 }
 
 function contextSpecValue(model: ModelEntry) {
-    if (model.contextLength <= 0) return "N/A";
+    if (model.contextLength <= 0) return "Usage-specific";
     return `${fmtNumber.format(model.contextLength)} tokens`;
 }
 
@@ -1741,13 +1743,18 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
     const context = contextBand(model);
     const pricing = pricingBand(model);
     const modality = defaultModality(model);
+    const humanModality = humanizeModelModality(modality);
+    const modalityPhrase = humanModality.charAt(0).toLowerCase() + humanModality.slice(1);
+    const modelName = displayModelName(model);
+    const displayModel = modelName === model.name ? model : { ...model, name: modelName };
     const slug = ensureUniqueSlug(model, usedSlugs);
     const fitPhrase = bestFitPhrase(model);
     const contextArticle = articleFor(context);
     const landingBestFor = displayBestFor(model);
+    const usageBased = pricing === "usage-based";
     const useCases: string[] = [];
     for (const entry of landingBestFor.slice(0, 4)) {
-        const useCase = useCaseFromTag(entry, model);
+        const useCase = useCaseFromTag(entry, displayModel);
         if (!useCases.includes(useCase)) useCases.push(useCase);
     }
     const bestFitList = landingBestFor.length > 0 ? landingBestFor.join(", ") : "General assistants";
@@ -1757,16 +1764,16 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
             : landingBestFor[0]?.toLowerCase() ?? "general assistants";
     let fallbackIndex = useCases.length;
     while (useCases.length < 4) {
-        const fallback = fallbackUseCaseForModel(model, modality, fallbackIndex);
+        const fallback = fallbackUseCaseForModel(displayModel, modality, fallbackIndex);
         fallbackIndex += 1;
         if (useCases.includes(fallback) && fallbackIndex < 12) continue;
         useCases.push(fallback);
     }
 
     const strengths = [
-        `${model.name} is suited for ${landingBestFor[0]?.toLowerCase() ?? "general enterprise assistants"}.`,
+        `${modelName} is suited for ${landingBestFor[0]?.toLowerCase() ?? "general enterprise assistants"}.`,
         context === "non-token"
-            ? `Supports ${modality} workflows for governed media and automation use cases.`
+            ? `Supports ${modalityPhrase} workflows for governed media and automation use cases.`
             : `Supports ${context} for multi-step prompts and larger working sets.`,
         `Pricing profile is ${pricing}, enabling predictable workload routing decisions.`,
         `Can be paired with policy guardrails for safer deployment at scale.`,
@@ -1774,24 +1781,36 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
 
     const tradeoffs = tradeoffsForModel(model, context, pricing, modality, autoIndex);
 
-    const inputModalities = (model.inputModalities ?? ["text"]).join(", ");
-    const outputModalities = (model.outputModalities ?? ["text"]).join(", ");
+    const inputModalities = (model.inputModalities ?? ["text"]).map(titleCaseToken).join(", ");
+    const outputModalities = (model.outputModalities ?? ["text"]).map(titleCaseToken).join(", ");
+    const heroSubtitle = usageBased
+        ? `${modelName} supports enterprise teams working on ${fitPhrase}, with provider-defined usage pricing and governance controls.`
+        : `${modelName} is a ${pricing} model with ${context} support, suited to ${fitPhrase} for enterprise teams.`;
+    const metaDescription = usageBased
+        ? `${modelName} enterprise profile: usage-based pricing, support for ${modalityPhrase}, and rollout guidance for ${topUseCasesText}.`
+        : `${modelName} enterprise profile: ${context} support, ${inputPriceSpecValue(model)} input pricing, and rollout guidance for ${topUseCasesText}.`;
+    const providerSummary = usageBased
+        ? `${modelName} is available in Remova for ${fitPhrase}, with provider-defined usage-based pricing and support for ${modalityPhrase}.`
+        : `${modelName} is available in Remova as ${contextArticle} ${context} option with ${inputPriceSpecValue(model)} input pricing, ${outputPriceSpecValue(model)} output pricing, and ${modalityPhrase} support.`;
+    const capacitySummary = usageBased
+        ? `${modelName} is suited to ${fitPhrase} with provider-defined usage billing.`
+        : `${modelName} offers ${context} capacity for enterprise prompts and documents.`;
+    const pricingSummary = usageBased
+        ? "Pricing is usage-based and should be estimated against the intended workflow before rollout."
+        : `Current Remova pricing band is ${pricing}: ${inputPriceSpecValue(model)} input and ${outputPriceSpecValue(model)} output.`;
 
     return {
         slug,
         modelId: model.id,
         heroLabel: theme.heroLabel,
-        heroTitle: model.name,
-        heroSubtitle: `${model.name} is a ${pricing} model with ${context} support, suited to ${fitPhrase} for enterprise teams.`,
-        metaTitle: buildMetaTitle(model.name),
-        metaDescription: trimCopy(
-            `${model.name} enterprise profile: ${context} support, ${pricing} pricing (${inputPriceSpecValue(model)} input), and rollout guidance for ${topUseCasesText}.`,
-            158
-        ),
-        providerSummary: `${model.name} is available in Remova as ${contextArticle} ${context} option with ${inputPriceSpecValue(model)} input pricing, ${outputPriceSpecValue(model)} output pricing, and ${modality} modality support for enterprise AI operations.`,
+        heroTitle: modelName,
+        heroSubtitle,
+        metaTitle: buildMetaTitle(modelName),
+        metaDescription: trimCopy(metaDescription, 158),
+        providerSummary,
         summaryPoints: [
-            `${model.name} offers ${context} capacity for enterprise prompts and documents.`,
-            `Current Remova pricing band is ${pricing}: ${inputPriceSpecValue(model)} input and ${outputPriceSpecValue(model)} output.`,
+            capacitySummary,
+            pricingSummary,
             `Best-fit workloads include: ${bestFitList}.`,
             theme.governanceLine,
         ],
@@ -1799,9 +1818,11 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         tradeoffs,
         useCases,
         deploymentChecklist: [
-            `Define where ${model.name} is default vs. fallback in your routing policy.`,
+            `Define where ${modelName} is default vs. fallback in your routing policy.`,
             "Enable role-based access and policy checks before opening access broadly.",
-            "Set spend guardrails by team and monitor weekly token consumption.",
+            usageBased
+                ? "Set spend guardrails by team and monitor weekly usage against completed workflow outcomes."
+                : "Set spend guardrails by team and monitor weekly token consumption.",
             theme.rolloutFocus,
             "Re-run quality and cost benchmarks monthly as newer releases appear.",
         ],
@@ -1809,7 +1830,7 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         specNotes: [
             { label: "Model ID", value: publicModelId(model, slug) },
             { label: "Context Window", value: contextSpecValue(model) },
-            { label: "Modality", value: modality },
+            { label: "Modality", value: humanModality },
             { label: "Input Modalities", value: inputModalities },
             { label: "Output Modalities", value: outputModalities },
             { label: "Input Price", value: inputPriceSpecValue(model) },
@@ -1819,16 +1840,18 @@ function autoLandingForModel(model: ModelEntry, autoIndex: number, usedSlugs: Se
         ],
         faqs: [
             {
-                question: `When should teams choose ${model.name}?`,
-                answer: `Choose ${model.name} when the workload aligns with ${bestFitList.toLowerCase()} and quality targets justify its pricing profile.`,
+                question: `When should teams choose ${modelName}?`,
+                answer: `Choose ${modelName} when the workload aligns with ${bestFitList.toLowerCase()} and quality targets justify its pricing profile.`,
             },
             {
-                question: `Can ${model.name} be used as a default model?`,
+                question: `Can ${modelName} be used as a default model?`,
                 answer: "It depends on workload mix. Most organizations use routing policies so routine traffic stays on lower-cost tiers.",
             },
             {
                 question: "What should be validated before rollout?",
-                answer: "Validate quality on real internal prompts, token efficiency, latency, and policy compliance behavior.",
+                answer: usageBased
+                    ? "Validate workflow quality, processing time, cost per completed asset, and policy compliance behavior."
+                    : "Validate quality on real internal prompts, token efficiency, latency, and policy compliance behavior.",
             },
         ],
         sourceCheckedAt: modelsLastUpdated,
@@ -1903,7 +1926,7 @@ export function modelLandingSeoDescription(landing: ModelLanding, model: ModelEn
     if ((modelLandingTitleCounts.get(landing.heroTitle) ?? 0) <= 1) return landing.metaDescription;
     const variant = humanizeModelVariant(model, landing);
     return trimSeoCopy(
-        `${landing.heroTitle} ${variant} enterprise profile: ${contextSpecValue(model)} context, ${inputPriceSpecValue(model)} input, ${outputPriceSpecValue(model)} output, and governed rollout notes for ${defaultModality(model)} workflows.`,
+        `${landing.heroTitle} ${variant} enterprise profile: ${contextSpecValue(model)} context, ${inputPriceSpecValue(model)} input, ${outputPriceSpecValue(model)} output, and governed rollout notes for ${humanizeModelModality(defaultModality(model))} workflows.`,
         168
     );
 }
@@ -1927,8 +1950,9 @@ function normalizeAliasSlug(value: string) {
 
 function aliasCandidatesForLanding(landing: ModelLanding) {
     const model = models.find((entry) => entry.id === landing.modelId);
-    const heroProviderPrefix = landing.heroTitle.includes(":") ? landing.heroTitle.split(":")[0] ?? "" : "";
-    const titleWithoutProvider = landing.heroTitle.replace(/^[^:]+:\s*/, "");
+    const catalogName = model?.name ?? landing.heroTitle;
+    const heroProviderPrefix = catalogName.includes(":") ? catalogName.split(":")[0] ?? "" : "";
+    const titleWithoutProvider = catalogName.replace(/^[^:]+:\s*/, "");
     const idWithoutProvider = landing.modelId.split("/").slice(1).join("-");
     const idProvider = landing.modelId.split("/")[0] ?? "";
     const providerPrefixAliases = heroProviderPrefix

@@ -11,6 +11,7 @@ import ItemListSchema from "@/components/seo/ItemListSchema";
 import RelatedHubs from "@/components/seo/RelatedHubs";
 import modelCatalogReport from "@/docs/model-catalog-report.json";
 import { displayBestFor } from "@/lib/model-best-for";
+import { displayModelName, displayModelSummary } from "@/lib/model-public-copy";
 import { formatModelInputPriceDetail } from "@/lib/model-pricing";
 import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_URL, SITE_NAME, absoluteUrl, buildKeywords } from "@/lib/seo";
 
@@ -152,6 +153,7 @@ export default function ModelsPage() {
                             {newlyAddedModels.map((model) => {
                                 const landingSlug = landingByModelId[model.id];
                                 const bestFor = displayBestFor(model).slice(0, 2);
+                                const modelName = displayModelName(model);
 
                                 return (
                                     <article
@@ -171,10 +173,10 @@ export default function ModelsPage() {
                                             {modelCategoryLabel(model)}
                                         </div>
                                         <h3 className="mb-3 text-xl font-black leading-tight text-slate-900 dark:text-white">
-                                            {model.name}
+                                            {modelName}
                                         </h3>
                                         <p className="mb-5 line-clamp-4 text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-300">
-                                            {model.summary}
+                                            {displayModelSummary(model)}
                                         </p>
 
                                         <div className="mt-auto space-y-4">

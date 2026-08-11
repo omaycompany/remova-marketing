@@ -20,7 +20,7 @@ import LazyModelVideo from "@/components/video/LazyModelVideo";
 const fmtNumber = new Intl.NumberFormat("en-US");
 
 function formatContextLabel(model: ModelEntry) {
-    if (model.contextLength <= 0) return "N/A";
+    if (model.contextLength <= 0) return "Usage-specific";
     return fmtNumber.format(model.contextLength);
 }
 

@@ -78,7 +78,13 @@ function pricePerMillion(value) {
 function sentence(value, fallback) {
     const clean = sanitizePublicText(String(value ?? "")).replace(/\s+/g, " ").trim();
     if (!clean) return fallback;
-    return clean.length > 220 ? `${clean.slice(0, 219).trimEnd()}…` : clean;
+    if (clean.length <= 220) return clean;
+
+    const excerpt = clean.slice(0, 220);
+    const sentenceEnd = Math.max(excerpt.lastIndexOf(". "), excerpt.lastIndexOf("? "), excerpt.lastIndexOf("! "));
+    if (sentenceEnd >= 100) return excerpt.slice(0, sentenceEnd + 1).trim();
+
+    return fallback;
 }
 
 function sanitizePublicText(value) {

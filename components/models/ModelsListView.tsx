@@ -5,7 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, CalendarDays, Layers, Search, SlidersHorizontal, X } from "lucide-react";
 import type { ModelEntry } from "@/content/models";
 import { displayBestFor } from "@/lib/model-best-for";
-import { formatPublicModelPrice, publicModelPrice } from "@/lib/model-pricing";
+import { displayModelName, displayModelSummary } from "@/lib/model-public-copy";
+import {
+    formatPublicModelPrice,
+    modelInputPriceHeading,
+    modelOutputPriceHeading,
+    publicModelPrice,
+} from "@/lib/model-pricing";
 
 interface ModelsListViewProps {
     models: ModelEntry[];
@@ -15,21 +21,23 @@ interface ModelsListViewProps {
 const fmtNumber = new Intl.NumberFormat("en-US");
 const MODELS_PER_PAGE = 12;
 
-function contextTierForModel(contextLength: number) {
-    if (contextLength >= 1_000_000) return "ultra";
-    if (contextLength >= 200_000) return "long";
+function contextTierForModel(model: ModelEntry) {
+    if (model.contextLength <= 0) return "usage";
+    if (model.contextLength >= 1_000_000) return "ultra";
+    if (model.contextLength >= 200_000) return "long";
     return "standard";
 }
 
-function priceTierForModel(inputPer1M: number) {
-    const publicInputPrice = publicModelPrice(inputPer1M);
+function priceTierForModel(model: ModelEntry) {
+    if (model.pricingDescription) return "usage";
+    const publicInputPrice = publicModelPrice(model.inputPer1M);
     if (publicInputPrice <= 0.25) return "budget";
     if (publicInputPrice <= 2) return "balanced";
     return "premium";
 }
 
 function formatContextLabel(model: ModelEntry) {
-    if (model.contextLength <= 0) return "N/A";
+    if (model.contextLength <= 0) return "Usage-specific";
     return fmtNumber.format(model.contextLength);
 }
 
@@ -67,8 +75,8 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
 
         return models.filter((model) => {
             if (provider !== "all" && model.provider !== provider) return false;
-            if (contextTier !== "all" && contextTierForModel(model.contextLength) !== contextTier) return false;
-            if (priceTier !== "all" && priceTierForModel(model.inputPer1M) !== priceTier) return false;
+            if (contextTier !== "all" && contextTierForModel(model) !== contextTier) return false;
+            if (priceTier !== "all" && priceTierForModel(model) !== priceTier) return false;
             if (landingFilter === "with-landing" && !landingByModelId[model.id]) return false;
 
             if (!searchTerm) return true;
@@ -149,6 +157,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                         <option value="ultra">Ultra (1M+)</option>
                         <option value="long">Long (200K-999K)</option>
                         <option value="standard">Standard (&lt;200K)</option>
+                        <option value="usage">Usage-specific</option>
                     </select>
 
                     <select
@@ -160,6 +169,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                         <option value="budget">Budget (≤ $0.25 / 1M input)</option>
                         <option value="balanced">$0.26-$2 / 1M input</option>
                         <option value="premium">&gt; $2 / 1M input</option>
+                        <option value="usage">Usage-based pricing</option>
                     </select>
                 </div>
 
@@ -199,6 +209,7 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
             <div className="space-y-6">
                 {visibleModels.map((model) => {
                     const bestFor = displayBestFor(model);
+                    const modelName = displayModelName(model);
 
                     return (
                         <article
@@ -214,8 +225,8 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                                 </span>
                             </div>
 
-                            <h2 className="mb-3 text-2xl font-black leading-tight text-slate-900 dark:text-white">{model.name}</h2>
-                            <p className="mb-6 text-base leading-relaxed text-slate-600 dark:text-slate-300">{model.summary}</p>
+                            <h2 className="mb-3 text-2xl font-black leading-tight text-slate-900 dark:text-white">{modelName}</h2>
+                            <p className="mb-6 text-base leading-relaxed text-slate-600 dark:text-slate-300">{displayModelSummary(model)}</p>
 
                             <div className="mb-6 grid gap-3 sm:grid-cols-3">
                                 <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
@@ -223,11 +234,11 @@ export default function ModelsListView({ models, landingByModelId }: ModelsListV
                                     <div className="text-base font-black text-slate-900 dark:text-white">{formatContextLabel(model)}</div>
                                 </div>
                                 <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
-                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Input / 1M</div>
+                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">{modelInputPriceHeading(model)}</div>
                                     <div className="text-base font-black text-slate-900 dark:text-white">{formatInputPriceLabel(model)}</div>
                                 </div>
                                 <div className="rounded-xl border border-slate-200 dark:border-white/10 p-4">
-                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">Output / 1M</div>
+                                    <div className="mb-1 text-[11px] font-black uppercase tracking-wide text-slate-500">{modelOutputPriceHeading(model)}</div>
                                     <div className="text-base font-black text-slate-900 dark:text-white">{formatOutputPriceLabel(model)}</div>
                                 </div>
                             </div>
