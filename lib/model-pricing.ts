@@ -16,7 +16,7 @@ export function formatPublicModelPricePer1M(rawProviderPricePer1M: number) {
     return `${formatPublicModelPrice(rawProviderPricePer1M)} per 1M tokens`;
 }
 
-const nonTokenOutputs = new Set(["image", "video", "audio", "speech", "transcription", "media"]);
+const nonTokenOutputs = new Set(["3d", "image", "video", "audio", "speech", "transcription", "media", "model"]);
 
 function outputSet(model: ModelEntry) {
     return new Set(model.outputModalities ?? []);
@@ -34,7 +34,7 @@ export function isUsageBasedPriceModel(model: ModelEntry) {
 export function modelInputPriceHeading(model: ModelEntry) {
     const outputs = outputSet(model);
     if (outputs.has("transcription")) return "Audio Input";
-    if (isNonTokenPricedModel(model)) return "Input";
+    if (isUsageBasedPriceModel(model)) return "Input";
     return "Input / 1M";
 }
 
@@ -43,8 +43,9 @@ export function modelOutputPriceHeading(model: ModelEntry) {
     if (outputs.has("transcription")) return "Transcription";
     if (outputs.has("image")) return "Image Output";
     if (outputs.has("video")) return "Video Output";
+    if (outputs.has("3d")) return "3D Output";
     if (outputs.has("speech") || outputs.has("audio")) return "Audio Output";
-    if (isNonTokenPricedModel(model)) return "Output";
+    if (isUsageBasedPriceModel(model)) return "Output";
     return "Output / 1M";
 }
 

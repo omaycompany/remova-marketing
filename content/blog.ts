@@ -193,7 +193,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "Can we just block ChatGPT and other public models?",
-                answer: "Blocking without providing an alternative leads to <a href='/glossary/shadow-ai'><a href='/glossary/shadow-ai'>Shadow AI</a></a>. Employees will just use their personal devices to access the tools, which is even worse for security because IT loses all visibility and control."
+                answer: "Blocking without providing an alternative leads to <a href='/glossary/shadow-ai'>Shadow AI</a>. Employees will just use their personal devices to access the tools, which is even worse for security because IT loses all visibility and control."
             },
             {
                 question: "What is the difference between blocking and redaction?",
@@ -241,7 +241,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
         faqs: [
             {
                 question: "Is it difficult to build an AI API proxy?",
-                answer: "Building a basic proxy to route API keys is easy. Building a secure, compliant AI governance gateway that handles dynamic redaction, identity integration, and <a href='/features/department-budgets'><a href='/features/department-budgets'>FinOps</a></a> budgeting at scale is incredibly difficult and expensive."
+                answer: "Building a basic proxy to route API keys is easy. Building a secure, compliant AI governance gateway that handles dynamic redaction, identity integration, and <a href='/features/department-budgets'>FinOps</a> budgeting at scale is incredibly difficult and expensive."
             },
             {
                 question: "Why can't we just use our existing API gateway for AI?",
@@ -401,7 +401,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "How does integrating Okta or Entra ID improve AI security?",
-                answer: "It allows you to enforce <a href='/features/role-access-control'>Role-Based Access Control</a> (<a href='/features/role-access-control'><a href='/features/role-access-control'>RBAC</a></a>). The AI platform reads the user's department from the IdP and automatically restricts which models they can use, what data they can search, and which security guardrails apply to them."
+                answer: "It allows you to enforce <a href='/features/role-access-control'>Role-Based Access Control</a> (<a href='/features/role-access-control'>RBAC</a>). The AI platform reads the user's department from the IdP and automatically restricts which models they can use, what data they can search, and which security guardrails apply to them."
             },
             {
                 question: "Can identity integration help control AI costs?",
@@ -409,7 +409,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "How does identity affect <a href='/glossary/rag'>RAG</a> (<a href='/glossary/rag'>Retrieval-Augmented Generation</a>) systems?",
-                answer: "In a secure <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> system, the AI inherits the user's exact IdP permissions. If the user doesn't have access to a specific SharePoint folder, the AI cannot retrieve documents from that folder to answer their question."
+                answer: "In a secure <a href='/glossary/rag'>RAG</a> system, the AI inherits the user's exact IdP permissions. If the user doesn't have access to a specific SharePoint folder, the AI cannot retrieve documents from that folder to answer their question."
             }
         ]
     },
@@ -461,11 +461,11 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "How do you manage the cost of 10,000 employees using AI?",
-                answer: "Through decentralized <a href='/features/department-budgets'><a href='/features/department-budgets'>FinOps</a></a>. You use an AI gateway to track every token back to the user's department, assign hard budgets to business leaders, and intelligently route simple queries to cheaper models to minimize waste."
+                answer: "Through decentralized <a href='/features/department-budgets'>FinOps</a>. You use an AI gateway to track every token back to the user's department, assign hard budgets to business leaders, and intelligently route simple queries to cheaper models to minimize waste."
             },
             {
                 question: "Why is Identity Provider (IdP) integration critical for large rollouts?",
-                answer: "It automates access control. As thousands of employees join, move, or leave the company, their access to specific AI models, budgets, and internal <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> datasets is automatically updated based on their Okta or Entra ID group memberships."
+                answer: "It automates access control. As thousands of employees join, move, or leave the company, their access to specific AI models, budgets, and internal <a href='/glossary/rag'>RAG</a> datasets is automatically updated based on their Okta or Entra ID group memberships."
             }
         ]
     },
@@ -509,11 +509,11 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
         faqs: [
             {
                 question: "Why do <a href='/glossary/rag'>RAG</a> systems frequently violate access controls?",
-                answer: "Many basic <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> implementations use a single 'admin' service account to index and search documents. When an employee asks a question, the AI searches using that admin account, bypassing the employee's personal permissions and potentially exposing confidential files."
+                answer: "Many basic <a href='/glossary/rag'>RAG</a> implementations use a single 'admin' service account to index and search documents. When an employee asks a question, the AI searches using that admin account, bypassing the employee's personal permissions and potentially exposing confidential files."
             },
             {
                 question: "How do you fix identity disconnect in a <a href='/glossary/rag'>RAG</a> pipeline?",
-                answer: "The <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> search mechanism must integrate with your Identity Provider (IdP) and evaluate the Access Control List (ACL) of every document in real-time. It must only retrieve and process text chunks from documents the specific user is explicitly authorized to view."
+                answer: "The <a href='/glossary/rag'>RAG</a> search mechanism must integrate with your Identity Provider (IdP) and evaluate the Access Control List (ACL) of every document in real-time. It must only retrieve and process text chunks from documents the specific user is explicitly authorized to view."
             },
             {
                 question: "Why is data lineage important in RAG?",
@@ -565,7 +565,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
         faqs: [
             {
                 question: "Does hosting an open-source model internally solve AI security?",
-                answer: "No. It solves third-party data privacy (since data doesn't leave your network), but it does not solve internal governance issues like role-based access, <a href='/glossary/prompt-injection'><a href='/glossary/prompt-injection'>prompt injection</a></a> from employees, or the need for compliance audit logs."
+                answer: "No. It solves third-party data privacy (since data doesn't leave your network), but it does not solve internal governance issues like role-based access, <a href='/glossary/prompt-injection'>prompt injection</a> from employees, or the need for compliance audit logs."
             },
             {
                 question: "Why do you need <a href='/features/department-budgets'>FinOps</a> for an open-source model with no API fees?",
@@ -629,7 +629,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "Can <a href='/features/sensitive-data-protection'>Data Loss Prevention</a> (<a href='/features/sensitive-data-protection'>DLP</a>) tools replace Model Governance?",
-                answer: "No. Legacy <a href='/features/sensitive-data-protection'><a href='/features/sensitive-data-protection'>DLP</a></a> tools rely on static regex rules to block known patterns. They cannot understand the complex, conversational context of AI prompts, leading to massive false positives or missed exfiltrations in generative AI workflows."
+                answer: "No. Legacy <a href='/features/sensitive-data-protection'>DLP</a> tools rely on static regex rules to block known patterns. They cannot understand the complex, conversational context of AI prompts, leading to massive false positives or missed exfiltrations in generative AI workflows."
             }
         ]
     },
@@ -673,7 +673,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
         faqs: [
             {
                 question: "Why do traditional <a href='/features/sensitive-data-protection'>DLP</a> tools block legitimate AI prompts?",
-                answer: "Traditional <a href='/features/sensitive-data-protection'><a href='/features/sensitive-data-protection'>DLP</a></a> uses rigid regex patterns. When scanning massive text blocks (like meeting transcripts) used in AI prompts, they frequently trigger false positives (e.g., mistaking a product ID for a credit card number), resulting in blocked prompts and frustrated users."
+                answer: "Traditional <a href='/features/sensitive-data-protection'>DLP</a> uses rigid regex patterns. When scanning massive text blocks (like meeting transcripts) used in AI prompts, they frequently trigger false positives (e.g., mistaking a product ID for a credit card number), resulting in blocked prompts and frustrated users."
             },
             {
                 question: "How does Dynamic Data Redaction preserve user productivity?",
@@ -733,15 +733,15 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "Why is AI FinOps considered part of AI governance?",
-                answer: "Because generative AI costs are highly variable and usage-based. Without governance, organizations lose visibility into who is spending what. AI <a href='/features/department-budgets'><a href='/features/department-budgets'>FinOps</a></a> implements department budgets, token tracking, and model routing to ensure AI usage delivers ROI rather than unexpected API bills."
+                answer: "Because generative AI costs are highly variable and usage-based. Without governance, organizations lose visibility into who is spending what. AI <a href='/features/department-budgets'>FinOps</a> implements department budgets, token tracking, and model routing to ensure AI usage delivers ROI rather than unexpected API bills."
             },
             {
                 question: "How does role-based access control (<a href='/features/role-access-control'>RBAC</a>) work in AI?",
-                answer: "<a href='/features/role-access-control'><a href='/features/role-access-control'>RBAC</a></a> in AI integrates with your Identity Provider (like Okta) to dynamically grant access to specific AI models, budgets, and internal datasets based on a user's department or role, ensuring the principle of least privilege is maintained."
+                answer: "<a href='/features/role-access-control'>RBAC</a> in AI integrates with your Identity Provider (like Okta) to dynamically grant access to specific AI models, budgets, and internal datasets based on a user's department or role, ensuring the principle of least privilege is maintained."
             },
             {
                 question: "Is AI governance necessary if we don't build our own models?",
-                answer: "Yes. Even if you strictly use third-party APIs or SaaS tools, you still face massive risks around data leakage (<a href='/glossary/shadow-ai'><a href='/glossary/shadow-ai'>shadow AI</a></a>), uncontrolled spending, and compliance violations. You must govern how your employees interact with those external models."
+                answer: "Yes. Even if you strictly use third-party APIs or SaaS tools, you still face massive risks around data leakage (<a href='/glossary/shadow-ai'>shadow AI</a>), uncontrolled spending, and compliance violations. You must govern how your employees interact with those external models."
             }
         ]
     },
@@ -785,11 +785,11 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
         faqs: [
             {
                 question: "What is the most immediate AI security threat to enterprises?",
-                answer: "<a href='/glossary/shadow-ai'><a href='/glossary/shadow-ai'>Shadow AI</a></a>. Unsanctioned use of consumer-grade AI tools by employees leads to completely unmonitored data exfiltration. The most effective defense is providing a highly capable, governed internal alternative."
+                answer: "<a href='/glossary/shadow-ai'>Shadow AI</a>. Unsanctioned use of consumer-grade AI tools by employees leads to completely unmonitored data exfiltration. The most effective defense is providing a highly capable, governed internal alternative."
             },
             {
                 question: "How do active policy guardrails differ from traditional <a href='/features/sensitive-data-protection'>DLP</a>?",
-                answer: "Traditional <a href='/features/sensitive-data-protection'><a href='/features/sensitive-data-protection'>DLP</a></a> relies heavily on rigid regex patterns and file types. Active AI guardrails use specialized semantic models to understand the context of a natural language prompt, allowing them to dynamically redact sensitive entities in real-time without breaking the user's workflow."
+                answer: "Traditional <a href='/features/sensitive-data-protection'>DLP</a> relies heavily on rigid regex patterns and file types. Active AI guardrails use specialized semantic models to understand the context of a natural language prompt, allowing them to dynamically redact sensitive entities in real-time without breaking the user's workflow."
             },
             {
                 question: "What is a prompt injection attack?",
@@ -849,7 +849,7 @@ If a team believes Claude Fable 5 is necessary for a specific non-sensitive work
             },
             {
                 question: "What is the compliance risk of <a href='/glossary/rag'>Retrieval-Augmented Generation</a> (<a href='/glossary/rag'>RAG</a>)?",
-                answer: "If the <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> system does not strictly enforce the user's existing identity permissions (<a href='/features/role-access-control'><a href='/features/role-access-control'>RBAC</a></a>), the AI could retrieve and summarize highly confidential internal documents (like HR records or unannounced financials) for unauthorized employees."
+                answer: "If the <a href='/glossary/rag'>RAG</a> system does not strictly enforce the user's existing identity permissions (<a href='/features/role-access-control'>RBAC</a>), the AI could retrieve and summarize highly confidential internal documents (like HR records or unannounced financials) for unauthorized employees."
             },
             {
                 question: "How do you enforce Human-in-the-Loop (HITL) for AI?",
@@ -1273,7 +1273,7 @@ A practical rollout can start in thirty days. Week one: identify the top AI work
         faqs: [
             {
                 question: "How does GPT-5's multimodality affect enterprise security?",
-                answer: "Because GPT-5 natively processes video, audio, and images, traditional text-based <a href='/features/sensitive-data-protection'>Data Loss Prevention</a> (<a href='/features/sensitive-data-protection'><a href='/features/sensitive-data-protection'>DLP</a></a>) tools cannot monitor what data employees are uploading. Governance platforms must now be capable of inspecting and redacting sensitive data across all modalities."
+                answer: "Because GPT-5 natively processes video, audio, and images, traditional text-based <a href='/features/sensitive-data-protection'>Data Loss Prevention</a> (<a href='/features/sensitive-data-protection'>DLP</a>) tools cannot monitor what data employees are uploading. Governance platforms must now be capable of inspecting and redacting sensitive data across all modalities."
             },
             {
                 question: "Why is model routing essential with the release of GPT-5?",
@@ -1337,7 +1337,7 @@ A practical rollout can start in thirty days. Week one: identify the top AI work
             },
             {
                 question: "How do you secure an AI agent's access to corporate systems?",
-                answer: "Agents must be treated as distinct identities with strict <a href='/features/role-access-control'>Role-Based Access Control</a> (<a href='/features/role-access-control'><a href='/features/role-access-control'>RBAC</a></a>). They should be granted Least Privilege access via short-lived, scoped credentials, meaning they can only access the specific tools required for their immediate task."
+                answer: "Agents must be treated as distinct identities with strict <a href='/features/role-access-control'>Role-Based Access Control</a> (<a href='/features/role-access-control'>RBAC</a>). They should be granted Least Privilege access via short-lived, scoped credentials, meaning they can only access the specific tools required for their immediate task."
             },
             {
                 question: "Why is Human-in-the-Loop (HITL) still necessary for autonomous agents?",
@@ -1385,7 +1385,7 @@ A practical rollout can start in thirty days. Week one: identify the top AI work
         faqs: [
             {
                 question: "Why is enterprise AI spending shifting away from raw model inference?",
-                answer: "Because model API prices are dropping due to competition, and organizations realize that without investing in the surrounding infrastructure (like <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> databases and governance controls), raw inference often leads to unmeasured waste rather than ROI."
+                answer: "Because model API prices are dropping due to competition, and organizations realize that without investing in the surrounding infrastructure (like <a href='/glossary/rag'>RAG</a> databases and governance controls), raw inference often leads to unmeasured waste rather than ROI."
             },
             {
                 question: "How do specialized Small Language Models (SLMs) affect the budget?",
@@ -1397,7 +1397,7 @@ A practical rollout can start in thirty days. Week one: identify the top AI work
             },
             {
                 question: "Why is the AI security budget growing so rapidly?",
-                answer: "As AI transitions from isolated chatbots to integrated agents that access production databases, the risk of data exfiltration and <a href='/glossary/prompt-injection'><a href='/glossary/prompt-injection'>prompt injection</a></a> skyrockets. Organizations are forced to invest heavily in active guardrails and inline redaction to prevent costly breaches."
+                answer: "As AI transitions from isolated chatbots to integrated agents that access production databases, the risk of data exfiltration and <a href='/glossary/prompt-injection'>prompt injection</a> skyrockets. Organizations are forced to invest heavily in active guardrails and inline redaction to prevent costly breaches."
             }
         ]
     },
@@ -1798,7 +1798,7 @@ A practical rollout can start in thirty days. Week one: identify the top AI work
             { heading: "The Response Playbook When Shadow AI Is Detected", content: "When <a href='/glossary/shadow-ai'>shadow AI</a> usage is detected, the response should follow a structured path rather than defaulting to immediate punitive action. First, assess the risk: what data was likely involved, how long was the usage occurring, and what is the realistic exposure based on the tool's data handling practices. Second, address the workflow need: investigate why the employee adopted the tool and whether the sanctioned environment meets that need. If it does not, the sanctioned environment has a gap that needs to close. Third, update controls: if the detection revealed a technical gap — a tool that bypassed proxy controls, a workflow category not covered by the approved environment — fix the control before addressing the policy violation. Fourth, communicate: brief the employee on why the unauthorized usage creates risk, explain what is available in the sanctioned environment, and document the interaction. Treating <a href='/glossary/shadow-ai'>shadow AI</a> detection as primarily a disciplinary matter rather than a governance signal almost always leads to the same pattern recurring." },
         ],
         faqs: [
-            { question: "What is shadow AI?", answer: "<a href='/glossary/shadow-ai'><a href='/glossary/shadow-ai'>Shadow AI</a></a> is the use of AI tools by employees without formal IT, security, or compliance approval. It includes consumer AI assistants, browser extensions, API integrations, and any other AI capability that employees adopt for work tasks outside the organization's sanctioned environment." },
+            { question: "What is shadow AI?", answer: "<a href='/glossary/shadow-ai'>Shadow AI</a> is the use of AI tools by employees without formal IT, security, or compliance approval. It includes consumer AI assistants, browser extensions, API integrations, and any other AI capability that employees adopt for work tasks outside the organization's sanctioned environment." },
             { question: "How do enterprises detect shadow AI usage?", answer: "Detection typically combines browser extension monitoring, DNS query analysis, security proxy logs, and outbound traffic pattern analysis. Periodic discovery exercises help build a complete picture of which AI services are accessed from corporate devices and networks." },
             { question: "Why do AI usage bans fail?", answer: "Bans remove the convenience of an unauthorized tool without providing an alternative. Employees who adopted the tool to get work done more effectively find workarounds — personal devices, personal networks, or different tools not yet on the block list — that are even less visible to security teams." },
             { question: "What makes a sanctioned AI environment effective at reducing shadow adoption?", answer: "A sanctioned environment reduces shadow adoption when it meets the majority of the workflow needs that drive unauthorized usage. This means capable AI assistance, easy access, and governance controls that operate without creating constant friction for legitimate work tasks." },
@@ -2089,7 +2089,7 @@ A practical rollout can start in thirty days. Week one: identify the top AI work
         ],
         faqs: [
             { question: "Does RAG solve hallucination?", answer: "No. RAG can reduce unsupported answers by grounding responses in source material, but it can still fail when documents are stale, conflicting, poorly permissioned, over-broad, or cited incorrectly." },
-            { question: "What governance risk does RAG introduce?", answer: "While <a href='/glossary/rag'><a href='/glossary/rag'>RAG</a></a> can improve accuracy, it creates access-control and source-quality risks. If the AI searches internal documents using a global system account rather than the specific user's permissions, it can summarize confidential information for unauthorized employees." },
+            { question: "What governance risk does RAG introduce?", answer: "While <a href='/glossary/rag'>RAG</a> can improve accuracy, it creates access-control and source-quality risks. If the AI searches internal documents using a global system account rather than the specific user's permissions, it can summarize confidential information for unauthorized employees." },
             { question: "What is identity propagation in RAG?", answer: "Identity propagation ensures the retrieval system searches the knowledge base using the specific employee's identity and access permissions. This guarantees the AI only generates answers based on documents the employee already has legitimate access to read." },
             { question: "Why are citations important for AI governance?", answer: "Citations provide auditability. If an employee acts on AI advice, compliance teams need citations to verify whether the AI hallucinated the answer or accurately summarized an outdated/incorrect internal document that needs to be removed from the knowledge base." },
         ],

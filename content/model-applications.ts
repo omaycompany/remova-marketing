@@ -1,4 +1,5 @@
 import type { ModelEntry } from "@/content/models";
+import { displayModelName } from "@/lib/model-public-copy";
 import {
     hasCodingSignal,
     isCodeRetrievalModel,
@@ -316,8 +317,9 @@ function moveToFront<T extends { title: string }>(items: T[], titles: string[]) 
 }
 
 export function applicationsForModel(model: ModelEntry) {
+    const modelName = displayModelName(model);
     return applicationsByModality(model).slice(0, 12).map((application) => ({
         ...application,
-        description: application.description.replace(/\.$/, ` with ${model.name}.`),
+        description: application.description.replace(/\.$/, ` with ${modelName}.`),
     }));
 }
